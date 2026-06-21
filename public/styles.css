@@ -373,6 +373,18 @@ p { margin: 0 0 1em; }
   gap: 14px;
   margin-bottom: 28px;
 }
+/* Outline buttons sit over busy hero footage — a frosted white backing keeps
+   the blue label readable without losing the outlined look. */
+.hero-buttons .btn-outline {
+  background-color: rgba(255, 255, 255, 0.82);
+  border-color: var(--mountain-blue);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(2px);
+}
+.hero-buttons .btn-outline:hover {
+  background-color: var(--mountain-blue);
+  color: #fff;
+}
 .hero-phone {
   display: inline-flex;
   align-items: center;
