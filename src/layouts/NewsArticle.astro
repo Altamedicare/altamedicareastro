@@ -1,0 +1,217 @@
+---
+import MainLayout from './MainLayout.astro';
+import { NEWS_CATEGORIES, CONTACT_URL, COMPARE_PLANS_URL, PHONE_TEL, PHONE_DISPLAY } from '../consts';
+
+interface RelatedItem { slug: string; title: string; summary: string; category: string; }
+interface NavItem { slug: string; title: string; }
+
+interface Props {
+  slug: string;
+  title: string;
+  summary: string;
+  category: keyof typeof NEWS_CATEGORIES;
+  date: Date;
+  updated?: Date;
+  author: string;
+  tag?: string;
+  source?: string;
+  image?: string;
+  faqs: { question: string; answer: string }[];
+  readingTime: number;
+  related: RelatedItem[];
+  prev?: NavItem;
+  next?: NavItem;
+}
+
+const {
+  slug, title, summary, category, date, updated, author, tag, source, image, faqs,
+  readingTime, related, prev, next,
+} = Astro.props;
+
+const lastUpdated = updated || date;
+
+const canonical = `/medicare-news/${slug}.html`;
+const cat = NEWS_CATEGORIES[category];
+const SITE = 'https://altamedicare.com';
+const ogImage = image || '/images/og-image.svg';
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+const iso = (d: Date) => d.toISOString().slice(0, 10);
+
+const sourceHost = (() => {
+  if (!source) return '';
+  try { return new URL(source).hostname.replace(/^www\./, ''); } catch { return ''; }
+})();
+
+// ── Structured data ──────────────────────────────────────────────
+// Rich Person author (EEAT). Single-author site → keyed to the About page anchor.
+const authorLd = {
+  '@type': 'Person',
+  '@id': `${SITE}/about.html#bret-swope`,
+  name: author,
+  jobTitle: 'Licensed Utah Medicare Agent',
+  url: `${SITE}/about.html`,
+  worksFor: { '@type': 'Organization', name: 'AltaMedicare' },
+};
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  '@type': 'NewsArticle',
+  headline: title,
+  description: summary,
+  datePublished: iso(date),
+  dateModified: iso(lastUpdated),
+  author: authorLd,
+  publisher: {
+    '@type': 'Organization',
+    name: 'AltaMedicare',
+    logo: { '@type': 'ImageObject', url: `${SITE}/images/favicon.svg` },
+  },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE}${canonical}` },
+  image: `${SITE}${ogImage}`,
+  articleSection: cat.title,
+};
+
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: 'Medicare News', item: `${SITE}/medicare-news.html` },
+    { '@type': 'ListItem', position: 3, name: cat.title, item: `${SITE}/medicare-news/category/${category}.html` },
+    { '@type': 'ListItem', position: 4, name: title, item: `${SITE}${canonical}` },
+  ],
+};
+
+const faqLd = faqs.length
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((f) => ({
+        '@type': 'Question',
+        name: f.question,
+        acceptedAnswer: { '@type': 'Answer', text: f.answer },
+      })),
+    }
+  : null;
+---
+
+<MainLayout title={`${title} | AltaMedicare`} description={summary} canonical={canonical} ogImage={ogImage} pageType="News">
+  <Fragment slot="head">
+    <meta property="og:type" content="article" />
+    <link rel="alternate" type="application/rss+xml" title="AltaMedicare Medicare News" href="/medicare-news/rss.xml" />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(articleLd)} />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbLd)} />
+    {faqLd && <script type="application/ld+json" is:inline set:html={JSON.stringify(faqLd)} />}
+  </Fragment>
+
+  <article class="blog-post">
+    <header class="post-header">
+      <div class="container content-narrow">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a> &nbsp;&rsaquo;&nbsp;
+          <a href="/medicare-news.html">Medicare News</a> &nbsp;&rsaquo;&nbsp;
+          <a href={`/medicare-news/category/${category}.html`}>{cat.title}</a>
+        </nav>
+        <span class="post-cat-tag"><i class={`fa-solid ${cat.icon}`}></i> {cat.title}</span>
+        <h1>{title}</h1>
+        <p class="lede">{summary}</p>
+        <p class="post-byline">
+          By <a href="/about.html" rel="author">{author}</a> &middot; Licensed Utah Medicare Agent
+        </p>
+        <div class="post-meta">
+          <span><i class="fa-solid fa-calendar-day"></i> Published {fmt(date)}</span>
+          {updated && <span><i class="fa-solid fa-rotate"></i> Updated {fmt(lastUpdated)}</span>}
+          <span><i class="fa-solid fa-clock"></i> {readingTime} min read</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="section-white">
+      <div class="container content-narrow post-body">
+        <slot />
+
+        {source && sourceHost && (
+          <p class="post-disclaimer">
+            <strong>Source:</strong> Based on information from{' '}
+            <a href={source} rel="nofollow noopener" target="_blank">{sourceHost}</a>.
+            Coverage details depend on your specific plan and can change — always confirm with your plan or a licensed agent.
+          </p>
+        )}
+      </div>
+    </div>
+
+    {faqs.length > 0 && (
+      <section class="section-tinted">
+        <div class="container content-narrow">
+          <h2 class="faq-title">Frequently Asked Questions</h2>
+          <div class="faq-list">
+            {faqs.map((f) => (
+              <details class="faq-item">
+                <summary>{f.question}</summary>
+                <p>{f.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <section class="post-help section-tinted">
+      <div class="container content-narrow">
+        <div class="callout">
+          <strong>Want a real person to walk through this with you?</strong>
+          <p style="margin:8px 0 14px;">Bret Swope is a licensed Utah Medicare agent. No bots, no pressure &mdash; just clear answers.</p>
+          <div class="cta-buttons">
+            <a href={CONTACT_URL} class="btn btn-primary">Talk to Bret</a>
+            <a href={COMPARE_PLANS_URL} class="btn btn-outline" target="_blank" rel="noopener">Compare Plans Online</a>
+            <a href={PHONE_TEL} class="btn btn-outline">Call {PHONE_DISPLAY}</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {related.length > 0 && (
+      <section class="section-white">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">More news</span>
+            <h2>Related Updates</h2>
+          </div>
+          <div class="card-grid">
+            {related.map((r) => (
+              <a href={`/medicare-news/${r.slug}.html`} class="card" style="text-decoration:none;">
+                <span class="card-eyebrow">{NEWS_CATEGORIES[r.category as keyof typeof NEWS_CATEGORIES]?.title}</span>
+                <h3>{r.title}</h3>
+                <p>{r.summary}</p>
+                <span class="card-link">Read update</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {(prev || next) && (
+      <nav class="post-nav" aria-label="More news">
+        <div class="container content-narrow">
+          <div class="post-nav-grid">
+            {prev ? (
+              <a class="post-nav-link prev" href={`/medicare-news/${prev.slug}.html`}>
+                <span class="pn-dir"><i class="fa-solid fa-arrow-left"></i> Previous</span>
+                <span class="pn-title">{prev.title}</span>
+              </a>
+            ) : <span></span>}
+            {next ? (
+              <a class="post-nav-link next" href={`/medicare-news/${next.slug}.html`}>
+                <span class="pn-dir">Next <i class="fa-solid fa-arrow-right"></i></span>
+                <span class="pn-title">{next.title}</span>
+              </a>
+            ) : <span></span>}
+          </div>
+        </div>
+      </nav>
+    )}
+  </article>
+</MainLayout>

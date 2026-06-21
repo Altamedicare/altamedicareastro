@@ -1,0 +1,58 @@
+---
+import { getCollection } from 'astro:content';
+import NewsArticle from '../../layouts/NewsArticle.astro';
+
+export async function getStaticPaths() {
+  const items = (await getCollection('news', ({ data }) => !data.draft))
+    .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf());
+
+  return items.map((item, i) => {
+    const prev = items[i - 1]; // chronologically earlier
+    const next = items[i + 1]; // chronologically later
+
+    const related = items
+      .filter((p) => p.slug !== item.slug && p.data.category === item.data.category)
+      .sort((a, b) => Number(b.data.featured) - Number(a.data.featured))
+      .slice(0, 3)
+      .map((p) => ({ slug: p.slug, title: p.data.title, summary: p.data.summary, category: p.data.category }));
+
+    const words = item.body.split(/\s+/).filter(Boolean).length;
+    const readingTime = Math.max(1, Math.round(words / 200));
+
+    return {
+      params: { slug: item.slug },
+      props: {
+        item,
+        readingTime,
+        related,
+        prev: prev ? { slug: prev.slug, title: prev.data.title } : undefined,
+        next: next ? { slug: next.slug, title: next.data.title } : undefined,
+      },
+    };
+  });
+}
+
+const { item, readingTime, related, prev, next } = Astro.props;
+const { Content } = await item.render();
+const d = item.data;
+---
+
+<NewsArticle
+  slug={item.slug}
+  title={d.title}
+  summary={d.summary}
+  category={d.category}
+  date={d.date}
+  updated={d.updated}
+  author={d.author}
+  tag={d.tag}
+  source={d.source}
+  image={d.image}
+  faqs={d.faqs}
+  readingTime={readingTime}
+  related={related}
+  prev={prev}
+  next={next}
+>
+  <Content />
+</NewsArticle>

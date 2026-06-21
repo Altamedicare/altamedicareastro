@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Medicare Eligibility &amp; Timeline Calculator | When Can I Enroll? | AltaMedicare</title>
+<meta name="description" content="Free Medicare eligibility and timeline calculator. See if you qualify, your Initial Enrollment Period dates, your Medicare start date, and key deadlines based on your date of birth." />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- WebApplication schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Medicare Eligibility & Timeline Calculator",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Web",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "Check your Medicare eligibility and visualize your enrollment timeline, Initial Enrollment Period, Special Enrollment Period, and key deadlines based on your date of birth."
+}
+</script>
+
+<!-- FAQ schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Who qualifies for Medicare before age 65?", "acceptedAnswer": { "@type": "Answer", "text": "People who have received Social Security disability benefits for 24 months, or who have End-Stage Renal Disease (ESRD) or ALS, can qualify for Medicare before age 65." } },
+    { "@type": "Question", "name": "When does Medicare start?", "acceptedAnswer": { "@type": "Answer", "text": "If you enroll during the 3 months before your 65th birthday, Medicare generally starts the first day of your birthday month. Enrolling later can delay your start date." } },
+    { "@type": "Question", "name": "When should I enroll?", "acceptedAnswer": { "@type": "Answer", "text": "Most people enroll during their Initial Enrollment Period — the 7-month window that begins 3 months before the month you turn 65 and ends 3 months after." } },
+    { "@type": "Question", "name": "What if I keep working after 65?", "acceptedAnswer": { "@type": "Answer", "text": "If you have active employer coverage from a company with 20 or more employees, you may be able to delay Part B without penalty and use a Special Enrollment Period when that coverage ends." } },
+    { "@type": "Question", "name": "What is the Annual Enrollment Period?", "acceptedAnswer": { "@type": "Answer", "text": "From October 15 to December 7 each year, you can join, switch, or drop a Medicare Advantage or Part D plan for the following year." } },
+    { "@type": "Question", "name": "What happens if I miss my Initial Enrollment Period?", "acceptedAnswer": { "@type": "Answer", "text": "You may need to wait for the General Enrollment Period (January 1 to March 31) and could face lifetime late-enrollment penalties for Part B and Part D." } }
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --mc-blue: #135aac; --mc-blue-dark: #0d3f86; --mc-blue-deep: #0a2540;
+    --mc-blue-soft: #eaf2fd; --mc-blue-line: #cfe0f5;
+    --mc-green: #15803d; --mc-green-deep: #14532d; --mc-green-soft: #ecfdf3; --mc-green-line: #bbf7d0;
+    --mc-amber: #b45309; --mc-amber-soft: #fff7ed; --mc-amber-line: #fed7aa;
+    --mc-red: #b42318; --mc-red-soft: #fef3f2; --mc-red-line: #fecdca;
+    --ink: #1f2a37; --ink-soft: #475467; --muted: #6b7280;
+    --radius: 16px; --shadow: 0 18px 50px -24px rgba(13, 63, 134, 0.4);
+    --font: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: var(--font); color: var(--ink); line-height: 1.55;
+    background: radial-gradient(1200px 500px at 50% -220px, #dbeafe 0%, transparent 70%), #f3f7fc;
+    padding: 28px 16px 60px; -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; }
+  .card { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--mc-blue-line); overflow: hidden; }
+
+  .head { background: linear-gradient(135deg, var(--mc-blue) 0%, var(--mc-blue-deep) 100%); color: #fff; padding: 28px 26px; display: flex; align-items: center; gap: 16px; }
+  .head .badge { flex: none; width: 54px; height: 54px; border-radius: 14px; background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.25); display: grid; place-items: center; font-size: 1.5rem; }
+  .head h1 { margin: 0; font-size: 1.45rem; line-height: 1.2; }
+  .head p { margin: 4px 0 0; font-size: .95rem; opacity: .9; }
+
+  .body { padding: 26px; }
+  .field { margin-bottom: 22px; }
+  .field > label.q, .field legend { display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 1.02rem; color: var(--ink); margin-bottom: 10px; padding: 0; }
+  i.qi { color: var(--mc-blue); width: 20px; text-align: center; }
+
+  input[type="date"] { width: 100%; font-family: inherit; font-size: 1.05rem; min-height: 52px; padding: 13px 14px; border: 2px solid var(--mc-blue-line); border-radius: 10px; color: var(--ink); background: #fff; transition: border-color .2s, box-shadow .2s; }
+  input[type="date"]:focus { outline: none; border-color: var(--mc-blue); box-shadow: 0 0 0 4px rgba(19,90,172,.15); }
+
+  .seg { border: 0; padding: 0; margin: 0; }
+  .seg-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .seg-options input { position: absolute; opacity: 0; pointer-events: none; }
+  .seg-options label { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px; padding: 12px 10px; border: 2px solid var(--mc-blue-line); border-radius: 10px; font-weight: 600; color: var(--ink-soft); cursor: pointer; background: #fff; transition: all .15s ease; user-select: none; }
+  .seg-options label:hover { border-color: var(--mc-blue); }
+  .seg-options input:checked + label { background: var(--mc-blue); border-color: var(--mc-blue); color: #fff; box-shadow: 0 6px 16px -8px rgba(19,90,172,.8); }
+  .seg-options input:focus-visible + label { box-shadow: 0 0 0 4px rgba(19,90,172,.25); }
+
+  .btn { width: 100%; margin-top: 4px; background: var(--mc-blue); color: #fff; border: 0; border-radius: 12px; padding: 16px; font-family: inherit; font-size: 1.1rem; font-weight: 700; cursor: pointer; min-height: 52px; display: flex; align-items: center; justify-content: center; gap: 10px; transition: background .2s, transform .1s; }
+  .btn:hover { background: var(--mc-blue-dark); }
+  .btn:active { transform: translateY(1px); }
+
+  .err { color: var(--mc-red); background: var(--mc-red-soft); border: 1px solid var(--mc-red-line); border-radius: 10px; padding: 10px 13px; font-size: .92rem; margin-bottom: 16px; display: none; align-items: center; gap: 8px; }
+  .err.show { display: flex; }
+
+  .results { display: none; margin-top: 26px; }
+  .results.show { display: block; animation: fade .35s ease; }
+  @keyframes fade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+  .banner { border-radius: 14px; padding: 18px 20px; display: flex; gap: 14px; align-items: flex-start; font-size: 1.08rem; }
+  .banner i { font-size: 1.5rem; flex: none; margin-top: 1px; }
+  .banner strong { display: block; }
+  .banner.green { background: var(--mc-green-soft); border: 1px solid var(--mc-green-line); }
+  .banner.green i, .banner.green strong { color: var(--mc-green); }
+  .banner.blue { background: var(--mc-blue-soft); border: 1px solid var(--mc-blue-line); }
+  .banner.blue i, .banner.blue strong { color: var(--mc-blue-dark); }
+  .banner.amber { background: var(--mc-amber-soft); border: 1px solid var(--mc-amber-line); }
+  .banner.amber i, .banner.amber strong { color: var(--mc-amber); }
+  .banner.red { background: var(--mc-red-soft); border: 1px solid var(--mc-red-line); }
+  .banner.red i, .banner.red strong { color: var(--mc-red); }
+
+  .section-label { margin: 26px 0 12px; font-size: 1.1rem; font-weight: 700; color: var(--mc-blue-deep); display: flex; align-items: center; gap: 9px; }
+  .section-label i { color: var(--mc-blue); }
+
+  /* Timeline */
+  .timeline { list-style: none; margin: 0; padding: 0; }
+  .milestone { display: flex; gap: 16px; position: relative; padding-bottom: 26px; }
+  .milestone:last-child { padding-bottom: 0; }
+  .milestone:not(:last-child)::before { content: ""; position: absolute; left: 24px; top: 50px; bottom: 0; width: 3px; background: var(--mc-blue-line); }
+  .m-node { flex: none; width: 50px; height: 50px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-size: 1.2rem; z-index: 1; box-shadow: 0 6px 14px -6px rgba(13,63,134,.6); }
+  .m-node.blue { background: var(--mc-blue); }
+  .m-node.green { background: var(--mc-green); }
+  .m-node.amber { background: var(--mc-amber); }
+  .m-content { padding-top: 3px; }
+  .m-content h3 { margin: 0; font-size: 1.05rem; color: var(--ink); }
+  .m-date { margin: 3px 0 0; font-weight: 700; color: var(--mc-blue-dark); }
+  .m-note { margin: 3px 0 0; font-size: .9rem; color: var(--muted); }
+  @media (min-width: 820px) {
+    .timeline { display: flex; gap: 0; }
+    .milestone { flex: 1; flex-direction: column; text-align: center; padding: 0 6px; gap: 0; }
+    .milestone:not(:last-child)::before { left: 50%; right: -50%; top: 25px; bottom: auto; width: auto; height: 3px; }
+    .m-node { margin: 0 auto 14px; }
+    .m-content { padding-top: 0; }
+  }
+
+  /* Recommendations */
+  .recs-panel { border: 1px solid var(--mc-blue-line); border-radius: 14px; padding: 18px 22px; }
+  .recs { list-style: none; padding: 0; margin: 0; }
+  .recs li { display: flex; gap: 12px; padding: 11px 0; border-bottom: 1px solid #eef2f7; color: var(--ink-soft); }
+  .recs li:last-child { border-bottom: 0; }
+  .recs li i { margin-top: 4px; flex: none; }
+  .recs li i.ok { color: var(--mc-blue); }
+  .recs li i.warn { color: var(--mc-amber); }
+  .recs a { color: var(--mc-blue-dark); font-weight: 600; }
+
+  /* Detail cards */
+  .cards { display: grid; grid-template-columns: 1fr; gap: 14px; }
+  @media (min-width: 640px) { .cards { grid-template-columns: 1fr 1fr; } }
+  .tc { border: 1px solid var(--mc-blue-line); border-radius: 14px; padding: 18px 20px; background: #fff; }
+  .tc h3 { margin: 0 0 6px; font-size: 1.08rem; color: var(--mc-blue-deep); display: flex; align-items: center; gap: 9px; }
+  .tc h3 i { color: var(--mc-blue); }
+  .tc .tc-date { font-weight: 700; color: var(--mc-blue-dark); margin: 0 0 6px; font-size: 1.05rem; }
+  .tc p { margin: 0; color: var(--ink-soft); font-size: .95rem; }
+  .tc ul { margin: 8px 0 0; padding-left: 18px; color: var(--ink-soft); font-size: .92rem; }
+  .tc ul li { margin-bottom: 4px; }
+  .tc.warn { background: var(--mc-amber-soft); border-color: var(--mc-amber-line); }
+  .tc.warn h3, .tc.warn h3 i { color: var(--mc-amber); }
+  .tc.sep { background: var(--mc-blue-soft); }
+
+  /* Lead capture */
+  .lead { margin-top: 22px; border-radius: 14px; background: var(--mc-blue-soft); border: 1px solid var(--mc-blue-line); padding: 20px 22px; text-align: center; }
+  .lead h3 { margin: 0 0 4px; color: var(--mc-blue-deep); }
+  .lead p { margin: 0 0 14px; color: var(--ink-soft); }
+  .lead .cta-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+  .lead .cta-row a { flex: 1 1 150px; max-width: 240px; text-decoration: none; min-height: 50px; display: flex; align-items: center; justify-content: center; gap: 9px; padding: 13px 18px; border-radius: 11px; font-weight: 700; }
+  .lead .cta-row a.primary { background: var(--mc-blue); color: #fff; }
+  .lead .cta-row a.primary:hover { background: var(--mc-blue-dark); }
+  .lead .cta-row a.ghost { background: #fff; color: var(--mc-blue-dark); border: 2px solid var(--mc-blue-line); }
+  .lead .cta-row a.ghost:hover { border-color: var(--mc-blue); }
+
+  section.block { margin-top: 28px; }
+  section.block > h2 { font-size: 1.35rem; color: var(--mc-blue-deep); margin: 0 0 14px; display: flex; align-items: center; gap: 10px; }
+  section.block > h2 i { color: var(--mc-blue); }
+
+  .edu .eitem { padding: 16px 0; border-bottom: 1px solid #eef2f7; }
+  .edu .eitem:last-child { border-bottom: 0; }
+  .edu .eitem h3 { margin: 0 0 5px; font-size: 1.05rem; color: var(--ink); }
+  .edu .eitem p { margin: 0; color: var(--ink-soft); }
+
+  .cta-card { background: linear-gradient(135deg, var(--mc-blue) 0%, var(--mc-blue-deep) 100%); color: #fff; border-radius: var(--radius); padding: 30px 26px; text-align: center; }
+  .cta-card h2 { margin: 0 0 6px; color: #fff; font-size: 1.4rem; }
+  .cta-card p { margin: 0 0 20px; opacity: .92; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+  .cta-card .cta-row a { flex: 1 1 200px; max-width: 280px; text-decoration: none; min-height: 52px; display: flex; align-items: center; justify-content: center; gap: 9px; padding: 14px 20px; border-radius: 12px; font-weight: 700; font-size: 1.05rem; }
+  .cta-card .cta-row a.primary { background: #fff; color: var(--mc-blue-dark); }
+  .cta-card .cta-row a.primary:hover { background: #eaf2fd; }
+  .cta-card .cta-row a.ghost { background: rgba(255,255,255,.12); color: #fff; border: 2px solid rgba(255,255,255,.5); }
+  .cta-card .cta-row a.ghost:hover { background: rgba(255,255,255,.22); }
+
+  .faq details { background: #fff; border: 1px solid var(--mc-blue-line); border-radius: 12px; margin-bottom: 10px; overflow: hidden; }
+  .faq summary { list-style: none; cursor: pointer; padding: 18px 20px; font-weight: 600; font-size: 1.05rem; color: var(--mc-blue-deep); display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 44px; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary .chev { flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--mc-blue-soft); display: grid; place-items: center; color: var(--mc-blue); transition: transform .2s; }
+  .faq details[open] summary .chev { transform: rotate(180deg); }
+  .faq .faq-a { padding: 0 20px 18px; color: var(--ink-soft); }
+
+  .disclaimer { margin-top: 26px; background: #f8fafc; border: 1px solid #e6ebf2; border-radius: 12px; padding: 16px 18px; font-size: .86rem; color: var(--muted); display: flex; gap: 10px; }
+  .disclaimer i { color: var(--mc-blue); margin-top: 2px; flex: none; }
+  .disclaimer a { color: var(--mc-blue-dark); }
+
+  @media (max-width: 480px) { .head { padding: 22px 18px; } .head h1 { font-size: 1.2rem; } .body { padding: 20px 18px; } }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body data-pagefind-body data-pagefind-meta="type:Calculator" data-pagefind-filter="type:Calculator">
+<div class="wrap">
+  <a href="/tools.html" style="display:inline-flex;align-items:center;gap:8px;margin-bottom:16px;color:var(--mc-blue,#135aac);font-family:inherit;font-weight:600;text-decoration:none;font-size:.95rem;"><i class="fa-solid fa-arrow-left"></i> Back to Tools</a>
+
+  <main class="card" role="main">
+    <header class="head">
+      <div class="badge"><i class="fa-solid fa-calendar-check"></i></div>
+      <div>
+        <h1>Medicare Eligibility &amp; Timeline Calculator</h1>
+        <p>See if you qualify, when your enrollment window opens, and your key deadlines.</p>
+      </div>
+    </header>
+
+    <div class="body">
+      <form id="mec-form" novalidate>
+        <div class="err" id="mec-err"><i class="fa-solid fa-triangle-exclamation"></i><span>Please enter your date of birth.</span></div>
+
+        <div class="field">
+          <label class="q" for="dob"><i class="fa-solid fa-cake-candles qi"></i> Date of birth</label>
+          <input type="date" id="dob" name="dob" required />
+        </div>
+
+        <div class="field">
+          <fieldset class="seg">
+            <legend><i class="fa-solid fa-briefcase qi"></i> Currently working and covered by employer insurance?</legend>
+            <div class="seg-options">
+              <input type="radio" id="emp-no" name="employer" value="no" checked />
+              <label for="emp-no"><i class="fa-solid fa-xmark"></i> No</label>
+              <input type="radio" id="emp-yes" name="employer" value="yes" />
+              <label for="emp-yes"><i class="fa-solid fa-check"></i> Yes</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="field">
+          <fieldset class="seg">
+            <legend><i class="fa-solid fa-wheelchair-move qi"></i> Receiving Social Security disability (SSDI)?</legend>
+            <div class="seg-options">
+              <input type="radio" id="ssdi-no" name="ssdi" value="no" checked />
+              <label for="ssdi-no"><i class="fa-solid fa-xmark"></i> No</label>
+              <input type="radio" id="ssdi-yes" name="ssdi" value="yes" />
+              <label for="ssdi-yes"><i class="fa-solid fa-check"></i> Yes</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="field">
+          <fieldset class="seg">
+            <legend><i class="fa-solid fa-kit-medical qi"></i> Diagnosed with ESRD (permanent kidney failure)?</legend>
+            <div class="seg-options">
+              <input type="radio" id="esrd-no" name="esrd" value="no" checked />
+              <label for="esrd-no"><i class="fa-solid fa-xmark"></i> No</label>
+              <input type="radio" id="esrd-yes" name="esrd" value="yes" />
+              <label for="esrd-yes"><i class="fa-solid fa-check"></i> Yes</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <button type="submit" class="btn"><i class="fa-solid fa-magnifying-glass-chart"></i> Check Eligibility &amp; Timeline</button>
+      </form>
+
+      <section class="results" id="mec-results" aria-live="polite"></section>
+
+      <p class="disclaimer">
+        <i class="fa-solid fa-circle-info"></i>
+        <span><strong>Disclaimer:</strong> This tool provides estimates for educational purposes only and is <strong>not an official Medicare determination</strong>. Dates and eligibility can vary. Please confirm with <a href="https://www.medicare.gov" target="_blank" rel="noopener">Medicare.gov</a>, Social Security, or a licensed Medicare agent.</span>
+      </p>
+    </div>
+  </main>
+
+  <!-- Educational -->
+  <section class="block">
+    <h2><i class="fa-solid fa-graduation-cap"></i> Understanding Your Enrollment Periods</h2>
+    <div class="card edu" style="padding:8px 22px;">
+      <div class="eitem"><h3>Initial Enrollment Period (IEP)</h3><p>A 7-month window around your 65th birthday — the 3 months before your birthday month, your birthday month, and the 3 months after. This is when most people first sign up for Medicare.</p></div>
+      <div class="eitem"><h3>Special Enrollment Period (SEP)</h3><p>If you have active employer coverage from a company with 20+ employees past 65, you can delay Part B and enroll later — usually within 8 months of that coverage ending — without a penalty.</p></div>
+      <div class="eitem"><h3>Annual Enrollment Period (AEP)</h3><p>October 15 – December 7 each year. You can join, switch, or drop a Medicare Advantage or Part D plan for the following year.</p></div>
+      <div class="eitem"><h3>General Enrollment Period (GEP)</h3><p>January 1 – March 31 each year, for people who missed their Initial Enrollment Period. Late-enrollment penalties may apply.</p></div>
+      <div class="eitem"><h3>What happens if I delay Medicare?</h3><p>Without qualifying employer coverage, delaying Part B or Part D can add a lifetime late-enrollment penalty to your premiums — and you may have to wait for the General Enrollment Period to sign up.</p></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="block">
+    <div class="cta-card">
+      <h2>Questions about your eligibility or timeline?</h2>
+      <p>Talk to a licensed Utah Medicare agent — free, no pressure.</p>
+      <div class="cta-row">
+        <a class="primary" href="tel:8013680700"><i class="fa-solid fa-phone"></i> Call (801) 368-0700</a>
+        <a class="ghost" href="sms:18013680700?body=Hi%20Bret%2C%20I%20have%20a%20question%20about%20my%20Medicare%20eligibility%20and%20timeline."><i class="fa-solid fa-comment-sms"></i> Text Us</a>
+      </div>
+      <div class="cta-row" style="margin-top:12px;">
+        <a class="ghost" href="contact.html"><i class="fa-solid fa-calendar-check"></i> Free Medicare Review</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block faq">
+    <h2><i class="fa-solid fa-circle-question"></i> Frequently Asked Questions</h2>
+    <details><summary>Who qualifies for Medicare before age 65? <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></summary><div class="faq-a">People who have received Social Security disability benefits for 24 months, or who have End-Stage Renal Disease (ESRD) or ALS, can qualify before age 65.</div></details>
+    <details><summary>When does Medicare start? <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></summary><div class="faq-a">If you enroll during the 3 months before your 65th birthday, Medicare generally starts the first day of your birthday month. Enrolling later can delay your start date.</div></details>
+    <details><summary>When should I enroll? <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></summary><div class="faq-a">Most people enroll during their Initial Enrollment Period — the 7-month window that begins 3 months before the month you turn 65 and ends 3 months after.</div></details>
+    <details><summary>What if I keep working after 65? <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></summary><div class="faq-a">If you have active employer coverage from a company with 20 or more employees, you may be able to delay Part B without penalty and use a Special Enrollment Period when that coverage ends.</div></details>
+    <details><summary>What is the Annual Enrollment Period? <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></summary><div class="faq-a">From October 15 to December 7 each year, you can join, switch, or drop a Medicare Advantage or Part D plan for the following year.</div></details>
+    <details><summary>What happens if I miss my Initial Enrollment Period? <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></summary><div class="faq-a">You may need to wait for the General Enrollment Period (January 1 to March 31) and could face lifetime late-enrollment penalties for Part B and Part D.</div></details>
+  </section>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var form = document.getElementById("mec-form");
+  var results = document.getElementById("mec-results");
+  var errBox = document.getElementById("mec-err");
+  if (!form) return;
+
+  function fmtMonthYear(d) { return d.toLocaleDateString("en-US", { month: "long", year: "numeric" }); }
+  function fmtFull(d) { return d.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }); }
+
+  function build(data) {
+    var birth = new Date(data.dob + "T00:00:00");
+    var now = new Date();
+
+    var age = now.getFullYear() - birth.getFullYear();
+    var aMonthDiff = now.getMonth() - birth.getMonth();
+    if (aMonthDiff < 0 || (aMonthDiff === 0 && now.getDate() < birth.getDate())) age--;
+
+    var refMonth = new Date(birth.getFullYear() + 65, birth.getMonth(), 1);
+    var bornFirst = birth.getDate() === 1;
+    if (bornFirst) refMonth.setMonth(refMonth.getMonth() - 1);
+
+    var iepStart = new Date(refMonth.getFullYear(), refMonth.getMonth() - 3, 1);
+    var iepEnd = new Date(refMonth.getFullYear(), refMonth.getMonth() + 4, 0);
+    var startDate = new Date(refMonth.getFullYear(), refMonth.getMonth(), 1);
+    var turn65 = new Date(birth.getFullYear() + 65, birth.getMonth(), birth.getDate());
+
+    // ----- Eligibility banner -----
+    var banner;
+    if (data.esrd === "yes") {
+      banner = { type: "green", title: "You may qualify before age 65 (ESRD)", text: "Coverage for End-Stage Renal Disease can begin at any age — often the 4th month of dialysis. The age-65 timeline below still applies if you have not yet enrolled." };
+    } else if (data.ssdi === "yes") {
+      banner = { type: "green", title: "You may qualify through disability", text: "Medicare usually begins automatically after 24 months of Social Security disability benefits. Your age-65 timeline is shown below as well." };
+    } else if (now >= iepStart && now <= iepEnd) {
+      banner = { type: "green", title: "You're currently in your Initial Enrollment Period.", text: "This is the ideal time to enroll — it runs through " + fmtFull(iepEnd) + "." };
+    } else if (now < iepStart) {
+      banner = { type: "blue", title: "Your Initial Enrollment Period begins on " + fmtFull(iepStart) + ".", text: "That's about 3 months before you turn 65 on " + fmtFull(turn65) + "." };
+    } else if (data.employer === "yes") {
+      banner = { type: "amber", title: "You may qualify for a Special Enrollment Period.", text: "Because you have employer coverage, you may be able to enroll later without penalty. Confirm the details before that coverage ends." };
+    } else {
+      banner = { type: "red", title: "You may have missed your Initial Enrollment Period.", text: "Speak with a licensed agent soon — a Special Enrollment Period or the General Enrollment Period may apply, and penalties can sometimes be avoided." };
+    }
+
+    // ----- Timeline milestones -----
+    var milestones = [
+      { color: "blue", icon: "fa-calendar-plus", title: "Initial Enrollment Begins", date: fmtMonthYear(iepStart), note: "3 months before your birthday month" },
+      { color: "green", icon: "fa-cake-candles", title: "You Turn 65", date: fmtMonthYear(turn65), note: "Medicare eligibility" },
+      { color: "blue", icon: "fa-calendar-xmark", title: "Initial Enrollment Ends", date: fmtMonthYear(iepEnd), note: "3 months after your birthday month" }
+    ];
+    if (data.employer === "yes") {
+      milestones.push({ color: "amber", icon: "fa-briefcase", title: "Special Enrollment Period", date: "While employed", note: "Enroll when employer coverage ends" });
+    }
+    milestones.push({ color: "blue", icon: "fa-calendar-days", title: "Annual Enrollment", date: "Oct 15 – Dec 7", note: "Every year — change plans" });
+
+    // ----- Recommended next steps -----
+    var recs = [];
+    if (data.esrd === "yes") {
+      recs.push({ type: "ok", html: "Contact Social Security to begin Medicare — ESRD timing depends on when dialysis or a transplant begins." });
+    } else if (data.ssdi === "yes") {
+      recs.push({ type: "ok", html: "Watch your mail for your Medicare card around month 25 — enrollment is usually automatic." });
+    } else {
+      recs.push({ type: "ok", html: 'Compare <a href="medicare-advantage.html">Medicare Advantage</a>, <a href="medicare-supplement.html">Medicare Supplement</a>, and <a href="prescription-drug-plans.html">Part D</a> plans.' });
+    }
+    recs.push({ type: "ok", html: "Enroll through the Social Security Administration at SSA.gov or 1-800-772-1213." });
+    if (data.employer === "yes") {
+      recs.push({ type: "warn", html: "Delaying Part B may be appropriate if you have active employer coverage from a company with 20+ employees." });
+      recs.push({ type: "warn", html: "Contributing to an HSA after enrolling in Medicare can create tax issues — review this before you enroll." });
+    } else if (age < 65) {
+      recs.push({ type: "ok", html: "Sign up during your Initial Enrollment Period to avoid lifetime late-enrollment penalties for Part B and Part D." });
+    } else if (now > iepEnd) {
+      recs.push({ type: "warn", html: "If you missed your Initial Enrollment Period without other coverage, act soon — penalties can last a lifetime." });
+    }
+    recs.push({ type: "ok", html: 'Speak with a <a href="contact.html">licensed Utah Medicare agent</a> for free, personalized guidance.' });
+
+    // ----- Detail cards -----
+    var cards = [];
+    cards.push({ icon: "fa-calendar-plus", title: "Initial Enrollment Period", date: fmtMonthYear(iepStart) + " – " + fmtMonthYear(iepEnd), body: "Your 7-month window to sign up: the 3 months before your birthday month, your birthday month, and the 3 months after." + (bornFirst ? " Because you were born on the 1st, Medicare treats your eligibility as starting one month earlier." : "") });
+    cards.push({ icon: "fa-flag-checkered", title: "Medicare Start Date", date: fmtMonthYear(startDate), body: "If you enroll during the 3 months before your birthday month, your coverage generally starts the first day of " + fmtMonthYear(startDate) + "." });
+    if (data.employer === "yes") {
+      cards.push({ cls: "sep", icon: "fa-briefcase", title: "Special Enrollment Period", body: "Because you have active employer coverage, you may delay Part B without penalty:", list: [
+        "Applies while you (or a spouse) have active coverage from current employment.",
+        "Works when the employer has 20+ employees (Medicare is secondary).",
+        "Heads up: contributing to an HSA after enrolling in Medicare can create tax issues."
+      ] });
+    }
+    cards.push({ icon: "fa-calendar-days", title: "Annual Enrollment Period", date: "October 15 – December 7", body: "Each year you can join, switch, or drop a Medicare Advantage or Part D plan for the following year." });
+    cards.push({ icon: "fa-calendar-day", title: "General Enrollment Period", date: "January 1 – March 31", body: "For people who missed their Initial Enrollment Period. Coverage starts the month after you enroll, and penalties may apply." });
+    cards.push({ cls: "warn", icon: "fa-triangle-exclamation", title: "Late Enrollment Penalty", body: "Delaying Part B or Part D without qualifying coverage can add a lifetime penalty to your premiums. The Part B penalty is 10% for each full year you could have had it. Enroll on time to avoid it." });
+
+    return { banner: banner, milestones: milestones, recs: recs, cards: cards };
+  }
+
+  function render(r) {
+    var html = "";
+
+    // Banner
+    var bi = r.banner.type === "green" ? "fa-circle-check" : r.banner.type === "blue" ? "fa-circle-info" : r.banner.type === "amber" ? "fa-circle-exclamation" : "fa-triangle-exclamation";
+    html += '<div class="banner ' + r.banner.type + '"><i class="fa-solid ' + bi + '"></i><div><strong>' + r.banner.title + '</strong><span>' + r.banner.text + '</span></div></div>';
+
+    // Timeline
+    html += '<p class="section-label"><i class="fa-solid fa-timeline"></i> Your enrollment timeline</p><ol class="timeline">';
+    r.milestones.forEach(function (m) {
+      html += '<li class="milestone"><div class="m-node ' + m.color + '"><i class="fa-solid ' + m.icon + '"></i></div>' +
+        '<div class="m-content"><h3>' + m.title + '</h3><p class="m-date">' + m.date + '</p><p class="m-note">' + m.note + '</p></div></li>';
+    });
+    html += '</ol>';
+
+    // Recommendations
+    html += '<p class="section-label"><i class="fa-solid fa-list-check"></i> Recommended next steps</p><div class="recs-panel"><ul class="recs">';
+    r.recs.forEach(function (rec) {
+      var ic = rec.type === "warn" ? "fa-triangle-exclamation warn" : "fa-circle-check ok";
+      html += '<li><i class="fa-solid ' + ic + '"></i><span>' + rec.html + '</span></li>';
+    });
+    html += '</ul></div>';
+
+    // Detail cards
+    html += '<p class="section-label"><i class="fa-solid fa-calendar-days"></i> Key dates &amp; deadlines</p><div class="cards">';
+    r.cards.forEach(function (c) {
+      html += '<div class="tc ' + (c.cls || "") + '"><h3><i class="fa-solid ' + c.icon + '"></i> ' + c.title + '</h3>';
+      if (c.date) html += '<p class="tc-date">' + c.date + '</p>';
+      html += '<p>' + c.body + '</p>';
+      if (c.list) { html += '<ul>'; c.list.forEach(function (li) { html += '<li>' + li + '</li>'; }); html += '</ul>'; }
+      html += '</div>';
+    });
+    html += '</div>';
+
+    // Lead capture
+    html += '<div class="lead"><h3>Still have questions?</h3><p>Talk to a local Medicare agent — free, no pressure.</p><div class="cta-row">' +
+      '<a class="primary" href="sms:18013680700?body=Hi%20Bret%2C%20I%20have%20a%20question%20about%20my%20Medicare%20timeline."><i class="fa-solid fa-comment-sms"></i> Text</a>' +
+      '<a class="ghost" href="tel:8013680700"><i class="fa-solid fa-phone"></i> Call</a>' +
+      '<a class="ghost" href="contact.html"><i class="fa-solid fa-calendar-check"></i> Schedule</a>' +
+      '</div></div>';
+
+    results.innerHTML = html;
+    results.classList.add("show");
+    results.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+
+  function run(showError) {
+    var dob = document.getElementById("dob").value;
+    if (!dob) {
+      if (showError) { errBox.classList.add("show"); results.classList.remove("show"); document.getElementById("dob").focus(); }
+      return;
+    }
+    errBox.classList.remove("show");
+    render(build({ dob: dob, employer: form.employer.value, ssdi: form.ssdi.value, esrd: form.esrd.value }));
+  }
+
+  form.addEventListener("submit", function (e) { e.preventDefault(); run(true); });
+  form.addEventListener("change", function () { if (document.getElementById("dob").value) run(false); });
+})();
+</script>
+</body>
+</html>

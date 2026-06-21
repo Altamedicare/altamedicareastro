@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Medicare Plan Quiz | Which Medicare Coverage Fits You? | AltaMedicare</title>
+<meta name="description" content="Take our free 7-question Medicare quiz to discover which type of coverage may fit your needs — Original Medicare + Medigap, Medicare Advantage, Part D, or Dual Eligible plans." />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<script type="application/ld+json">
+{ "@context":"https://schema.org","@type":"WebApplication","name":"Medicare Plan Quiz","applicationCategory":"HealthApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"A 7-question quiz that helps you discover which type of Medicare coverage may fit your needs." }
+</script>
+<script type="application/ld+json">
+{ "@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Which Medicare plan is best?","acceptedAnswer":{"@type":"Answer","text":"There is no single best plan — the right fit depends on your doctors, prescriptions, budget, travel, and whether you qualify for extra help. This quiz points you toward options to compare and discuss."}},
+  {"@type":"Question","name":"Should I choose Medigap or Medicare Advantage?","acceptedAnswer":{"@type":"Answer","text":"Medigap (with Original Medicare) offers predictable costs and any-doctor freedom for a higher premium. Medicare Advantage bundles benefits with low premiums but uses networks and copays. The best choice depends on your priorities."}},
+  {"@type":"Question","name":"Do I need prescription drug coverage?","acceptedAnswer":{"@type":"Answer","text":"Most people should have Part D drug coverage — either built into a Medicare Advantage plan or as a standalone plan — to avoid a lifetime late-enrollment penalty, even if you take few medications now."}},
+  {"@type":"Question","name":"Can I switch plans later?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can change plans during the Annual Enrollment Period (October 15 – December 7) each year, and Special Enrollment Periods may apply after certain life events."}}
+]}
+</script>
+
+<style>
+  :root{
+    --mc-blue:#135aac;--mc-blue-dark:#0d3f86;--mc-blue-deep:#0a2540;--mc-blue-soft:#eaf2fd;--mc-blue-line:#cfe0f5;
+    --mc-green:#15803d;--mc-green-soft:#ecfdf3;--mc-green-line:#bbf7d0;
+    --mc-amber:#b45309;--mc-amber-soft:#fff7ed;--mc-amber-line:#fed7aa;
+    --mc-purple:#7c3aed;--mc-purple-soft:#f5f0ff;--mc-purple-line:#e0d0fb;
+    --ink:#1f2a37;--ink-soft:#475467;--muted:#6b7280;
+    --radius:16px;--shadow:0 18px 50px -24px rgba(13,63,134,.4);--font:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:var(--font);color:var(--ink);line-height:1.55;background:radial-gradient(1200px 500px at 50% -220px,#dbeafe 0%,transparent 70%),#f3f7fc;padding:28px 16px 60px;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:760px;margin:0 auto;}
+  .card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--mc-blue-line);overflow:hidden;}
+  .head{background:linear-gradient(135deg,var(--mc-blue) 0%,var(--mc-blue-deep) 100%);color:#fff;padding:28px 26px;display:flex;align-items:center;gap:16px;}
+  .head .badge{flex:none;width:54px;height:54px;border-radius:14px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);display:grid;place-items:center;font-size:1.5rem;}
+  .head h1{margin:0;font-size:1.38rem;line-height:1.2;}.head p{margin:4px 0 0;font-size:.95rem;opacity:.9;}
+  .body{padding:26px;}
+
+  .progress{height:10px;background:var(--mc-blue-soft);border-radius:6px;overflow:hidden;margin-bottom:8px;}
+  .progress-bar{height:100%;width:0;background:linear-gradient(90deg,var(--mc-blue),var(--mc-blue-dark));border-radius:6px;transition:width .35s ease;}
+  .progress-label{font-size:.85rem;color:var(--muted);font-weight:600;margin-bottom:22px;}
+
+  .question h2{margin:0 0 20px;font-size:1.45rem;color:var(--mc-blue-deep);}
+  .options{display:grid;gap:12px;}
+  .opt{display:flex;align-items:center;gap:12px;width:100%;text-align:left;font-family:inherit;font-size:1.08rem;font-weight:600;color:var(--ink);background:#fff;border:2px solid var(--mc-blue-line);border-radius:14px;padding:18px 20px;min-height:60px;cursor:pointer;transition:all .15s ease;}
+  .opt:hover{border-color:var(--mc-blue);background:var(--mc-blue-soft);}
+  .opt:focus-visible{outline:none;box-shadow:0 0 0 4px rgba(19,90,172,.25);}
+  .opt .dot{flex:none;width:26px;height:26px;border-radius:50%;border:2px solid var(--mc-blue-line);display:grid;place-items:center;color:#fff;}
+  .opt:hover .dot{border-color:var(--mc-blue);}
+  .nav-row{display:flex;justify-content:space-between;margin-top:22px;}
+  .btn-back{background:none;border:0;color:var(--mc-blue);font-family:inherit;font-weight:700;font-size:1rem;cursor:pointer;min-height:44px;display:inline-flex;align-items:center;gap:8px;}
+  .btn-back[disabled]{color:var(--mc-blue-line);cursor:default;}
+
+  /* Results */
+  .banner{border-radius:14px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start;font-size:1.08rem;margin-bottom:18px;}
+  .banner i{font-size:1.6rem;flex:none;margin-top:1px;}.banner strong{display:block;}
+  .banner.blue{background:var(--mc-blue-soft);border:1px solid var(--mc-blue-line);}.banner.blue i,.banner.blue strong{color:var(--mc-blue-dark);}
+  .banner.green{background:var(--mc-green-soft);border:1px solid var(--mc-green-line);}.banner.green i,.banner.green strong{color:var(--mc-green);}
+  .banner.amber{background:var(--mc-amber-soft);border:1px solid var(--mc-amber-line);}.banner.amber i,.banner.amber strong{color:var(--mc-amber);}
+  .banner.purple{background:var(--mc-purple-soft);border:1px solid var(--mc-purple-line);}.banner.purple i,.banner.purple strong{color:var(--mc-purple);}
+
+  .rec-card{border:1px solid var(--mc-blue-line);border-radius:14px;overflow:hidden;}
+  .rec-head{padding:18px 22px;background:var(--mc-blue-soft);}
+  .rec-head h2{margin:0;font-size:1.3rem;color:var(--mc-blue-deep);display:flex;align-items:center;gap:10px;}
+  .rec-head p{margin:6px 0 0;color:var(--ink-soft);}
+  .rec-body{padding:8px 22px 18px;}
+  .rec-sec{padding:14px 0;border-bottom:1px solid #eef2f7;}
+  .rec-sec:last-child{border-bottom:0;}
+  .rec-sec h4{margin:0 0 8px;font-size:.8rem;text-transform:uppercase;letter-spacing:.07em;color:var(--mc-blue);display:flex;align-items:center;gap:8px;}
+  .rec-sec ul{margin:0;padding-left:20px;color:var(--ink-soft);}.rec-sec li{margin-bottom:6px;}
+  .retake{margin-top:18px;text-align:center;}
+  .retake button{background:none;border:0;color:var(--mc-blue);font-weight:700;font-family:inherit;cursor:pointer;text-decoration:underline;min-height:44px;}
+
+  .compare{margin-top:22px;border:1px solid var(--mc-blue-line);border-radius:14px;padding:22px;background:linear-gradient(135deg,var(--mc-blue-soft),#fff);}
+  .compare h3{margin:0 0 12px;color:var(--mc-blue-deep);font-size:1.2rem;}
+  .compare ul{list-style:none;padding:0;margin:0 0 16px;display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  @media(max-width:520px){.compare ul{grid-template-columns:1fr;}}
+  .compare li{display:flex;align-items:center;gap:9px;color:var(--ink-soft);font-weight:600;}
+  .compare li i{color:var(--mc-green);}
+  .compare .btn-cmp{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:54px;width:100%;background:var(--mc-blue);color:#fff;text-decoration:none;border-radius:12px;font-weight:700;font-size:1.1rem;}
+  .compare .btn-cmp:hover{background:var(--mc-blue-dark);}
+  .compare .note{margin:10px 0 0;font-size:.82rem;color:var(--muted);text-align:center;}
+
+  section.block{margin-top:30px;}
+  section.block>h2{font-size:1.35rem;color:var(--mc-blue-deep);margin:0 0 14px;display:flex;align-items:center;gap:10px;}section.block>h2 i{color:var(--mc-blue);}
+  .edu .eitem{padding:15px 0;border-bottom:1px solid #eef2f7;}.edu .eitem:last-child{border-bottom:0;}
+  .edu .eitem h3{margin:0 0 4px;font-size:1.02rem;color:var(--ink);}.edu .eitem p{margin:0;color:var(--ink-soft);font-size:.95rem;}
+
+  .tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;}
+  .tool-card{display:block;text-decoration:none;border:1px solid var(--mc-blue-line);border-radius:14px;padding:18px;background:#fff;box-shadow:0 6px 18px -14px rgba(13,63,134,.5);transition:transform .15s,box-shadow .15s,border-color .15s;}
+  .tool-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--mc-blue);}
+  .tool-card .tc-icon{width:44px;height:44px;border-radius:12px;background:var(--mc-blue-soft);display:grid;place-items:center;color:var(--mc-blue);font-size:1.2rem;margin-bottom:10px;}
+  .tool-card h3{margin:0 0 3px;font-size:1rem;color:var(--mc-blue-deep);}.tool-card p{margin:0;font-size:.86rem;color:var(--ink-soft);}
+
+  .cta-card{background:linear-gradient(135deg,var(--mc-blue) 0%,var(--mc-blue-deep) 100%);color:#fff;border-radius:var(--radius);padding:30px 26px;text-align:center;}
+  .cta-card h2{margin:0 0 6px;color:#fff;font-size:1.4rem;}.cta-card p{margin:0 0 20px;opacity:.92;}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;}
+  .cta-row a{flex:1 1 200px;max-width:280px;text-decoration:none;min-height:52px;display:flex;align-items:center;justify-content:center;gap:9px;padding:14px 20px;border-radius:12px;font-weight:700;font-size:1.05rem;}
+  .cta-row a.primary{background:#fff;color:var(--mc-blue-dark);}.cta-row a.ghost{background:rgba(255,255,255,.12);color:#fff;border:2px solid rgba(255,255,255,.5);}
+
+  .faq details{background:#fff;border:1px solid var(--mc-blue-line);border-radius:12px;margin-bottom:10px;overflow:hidden;}
+  .faq summary{list-style:none;cursor:pointer;padding:18px 20px;font-weight:600;font-size:1.05rem;color:var(--mc-blue-deep);display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:44px;}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary .chev{flex:none;width:30px;height:30px;border-radius:50%;background:var(--mc-blue-soft);display:grid;place-items:center;color:var(--mc-blue);transition:transform .2s;}
+  .faq details[open] summary .chev{transform:rotate(180deg);}.faq .faq-a{padding:0 20px 18px;color:var(--ink-soft);}
+
+  .disclaimer{margin-top:26px;background:#f8fafc;border:1px solid #e6ebf2;border-radius:12px;padding:16px 18px;font-size:.86rem;color:var(--muted);display:flex;gap:10px;}
+  .disclaimer i{color:var(--mc-blue);margin-top:2px;flex:none;}.disclaimer a{color:var(--mc-blue-dark);}
+  @media(max-width:480px){.head{padding:22px 18px;}.head h1{font-size:1.14rem;}.body{padding:20px 18px;}.question h2{font-size:1.25rem;}}
+  @media(prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important;}}
+</style>
+</head>
+<body data-pagefind-body data-pagefind-meta="type:Calculator" data-pagefind-filter="type:Calculator">
+<div class="wrap">
+  <a href="/tools.html" style="display:inline-flex;align-items:center;gap:8px;margin-bottom:16px;color:var(--mc-blue,#135aac);font-family:inherit;font-weight:600;text-decoration:none;font-size:.95rem;"><i class="fa-solid fa-arrow-left"></i> Back to Tools</a>
+
+  <main class="card" role="main">
+    <header class="head">
+      <div class="badge"><i class="fa-solid fa-clipboard-question"></i></div>
+      <div>
+        <h1>Which Medicare Plan Fits You?</h1>
+        <p>A quick 7-question quiz to point you toward options to compare.</p>
+      </div>
+    </header>
+
+    <div class="body">
+      <div id="quiz">
+        <div class="progress"><div class="progress-bar" id="bar"></div></div>
+        <div class="progress-label" id="plabel"></div>
+        <div class="question" id="question"></div>
+        <div class="nav-row">
+          <button class="btn-back" id="back"><i class="fa-solid fa-arrow-left"></i> Back</button>
+          <span></span>
+        </div>
+      </div>
+
+      <div id="results" style="display:none"></div>
+
+      <p class="disclaimer">
+        <i class="fa-solid fa-circle-info"></i>
+        <span>This quiz is <strong>educational only</strong> and is not official advice or a recommendation of any specific plan or carrier. Everyone's situation is different — use it as a starting point and confirm your options with <a href="https://www.medicare.gov" target="_blank" rel="noopener">Medicare.gov</a> or a licensed agent.</span>
+      </p>
+    </div>
+  </main>
+
+  <section class="block">
+    <h2><i class="fa-solid fa-book-open"></i> Medicare Coverage Explained</h2>
+    <div class="card edu" style="padding:8px 22px;">
+      <div class="eitem"><h3>Original Medicare</h3><p>Federal Part A (hospital) and Part B (medical). You can see any provider that accepts Medicare, but there's no yearly out-of-pocket cap on its own.</p></div>
+      <div class="eitem"><h3>Medigap (Medicare Supplement)</h3><p>A private policy that pairs with Original Medicare to cover most of what it doesn't — predictable costs and nationwide doctor freedom for a monthly premium.</p></div>
+      <div class="eitem"><h3>Medicare Advantage (Part C)</h3><p>An all-in-one private plan that bundles Parts A, B, and usually D, often with extras like dental and vision — with networks, copays, and a yearly out-of-pocket cap.</p></div>
+      <div class="eitem"><h3>Part D</h3><p>Prescription drug coverage, either standalone or built into a Medicare Advantage plan. Enrolling on time avoids a lifetime late penalty.</p></div>
+      <div class="eitem"><h3>Extra Help</h3><p>A federal program that lowers Part D drug costs for people with limited income and resources.</p></div>
+      <div class="eitem"><h3>Dual Eligible Plans (D-SNP)</h3><p>Special plans for people with both Medicare and Medicaid that often add benefits like grocery/OTC cards, transportation, and dental at very low cost.</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="cta-card">
+      <h2>Questions?</h2>
+      <p>Bret will walk you through your options personally — free, no pressure, no obligation.</p>
+      <div class="cta-row">
+        <a class="primary" href="tel:8013680700"><i class="fa-solid fa-phone"></i> Call or Text Bret</a>
+        <a class="ghost" href="contact.html"><i class="fa-solid fa-calendar-check"></i> Schedule a Free Medicare Review</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block faq">
+    <h2><i class="fa-solid fa-circle-question"></i> Frequently Asked Questions</h2>
+    <details><summary>Which Medicare plan is best? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></summary><div class="faq-a">There's no single best plan — the right fit depends on your doctors, prescriptions, budget, travel, and whether you qualify for extra help. This quiz points you toward options to compare and discuss.</div></details>
+    <details><summary>Should I choose Medigap or Medicare Advantage? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></summary><div class="faq-a">Medigap offers predictable costs and any-doctor freedom for a higher premium; Medicare Advantage bundles benefits with low premiums but uses networks and copays. The best choice depends on your priorities.</div></details>
+    <details><summary>Do I need prescription drug coverage? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></summary><div class="faq-a">Most people should have Part D coverage — standalone or inside a Medicare Advantage plan — to avoid a lifetime late penalty, even if you take few medications now.</div></details>
+    <details><summary>Can I switch plans later? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></summary><div class="faq-a">Yes. You can change during the Annual Enrollment Period (October 15 – December 7) each year, and Special Enrollment Periods may apply after certain life events.</div></details>
+  </section>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  // Bret's plan-comparison / enrollment portal (SunFire consumer quoting site).
+  var SUNFIRE_URL="https://www.sunfirematrix.com/app/consumer/medicareadvocates/5454608/#/";
+
+  var QUESTIONS=[
+    {q:"How old are you?",opts:["Under 65","Turning 65 soon","65–69","70+"]},
+    {q:"Are you still working and covered by employer insurance?",opts:["Yes","No"]},
+    {q:"Do you take prescription medications regularly?",opts:["None","1–2","3–5","6+"]},
+    {q:"How often do you visit doctors?",opts:["Rarely","Occasionally","Frequently"]},
+    {q:"Which matters most to you?",opts:["Lowest monthly premium","Predictable costs","Keep my doctors","Prescription coverage"]},
+    {q:"Do you travel frequently?",opts:["Yes","No"]},
+    {q:"Are you receiving Medicaid or Extra Help?",opts:["Yes","No"]}
+  ];
+
+  var PROFILES={
+    medigap:{ banner:"blue", icon:"fa-shield-heart", btext:"You may benefit from Original Medicare plus a supplement.",
+      title:"Original Medicare + Medigap",
+      lead:"Predictable costs and the freedom to see any doctor that accepts Medicare — a great fit for travelers and people who value stability.",
+      strengths:["See any doctor nationwide that accepts Medicare — no networks","Predictable costs with few surprise bills","Excellent for frequent travelers","Coverage doesn't change every year"],
+      drawbacks:["Higher monthly premium than most Advantage plans","You add a separate Part D drug plan","Switching later may require health questions (underwriting)"],
+      discuss:["Which Medigap plan letter fits (Plan G vs. Plan N)","Pairing the right standalone Part D plan with your medications","How the premium fits your monthly budget"] },
+    ma:{ banner:"green", icon:"fa-layer-group", btext:"A Medicare Advantage plan may fit your goals.",
+      title:"Medicare Advantage",
+      lead:"Low premiums and bundled benefits with a yearly cap on what you pay — a good fit if you're comfortable with networks.",
+      strengths:["Low or $0 monthly plan premium","Bundles medical, drug, and extras like dental/vision/hearing","Yearly maximum out-of-pocket limit","One card for most of your coverage"],
+      drawbacks:["Uses provider networks and may need referrals","Copays can add up if you use a lot of care","Benefits and networks can change each year"],
+      discuss:["Whether your doctors are in the plan's network","Whether your prescriptions are on the formulary","The plan's maximum out-of-pocket for a tough year"] },
+    partd:{ banner:"amber", icon:"fa-pills", btext:"Prescription drug coverage deserves special attention.",
+      title:"Part D Prescription Coverage",
+      lead:"Your medications should drive the decision. The right drug coverage can save you the most — pair it with either Original Medicare or a Medicare Advantage plan.",
+      strengths:["Protects against high prescription costs","2026 brings a $2,000 yearly out-of-pocket cap on covered drugs","Helps you avoid a lifetime late-enrollment penalty"],
+      drawbacks:["Formularies vary widely between plans","The best plan depends on your exact drug list","Plans change their drug lists and costs every year"],
+      discuss:["Running your medication list through the best plan each year","Whether standalone Part D or an Advantage plan with drugs is cheaper","Checking the Formulary Lookup and Drug Cost Calculator"] },
+    dual:{ banner:"purple", icon:"fa-hand-holding-heart", btext:"You may qualify for extra benefits through Medicaid or Extra Help.",
+      title:"Dual Eligible Plans (D-SNP)",
+      lead:"With both Medicare and Medicaid (or Extra Help), special plans can give you richer benefits at very low or no cost.",
+      strengths:["Very low or $0 premiums and drug costs","Often add grocery/OTC cards, transportation, and dental","Extra Help dramatically lowers prescription costs"],
+      drawbacks:["You must meet income and eligibility requirements","Plan availability varies by county","Benefits differ from one plan to another"],
+      discuss:["Confirming your Medicaid or Extra Help level","Which D-SNP plans are available in your county","Making sure your doctors and drugs are covered"] }
+  };
+
+  var bar=document.getElementById("bar"), plabel=document.getElementById("plabel"),
+      qEl=document.getElementById("question"), backBtn=document.getElementById("back"),
+      quizEl=document.getElementById("quiz"), resultsEl=document.getElementById("results");
+
+  var current=0, answers=[];
+
+  function renderQuestion(){
+    var Q=QUESTIONS[current];
+    bar.style.width=(current/QUESTIONS.length*100)+"%";
+    plabel.textContent="Question "+(current+1)+" of "+QUESTIONS.length;
+    backBtn.disabled=current===0;
+    qEl.innerHTML='<h2>'+Q.q+'</h2><div class="options">'+
+      Q.opts.map(function(o,i){return '<button class="opt" data-i="'+i+'"><span class="dot"><i class="fa-solid fa-check" style="font-size:.7rem;opacity:'+(answers[current]===i?1:0)+'"></i></span>'+o+'</button>';}).join("")+'</div>';
+  }
+
+  qEl.addEventListener("click",function(e){
+    var b=e.target.closest(".opt"); if(!b)return;
+    answers[current]=parseInt(b.getAttribute("data-i"),10);
+    if(current<QUESTIONS.length-1){ current++; renderQuestion(); }
+    else showResults();
+  });
+  backBtn.addEventListener("click",function(){ if(current>0){current--;renderQuestion();} });
+
+  function score(){
+    var s={medigap:0,ma:0,partd:0,dual:0};
+    if(answers[2]===3) s.partd+=2; else if(answers[2]===2) s.partd+=1;       // prescriptions
+    if(answers[3]===2) s.medigap+=1; else if(answers[3]===0) s.ma+=1;        // doctor visits
+    if(answers[4]===0) s.ma+=2; else if(answers[4]===1) s.medigap+=2;        // priority
+    else if(answers[4]===2) s.medigap+=2; else if(answers[4]===3) s.partd+=2;
+    if(answers[5]===0) s.medigap+=2;                                          // travel
+    if(answers[6]===0) s.dual+=5;                                             // medicaid / extra help
+    if(s.dual>=5) return "dual";
+    var order=["medigap","ma","partd"], best=order[0];
+    order.forEach(function(k){ if(s[k]>s[best]) best=k; });
+    return best;
+  }
+
+  function showResults(){
+    bar.style.width="100%";
+    var key=score(), p=PROFILES[key];
+    quizEl.style.display="none";
+    resultsEl.style.display="block";
+    resultsEl.innerHTML=
+      '<div class="banner '+p.banner+'"><i class="fa-solid '+p.icon+'"></i><div><strong>'+p.btext+'</strong><span>Based on your answers, here\'s a coverage type worth exploring — and what to weigh.</span></div></div>'+
+      '<div class="rec-card"><div class="rec-head"><h2><i class="fa-solid '+p.icon+'"></i> '+p.title+'</h2><p>'+p.lead+'</p></div><div class="rec-body">'+
+        sec("Strengths","fa-circle-check",p.strengths)+
+        sec("Potential drawbacks","fa-circle-exclamation",p.drawbacks)+
+        sec("Things to discuss with Bret","fa-comments",p.discuss)+
+      '</div></div>'+
+      '<div class="compare"><h3>Ready to compare plans available in your area?</h3>'+
+        '<ul><li><i class="fa-solid fa-check"></i> Medicare Advantage</li><li><i class="fa-solid fa-check"></i> Medicare Supplement</li><li><i class="fa-solid fa-check"></i> Prescription Drug Plans</li><li><i class="fa-solid fa-check"></i> Secure online enrollment</li></ul>'+
+        '<a class="btn-cmp" href="'+SUNFIRE_URL+'" target="_blank" rel="noopener"><i class="fa-solid fa-magnifying-glass-chart"></i> Compare Plans Online</a>'+
+        '<p class="note">Opens our secure plan comparison &amp; enrollment portal. Prefer help? Call or text Bret at (801) 368-0700.</p>'+
+      '</div>'+
+      '<section class="block" style="margin-top:26px"><h2><i class="fa-solid fa-toolbox"></i> Keep exploring</h2><div class="tools-grid">'+
+        tool("/medicare-eligibility-calculator.html","fa-calendar-check","Eligibility Calculator","When you qualify &amp; your dates.")+
+        tool("/medicare-irmaa-calculator.html","fa-sack-dollar","IRMAA Calculator","Income-based premium surcharges.")+
+        tool("/medicare-timeline-calculator.html","fa-timeline","Timeline Calculator","Visualize enrollment windows.")+
+        tool("/medicare-cost-estimator.html","fa-coins","Cost Estimator","Estimate total annual costs.")+
+        tool("/medicare-formulary-lookup.html","fa-prescription-bottle-medical","Formulary Lookup","Is your drug covered?")+
+        tool("/medicare-drug-cost-calculator.html","fa-pills","Drug Cost Calculator","Estimate prescription costs.")+
+      '</div></section>'+
+      '<div class="retake"><button id="retake"><i class="fa-solid fa-rotate-left"></i> Retake the quiz</button></div>';
+
+    document.getElementById("retake").addEventListener("click",function(){
+      current=0; answers=[]; resultsEl.style.display="none"; quizEl.style.display="block"; renderQuestion();
+      window.scrollTo({top:0,behavior:"smooth"});
+    });
+    resultsEl.scrollIntoView({behavior:"smooth",block:"start"});
+  }
+
+  function sec(title,icon,items){ return '<div class="rec-sec"><h4><i class="fa-solid '+icon+'"></i> '+title+'</h4><ul>'+items.map(function(x){return '<li>'+x+'</li>';}).join("")+'</ul></div>'; }
+  function tool(href,icon,title,desc){ return '<a class="tool-card" href="'+href+'"><div class="tc-icon"><i class="fa-solid '+icon+'"></i></div><h3>'+title+'</h3><p>'+desc+'</p></a>'; }
+
+  renderQuestion();
+})();
+</script>
+</body>
+</html>

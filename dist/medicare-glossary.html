@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Medicare Glossary | Plain-English Medicare Terms A–Z | AltaMedicare</title>
+<meta name="description" content="A searchable Medicare glossary: 100+ Medicare terms explained in plain English, from Annual Enrollment Period and IRMAA to Medigap, Part D, and Step Therapy." />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<script type="application/ld+json">
+{ "@context":"https://schema.org","@type":"WebApplication","name":"Medicare Glossary","applicationCategory":"ReferenceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"A searchable plain-English glossary of Medicare terms." }
+</script>
+<script type="application/ld+json">
+{ "@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"What is Medicare Part B?","acceptedAnswer":{"@type":"Answer","text":"Medicare Part B is medical insurance that covers doctor visits, outpatient care, preventive services, and durable medical equipment. It has a standard monthly premium."}},
+  {"@type":"Question","name":"What is a deductible?","acceptedAnswer":{"@type":"Answer","text":"A deductible is the amount you pay out of pocket for covered services before your plan begins to pay."}},
+  {"@type":"Question","name":"What is IRMAA?","acceptedAnswer":{"@type":"Answer","text":"IRMAA is an income-related surcharge added to your Medicare Part B and Part D premiums if your income is above a set threshold."}},
+  {"@type":"Question","name":"What is a formulary?","acceptedAnswer":{"@type":"Answer","text":"A formulary is the list of prescription drugs a Medicare Part D or Medicare Advantage plan covers, organized into pricing tiers."}},
+  {"@type":"Question","name":"What is a Special Enrollment Period?","acceptedAnswer":{"@type":"Answer","text":"A Special Enrollment Period is a window outside the usual enrollment periods when you can sign up for or change Medicare coverage after a qualifying life event, such as losing employer coverage."}}
+]}
+</script>
+
+<style>
+  :root{
+    --mc-blue:#135aac;--mc-blue-dark:#0d3f86;--mc-blue-deep:#0a2540;--mc-blue-soft:#eaf2fd;--mc-blue-line:#cfe0f5;
+    --mc-green:#15803d;--mc-green-soft:#ecfdf3;
+    --mc-amber:#b45309;--mc-amber-soft:#fff7ed;--mc-amber-line:#fed7aa;
+    --mc-red:#b42318;--mc-red-soft:#fef3f2;--mc-red-line:#fecdca;
+    --ink:#1f2a37;--ink-soft:#475467;--muted:#6b7280;
+    --radius:16px;--shadow:0 18px 50px -24px rgba(13,63,134,.4);--font:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:var(--font);color:var(--ink);line-height:1.55;background:radial-gradient(1200px 500px at 50% -220px,#dbeafe 0%,transparent 70%),#f3f7fc;padding:28px 16px 60px;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:980px;margin:0 auto;}
+  .card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--mc-blue-line);overflow:hidden;}
+  .head{background:linear-gradient(135deg,var(--mc-blue) 0%,var(--mc-blue-deep) 100%);color:#fff;padding:28px 26px;display:flex;align-items:center;gap:16px;}
+  .head .badge{flex:none;width:54px;height:54px;border-radius:14px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);display:grid;place-items:center;font-size:1.5rem;}
+  .head h1{margin:0;font-size:1.36rem;line-height:1.2;}.head p{margin:4px 0 0;font-size:.95rem;opacity:.9;}
+  .body{padding:26px;}
+
+  .combo{position:relative;margin-bottom:16px;}
+  .combo i.sicon{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--muted);}
+  .combo input{width:100%;font-family:inherit;font-size:1.08rem;min-height:54px;padding:14px 16px 14px 44px;border:2px solid var(--mc-blue-line);border-radius:12px;color:var(--ink);background:#fff;}
+  .combo input:focus{outline:none;border-color:var(--mc-blue);box-shadow:0 0 0 4px rgba(19,90,172,.15);}
+
+  .cats{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+  .cat{min-height:40px;padding:8px 14px;border:2px solid var(--mc-blue-line);border-radius:20px;background:#fff;font-family:inherit;font-weight:600;font-size:.9rem;color:var(--ink-soft);cursor:pointer;display:inline-flex;align-items:center;gap:7px;}
+  .cat[aria-pressed="true"]{background:var(--mc-blue);border-color:var(--mc-blue);color:#fff;}
+  .cat:focus-visible{outline:none;box-shadow:0 0 0 4px rgba(19,90,172,.25);}
+  .cat .sw{width:10px;height:10px;border-radius:3px;}
+
+  .azbar{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px;}
+  .azbar a{min-width:34px;min-height:34px;display:inline-flex;align-items:center;justify-content:center;border-radius:8px;font-weight:700;font-size:.9rem;color:var(--mc-blue);background:var(--mc-blue-soft);text-decoration:none;}
+  .azbar a:hover{background:var(--mc-blue);color:#fff;}
+  .azbar a.disabled{color:#c7ccd6;background:#f1f4f9;pointer-events:none;}
+  .count{margin:14px 0 12px;font-size:.9rem;color:var(--ink-soft);font-weight:600;}
+
+  .letter{margin-top:18px;}
+  .letter h2{margin:0 0 12px;font-size:1.3rem;color:var(--mc-blue-deep);border-bottom:2px solid var(--mc-blue-line);padding-bottom:6px;scroll-margin-top:14px;}
+  .gcards{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media(max-width:680px){.gcards{grid-template-columns:1fr;}}
+  .term{border:1px solid var(--mc-blue-line);border-radius:14px;padding:16px 18px;background:#fff;box-shadow:0 6px 18px -16px rgba(13,63,134,.5);}
+  .term h3{margin:0 0 6px;font-size:1.08rem;color:var(--mc-blue-deep);}
+  .term .tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px;}
+  .tag{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:3px 8px;border-radius:14px;}
+  .tag.mis{background:var(--mc-amber-soft);color:var(--mc-amber);}
+  .tag.dl{background:var(--mc-red-soft);color:var(--mc-red);}
+  .tag.rx{background:var(--mc-blue-soft);color:var(--mc-blue-dark);}
+  .term p{margin:0;color:var(--ink-soft);font-size:.95rem;}
+  .term .rel{margin-top:9px;font-size:.84rem;color:var(--muted);}
+  .term .rel b{color:var(--ink-soft);}
+  .term .more{margin-top:9px;display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:.86rem;color:var(--mc-blue);text-decoration:none;}
+  .empty{text-align:center;color:var(--muted);padding:30px;background:#f8fafc;border:1px dashed var(--mc-blue-line);border-radius:12px;}
+
+  section.block{margin-top:30px;}
+  section.block>h2{font-size:1.35rem;color:var(--mc-blue-deep);margin:0 0 14px;display:flex;align-items:center;gap:10px;}section.block>h2 i{color:var(--mc-blue);}
+  .edu p{margin:0;color:var(--ink-soft);}
+  .edu{padding:20px 24px;}
+
+  .tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;}
+  .tool-card{display:block;text-decoration:none;border:1px solid var(--mc-blue-line);border-radius:14px;padding:18px;background:#fff;box-shadow:0 6px 18px -14px rgba(13,63,134,.5);transition:transform .15s,box-shadow .15s,border-color .15s;}
+  .tool-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--mc-blue);}
+  .tool-card .tc-icon{width:44px;height:44px;border-radius:12px;background:var(--mc-blue-soft);display:grid;place-items:center;color:var(--mc-blue);font-size:1.2rem;margin-bottom:10px;}
+  .tool-card h3{margin:0 0 3px;font-size:1rem;color:var(--mc-blue-deep);}.tool-card p{margin:0;font-size:.86rem;color:var(--ink-soft);}
+
+  .cta-card{background:linear-gradient(135deg,var(--mc-blue) 0%,var(--mc-blue-deep) 100%);color:#fff;border-radius:var(--radius);padding:30px 26px;text-align:center;}
+  .cta-card h2{margin:0 0 6px;color:#fff;font-size:1.4rem;}.cta-card p{margin:0 0 20px;opacity:.92;}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;}
+  .cta-row a{flex:1 1 200px;max-width:280px;text-decoration:none;min-height:52px;display:flex;align-items:center;justify-content:center;gap:9px;padding:14px 20px;border-radius:12px;font-weight:700;font-size:1.05rem;}
+  .cta-row a.primary{background:#fff;color:var(--mc-blue-dark);}.cta-row a.ghost{background:rgba(255,255,255,.12);color:#fff;border:2px solid rgba(255,255,255,.5);}
+
+  .faq details{background:#fff;border:1px solid var(--mc-blue-line);border-radius:12px;margin-bottom:10px;overflow:hidden;}
+  .faq summary{list-style:none;cursor:pointer;padding:18px 20px;font-weight:600;font-size:1.05rem;color:var(--mc-blue-deep);display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:44px;}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary .chev{flex:none;width:30px;height:30px;border-radius:50%;background:var(--mc-blue-soft);display:grid;place-items:center;color:var(--mc-blue);transition:transform .2s;}
+  .faq details[open] summary .chev{transform:rotate(180deg);}.faq .faq-a{padding:0 20px 18px;color:var(--ink-soft);}
+
+  .disclaimer{margin-top:26px;background:#f8fafc;border:1px solid #e6ebf2;border-radius:12px;padding:16px 18px;font-size:.86rem;color:var(--muted);display:flex;gap:10px;}
+  .disclaimer i{color:var(--mc-blue);margin-top:2px;flex:none;}.disclaimer a{color:var(--mc-blue-dark);}
+  @media(max-width:480px){.head{padding:22px 18px;}.head h1{font-size:1.1rem;}.body{padding:20px 18px;}}
+  @media(prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important;scroll-behavior:auto !important;}}
+  html{scroll-behavior:smooth;}
+</style>
+</head>
+<body data-pagefind-body data-pagefind-meta="type:Glossary" data-pagefind-filter="type:Glossary">
+<div class="wrap">
+  <a href="/tools.html" style="display:inline-flex;align-items:center;gap:8px;margin-bottom:16px;color:var(--mc-blue,#135aac);font-family:inherit;font-weight:600;text-decoration:none;font-size:.95rem;"><i class="fa-solid fa-arrow-left"></i> Back to Tools</a>
+
+  <main class="card" role="main">
+    <header class="head">
+      <div class="badge"><i class="fa-solid fa-book"></i></div>
+      <div>
+        <h1>Medicare Glossary</h1>
+        <p>100+ Medicare terms explained in plain English.</p>
+      </div>
+    </header>
+
+    <div class="body">
+      <div class="combo">
+        <i class="fa-solid fa-magnifying-glass sicon" aria-hidden="true"></i>
+        <label for="g-search" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Search terms</label>
+        <input type="text" id="g-search" autocomplete="off" placeholder="Search Medicare terms — e.g. deductible, IRMAA, formulary" />
+      </div>
+
+      <div class="cats" role="group" aria-label="Filter by category">
+        <button class="cat" data-cat="all" aria-pressed="true"><i class="fa-solid fa-list"></i> All terms</button>
+        <button class="cat" data-cat="mis" aria-pressed="false"><span class="sw" style="background:var(--mc-amber)"></span> Often misunderstood</button>
+        <button class="cat" data-cat="dl" aria-pressed="false"><span class="sw" style="background:var(--mc-red)"></span> Deadlines</button>
+        <button class="cat" data-cat="rx" aria-pressed="false"><span class="sw" style="background:var(--mc-blue)"></span> Prescription</button>
+      </div>
+
+      <nav class="azbar" id="azbar" aria-label="Jump to letter"></nav>
+      <p class="count" id="g-count"></p>
+      <div id="g-list" aria-live="polite"></div>
+
+      <p class="disclaimer">
+        <i class="fa-solid fa-circle-info"></i>
+        <span>These plain-English definitions are educational and simplified — exact rules and amounts can vary by plan and year. For specifics, see <a href="https://www.medicare.gov" target="_blank" rel="noopener">Medicare.gov</a> or ask a licensed agent.</span>
+      </p>
+    </div>
+  </main>
+
+  <section class="block">
+    <h2><i class="fa-solid fa-lightbulb"></i> Why the words matter</h2>
+    <div class="card edu">
+      <p>Medicare terminology directly shapes your coverage choices. The difference between a <strong>copay</strong> and <strong>coinsurance</strong>, knowing what counts as <strong>creditable coverage</strong>, or understanding a plan's <strong>maximum out-of-pocket</strong> can mean hundreds of dollars a year and which plan actually fits you. Use this glossary as you compare plans — and reach out anytime a term is still fuzzy. There are no silly questions in Medicare.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2><i class="fa-solid fa-toolbox"></i> Related Medicare Tools</h2>
+    <div class="tools-grid">
+      <a class="tool-card" href="/medicare-eligibility-calculator.html"><div class="tc-icon"><i class="fa-solid fa-calendar-check"></i></div><h3>Eligibility Calculator</h3><p>When you qualify &amp; your dates.</p></a>
+      <a class="tool-card" href="/medicare-timeline-calculator.html"><div class="tc-icon"><i class="fa-solid fa-timeline"></i></div><h3>Timeline Calculator</h3><p>Visualize enrollment windows.</p></a>
+      <a class="tool-card" href="/medicare-penalty-calculator.html"><div class="tc-icon"><i class="fa-solid fa-triangle-exclamation"></i></div><h3>Penalty Calculator</h3><p>Estimate late-enrollment penalties.</p></a>
+      <a class="tool-card" href="/medicare-irmaa-calculator.html"><div class="tc-icon"><i class="fa-solid fa-sack-dollar"></i></div><h3>IRMAA Calculator</h3><p>Income-based premium surcharges.</p></a>
+      <a class="tool-card" href="/medicare-formulary-lookup.html"><div class="tc-icon"><i class="fa-solid fa-prescription-bottle-medical"></i></div><h3>Formulary Lookup</h3><p>Is your drug covered?</p></a>
+      <a class="tool-card" href="/medicare-drug-cost-calculator.html"><div class="tc-icon"><i class="fa-solid fa-pills"></i></div><h3>Drug Cost Calculator</h3><p>Estimate prescription costs.</p></a>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="cta-card">
+      <h2>Questions about Medicare?</h2>
+      <p>If a term still doesn't make sense, Bret will explain it in plain English — free, no pressure.</p>
+      <div class="cta-row">
+        <a class="primary" href="tel:8013680700"><i class="fa-solid fa-phone"></i> Call or Text Bret</a>
+        <a class="ghost" href="contact.html"><i class="fa-solid fa-calendar-check"></i> Schedule a Free Medicare Review</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block faq">
+    <h2><i class="fa-solid fa-circle-question"></i> Frequently Asked Questions</h2>
+    <details><summary>What is Medicare Part B? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></summary><div class="faq-a">Medical insurance that covers doctor visits, outpatient care, preventive services, and durable medical equipment, for a standard monthly premium.</div></details>
+    <details><summary>What is a deductible? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></summary><div class="faq-a">The amount you pay out of pocket for covered services before your plan begins to pay.</div></details>
+    <details><summary>What is IRMAA? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></summary><div class="faq-a">An income-related surcharge added to your Part B and Part D premiums if your income is above a set threshold.</div></details>
+    <details><summary>What is a formulary? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></summary><div class="faq-a">The list of prescription drugs a plan covers, organized into pricing tiers.</div></details>
+    <details><summary>What is a Special Enrollment Period? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></summary><div class="faq-a">A window outside the usual enrollment periods when you can change coverage after a qualifying event, such as losing employer coverage.</div></details>
+  </section>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ============================================================
+     GLOSSARY DATA — single source of truth.
+     Shape: { t:Term, d:Definition, r:[related], link:"/relevant-page"?, tag:["mis"|"dl"|"rx"] }
+     Future expansion or AI search can reuse this array directly.
+     ============================================================ */
+  var TERMS=[
+    {t:"Advance Beneficiary Notice (ABN)",d:"A written notice a provider gives when Medicare may not pay for a service, so you may have to pay.",r:["Assignment","Claim"]},
+    {t:"Annual Enrollment Period (AEP)",d:"October 15–December 7 each year, when you can join, switch, or drop a Medicare Advantage or Part D plan.",r:["General Enrollment Period","Special Enrollment Period"],link:"/medicare-timeline-calculator.html",tag:["dl"]},
+    {t:"Annual Notice of Change (ANOC)",d:"The letter your plan mails each fall explaining what's changing for the next year.",r:["Annual Enrollment Period"],tag:["dl"]},
+    {t:"Appeal",d:"A formal request to review a coverage or payment decision you disagree with.",r:["Coverage Determination","Grievance"]},
+    {t:"Assignment",d:"When a provider agrees to accept the Medicare-approved amount as full payment.",r:["Excess Charge","Non-Participating Provider"]},
+    {t:"Balance Billing",d:"When a provider bills you for the difference between their charge and the allowed amount.",r:["Excess Charge","Assignment"],tag:["mis"]},
+    {t:"Beneficiary",d:"A person who is enrolled in Medicare.",r:["Eligibility"]},
+    {t:"Benefit Period",d:"How Original Medicare measures inpatient hospital and skilled nursing stays — it starts at admission and ends after 60 days out of the facility.",r:["Skilled Nursing Facility","Lifetime Reserve Days"],tag:["mis"]},
+    {t:"Biosimilar",d:"A drug that is highly similar to an approved biologic and often costs less.",r:["Brand-Name Drug","Specialty Drug"],tag:["rx"]},
+    {t:"Brand-Name Drug",d:"A medication sold under its manufacturer's name; usually on a higher formulary tier.",r:["Generic Drug","Tier","Formulary"],link:"/medicare-drug-cost-calculator.html",tag:["rx"]},
+    {t:"Catastrophic Coverage",d:"The Part D phase where your drug costs drop sharply after you reach the yearly out-of-pocket limit.",r:["TrOOP","Part D"],tag:["rx"]},
+    {t:"Centers for Medicare & Medicaid Services (CMS)",d:"The federal agency that runs Medicare and Medicaid.",r:["Medicare","Medicaid"]},
+    {t:"Claim",d:"A request for payment sent to Medicare or your plan after you receive care.",r:["Explanation of Benefits","Assignment"]},
+    {t:"Coinsurance",d:"Your share of a cost as a percentage — for example, 20% of the cost of a service.",r:["Copay","Deductible","Cost Sharing"],tag:["mis"]},
+    {t:"Coordination of Benefits",d:"The rules for which coverage pays first when you have more than one source of insurance.",r:["Employer Coverage","Working Aged"]},
+    {t:"Copay (Copayment)",d:"A fixed dollar amount you pay for a covered service or drug, like $10 for a doctor visit.",r:["Coinsurance","Cost Sharing"],tag:["mis"]},
+    {t:"Cost Sharing",d:"The portion of costs you pay yourself — deductibles, copays, and coinsurance.",r:["Deductible","Copay","Coinsurance"],link:"/medicare-cost-estimator.html"},
+    {t:"Coverage Gap (Donut Hole)",d:"A former Part D phase between initial coverage and catastrophic coverage; the 2025+ rules replaced it with a yearly out-of-pocket cap.",r:["Part D","Catastrophic Coverage"],tag:["rx","mis"]},
+    {t:"Creditable Coverage",d:"Drug or health coverage at least as good as Medicare's, which lets you delay enrollment without a penalty.",r:["Late Enrollment Penalty","Special Enrollment Period"],tag:["mis","rx"]},
+    {t:"Deductible",d:"The amount you pay out of pocket before your coverage starts paying.",r:["Copay","Coinsurance","Premium"],tag:["mis"]},
+    {t:"Disenrollment",d:"Leaving a Medicare plan, either by choice or automatically.",r:["Annual Enrollment Period"]},
+    {t:"Dual Eligible",d:"A person who has both Medicare and Medicaid, often qualifying for special low-cost plans.",r:["Medicaid","Extra Help","Special Needs Plan"],link:"/dual-eligible.html"},
+    {t:"Durable Medical Equipment (DME)",d:"Reusable medical equipment prescribed for home use, such as walkers, oxygen, or wheelchairs.",r:["Medicare Part B"]},
+    {t:"Effective Date",d:"The date your Medicare coverage officially begins.",r:["Initial Enrollment Period"],tag:["dl"]},
+    {t:"Eligibility",d:"Meeting the requirements to enroll in Medicare — usually age 65, or earlier with disability or ESRD.",r:["Initial Enrollment Period","ESRD"],link:"/medicare-eligibility-calculator.html"},
+    {t:"Emergency Care",d:"Care for a sudden, serious medical condition, covered even when you're out of your plan's network.",r:["Urgent Care","Network"]},
+    {t:"End-Stage Renal Disease (ESRD)",d:"Permanent kidney failure requiring dialysis or a transplant, which can qualify you for Medicare at any age.",r:["Eligibility","Disability"],link:"/medicare-eligibility-calculator.html"},
+    {t:"Excess Charge",d:"Up to 15% above the Medicare-approved amount that a non-participating provider may bill.",r:["Assignment","Balance Billing"],tag:["mis"]},
+    {t:"Explanation of Benefits (EOB)",d:"A summary from your plan showing what was billed and paid — it is not a bill.",r:["Claim"],tag:["mis"]},
+    {t:"Extra Help (Low-Income Subsidy)",d:"A federal program that lowers Part D prescription drug costs for people with limited income and resources.",r:["Dual Eligible","Medicaid","Part D"],link:"/dual-eligible.html",tag:["rx"]},
+    {t:"Fee-for-Service",d:"A payment model where providers are paid per service; it describes Original Medicare.",r:["Original Medicare"]},
+    {t:"Formulary",d:"The list of drugs a Part D or Medicare Advantage plan covers, grouped into pricing tiers.",r:["Tier","Prior Authorization","Step Therapy"],link:"/medicare-formulary-lookup.html",tag:["rx"]},
+    {t:"General Enrollment Period (GEP)",d:"January 1–March 31 each year for people who missed their Initial Enrollment Period.",r:["Initial Enrollment Period","Late Enrollment Penalty"],link:"/medicare-timeline-calculator.html",tag:["dl"]},
+    {t:"Generic Drug",d:"A lower-cost equivalent to a brand-name drug with the same active ingredient and FDA standards.",r:["Brand-Name Drug","Tier"],link:"/medicare-drug-cost-calculator.html",tag:["rx"]},
+    {t:"Grievance",d:"A complaint about the quality of care or service from a plan or provider (different from an appeal).",r:["Appeal"]},
+    {t:"Guaranteed Issue",d:"Times when you can buy a Medigap policy without answering health questions or being turned down.",r:["Medigap","Medical Underwriting"],link:"/medicare-supplement.html",tag:["dl"]},
+    {t:"Health Savings Account (HSA)",d:"A tax-advantaged savings account; you cannot keep contributing once you enroll in Medicare.",r:["Employer Coverage","Working Aged"],tag:["mis"]},
+    {t:"HMO (Health Maintenance Organization)",d:"A Medicare Advantage plan type that uses a network and usually requires referrals to see specialists.",r:["PPO","Network","Referral"],link:"/medicare-advantage.html"},
+    {t:"Hospice",d:"Comfort-focused care for a terminal illness, covered under Medicare Part A.",r:["Medicare Part A","Respite Care"]},
+    {t:"Initial Enrollment Period (IEP)",d:"Your 7-month window to first sign up for Medicare — 3 months before, the month of, and 3 months after your 65th birthday.",r:["General Enrollment Period","Special Enrollment Period"],link:"/medicare-timeline-calculator.html",tag:["dl"]},
+    {t:"Inpatient",d:"When you are formally admitted to a hospital, which affects how Part A covers your stay.",r:["Outpatient","Benefit Period"],tag:["mis"]},
+    {t:"IRMAA (Income-Related Monthly Adjustment Amount)",d:"An income-based surcharge added to your Part B and Part D premiums if your income is above a set threshold.",r:["Premium","Medicare Part B"],link:"/medicare-irmaa-calculator.html",tag:["mis"]},
+    {t:"Late Enrollment Penalty",d:"A permanent premium increase for enrolling in Part B or Part D late without creditable coverage.",r:["Creditable Coverage","General Enrollment Period"],link:"/medicare-penalty-calculator.html",tag:["mis","dl"]},
+    {t:"Lifetime Reserve Days",d:"60 extra inpatient hospital days Part A covers over your lifetime, beyond 90 days in a benefit period.",r:["Benefit Period","Medicare Part A"]},
+    {t:"Long-Term Care",d:"Help with everyday activities like bathing and dressing — generally NOT covered by Medicare.",r:["Skilled Nursing Facility","Medicaid"],tag:["mis"]},
+    {t:"Maximum Out-of-Pocket (MOOP)",d:"The yearly limit on what you pay for covered medical services in a Medicare Advantage plan.",r:["Medicare Advantage","Out-of-Pocket Costs"],link:"/medicare-cost-estimator.html",tag:["mis"]},
+    {t:"Medicaid",d:"A joint federal and state program that helps people with limited income; it can work alongside Medicare.",r:["Dual Eligible","Extra Help"],link:"/dual-eligible.html"},
+    {t:"Medically Necessary",d:"Services or supplies needed to diagnose or treat a condition that meet accepted standards of care.",r:["Prior Authorization"]},
+    {t:"Medical Underwriting",d:"A health review insurers may use to decide whether to issue, and how to price, a Medigap policy.",r:["Guaranteed Issue","Medigap"],link:"/medicare-supplement.html",tag:["mis"]},
+    {t:"Medicare Advantage (Part C)",d:"A private all-in-one alternative to Original Medicare that bundles Parts A, B, and usually D, often with extra benefits.",r:["Original Medicare","Medigap","Network"],link:"/medicare-advantage.html"},
+    {t:"Medicare Part A",d:"Hospital insurance covering inpatient stays, skilled nursing, hospice, and some home health — usually $0 premium.",r:["Medicare Part B","Original Medicare"]},
+    {t:"Medicare Part B",d:"Medical insurance covering doctor visits, outpatient care, preventive services, and equipment, for a monthly premium.",r:["Medicare Part A","IRMAA"]},
+    {t:"Medicare Part C",d:"Another name for Medicare Advantage.",r:["Medicare Advantage"],link:"/medicare-advantage.html"},
+    {t:"Medicare Part D",d:"Prescription drug coverage, sold standalone or built into a Medicare Advantage plan.",r:["Formulary","PDP","Late Enrollment Penalty"],link:"/prescription-drug-plans.html",tag:["rx"]},
+    {t:"Medigap (Medicare Supplement)",d:"Private insurance that pairs with Original Medicare to cover most of its out-of-pocket costs.",r:["Original Medicare","Plan G","Guaranteed Issue"],link:"/medicare-supplement.html"},
+    {t:"Network",d:"The doctors, hospitals, and pharmacies a plan contracts with for covered care.",r:["HMO","PPO","Out-of-Network"]},
+    {t:"Non-Participating Provider",d:"A provider who hasn't agreed to always accept Medicare assignment and may charge an excess charge.",r:["Assignment","Excess Charge"]},
+    {t:"Open Enrollment Period (Medicare Advantage)",d:"January 1–March 31, when Medicare Advantage members can switch plans once or return to Original Medicare.",r:["Annual Enrollment Period"],tag:["dl"]},
+    {t:"Original Medicare",d:"The federal program made of Part A and Part B; you can add Medigap and a Part D plan.",r:["Medicare Part A","Medicare Part B","Medigap"]},
+    {t:"Out-of-Network",d:"Providers that don't have a contract with your plan, usually costing more or not being covered.",r:["Network","PPO"]},
+    {t:"Out-of-Pocket Costs",d:"What you pay yourself beyond premiums — deductibles, copays, and coinsurance.",r:["Cost Sharing","Maximum Out-of-Pocket"],link:"/medicare-cost-estimator.html"},
+    {t:"Outpatient",d:"Care you get without being formally admitted to a hospital, even if you stay overnight for observation.",r:["Inpatient","Observation"],tag:["mis"]},
+    {t:"Part B Give-Back",d:"A benefit some Medicare Advantage plans offer that pays part of your Part B premium back.",r:["Medicare Advantage","Premium"]},
+    {t:"PCP (Primary Care Provider)",d:"Your main doctor who manages your care; some plans require you to pick one.",r:["Referral","HMO"]},
+    {t:"PDP (Prescription Drug Plan)",d:"A standalone Part D plan you add to Original Medicare or Medigap.",r:["Part D","Formulary"],link:"/prescription-drug-plans.html",tag:["rx"]},
+    {t:"PPO (Preferred Provider Organization)",d:"A Medicare Advantage plan type that lets you see out-of-network providers for a higher cost.",r:["HMO","Network"],link:"/medicare-advantage.html"},
+    {t:"Preferred Pharmacy",d:"A pharmacy in your plan's network with lower negotiated drug costs.",r:["Formulary","Part D"],tag:["rx"]},
+    {t:"Premium",d:"The monthly amount you pay to have a coverage — Part B, Part D, Medigap, or an Advantage plan.",r:["Deductible","IRMAA"],tag:["mis"]},
+    {t:"Preventive Services",d:"Screenings, vaccines, and a yearly wellness visit that Medicare covers at no cost to you.",r:["Wellness Visit","Medicare Part B"]},
+    {t:"Prior Authorization",d:"Approval your plan must give before it will cover certain services or drugs.",r:["Step Therapy","Formulary"],link:"/medicare-formulary-lookup.html",tag:["rx"]},
+    {t:"Provider",d:"A doctor, hospital, pharmacy, or other professional that delivers care.",r:["Network","Assignment"]},
+    {t:"QMB (Qualified Medicare Beneficiary)",d:"A Medicaid Savings Program that helps pay your Medicare premiums and cost sharing.",r:["Medicaid","Dual Eligible"],link:"/dual-eligible.html"},
+    {t:"Quantity Limit",d:"A cap on how much of a drug a plan covers over a set time, for safety or cost reasons.",r:["Formulary","Prior Authorization"],tag:["rx"]},
+    {t:"Referral",d:"Approval from your primary care provider to see a specialist, common in HMO plans.",r:["PCP","HMO"]},
+    {t:"Respite Care",d:"Short-term hospice care that gives a regular caregiver a break.",r:["Hospice"]},
+    {t:"Skilled Nursing Facility (SNF)",d:"A facility providing short-term skilled care, often after a qualifying hospital stay.",r:["Benefit Period","Medicare Part A"]},
+    {t:"Special Enrollment Period (SEP)",d:"A window to enroll in or change Medicare after certain life events, like losing employer coverage.",r:["Initial Enrollment Period","Creditable Coverage"],link:"/medicare-timeline-calculator.html",tag:["dl"]},
+    {t:"Special Needs Plan (SNP)",d:"A Medicare Advantage plan tailored to people with specific conditions or dual eligibility.",r:["Dual Eligible","Medicare Advantage"],link:"/dual-eligible.html"},
+    {t:"Specialist",d:"A doctor who focuses on a specific area of medicine, like cardiology or oncology.",r:["Referral","PCP"]},
+    {t:"Specialty Drug",d:"A high-cost medication, usually placed on a plan's top tier with coinsurance.",r:["Tier","Biosimilar"],tag:["rx"]},
+    {t:"Star Ratings",d:"CMS quality scores from 1 to 5 stars that rate Medicare Advantage and Part D plans.",r:["Medicare Advantage","Annual Enrollment Period"]},
+    {t:"Step Therapy",d:"A rule requiring you to try lower-cost drugs first before the plan covers a costlier option.",r:["Prior Authorization","Formulary"],link:"/medicare-formulary-lookup.html",tag:["rx"]},
+    {t:"State Health Insurance Assistance Program (SHIP)",d:"Free, unbiased local counseling that helps people understand Medicare options.",r:["Medicaid"]},
+    {t:"Subsidy",d:"Financial help that lowers your costs, such as Extra Help for prescriptions.",r:["Extra Help","Dual Eligible"],tag:["rx"]},
+    {t:"Telehealth",d:"Medical care delivered remotely by phone or video, covered by many plans.",r:["Medicare Part B"]},
+    {t:"Tier",d:"A pricing level on a drug formulary — lower tiers are generics, higher tiers are brands and specialty drugs.",r:["Formulary","Generic Drug","Specialty Drug"],link:"/medicare-formulary-lookup.html",tag:["rx"]},
+    {t:"TRICARE",d:"Health coverage for active and retired military members that can coordinate with Medicare.",r:["VA Benefits","Coordination of Benefits"]},
+    {t:"TrOOP (True Out-of-Pocket)",d:"The spending that counts toward your Part D out-of-pocket limit and catastrophic coverage.",r:["Catastrophic Coverage","Part D"],tag:["rx"]},
+    {t:"Urgent Care",d:"Care for a non-emergency that still needs prompt attention, usually covered in or out of network.",r:["Emergency Care"]},
+    {t:"VA Benefits",d:"Veterans Affairs health coverage that you can keep alongside Medicare.",r:["TRICARE","Creditable Coverage"]},
+    {t:"Wellness Visit",d:"A yearly preventive visit covered by Part B to plan your care — not a head-to-toe physical.",r:["Preventive Services"],tag:["mis"]},
+    {t:"Working Aged",d:"Rules that decide whether Medicare or your employer plan pays first when you keep working past 65.",r:["Coordination of Benefits","Special Enrollment Period"],tag:["mis"]},
+    {t:"Annual Wellness Visit",d:"A yearly Part B visit to update your prevention plan, available after your first 12 months on Part B.",r:["Wellness Visit","Preventive Services"]},
+    {t:"Catastrophic Cap",d:"The yearly limit (about $2,000 in 2026) after which you pay $0 for covered Part D drugs.",r:["Part D","TrOOP"],tag:["rx"]},
+    {t:"Disability (SSDI)",d:"Receiving Social Security disability benefits for 24 months qualifies you for Medicare before age 65.",r:["Eligibility","ESRD"],link:"/medicare-eligibility-calculator.html"},
+    {t:"Donut Hole",d:"A nickname for the old Part D coverage gap, now replaced by the yearly out-of-pocket cap.",r:["Coverage Gap"],tag:["rx","mis"]},
+    {t:"Employer Coverage",d:"A group health plan from your or a spouse's job that can let you delay Medicare without penalty.",r:["Creditable Coverage","Working Aged","Special Enrollment Period"],tag:["mis"]},
+    {t:"Enrollment Period",d:"A defined window when you can sign up for or change Medicare coverage.",r:["Initial Enrollment Period","Annual Enrollment Period"],link:"/medicare-timeline-calculator.html",tag:["dl"]},
+    {t:"Observation Status",d:"Being kept in the hospital for monitoring as an outpatient, which can affect Part A and SNF coverage.",r:["Inpatient","Outpatient"],tag:["mis"]},
+    {t:"Opt-Out Provider",d:"A provider who has formally opted out of Medicare and bills you privately by contract.",r:["Non-Participating Provider","Assignment"]},
+    {t:"Plan Finder",d:"The official Medicare.gov tool for comparing Part D and Medicare Advantage plans.",r:["Formulary","Annual Enrollment Period"]},
+    {t:"Plan G",d:"A popular Medigap plan that covers nearly all Original Medicare gaps except the Part B deductible.",r:["Medigap","Plan N"],link:"/medicare-supplement.html"},
+    {t:"Plan N",d:"A Medigap plan with a lower premium that uses small copays for some office and ER visits.",r:["Medigap","Plan G"],link:"/medicare-supplement.html"}
+  ];
+
+  var TAGS={mis:{cls:"mis",label:"Often misunderstood"},dl:{cls:"dl",label:"Deadline"},rx:{cls:"rx",label:"Prescription"}};
+
+  var searchEl=document.getElementById("g-search");
+  var azbar=document.getElementById("azbar");
+  var listEl=document.getElementById("g-list");
+  var countEl=document.getElementById("g-count");
+  var cats=Array.prototype.slice.call(document.querySelectorAll(".cat"));
+  var activeCat="all";
+
+  TERMS.sort(function(a,b){return a.t.toLowerCase().localeCompare(b.t.toLowerCase());});
+  var LETTERS="ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+
+  function firstLetter(t){var c=t.t.replace(/[^A-Za-z]/,"").charAt(0).toUpperCase();return c||"#";}
+
+  function render(){
+    var q=searchEl.value.trim().toLowerCase();
+    var visible=TERMS.filter(function(x){
+      if(activeCat!=="all" && (!x.tag || x.tag.indexOf(activeCat)===-1)) return false;
+      if(!q) return true;
+      return (x.t+" "+x.d).toLowerCase().indexOf(q)!==-1;
+    });
+
+    countEl.textContent="Showing "+visible.length+" of "+TERMS.length+" terms.";
+
+    // group by letter
+    var groups={};
+    visible.forEach(function(x){var L=firstLetter(x);(groups[L]=groups[L]||[]).push(x);});
+
+    // A-Z bar
+    azbar.innerHTML=LETTERS.map(function(L){
+      return groups[L] ? '<a href="#letter-'+L+'">'+L+'</a>' : '<a class="disabled" aria-disabled="true">'+L+'</a>';
+    }).join("");
+
+    if(!visible.length){
+      listEl.innerHTML='<div class="empty"><i class="fa-solid fa-magnifying-glass" style="font-size:1.6rem;color:var(--mc-blue);display:block;margin-bottom:8px"></i>No terms match. Try another word, or <a href="sms:18013680700?body=Hi%20Bret%2C%20what%20does%20this%20Medicare%20term%20mean%3F" style="color:var(--mc-blue-dark);font-weight:600">text Bret &rarr;</a></div>';
+      return;
+    }
+
+    listEl.innerHTML=LETTERS.filter(function(L){return groups[L];}).map(function(L){
+      var cards=groups[L].map(function(x){
+        var tags=(x.tag||[]).map(function(tg){return '<span class="tag '+TAGS[tg].cls+'">'+TAGS[tg].label+'</span>';}).join("");
+        var rel=x.r&&x.r.length?'<div class="rel"><b>Related:</b> '+x.r.join(", ")+'</div>':'';
+        var more=x.link?'<a class="more" href="'+x.link+'">Learn more <i class="fa-solid fa-arrow-right"></i></a>':'';
+        return '<div class="term"><h3>'+x.t+'</h3>'+(tags?'<div class="tags">'+tags+'</div>':'')+'<p>'+x.d+'</p>'+rel+more+'</div>';
+      }).join("");
+      return '<div class="letter"><h2 id="letter-'+L+'">'+L+'</h2><div class="gcards">'+cards+'</div></div>';
+    }).join("");
+  }
+
+  searchEl.addEventListener("input",render);
+  cats.forEach(function(c){
+    c.addEventListener("click",function(){
+      cats.forEach(function(o){o.setAttribute("aria-pressed","false");});
+      c.setAttribute("aria-pressed","true");
+      activeCat=c.getAttribute("data-cat");
+      render();
+    });
+  });
+
+  // DefinedTermSet schema generated from the single data array (future-proof)
+  var dts={"@context":"https://schema.org","@type":"DefinedTermSet","name":"Medicare Glossary",
+    "hasDefinedTerm":TERMS.map(function(x){return {"@type":"DefinedTerm","name":x.t,"description":x.d};})};
+  var s=document.createElement("script");s.type="application/ld+json";s.textContent=JSON.stringify(dts);document.head.appendChild(s);
+
+  render();
+})();
+</script>
+</body>
+</html>

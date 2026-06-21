@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AltaMedicare — Medicare News &amp; Updates</title>
+    <link>https://altamedicare.com/medicare-news.html</link>
+    <atom:link href="https://altamedicare.com/medicare-news/rss.xml" rel="self" type="application/rss+xml" />
+    <description>Important Medicare changes, savings opportunities, and Utah-specific Medicare news from AltaMedicare.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 20 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Medicare Will Cover Weight-Loss GLP-1 Drugs for $50/Month Starting July 2026</title>
+      <link>https://altamedicare.com/medicare-news/medicare-glp-1-bridge-2026.html</link>
+      <guid isPermaLink="true">https://altamedicare.com/medicare-news/medicare-glp-1-bridge-2026.html</guid>
+      <pubDate>Sat, 20 Jun 2026 00:00:00 GMT</pubDate>
+      <category>prescription-drugs</category>
+      <description>A new Medicare demonstration — the GLP-1 Bridge — lets eligible Part D members get Wegovy and Zepbound for weight loss at $50 a month, from July 1, 2026 through December 31, 2027.</description>
+    </item>
+    <item>
+      <title>Are You Missing Out on Extra Help?</title>
+      <link>https://altamedicare.com/medicare-news/extra-help-missed-savings.html</link>
+      <guid isPermaLink="true">https://altamedicare.com/medicare-news/extra-help-missed-savings.html</guid>
+      <pubDate>Fri, 01 May 2026 00:00:00 GMT</pubDate>
+      <category>costs</category>
+      <description>Many Utah seniors qualify for Extra Help with prescription costs and don't know it. Checking your eligibility could save thousands.</description>
+    </item>
+    <item>
+      <title>Scam Alert: Calls Asking for Your Medicare Number</title>
+      <link>https://altamedicare.com/medicare-news/medicare-scam-calls-alert.html</link>
+      <guid isPermaLink="true">https://altamedicare.com/medicare-news/medicare-scam-calls-alert.html</guid>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <category>alerts</category>
+      <description>If someone pressures you to share your Medicare number or sign up immediately, it's a scam. Here's how to protect yourself.</description>
+    </item>
+    <item>
+      <title>Insulin Stays Capped at $35 a Month</title>
+      <link>https://altamedicare.com/medicare-news/insulin-35-dollar-cap.html</link>
+      <guid isPermaLink="true">https://altamedicare.com/medicare-news/insulin-35-dollar-cap.html</guid>
+      <pubDate>Thu, 01 Jan 2026 00:00:00 GMT</pubDate>
+      <category>prescription-drugs</category>
+      <description>Covered insulin remains capped at $35 per month for Medicare beneficiaries in 2026.</description>
+    </item>
+    <item>
+      <title>2026 Part D $2,000 Out-of-Pocket Cap Now in Effect</title>
+      <link>https://altamedicare.com/medicare-news/part-d-2000-cap.html</link>
+      <guid isPermaLink="true">https://altamedicare.com/medicare-news/part-d-2000-cap.html</guid>
+      <pubDate>Thu, 01 Jan 2026 00:00:00 GMT</pubDate>
+      <category>prescription-drugs</category>
+      <description>Medicare prescription costs are now capped at $2,000 a year — real savings for anyone on multiple medications.</description>
+    </item>
+    <item>
+      <title>Medicare Advantage Plan Changes for 2026</title>
+      <link>https://altamedicare.com/medicare-news/medicare-advantage-changes-2026.html</link>
+      <guid isPermaLink="true">https://altamedicare.com/medicare-news/medicare-advantage-changes-2026.html</guid>
+      <pubDate>Wed, 15 Oct 2025 00:00:00 GMT</pubDate>
+      <category>medicare-advantage</category>
+      <description>Networks, formularies, and benefits all shift each year. Here's what changed for Utah plans — and how it affects you.</description>
+    </item>
+  </channel>
+</rss>

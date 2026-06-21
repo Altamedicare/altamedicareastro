@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Prescription Drug Assistance Finder | Help Paying for Medications | AltaMedicare</title>
+<meta name="description" content="Find help paying for expensive prescriptions. Search a medication to see Medicare Extra Help, copay grant foundations, manufacturer patient assistance programs, and discount resources you may qualify for." />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<script type="application/ld+json">
+{ "@context":"https://schema.org","@type":"WebApplication","name":"Prescription Drug Assistance Finder","applicationCategory":"HealthApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Search a medication to find Medicare Extra Help, nonprofit copay grant foundations, manufacturer patient assistance programs, and prescription discount resources that may lower your drug costs." }
+</script>
+<script type="application/ld+json">
+{ "@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"What is Medicare Extra Help?","acceptedAnswer":{"@type":"Answer","text":"Extra Help (also called the Part D Low-Income Subsidy or LIS) is a federal program that lowers or eliminates Part D premiums, deductibles, and copays for people with limited income and resources. You apply free through Social Security."}},
+  {"@type":"Question","name":"Can I use a manufacturer copay card if I have Medicare?","acceptedAnswer":{"@type":"Answer","text":"Usually no. Federal anti-kickback rules generally prohibit people with Medicare or other government drug coverage from using manufacturer copay coupons or savings cards. However, you may still qualify for a manufacturer Patient Assistance Program, which provides the drug free or at low cost to eligible people based on income."}},
+  {"@type":"Question","name":"What are copay assistance foundations?","acceptedAnswer":{"@type":"Answer","text":"Nonprofit foundations such as the PAN Foundation, HealthWell Foundation, Good Days, and the Patient Advocate Foundation Co-Pay Relief Program provide grants that cover out-of-pocket costs for specific diseases. Unlike manufacturer copay cards, these grants can be used by people on Medicare."}},
+  {"@type":"Question","name":"How do I qualify for prescription assistance?","acceptedAnswer":{"@type":"Answer","text":"Most programs use income limits, often a multiple of the federal poverty level, and many are tied to a specific diagnosis. Manufacturer programs typically require you to be uninsured or underinsured. Each program lists its own rules, and a licensed agent can help you apply."}},
+  {"@type":"Question","name":"Is this assistance free to apply for?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every program listed here is free to apply for. Be cautious of anyone who charges a fee to enroll you in Extra Help, a foundation grant, or a manufacturer assistance program."}},
+  {"@type":"Question","name":"Does Medicare's $2,000 cap help with drug costs?","acceptedAnswer":{"@type":"Answer","text":"Yes. Starting in 2025, Medicare Part D limits what you pay out of pocket for covered drugs to $2,000 per year, and the Medicare Prescription Payment Plan lets you spread that amount across monthly installments. Assistance programs can help with costs before and around that cap."}}
+]}
+</script>
+
+<style>
+  :root{
+    --mc-blue:#135aac;--mc-blue-dark:#0d3f86;--mc-blue-deep:#0a2540;--mc-blue-soft:#eaf2fd;--mc-blue-line:#cfe0f5;
+    --mc-green:#15803d;--mc-green-soft:#ecfdf3;--mc-green-line:#bbf7d0;
+    --mc-amber:#b45309;--mc-amber-soft:#fff7ed;--mc-amber-line:#fed7aa;
+    --mc-red:#b42318;--mc-red-soft:#fef3f2;--mc-red-line:#fecdca;
+    --mc-violet:#6d28d9;--mc-violet-soft:#f5f3ff;
+    --ink:#1f2a37;--ink-soft:#475467;--muted:#6b7280;
+    --radius:16px;--shadow:0 18px 50px -24px rgba(13,63,134,.4);--font:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:var(--font);color:var(--ink);line-height:1.55;background:radial-gradient(1200px 500px at 50% -220px,#dbeafe 0%,transparent 70%),#f3f7fc;padding:28px 16px 60px;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:980px;margin:0 auto;}
+  .card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--mc-blue-line);overflow:hidden;}
+  .head{background:linear-gradient(135deg,var(--mc-blue) 0%,var(--mc-blue-deep) 100%);color:#fff;padding:28px 26px;display:flex;align-items:center;gap:16px;}
+  .head .badge{flex:none;width:54px;height:54px;border-radius:14px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);display:grid;place-items:center;font-size:1.5rem;}
+  .head h1{margin:0;font-size:1.34rem;line-height:1.2;}.head p{margin:4px 0 0;font-size:.95rem;opacity:.9;}
+  .body{padding:26px;}
+
+  .search-row{display:grid;grid-template-columns:1fr;gap:14px;}
+  .combo{position:relative;}
+  .combo i.sicon{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none;}
+  .combo input{width:100%;font-family:inherit;font-size:1.08rem;min-height:54px;padding:14px 16px 14px 44px;border:2px solid var(--mc-blue-line);border-radius:12px;color:var(--ink);background:#fff;}
+  .combo input:focus{outline:none;border-color:var(--mc-blue);box-shadow:0 0 0 4px rgba(19,90,172,.15);}
+  .filters{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media(max-width:560px){.filters{grid-template-columns:1fr;}}
+  .filters label.fl{font-weight:600;font-size:.9rem;color:var(--ink);margin-bottom:7px;display:flex;align-items:center;gap:8px;}
+  .filters label.fl i{color:var(--mc-blue);}
+  select{width:100%;font-family:inherit;font-size:1.02rem;min-height:48px;padding:11px 13px;border:2px solid var(--mc-blue-line);border-radius:10px;background:#fff;color:var(--ink);}
+  select:focus{outline:none;border-color:var(--mc-blue);box-shadow:0 0 0 4px rgba(19,90,172,.15);}
+
+  .examples{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:14px;}
+  .examples .lbl{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);}
+  .chip{background:var(--mc-blue-soft);border:1px solid var(--mc-blue-line);border-radius:20px;padding:7px 14px;font-family:inherit;font-size:.9rem;color:var(--mc-blue-dark);cursor:pointer;min-height:36px;}
+  .chip:hover{background:var(--mc-blue);color:#fff;border-color:var(--mc-blue);}
+
+  .count{margin:20px 0 12px;font-size:.92rem;color:var(--ink-soft);font-weight:600;}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media(max-width:640px){.grid{grid-template-columns:1fr;}}
+  .prog{border:1px solid var(--mc-blue-line);border-radius:14px;padding:18px;background:#fff;box-shadow:0 6px 18px -16px rgba(13,63,134,.5);display:flex;flex-direction:column;}
+  .prog-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;}
+  .prog h3{margin:0;font-size:1.1rem;color:var(--mc-blue-deep);line-height:1.25;}
+  .prog .tagline{font-size:.88rem;color:var(--ink-soft);margin-top:6px;}
+  .badge-pill{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:4px 10px;border-radius:20px;white-space:nowrap;}
+  .b-green{background:var(--mc-green-soft);color:var(--mc-green);}
+  .b-amber{background:var(--mc-amber-soft);color:var(--mc-amber);}
+  .b-red{background:var(--mc-red-soft);color:var(--mc-red);}
+  .b-blue{background:var(--mc-blue-soft);color:var(--mc-blue-dark);}
+  .b-violet{background:var(--mc-violet-soft);color:var(--mc-violet);}
+  .b-tier{background:#eef2f7;color:var(--ink-soft);}
+  .prog .view{margin-top:auto;align-self:flex-start;background:none;border:0;color:var(--mc-blue);font-weight:700;font-family:inherit;font-size:.95rem;cursor:pointer;padding:10px 0 4px;min-height:36px;display:inline-flex;align-items:center;gap:6px;}
+  .empty{text-align:center;color:var(--muted);padding:30px;background:#f8fafc;border:1px dashed var(--mc-blue-line);border-radius:12px;}
+  .empty a{color:var(--mc-blue-dark);font-weight:600;}
+
+  /* Modal */
+  .modal{position:fixed;inset:0;z-index:60;display:none;align-items:flex-start;justify-content:center;padding:8vh 18px 18px;}
+  .modal.open{display:flex;}
+  .modal-bg{position:absolute;inset:0;background:rgba(10,37,64,.5);backdrop-filter:blur(3px);}
+  .modal-panel{position:relative;width:100%;max-width:600px;max-height:84vh;overflow-y:auto;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:26px;animation:pop .18s ease-out;}
+  @keyframes pop{from{opacity:0;transform:translateY(-10px);}to{opacity:1;transform:none;}}
+  .modal-close{position:absolute;top:14px;right:16px;background:none;border:0;font-size:1.6rem;color:var(--muted);cursor:pointer;min-height:44px;min-width:44px;}
+  .modal h2{margin:0 0 2px;color:var(--mc-blue-deep);font-size:1.4rem;padding-right:36px;}
+  .modal .m-sub{color:var(--muted);margin:0 0 14px;}
+  .m-sec{margin-top:16px;}.m-sec h4{margin:0 0 6px;font-size:.78rem;text-transform:uppercase;letter-spacing:.07em;color:var(--mc-blue);}
+  .m-sec p{margin:0;color:var(--ink-soft);}
+  .m-sec ul{margin:0;padding-left:18px;color:var(--ink-soft);}.m-sec li{margin-bottom:5px;}
+  .m-typical{margin:6px 0 4px;background:var(--mc-green-soft);border:1px solid var(--mc-green-line);border-radius:12px;padding:14px 16px;display:flex;gap:11px;align-items:flex-start;}
+  .m-typical i{color:var(--mc-green);font-size:1.1rem;margin-top:1px;flex:none;}
+  .m-typical span{color:var(--ink);font-weight:600;font-size:.97rem;}
+  .m-actions{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px;}
+  .m-actions a{text-decoration:none;display:inline-flex;align-items:center;gap:8px;padding:11px 16px;border-radius:10px;font-weight:700;font-size:.95rem;min-height:44px;}
+  .m-actions a.primary{background:var(--mc-blue);color:#fff;}
+  .m-actions a.ghost{background:var(--mc-blue-soft);color:var(--mc-blue-dark);border:1px solid var(--mc-blue-line);}
+
+  section.block{margin-top:30px;}
+  section.block>h2{font-size:1.35rem;color:var(--mc-blue-deep);margin:0 0 14px;display:flex;align-items:center;gap:10px;}section.block>h2 i{color:var(--mc-blue);}
+  .edu .eitem{padding:15px 0;border-bottom:1px solid #eef2f7;}.edu .eitem:last-child{border-bottom:0;}
+  .edu .eitem h3{margin:0 0 4px;font-size:1.02rem;color:var(--ink);}.edu .eitem p{margin:0;color:var(--ink-soft);font-size:.95rem;}
+
+  .tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;}
+  .tool-card{display:block;text-decoration:none;border:1px solid var(--mc-blue-line);border-radius:14px;padding:18px;background:#fff;box-shadow:0 6px 18px -14px rgba(13,63,134,.5);transition:transform .15s,box-shadow .15s,border-color .15s;}
+  .tool-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--mc-blue);}
+  .tool-card .tc-icon{width:44px;height:44px;border-radius:12px;background:var(--mc-blue-soft);display:grid;place-items:center;color:var(--mc-blue);font-size:1.2rem;margin-bottom:10px;}
+  .tool-card h3{margin:0 0 3px;font-size:1rem;color:var(--mc-blue-deep);}.tool-card p{margin:0;font-size:.86rem;color:var(--ink-soft);}
+
+  .cta-card{background:linear-gradient(135deg,var(--mc-blue) 0%,var(--mc-blue-deep) 100%);color:#fff;border-radius:var(--radius);padding:30px 26px;text-align:center;}
+  .cta-card h2{margin:0 0 6px;color:#fff;font-size:1.4rem;}.cta-card p{margin:0 0 20px;opacity:.92;}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;}
+  .cta-row a{flex:1 1 200px;max-width:280px;text-decoration:none;min-height:52px;display:flex;align-items:center;justify-content:center;gap:9px;padding:14px 20px;border-radius:12px;font-weight:700;font-size:1.05rem;}
+  .cta-row a.primary{background:#fff;color:var(--mc-blue-dark);}.cta-row a.ghost{background:rgba(255,255,255,.12);color:#fff;border:2px solid rgba(255,255,255,.5);}
+
+  .faq details{background:#fff;border:1px solid var(--mc-blue-line);border-radius:12px;margin-bottom:10px;overflow:hidden;}
+  .faq summary{list-style:none;cursor:pointer;padding:18px 20px;font-weight:600;font-size:1.05rem;color:var(--mc-blue-deep);display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:44px;}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary .chev{flex:none;width:30px;height:30px;border-radius:50%;background:var(--mc-blue-soft);display:grid;place-items:center;color:var(--mc-blue);transition:transform .2s;}
+  .faq details[open] summary .chev{transform:rotate(180deg);}.faq .faq-a{padding:0 20px 18px;color:var(--ink-soft);}
+
+  .disclaimer{margin-top:26px;background:#f8fafc;border:1px solid #e6ebf2;border-radius:12px;padding:16px 18px;font-size:.86rem;color:var(--muted);display:flex;gap:10px;}
+  .disclaimer i{color:var(--mc-blue);margin-top:2px;flex:none;}.disclaimer a{color:var(--mc-blue-dark);}
+
+  /* Coupon-vs-PAP notice banner */
+  .notice{display:flex;gap:12px;align-items:flex-start;background:var(--mc-amber-soft);border:1px solid var(--mc-amber-line);border-radius:12px;padding:14px 16px;margin-bottom:18px;}
+  .notice i{color:var(--mc-amber);font-size:1.15rem;margin-top:2px;flex:none;}
+  .notice p{margin:0;font-size:.92rem;color:var(--ink);}
+
+  /* Eligibility estimator */
+  .est-intro{margin:0 0 16px;color:var(--ink-soft);}
+  .est-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media(max-width:560px){.est-grid{grid-template-columns:1fr;}}
+  .est-grid input{width:100%;font-family:inherit;font-size:1.02rem;min-height:48px;padding:11px 13px;border:2px solid var(--mc-blue-line);border-radius:10px;background:#fff;color:var(--ink);}
+  .est-grid input:focus{outline:none;border-color:var(--mc-blue);box-shadow:0 0 0 4px rgba(19,90,172,.15);}
+  .est-btn{margin-top:18px;width:100%;background:var(--mc-blue);color:#fff;border:0;border-radius:12px;font-family:inherit;font-weight:700;font-size:1.05rem;min-height:54px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:9px;}
+  .est-btn:hover{background:var(--mc-blue-dark);}
+  .est-result{margin-top:20px;display:none;}
+  .est-result.show{display:block;}
+  .est-row{display:flex;gap:12px;align-items:flex-start;padding:13px 0;border-bottom:1px solid #eef2f7;}
+  .est-row:last-of-type{border-bottom:0;}
+  .est-row .ico{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:.95rem;margin-top:1px;}
+  .est-row .ico.yes{background:var(--mc-green-soft);color:var(--mc-green);}
+  .est-row .ico.maybe{background:var(--mc-amber-soft);color:var(--mc-amber);}
+  .est-row .ico.no{background:#eef2f7;color:var(--muted);}
+  .est-row h4{margin:0 0 2px;font-size:1rem;color:var(--mc-blue-deep);}
+  .est-row p{margin:0;font-size:.9rem;color:var(--ink-soft);}
+  .est-note{margin-top:16px;background:#f8fafc;border:1px solid #e6ebf2;border-radius:10px;padding:13px 15px;font-size:.85rem;color:var(--muted);}
+  .est-note i{color:var(--mc-blue);}
+  .est-cta{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px;}
+  .est-cta a{text-decoration:none;display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:10px;font-weight:700;font-size:.98rem;min-height:48px;}
+  .est-cta a.primary{background:var(--mc-blue);color:#fff;}
+  .est-cta a.ghost{background:var(--mc-blue-soft);color:var(--mc-blue-dark);border:1px solid var(--mc-blue-line);}
+
+  /* Document checklist */
+  .checklist{list-style:none;margin:0;padding:0;}
+  .checklist li{display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px solid #eef2f7;color:var(--ink);font-size:1rem;}
+  .checklist li:last-child{border-bottom:0;}
+  .checklist li::before{content:"";flex:none;width:22px;height:22px;border:2px solid var(--mc-blue-line);border-radius:6px;margin-top:1px;}
+  .print-head{display:none;}
+
+  /* Foundation fund status */
+  .fund-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid #eef2f7;}
+  .fund-row:last-child{border-bottom:0;}
+  .fund-row .fname{font-weight:600;color:var(--mc-blue-deep);}
+  .fund-row .fname a{color:inherit;text-decoration:none;}
+  .fund-row .fname a:hover{text-decoration:underline;}
+  .fund-note{margin:14px 0 0;font-size:.84rem;color:var(--muted);}
+  .fund-note i{color:var(--mc-blue);}
+
+  /* Popular drug pages */
+  .pop-links{display:flex;flex-wrap:wrap;gap:10px;}
+  .pop-links a{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--mc-blue-line);border-radius:10px;padding:11px 15px;text-decoration:none;color:var(--mc-blue-dark);font-weight:600;font-size:.95rem;box-shadow:0 6px 18px -16px rgba(13,63,134,.5);}
+  .pop-links a:hover{background:var(--mc-blue);color:#fff;border-color:var(--mc-blue);}
+  .pop-links a i{opacity:.75;}
+
+  @media print{
+    body{background:#fff;padding:0;}
+    body *{visibility:hidden;}
+    #print-area,#print-area *{visibility:visible;}
+    #print-area{position:absolute;left:0;top:0;width:100%;box-shadow:none;border:0;}
+    .no-print{display:none !important;}
+    .print-head{display:block;margin-bottom:14px;}
+    .print-head h3{margin:0;color:#0a2540;}
+    .print-head p{margin:4px 0 0;color:#475467;font-size:.9rem;}
+  }
+  @media(max-width:480px){.head{padding:22px 18px;}.head h1{font-size:1.12rem;}.body{padding:20px 18px;}}
+  @media(prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important;}}
+</style>
+</head>
+<body data-pagefind-body data-pagefind-meta="type:Calculator" data-pagefind-filter="type:Calculator">
+<div class="wrap">
+  <a href="/tools.html" style="display:inline-flex;align-items:center;gap:8px;margin-bottom:16px;color:var(--mc-blue,#135aac);font-family:inherit;font-weight:600;text-decoration:none;font-size:.95rem;"><i class="fa-solid fa-arrow-left"></i> Back to Tools</a>
+
+  <main class="card" role="main">
+    <header class="head">
+      <div class="badge"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+      <div>
+        <h1>Prescription Drug Assistance Finder</h1>
+        <p>Search a medication to find grants, foundations, and programs that may lower your costs.</p>
+      </div>
+    </header>
+
+    <div class="body">
+      <div class="notice">
+        <i class="fa-solid fa-shield-halved"></i>
+        <p><strong>On Medicare?</strong> You generally <strong>cannot use manufacturer copay coupons or savings cards</strong> — federal anti-kickback rules block them. But manufacturer <strong>Patient Assistance Programs</strong> (free drug by income) and nonprofit <strong>foundation grants</strong> still can help. This finder focuses on the programs that work <em>with</em> Medicare.</p>
+      </div>
+
+      <div class="search-row">
+        <div class="combo">
+          <i class="fa-solid fa-magnifying-glass sicon" aria-hidden="true"></i>
+          <label for="drug-search" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Search a medication</label>
+          <input type="text" id="drug-search" list="drug-names" autocomplete="off" placeholder="Medication name — e.g. Eliquis, Ozempic, Humira" />
+          <datalist id="drug-names"></datalist>
+        </div>
+        <div class="filters">
+          <div>
+            <label class="fl" for="cond-filter"><i class="fa-solid fa-stethoscope"></i> Condition (optional)</label>
+            <select id="cond-filter">
+              <option value="all">Any condition</option>
+            </select>
+          </div>
+          <div>
+            <label class="fl" for="type-filter"><i class="fa-solid fa-filter"></i> Type of help</label>
+            <select id="type-filter">
+              <option value="all">All program types</option>
+              <option value="government">Government programs</option>
+              <option value="foundation">Nonprofit copay grants</option>
+              <option value="manufacturer">Manufacturer programs</option>
+              <option value="database">Discount &amp; search tools</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="examples">
+        <span class="lbl">Try:</span>
+        <button type="button" class="chip">Eliquis</button>
+        <button type="button" class="chip">Ozempic</button>
+        <button type="button" class="chip">Jardiance</button>
+        <button type="button" class="chip">Humira</button>
+        <button type="button" class="chip">Farxiga</button>
+        <button type="button" class="chip">Repatha</button>
+        <button type="button" class="chip">Xtandi</button>
+      </div>
+
+      <p class="count" id="ce-count"></p>
+      <div class="grid" id="ce-grid" aria-live="polite"></div>
+
+      <p class="disclaimer">
+        <i class="fa-solid fa-circle-info"></i>
+        <span>This finder is an <strong>educational starting point, not an application or eligibility decision</strong>. Program names, eligibility rules, funding, and contact details change often, and disease funds open and close based on availability. Always confirm directly with each program. Every legitimate program here is <strong>free to apply for</strong> — never pay a fee to enroll.</span>
+      </p>
+    </div>
+  </main>
+
+  <section class="block">
+    <h2><i class="fa-solid fa-clipboard-check"></i> Do I Qualify? Quick Eligibility Estimator</h2>
+    <div class="card" style="padding:24px;">
+      <p class="est-intro">Answer a few quick questions for a rough idea of which kinds of help you may qualify for. Nothing is saved or submitted.</p>
+      <div class="est-grid">
+        <div>
+          <label class="fl" for="est-status"><i class="fa-solid fa-user-group"></i> Marital status</label>
+          <select id="est-status">
+            <option value="single">Single</option>
+            <option value="married">Married</option>
+          </select>
+        </div>
+        <div>
+          <label class="fl" for="est-house"><i class="fa-solid fa-house-user"></i> People in household</label>
+          <select id="est-house">
+            <option>1</option><option>2</option><option>3</option><option>4</option>
+            <option>5</option><option>6</option><option>7</option><option>8</option>
+          </select>
+        </div>
+        <div>
+          <label class="fl" for="est-income"><i class="fa-solid fa-dollar-sign"></i> Annual household income</label>
+          <input type="text" inputmode="numeric" id="est-income" placeholder="e.g. 28,000" />
+        </div>
+        <div>
+          <label class="fl" for="est-cost"><i class="fa-solid fa-pills"></i> Your monthly drug cost</label>
+          <select id="est-cost">
+            <option value="0">Not sure</option>
+            <option value="100">Under $100</option>
+            <option value="300">$100–300</option>
+            <option value="600">$300–600</option>
+            <option value="1000">$600–1,000</option>
+            <option value="1500">Over $1,000</option>
+          </select>
+        </div>
+      </div>
+      <button type="button" id="est-go" class="est-btn"><i class="fa-solid fa-magnifying-glass-dollar"></i> See what I may qualify for</button>
+      <div id="est-result" class="est-result" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2><i class="fa-solid fa-lightbulb"></i> How Drug Assistance Works on Medicare</h2>
+    <div class="card edu" style="padding:8px 22px;">
+      <div class="eitem"><h3>Medicare Extra Help (Low-Income Subsidy)</h3><p>A federal program that lowers or eliminates Part&nbsp;D premiums, deductibles, and copays. Apply free through Social Security — many people who qualify never sign up.</p></div>
+      <div class="eitem"><h3>Nonprofit copay grant foundations</h3><p>Charities like the PAN Foundation and HealthWell give grants for out-of-pocket drug costs for specific diseases. Unlike copay coupons, <strong>these can be used with Medicare</strong>.</p></div>
+      <div class="eitem"><h3>Manufacturer patient assistance programs</h3><p>Drug makers provide their medication free or low-cost to people who qualify by income. These are different from copay cards and often <em>do</em> serve Medicare beneficiaries.</p></div>
+      <div class="eitem"><h3>Why copay cards usually don't work on Medicare</h3><p>Federal anti-kickback law generally blocks people with Medicare from using manufacturer copay coupons — so foundations and patient assistance programs are the routes that apply to you.</p></div>
+      <div class="eitem"><h3>The $2,000 Part D cap</h3><p>Since 2025, what you pay out of pocket for covered drugs is capped at $2,000 a year, and you can spread it over the year with the Medicare Prescription Payment Plan.</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2><i class="fa-solid fa-traffic-light"></i> Foundation Fund Status</h2>
+    <div class="card" style="padding:18px 22px;">
+      <div id="fund-status" class="fund-status"></div>
+      <p class="fund-note"><i class="fa-solid fa-circle-info"></i> Fund availability changes frequently and varies by diagnosis. These are general indicators only — always verify directly with the foundation before applying.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2><i class="fa-solid fa-list-check"></i> Documents You'll Need to Apply</h2>
+    <div class="card" id="print-area" style="padding:24px;">
+      <div class="print-head">
+        <h3>Prescription Drug Assistance — Document Checklist</h3>
+        <p>AltaMedicare.com &middot; Bret Swope, licensed Utah Medicare agent &middot; (801) 368-0700</p>
+      </div>
+      <ul class="checklist">
+        <li>Medicare card (red, white &amp; blue)</li>
+        <li>Prescription drug plan (Part&nbsp;D) card</li>
+        <li>Social Security award or benefit letter</li>
+        <li>Proof of income (Social Security, pension, wages)</li>
+        <li>Most recent tax return, if you file one</li>
+        <li>Complete medication list with dosages</li>
+        <li>Preferred pharmacy name &amp; address</li>
+        <li>Bank &amp; resource information (for Extra Help and Medicaid)</li>
+        <li>Prescribing doctor's name &amp; contact info (for diagnosis verification)</li>
+      </ul>
+      <button type="button" class="est-btn no-print" id="print-btn"><i class="fa-solid fa-print"></i> Print / Save as PDF</button>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2><i class="fa-solid fa-toolbox"></i> Related Medicare Tools</h2>
+    <div class="tools-grid">
+      <a class="tool-card" href="/medicare-formulary-lookup.html"><div class="tc-icon"><i class="fa-solid fa-prescription-bottle-medical"></i></div><h3>Formulary Lookup</h3><p>See typical Part&nbsp;D coverage &amp; rules.</p></a>
+      <a class="tool-card" href="/medicare-drug-cost-calculator.html"><div class="tc-icon"><i class="fa-solid fa-pills"></i></div><h3>Drug Cost Calculator</h3><p>Estimate costs &amp; generic savings.</p></a>
+      <a class="tool-card" href="/medicare-cost-estimator.html"><div class="tc-icon"><i class="fa-solid fa-coins"></i></div><h3>Cost Estimator</h3><p>Estimate total annual Medicare costs.</p></a>
+      <a class="tool-card" href="/medicare-irmaa-calculator.html"><div class="tc-icon"><i class="fa-solid fa-sack-dollar"></i></div><h3>IRMAA Calculator</h3><p>Income-based premium surcharges.</p></a>
+      <a class="tool-card" href="/medicare-eligibility-calculator.html"><div class="tc-icon"><i class="fa-solid fa-calendar-check"></i></div><h3>Eligibility Calculator</h3><p>When you qualify &amp; your dates.</p></a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2><i class="fa-solid fa-book-open-reader"></i> Related Reading</h2>
+    <div class="tools-grid">
+      <a class="tool-card" href="/blog/extra-help-explained.html"><div class="tc-icon"><i class="fa-solid fa-hand-holding-heart"></i></div><h3>Extra Help Explained</h3><p>Who qualifies and how much it saves.</p></a>
+      <a class="tool-card" href="/blog/the-2000-drug-cap-explained.html"><div class="tc-icon"><i class="fa-solid fa-piggy-bank"></i></div><h3>The $2,000 Part D Cap</h3><p>Your new yearly out-of-pocket limit.</p></a>
+      <a class="tool-card" href="/blog/medicare-savings-programs.html"><div class="tc-icon"><i class="fa-solid fa-landmark"></i></div><h3>Medicare Savings Programs</h3><p>State help paying your Medicare costs.</p></a>
+      <a class="tool-card" href="/blog/medicare-35-dollar-insulin-cap.html"><div class="tc-icon"><i class="fa-solid fa-syringe"></i></div><h3>The $35 Insulin Cap</h3><p>What you pay for covered insulin now.</p></a>
+      <a class="tool-card" href="/blog/medicaid-income-limits.html"><div class="tc-icon"><i class="fa-solid fa-scale-balanced"></i></div><h3>Medicaid Income Limits</h3><p>Utah eligibility thresholds explained.</p></a>
+      <a class="tool-card" href="/blog/what-is-step-therapy.html"><div class="tc-icon"><i class="fa-solid fa-stairs"></i></div><h3>What Is Step Therapy?</h3><p>Why plans ask you to try a drug first.</p></a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2><i class="fa-solid fa-fire"></i> Popular Drug Assistance Pages</h2>
+    <div class="pop-links">
+      <a href="/eliquis-assistance-program.html"><i class="fa-solid fa-hand-holding-dollar"></i> Eliquis Assistance Program</a>
+      <a href="/xarelto-assistance-program.html"><i class="fa-solid fa-hand-holding-dollar"></i> Xarelto Assistance Program</a>
+      <a href="/ozempic-assistance-program.html"><i class="fa-solid fa-hand-holding-dollar"></i> Ozempic Assistance Program</a>
+      <a href="/mounjaro-assistance-program.html"><i class="fa-solid fa-hand-holding-dollar"></i> Mounjaro Assistance Program</a>
+      <a href="/trulicity-assistance-program.html"><i class="fa-solid fa-hand-holding-dollar"></i> Trulicity Assistance Program</a>
+      <a href="/jardiance-assistance-program.html"><i class="fa-solid fa-hand-holding-dollar"></i> Jardiance Assistance Program</a>
+      <a href="/farxiga-assistance-program.html"><i class="fa-solid fa-hand-holding-dollar"></i> Farxiga Assistance Program</a>
+      <a href="/entresto-assistance-program.html"><i class="fa-solid fa-hand-holding-dollar"></i> Entresto Assistance Program</a>
+      <a href="/repatha-assistance-program.html"><i class="fa-solid fa-hand-holding-dollar"></i> Repatha Assistance Program</a>
+      <a href="/humira-assistance-program.html"><i class="fa-solid fa-hand-holding-dollar"></i> Humira Assistance Program</a>
+      <a href="/enbrel-assistance-program.html"><i class="fa-solid fa-hand-holding-dollar"></i> Enbrel Assistance Program</a>
+      <a href="/skyrizi-assistance-program.html"><i class="fa-solid fa-hand-holding-dollar"></i> Skyrizi Assistance Program</a>
+      <a href="/rinvoq-assistance-program.html"><i class="fa-solid fa-hand-holding-dollar"></i> Rinvoq Assistance Program</a>
+      <a href="/dupixent-assistance-program.html"><i class="fa-solid fa-hand-holding-dollar"></i> Dupixent Assistance Program</a>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="cta-card">
+      <h2>Struggling to afford a medication?</h2>
+      <p>Send Bret your drug list — he'll check Extra Help, the right foundation, and which Part&nbsp;D plan covers your meds for the least. Free, no pressure.</p>
+      <div class="cta-row">
+        <a class="primary" href="tel:8013680700"><i class="fa-solid fa-phone"></i> Call (801) 368-0700</a>
+        <a class="ghost" href="sms:18013680700?body=Hi%20Bret%2C%20I%20need%20help%20paying%20for%20a%20medication.%20Can%20you%20help%3F"><i class="fa-solid fa-comment-sms"></i> Text Your Meds</a>
+      </div>
+      <div class="cta-row" style="margin-top:12px;">
+        <a class="ghost" href="contact.html"><i class="fa-solid fa-calendar-check"></i> Free Medicare Review</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block faq">
+    <h2><i class="fa-solid fa-circle-question"></i> Frequently Asked Questions</h2>
+    <details><summary>What is Medicare Extra Help? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></summary><div class="faq-a">Extra Help — the Part D Low-Income Subsidy (LIS) — lowers or eliminates your Part D premiums, deductible, and copays if you have limited income and resources. You apply free through Social Security at ssa.gov.</div></details>
+    <details><summary>Can I use a manufacturer copay card if I have Medicare? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></summary><div class="faq-a">Usually no. Federal anti-kickback rules generally prohibit people with Medicare from using manufacturer copay coupons or savings cards. But you may still qualify for that manufacturer's <strong>Patient Assistance Program</strong>, which provides the drug free or low-cost based on income.</div></details>
+    <details><summary>What are copay assistance foundations? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></summary><div class="faq-a">Nonprofits like PAN Foundation, HealthWell Foundation, Good Days, and Patient Advocate Foundation Co-Pay Relief give grants that cover out-of-pocket costs for specific diseases — and these grants <em>can</em> be used by people on Medicare.</div></details>
+    <details><summary>How do I qualify? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></summary><div class="faq-a">Most programs use income limits (often a multiple of the federal poverty level), and many require a specific diagnosis. Manufacturer programs usually require you to be uninsured or underinsured. Each program lists its own rules.</div></details>
+    <details><summary>Is it really free to apply? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></summary><div class="faq-a">Yes. Every program here is free to apply for. Be cautious of anyone charging a fee to enroll you in Extra Help, a foundation grant, or a manufacturer program — that's a red flag.</div></details>
+    <details><summary>Can a Medicare agent help me apply? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></summary><div class="faq-a">Yes. Bret can screen you for Extra Help and Medicaid, point you to the right disease foundation, and make sure your Part D plan covers your medications for the lowest cost — at no charge.</div></details>
+  </section>
+
+</div>
+
+<!-- Program details modal -->
+<div class="modal" id="prog-modal" role="dialog" aria-modal="true" aria-label="Program details">
+  <div class="modal-bg" data-close></div>
+  <div class="modal-panel" id="modal-panel"></div>
+</div>
+
+<script src="/medicare-figures.js"></script>
+<script src="/drug-assistance-data.js"></script>
+<script>
+(function(){
+  "use strict";
+
+  /* ============================================================
+     DATA — single source of truth lives in src/data/drugAssistance.ts and is
+     published to the page by /drug-assistance-data.js. MEDICARE_FIGURES comes
+     from /medicare-figures.js and feeds the eligibility estimator below.
+     ============================================================ */
+  var DA = window.DRUG_ASSISTANCE || {};
+  var CONDITIONS = DA.CONDITIONS || [];
+  var PROGRAMS = DA.PROGRAMS || [];
+  var CONDLABEL = {}; CONDITIONS.forEach(function(c){CONDLABEL[c.key]=c.label;});
+  var FIGURES = window.MEDICARE_FIGURES || null;
+
+  var TYPE = {
+    government:{cls:"b-green",label:"Government program"},
+    foundation:{cls:"b-blue",label:"Nonprofit grant"},
+    manufacturer:{cls:"b-amber",label:"Manufacturer program"},
+    database:{cls:"b-violet",label:"Search & discount"}
+  };
+  var FUND_STATUS = {
+    open:{cls:"b-green",label:"🟢 Fund open"},
+    verify:{cls:"b-amber",label:"🟡 Verify availability"},
+    closed:{cls:"b-red",label:"🔴 Currently closed"}
+  };
+  function statusPill(p){ return (p.status&&FUND_STATUS[p.status])?'<span class="badge-pill '+FUND_STATUS[p.status].cls+'">'+FUND_STATUS[p.status].label+'</span>':''; }
+  var TYPEFILTER = { government:"government", foundation:"foundation", manufacturer:"manufacturer", database:"database" };
+  var TYPEORDER = { government:0, foundation:1, manufacturer:2, database:3 };
+
+  // Build a drug -> {conditions, mfr id} index from the manufacturer programs, plus
+  // common drugs whose disease should surface foundations even without a maker match.
+  var DRUG_INDEX = {};
+  function indexDrug(name, conds, mfrId){
+    var k = name.toLowerCase();
+    if(!DRUG_INDEX[k]) DRUG_INDEX[k] = {name:name, conditions:[], mfr:[]};
+    conds.forEach(function(c){ if(DRUG_INDEX[k].conditions.indexOf(c)===-1) DRUG_INDEX[k].conditions.push(c); });
+    if(mfrId && DRUG_INDEX[k].mfr.indexOf(mfrId)===-1) DRUG_INDEX[k].mfr.push(mfrId);
+  }
+  PROGRAMS.forEach(function(p){
+    if(p.type==="manufacturer" && p.drugs){
+      var conds = p.conditions.filter(function(c){return c!=="any";});
+      p.drugs.forEach(function(d){ indexDrug(d, conds, p.id); });
+    }
+  });
+
+  // --- elements ---
+  var searchEl=document.getElementById("drug-search");
+  var condEl=document.getElementById("cond-filter");
+  var typeEl=document.getElementById("type-filter");
+  var gridEl=document.getElementById("ce-grid");
+  var countEl=document.getElementById("ce-count");
+  var datalist=document.getElementById("drug-names");
+  var modal=document.getElementById("prog-modal");
+  var panel=document.getElementById("modal-panel");
+
+  // populate condition dropdown
+  condEl.innerHTML='<option value="all">Any condition</option>'+
+    CONDITIONS.map(function(c){return '<option value="'+c.key+'">'+c.label+'</option>';}).join("");
+
+  // populate datalist with known drug names
+  datalist.innerHTML=Object.keys(DRUG_INDEX).map(function(k){return '<option value="'+DRUG_INDEX[k].name+'"></option>';}).join("");
+
+  function condsForQuery(q){
+    if(!q) return null;
+    var entry=DRUG_INDEX[q];
+    if(entry) return {conditions:entry.conditions, mfr:entry.mfr, name:entry.name};
+    // partial match (e.g. "eliq")
+    var keys=Object.keys(DRUG_INDEX);
+    for(var i=0;i<keys.length;i++){
+      if(keys[i].indexOf(q)!==-1){ var e=DRUG_INDEX[keys[i]]; return {conditions:e.conditions, mfr:e.mfr, name:e.name}; }
+    }
+    return {conditions:[], mfr:[], name:null};
+  }
+
+  function programMatches(p, q, info, cond, typeFilter){
+    if(typeFilter!=="all" && TYPEFILTER[p.type]!==typeFilter) return false;
+
+    // Condition dropdown
+    if(cond!=="all"){
+      if(p.conditions.indexOf("any")===-1 && p.conditions.indexOf(cond)===-1) return false;
+    }
+
+    if(!q) return true;
+
+    // Drug search: include universal programs, foundations matching the drug's
+    // condition, and the specific manufacturer program(s) for that drug.
+    if(p.conditions.indexOf("any")!==-1) return true;            // Extra Help, NeedyMeds, etc.
+    if(info.mfr && info.mfr.indexOf(p.id)!==-1) return true;      // exact maker
+    if(p.type==="manufacturer") {                                // other makers only if they list the drug
+      return p.drugs && p.drugs.some(function(d){return d.toLowerCase().indexOf(q)!==-1;});
+    }
+    // foundations: match if the drug's condition overlaps the fund's conditions
+    if(info.conditions && info.conditions.length){
+      return info.conditions.some(function(c){return p.conditions.indexOf(c)!==-1;});
+    }
+    return false;
+  }
+
+  function render(){
+    var q=searchEl.value.trim().toLowerCase();
+    var cond=condEl.value;
+    var typeFilter=typeEl.value;
+    var info=condsForQuery(q) || {conditions:[],mfr:[],name:null};
+
+    var list=PROGRAMS.filter(function(p){return programMatches(p,q,info,cond,typeFilter);})
+                     .sort(function(a,b){
+                       var d=TYPEORDER[a.type]-TYPEORDER[b.type];
+                       return d!==0?d:a.name.localeCompare(b.name);
+                     });
+
+    var label=q?(info.name||searchEl.value.trim()):"";
+    if(q && label){
+      countEl.textContent="Showing "+list.length+" program"+(list.length===1?"":"s")+" that may help with "+label+".";
+    } else {
+      countEl.textContent="Showing "+list.length+" of "+PROGRAMS.length+" assistance programs.";
+    }
+
+    if(!list.length){
+      gridEl.innerHTML='<div class="empty" style="grid-column:1/-1"><i class="fa-solid fa-magnifying-glass" style="font-size:1.6rem;color:var(--mc-blue);display:block;margin-bottom:8px"></i>No programs match that search. Try the medication\'s brand name, broaden the filters, or <a href="sms:18013680700?body=Hi%20Bret%2C%20can%20you%20help%20me%20find%20assistance%20for%20a%20medication%3F">text us the drug name &rarr;</a></div>';
+      return;
+    }
+
+    gridEl.innerHTML=list.map(function(p){
+      var t=TYPE[p.type];
+      return '<div class="prog">'+
+        '<div class="prog-top"><h3>'+p.name+'</h3>'+
+        '<span class="badge-pill '+t.cls+'">'+t.label+'</span></div>'+
+        '<div class="tagline">'+p.tagline+'</div>'+
+        (p.status?'<div style="margin-top:10px">'+statusPill(p)+'</div>':'')+
+        '<button class="view" data-id="'+p.id+'">View details &amp; apply <i class="fa-solid fa-arrow-right"></i></button>'+
+        '</div>';
+    }).join("");
+  }
+
+  function progById(id){ for(var i=0;i<PROGRAMS.length;i++){ if(PROGRAMS[i].id===id) return PROGRAMS[i]; } return null; }
+
+  // Short "Typical assistance" line. Uses an explicit override when set, otherwise
+  // derives a sensible default by program type — naming the searched drug for makers.
+  function typicalLine(p, drugName){
+    if(p.typical) return p.typical;
+    if(p.type==="government") return "May lower or eliminate your Part D premium, deductible, and copays.";
+    if(p.type==="foundation") return "May cover copays and coinsurance for a qualifying diagnosis.";
+    if(p.type==="database") return "Free search to find programs for your specific medications.";
+    if(p.type==="manufacturer"){
+      var drug=null;
+      if(drugName && p.drugs){
+        var q=drugName.toLowerCase();
+        for(var i=0;i<p.drugs.length;i++){ if(p.drugs[i].toLowerCase().indexOf(q)!==-1){ drug=p.drugs[i]; break; } }
+      }
+      return "May provide "+(drug||"your medication")+" at no cost if you qualify.";
+    }
+    return "";
+  }
+
+  function openModal(p){
+    var t=TYPE[p.type];
+    var typical=typicalLine(p, searchEl.value.trim());
+    var condText = p.conditions.indexOf("any")!==-1
+      ? "Any condition"
+      : p.conditions.map(function(c){return CONDLABEL[c]||c;}).join(", ");
+    var drugLine = (p.drugs && p.drugs.length)
+      ? '<div class="m-sec"><h4>Medications it may cover</h4><p>'+p.drugs.join(", ")+'</p></div>'
+      : '';
+    var phoneBtn = p.phone
+      ? '<a class="ghost" href="tel:'+p.phone.replace(/[^0-9]/g,"")+'"><i class="fa-solid fa-phone"></i> '+p.phone+'</a>'
+      : '';
+
+    panel.innerHTML=
+      '<button class="modal-close" data-close aria-label="Close">&times;</button>'+
+      '<h2>'+p.name+'</h2>'+
+      '<p class="m-sub"><span class="badge-pill '+t.cls+'">'+t.label+'</span>'+(p.status?' '+statusPill(p):'')+'</p>'+
+      '<div class="m-typical"><i class="fa-solid fa-circle-check"></i><span>Typical assistance: '+typical+'</span></div>'+
+      '<div class="m-sec"><h4>What it helps with</h4><p>'+p.helps+'</p></div>'+
+      '<div class="m-sec"><h4>Who may qualify</h4><p>'+p.eligibility+'</p></div>'+
+      '<div class="m-sec"><h4>Conditions covered</h4><p>'+condText+'</p></div>'+
+      drugLine+
+      '<div class="m-actions">'+
+        '<a class="primary" href="'+p.url+'" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> '+(p.urlLabel||"Visit program")+'</a>'+
+        phoneBtn+
+      '</div>'+
+      '<div class="m-sec" style="margin-top:20px"><a class="badge-pill b-blue" style="text-decoration:none;display:inline-block;padding:10px 16px;font-size:.9rem" href="sms:18013680700?body=Hi%20Bret%2C%20can%20you%20help%20me%20apply%20for%20'+encodeURIComponent(p.name)+'%3F"><i class="fa-solid fa-comment-sms"></i> Ask Bret to help me apply</a></div>';
+    modal.classList.add("open");
+    document.body.style.overflow="hidden";
+  }
+  function closeModal(){modal.classList.remove("open");document.body.style.overflow="";}
+
+  gridEl.addEventListener("click",function(e){
+    var btn=e.target.closest(".view");
+    if(btn){ var p=progById(btn.getAttribute("data-id")); if(p) openModal(p); }
+  });
+  modal.addEventListener("click",function(e){ if(e.target.closest("[data-close]")) closeModal(); });
+  document.addEventListener("keydown",function(e){ if(e.key==="Escape" && modal.classList.contains("open")) closeModal(); });
+
+  document.querySelectorAll(".chip").forEach(function(c){
+    c.addEventListener("click",function(){ searchEl.value=c.textContent; render(); searchEl.focus(); });
+  });
+
+  searchEl.addEventListener("input",render);
+  condEl.addEventListener("change",render);
+  typeEl.addEventListener("change",render);
+  render();
+
+  /* ============================================================
+     ELIGIBILITY ESTIMATOR — rough, income-only screening.
+     Government-program limits use the live site figures (window.MEDICARE_FIGURES);
+     PAP/foundation flags use % of the federal poverty level.
+     ============================================================ */
+  var FPL_BASE=[0,15650,21150,26650,32150,37650,43150,48650,54150]; // 2025 federal poverty guidelines (48 states + DC) — verify annually
+  var FPL_ADD=5500, FPL_YEAR="2025";
+  function fplFor(size){ return size<=8 ? FPL_BASE[size] : FPL_BASE[8]+FPL_ADD*(size-8); }
+
+  var estGo=document.getElementById("est-go");
+  if(estGo){
+    var estStatus=document.getElementById("est-status");
+    var estHouse=document.getElementById("est-house");
+    var estIncome=document.getElementById("est-income");
+    var estCost=document.getElementById("est-cost");
+    var estResult=document.getElementById("est-result");
+
+    function estRow(state,title,text){
+      var ico=state==="yes"?'<i class="fa-solid fa-check"></i>':state==="maybe"?'<i class="fa-solid fa-circle-question"></i>':'<i class="fa-solid fa-minus"></i>';
+      return '<div class="est-row"><div class="ico '+state+'">'+ico+'</div><div><h4>'+title+'</h4><p>'+text+'</p></div></div>';
+    }
+    function estTier(pct,strong,maybe){ return pct<=strong?"yes":pct<=maybe?"maybe":"no"; }
+    function estTierText(state){ return state==="yes"?"You likely qualify based on income.":state==="maybe"?"You may qualify — worth applying.":"Your income is likely above the typical limit, but rules vary."; }
+
+    estGo.addEventListener("click",function(){
+      var size=parseInt(estHouse.value,10)||1;
+      var income=parseFloat((estIncome.value||"").replace(/[^0-9.]/g,""));
+      if(!income || income<0){
+        estResult.innerHTML='<div class="est-note"><i class="fa-solid fa-circle-info"></i> Enter your annual household income to see an estimate.</div>';
+        estResult.classList.add("show"); return;
+      }
+      var status=estStatus.value;
+      var fpl=fplFor(size);
+      var pct=income/fpl*100;
+      var monthly=income/12;
+
+      var html="";
+      var eh=estTier(pct,150,160);
+      html+=estRow(eh,"Medicare Extra Help (Part D)",estTierText(eh)+" Extra Help can erase most Part D drug costs.");
+
+      var mspState="no", mspText="Income may be above the limit, but resource rules vary — worth checking.";
+      if(FIGURES && FIGURES.medicareSavingsPrograms){
+        var k=status==="married"?"couple":"individual";
+        var msp=FIGURES.medicareSavingsPrograms;
+        if(monthly<=msp.qmb[k]){ mspState="yes"; mspText="You may qualify for QMB — the most generous level, which also pays your Part B premium."; }
+        else if(monthly<=msp.slmb[k]){ mspState="yes"; mspText="You may qualify for SLMB, which pays your Part B premium and unlocks Extra Help."; }
+        else if(monthly<=msp.qi[k]){ mspState="maybe"; mspText="You may qualify for QI, which pays your Part B premium and unlocks Extra Help."; }
+      }
+      html+=estRow(mspState,"Medicare Savings Programs",mspText);
+
+      var pap=estTier(pct,300,400);
+      html+=estRow(pap,"Manufacturer Patient Assistance",estTierText(pap)+" These provide brand-name drugs free or at low cost.");
+
+      var fnd=estTier(pct,400,500);
+      html+=estRow(fnd,"Foundation Grants",estTierText(fnd)+" Available when a fund is open for your diagnosis.");
+
+      var costVal=parseInt(estCost.value,10)||0;
+      var costNote = costVal>=600 ? " With high monthly drug costs, the $2,000 yearly Part D cap matters a lot — ask about the Medicare Prescription Payment Plan to spread payments over the year." : "";
+
+      estResult.innerHTML=
+        '<div style="font-weight:700;color:var(--mc-blue-deep);margin-bottom:6px;">Your income is about '+Math.round(pct)+'% of the federal poverty level (household of '+size+').</div>'+
+        html+
+        '<div class="est-note"><i class="fa-solid fa-circle-info"></i> This is a rough, income-only screening based on '+FPL_YEAR+' federal poverty guidelines. Real eligibility also depends on your assets and resources, your specific diagnosis, and whether a fund is currently open.'+costNote+'</div>'+
+        '<div class="est-cta">'+
+          '<a class="primary" href="sms:18013680700?body=Hi%20Bret%2C%20can%20you%20help%20me%20apply%20for%20drug%20assistance%3F"><i class="fa-solid fa-comment-sms"></i> Text Bret to help me apply</a>'+
+          '<a class="ghost" href="tel:8013680700"><i class="fa-solid fa-phone"></i> Call (801) 368-0700</a>'+
+        '</div>';
+      estResult.classList.add("show");
+    });
+  }
+
+  /* ---- Foundation fund status (manually maintained via the `status` field) ---- */
+  var fundStatusEl=document.getElementById("fund-status");
+  if(fundStatusEl){
+    var foundations=PROGRAMS.filter(function(p){return p.type==="foundation" && p.status;});
+    fundStatusEl.innerHTML=foundations.map(function(p){
+      return '<div class="fund-row"><span class="fname"><a href="'+p.url+'" target="_blank" rel="noopener">'+p.name+'</a></span>'+statusPill(p)+'</div>';
+    }).join("");
+  }
+
+  /* ---- Printable checklist ---- */
+  var printBtn=document.getElementById("print-btn");
+  if(printBtn){ printBtn.addEventListener("click",function(){ window.print(); }); }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import {
+  FEATURED_DRUGS,
+  programsForDrug,
+  condLabel,
+  TYPE_META,
+  FUND_STATUS_META,
+  type Program,
+  type FeaturedDrug,
+} from '../data/drugAssistance';
+
+export function getStaticPaths() {
+  return FEATURED_DRUGS.map((d) => ({ params: { drug: d.slug }, props: { d } }));
+}
+
+const { d } = Astro.props as { d: FeaturedDrug };
+const groups = programsForDrug(d.drug, d.conditions);
+
+const canonical = `/${d.slug}-assistance-program.html`;
+const title = `${d.drug} Assistance Programs — Help Paying for ${d.drug} | AltaMedicare`;
+const description = `How to get help paying for ${d.drug} (${d.generic}) on Medicare: manufacturer patient assistance, nonprofit copay grants, and Extra Help. Why copay coupons don't work on Medicare — and what does.`;
+
+const smsHref = (msg: string) => `sms:18013680700?body=${encodeURIComponent(msg)}`;
+const telLink = (phone: string) => `tel:${phone.replace(/[^0-9]/g, '')}`;
+
+// Ordered sections of programs shown on the page.
+const sections: { key: string; heading: string; blurb: string; items: Program[] }[] = [
+  { key: 'manufacturer', heading: `${d.drug} Manufacturer Assistance`, blurb: `The company that makes ${d.drug} may provide it free or at low cost to people who qualify by income — including many Medicare beneficiaries.`, items: groups.manufacturer },
+  { key: 'foundation', heading: 'Nonprofit Copay Grant Foundations', blurb: `Disease-based charities that give grants you can use with Medicare for ${d.conditionLabel}. Funds open and close based on availability.`, items: groups.foundation },
+  { key: 'government', heading: 'Government Programs', blurb: 'Federal and state programs that lower your overall drug and Medicare costs.', items: groups.government },
+  { key: 'database', heading: 'Search & Discount Tools', blurb: 'Free databases that list additional programs and discounts.', items: groups.database },
+].filter((s) => s.items.length > 0);
+
+const related = FEATURED_DRUGS.filter((x) => x.slug !== d.slug).slice(0, 6);
+
+const faqs = [
+  {
+    q: `Can I use a ${d.drug} copay card if I have Medicare?`,
+    a: `Usually no. Federal anti-kickback rules generally prohibit people with Medicare from using manufacturer copay coupons or savings cards for ${d.drug}. But you may still qualify for the manufacturer's Patient Assistance Program, which provides ${d.drug} free or at low cost based on income.`,
+  },
+  {
+    q: `How do I get help paying for ${d.drug}?`,
+    a: `Start with the ${d.drug} manufacturer assistance program, check whether a nonprofit foundation has an open fund for your condition, and apply for Medicare Extra Help if your income is limited. A licensed agent can screen you and help you apply — free.`,
+  },
+  {
+    q: `Is ${d.drug} covered by Medicare Part D?`,
+    a: `${d.drug} is often on Part D and Medicare Advantage drug formularies, frequently on a higher brand or specialty tier and sometimes with prior authorization. Coverage and cost vary by plan. See our guide on whether Medicare covers ${d.drug}, or have us check your specific plan.`,
+  },
+  {
+    q: `Is applying for ${d.drug} assistance free?`,
+    a: `Yes. Every program here is free to apply for. Never pay a fee to enroll in Extra Help, a foundation grant, or a manufacturer assistance program — that's a red flag for a scam.`,
+  },
+];
+
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+
+<MainLayout title={title} description={description} canonical={canonical} pageType="Guide">
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(faqLd)} slot="head" />
+
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a> &nbsp;&rsaquo;&nbsp; <a href="/tools.html">Tools</a> &nbsp;&rsaquo;&nbsp;
+        <a href="/prescription-drug-assistance.html">Drug Assistance</a> &nbsp;&rsaquo;&nbsp; {d.drug}
+      </div>
+      <h1>{d.drug} Assistance Programs</h1>
+      <p class="lede">Help paying for {d.drug} ({d.generic}) — manufacturer patient assistance, nonprofit copay grants, and Medicare Extra Help for {d.conditionLabel}.</p>
+    </div>
+  </section>
+
+  <section class="section-white">
+    <div class="container content-narrow">
+      <div class="callout">
+        <p style="margin:0;"><strong>On Medicare?</strong> You generally <strong>cannot use a {d.drug} copay coupon or savings card</strong> — federal anti-kickback rules block them. But the manufacturer's <strong>Patient Assistance Program</strong> (free drug by income) and nonprofit <strong>foundation grants</strong> still can help. Below are the routes that work <em>with</em> Medicare.</p>
+      </div>
+
+      {sections.map((s) => (
+        <section class="da-section">
+          <h2>{s.heading}</h2>
+          <p class="da-blurb">{s.blurb}</p>
+          <div class="da-list">
+            {s.items.map((p) => (
+              <div class="da-card">
+                <div class="da-card-head">
+                  <h3>{p.name}</h3>
+                  <div class="da-badges">
+                    <span class="da-badge">{TYPE_META[p.type].label}</span>
+                    {p.status && <span class={`da-status ${FUND_STATUS_META[p.status].cls}`}>{FUND_STATUS_META[p.status].dot} {FUND_STATUS_META[p.status].label}</span>}
+                  </div>
+                </div>
+                <p class="da-helps">{p.helps}</p>
+                <p class="da-elig"><strong>Who may qualify:</strong> {p.eligibility}</p>
+                {p.conditions[0] !== 'any' && (
+                  <p class="da-conds"><strong>Conditions:</strong> {p.conditions.map((c) => condLabel(c)).join(', ')}</p>
+                )}
+                <div class="da-actions">
+                  <a class="btn btn-primary" href={p.url} target="_blank" rel="noopener">{p.urlLabel} &rarr;</a>
+                  {p.phone && <a class="btn btn-outline" href={telLink(p.phone)}>{p.phone}</a>}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      ))}
+
+      <div class="callout" style="margin-top:34px;">
+        <p style="margin:0;"><strong>Not sure which one fits you?</strong> Use the free <a href="/prescription-drug-assistance.html">Prescription Drug Assistance Finder</a> and its quick eligibility estimator, read <a href={`/blog/${d.blogSlug}.html`}>Does Medicare cover {d.drug}?</a>, or let Bret screen you and help you apply.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tinted">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Plain-English answers</span>
+        <h2>{d.drug} Assistance — FAQ</h2>
+      </div>
+      <div class="content-narrow">
+        {faqs.map((f) => (
+          <details class="da-faq">
+            <summary>{f.q}</summary>
+            <div class="da-faq-a">{f.a}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-white">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">More medications</span>
+        <h2>Assistance for Other Costly Drugs</h2>
+      </div>
+      <div class="card-grid">
+        {related.map((r) => (
+          <a class="card" href={`/${r.slug}-assistance-program.html`} style="text-decoration:none;">
+            <div class="card-icon"><i class="fa-solid fa-hand-holding-dollar" style="font-size:1.5rem"></i></div>
+            <h3>{r.drug} Assistance</h3>
+            <p>Help paying for {r.drug} ({r.generic}).</p>
+            <span class="card-link">View programs</span>
+          </a>
+        ))}
+      </div>
+      <div style="text-align:center; margin-top:32px;">
+        <a href="/prescription-drug-assistance.html" class="btn btn-outline">Open the full Drug Assistance Finder</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="container">
+      <h2>Struggling to afford {d.drug}?</h2>
+      <p>Send Bret your medication list — he'll check assistance programs, Extra Help, and which Part D plan covers {d.drug} for the least. Free, no pressure.</p>
+      <div class="cta-buttons">
+        <a href={smsHref(`Hi Bret, can you help me afford ${d.drug}?`)} class="btn btn-primary btn-lg">Text Bret About {d.drug}</a>
+        <a href="tel:8013680700" class="btn btn-outline btn-lg">Call (801) 368-0700</a>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .da-section { margin-top: 34px; }
+  .da-section > h2 { margin-bottom: 4px; }
+  .da-blurb { color: var(--text-muted, #6b7280); margin: 0 0 18px; }
+  .da-list { display: grid; gap: 16px; }
+  .da-card { border: 1px solid #e6ebf2; border-radius: 14px; padding: 20px 22px; background: #fff; box-shadow: 0 6px 18px -16px rgba(13, 63, 134, .5); }
+  .da-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
+  .da-card-head h3 { margin: 0; font-size: 1.18rem; }
+  .da-badges { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
+  .da-badge { flex: none; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; padding: 5px 11px; border-radius: 20px; background: #eaf2fd; color: #0d3f86; }
+  .da-status { flex: none; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; padding: 5px 11px; border-radius: 20px; }
+  .da-status.b-green { background: #ecfdf3; color: #15803d; }
+  .da-status.b-amber { background: #fff7ed; color: #b45309; }
+  .da-status.b-red { background: #fef3f2; color: #b42318; }
+  .da-helps { margin: 12px 0 0; }
+  .da-elig, .da-conds { margin: 8px 0 0; font-size: .94rem; color: var(--text-muted, #475467); }
+  .da-actions { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 10px; }
+  .da-actions .btn { padding: 10px 18px; }
+  .da-faq { background: #fff; border: 1px solid #e6ebf2; border-radius: 12px; margin-bottom: 10px; overflow: hidden; }
+  .da-faq summary { list-style: none; cursor: pointer; padding: 17px 20px; font-weight: 600; font-size: 1.05rem; color: #0a2540; }
+  .da-faq summary::-webkit-details-marker { display: none; }
+  .da-faq[open] summary { padding-bottom: 6px; }
+  .da-faq-a { padding: 0 20px 18px; color: var(--text-muted, #475467); }
+</style>

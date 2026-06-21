@@ -1,0 +1,97 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import LocationTools from './LocationTools.astro';
+import LocationFaq from './LocationFaq.astro';
+import LocationCTA from './LocationCTA.astro';
+import LocationBreadcrumb from './LocationBreadcrumb.astro';
+import { pageHref, trail, type Place } from '../../data/places';
+
+interface Props {
+  place: Place;
+}
+const { place } = Astro.props;
+const n = place.name;
+const canonical = pageHref(place, 'medicare-advantage');
+const SITE = 'https://altamedicare.com';
+
+const faqs = [
+  { q: `Does Medicare Advantage cost extra in ${n}?`, a: `You still pay your Part B premium, but many Medicare Advantage plans in ${n} have a $0 or low monthly plan premium. Your real costs come from copays, coinsurance, and your plan's out-of-pocket maximum, so it pays to compare the whole picture, not just the premium.` },
+  { q: `What is the difference between an HMO and a PPO?`, a: `An HMO generally keeps costs lower but asks you to stay in-network and often use a primary doctor for referrals. A PPO costs a bit more but lets you see out-of-network providers at a higher share of the cost. The best choice depends on your doctors and how much flexibility you want.` },
+  { q: `Does Medicare Advantage in ${n} include drug coverage?`, a: `Most Medicare Advantage plans include Part D prescription coverage built in. Always confirm your specific medications are on the plan's formulary before enrolling, because every plan covers a different list of drugs.` },
+  { q: `Can I switch Medicare Advantage plans later?`, a: `Yes. You can change plans during the Annual Enrollment Period (October 15 to December 7), and the Medicare Advantage Open Enrollment Period (January 1 to March 31) lets you switch to another Advantage plan or move back to Original Medicare once.` },
+  { q: `Do Medicare Advantage plans in ${n} have an out-of-pocket maximum?`, a: `Yes. Every Medicare Advantage plan has a yearly cap on what you pay for covered medical services, which Original Medicare alone does not. Once you reach it, the plan covers 100% of covered services for the rest of the year.` },
+];
+const faqLd = {
+  '@context': 'https://schema.org', '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+const crumbs = trail(place, { name: 'Medicare Advantage', href: canonical });
+const breadcrumbLd = {
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+  itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: `${SITE}${c.href}` })),
+};
+---
+
+<MainLayout
+  title={`Medicare Advantage in ${n} | How Part C Works | AltaMedicare`}
+  description={`How Medicare Advantage works in ${n}: HMO vs PPO, prescription coverage, extra benefits, enrollment periods, and the questions to ask before choosing a plan.`}
+  canonical={canonical}
+  pageType="Guide"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(faqLd)} />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbLd)} />
+  </Fragment>
+
+  <section class="page-header">
+    <div class="container">
+      <LocationBreadcrumb crumbs={crumbs} />
+      <h1>Medicare Advantage in {n}</h1>
+      <p class="lede">An all-in-one way to get your Medicare &mdash; here is how Medicare Advantage (Part C) works in {n}, and how to tell whether it fits you.</p>
+    </div>
+  </section>
+
+  <section class="section-white">
+    <div class="container content-narrow">
+      <h2>How Medicare Advantage works in {n}</h2>
+      <p>A Medicare Advantage (Part C) plan is offered by a private insurer approved by Medicare. When you join one, the plan provides your Part A and Part B benefits in one package &mdash; usually with Part D drug coverage and extra benefits built in. You keep paying your Part B premium, and you follow the plan's rules for networks and referrals. In exchange, you get a single card, a predictable copay structure, and a yearly out-of-pocket maximum.</p>
+
+      <h2>HMO vs PPO</h2>
+      <p>The two most common Medicare Advantage plan types are HMO and PPO:</p>
+      <ul>
+        <li><strong>HMO</strong> &mdash; usually the lowest cost. You stay within the plan's network and often choose a primary care doctor who coordinates referrals.</li>
+        <li><strong>PPO</strong> &mdash; more flexibility. You can see out-of-network providers, though you pay a higher share. Referrals are usually not required.</li>
+      </ul>
+      <p>If keeping a specific doctor matters, check whether they are in the plan's network before you enroll &mdash; that single detail decides a lot.</p>
+
+      <h2>Prescription coverage</h2>
+      <p>Most Medicare Advantage plans include Part D drug coverage, so you do not need a separate drug plan. Because each plan has its own formulary, the smartest move is to confirm your exact medications are covered &mdash; and at what tier &mdash; before choosing. Our <a href="/medicare-formulary-lookup.html">formulary lookup</a> and <a href="/medicare-drug-cost-calculator.html">drug cost calculator</a> make that quick.</p>
+
+      <h2>Extra benefits</h2>
+      <p>One reason Medicare Advantage is popular is the extras Original Medicare does not cover &mdash; commonly dental, vision, hearing, fitness memberships, and sometimes an over-the-counter allowance or transportation. Benefits vary by plan and change each year, so treat them as a tiebreaker, not the headline.</p>
+
+      <h2>Enrollment periods</h2>
+      <p>You can join a Medicare Advantage plan during your <strong>Initial Enrollment Period</strong> at 65, the <strong>Annual Enrollment Period</strong> (October 15 to December 7), and &mdash; if you are already in an Advantage plan &mdash; the <strong>Medicare Advantage Open Enrollment Period</strong> (January 1 to March 31). See your exact windows with the <a href="/medicare-timeline-calculator.html">timeline calculator</a>, and read our <a href="/blog/annual-enrollment-period-explained.html">guide to the Annual Enrollment Period</a>.</p>
+
+      <h2>Questions to ask before choosing a plan</h2>
+      <ul>
+        <li>Are my doctors and preferred hospital in the plan's network?</li>
+        <li>Are all of my prescriptions on the formulary, and at what tier?</li>
+        <li>What is the out-of-pocket maximum, and what are the copays for the services I use?</li>
+        <li>Does it include the extra benefits I will actually use?</li>
+        <li>Is it an HMO or PPO &mdash; and does that match how I like to get care?</li>
+      </ul>
+      <p>Not sure where to start? Our <a href="/blog/pros-and-cons-of-medicare-advantage.html">pros and cons guide</a> and <a href="/blog/medicare-advantage-vs-medigap.html">Advantage vs. Medigap comparison</a> lay out the trade-offs, and Bret can compare the plans available at your address with you.</p>
+    </div>
+  </section>
+
+  <LocationTools
+    tools={['quiz', 'cost-estimator', 'formulary']}
+    heading="Tools to compare your options"
+    sub="See which coverage type fits, estimate your costs, and check your drugs."
+  />
+
+  <LocationFaq faqs={faqs} heading={`Medicare Advantage in ${n}: FAQs`} />
+
+  <LocationCTA place={place} />
+</MainLayout>

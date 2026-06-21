@@ -1,0 +1,69 @@
+---
+import { getCollection } from 'astro:content';
+import MainLayout from '../../../layouts/MainLayout.astro';
+import { NEWS_CATEGORIES } from '../../../consts';
+
+export async function getStaticPaths() {
+  const items = await getCollection('news', ({ data }) => !data.draft);
+  return Object.entries(NEWS_CATEGORIES).map(([key, cat]) => ({
+    params: { category: key },
+    props: {
+      key,
+      cat,
+      items: items
+        .filter((p) => p.data.category === key)
+        .sort((a, b) => Number(b.data.featured) - Number(a.data.featured) || b.data.date.valueOf() - a.data.date.valueOf())
+        .map((p) => ({ slug: p.slug, ...p.data })),
+    },
+  }));
+}
+
+const { key, cat, items } = Astro.props;
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
+---
+
+<MainLayout
+  title={`${cat.title} News | Medicare Updates | AltaMedicare`}
+  description={`${cat.blurb} Plain-English Medicare news from a licensed Utah agent.`}
+  canonical={`/medicare-news/category/${key}.html`}
+  noIndex={true}
+>
+
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a> &nbsp;&rsaquo;&nbsp; <a href="/medicare-news.html">Medicare News</a> &nbsp;&rsaquo;&nbsp; {cat.title}</div>
+    <h1><i class={`fa-solid ${cat.icon}`} style="margin-right:10px;color:var(--mountain-blue);"></i>{cat.title}</h1>
+    <p class="lede">{cat.blurb}</p>
+  </div>
+</section>
+
+<section class="section-white">
+  <div class="container">
+    {items.length > 0 ? (
+      <div class="post-list">
+        {items.map((p) => (
+          <a href={`/medicare-news/${p.slug}.html`} class="post-row">
+            <div class="pr-main">
+              <span class="pr-cat">{cat.title}</span>
+              <h3>{p.title}</h3>
+              <p>{p.summary}</p>
+            </div>
+            <span class="pr-date">{fmt(p.date)}</span>
+          </a>
+        ))}
+      </div>
+    ) : (
+      <div class="callout" style="max-width:680px;margin:0 auto;">
+        <strong>No updates in this category yet.</strong>
+        <p style="margin:8px 0 0;">Check back soon, or <a href="/medicare-news.html">browse all Medicare news</a>.</p>
+      </div>
+    )}
+
+    <div style="text-align:center; margin-top:36px;">
+      <a href="/medicare-news.html" class="btn btn-outline">&larr; All Medicare news</a>
+    </div>
+  </div>
+</section>
+
+</MainLayout>

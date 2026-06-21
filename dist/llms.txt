@@ -1,0 +1,160 @@
+# AltaMedicare
+
+> Independent, plain-English Medicare guidance for Utah from Bret Swope, a licensed local agent in Orem, UT. Free help understanding Medicare and comparing Medicare Advantage, Medigap (Medicare Supplement), and Part D — plus interactive calculators. Phone: (801) 368-0700.
+
+AltaMedicare publishes evergreen educational content and free tools. We do not rank carriers, publish plan counts, or push "best plans" — plan comparisons and enrollment happen through a secure SunFire portal or by talking with Bret. All dollar figures are for 2026.
+
+## Key 2026 Medicare facts
+- Part B standard premium: $202.90/month; Part B annual deductible: $283; then 20% coinsurance. Original Medicare alone has no out-of-pocket maximum.
+- Part A: $0 premium for most people; inpatient hospital deductible $1,736 per benefit period.
+- Part D: national base premium $38.99; $2,000 annual out-of-pocket cap; insulin capped at $35/month; ACIP-recommended adult vaccines $0. The old coverage gap ("donut hole") is gone.
+- Late penalties: Part B +10% for each full 12 months without it (lifetime); Part D 1% of $38.99 per full month without creditable coverage (lifetime).
+- IRMAA (income surcharge on Part B & Part D) starts above $109,000 single / $218,000 joint, based on income from two years prior (2026 uses 2024).
+- Medicare Savings Programs (2026 monthly income; shared resource limits $9,950 single / $14,910 married): QMB $1,350/$1,824, SLMB $1,616/$2,184, QI $1,816/$2,455.
+- Extra Help (Part D Low-Income Subsidy) 2026 resource limits: $16,590 single / $33,100 married; covered-drug copays no more than $12.65.
+- Enrollment windows: Initial Enrollment Period = 7 months around age 65; Annual Enrollment Period = Oct 15–Dec 7; General Enrollment Period and Medicare Advantage Open Enrollment = Jan 1–Mar 31.
+- By law Medicare cannot cover drugs used for weight loss; some such drugs are covered for other FDA-approved uses.
+
+## Free Tools & Calculators
+- [Eligibility Calculator](https://altamedicare.com/medicare-eligibility-calculator.html): See when you're eligible and your enrollment dates.
+- [IRMAA Calculator](https://altamedicare.com/medicare-irmaa-calculator.html): Estimate your Part B & Part D premiums by income.
+- [Late Penalty Calculator](https://altamedicare.com/medicare-penalty-calculator.html): See if delaying could raise your premiums for life.
+- [Drug Cost Calculator](https://altamedicare.com/medicare-drug-cost-calculator.html): Estimate medication costs and generic alternatives.
+- [Timeline Calculator](https://altamedicare.com/medicare-timeline-calculator.html): Visualize your enrollment windows and deadlines.
+- [Enrollment Countdown](https://altamedicare.com/medicare-enrollment-countdown.html): A live countdown to your enrollment deadlines.
+- [Cost Estimator](https://altamedicare.com/medicare-cost-estimator.html): Estimate total annual costs and compare coverage.
+- [Formulary Lookup](https://altamedicare.com/medicare-formulary-lookup.html): Search drugs for typical Part D coverage & rules.
+- [Drug Assistance Finder](https://altamedicare.com/prescription-drug-assistance.html): Find grants & programs to help pay for costly drugs.
+- [Medicare Plan Quiz](https://altamedicare.com/medicare-quiz.html): Answer 7 questions to find a coverage type that fits.
+- [Medicare Glossary](https://altamedicare.com/medicare-glossary.html): 100+ Medicare terms in plain English.
+
+## Medicare FAQ
+- [Medicare FAQ Hub](https://altamedicare.com/faq.html): 100 common Medicare questions answered, organized by topic.
+- [Enrollment FAQ](https://altamedicare.com/faq/enrollment.html): 15 answers — Sign-up windows, deadlines, and penalties.
+- [Costs & Premiums FAQ](https://altamedicare.com/faq/costs.html): 15 answers — Premiums, deductibles, IRMAA, and savings help.
+- [Prescription Drugs FAQ](https://altamedicare.com/faq/prescription-drugs.html): 20 answers — Part D, coverage rules, and what your drugs cost.
+- [Medicare Advantage FAQ](https://altamedicare.com/faq/medicare-advantage.html): 10 answers — How Advantage (Part C) plans work and who they fit.
+- [Medigap FAQ](https://altamedicare.com/faq/medigap.html): 10 answers — Medicare Supplement plans, compared.
+- [Dual Eligible FAQ](https://altamedicare.com/faq/dual-eligible.html): 10 answers — Medicare + Medicaid, savings programs, D-SNPs.
+- [Turning 65 FAQ](https://altamedicare.com/faq/turning-65.html): 10 answers — What to do as you age into Medicare.
+- [General Medicare FAQ](https://altamedicare.com/faq/general.html): 10 answers — The basics: parts, eligibility, and coverage.
+
+## Guides — Turning 65
+- [What Happens If You Miss Medicare Enrollment?](https://altamedicare.com/blog/what-happens-if-you-miss-medicare-enrollment.html): Missing your Medicare enrollment window can mean lifetime late penalties and a coverage gap. Here's exactly what happens — and how to get back on track.
+- [Medicare and Employer Coverage After Age 65](https://altamedicare.com/blog/medicare-and-employer-coverage-after-65.html): Still working at 65? Whether to take Medicare or keep your employer plan depends on company size, HSAs, and cost. Here's how to decide.
+- [Can I Delay Medicare Part B?](https://altamedicare.com/blog/can-i-delay-medicare-part-b.html): You can delay Part B without penalty only if you have qualifying employer coverage. Here's who can safely wait, who can't, and how the 8-month SEP works.
+- [Medicare Checklist for Turning 65](https://altamedicare.com/blog/medicare-checklist-turning-65.html): A simple step-by-step Medicare checklist for turning 65 in Utah — what to do 6 months out, 3 months out, and right around your birthday.
+- [Initial Enrollment Period Explained](https://altamedicare.com/blog/initial-enrollment-period-explained.html): Your Initial Enrollment Period is the 7-month window to sign up for Medicare around your 65th birthday. Here's how it works and how to avoid missing it.
+
+## Guides — Prescription Drug Coverage (drug cluster)
+- [Does Medicare Cover Zepbound?](https://altamedicare.com/blog/does-medicare-cover-zepbound.html): Medicare can't cover Zepbound for weight loss — but Part D can cover it for obstructive sleep apnea. Here's how the prescribed diagnosis decides your coverage.
+- [Does Medicare Cover Wegovy?](https://altamedicare.com/blog/does-medicare-cover-wegovy.html): Medicare can't cover Wegovy for weight loss — but Part D can cover it to reduce cardiovascular risk. Here's how the prescribed indication decides your coverage.
+- [Does Medicare Cover Skyrizi?](https://altamedicare.com/blog/does-medicare-cover-skyrizi.html): Medicare covers Skyrizi — under Part D when self-injected, or sometimes Part B when given by IV. Here's how coverage works for psoriasis and Crohn's.
+- [Does Medicare Cover Rinvoq?](https://altamedicare.com/blog/does-medicare-cover-rinvoq.html): Yes — Medicare Part D covers Rinvoq as a specialty drug, usually with prior authorization or step therapy. Here's how coverage works.
+- [Does Medicare Cover Repatha?](https://altamedicare.com/blog/does-medicare-cover-repatha.html): Yes — Medicare Part D covers Repatha to lower cholesterol, usually after you've tried statins. Here's how coverage, step therapy, and prior authorization work.
+- [Does Medicare Cover Dupixent?](https://altamedicare.com/blog/does-medicare-cover-dupixent.html): Yes — Medicare Part D covers Dupixent, typically as a specialty drug with prior authorization. Here's how coverage works for eczema, asthma, and more.
+- [Does Medicare Cover Humira?](https://altamedicare.com/blog/does-medicare-cover-humira.html): Yes — Medicare Part D covers Humira, usually as a specialty drug. Here's how coverage works, why plans may prefer a biosimilar, and what the $2,000 cap means.
+- [Does Medicare Cover Xarelto?](https://altamedicare.com/blog/does-medicare-cover-xarelto.html): Yes — Medicare Part D covers Xarelto, and it's one of the first Medicare-negotiated drugs in 2026. Here's how coverage, tiers, and prior authorization work.
+- [Does Medicare Cover Farxiga?](https://altamedicare.com/blog/does-medicare-cover-farxiga.html): Yes — Medicare Part D covers Farxiga for diabetes, heart failure, and kidney disease. It's also a 2026 Medicare-negotiated drug. Here's what to know.
+- [Does Medicare Cover Mounjaro?](https://altamedicare.com/blog/does-medicare-cover-mounjaro.html): Medicare Part D covers Mounjaro for type 2 diabetes — but not for weight loss. Here's how coverage works and how it differs from Zepbound.
+- [Does Medicare Cover Trulicity?](https://altamedicare.com/blog/does-medicare-cover-trulicity.html): Yes — Medicare Part D covers Trulicity when it's prescribed for type 2 diabetes. Here's how coverage, prior authorization, and step therapy typically work.
+- [Does Medicare Cover Trelegy?](https://altamedicare.com/blog/does-medicare-cover-trelegy.html): Yes — Medicare Part D covers Trelegy for COPD and asthma. Here's how coverage works, why prior authorization is common, and what to check on your plan's formulary.
+- [Does Medicare Cover Enbrel?](https://altamedicare.com/blog/does-medicare-cover-enbrel.html): Yes — Medicare Part D covers Enbrel as a specialty drug, and it's a 2026 Medicare-negotiated drug. Here's how coverage and prior authorization work.
+- [Does Medicare Cover Entresto?](https://altamedicare.com/blog/does-medicare-cover-entresto.html): Yes — Medicare Part D covers Entresto for heart failure, and it's a 2026 Medicare-negotiated drug. Here's how coverage and prior authorization work.
+- [Does Medicare Cover Insulin?](https://altamedicare.com/blog/does-medicare-cover-insulin.html): Yes — Medicare covers insulin, and a covered month's supply is capped at $35 under the Inflation Reduction Act. Here's how coverage works under Part D and Part B.
+- [Does Medicare Cover Inhalers?](https://altamedicare.com/blog/does-medicare-cover-inhalers.html): Yes — Medicare Part D covers prescription inhalers for asthma and COPD. Here's how coverage, tiers, and prior authorization work, and how the $2,000 cap helps.
+- [What Is the Medicare $35 Insulin Cap?](https://altamedicare.com/blog/medicare-35-dollar-insulin-cap.html): Under the Inflation Reduction Act, a covered month's supply of insulin costs no more than $35 with no deductible. Here's exactly how the Medicare insulin cap works.
+- [What Is Step Therapy?](https://altamedicare.com/blog/what-is-step-therapy.html): Step therapy means trying a lower-cost drug before your plan covers a pricier one. Here's how it works in Medicare and how to request an exception.
+- [What Is Prior Authorization?](https://altamedicare.com/blog/what-is-prior-authorization.html): Prior authorization means your plan must approve a drug or service before it's covered. Here's how it works in Medicare and how to get through it smoothly.
+- [Does Medicare Cover Jardiance?](https://altamedicare.com/blog/does-medicare-cover-jardiance.html): Medicare Part D covers Jardiance for type 2 diabetes, heart failure, and kidney disease. It's also a Medicare-negotiated drug starting in 2026 — here's what to know.
+- [Does Medicare Cover Eliquis?](https://altamedicare.com/blog/does-medicare-cover-eliquis.html): Yes — Medicare Part D covers Eliquis, and it's one of the first drugs with a Medicare-negotiated price starting in 2026. Here's what that means for your costs.
+- [Does Medicare Cover Ozempic?](https://altamedicare.com/blog/does-medicare-cover-ozempic.html): Medicare Part D covers Ozempic when it's prescribed for type 2 diabetes — but not for weight loss. Here's how coverage, tiers, and prior authorization work.
+
+## Guides — Costs and Premiums
+- [Extra Help Explained](https://altamedicare.com/blog/extra-help-explained.html): Extra Help (the Part D Low-Income Subsidy) lowers prescription drug costs for people with limited income. See who may qualify and how to apply.
+- [How Much Does Medicare Cost?](https://altamedicare.com/blog/how-much-does-medicare-cost.html): A clear breakdown of 2026 Medicare costs: Part A, the Part B premium and deductible, Part D, IRMAA, and the extra coverage that caps your spending.
+- [What Is the Medicare Part B Deductible?](https://altamedicare.com/blog/what-is-the-medicare-part-b-deductible.html): The 2026 Medicare Part B deductible is $283. Learn what it covers, how it works with the 20% coinsurance, and how Medigap or Advantage change the math.
+- [IRMAA Brackets Explained (2026)](https://altamedicare.com/blog/irmaa-brackets-explained.html): IRMAA is the income surcharge added to Medicare Part B and Part D for higher earners. See the 2026 brackets, how the two-year lookback works, and how to appeal.
+- [Medicare Part B Premiums for 2026](https://altamedicare.com/blog/medicare-part-b-premiums-2026.html): The 2026 Medicare Part B premium is $202.90 a month with a $283 deductible. Here's what's changed, who pays more, and how to plan for it.
+
+## Guides — Enrollment
+- [Medicare Late Enrollment Penalties](https://altamedicare.com/blog/medicare-late-enrollment-penalties.html): Medicare's Part B and Part D late penalties are permanent and add up fast. Here's exactly how they're calculated — and how to avoid them entirely.
+- [General Enrollment Period Explained](https://altamedicare.com/blog/general-enrollment-period-explained.html): The General Enrollment Period (January 1 to March 31) is the backup window for people who missed Medicare sign-up. Here's how it works and what it costs.
+- [Special Enrollment Period Explained](https://altamedicare.com/blog/special-enrollment-period-explained.html): A Special Enrollment Period lets you enroll in or change Medicare outside the normal windows after a qualifying life event — often with no penalty. Here's how.
+- [Annual Enrollment Period Explained](https://altamedicare.com/blog/annual-enrollment-period-explained.html): The Medicare Annual Enrollment Period runs October 15 to December 7. Here's what you can change, why to review every year, and how to avoid common mistakes.
+- [Medicare Timeline Explained](https://altamedicare.com/blog/medicare-timeline-explained.html): From your first enrollment window to annual reviews, here's the full Medicare timeline — every key date and deadline in one clear roadmap.
+
+## Guides — Medicare Advantage
+- [Which Medicare Plan Is Right for Me?](https://altamedicare.com/blog/which-medicare-plan-is-right-for-me.html): There's no single best Medicare plan — only the best fit for your doctors, drugs, budget, and travel. Here's a simple framework to narrow it down.
+- [Pros and Cons of Medicare Advantage](https://altamedicare.com/blog/pros-and-cons-of-medicare-advantage.html): Medicare Advantage plans offer low premiums and extra benefits — but networks and prior authorization are real trade-offs. Here's an honest look at both sides.
+- [Medicare Advantage vs Medigap](https://altamedicare.com/blog/medicare-advantage-vs-medigap.html): Medicare Advantage and Medigap solve the same problem two very different ways. Here's an honest side-by-side to help you choose the right fit.
+
+## Guides — Medigap
+- [What Is Medicare Supplement Plan N?](https://altamedicare.com/blog/what-is-medicare-supplement-plan-n.html): Medigap Plan N trades a lower premium for small copays and possible excess charges. Here's how it compares to Plan G and who it fits best.
+- [What Is Medicare Supplement Plan G?](https://altamedicare.com/blog/what-is-medicare-supplement-plan-g.html): Medigap Plan G is the most popular Medicare Supplement for new enrollees. It covers nearly every gap after the Part B deductible. Here's how it works.
+
+## Guides — Dual Eligible
+- [Dual Eligible Checklist: Get Every Benefit You Qualify For](https://altamedicare.com/blog/dual-eligible-checklist.html): A simple checklist for people with both Medicare and Medicaid — make sure you're getting your premium help, Extra Help, and every D-SNP benefit available.
+- [How to Apply for Medicaid in Utah](https://altamedicare.com/blog/how-to-apply-for-medicaid-in-utah.html): A plain-English walkthrough of applying for Medicaid and Medicare Savings Programs in Utah — what you'll need, where to apply, and what happens next.
+- [Medicaid Income Limits and How They Affect Medicare](https://altamedicare.com/blog/medicaid-income-limits.html): Income and resource limits decide whether you qualify for Medicaid or a Medicare Savings Program. Here are the 2026 figures and how Utah determines eligibility.
+- [How to Enroll in a D-SNP](https://altamedicare.com/blog/how-to-enroll-in-a-d-snp.html): If you have both Medicare and Medicaid, you can join a D-SNP and often switch plans more than once a year. Here's the step-by-step enrollment process.
+- [D-SNP Plans Explained](https://altamedicare.com/blog/d-snp-plans-explained.html): A D-SNP is a Medicare Advantage plan built just for people with both Medicare and Medicaid. Here's how Dual Eligible Special Needs Plans work and who they fit.
+- [Extra Benefits for Dual Eligible Beneficiaries](https://altamedicare.com/blog/extra-benefits-for-dual-eligible-beneficiaries.html): Dual eligible members often unlock benefits Original Medicare doesn't offer — dental, vision, hearing, OTC allowances, transportation, and more. Here's what's available.
+- [What Is the QMB Program?](https://altamedicare.com/blog/what-is-the-qmb-program.html): The QMB program is the most generous Medicare Savings Program — it pays your Part A and Part B premiums plus deductibles and copays, and bans balance billing.
+- [QMB vs SLMB vs QI: Which Medicare Savings Program Fits?](https://altamedicare.com/blog/qmb-vs-slmb-vs-qi.html): QMB, SLMB, and QI each help with Medicare costs at different income levels. Here's a side-by-side of the three 2026 programs and what each one pays.
+- [Medicare Savings Programs Explained](https://altamedicare.com/blog/medicare-savings-programs.html): Medicare Savings Programs help pay your Part A and Part B premiums and sometimes your deductibles and copays. See the 2026 programs and income limits.
+- [Full vs Partial Dual Eligibility](https://altamedicare.com/blog/full-vs-partial-dual-eligibility.html): Not all dual eligibility is the same. Full duals get complete Medicaid; partial duals get help with Medicare costs only. Here's how to tell which you are.
+- [Medicare and Medicaid Together: How They Work](https://altamedicare.com/blog/medicare-and-medicaid-together.html): When you have both Medicare and Medicaid, the two programs coordinate so almost nothing falls through the cracks. Here's who pays for what.
+- [What Is Dual Eligibility?](https://altamedicare.com/blog/what-is-dual-eligibility.html): Dual eligibility means you qualify for both Medicare and Medicaid. Here's what that means, who qualifies in 2026, and how the two programs work together.
+- [Losing Medicaid: What Happens to Your Medicare?](https://altamedicare.com/blog/losing-medicaid-what-happens-to-medicare.html): If you lose Medicaid, your Medicare doesn't disappear — but your costs and plan options can change fast. Here's what to do and the windows you get.
+- [Do Dual Eligible Members Pay Medicare Costs?](https://altamedicare.com/blog/do-dual-eligible-members-pay-medicare-costs.html): If you have both Medicare and Medicaid, most of your Medicare premiums, deductibles, and copays may be covered. Here's exactly what you do and don't pay.
+- [Extra Help and Dual Eligibility](https://altamedicare.com/blog/extra-help-and-dual-eligibility.html): If you have Medicaid or a Medicare Savings Program, you automatically get Extra Help with prescription drug costs. Here's what that's worth in 2026.
+
+## Guides — Medicare News
+- [Medicare Changes for 2027: What We Know So Far](https://altamedicare.com/blog/medicare-changes-for-2027.html): Medicare's 2027 premiums and brackets won't be set until late 2026, but several changes are already scheduled. Here's what to watch and how to prepare.
+- [The $2,000 Drug Cap Explained](https://altamedicare.com/blog/the-2000-drug-cap-explained.html): Starting in 2025 and continuing in 2026, Medicare Part D caps your out-of-pocket drug costs at $2,000 a year. Here's how the cap works and who it helps most.
+- [New Part D Rules: What Changed](https://altamedicare.com/blog/new-part-d-rules.html): Medicare Part D looks very different now — three coverage phases, a $2,000 cap, monthly payment smoothing, and capped insulin. Here's what changed and why it matters.
+- [Inflation Reduction Act: How It's Changing Medicare](https://altamedicare.com/blog/inflation-reduction-act-medicare-changes.html): The Inflation Reduction Act brought the biggest Medicare drug changes in years — a $2,000 cap, $35 insulin, free vaccines, and drug price negotiation. Here's the rundown.
+
+## Medicare in Utah
+- [Medicare in Utah](https://altamedicare.com/utah.html): Overview of Medicare options, enrollment, and local help in Utah.
+- [Medicare Advantage in Utah](https://altamedicare.com/utah/medicare-advantage.html): How Part C (HMO/PPO), networks, and extra benefits work in Utah.
+- [Medicare Supplement in Utah](https://altamedicare.com/utah/medicare-supplement.html): Medigap Plan G, Plan N, and guaranteed issue rights in Utah.
+- [Part D in Utah](https://altamedicare.com/utah/part-d.html): Prescription drug coverage, formularies, and the $2,000 cap in Utah.
+
+## Utah Counties
+- [Medicare in Salt Lake County](https://altamedicare.com/utah/salt-lake-county.html): Overview of Medicare options, enrollment, and local help in Salt Lake County.
+- [Medicare Advantage in Salt Lake County](https://altamedicare.com/utah/salt-lake-county/medicare-advantage.html): How Part C (HMO/PPO), networks, and extra benefits work in Salt Lake County.
+- [Medicare Supplement in Salt Lake County](https://altamedicare.com/utah/salt-lake-county/medicare-supplement.html): Medigap Plan G, Plan N, and guaranteed issue rights in Salt Lake County.
+- [Part D in Salt Lake County](https://altamedicare.com/utah/salt-lake-county/part-d.html): Prescription drug coverage, formularies, and the $2,000 cap in Salt Lake County.
+- [Medicare in Utah County](https://altamedicare.com/utah/utah-county.html): Overview of Medicare options, enrollment, and local help in Utah County.
+- [Medicare Advantage in Utah County](https://altamedicare.com/utah/utah-county/medicare-advantage.html): How Part C (HMO/PPO), networks, and extra benefits work in Utah County.
+- [Medicare Supplement in Utah County](https://altamedicare.com/utah/utah-county/medicare-supplement.html): Medigap Plan G, Plan N, and guaranteed issue rights in Utah County.
+- [Part D in Utah County](https://altamedicare.com/utah/utah-county/part-d.html): Prescription drug coverage, formularies, and the $2,000 cap in Utah County.
+- [Medicare in Davis County](https://altamedicare.com/utah/davis-county.html): Overview of Medicare options, enrollment, and local help in Davis County.
+- [Medicare Advantage in Davis County](https://altamedicare.com/utah/davis-county/medicare-advantage.html): How Part C (HMO/PPO), networks, and extra benefits work in Davis County.
+- [Medicare Supplement in Davis County](https://altamedicare.com/utah/davis-county/medicare-supplement.html): Medigap Plan G, Plan N, and guaranteed issue rights in Davis County.
+- [Part D in Davis County](https://altamedicare.com/utah/davis-county/part-d.html): Prescription drug coverage, formularies, and the $2,000 cap in Davis County.
+- [Medicare in Weber County](https://altamedicare.com/utah/weber-county.html): Overview of Medicare options, enrollment, and local help in Weber County.
+- [Medicare Advantage in Weber County](https://altamedicare.com/utah/weber-county/medicare-advantage.html): How Part C (HMO/PPO), networks, and extra benefits work in Weber County.
+- [Medicare Supplement in Weber County](https://altamedicare.com/utah/weber-county/medicare-supplement.html): Medigap Plan G, Plan N, and guaranteed issue rights in Weber County.
+- [Part D in Weber County](https://altamedicare.com/utah/weber-county/part-d.html): Prescription drug coverage, formularies, and the $2,000 cap in Weber County.
+- [Medicare in Washington County](https://altamedicare.com/utah/washington-county.html): Overview of Medicare options, enrollment, and local help in Washington County.
+- [Medicare Advantage in Washington County](https://altamedicare.com/utah/washington-county/medicare-advantage.html): How Part C (HMO/PPO), networks, and extra benefits work in Washington County.
+- [Medicare Supplement in Washington County](https://altamedicare.com/utah/washington-county/medicare-supplement.html): Medigap Plan G, Plan N, and guaranteed issue rights in Washington County.
+- [Part D in Washington County](https://altamedicare.com/utah/washington-county/part-d.html): Prescription drug coverage, formularies, and the $2,000 cap in Washington County.
+
+## Plans & Topics
+- [Medicare Basics](https://altamedicare.com/medicare-basics.html): Parts A, B, C, and D explained in plain English.
+- [Medicare Advantage](https://altamedicare.com/medicare-advantage.html): All-in-one Part C plans with networks and extra benefits.
+- [Medicare Supplement (Medigap)](https://altamedicare.com/medicare-supplement.html): Predictable costs and nationwide provider flexibility.
+- [Prescription Drug Plans (Part D)](https://altamedicare.com/prescription-drug-plans.html): Formularies, insulin caps, and the $2,000 out-of-pocket cap.
+- [Dual Eligible / Medicaid (D-SNP)](https://altamedicare.com/dual-eligible.html): Extra benefits for people with both Medicare and Medicaid.
+- [Dental, Vision & Hearing](https://altamedicare.com/dental-vision-hearing.html): Coverage Original Medicare leaves out.
+- [Turning 65](https://altamedicare.com/turning-65.html): Enrollment timeline and avoiding lifetime late penalties.
+- [Drug Savings](https://altamedicare.com/drug-savings.html): Free prescription review across Part D plans and pharmacies.
+
+## Contact & Enrollment
+- [About Bret Swope](https://altamedicare.com/about.html): Licensed Utah Medicare agent based in Orem.
+- [Contact](https://altamedicare.com/contact.html): Call or text (801) 368-0700 · Orem, Utah · Mon–Fri 9am–6pm MT.
+- Compare Plans Online (secure portal): https://www.sunfirematrix.com/app/consumer/medicareadvocates/5454608/#/

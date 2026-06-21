@@ -1,0 +1,218 @@
+---
+// "Latest Medicare News" ticker — a continuous, right-to-left news strip.
+// Source of truth: the `news` content collection (src/content/news/*.md). Add a
+// markdown article there and it appears here automatically — featured/newest first.
+// Every headline is rendered server-side (links included) so search engines crawl
+// them; CSS handles the scrolling. Each headline links to the full article page at
+// /medicare-news/<slug>.html (internal linking, not off-site).
+import { getCollection } from 'astro:content';
+
+const MAX_ITEMS = 8;
+
+// Keep items live through the end of their optional `expires` day (UTC).
+const startOfToday = new Date();
+startOfToday.setUTCHours(0, 0, 0, 0);
+
+const items = (await getCollection('news', ({ data }) => !data.draft))
+  .filter((p) => !p.data.expires || p.data.expires.valueOf() >= startOfToday.valueOf())
+  // Featured first, then newest date.
+  .sort(
+    (a, b) =>
+      Number(b.data.featured) - Number(a.data.featured) ||
+      b.data.date.valueOf() - a.data.date.valueOf()
+  )
+  .slice(0, MAX_ITEMS)
+  .map((p) => ({
+    title: p.data.title,
+    tag: p.data.tag,
+    url: `/medicare-news/${p.slug}.html`,
+  }));
+
+// Render the list twice so the scroll loops seamlessly (track animates -50%).
+// The second copy is hidden from screen readers and the tab order.
+const loop = [
+  ...items.map((item) => ({ ...item, dup: false })),
+  ...items.map((item) => ({ ...item, dup: true })),
+];
+
+// Pace scales with how many headlines there are, so the speed feels constant.
+const durationSec = Math.max(items.length * 6, 24);
+const hasItems = items.length > 0;
+---
+
+{hasItems && (
+  <section class="mn-section" aria-label="Latest Medicare news">
+    <div class="mn-ticker">
+      <a class="mn-ticker-label" href="/medicare-news.html">
+        <span aria-hidden="true">📰</span>&nbsp;Medicare News
+      </a>
+
+      <div class="mn-ticker-viewport" role="region" aria-label="Latest Medicare news headlines">
+        <ul class="mn-track" style={`--mn-duration:${durationSec}s`}>
+          {loop.map((item) => (
+            <li class="mn-item" aria-hidden={item.dup ? 'true' : 'false'}>
+              <a
+                href={item.url}
+                class={`mn-link${item.tag ? ` mn-link--${item.tag.toLowerCase()}` : ''}`}
+                tabindex={item.dup ? -1 : 0}
+              >
+                {item.tag && <span class="mn-flag">{item.tag}</span>}
+                <span class="mn-headline">{item.title}</span>
+                <span class="mn-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+  /* The strip itself adds no surrounding space — it sits flush against the hero
+     above and the next section below. */
+  .mn-section {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Full-bleed strip: break out of the container so it spans the viewport. */
+  .mn-ticker {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+    overflow: hidden;
+  }
+
+  /* Fixed "📰 Medicare News" tab on the left — links to the news hub. */
+  .mn-ticker-label {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 22px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: #fff;
+    background: var(--terracotta);
+    white-space: nowrap;
+    text-decoration: none;
+    z-index: 2;
+    transition: background var(--transition, 0.2s ease);
+  }
+  .mn-ticker-label:hover { background: var(--terracotta-dark, #b85540); }
+
+  .mn-ticker-viewport {
+    position: relative;
+    flex: 1 1 auto;
+    overflow: hidden;
+  }
+
+  /* Soft fade at both edges so headlines appear/disappear gracefully. */
+  .mn-ticker-viewport::before,
+  .mn-ticker-viewport::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 48px;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .mn-ticker-viewport::before {
+    left: 0;
+    background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+  }
+  .mn-ticker-viewport::after {
+    right: 0;
+    background: linear-gradient(to left, #fff, rgba(255, 255, 255, 0));
+  }
+
+  .mn-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    animation: mn-scroll var(--mn-duration, 48s) linear infinite;
+  }
+
+  /* Pause so visitors can read and click. */
+  .mn-ticker:hover .mn-track,
+  .mn-track:focus-within {
+    animation-play-state: paused;
+  }
+
+  .mn-item {
+    flex: 0 0 auto;
+  }
+
+  .mn-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 26px;
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: var(--charcoal, #1f2937);
+    text-decoration: none;
+    white-space: nowrap;
+    border-right: 1px solid var(--border-light);
+    transition: color var(--transition, 0.2s ease), background var(--transition, 0.2s ease);
+  }
+  .mn-link:hover {
+    color: var(--terracotta);
+    background: var(--cream, #faf7f2);
+  }
+
+  .mn-arrow {
+    color: var(--terracotta);
+    font-weight: 700;
+    transition: transform var(--transition, 0.2s ease);
+  }
+  .mn-link:hover .mn-arrow {
+    transform: translateX(3px);
+  }
+
+  /* Small colored badge mirroring the old card tags. */
+  .mn-flag {
+    font-size: 0.66rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--mountain-blue-light, #e0f2fe);
+    color: var(--mountain-blue-dark, #075985);
+  }
+  .mn-link--savings .mn-flag { background: #dcfce7; color: #15803d; }
+  .mn-link--alert .mn-flag { background: #fee2e2; color: #b91c1c; }
+
+  @keyframes mn-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* No motion: stop the scroll and let people swipe/scroll the strip instead.
+     The duplicate set stays hidden so headlines aren't listed twice. */
+  @media (prefers-reduced-motion: reduce) {
+    .mn-track {
+      animation: none;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .mn-track::-webkit-scrollbar { display: none; }
+    .mn-item[aria-hidden='true'] { display: none; }
+  }
+
+  @media (max-width: 600px) {
+    .mn-ticker-label { padding: 0 14px; font-size: 0.72rem; }
+    .mn-link { padding: 14px 18px; font-size: 0.92rem; }
+  }
+</style>

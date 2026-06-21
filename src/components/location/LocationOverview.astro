@@ -1,0 +1,103 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import LocationTools from './LocationTools.astro';
+import LocationFaq from './LocationFaq.astro';
+import LocationCTA from './LocationCTA.astro';
+import LocationBreadcrumb from './LocationBreadcrumb.astro';
+import { hubHref, pageHref, trail, type Place } from '../../data/places';
+
+interface Props {
+  place: Place;
+}
+const { place } = Astro.props;
+const n = place.name;
+const canonical = hubHref(place);
+const SITE = 'https://altamedicare.com';
+
+const faqs = [
+  { q: `Who is eligible for Medicare in ${n}?`, a: `Medicare eligibility is federal, so it works the same in ${n} as everywhere else. Most people qualify at age 65, and some qualify earlier through Social Security disability. You can check your dates with our eligibility calculator.` },
+  { q: `What types of Medicare plans are available in ${n}?`, a: `${n} residents can choose Original Medicare (Parts A and B), often paired with a Medicare Supplement (Medigap) policy and a standalone Part D drug plan, or a Medicare Advantage (Part C) plan that bundles coverage together. The right fit depends on your doctors, prescriptions, budget, and travel.` },
+  { q: `Does it cost anything to work with a local Medicare agent in ${n}?`, a: `No. Working with a licensed agent like Bret is free to you. Agents are paid by the insurance carriers, and plan premiums are the same whether you enroll on your own or with help.` },
+  { q: `When can I enroll in Medicare in ${n}?`, a: `Most people first enroll during their 7-month Initial Enrollment Period around their 65th birthday. After that, the Annual Enrollment Period (October 15 to December 7) lets you change drug and Medicare Advantage plans for the following year.` },
+  { q: `How do I compare Medicare plans in ${n}?`, a: `You can compare plans available at your ZIP code online through our secure comparison portal, or talk through your options with Bret. We look at your doctors, prescriptions, and budget rather than chasing whichever plan is advertised most.` },
+];
+const faqLd = {
+  '@context': 'https://schema.org', '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+const crumbs = trail(place);
+const breadcrumbLd = {
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+  itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: `${SITE}${c.href}` })),
+};
+---
+
+<MainLayout
+  title={`Medicare in ${n} | Plans, Enrollment & Local Help | AltaMedicare`}
+  description={`A plain-English guide to Medicare in ${n}: how Medicare Advantage, Medicare Supplement, and Part D work, when to enroll, and free local help from a licensed Utah agent.`}
+  canonical={canonical}
+  pageType="Guide"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(faqLd)} />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbLd)} />
+  </Fragment>
+
+  <section class="page-header">
+    <div class="container">
+      <LocationBreadcrumb crumbs={crumbs} />
+      <h1>Medicare in {n}</h1>
+      <p class="lede">Everything you need to understand your Medicare options in {n} &mdash; explained in plain English by a licensed local agent, and updated for 2026.</p>
+    </div>
+  </section>
+
+  <section class="section-white">
+    <div class="container content-narrow">
+      <h2>Understanding Medicare in {n}</h2>
+      <p>Medicare itself is a federal program, so the rules, parts, and enrollment windows are the same in {n} as they are across the country. What changes locally is which <strong>private plans</strong> are offered at your ZIP code &mdash; the Medicare Advantage and Part D plans available to you, and the Medigap policies sold in your area. That is exactly where a local agent helps: matching the national rules to the specific plans you can actually choose from.</p>
+      <p>Most people in {n} build their coverage one of two ways:</p>
+      <ul>
+        <li><strong>Original Medicare + a Medigap policy + a Part D drug plan</strong> &mdash; maximum freedom to see any provider that accepts Medicare, with predictable costs.</li>
+        <li><strong>A Medicare Advantage (Part C) plan</strong> &mdash; an all-in-one plan, usually with a low premium, a network, built-in drug coverage, and extra benefits.</li>
+      </ul>
+      <p>Neither is automatically &ldquo;better.&rdquo; The right path depends on your doctors, your prescriptions, your budget, and how much you travel. Our <a href="/medicare-quiz.html">plan quiz</a> and <a href="/blog/which-medicare-plan-is-right-for-me.html">plan-selection guide</a> are good places to start.</p>
+    </div>
+  </section>
+
+  <section class="section-tinted">
+    <div class="container content-narrow">
+      <h2>Medicare Advantage in {n}</h2>
+      <p>Medicare Advantage (Part C) plans are offered by private insurers and bundle your Part A, Part B, and usually Part D into a single plan &mdash; often with a $0 or low premium and extras like dental, vision, and hearing. They use provider networks (HMO or PPO) and have a yearly out-of-pocket maximum that Original Medicare alone does not.</p>
+      <p><a href={pageHref(place, 'medicare-advantage')}><strong>Read the full guide: Medicare Advantage in {n} &rarr;</strong></a></p>
+
+      <h2>Medicare Supplement Plans in {n}</h2>
+      <p>Medicare Supplement (Medigap) policies pair with Original Medicare and pay many of the out-of-pocket costs it leaves behind. There are no networks &mdash; you can see any provider nationwide that accepts Medicare &mdash; and the plans are standardized, so a Plan G is the same coverage from every company. You add a standalone Part D plan for drugs.</p>
+      <p><a href={pageHref(place, 'medicare-supplement')}><strong>Read the full guide: Medicare Supplement in {n} &rarr;</strong></a></p>
+
+      <h2>Part D Prescription Drug Plans in {n}</h2>
+      <p>Part D covers prescription drugs, either as a standalone plan (with Original Medicare) or built into a Medicare Advantage plan. Every plan has its own formulary &mdash; the list of drugs it covers and the tier each sits on &mdash; so the &ldquo;best&rdquo; Part D plan is simply the one that covers your specific medications for the least total cost. In 2026, Part D also has a <strong>$2,000 annual cap</strong> on what you pay out of pocket for covered drugs.</p>
+      <p><a href={pageHref(place, 'part-d')}><strong>Read the full guide: Part D in {n} &rarr;</strong></a></p>
+    </div>
+  </section>
+
+  <section class="section-white">
+    <div class="container content-narrow">
+      <h2>Turning 65 in {n}</h2>
+      <p>If you are approaching 65 in {n}, your most important window is the <strong>Initial Enrollment Period</strong> &mdash; the 7 months around your birthday when you can sign up without penalty. Miss it without qualifying coverage and you can face lifetime late penalties. If you are still working past 65, whether to take Medicare or keep your employer plan depends on your employer's size and your HSA.</p>
+      <p>Our <a href="/blog/medicare-checklist-turning-65.html">turning-65 checklist</a> walks through the steps, and the <a href="/medicare-timeline-calculator.html">timeline calculator</a> maps your exact dates.</p>
+
+      <h2>Help from Bret</h2>
+      <p>Bret Swope is a licensed Medicare agent based in Orem who helps {n} families sort through their options &mdash; at no cost to you. There are no call centers and no pressure: just a local person who explains things clearly, compares the plans available at your address, and helps you enroll if you choose to. Have a question? <a href="/contact.html">Reach out anytime</a> or call <a href="tel:8013680700">(801) 368-0700</a>.</p>
+    </div>
+  </section>
+
+  <LocationTools
+    tools={['eligibility', 'timeline', 'cost-estimator', 'drug-cost']}
+    heading={`${n} Medicare tools`}
+    sub="Free, private calculators to plan your own situation — no sign-up required."
+  />
+
+  <LocationFaq faqs={faqs} heading={`Medicare in ${n}: Common Questions`} />
+
+  <LocationCTA place={place} />
+</MainLayout>

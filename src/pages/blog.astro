@@ -1,0 +1,105 @@
+---
+import { getCollection } from 'astro:content';
+import MainLayout from '../layouts/MainLayout.astro';
+import { CATEGORIES } from '../consts';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+
+const featured = posts.filter((p) => p.data.featured).slice(0, 3);
+const recent = posts.slice(0, 12);
+const countByCat = (key: string) => posts.filter((p) => p.data.category === key).length;
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
+---
+
+<MainLayout
+  title="Medicare Blog & Guides | AltaMedicare"
+  description="Plain-English Medicare articles from a licensed Utah agent: turning 65, drug coverage, costs, enrollment periods, Medicare Advantage, and Medigap."
+  canonical="/blog.html"
+  pageType="Blog"
+>
+
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a> &nbsp;&rsaquo;&nbsp; Blog</div>
+    <h1>Medicare Guides &amp; Articles</h1>
+    <p class="lede">Straight answers to the Medicare questions Utah families actually ask &mdash; written by a licensed local agent, updated for 2026.</p>
+  </div>
+</section>
+
+{featured.length > 0 && (
+  <section class="section-white">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Start here</span>
+        <h2>Featured Articles</h2>
+      </div>
+      <div class="card-grid">
+        {featured.map((p) => (
+          <a href={`/blog/${p.slug}.html`} class="card card-feature" style="text-decoration:none;">
+            <span class="card-eyebrow"><i class={`fa-solid ${CATEGORIES[p.data.category].icon}`}></i> {CATEGORIES[p.data.category].title}</span>
+            <h3>{p.data.title}</h3>
+            <p>{p.data.description}</p>
+            <span class="card-link">Read article</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<section class="section-tinted">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Browse by topic</span>
+      <h2>Categories</h2>
+      <p>Pick the area you&rsquo;re sorting out right now.</p>
+    </div>
+    <div class="card-grid">
+      {Object.entries(CATEGORIES).map(([key, c]) => (
+        <a href={`/blog/category/${key}.html`} class="card cat-card" style="text-decoration:none;">
+          <div class="card-icon"><i class={`fa-solid ${c.icon}`} style="font-size:1.5rem"></i></div>
+          <h3>{c.title}</h3>
+          <p>{c.blurb}</p>
+          <span class="card-link">{countByCat(key)} {countByCat(key) === 1 ? 'article' : 'articles'}</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="section-white">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Fresh off the press</span>
+      <h2>Latest Articles</h2>
+    </div>
+    <div class="post-list">
+      {recent.map((p) => (
+        <a href={`/blog/${p.slug}.html`} class="post-row">
+          <div class="pr-main">
+            <span class="pr-cat">{CATEGORIES[p.data.category].title}</span>
+            <h3>{p.data.title}</h3>
+            <p>{p.data.description}</p>
+          </div>
+          <span class="pr-date">{fmt(p.data.publishDate)}</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <h2>Still have questions?</h2>
+    <p>One free, no-pressure call with a licensed Utah Medicare agent.</p>
+    <div class="cta-buttons">
+      <a href="/contact.html" class="btn btn-primary btn-lg">Talk to Bret</a>
+      <a href="tel:8013680700" class="btn btn-outline btn-lg">Call (801) 368-0700</a>
+    </div>
+  </div>
+</section>
+
+</MainLayout>

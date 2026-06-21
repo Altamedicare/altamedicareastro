@@ -1,0 +1,17 @@
+---
+import type { Crumb } from '../../data/places';
+
+interface Props {
+  crumbs: Crumb[];
+}
+const { crumbs } = Astro.props;
+const last = crumbs.length - 1;
+---
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  {crumbs.map((c, i) => (
+    i < last
+      ? <Fragment><a href={c.href}>{c.name}</a> &nbsp;&rsaquo;&nbsp; </Fragment>
+      : <span aria-current="page">{c.name}</span>
+  ))}
+</nav>

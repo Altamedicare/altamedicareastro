@@ -1,0 +1,88 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { getCollection } from 'astro:content';
+import { NEWS_CATEGORIES } from '../consts';
+
+const items = (await getCollection('news', ({ data }) => !data.draft))
+  .sort((a, b) =>
+    Number(b.data.featured) - Number(a.data.featured) ||
+    b.data.date.valueOf() - a.data.date.valueOf()
+  );
+
+// Only show category chips that actually have published articles.
+const usedCategories = Object.entries(NEWS_CATEGORIES).filter(
+  ([key]) => items.some((p) => p.data.category === key)
+);
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
+---
+
+<MainLayout
+  title={"Medicare News & Updates | AltaMedicare"}
+  description={"Important Medicare changes for 2026: Part D $2,000 cap, insulin savings, scam alerts, plan changes, and Utah-specific Medicare news."}
+  canonical="/medicare-news.html"
+  pageType="News"
+>
+  <Fragment slot="head">
+    <link rel="alternate" type="application/rss+xml" title="AltaMedicare Medicare News" href="/medicare-news/rss.xml" />
+  </Fragment>
+
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a> &nbsp;&rsaquo;&nbsp; Medicare News</div>
+    <h1>Medicare News &amp; Updates</h1>
+    <p class="lede">Important changes, savings opportunities, and Utah-specific Medicare news for 2026 and beyond.</p>
+    <p style="margin-top:14px;"><a href="/medicare-news/rss.xml" class="news-rss-link"><i class="fa-solid fa-rss"></i> Subscribe via RSS</a></p>
+  </div>
+</section>
+
+{usedCategories.length > 0 && (
+  <section class="section-tinted" style="padding-top:28px; padding-bottom:28px;">
+    <div class="container">
+      <div class="news-cats">
+        {usedCategories.map(([key, cat]) => (
+          <a href={`/medicare-news/category/${key}.html`} class="news-cat-chip">
+            <i class={`fa-solid ${cat.icon}`}></i> {cat.title}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<section class="section-white">
+  <div class="container">
+    {items.length > 0 ? (
+      <div class="post-list">
+        {items.map((p) => (
+          <a href={`/medicare-news/${p.slug}.html`} class="post-row">
+            <div class="pr-main">
+              <span class="pr-cat">{NEWS_CATEGORIES[p.data.category]?.title}</span>
+              <h3>{p.data.title}</h3>
+              <p>{p.data.summary}</p>
+            </div>
+            <span class="pr-date">{fmt(p.data.date)}</span>
+          </a>
+        ))}
+      </div>
+    ) : (
+      <p style="text-align:center; color:var(--text-muted);">
+        New Medicare updates are on the way. <a href="contact.html">Sign up</a> to get notified.
+      </p>
+    )}
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <h2>Have Questions? Let's Talk.</h2>
+    <p>One free, no-pressure call &mdash; clear answers, no sales pitch.</p>
+    <div class="cta-buttons">
+      <a href="contact.html" class="btn btn-primary btn-lg">Schedule Consultation</a>
+      <a href="tel:8013680700" class="btn btn-outline btn-lg">Call (801) 368-0700</a>
+    </div>
+  </div>
+</section>
+
+</MainLayout>

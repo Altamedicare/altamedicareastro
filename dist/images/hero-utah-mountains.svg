@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FAFAF7"/>
+      <stop offset="60%" stop-color="#F5F0E7"/>
+      <stop offset="100%" stop-color="#E8DFCB"/>
+    </linearGradient>
+    <linearGradient id="m1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5C88A6" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#466F8B" stop-opacity="0.7"/>
+    </linearGradient>
+    <linearGradient id="m2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#879B7A" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#6E8261" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <!-- Sun glow -->
+  <circle cx="1200" cy="280" r="180" fill="#FFE9B8" opacity="0.45"/>
+  <circle cx="1200" cy="280" r="80" fill="#FFD394" opacity="0.6"/>
+  <!-- Back mountains -->
+  <path d="M0,700 L150,500 L320,620 L500,420 L680,580 L860,400 L1040,560 L1240,460 L1440,580 L1600,500 L1600,900 L0,900 Z" fill="url(#m1)"/>
+  <!-- Front mountains -->
+  <path d="M0,800 L120,650 L280,750 L440,580 L620,720 L800,560 L980,690 L1180,620 L1380,720 L1600,650 L1600,900 L0,900 Z" fill="url(#m2)"/>
+  <text x="800" y="450" font-family="Poppins, sans-serif" font-size="36" fill="#5C88A6" opacity="0.4" text-anchor="middle" font-weight="600">Utah Mountains Hero Image &mdash; Placeholder</text>
+</svg>

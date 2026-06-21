@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Medicare IRMAA Calculator | Estimate Your Part B &amp; Part D Premiums | AltaMedicare</title>
+<meta name="description" content="Free Medicare IRMAA calculator. Estimate your monthly Part B premium and Part D income surcharge based on your income and filing status." />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- WebApplication schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Medicare IRMAA Calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "Estimate your Medicare Part B premium and Part D IRMAA surcharge based on income and filing status."
+}
+</script>
+
+<!-- FAQ schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is IRMAA?", "acceptedAnswer": { "@type": "Answer", "text": "IRMAA stands for Income-Related Monthly Adjustment Amount. It is an extra charge added to your Medicare Part B and Part D premiums when your income is above a set threshold." } },
+    { "@type": "Question", "name": "How is MAGI calculated?", "acceptedAnswer": { "@type": "Answer", "text": "Modified Adjusted Gross Income (MAGI) is your Adjusted Gross Income plus any tax-exempt interest income. Social Security uses MAGI to determine whether IRMAA applies." } },
+    { "@type": "Question", "name": "Why does Medicare use income from two years ago?", "acceptedAnswer": { "@type": "Answer", "text": "Social Security generally uses the most recent federal tax return available, which is from two years earlier. For 2026 premiums, that is usually your 2024 tax return." } },
+    { "@type": "Question", "name": "Can IRMAA be appealed?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. If a life-changing event reduced your income, you can request a reconsideration by filing Form SSA-44 with Social Security." } },
+    { "@type": "Question", "name": "What life events qualify for reconsideration?", "acceptedAnswer": { "@type": "Answer", "text": "Qualifying events include marriage, divorce, death of a spouse, work stoppage or reduction such as retirement, loss of pension, and loss of income-producing property." } },
+    { "@type": "Question", "name": "Does everyone pay IRMAA?", "acceptedAnswer": { "@type": "Answer", "text": "No. Most people pay only the standard Part B premium. IRMAA applies only to higher-income beneficiaries above the annual income thresholds." } }
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --mc-blue: #135aac;
+    --mc-blue-dark: #0d3f86;
+    --mc-blue-deep: #0a2540;
+    --mc-blue-soft: #eaf2fd;
+    --mc-blue-line: #cfe0f5;
+    --mc-green: #15803d;
+    --mc-green-deep: #14532d;
+    --mc-green-soft: #ecfdf3;
+    --mc-green-line: #bbf7d0;
+    --ink: #1f2a37;
+    --ink-soft: #475467;
+    --muted: #6b7280;
+    --radius: 16px;
+    --shadow: 0 18px 50px -24px rgba(13, 63, 134, 0.4);
+    --font: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: var(--font);
+    color: var(--ink);
+    line-height: 1.55;
+    background:
+      radial-gradient(1200px 500px at 50% -220px, #dbeafe 0%, transparent 70%),
+      #f3f7fc;
+    padding: 28px 16px 60px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; }
+
+  .card {
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--mc-blue-line);
+    overflow: hidden;
+  }
+
+  /* Header */
+  .head {
+    background: linear-gradient(135deg, var(--mc-blue) 0%, var(--mc-blue-deep) 100%);
+    color: #fff; padding: 28px 26px; display: flex; align-items: center; gap: 16px;
+  }
+  .head .badge {
+    flex: none; width: 54px; height: 54px; border-radius: 14px;
+    background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.25);
+    display: grid; place-items: center; font-size: 1.5rem;
+  }
+  .head h1 { margin: 0; font-size: 1.45rem; line-height: 1.2; }
+  .head p { margin: 4px 0 0; font-size: 0.95rem; opacity: 0.9; }
+
+  .body { padding: 26px; }
+
+  /* Form */
+  .field { margin-bottom: 22px; }
+  .field > label.q, .field legend {
+    display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 1.02rem;
+    color: var(--ink); margin-bottom: 10px; padding: 0;
+  }
+  i.qi { color: var(--mc-blue); width: 20px; text-align: center; }
+
+  .seg { border: 0; padding: 0; margin: 0; }
+  .seg-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .seg-options input { position: absolute; opacity: 0; pointer-events: none; }
+  .seg-options label {
+    display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px;
+    padding: 12px 10px; border: 2px solid var(--mc-blue-line); border-radius: 10px;
+    font-weight: 600; color: var(--ink-soft); cursor: pointer; background: #fff;
+    transition: all .15s ease; user-select: none; text-align: center;
+  }
+  .seg-options label:hover { border-color: var(--mc-blue); }
+  .seg-options input:checked + label {
+    background: var(--mc-blue); border-color: var(--mc-blue); color: #fff;
+    box-shadow: 0 6px 16px -8px rgba(19, 90, 172, 0.8);
+  }
+  .seg-options input:focus-visible + label { box-shadow: 0 0 0 4px rgba(19, 90, 172, 0.25); }
+
+  .money-input { position: relative; }
+  .money-input .dollar {
+    position: absolute; left: 15px; top: 50%; transform: translateY(-50%);
+    color: var(--muted); font-size: 1.1rem; font-weight: 600;
+  }
+  input.magi {
+    width: 100%; font-family: inherit; font-size: 1.15rem; min-height: 52px;
+    padding: 13px 14px 13px 32px; border: 2px solid var(--mc-blue-line); border-radius: 10px;
+    color: var(--ink); background: #fff; transition: border-color .2s, box-shadow .2s;
+  }
+  input.magi:focus { outline: none; border-color: var(--mc-blue); box-shadow: 0 0 0 4px rgba(19, 90, 172, 0.15); }
+  .hint { margin: 7px 0 0; font-size: 0.86rem; color: var(--muted); }
+
+  /* Results */
+  .results-banner {
+    background: linear-gradient(135deg, var(--mc-green) 0%, var(--mc-green-deep) 100%);
+    color: #fff; border-radius: 14px; padding: 16px 20px; display: flex; align-items: center; gap: 12px;
+    font-size: 1.15rem; font-weight: 700; margin-top: 6px;
+  }
+  .results-banner i { font-size: 1.4rem; }
+
+  .result-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px; }
+  .result-card {
+    border: 1px solid var(--mc-blue-line); border-radius: 14px; padding: 18px;
+    background: var(--mc-blue-soft);
+  }
+  .result-card.total { background: var(--mc-green-soft); border-color: var(--mc-green-line); }
+  .result-card .rc-label { font-size: 0.9rem; font-weight: 600; color: var(--ink-soft); display: flex; align-items: center; gap: 8px; }
+  .result-card .rc-label i { color: var(--mc-blue); }
+  .result-card.total .rc-label i { color: var(--mc-green); }
+  .result-card .rc-value { font-size: 1.7rem; font-weight: 800; color: var(--mc-blue-deep); margin-top: 6px; line-height: 1.1; }
+  .result-card.total .rc-value { color: var(--mc-green-deep); }
+  .result-card .rc-unit { font-size: 0.95rem; font-weight: 600; color: var(--muted); }
+
+  .irmaa-note {
+    margin-top: 14px; font-size: 0.9rem; color: var(--ink-soft);
+    background: #f8fafc; border: 1px solid #e6ebf2; border-radius: 10px; padding: 12px 14px;
+    display: flex; gap: 9px;
+  }
+  .irmaa-note i { color: var(--mc-blue); margin-top: 2px; }
+
+  /* Generic section */
+  section.block { margin-top: 28px; }
+  section.block > h2 {
+    font-size: 1.35rem; color: var(--mc-blue-deep); margin: 0 0 14px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  section.block > h2 i { color: var(--mc-blue); }
+
+  .edu { padding: 22px 24px; }
+  .edu p { margin: 0 0 14px; color: var(--ink-soft); }
+  .edu p:last-child { margin-bottom: 0; }
+  .edu strong { color: var(--ink); }
+
+  .events { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
+  .event {
+    border: 1px solid var(--mc-blue-line); border-radius: 14px; padding: 18px; background: #fff; text-align: center;
+    box-shadow: 0 6px 18px -14px rgba(13, 63, 134, 0.5);
+  }
+  .event .ev-icon {
+    width: 48px; height: 48px; margin: 0 auto 12px; border-radius: 12px; background: var(--mc-blue-soft);
+    display: grid; place-items: center; color: var(--mc-blue); font-size: 1.3rem;
+  }
+  .event h3 { margin: 0 0 4px; font-size: 1.05rem; color: var(--ink); }
+  .event p { margin: 0; font-size: 0.86rem; color: var(--muted); }
+
+  /* CTA */
+  .cta-card {
+    background: linear-gradient(135deg, var(--mc-blue) 0%, var(--mc-blue-deep) 100%);
+    color: #fff; border-radius: var(--radius); padding: 30px 26px; text-align: center;
+  }
+  .cta-card h2 { margin: 0 0 6px; color: #fff; font-size: 1.4rem; }
+  .cta-card p { margin: 0 0 20px; opacity: 0.92; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+  .cta-row a {
+    flex: 1 1 200px; max-width: 280px; text-decoration: none; min-height: 52px;
+    display: flex; align-items: center; justify-content: center; gap: 9px;
+    padding: 14px 20px; border-radius: 12px; font-weight: 700; font-size: 1.05rem;
+  }
+  .cta-row a.primary { background: #fff; color: var(--mc-blue-dark); }
+  .cta-row a.primary:hover { background: #eaf2fd; }
+  .cta-row a.ghost { background: rgba(255, 255, 255, 0.12); color: #fff; border: 2px solid rgba(255, 255, 255, 0.5); }
+  .cta-row a.ghost:hover { background: rgba(255, 255, 255, 0.22); }
+
+  /* FAQ */
+  .faq details {
+    background: #fff; border: 1px solid var(--mc-blue-line); border-radius: 12px;
+    margin-bottom: 10px; overflow: hidden;
+  }
+  .faq summary {
+    list-style: none; cursor: pointer; padding: 18px 20px; font-weight: 600; font-size: 1.05rem;
+    color: var(--mc-blue-deep); display: flex; align-items: center; justify-content: space-between; gap: 14px;
+    min-height: 44px;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary .chev {
+    flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--mc-blue-soft);
+    display: grid; place-items: center; color: var(--mc-blue); transition: transform .2s;
+  }
+  .faq details[open] summary .chev { transform: rotate(180deg); }
+  .faq .faq-a { padding: 0 20px 18px; color: var(--ink-soft); }
+
+  .disclaimer {
+    margin-top: 26px; background: #f8fafc; border: 1px solid #e6ebf2; border-radius: 12px;
+    padding: 16px 18px; font-size: 0.86rem; color: var(--muted); display: flex; gap: 10px;
+  }
+  .disclaimer i { color: var(--mc-blue); margin-top: 2px; flex: none; }
+  .disclaimer a { color: var(--mc-blue-dark); }
+
+  @media (max-width: 480px) {
+    .head { padding: 22px 18px; } .head h1 { font-size: 1.22rem; }
+    .body { padding: 20px 18px; }
+    .result-grid { grid-template-columns: 1fr; }
+    .result-card .rc-value { font-size: 1.5rem; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body data-pagefind-body data-pagefind-meta="type:Calculator" data-pagefind-filter="type:Calculator">
+<div class="wrap">
+  <a href="/tools.html" style="display:inline-flex;align-items:center;gap:8px;margin-bottom:16px;color:var(--mc-blue,#135aac);font-family:inherit;font-weight:600;text-decoration:none;font-size:.95rem;"><i class="fa-solid fa-arrow-left"></i> Back to Tools</a>
+
+  <!-- ============ CALCULATOR ============ -->
+  <main class="card" role="main">
+    <header class="head">
+      <div class="badge"><i class="fa-solid fa-calculator"></i></div>
+      <div>
+        <h1>Medicare IRMAA Calculator</h1>
+        <p>Estimate your monthly Part&nbsp;B premium and Part&nbsp;D income surcharge.</p>
+      </div>
+    </header>
+
+    <div class="body">
+      <form id="irmaa-form" novalidate>
+        <div class="field">
+          <fieldset class="seg">
+            <legend><i class="fa-solid fa-user-group qi"></i> Tax filing status</legend>
+            <div class="seg-options">
+              <input type="radio" id="fs-single" name="filing" value="single" checked />
+              <label for="fs-single"><i class="fa-solid fa-user"></i> Single</label>
+              <input type="radio" id="fs-married" name="filing" value="married" />
+              <label for="fs-married"><i class="fa-solid fa-user-group"></i> Married Filing Jointly</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="field">
+          <label class="q" for="magi"><i class="fa-solid fa-sack-dollar qi"></i> Modified Adjusted Gross Income (MAGI)</label>
+          <div class="money-input">
+            <span class="dollar" aria-hidden="true">$</span>
+            <input type="text" id="magi" class="magi" inputmode="numeric" autocomplete="off"
+              placeholder="e.g. 95,000" aria-describedby="magi-hint" />
+          </div>
+          <p class="hint" id="magi-hint">Your Adjusted Gross Income plus any tax-exempt interest, from the tax return Social Security uses (generally two years ago).</p>
+        </div>
+      </form>
+
+      <!-- Results -->
+      <div class="results-banner">
+        <i class="fa-solid fa-circle-check"></i> Your estimated Medicare premiums
+      </div>
+
+      <div class="result-grid" aria-live="polite">
+        <div class="result-card">
+          <div class="rc-label"><i class="fa-solid fa-stethoscope"></i> Part B Premium</div>
+          <div class="rc-value" id="out-partb">$202.90</div>
+          <div class="rc-unit">/ month</div>
+        </div>
+        <div class="result-card">
+          <div class="rc-label"><i class="fa-solid fa-pills"></i> Part D IRMAA</div>
+          <div class="rc-value" id="out-partd">$0.00</div>
+          <div class="rc-unit">/ month</div>
+        </div>
+        <div class="result-card total">
+          <div class="rc-label"><i class="fa-solid fa-coins"></i> Total Premium</div>
+          <div class="rc-value" id="out-total">$202.90</div>
+          <div class="rc-unit">/ month</div>
+        </div>
+        <div class="result-card total">
+          <div class="rc-label"><i class="fa-solid fa-calendar-day"></i> Annual Cost</div>
+          <div class="rc-value" id="out-annual">$2,434.80</div>
+          <div class="rc-unit">/ year</div>
+        </div>
+      </div>
+
+      <p class="irmaa-note" id="irmaa-status">
+        <i class="fa-solid fa-circle-info"></i>
+        <span>Enter your income to see whether IRMAA applies. Figures use 2026 amounts. The total reflects your Part&nbsp;B premium plus any Part&nbsp;D IRMAA surcharge — your Part&nbsp;D plan's base premium is separate and varies by plan.</span>
+      </p>
+    </div>
+  </main>
+
+  <!-- ============ EDUCATIONAL ============ -->
+  <section class="block">
+    <h2><i class="fa-solid fa-book-open"></i> Understanding IRMAA</h2>
+    <div class="card edu">
+      <p><strong>IRMAA (Income-Related Monthly Adjustment Amount)</strong> is an extra amount added to your Medicare Part&nbsp;B and Part&nbsp;D premiums if your income is above a certain level. Most people don't pay it — it applies only to higher-income beneficiaries.</p>
+      <p>Social Security generally determines IRMAA using your <strong>tax return from two years earlier</strong>. For 2026 premiums, that usually means your <strong>2024</strong> Modified Adjusted Gross Income.</p>
+      <p>If your income has dropped because of a <strong>life-changing event</strong>, you may qualify to have your IRMAA reconsidered by filing <strong>Form&nbsp;SSA-44</strong> with Social Security.</p>
+    </div>
+  </section>
+
+  <!-- ============ LIFE EVENTS ============ -->
+  <section class="block">
+    <h2><i class="fa-solid fa-life-ring"></i> Life events that may qualify for a reconsideration</h2>
+    <div class="events">
+      <div class="event"><div class="ev-icon"><i class="fa-solid fa-umbrella-beach"></i></div><h3>Retirement</h3><p>Work stoppage</p></div>
+      <div class="event"><div class="ev-icon"><i class="fa-solid fa-ring"></i></div><h3>Marriage</h3><p>New filing status</p></div>
+      <div class="event"><div class="ev-icon"><i class="fa-solid fa-heart-crack"></i></div><h3>Divorce</h3><p>Income change</p></div>
+      <div class="event"><div class="ev-icon"><i class="fa-solid fa-dove"></i></div><h3>Death of Spouse</h3><p>Household change</p></div>
+      <div class="event"><div class="ev-icon"><i class="fa-solid fa-piggy-bank"></i></div><h3>Loss of Pension</h3><p>Reduced income</p></div>
+      <div class="event"><div class="ev-icon"><i class="fa-solid fa-business-time"></i></div><h3>Fewer Work Hours</h3><p>Reduced income</p></div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="block">
+    <div class="cta-card">
+      <h2>Questions about Medicare premiums?</h2>
+      <p>Talk to a licensed Utah Medicare agent — free, no pressure.</p>
+      <div class="cta-row">
+        <a class="primary" href="tel:8013680700"><i class="fa-solid fa-phone"></i> Call (801) 368-0700</a>
+        <a class="ghost" href="sms:18013680700?body=Hi%20Bret%2C%20I%20have%20a%20question%20about%20my%20Medicare%20premiums."><i class="fa-solid fa-comment-sms"></i> Text Us</a>
+      </div>
+      <div class="cta-row" style="margin-top:12px;">
+        <a class="ghost" href="contact.html"><i class="fa-solid fa-calendar-check"></i> Free Medicare Review</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="block faq">
+    <h2><i class="fa-solid fa-circle-question"></i> Frequently Asked Questions</h2>
+
+    <details>
+      <summary>What is IRMAA? <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></summary>
+      <div class="faq-a">IRMAA stands for Income-Related Monthly Adjustment Amount — an extra charge added to your Medicare Part&nbsp;B and Part&nbsp;D premiums when your income is above a set threshold.</div>
+    </details>
+    <details>
+      <summary>How is MAGI calculated? <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></summary>
+      <div class="faq-a">Modified Adjusted Gross Income is your Adjusted Gross Income (AGI) plus any tax-exempt interest income. Social Security uses MAGI to decide whether IRMAA applies.</div>
+    </details>
+    <details>
+      <summary>Why does Medicare use income from two years ago? <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></summary>
+      <div class="faq-a">Because that's the most recent federal tax return the Social Security Administration has on file. For 2026 premiums, they generally use your 2024 tax return.</div>
+    </details>
+    <details>
+      <summary>Can IRMAA be appealed? <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></summary>
+      <div class="faq-a">Yes. If a life-changing event reduced your income, you can request a reconsideration by filing Form&nbsp;SSA-44 with Social Security.</div>
+    </details>
+    <details>
+      <summary>What life events qualify for reconsideration? <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></summary>
+      <div class="faq-a">Marriage, divorce, death of a spouse, work stoppage or reduction (such as retirement), loss of pension, and loss of income-producing property are common qualifying events.</div>
+    </details>
+    <details>
+      <summary>Does everyone pay IRMAA? <span class="chev" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></summary>
+      <div class="faq-a">No. Most people pay only the standard Part&nbsp;B premium. IRMAA applies only to higher-income beneficiaries above the annual income thresholds.</div>
+    </details>
+  </section>
+
+  <!-- ============ DISCLAIMER ============ -->
+  <p class="disclaimer">
+    <i class="fa-solid fa-circle-info"></i>
+    <span>This calculator provides estimates only and is not an official Medicare determination. Premium amounts change annually. Consult <a href="https://www.medicare.gov" target="_blank" rel="noopener">Medicare.gov</a>, Social Security, or a licensed Medicare agent for current information.</span>
+  </p>
+
+</div>
+
+<script src="/medicare-figures.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  // IRMAA brackets come from the single source of truth (/medicare-figures.js →
+  // window.MEDICARE_FIGURES). Inline values are a fallback if the bridge is absent.
+  // Each bracket: income up to `upTo` → total monthly Part B premium + monthly Part D surcharge.
+  var F = window.MEDICARE_FIGURES || null;
+  function buildBrackets(thresholds, pb, pd) {
+    var arr = thresholds.map(function (t, i) { return { upTo: t, partB: pb[i], partD: pd[i] }; });
+    arr.push({ upTo: Infinity, partB: pb[thresholds.length], partD: pd[thresholds.length] });
+    return arr;
+  }
+  var BRACKETS = (F && F.irmaa) ? {
+    single: buildBrackets(F.irmaa.single, F.irmaa.partBByTier, F.irmaa.partDByTier),
+    married: buildBrackets(F.irmaa.married, F.irmaa.partBByTier, F.irmaa.partDByTier)
+  } : {
+    single: [
+      { upTo: 109000, partB: 202.90, partD: 0 },
+      { upTo: 137000, partB: 284.10, partD: 14.50 },
+      { upTo: 171000, partB: 405.80, partD: 37.50 },
+      { upTo: 205000, partB: 527.50, partD: 60.40 },
+      { upTo: 500000, partB: 649.20, partD: 83.30 },
+      { upTo: Infinity, partB: 689.90, partD: 91.00 }
+    ],
+    married: [
+      { upTo: 218000, partB: 202.90, partD: 0 },
+      { upTo: 274000, partB: 284.10, partD: 14.50 },
+      { upTo: 342000, partB: 405.80, partD: 37.50 },
+      { upTo: 410000, partB: 527.50, partD: 60.40 },
+      { upTo: 750000, partB: 649.20, partD: 83.30 },
+      { upTo: Infinity, partB: 689.90, partD: 91.00 }
+    ]
+  };
+  var STANDARD_PARTB = (F && F.partB) ? F.partB.premium : 202.90;
+
+  var form = document.getElementById("irmaa-form");
+  var magiEl = document.getElementById("magi");
+  var statusEl = document.getElementById("irmaa-status");
+
+  var outB = document.getElementById("out-partb");
+  var outD = document.getElementById("out-partd");
+  var outT = document.getElementById("out-total");
+  var outA = document.getElementById("out-annual");
+
+  function usd(n, decimals) {
+    return "$" + n.toLocaleString("en-US", { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+  }
+
+  function update() {
+    var filing = form.filing.value;
+    var magi = parseFloat(magiEl.value.replace(/[^\d.]/g, "")) || 0;
+
+    var brackets = BRACKETS[filing] || BRACKETS.single;
+    var b = brackets.find(function (x) { return magi <= x.upTo; }) || brackets[brackets.length - 1];
+
+    var total = b.partB + b.partD;
+    var annual = total * 12;
+
+    outB.textContent = usd(b.partB, 2);
+    outD.textContent = usd(b.partD, 2);
+    outT.textContent = usd(total, 2);
+    outA.textContent = usd(annual, 2);
+
+    var hasIrmaa = b.partB > STANDARD_PARTB;
+    if (magi <= 0) {
+      statusEl.innerHTML = '<i class="fa-solid fa-circle-info"></i><span>Enter your income above to see whether IRMAA applies. Figures use 2026 amounts. The total is your Part&nbsp;B premium plus any Part&nbsp;D IRMAA surcharge — your Part&nbsp;D plan\'s base premium is separate and varies by plan.</span>';
+    } else if (hasIrmaa) {
+      statusEl.innerHTML = '<i class="fa-solid fa-triangle-exclamation" style="color:#b45309"></i><span><strong>IRMAA applies to your income.</strong> You pay an income surcharge on top of the standard Part&nbsp;B premium, plus a Part&nbsp;D surcharge. If a life-changing event lowered your income, you may be able to appeal with Form&nbsp;SSA-44.</span>';
+    } else {
+      statusEl.innerHTML = '<i class="fa-solid fa-circle-check" style="color:#15803d"></i><span><strong>Good news — no IRMAA at this income.</strong> You pay the standard 2026 Part&nbsp;B premium with no income surcharge. Your Part&nbsp;D plan\'s base premium is separate and varies by plan.</span>';
+    }
+  }
+
+  // Live comma formatting + instant recompute
+  magiEl.addEventListener("input", function () {
+    var digits = magiEl.value.replace(/[^\d]/g, "");
+    magiEl.value = digits ? Number(digits).toLocaleString("en-US") : "";
+    update();
+  });
+  form.addEventListener("change", update);
+  form.addEventListener("submit", function (e) { e.preventDefault(); });
+
+  update();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Prescription Drug Cost Calculator | Estimate & Compare Generics | AltaMedicare</title>
+<meta name="description" content="Free prescription drug cost calculator. Estimate your monthly and annual medication costs and see lower-cost generic alternatives." />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+  :root {
+    --mc-blue: #135aac; --mc-blue-dark: #0d3f86; --mc-blue-deep: #0a2540;
+    --mc-blue-soft: #eaf2fd; --mc-blue-line: #cfe0f5;
+    --mc-green: #15803d; --mc-green-deep: #14532d; --mc-green-soft: #ecfdf3; --mc-green-line: #bbf7d0;
+    --mc-amber: #b45309; --mc-amber-soft: #fff7ed; --mc-amber-line: #fed7aa;
+    --ink: #1f2a37; --ink-soft: #475467; --muted: #6b7280;
+    --radius: 16px; --shadow: 0 18px 50px -24px rgba(13, 63, 134, 0.4);
+    --font: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: var(--font); color: var(--ink); line-height: 1.55;
+    background: radial-gradient(1200px 500px at 50% -220px, #dbeafe 0%, transparent 70%), #f3f7fc;
+    padding: 28px 16px 60px; -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+  .card { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--mc-blue-line); overflow: hidden; }
+
+  .head { background: linear-gradient(135deg, var(--mc-blue) 0%, var(--mc-blue-deep) 100%); color: #fff; padding: 28px 26px; display: flex; align-items: center; gap: 16px; }
+  .head .badge { flex: none; width: 54px; height: 54px; border-radius: 14px; background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.25); display: grid; place-items: center; font-size: 1.5rem; }
+  .head h1 { margin: 0; font-size: 1.4rem; line-height: 1.2; }
+  .head p { margin: 4px 0 0; font-size: .95rem; opacity: .9; }
+
+  .body { padding: 26px; }
+  .field { margin-bottom: 20px; }
+  .field > label { display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 1.02rem; color: var(--ink); margin-bottom: 9px; }
+  .field > label i { color: var(--mc-blue); width: 20px; text-align: center; }
+
+  .control { width: 100%; font-family: inherit; font-size: 1.05rem; min-height: 52px; padding: 13px 14px; border: 2px solid var(--mc-blue-line); border-radius: 10px; color: var(--ink); background: #fff; transition: border-color .2s, box-shadow .2s; }
+  .control:focus { outline: none; border-color: var(--mc-blue); box-shadow: 0 0 0 4px rgba(19,90,172,.15); }
+
+  /* Autocomplete combobox */
+  .combo { position: relative; }
+  .combo .control { padding-left: 42px; }
+  .combo .search-icon { position: absolute; left: 15px; top: 26px; transform: translateY(-50%); color: var(--muted); pointer-events: none; }
+  .suggestions {
+    position: absolute; z-index: 30; left: 0; right: 0; top: calc(100% + 6px);
+    background: #fff; border: 1px solid var(--mc-blue-line); border-radius: 12px;
+    box-shadow: var(--shadow); max-height: 280px; overflow-y: auto; padding: 6px; display: none;
+  }
+  .suggestions.open { display: block; }
+  .suggestion { padding: 12px 14px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .suggestion:hover, .suggestion.active { background: var(--mc-blue-soft); }
+  .suggestion .s-name { font-weight: 600; color: var(--ink); }
+  .suggestion .s-tag { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; padding: 3px 9px; border-radius: 20px; }
+  .s-tag.brand { background: var(--mc-amber-soft); color: var(--mc-amber); }
+  .s-tag.generic { background: var(--mc-green-soft); color: var(--mc-green); }
+
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 520px) { .row { grid-template-columns: 1fr; } }
+  .hint { margin: 7px 0 0; font-size: .85rem; color: var(--muted); }
+
+  /* Results */
+  .results { margin-top: 24px; }
+  .empty { text-align: center; color: var(--muted); padding: 22px 14px; background: #f8fafc; border: 1px dashed var(--mc-blue-line); border-radius: 12px; }
+  .empty i { font-size: 1.6rem; color: var(--mc-blue); display: block; margin-bottom: 8px; }
+
+  .cost-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 520px) { .cost-grid { grid-template-columns: 1fr; } }
+  .cost-card { border: 1px solid var(--mc-blue-line); border-radius: 14px; padding: 20px; background: var(--mc-blue-soft); }
+  .cost-card .cc-label { font-size: .9rem; font-weight: 600; color: var(--ink-soft); display: flex; align-items: center; gap: 8px; }
+  .cost-card .cc-label i { color: var(--mc-blue); }
+  .cost-card .cc-value { font-size: 1.9rem; font-weight: 800; color: var(--mc-blue-deep); margin-top: 6px; line-height: 1.1; }
+  .cost-card .cc-unit { font-size: .9rem; font-weight: 600; color: var(--muted); }
+  .cost-meta { margin-top: 12px; font-size: .9rem; color: var(--ink-soft); background: #f8fafc; border: 1px solid #e6ebf2; border-radius: 10px; padding: 11px 14px; }
+
+  /* Generics */
+  .generics { margin-top: 22px; border-radius: 14px; padding: 20px 22px; }
+  .generics h2 { margin: 0 0 12px; font-size: 1.15rem; color: var(--mc-blue-deep); display: flex; align-items: center; gap: 9px; }
+  .generics h2 i { color: var(--mc-green); }
+  .generics.save { background: var(--mc-green-soft); border: 1px solid var(--mc-green-line); }
+  .generics.none { background: var(--mc-amber-soft); border: 1px solid var(--mc-amber-line); }
+  .generics.already { background: var(--mc-green-soft); border: 1px solid var(--mc-green-line); }
+  .gen-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+  .gen-name { font-weight: 700; color: var(--ink); font-size: 1.05rem; }
+  .gen-cost { font-weight: 700; color: var(--mc-green-deep); }
+  .save-banner { margin-top: 14px; background: #fff; border: 1px solid var(--mc-green-line); border-radius: 10px; padding: 14px 16px; display: flex; align-items: center; gap: 12px; }
+  .save-banner i { font-size: 1.5rem; color: var(--mc-green); flex: none; }
+  .save-banner strong { color: var(--mc-green-deep); font-size: 1.2rem; }
+  .generics p { margin: 8px 0 0; color: var(--ink-soft); font-size: .95rem; }
+
+  .disclaimer { margin-top: 24px; background: #f8fafc; border: 1px solid #e6ebf2; border-radius: 12px; padding: 16px 18px; font-size: .85rem; color: var(--muted); display: flex; gap: 10px; }
+  .disclaimer i { color: var(--mc-blue); margin-top: 2px; flex: none; }
+  .disclaimer a { color: var(--mc-blue-dark); }
+
+  .cta-card { margin-top: 20px; background: linear-gradient(135deg, var(--mc-blue) 0%, var(--mc-blue-deep) 100%); color: #fff; border-radius: var(--radius); padding: 26px; text-align: center; }
+  .cta-card h2 { margin: 0 0 6px; color: #fff; font-size: 1.3rem; }
+  .cta-card p { margin: 0 0 18px; opacity: .92; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+  .cta-row a { flex: 1 1 180px; max-width: 260px; text-decoration: none; min-height: 52px; display: flex; align-items: center; justify-content: center; gap: 9px; padding: 14px 18px; border-radius: 12px; font-weight: 700; }
+  .cta-row a.primary { background: #fff; color: var(--mc-blue-dark); }
+  .cta-row a.ghost { background: rgba(255,255,255,.12); color: #fff; border: 2px solid rgba(255,255,255,.5); }
+
+  @media (max-width: 480px) { .head { padding: 22px 18px; } .head h1 { font-size: 1.18rem; } .body { padding: 20px 18px; } }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body data-pagefind-body data-pagefind-meta="type:Calculator" data-pagefind-filter="type:Calculator">
+<div class="wrap">
+  <a href="/tools.html" style="display:inline-flex;align-items:center;gap:8px;margin-bottom:16px;color:var(--mc-blue,#135aac);font-family:inherit;font-weight:600;text-decoration:none;font-size:.95rem;"><i class="fa-solid fa-arrow-left"></i> Back to Tools</a>
+
+  <main class="card" role="main">
+    <header class="head">
+      <div class="badge"><i class="fa-solid fa-pills"></i></div>
+      <div>
+        <h1>Prescription Drug Cost Calculator</h1>
+        <p>Estimate your medication costs and find lower-cost generics.</p>
+      </div>
+    </header>
+
+    <div class="body">
+      <!-- Drug autocomplete -->
+      <div class="field">
+        <label for="drug"><i class="fa-solid fa-prescription-bottle-medical"></i> Drug name</label>
+        <div class="combo">
+          <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
+          <input type="text" id="drug" class="control" autocomplete="off" placeholder="Start typing… e.g. Lipitor, metformin, Eliquis"
+            role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="drug-suggestions" />
+          <div class="suggestions" id="drug-suggestions" role="listbox"></div>
+        </div>
+        <p class="hint">Type a brand or generic name and pick from the list.</p>
+      </div>
+
+      <div class="row">
+        <div class="field" style="margin-bottom:0;">
+          <label for="qty"><i class="fa-solid fa-hashtag"></i> Monthly quantity</label>
+          <input type="number" id="qty" class="control" min="1" step="1" value="30" inputmode="numeric" />
+          <p class="hint">Units per month (e.g. 30 for once-daily pills).</p>
+        </div>
+        <div class="field" style="margin-bottom:0;">
+          <label for="pharmacy"><i class="fa-solid fa-store"></i> Pharmacy</label>
+          <input type="text" id="pharmacy" class="control" list="pharmacy-list" autocomplete="off" placeholder="e.g. Walmart, CVS, Costco" />
+          <datalist id="pharmacy-list">
+            <option value="Costco"></option><option value="Sam's Club"></option><option value="Walmart"></option>
+            <option value="Kroger"></option><option value="Smith's"></option><option value="Harmons"></option>
+            <option value="Walgreens"></option><option value="CVS"></option><option value="Rite Aid"></option>
+          </datalist>
+          <p class="hint">Optional — adjusts the estimate.</p>
+        </div>
+      </div>
+
+      <div class="results" id="results" aria-live="polite">
+        <div class="empty"><i class="fa-solid fa-magnifying-glass-dollar"></i>Search for a medication above to see your estimated cost.</div>
+      </div>
+
+      <p class="disclaimer">
+        <i class="fa-solid fa-circle-info"></i>
+        <span><strong>Estimates only.</strong> These are rough cash-price estimates for education — <strong>not your plan's price</strong>. Actual costs vary by pharmacy, location, dosage, coupons, and your Medicare drug plan. For exact pricing, check the <a href="https://www.medicare.gov/plan-compare/" target="_blank" rel="noopener">Medicare Plan Finder</a>, ask your pharmacist, or talk to a licensed agent.</span>
+      </p>
+    </div>
+  </main>
+
+  <div class="cta-card">
+    <h2>Paying too much for prescriptions?</h2>
+    <p>Send us your medication list — we'll check whether a different plan saves you money. Free, no pressure.</p>
+    <div class="cta-row">
+      <a class="primary" href="tel:8013680700"><i class="fa-solid fa-phone"></i> Call (801) 368-0700</a>
+      <a class="ghost" href="sms:18013680700?body=Hi%20Bret%2C%20can%20you%20review%20my%20prescription%20costs%3F%20My%20medications%20are%3A"><i class="fa-solid fa-comment-sms"></i> Text Your Meds</a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // Rough cash-price estimates per unit (tablet/capsule/pen). Educational only.
+  // brand: true/false. generic: { name, price } when a lower-cost equivalent exists.
+  // defaultQty: typical monthly units (pens default to a small number).
+  var DRUGS = [
+    { q: "lipitor atorvastatin cholesterol statin", name: "Lipitor", brand: true, price: 9.00, generic: { name: "Atorvastatin", price: 0.30 } },
+    { q: "crestor rosuvastatin cholesterol statin", name: "Crestor", brand: true, price: 8.00, generic: { name: "Rosuvastatin", price: 0.45 } },
+    { q: "zocor simvastatin cholesterol statin", name: "Zocor", brand: true, price: 6.00, generic: { name: "Simvastatin", price: 0.20 } },
+    { q: "synthroid levothyroxine thyroid", name: "Synthroid", brand: true, price: 1.20, generic: { name: "Levothyroxine", price: 0.25 } },
+    { q: "nexium esomeprazole acid reflux heartburn ppi", name: "Nexium", brand: true, price: 8.00, generic: { name: "Esomeprazole", price: 0.55 } },
+    { q: "prilosec omeprazole acid reflux heartburn ppi", name: "Prilosec", brand: true, price: 1.00, generic: { name: "Omeprazole", price: 0.20 } },
+    { q: "plavix clopidogrel blood thinner", name: "Plavix", brand: true, price: 7.00, generic: { name: "Clopidogrel", price: 0.35 } },
+    { q: "norvasc amlodipine blood pressure", name: "Norvasc", brand: true, price: 5.00, generic: { name: "Amlodipine", price: 0.18 } },
+    { q: "cozaar losartan blood pressure", name: "Cozaar", brand: true, price: 6.00, generic: { name: "Losartan", price: 0.28 } },
+    { q: "glucophage metformin diabetes", name: "Glucophage", brand: true, price: 3.00, generic: { name: "Metformin", price: 0.12 } },
+    { q: "lexapro escitalopram depression anxiety", name: "Lexapro", brand: true, price: 9.00, generic: { name: "Escitalopram", price: 0.30 } },
+    { q: "zoloft sertraline depression anxiety", name: "Zoloft", brand: true, price: 10.00, generic: { name: "Sertraline", price: 0.25 } },
+    { q: "zestril prinivil lisinopril blood pressure", name: "Zestril (Lisinopril)", brand: true, price: 2.00, generic: { name: "Lisinopril", price: 0.14 } },
+    { q: "lasix furosemide water pill diuretic", name: "Lasix", brand: true, price: 1.50, generic: { name: "Furosemide", price: 0.12 } },
+    { q: "singulair montelukast asthma allergy", name: "Singulair", brand: true, price: 7.00, generic: { name: "Montelukast", price: 0.35 } },
+    { q: "flomax tamsulosin prostate", name: "Flomax", brand: true, price: 6.00, generic: { name: "Tamsulosin", price: 0.30 } },
+    { q: "neurontin gabapentin nerve pain", name: "Neurontin", brand: true, price: 5.00, generic: { name: "Gabapentin", price: 0.20 } },
+    { q: "protonix pantoprazole acid reflux ppi", name: "Protonix", brand: true, price: 7.00, generic: { name: "Pantoprazole", price: 0.25 } },
+
+    // Brand-only / no low-cost generic yet
+    { q: "eliquis apixaban blood thinner afib", name: "Eliquis", brand: true, price: 18.00, generic: null },
+    { q: "xarelto rivaroxaban blood thinner afib", name: "Xarelto", brand: true, price: 18.00, generic: null },
+    { q: "jardiance empagliflozin diabetes", name: "Jardiance", brand: true, price: 20.00, generic: null },
+    { q: "farxiga dapagliflozin diabetes", name: "Farxiga", brand: true, price: 20.00, generic: null },
+    { q: "januvia sitagliptin diabetes", name: "Januvia", brand: true, price: 20.00, generic: null },
+    { q: "entresto sacubitril valsartan heart failure", name: "Entresto", brand: true, price: 10.00, generic: null },
+    { q: "ozempic semaglutide diabetes injection pen", name: "Ozempic (pen)", brand: true, price: 950.00, generic: null, defaultQty: 1, unit: "pen" },
+    { q: "trulicity dulaglutide diabetes injection pen", name: "Trulicity (pen)", brand: true, price: 215.00, generic: null, defaultQty: 4, unit: "pen" },
+
+    // Common generics (direct)
+    { q: "atorvastatin lipitor cholesterol statin generic", name: "Atorvastatin", brand: false, price: 0.30 },
+    { q: "metformin glucophage diabetes generic", name: "Metformin", brand: false, price: 0.12 },
+    { q: "lisinopril blood pressure generic", name: "Lisinopril", brand: false, price: 0.14 },
+    { q: "amlodipine norvasc blood pressure generic", name: "Amlodipine", brand: false, price: 0.18 },
+    { q: "levothyroxine synthroid thyroid generic", name: "Levothyroxine", brand: false, price: 0.25 },
+    { q: "losartan cozaar blood pressure generic", name: "Losartan", brand: false, price: 0.28 },
+    { q: "omeprazole prilosec acid reflux generic", name: "Omeprazole", brand: false, price: 0.20 },
+    { q: "gabapentin neurontin nerve pain generic", name: "Gabapentin", brand: false, price: 0.20 },
+    { q: "hydrochlorothiazide hctz water pill generic", name: "Hydrochlorothiazide", brand: false, price: 0.10 },
+    { q: "simvastatin zocor cholesterol statin generic", name: "Simvastatin", brand: false, price: 0.20 },
+    { q: "sertraline zoloft depression generic", name: "Sertraline", brand: false, price: 0.25 }
+  ];
+
+  var PHARMACIES = {
+    "costco": 0.82, "sam's club": 0.85, "sams club": 0.85, "walmart": 0.88,
+    "kroger": 1.00, "smith's": 1.00, "smiths": 1.00, "harmons": 1.05,
+    "walgreens": 1.15, "cvs": 1.20, "rite aid": 1.12
+  };
+
+  var drugInput = document.getElementById("drug");
+  var sugBox = document.getElementById("drug-suggestions");
+  var qtyInput = document.getElementById("qty");
+  var pharmInput = document.getElementById("pharmacy");
+  var results = document.getElementById("results");
+
+  var selected = null;
+  var activeIndex = -1;
+  var matches = [];
+
+  function usd(n) { return "$" + n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+
+  function pharmMult() {
+    var key = (pharmInput.value || "").trim().toLowerCase();
+    return PHARMACIES[key] || 1.0;
+  }
+
+  // ---------- Autocomplete ----------
+  function renderSuggestions() {
+    var qv = drugInput.value.trim().toLowerCase();
+    selected = null; // typing deselects until a pick is made
+    if (qv.length < 1) { closeSuggestions(); compute(); return; }
+
+    matches = DRUGS.filter(function (d) { return d.q.indexOf(qv) !== -1 || d.name.toLowerCase().indexOf(qv) !== -1; }).slice(0, 8);
+    activeIndex = -1;
+
+    if (!matches.length) {
+      sugBox.innerHTML = '<div class="suggestion" style="cursor:default;color:#6b7280">No match — <a href="sms:18013680700?body=Hi%20Bret%2C%20can%20you%20look%20up%20the%20price%20of%20my%20medication%3F" style="color:#0d3f86;font-weight:600">text us the name &rarr;</a></div>';
+      openSuggestions();
+      compute();
+      return;
+    }
+
+    sugBox.innerHTML = matches.map(function (d, i) {
+      var tag = d.brand ? '<span class="s-tag brand">Brand</span>' : '<span class="s-tag generic">Generic</span>';
+      return '<div class="suggestion" role="option" id="sug-' + i + '" data-i="' + i + '"><span class="s-name">' + d.name + '</span>' + tag + '</div>';
+    }).join("");
+    openSuggestions();
+  }
+
+  function openSuggestions() { sugBox.classList.add("open"); drugInput.setAttribute("aria-expanded", "true"); }
+  function closeSuggestions() { sugBox.classList.remove("open"); drugInput.setAttribute("aria-expanded", "false"); activeIndex = -1; }
+
+  function choose(i) {
+    var d = matches[i];
+    if (!d) return;
+    selected = d;
+    drugInput.value = d.name;
+    if (d.defaultQty) qtyInput.value = d.defaultQty;
+    closeSuggestions();
+    compute();
+  }
+
+  function highlight(idx) {
+    var nodes = sugBox.querySelectorAll(".suggestion[data-i]");
+    nodes.forEach(function (n) { n.classList.remove("active"); });
+    if (idx >= 0 && nodes[idx]) { nodes[idx].classList.add("active"); drugInput.setAttribute("aria-activedescendant", "sug-" + idx); nodes[idx].scrollIntoView({ block: "nearest" }); }
+  }
+
+  drugInput.addEventListener("input", renderSuggestions);
+  drugInput.addEventListener("focus", function () { if (drugInput.value.trim()) renderSuggestions(); });
+  drugInput.addEventListener("keydown", function (e) {
+    if (!sugBox.classList.contains("open") || !matches.length) return;
+    if (e.key === "ArrowDown") { e.preventDefault(); activeIndex = Math.min(activeIndex + 1, matches.length - 1); highlight(activeIndex); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); activeIndex = Math.max(activeIndex - 1, 0); highlight(activeIndex); }
+    else if (e.key === "Enter") { if (activeIndex >= 0) { e.preventDefault(); choose(activeIndex); } }
+    else if (e.key === "Escape") { closeSuggestions(); }
+  });
+  sugBox.addEventListener("click", function (e) {
+    var item = e.target.closest(".suggestion[data-i]");
+    if (item) choose(parseInt(item.getAttribute("data-i"), 10));
+  });
+  document.addEventListener("click", function (e) { if (!e.target.closest(".combo")) closeSuggestions(); });
+
+  qtyInput.addEventListener("input", compute);
+  pharmInput.addEventListener("input", compute);
+
+  // ---------- Compute & render ----------
+  function compute() {
+    if (!selected) {
+      results.innerHTML = '<div class="empty"><i class="fa-solid fa-magnifying-glass-dollar"></i>Search for a medication above to see your estimated cost.</div>';
+      return;
+    }
+    var qty = Math.max(1, parseInt(qtyInput.value, 10) || 1);
+    var mult = pharmMult();
+    var unit = selected.unit || "unit";
+
+    var monthly = selected.price * qty * mult;
+    var annual = monthly * 12;
+    var pharmLabel = (pharmInput.value || "").trim();
+
+    var html = "";
+    html += '<div class="cost-grid">' +
+      '<div class="cost-card"><div class="cc-label"><i class="fa-solid fa-calendar-day"></i> Estimated monthly</div><div class="cc-value">' + usd(monthly) + '</div><div class="cc-unit">/ month</div></div>' +
+      '<div class="cost-card"><div class="cc-label"><i class="fa-solid fa-calendar"></i> Estimated annual</div><div class="cc-value">' + usd(annual) + '</div><div class="cc-unit">/ year</div></div>' +
+      '</div>';
+
+    html += '<div class="cost-meta"><i class="fa-solid fa-receipt"></i> Based on <strong>' + selected.name + '</strong>, ' + qty + ' ' + unit + (qty > 1 ? "s" : "") + '/month' +
+      (pharmLabel ? ' at <strong>' + pharmLabel + '</strong>' + (mult !== 1 ? ' (' + (mult < 1 ? "tends to be lower" : "tends to be higher") + ' than average)' : '') : '') + '.</div>';
+
+    // Generic alternatives
+    if (selected.brand && selected.generic) {
+      var gMonthly = selected.generic.price * qty * mult;
+      var gAnnual = gMonthly * 12;
+      var saveYear = annual - gAnnual;
+      var savePct = Math.round((saveYear / annual) * 100);
+      html += '<div class="generics save"><h2><i class="fa-solid fa-circle-check"></i> Lower-cost generic available</h2>' +
+        '<div class="gen-row"><span class="gen-name">' + selected.generic.name + '</span><span class="gen-cost">' + usd(gMonthly) + '/mo &middot; ' + usd(gAnnual) + '/yr</span></div>' +
+        '<div class="save-banner"><i class="fa-solid fa-piggy-bank"></i><div>Switching could save about <strong>' + usd(saveYear) + ' a year</strong> (' + savePct + '% less).</div></div>' +
+        '<p>Generics use the same active ingredient and must meet the same FDA standards. Ask your doctor or pharmacist whether the generic is right for you.</p></div>';
+    } else if (selected.brand && !selected.generic) {
+      html += '<div class="generics none"><h2 style="color:#b45309"><i class="fa-solid fa-circle-info" style="color:#b45309"></i> No generic available yet</h2>' +
+        '<p>There isn\'t a lower-cost generic equivalent for ' + selected.name + ' right now. The right Medicare drug plan can still make a big difference in what you pay — we can help you compare.</p></div>';
+    } else {
+      html += '<div class="generics already"><h2><i class="fa-solid fa-thumbs-up"></i> You\'re already on a generic</h2>' +
+        '<p>Generics are typically the lowest-cost option. To pay even less, compare pharmacies and make sure your Part D plan covers ' + selected.name + ' on a preferred tier.</p></div>';
+    }
+
+    results.innerHTML = html;
+  }
+
+  compute();
+})();
+</script>
+</body>
+</html>

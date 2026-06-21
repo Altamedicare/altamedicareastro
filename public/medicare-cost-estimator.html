@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Medicare Cost Estimator | Estimate Your Annual Medicare Costs | AltaMedicare</title>
+<meta name="description" content="Free Medicare cost estimator. Estimate your total annual Medicare expenses — premiums, out-of-pocket, and prescriptions — and compare Original Medicare vs Medicare Advantage." />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<script type="application/ld+json">
+{ "@context":"https://schema.org","@type":"WebApplication","name":"Medicare Cost Estimator","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estimate your total annual Medicare costs and compare Original Medicare with Medicare Advantage." }
+</script>
+<script type="application/ld+json">
+{ "@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"How much does Medicare cost?","acceptedAnswer":{"@type":"Answer","text":"Most people pay $0 for Part A and a standard monthly Part B premium ($202.90 in 2026). Total costs depend on the plan you choose, your prescriptions, and how often you use care."}},
+  {"@type":"Question","name":"What are out-of-pocket expenses?","acceptedAnswer":{"@type":"Answer","text":"Out-of-pocket expenses are what you pay beyond premiums — deductibles, copays, and coinsurance when you receive care."}},
+  {"@type":"Question","name":"What is IRMAA?","acceptedAnswer":{"@type":"Answer","text":"IRMAA is an income-related surcharge added to your Part B and Part D premiums if your income is above a set threshold."}},
+  {"@type":"Question","name":"What is Extra Help?","acceptedAnswer":{"@type":"Answer","text":"Extra Help is a federal program that lowers Part D prescription drug costs for people with limited income and resources."}},
+  {"@type":"Question","name":"How much do Medigap plans cost?","acceptedAnswer":{"@type":"Answer","text":"Medigap (Medicare Supplement) premiums typically range from about $120 to $250 per month depending on the plan letter, your age, and your area."}},
+  {"@type":"Question","name":"Do Medicare Advantage plans have maximum out-of-pocket limits?","acceptedAnswer":{"@type":"Answer","text":"Yes. Medicare Advantage plans have a yearly in-network maximum out-of-pocket limit that caps what you pay for covered medical services."}}
+]}
+</script>
+
+<style>
+  :root{
+    --mc-blue:#135aac;--mc-blue-dark:#0d3f86;--mc-blue-deep:#0a2540;--mc-blue-soft:#eaf2fd;--mc-blue-line:#cfe0f5;
+    --mc-green:#15803d;--mc-green-soft:#ecfdf3;--mc-green-line:#bbf7d0;
+    --mc-amber:#b45309;--mc-amber-soft:#fff7ed;--mc-amber-line:#fed7aa;
+    --mc-red:#b42318;--mc-red-soft:#fef3f2;--mc-red-line:#fecdca;
+    --c-prem:#135aac;--c-rx:#0e9384;--c-med:#b45309;--c-other:#9b8afb;
+    --ink:#1f2a37;--ink-soft:#475467;--muted:#6b7280;
+    --radius:16px;--shadow:0 18px 50px -24px rgba(13,63,134,.4);--font:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:var(--font);color:var(--ink);line-height:1.55;background:radial-gradient(1200px 500px at 50% -220px,#dbeafe 0%,transparent 70%),#f3f7fc;padding:28px 16px 60px;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:960px;margin:0 auto;}
+  .card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--mc-blue-line);overflow:hidden;}
+  .head{background:linear-gradient(135deg,var(--mc-blue) 0%,var(--mc-blue-deep) 100%);color:#fff;padding:28px 26px;display:flex;align-items:center;gap:16px;}
+  .head .badge{flex:none;width:54px;height:54px;border-radius:14px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);display:grid;place-items:center;font-size:1.5rem;}
+  .head h1{margin:0;font-size:1.38rem;line-height:1.2;}
+  .head p{margin:4px 0 0;font-size:.95rem;opacity:.9;}
+  .body{padding:26px;}
+
+  .input-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;}
+  @media(max-width:760px){.input-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:480px){.input-grid{grid-template-columns:1fr;}}
+  .field label{display:flex;align-items:center;gap:8px;font-weight:600;font-size:.92rem;color:var(--ink);margin-bottom:7px;}
+  .field label i{color:var(--mc-blue);width:16px;text-align:center;}
+  .field input{width:100%;font-family:inherit;font-size:1.02rem;min-height:46px;padding:11px 13px;border:2px solid var(--mc-blue-line);border-radius:10px;color:var(--ink);background:#fff;}
+  .field input:focus{outline:none;border-color:var(--mc-blue);box-shadow:0 0 0 4px rgba(19,90,172,.15);}
+  .seg{border:0;padding:0;margin:0;}
+  .seg legend{font-weight:600;font-size:.92rem;color:var(--ink);margin-bottom:7px;display:flex;align-items:center;gap:8px;}
+  .seg legend i{color:var(--mc-blue);}
+  .seg-options{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  .seg-options input{position:absolute;opacity:0;pointer-events:none;}
+  .seg-options label{display:flex;align-items:center;justify-content:center;gap:6px;min-height:46px;padding:10px;border:2px solid var(--mc-blue-line);border-radius:10px;font-weight:600;color:var(--ink-soft);cursor:pointer;background:#fff;transition:all .15s ease;}
+  .seg-options label:hover{border-color:var(--mc-blue);}
+  .seg-options input:checked + label{background:var(--mc-blue);border-color:var(--mc-blue);color:#fff;}
+  .seg-options input:focus-visible + label{box-shadow:0 0 0 4px rgba(19,90,172,.25);}
+
+  /* Tabs */
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 18px;}
+  .tab{min-height:44px;padding:11px 16px;border:2px solid var(--mc-blue-line);border-radius:11px;background:#fff;font-family:inherit;font-weight:600;font-size:.95rem;color:var(--ink-soft);cursor:pointer;display:flex;align-items:center;gap:8px;transition:all .15s ease;}
+  .tab:hover{border-color:var(--mc-blue);}
+  .tab[aria-selected="true"]{background:var(--mc-blue);border-color:var(--mc-blue);color:#fff;}
+  .tab:focus-visible{box-shadow:0 0 0 4px rgba(19,90,172,.25);}
+
+  .banner{border-radius:14px;padding:16px 20px;display:flex;gap:12px;align-items:flex-start;margin-bottom:18px;}
+  .banner i{font-size:1.5rem;flex:none;margin-top:1px;}.banner strong{display:block;}
+  .banner.green{background:var(--mc-green-soft);border:1px solid var(--mc-green-line);}.banner.green i,.banner.green strong{color:var(--mc-green);}
+  .banner.blue{background:var(--mc-blue-soft);border:1px solid var(--mc-blue-line);}.banner.blue i,.banner.blue strong{color:var(--mc-blue-dark);}
+  .banner.amber{background:var(--mc-amber-soft);border:1px solid var(--mc-amber-line);}.banner.amber i,.banner.amber strong{color:var(--mc-amber);}
+  .banner.red{background:var(--mc-red-soft);border:1px solid var(--mc-red-line);}.banner.red i,.banner.red strong{color:var(--mc-red);}
+
+  .results-row{display:grid;grid-template-columns:1.3fr 1fr;gap:18px;align-items:start;}
+  @media(max-width:720px){.results-row{grid-template-columns:1fr;}}
+
+  .sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .sum{border:1px solid var(--mc-blue-line);border-radius:13px;padding:15px 16px;background:var(--mc-blue-soft);}
+  .sum .s-label{font-size:.82rem;font-weight:600;color:var(--ink-soft);}
+  .sum .s-val{font-size:1.35rem;font-weight:800;color:var(--mc-blue-deep);margin-top:4px;font-variant-numeric:tabular-nums;}
+  .sum .s-unit{font-size:.78rem;color:var(--muted);}
+  .total-card{grid-column:1/-1;background:linear-gradient(135deg,var(--mc-blue) 0%,var(--mc-blue-deep) 100%);color:#fff;border:0;border-radius:14px;padding:20px 22px;text-align:center;}
+  .total-card .s-label{color:rgba(255,255,255,.85);font-size:.9rem;font-weight:600;}
+  .total-card .s-val{color:#fff;font-size:2.4rem;margin-top:4px;}
+  @media(prefers-reduced-motion:no-preference){.total-card .s-val{transition:transform .3s ease;}}
+
+  .chart-wrap{border:1px solid var(--mc-blue-line);border-radius:14px;padding:20px;text-align:center;}
+  .pie{width:180px;height:180px;border-radius:50%;margin:0 auto;background:conic-gradient(#ccc 0% 100%);position:relative;}
+  .pie::after{content:"";position:absolute;inset:26%;border-radius:50%;background:#fff;}
+  .legend{list-style:none;padding:0;margin:16px 0 0;text-align:left;}
+  .legend li{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:.9rem;padding:4px 0;}
+  .legend .dot{width:12px;height:12px;border-radius:3px;flex:none;margin-right:8px;}
+  .legend .lname{display:flex;align-items:center;flex:1;}
+  .legend .lval{font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;}
+
+  .compare{margin-top:22px;border:1px solid var(--mc-blue-line);border-radius:14px;overflow:hidden;}
+  .compare h3{margin:0;padding:14px 18px;background:var(--mc-blue-soft);font-size:1rem;color:var(--mc-blue-deep);display:flex;align-items:center;gap:8px;}
+  .compare .crow{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 18px;border-top:1px solid #eef2f7;}
+  .compare .crow .cname{font-weight:600;color:var(--ink);}
+  .compare .crow .cval{font-weight:800;color:var(--mc-blue-deep);font-variant-numeric:tabular-nums;}
+  .compare .crow.best{background:var(--mc-green-soft);}
+  .compare .crow.best .cval{color:var(--mc-green);}
+  .compare .cdiff{font-size:.82rem;color:var(--muted);font-weight:600;}
+
+  section.block{margin-top:30px;}
+  section.block>h2{font-size:1.35rem;color:var(--mc-blue-deep);margin:0 0 14px;display:flex;align-items:center;gap:10px;}section.block>h2 i{color:var(--mc-blue);}
+  .edu .eitem{padding:15px 0;border-bottom:1px solid #eef2f7;}.edu .eitem:last-child{border-bottom:0;}
+  .edu .eitem h3{margin:0 0 4px;font-size:1.02rem;color:var(--ink);}.edu .eitem p{margin:0;color:var(--ink-soft);font-size:.95rem;}
+
+  .tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;}
+  .tool-card{display:block;text-decoration:none;border:1px solid var(--mc-blue-line);border-radius:14px;padding:18px;background:#fff;box-shadow:0 6px 18px -14px rgba(13,63,134,.5);transition:transform .15s,box-shadow .15s,border-color .15s;}
+  .tool-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--mc-blue);}
+  .tool-card .tc-icon{width:44px;height:44px;border-radius:12px;background:var(--mc-blue-soft);display:grid;place-items:center;color:var(--mc-blue);font-size:1.2rem;margin-bottom:10px;}
+  .tool-card h3{margin:0 0 3px;font-size:1rem;color:var(--mc-blue-deep);}.tool-card p{margin:0;font-size:.86rem;color:var(--ink-soft);}
+
+  .cta-card{background:linear-gradient(135deg,var(--mc-blue) 0%,var(--mc-blue-deep) 100%);color:#fff;border-radius:var(--radius);padding:30px 26px;text-align:center;}
+  .cta-card h2{margin:0 0 6px;color:#fff;font-size:1.4rem;}.cta-card p{margin:0 0 20px;opacity:.92;}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;}
+  .cta-row a{flex:1 1 200px;max-width:280px;text-decoration:none;min-height:52px;display:flex;align-items:center;justify-content:center;gap:9px;padding:14px 20px;border-radius:12px;font-weight:700;font-size:1.05rem;}
+  .cta-row a.primary{background:#fff;color:var(--mc-blue-dark);}.cta-row a.ghost{background:rgba(255,255,255,.12);color:#fff;border:2px solid rgba(255,255,255,.5);}
+
+  .faq details{background:#fff;border:1px solid var(--mc-blue-line);border-radius:12px;margin-bottom:10px;overflow:hidden;}
+  .faq summary{list-style:none;cursor:pointer;padding:18px 20px;font-weight:600;font-size:1.05rem;color:var(--mc-blue-deep);display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:44px;}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary .chev{flex:none;width:30px;height:30px;border-radius:50%;background:var(--mc-blue-soft);display:grid;place-items:center;color:var(--mc-blue);transition:transform .2s;}
+  .faq details[open] summary .chev{transform:rotate(180deg);}.faq .faq-a{padding:0 20px 18px;color:var(--ink-soft);}
+
+  .disclaimer{margin-top:26px;background:#f8fafc;border:1px solid #e6ebf2;border-radius:12px;padding:16px 18px;font-size:.86rem;color:var(--muted);display:flex;gap:10px;}
+  .disclaimer i{color:var(--mc-blue);margin-top:2px;flex:none;}.disclaimer a{color:var(--mc-blue-dark);}
+  @media(max-width:480px){.head{padding:22px 18px;}.head h1{font-size:1.14rem;}.body{padding:20px 18px;}}
+  @media(prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important;}}
+</style>
+</head>
+<body data-pagefind-body data-pagefind-meta="type:Calculator" data-pagefind-filter="type:Calculator">
+<div class="wrap">
+  <a href="/tools.html" style="display:inline-flex;align-items:center;gap:8px;margin-bottom:16px;color:var(--mc-blue,#135aac);font-family:inherit;font-weight:600;text-decoration:none;font-size:.95rem;"><i class="fa-solid fa-arrow-left"></i> Back to Tools</a>
+
+  <main class="card" role="main">
+    <header class="head">
+      <div class="badge"><i class="fa-solid fa-coins"></i></div>
+      <div>
+        <h1>Medicare Cost Estimator</h1>
+        <p>Estimate your total annual Medicare costs and compare your options.</p>
+      </div>
+    </header>
+
+    <div class="body">
+      <form id="ce-form" novalidate>
+        <div class="input-grid">
+          <div class="field"><label for="age"><i class="fa-solid fa-user"></i> Age</label><input type="number" id="age" min="0" max="120" value="66" inputmode="numeric" /></div>
+          <div class="field"><label for="zip"><i class="fa-solid fa-location-dot"></i> ZIP code <span style="color:var(--muted);font-weight:400">(optional)</span></label><input type="text" id="zip" maxlength="5" inputmode="numeric" placeholder="84097" /></div>
+          <div class="field"><label for="medigap"><i class="fa-solid fa-shield-halved"></i> Medigap premium /mo</label><input type="number" id="medigap" min="0" step="5" value="150" inputmode="numeric" /></div>
+          <div class="field"><label for="partD"><i class="fa-solid fa-pills"></i> Part D premium /mo</label><input type="number" id="partD" min="0" step="1" value="35" inputmode="numeric" /></div>
+          <div class="field"><label for="rxm"><i class="fa-solid fa-prescription-bottle"></i> Prescription cost /mo</label><input type="number" id="rxm" min="0" step="5" value="60" inputmode="numeric" /></div>
+          <div class="field"><label for="doctor"><i class="fa-solid fa-user-doctor"></i> Doctor visits /yr</label><input type="number" id="doctor" min="0" step="1" value="4" inputmode="numeric" /></div>
+          <div class="field"><label for="specialist"><i class="fa-solid fa-stethoscope"></i> Specialist visits /yr</label><input type="number" id="specialist" min="0" step="1" value="2" inputmode="numeric" /></div>
+          <div class="field"><label for="hospital"><i class="fa-solid fa-hospital"></i> Hospital stays /yr</label><input type="number" id="hospital" min="0" step="1" value="0" inputmode="numeric" /></div>
+          <div class="field"><label for="er"><i class="fa-solid fa-truck-medical"></i> ER visits /yr</label><input type="number" id="er" min="0" step="1" value="0" inputmode="numeric" /></div>
+
+          <div class="field"><fieldset class="seg"><legend><i class="fa-solid fa-hand-holding-dollar"></i> Receiving Extra Help?</legend><div class="seg-options">
+            <input type="radio" id="ex-no" name="extra" value="no" checked /><label for="ex-no">No</label>
+            <input type="radio" id="ex-yes" name="extra" value="yes" /><label for="ex-yes">Yes</label></div></fieldset></div>
+          <div class="field"><fieldset class="seg"><legend><i class="fa-solid fa-briefcase"></i> Employer coverage?</legend><div class="seg-options">
+            <input type="radio" id="emp-no" name="employer" value="no" checked /><label for="emp-no">No</label>
+            <input type="radio" id="emp-yes" name="employer" value="yes" /><label for="emp-yes">Yes</label></div></fieldset></div>
+          <div class="field"><fieldset class="seg"><legend><i class="fa-solid fa-sack-dollar"></i> IRMAA applies?</legend><div class="seg-options">
+            <input type="radio" id="ir-no" name="irmaa" value="no" checked /><label for="ir-no">No</label>
+            <input type="radio" id="ir-yes" name="irmaa" value="yes" /><label for="ir-yes">Yes</label></div></fieldset></div>
+        </div>
+      </form>
+
+      <div class="tabs" role="tablist" aria-label="Coverage scenarios">
+        <button class="tab" role="tab" data-scn="medigap" aria-selected="true"><i class="fa-solid fa-shield-heart"></i> Original Medicare + Medigap</button>
+        <button class="tab" role="tab" data-scn="ma" aria-selected="false"><i class="fa-solid fa-layer-group"></i> Medicare Advantage</button>
+        <button class="tab" role="tab" data-scn="high" aria-selected="false"><i class="fa-solid fa-arrow-trend-up"></i> High Utilization</button>
+        <button class="tab" role="tab" data-scn="low" aria-selected="false"><i class="fa-solid fa-arrow-trend-down"></i> Low Utilization</button>
+      </div>
+
+      <div id="ce-banner"></div>
+
+      <div class="results-row">
+        <div class="sum-grid" id="ce-summary"></div>
+        <div class="chart-wrap">
+          <div class="pie" id="ce-pie" role="img" aria-label="Cost breakdown chart"></div>
+          <ul class="legend" id="ce-legend"></ul>
+        </div>
+      </div>
+
+      <div class="compare">
+        <h3><i class="fa-solid fa-scale-balanced"></i> Compare scenarios (estimated yearly total)</h3>
+        <div id="ce-compare"></div>
+      </div>
+
+      <p class="disclaimer">
+        <i class="fa-solid fa-circle-info"></i>
+        <span><strong>Estimates only.</strong> This is an educational model using 2026 figures and typical copays — <strong>not a quote</strong>. Your actual costs depend on the specific plan, your providers, prescriptions, and area. Confirm with <a href="https://www.medicare.gov" target="_blank" rel="noopener">Medicare.gov</a> or a licensed agent.</span>
+      </p>
+    </div>
+  </main>
+
+  <section class="block">
+    <h2><i class="fa-solid fa-book-open"></i> Understanding Medicare Costs</h2>
+    <div class="card edu" style="padding:8px 22px;">
+      <div class="eitem"><h3>Premiums</h3><p>The monthly amount you pay to have coverage — Part B, plus Part D and/or Medigap or a Medicare Advantage plan.</p></div>
+      <div class="eitem"><h3>Deductibles</h3><p>What you pay out of pocket before your coverage starts paying (e.g., the annual Part B deductible).</p></div>
+      <div class="eitem"><h3>Copays</h3><p>A fixed dollar amount you pay for a service, like $10 for a doctor visit.</p></div>
+      <div class="eitem"><h3>Coinsurance</h3><p>A percentage you pay for a service — Original Medicare's Part B coinsurance is typically 20%.</p></div>
+      <div class="eitem"><h3>Out-of-pocket maximum</h3><p>Medicare Advantage plans cap your yearly in-network medical costs. Original Medicare has no cap, which is why many people add Medigap.</p></div>
+      <div class="eitem"><h3>Extra Help</h3><p>A federal program that lowers Part D prescription costs for people with limited income and resources.</p></div>
+      <div class="eitem"><h3>IRMAA</h3><p>An income-related surcharge added to Part B and Part D premiums for higher-income beneficiaries.</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2><i class="fa-solid fa-toolbox"></i> Related Medicare Tools</h2>
+    <div class="tools-grid">
+      <a class="tool-card" href="/medicare-eligibility-calculator.html"><div class="tc-icon"><i class="fa-solid fa-calendar-check"></i></div><h3>Eligibility Calculator</h3><p>When you qualify &amp; your enrollment dates.</p></a>
+      <a class="tool-card" href="/medicare-irmaa-calculator.html"><div class="tc-icon"><i class="fa-solid fa-sack-dollar"></i></div><h3>IRMAA Calculator</h3><p>Estimate income-based premium surcharges.</p></a>
+      <a class="tool-card" href="/medicare-drug-cost-calculator.html"><div class="tc-icon"><i class="fa-solid fa-pills"></i></div><h3>Drug Cost Calculator</h3><p>Estimate prescription costs &amp; generics.</p></a>
+      <a class="tool-card" href="/medicare-timeline-calculator.html"><div class="tc-icon"><i class="fa-solid fa-timeline"></i></div><h3>Timeline Calculator</h3><p>Visualize your enrollment windows.</p></a>
+      <a class="tool-card" href="/medicare-enrollment-countdown.html"><div class="tc-icon"><i class="fa-solid fa-stopwatch"></i></div><h3>Enrollment Countdown</h3><p>Days until your enrollment deadlines.</p></a>
+      <a class="tool-card" href="/medicare-penalty-calculator.html"><div class="tc-icon"><i class="fa-solid fa-triangle-exclamation"></i></div><h3>Penalty Calculator</h3><p>Estimate late-enrollment penalties.</p></a>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="cta-card">
+      <h2>Questions about Medicare costs?</h2>
+      <p>A licensed Utah agent can pressure-test these numbers against real plans — free, no pressure.</p>
+      <div class="cta-row">
+        <a class="primary" href="tel:8013680700"><i class="fa-solid fa-phone"></i> Call (801) 368-0700</a>
+        <a class="ghost" href="sms:18013680700?body=Hi%20Bret%2C%20I%20have%20a%20question%20about%20my%20Medicare%20costs."><i class="fa-solid fa-comment-sms"></i> Text Us</a>
+      </div>
+      <div class="cta-row" style="margin-top:12px;">
+        <a class="ghost" href="contact.html"><i class="fa-solid fa-calendar-check"></i> Free Medicare Review</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block faq">
+    <h2><i class="fa-solid fa-circle-question"></i> Frequently Asked Questions</h2>
+    <details><summary>How much does Medicare cost? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></summary><div class="faq-a">Most people pay $0 for Part A and a standard Part B premium ($202.90 in 2026). Total costs depend on the plan you choose, your prescriptions, and how often you use care.</div></details>
+    <details><summary>What are out-of-pocket expenses? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></summary><div class="faq-a">What you pay beyond premiums — deductibles, copays, and coinsurance when you receive care.</div></details>
+    <details><summary>What is IRMAA? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></summary><div class="faq-a">An income-related surcharge added to your Part B and Part D premiums if your income is above a set threshold.</div></details>
+    <details><summary>What is Extra Help? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></summary><div class="faq-a">A federal program that lowers Part D prescription drug costs for people with limited income and resources.</div></details>
+    <details><summary>How much do Medigap plans cost? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></summary><div class="faq-a">Medigap premiums typically range from about $120 to $250 per month depending on the plan letter, your age, and your area.</div></details>
+    <details><summary>Do Medicare Advantage plans have maximum out-of-pocket limits? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></summary><div class="faq-a">Yes — they have a yearly in-network maximum out-of-pocket limit that caps what you pay for covered medical services.</div></details>
+  </section>
+
+</div>
+
+<script src="/medicare-figures.js"></script>
+<script>
+(function(){
+  "use strict";
+  var form=document.getElementById("ce-form");
+  var summaryEl=document.getElementById("ce-summary");
+  var pieEl=document.getElementById("ce-pie");
+  var legendEl=document.getElementById("ce-legend");
+  var bannerEl=document.getElementById("ce-banner");
+  var compareEl=document.getElementById("ce-compare");
+  var tabs=Array.prototype.slice.call(document.querySelectorAll(".tab"));
+  var active="medigap";
+
+  // Official figures from the single source of truth (/medicare-figures.js); inline
+  // fallback. maMOOP/copays/other are illustrative modeling assumptions, not annual figures.
+  var F = window.MEDICARE_FIGURES || null;
+  var C={
+    partB:           (F && F.partB) ? F.partB.premium            : 202.90,
+    partBirmaa:      (F && F.irmaa) ? F.irmaa.partBByTier[1]     : 284.10,
+    partDirmaa:      (F && F.irmaa) ? F.irmaa.partDByTier[1]     : 14.50,
+    partBDeductible: (F && F.partB) ? F.partB.deductible         : 283,
+    maMOOP:9000,
+    cp:{doctor:10, specialist:45, hospitalDay:375, hospitalDays:4, er:120}, other:300 };
+
+  function num(id){var v=parseFloat(document.getElementById(id).value);return isNaN(v)?0:Math.max(0,v);}
+  function usd(n){return "$"+Math.round(n).toLocaleString("en-US");}
+
+  function scenario(kind){
+    var irmaa=form.irmaa.value==="yes", extra=form.extra.value==="yes";
+    var partB=irmaa?C.partBirmaa:C.partB;
+    var medigap=num("medigap"), partD=num("partD"), rxAnnual=num("rxm")*12;
+    if(extra){ partD=0; rxAnnual=rxAnnual*0.15; }
+
+    var v;
+    if(kind==="high") v={doc:12,spec:8,hosp:1,er:2};
+    else if(kind==="low") v={doc:2,spec:1,hosp:0,er:0};
+    else v={doc:num("doctor"),spec:num("specialist"),hosp:num("hospital"),er:num("er")};
+
+    var premMonthly, medical;
+    if(kind==="medigap"){
+      premMonthly=partB+medigap+partD;
+      medical=C.partBDeductible;
+    }else{
+      premMonthly=partB+(irmaa?C.partDirmaa:0);
+      medical=v.doc*C.cp.doctor + v.spec*C.cp.specialist + v.hosp*C.cp.hospitalDay*C.cp.hospitalDays + v.er*C.cp.er;
+      medical=Math.min(medical,C.maMOOP);
+    }
+    var premAnnual=premMonthly*12, other=C.other;
+    var total=premAnnual+medical+rxAnnual+other;
+    return {premMonthly:premMonthly,premAnnual:premAnnual,medical:medical,rxAnnual:rxAnnual,other:other,total:total};
+  }
+
+  var SCN={medigap:"Original Medicare + Medigap",ma:"Medicare Advantage",high:"High Utilization",low:"Low Utilization"};
+
+  function render(){
+    var s=scenario(active);
+
+    // Summary cards
+    summaryEl.innerHTML=
+      card("Monthly Premium Costs",usd(s.premMonthly),"/ mo")+
+      card("Annual Premium Costs",usd(s.premAnnual),"/ yr")+
+      card("Out-of-Pocket Costs",usd(s.medical+s.other),"/ yr")+
+      card("Prescription Costs",usd(s.rxAnnual),"/ yr")+
+      '<div class="sum total-card" style="grid-column:1/-1"><div class="s-label">Estimated Annual Medicare Costs</div><div class="s-val">'+usd(s.total)+'</div></div>';
+
+    // Pie
+    var segs=[
+      {name:"Premiums",val:s.premAnnual,color:"var(--c-prem)"},
+      {name:"Prescriptions",val:s.rxAnnual,color:"var(--c-rx)"},
+      {name:"Medical / OOP",val:s.medical,color:"var(--c-med)"},
+      {name:"Other",val:s.other,color:"var(--c-other)"}
+    ];
+    var tot=segs.reduce(function(a,b){return a+b.val;},0)||1;
+    var acc=0, stops=[];
+    segs.forEach(function(seg){var start=acc/tot*100; acc+=seg.val; var end=acc/tot*100; stops.push(seg.color+" "+start.toFixed(2)+"% "+end.toFixed(2)+"%");});
+    pieEl.style.background="conic-gradient("+stops.join(",")+")";
+    legendEl.innerHTML=segs.map(function(seg){return '<li><span class="lname"><span class="dot" style="background:'+seg.color+'"></span>'+seg.name+'</span><span class="lval">'+usd(seg.val)+'</span></li>';}).join("");
+
+    // Banner
+    var t=s.total, b;
+    if(t<4000) b={type:"green",icon:"fa-circle-check",title:"Lower-than-average costs.",text:"Your estimated annual Medicare spending is on the low end. Make sure your coverage still fits your needs."};
+    else if(t<7000) b={type:"blue",icon:"fa-circle-info",title:"Average expected costs.",text:"This is a typical range for Medicare beneficiaries — premiums plus modest out-of-pocket spending."};
+    else if(t<11000) b={type:"amber",icon:"fa-circle-exclamation",title:"Above-average costs.",text:"Your estimate is higher than average — it may be worth comparing plans or checking for Extra Help."};
+    else b={type:"red",icon:"fa-triangle-exclamation",title:"High healthcare spending expected.",text:"A licensed agent can help you find coverage that lowers these costs and caps your exposure."};
+    var emp=form.employer.value==="yes"?' <em>If you still have active employer coverage, Medicare may be secondary and your actual costs could be lower.</em>':'';
+    bannerEl.innerHTML='<div class="banner '+b.type+'"><i class="fa-solid '+b.icon+'"></i><div><strong>'+b.title+'</strong><span>'+b.text+emp+'</span></div></div>';
+
+    // Compare all 4 scenarios
+    var all=Object.keys(SCN).map(function(k){return {k:k,name:SCN[k],total:scenario(k).total};});
+    var min=Math.min.apply(null,all.map(function(x){return x.total;}));
+    compareEl.innerHTML=all.map(function(x){
+      var diff=x.total-min;
+      return '<div class="crow'+(x.total===min?' best':'')+'"><span class="cname">'+x.name+(x.k===active?' &middot; <span style="color:var(--mc-blue)">viewing</span>':'')+'</span>'+
+        '<span><span class="cval">'+usd(x.total)+'</span> <span class="cdiff">'+(diff===0?'lowest':"+"+usd(diff))+'</span></span></div>';
+    }).join("");
+  }
+
+  function card(label,val,unit){return '<div class="sum"><div class="s-label">'+label+'</div><div class="s-val">'+val+'</div><div class="s-unit">'+unit+'</div></div>';}
+
+  tabs.forEach(function(tab){
+    tab.addEventListener("click",function(){
+      tabs.forEach(function(t){t.setAttribute("aria-selected","false");});
+      tab.setAttribute("aria-selected","true");
+      active=tab.getAttribute("data-scn");
+      render();
+    });
+  });
+  form.addEventListener("input",render);
+  form.addEventListener("change",render);
+  render();
+})();
+</script>
+</body>
+</html>

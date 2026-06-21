@@ -1,0 +1,91 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import LocationTools from './LocationTools.astro';
+import LocationFaq from './LocationFaq.astro';
+import LocationCTA from './LocationCTA.astro';
+import LocationBreadcrumb from './LocationBreadcrumb.astro';
+import { pageHref, trail, type Place } from '../../data/places';
+
+interface Props {
+  place: Place;
+}
+const { place } = Astro.props;
+const n = place.name;
+const canonical = pageHref(place, 'part-d');
+const SITE = 'https://altamedicare.com';
+
+const faqs = [
+  { q: `How do I choose a Part D plan in ${n}?`, a: `Start with your medications. Because every Part D plan in ${n} has its own formulary, the best plan is simply the one that covers your specific drugs for the lowest total yearly cost, not the one with the cheapest premium. Our drug cost calculator and formulary lookup make that comparison quick.` },
+  { q: `What is the $2,000 drug cap?`, a: `In 2026, Part D caps what you pay out of pocket for covered drugs at $2,000 for the year. Once your out-of-pocket spending reaches $2,000, you pay $0 for covered drugs for the rest of the year. The old coverage gap, or donut hole, is gone.` },
+  { q: `Why does my plan need to approve a drug first?`, a: `Plans use tools like prior authorization (approval before the drug is covered), step therapy (trying a preferred drug first), and quantity limits to manage costs. Your doctor can request an exception, and you have the right to appeal a denial.` },
+  { q: `Do I need Part D if I do not take any prescriptions?`, a: `Usually yes. Going more than 63 days without creditable drug coverage after you are first eligible can trigger a lifetime Part D late penalty. Many people enroll in a low-cost plan just to avoid the penalty and be protected if they need a drug later.` },
+  { q: `What is Extra Help?`, a: `Extra Help, also called the Low-Income Subsidy, lowers Part D premiums, deductibles, and copays for people with limited income and resources. If you qualify, your covered-drug costs are sharply reduced. It is worth applying through Social Security even if you are unsure you qualify.` },
+];
+const faqLd = {
+  '@context': 'https://schema.org', '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+const crumbs = trail(place, { name: 'Part D', href: canonical });
+const breadcrumbLd = {
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+  itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: `${SITE}${c.href}` })),
+};
+---
+
+<MainLayout
+  title={`Medicare Part D in ${n} | Prescription Drug Plans | AltaMedicare`}
+  description={`How Medicare Part D prescription drug plans work in ${n}: formularies, drug tiers, prior authorization, step therapy, Extra Help, and the 2026 $2,000 cap.`}
+  canonical={canonical}
+  pageType="Guide"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(faqLd)} />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbLd)} />
+  </Fragment>
+
+  <section class="page-header">
+    <div class="container">
+      <LocationBreadcrumb crumbs={crumbs} />
+      <h1>Medicare Part D in {n}</h1>
+      <p class="lede">Prescription drug coverage, explained &mdash; how Part D plans work in {n}, what drives your costs, and how the 2026 $2,000 cap protects you.</p>
+    </div>
+  </section>
+
+  <section class="section-white">
+    <div class="container content-narrow">
+      <h2>Prescription coverage in {n}</h2>
+      <p>Part D is Medicare's prescription drug coverage. You can get it two ways: as a <strong>standalone Part D plan</strong> alongside Original Medicare (and usually a Medigap policy), or <strong>built into a Medicare Advantage plan</strong>. Either way, the coverage is delivered by private insurers, and the plan you pick determines which drugs are covered and what you pay.</p>
+
+      <h2>Formularies</h2>
+      <p>Every Part D plan has a <strong>formulary</strong> &mdash; its list of covered drugs. Two plans with similar premiums can treat your medications very differently, so the single most important step is confirming your drugs are on a plan's formulary before you enroll. Our <a href="/medicare-formulary-lookup.html">formulary lookup</a> shows typical coverage, and the <a href="/medicare-drug-cost-calculator.html">drug cost calculator</a> estimates your costs.</p>
+
+      <h2>Drug tiers</h2>
+      <p>Formularies group drugs into <strong>tiers</strong>, usually from preferred generics up to specialty drugs. Lower tiers cost less; higher tiers cost more. The same drug can sit on different tiers in different plans, which is another reason the cheapest premium is not always the cheapest plan for you.</p>
+
+      <h2>Prior authorization and step therapy</h2>
+      <p>Plans use a few rules to manage costs:</p>
+      <ul>
+        <li><strong>Prior authorization</strong> &mdash; the plan must approve certain drugs before they are covered.</li>
+        <li><strong>Step therapy</strong> &mdash; you may need to try a preferred, often lower-cost drug first.</li>
+        <li><strong>Quantity limits</strong> &mdash; the plan covers a set amount per fill without an approved exception.</li>
+      </ul>
+      <p>If a rule gets in the way, your prescriber can request an exception, and you have appeal rights. Our guides to <a href="/blog/what-is-prior-authorization.html">prior authorization</a> and <a href="/blog/what-is-step-therapy.html">step therapy</a> explain the process.</p>
+
+      <h2>Extra Help</h2>
+      <p><strong>Extra Help</strong> (the Low-Income Subsidy) lowers Part D premiums, deductibles, and copays for people with limited income and resources. If you qualify, your prescription costs drop substantially. It is worth applying through Social Security even if you are not sure you are eligible &mdash; our <a href="/blog/extra-help-explained.html">Extra Help guide</a> has the details.</p>
+
+      <h2>The $2,000 cap</h2>
+      <p>In 2026, Part D includes a <strong>$2,000 annual cap</strong> on what you pay out of pocket for covered drugs. Once your out-of-pocket spending hits $2,000, you pay nothing more for covered drugs that year &mdash; and the old coverage gap (the &ldquo;donut hole&rdquo;) is gone. If your costs are high, you can also spread them across the year through the Medicare Prescription Payment Plan. Read more in our <a href="/blog/the-2000-drug-cap-explained.html">guide to the $2,000 cap</a>.</p>
+    </div>
+  </section>
+
+  <LocationTools
+    tools={['formulary', 'drug-cost', 'cost-estimator']}
+    heading="Tools to price your prescriptions"
+    sub="Check coverage, estimate drug costs, and compare your total spend."
+  />
+
+  <LocationFaq faqs={faqs} heading={`Medicare Part D in ${n}: FAQs`} />
+
+  <LocationCTA place={place} />
+</MainLayout>

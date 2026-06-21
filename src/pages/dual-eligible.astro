@@ -1,0 +1,69 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { COMPARE_PLANS_URL } from '../consts';
+---
+
+<MainLayout
+  title={"Dual Eligible & Medicaid Plans (D-SNP) | AltaMedicare"}
+  description={"If you have both Medicare and Medicaid, D-SNP plans offer extra benefits: grocery cards, transportation, OTC, dental, vision, and $0 premiums."}
+  canonical="/dual-eligible.html"
+>
+
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;&rsaquo;&nbsp; <a href="medicare-basics.html">Plans</a> &nbsp;&rsaquo;&nbsp; Dual Eligible / Medicaid</div>
+    <h1>Dual Eligible &amp; Medicaid Plans (D-SNP)</h1>
+    <p class="lede">If you have both Medicare and Medicaid, you may qualify for special plans with extra benefits at little to no cost.</p>
+  </div>
+</section>
+
+<section class="section-white">
+  <div class="container content-narrow">
+    <h2>Medicare + Medicaid = More Help</h2>
+    <p>If you qualify for both Medicare and Medicaid, you&rsquo;re considered <strong>dual eligible</strong>. Special plans called <strong>D-SNPs (Dual-Eligible Special Needs Plans)</strong> are designed specifically for people in your situation &mdash; with extra benefits beyond what either program offers alone.</p>
+
+    <h2>Common D-SNP Benefits</h2>
+    <ul>
+      <li><strong>Grocery cards</strong> &mdash; monthly allowance for healthy groceries at participating stores</li>
+      <li><strong>Over-the-counter (OTC) cards</strong> &mdash; allowance for pharmacy items like vitamins, pain relievers, first aid</li>
+      <li><strong>Transportation</strong> &mdash; rides to medical appointments and sometimes to the pharmacy or grocery store</li>
+      <li><strong>Dental, vision, hearing</strong> &mdash; often more generous than standard Medicare Advantage plans</li>
+      <li><strong>$0 or very low premium</strong> &mdash; many D-SNPs have $0 monthly premium</li>
+      <li><strong>$0 copays</strong> for many services</li>
+      <li><strong>Extra Help with Part D</strong> &mdash; drastically reduced prescription costs</li>
+    </ul>
+
+    <h2>Do You Qualify?</h2>
+    <p>You may be dual eligible if you&rsquo;re on Medicare AND any of the following:</p>
+    <ul>
+      <li>Medicaid</li>
+      <li>Qualified Medicare Beneficiary (QMB)</li>
+      <li>Specified Low-Income Medicare Beneficiary (SLMB)</li>
+      <li>Qualifying Individual (QI)</li>
+      <li>Qualified Disabled and Working Individuals (QDWI)</li>
+    </ul>
+    <p>Income and asset limits apply. We can help you check whether you qualify and walk through the application if you&rsquo;re close.</p>
+
+    <h2>You Can Switch Plans Anytime</h2>
+    <p>Most Medicare beneficiaries are locked into their plan choice except during certain enrollment windows. <strong>Dual-eligible beneficiaries get a Special Enrollment Period</strong> that lets them change D-SNP plans more flexibly throughout the year.</p>
+
+    <div class="callout">
+      <strong>Not sure if you qualify?</strong>
+      <p style="margin:8px 0 0;">Call us. We&rsquo;ll check Medicare and Medicaid eligibility together &mdash; it&rsquo;s a quick conversation, and many people find out they qualify for benefits they didn&rsquo;t know about.</p>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <h2>Have Questions? Let's Talk.</h2>
+    <p>One free, no-pressure call &mdash; clear answers, no sales pitch.</p>
+    <div class="cta-buttons">
+      <a href="contact.html" class="btn btn-primary btn-lg">Schedule Consultation</a>
+      <a href="tel:8013680700" class="btn btn-outline btn-lg">Call (801) 368-0700</a>
+      <a href={COMPARE_PLANS_URL} target="_blank" rel="noopener" class="btn btn-outline btn-lg">Compare Plans Online</a>
+    </div>
+  </div>
+</section>
+
+</MainLayout>

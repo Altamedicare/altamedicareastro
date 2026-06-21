@@ -1,0 +1,3 @@
+# Cloudflare Pages redirects (301). Add cross-host or changed-URL redirects here.
+# Dev artifact — send to home.
+/test.html  /  301

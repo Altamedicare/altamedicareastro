@@ -1,0 +1,70 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { COMPARE_PLANS_URL } from '../consts';
+---
+
+<MainLayout
+  title={"Dental, Vision & Hearing Coverage | AltaMedicare"}
+  description={"Original Medicare doesn’t cover routine dental, vision, or hearing. Here are your options through Medicare Advantage and standalone plans."}
+  canonical="/dental-vision-hearing.html"
+>
+
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;&rsaquo;&nbsp; <a href="medicare-basics.html">Plans</a> &nbsp;&rsaquo;&nbsp; Dental, Vision, Hearing</div>
+    <h1>Dental, Vision &amp; Hearing Coverage</h1>
+    <p class="lede">Original Medicare doesn&rsquo;t cover routine dental, vision, or hearing care &mdash; but you have options.</p>
+  </div>
+</section>
+
+<section class="section-white">
+  <div class="container content-narrow">
+    <h2>What Original Medicare Doesn&rsquo;t Cover</h2>
+    <p>Many people are surprised to learn that Original Medicare (Parts A and B) doesn&rsquo;t cover most of what we think of as &ldquo;everyday&rdquo; healthcare:</p>
+    <ul>
+      <li>Routine dental cleanings, fillings, crowns, dentures</li>
+      <li>Routine eye exams, glasses, or contact lenses</li>
+      <li>Hearing exams or hearing aids</li>
+    </ul>
+    <p>The good news: there are several ways to add this coverage.</p>
+
+    <h2>Option 1: Medicare Advantage Plans</h2>
+    <p>Most <a href="medicare-advantage.html">Medicare Advantage</a> plans include dental, vision, and hearing benefits at no extra premium. Coverage levels vary by plan &mdash; some include only cleanings and exams, while others cover crowns, dentures, and hearing aids with meaningful allowances.</p>
+    <p>If dental, vision, and hearing are important to you, this is often the simplest path.</p>
+
+    <h2>Option 2: Standalone Dental, Vision &amp; Hearing Plans</h2>
+    <p>Available alongside Original Medicare and Medicare Supplement plans. These let you keep the doctor flexibility of Original Medicare/Supplement while adding ancillary coverage. Premiums and benefits vary widely.</p>
+
+    <h2>Option 3: Discount Programs</h2>
+    <p>Some dental and vision discount programs aren&rsquo;t insurance, but offer reduced rates at participating providers. Useful for occasional needs without committing to a full insurance premium.</p>
+
+    <h2>What to Look For</h2>
+    <p>When comparing dental, vision, and hearing benefits:</p>
+    <ul>
+      <li><strong>Annual maximums</strong> &mdash; how much will the plan pay per year?</li>
+      <li><strong>Waiting periods</strong> &mdash; can you use major benefits right away, or do you have to wait?</li>
+      <li><strong>Network</strong> &mdash; is your dentist or audiologist included?</li>
+      <li><strong>Hearing aid allowances</strong> &mdash; some plans offer $1,000+, others much less</li>
+      <li><strong>Vision allowances</strong> &mdash; how much toward frames and lenses each year?</li>
+    </ul>
+
+    <div class="callout">
+      <strong>Let&rsquo;s find the right fit.</strong>
+      <p style="margin:8px 0 0;">If dental work, hearing aids, or eye care matter to you, tell us &mdash; we&rsquo;ll help you compare plans where these benefits actually shine. Some plans have great dental but minimal hearing; others are the reverse. The right choice depends on what you actually need.</p>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <h2>Have Questions? Let's Talk.</h2>
+    <p>One free, no-pressure call &mdash; clear answers, no sales pitch.</p>
+    <div class="cta-buttons">
+      <a href="contact.html" class="btn btn-primary btn-lg">Schedule Consultation</a>
+      <a href="tel:8013680700" class="btn btn-outline btn-lg">Call (801) 368-0700</a>
+      <a href={COMPARE_PLANS_URL} target="_blank" rel="noopener" class="btn btn-outline btn-lg">Compare Plans Online</a>
+    </div>
+  </div>
+</section>
+
+</MainLayout>

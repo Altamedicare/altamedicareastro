@@ -1,0 +1,233 @@
+---
+import MainLayout from './MainLayout.astro';
+import { TOOLS, CATEGORIES, COMPARE_PLANS_URL, CONTACT_URL, PHONE_TEL, PHONE_DISPLAY } from '../consts';
+
+interface RelatedPost { slug: string; title: string; description: string; category: string; }
+interface NavPost { slug: string; title: string; }
+
+interface Props {
+  slug: string;
+  title: string;
+  description: string;
+  category: keyof typeof CATEGORIES;
+  publishDate: Date;
+  updatedDate?: Date;
+  author: string;
+  tags: string[];
+  image?: string;
+  faqs: { question: string; answer: string }[];
+  relatedTools: string[];
+  readingTime: number;
+  related: RelatedPost[];
+  prev?: NavPost;
+  next?: NavPost;
+}
+
+const {
+  slug, title, description, category, publishDate, updatedDate,
+  author, tags, image, faqs, relatedTools, readingTime, related, prev, next,
+} = Astro.props;
+
+const canonical = `/blog/${slug}.html`;
+const cat = CATEGORIES[category];
+const SITE = 'https://altamedicare.com';
+const ogImage = image || '/images/og-image.svg';
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+const iso = (d: Date) => d.toISOString().slice(0, 10);
+const lastUpdated = updatedDate || publishDate;
+
+// Only tool keys that exist in the registry, in frontmatter order.
+const toolCards = relatedTools
+  .filter((k): k is keyof typeof TOOLS => k in TOOLS)
+  .map((k) => TOOLS[k]);
+
+// ── Structured data ──────────────────────────────────────────────
+const articleLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: title,
+  description,
+  datePublished: iso(publishDate),
+  dateModified: iso(lastUpdated),
+  author: { '@type': 'Person', name: author },
+  publisher: {
+    '@type': 'Organization',
+    name: 'AltaMedicare',
+    logo: { '@type': 'ImageObject', url: `${SITE}/images/favicon.svg` },
+  },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE}${canonical}` },
+  image: `${SITE}${ogImage}`,
+  keywords: tags.join(', '),
+  articleSection: cat.title,
+};
+
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE}/blog.html` },
+    { '@type': 'ListItem', position: 3, name: cat.title, item: `${SITE}/blog/category/${category}.html` },
+    { '@type': 'ListItem', position: 4, name: title, item: `${SITE}${canonical}` },
+  ],
+};
+
+const faqLd = faqs.length
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((f) => ({
+        '@type': 'Question',
+        name: f.question,
+        acceptedAnswer: { '@type': 'Answer', text: f.answer },
+      })),
+    }
+  : null;
+---
+
+<MainLayout title={`${title} | AltaMedicare`} description={description} canonical={canonical} ogImage={ogImage} pageType="Blog">
+  <Fragment slot="head">
+    <meta property="og:type" content="article" />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(articleLd)} />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbLd)} />
+    {faqLd && <script type="application/ld+json" is:inline set:html={JSON.stringify(faqLd)} />}
+  </Fragment>
+
+  <article class="blog-post">
+    <header class="post-header">
+      <div class="container content-narrow">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a> &nbsp;&rsaquo;&nbsp;
+          <a href="/blog.html">Blog</a> &nbsp;&rsaquo;&nbsp;
+          <a href={`/blog/category/${category}.html`}>{cat.title}</a>
+        </nav>
+        <span class="post-cat-tag"><i class={`fa-solid ${cat.icon}`}></i> {cat.title}</span>
+        <h1>{title}</h1>
+        <p class="lede">{description}</p>
+        <div class="post-meta">
+          <span><i class="fa-solid fa-user-pen"></i> {author}</span>
+          <span><i class="fa-solid fa-clock"></i> {readingTime} min read</span>
+          <span><i class="fa-solid fa-rotate"></i> Updated {fmt(lastUpdated)}</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="section-white">
+      <div class="container content-narrow post-body">
+        <slot />
+
+        {category === 'drug-coverage' && (
+          <p class="post-disclaimer">
+            <strong>Medical &amp; coverage disclaimer:</strong> This article is general education &mdash; not
+            medical advice or a guarantee of coverage. Whether a specific drug is covered, and what you&rsquo;ll
+            pay, depends on your individual Part&nbsp;D or Medicare Advantage plan, its formulary, and the plan
+            year, and can change. Always confirm with your plan or a licensed agent, and talk to your doctor
+            about your treatment.
+          </p>
+        )}
+
+        {tags.length > 0 && (
+          <div class="post-tags">
+            {tags.map((t) => <span class="post-tag">{t}</span>)}
+          </div>
+        )}
+      </div>
+    </div>
+
+    {faqs.length > 0 && (
+      <section class="section-tinted">
+        <div class="container content-narrow">
+          <h2 class="faq-title">Frequently Asked Questions</h2>
+          <div class="faq-list">
+            {faqs.map((f) => (
+              <details class="faq-item">
+                <summary>{f.question}</summary>
+                <p>{f.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {toolCards.length > 0 && (
+      <section class="section-white">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">Free tools</span>
+            <h2>Related Calculators</h2>
+            <p>Put these numbers to work for your own situation.</p>
+          </div>
+          <div class="card-grid">
+            {toolCards.map((t) => (
+              <a href={t.href} class="card" style="text-decoration:none;">
+                <div class="card-icon"><i class={`fa-solid ${t.icon}`} style="font-size:1.6rem"></i></div>
+                <h3>{t.title}</h3>
+                <p>{t.desc}</p>
+                <span class="card-link">Open tool</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <section class="post-help section-tinted">
+      <div class="container content-narrow">
+        <div class="callout">
+          <strong>Want a real person to walk through this with you?</strong>
+          <p style="margin:8px 0 14px;">Bret Swope is a licensed Utah Medicare agent. No bots, no pressure &mdash; just clear answers.</p>
+          <div class="cta-buttons">
+            <a href={CONTACT_URL} class="btn btn-primary">Talk to Bret</a>
+            <a href={COMPARE_PLANS_URL} class="btn btn-outline" target="_blank" rel="noopener">Compare Plans Online</a>
+            <a href={PHONE_TEL} class="btn btn-outline">Call {PHONE_DISPLAY}</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {related.length > 0 && (
+      <section class="section-white">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">Keep reading</span>
+            <h2>Related Articles</h2>
+          </div>
+          <div class="card-grid">
+            {related.map((r) => (
+              <a href={`/blog/${r.slug}.html`} class="card" style="text-decoration:none;">
+                <span class="card-eyebrow">{CATEGORIES[r.category as keyof typeof CATEGORIES]?.title}</span>
+                <h3>{r.title}</h3>
+                <p>{r.description}</p>
+                <span class="card-link">Read article</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {(prev || next) && (
+      <nav class="post-nav" aria-label="More articles">
+        <div class="container content-narrow">
+          <div class="post-nav-grid">
+            {prev ? (
+              <a class="post-nav-link prev" href={`/blog/${prev.slug}.html`}>
+                <span class="pn-dir"><i class="fa-solid fa-arrow-left"></i> Previous</span>
+                <span class="pn-title">{prev.title}</span>
+              </a>
+            ) : <span></span>}
+            {next ? (
+              <a class="post-nav-link next" href={`/blog/${next.slug}.html`}>
+                <span class="pn-dir">Next <i class="fa-solid fa-arrow-right"></i></span>
+                <span class="pn-title">{next.title}</span>
+              </a>
+            ) : <span></span>}
+          </div>
+        </div>
+      </nav>
+    )}
+  </article>
+</MainLayout>

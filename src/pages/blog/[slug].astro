@@ -1,0 +1,58 @@
+---
+import { getCollection } from 'astro:content';
+import BlogPost from '../../layouts/BlogPost.astro';
+
+export async function getStaticPaths() {
+  const posts = (await getCollection('blog', ({ data }) => !data.draft))
+    .sort((a, b) => a.data.publishDate.valueOf() - b.data.publishDate.valueOf());
+
+  return posts.map((post, i) => {
+    const prev = posts[i - 1]; // chronologically earlier
+    const next = posts[i + 1]; // chronologically later
+
+    const related = posts
+      .filter((p) => p.slug !== post.slug && p.data.category === post.data.category)
+      .sort((a, b) => Number(b.data.featured) - Number(a.data.featured))
+      .slice(0, 3)
+      .map((p) => ({ slug: p.slug, title: p.data.title, description: p.data.description, category: p.data.category }));
+
+    const words = post.body.split(/\s+/).filter(Boolean).length;
+    const readingTime = Math.max(1, Math.round(words / 200));
+
+    return {
+      params: { slug: post.slug },
+      props: {
+        post,
+        readingTime,
+        related,
+        prev: prev ? { slug: prev.slug, title: prev.data.title } : undefined,
+        next: next ? { slug: next.slug, title: next.data.title } : undefined,
+      },
+    };
+  });
+}
+
+const { post, readingTime, related, prev, next } = Astro.props;
+const { Content } = await post.render();
+const d = post.data;
+---
+
+<BlogPost
+  slug={post.slug}
+  title={d.title}
+  description={d.description}
+  category={d.category}
+  publishDate={d.publishDate}
+  updatedDate={d.updatedDate}
+  author={d.author}
+  tags={d.tags}
+  image={d.image}
+  faqs={d.faqs}
+  relatedTools={d.relatedTools}
+  readingTime={readingTime}
+  related={related}
+  prev={prev}
+  next={next}
+>
+  <Content />
+</BlogPost>

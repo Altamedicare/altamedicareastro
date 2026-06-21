@@ -1,0 +1,549 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { COMPARE_PLANS_URL } from '../consts';
+---
+
+<MainLayout
+  title={"AltaMedicare | Simple Medicare Guidance for Utah Families"}
+  description={"Helping Orem and Utah residents understand Medicare, lower prescription costs, and make confident healthcare decisions. Licensed local Medicare guidance with no pressure."}
+  canonical="/"
+>
+
+<!-- ================= SECTION 1: HERO ================= -->
+<section class="hero">
+  <!-- Auto-playing, muted, looping background reel that fills the whole section. -->
+  <div class="hero-video" aria-hidden="true">
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="https://res.cloudinary.com/dcev2u7ki/video/upload/v1781961129/DJI_Mavic_Pro_4K_-_Orem_Utah_-_Park_Vista_khUXpXJNQ54_kk8a1s.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="hero-inner">
+      <h1>Simple Medicare Guidance for Utah Families</h1>
+      <p class="subhead">
+        Helping Orem and Utah residents understand Medicare, lower prescription
+        costs, and make confident healthcare decisions.
+      </p>
+      <div class="hero-buttons">
+        <a href="contact.html" class="btn btn-primary btn-lg">Schedule Free Consultation</a>
+        <a href="drug-savings.html" class="btn btn-outline btn-lg">Check Prescription Costs</a>
+        <a href={COMPARE_PLANS_URL} target="_blank" rel="noopener" class="btn btn-outline btn-lg">Compare Plans Online</a>
+      </div>
+      <a href="tel:8013680700" class="hero-phone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+        (801) 368-0700
+      </a>
+      <p class="hero-trust">
+        <span class="stars" aria-hidden="true">★★★★★</span>Trusted by Utah families · Licensed · No-pressure guidance
+      </p>
+    </div>
+
+    <div class="site-search">
+      <label for="medicare-search" class="sr-only">Ask a Medicare question</label>
+      <div class="site-search-field">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" id="medicare-search" autocomplete="off" placeholder="Ask a Medicare question — e.g. &ldquo;Can I keep my doctor?&rdquo;" />
+      </div>
+      <div class="search-examples">
+        <button type="button" class="search-example" data-q="doctor">Can I keep my doctor?</button>
+        <button type="button" class="search-example" data-q="enrollment when turning 65">When should I enroll?</button>
+        <button type="button" class="search-example" data-q="advantage supplement">Advantage vs Supplement?</button>
+      </div>
+    </div>
+
+    <div class="hero-tools">
+      <span class="hero-tools-label">Free calculators</span>
+      <a href="/medicare-drug-cost-calculator.html" title="Estimate prescription costs and savings opportunities.">💊 Drug Costs</a>
+      <a href="/medicare-irmaa-calculator.html" title="Estimate Medicare Part B and Part D premiums using 2026 figures.">💰 IRMAA Calculator</a>
+      <a href="/medicare-penalty-calculator.html" title="Estimate lifetime Medicare late enrollment penalties.">⚠️ Penalties</a>
+      <a href="/medicare-eligibility-calculator.html" title="See when you qualify and your Initial Enrollment Period.">💼 Eligibility</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION 2: TRUST BAR ================= -->
+<section class="trust-bar">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg>
+        </div>
+        <h4>Licensed Utah Medicare Help</h4>
+      </div>
+      <div class="trust-item">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h4>No-Cost Consultations</h4>
+      </div>
+      <div class="trust-item">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+        </div>
+        <h4>Prescription Savings Guidance</h4>
+      </div>
+      <div class="trust-item">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg>
+        </div>
+        <h4>Annual Plan Reviews</h4>
+      </div>
+      <div class="trust-item">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h4>Local Utah Support</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FREE MEDICARE TOOLS ================= -->
+<section class="section-tinted" id="tools">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Free Medicare tools</span>
+      <h2>Free Medicare Tools</h2>
+      <p>Interactive calculators and resources to help you make informed Medicare decisions.</p>
+    </div>
+    <div class="card-grid">
+      <a href="/medicare-eligibility-calculator.html" class="card" style="text-decoration:none;">
+        <div class="card-icon"><i class="fa-solid fa-calendar-check" style="font-size:1.6rem"></i></div>
+        <h3>Medicare Eligibility Calculator</h3>
+        <p>Find out when you qualify for Medicare and calculate your Initial Enrollment Period.</p>
+        <span class="card-link">Learn More</span>
+      </a>
+      <a href="/medicare-irmaa-calculator.html" class="card" style="text-decoration:none;">
+        <div class="card-icon"><i class="fa-solid fa-sack-dollar" style="font-size:1.6rem"></i></div>
+        <h3>IRMAA Calculator</h3>
+        <p>Estimate your Medicare Part B and Part D premiums using 2026 figures.</p>
+        <span class="card-link">Learn More</span>
+      </a>
+      <a href="/medicare-penalty-calculator.html" class="card" style="text-decoration:none;">
+        <div class="card-icon"><i class="fa-solid fa-triangle-exclamation" style="font-size:1.6rem"></i></div>
+        <h3>Late Enrollment Penalty Calculator</h3>
+        <p>Estimate lifetime Medicare penalties and understand Special Enrollment Periods.</p>
+        <span class="card-link">Learn More</span>
+      </a>
+      <a href="/medicare-drug-cost-calculator.html" class="card" style="text-decoration:none;">
+        <div class="card-icon"><i class="fa-solid fa-pills" style="font-size:1.6rem"></i></div>
+        <h3>Drug Cost Calculator</h3>
+        <p>Estimate prescription costs and compare savings opportunities.</p>
+        <span class="card-link">Learn More</span>
+      </a>
+    </div>
+    <div style="text-align:center; margin-top:32px;">
+      <a href="/tools.html" class="btn btn-outline">See all Medicare tools</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION 3: SIMPLE MEDICARE EXPLANATION ================= -->
+<section class="section-white">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Medicare, simplified</span>
+      <h2>The Four Things Most People Need to Know</h2>
+      <p>Medicare can feel overwhelming. Here's a quick, friendly overview of the main pieces — explained without jargon.</p>
+    </div>
+
+    <div class="card-grid">
+      <a href="medicare-advantage.html" class="card" style="text-decoration:none;">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Medicare Advantage</h3>
+        <p>All-in-one plans with extra benefits like dental, vision, hearing, and prescription coverage.</p>
+        <span class="card-link">Learn more</span>
+      </a>
+
+      <a href="medicare-supplement.html" class="card card--sage" style="text-decoration:none;">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Medicare Supplement</h3>
+        <p>Lower surprise medical costs with predictable monthly premiums and broad doctor flexibility.</p>
+        <span class="card-link">Learn more</span>
+      </a>
+
+      <a href="prescription-drug-plans.html" class="card card--terracotta" style="text-decoration:none;">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.5 20.5l10-10a4.95 4.95 0 10-7-7l-10 10a4.95 4.95 0 107 7z"/><path d="M8.5 8.5l7 7"/></svg>
+        </div>
+        <h3>Prescription Drug Plans</h3>
+        <p>Help lower medication expenses with the right Part D plan for your specific drugs.</p>
+        <span class="card-link">Learn more</span>
+      </a>
+
+      <a href="turning-65.html" class="card" style="text-decoration:none;">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        </div>
+        <h3>Turning 65</h3>
+        <p>Learn enrollment timelines, avoid penalties, and start your Medicare journey on the right foot.</p>
+        <span class="card-link">Learn more</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EDUCATIONAL VIDEO CENTER ================= -->
+<section class="section-tinted" id="videos">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Watch &amp; learn</span>
+      <h2>Medicare, Explained in Plain English</h2>
+      <p>Short, friendly videos on the questions we hear most — with a transcript for every one. Pick a topic to watch.</p>
+    </div>
+
+    <div class="video-center">
+      <div class="video-topics" role="tablist" aria-label="Video topics">
+        <button class="video-topic active" role="tab" aria-selected="true"
+          data-title="Understanding Medicare Parts A, B, C &amp; D"
+          data-desc="A 2-minute tour of the four parts of Medicare and what each one covers."
+          data-video="" data-yt="UDY-pF0Yek0" data-transcript="medicare-basics.html">
+          Understanding Parts A, B, C &amp; D
+        </button>
+        <button class="video-topic" role="tab" aria-selected="false"
+          data-title="Medicare Advantage vs Supplement"
+          data-desc="The real differences — networks, costs, and flexibility — so you can choose with confidence."
+          data-video="" data-yt="TwwRovzjYMk" data-transcript="medicare-advantage.html">
+          Medicare Advantage vs Supplement
+        </button>
+        <button class="video-topic" role="tab" aria-selected="false"
+          data-title="When Can I Enroll?"
+          data-desc="Your Initial Enrollment Period, the Annual Enrollment Period, and how to avoid penalties."
+          data-video="" data-yt="Yut_rz5cifs" data-transcript="turning-65.html">
+          When Can I Enroll?
+        </button>
+        <button class="video-topic" role="tab" aria-selected="false"
+          data-title="Can I Keep My Doctor?"
+          data-desc="How plan networks work and how we check that your doctors are covered before you enroll."
+          data-video="" data-yt="O2F1-u58YqI" data-transcript="medicare-advantage.html">
+          Can I Keep My Doctor?
+        </button>
+        <button class="video-topic" role="tab" aria-selected="false"
+          data-title="Prescription Drug Plans"
+          data-desc="How Part D works and how we match a plan to the exact medications you take."
+          data-video="" data-yt="MLN3mjcvHWM" data-transcript="prescription-drug-plans.html">
+          Prescription Drug Plans
+        </button>
+      </div>
+
+      <div class="video-stage">
+        <div class="media-card" id="videoPlayer" data-video="" data-yt="UDY-pF0Yek0" aria-label="Educational video">
+          <div class="media-poster">
+            <span class="media-badge">Medicare 101</span>
+            <button class="media-play" type="button" aria-label="Play this video">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <span class="media-watch"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M8 5v14l11-7z"/></svg> Watch the video</span>
+          </div>
+        </div>
+        <div class="video-meta">
+          <h3 id="videoTitle">Understanding Medicare Parts A, B, C &amp; D</h3>
+          <p id="videoDesc">A 2-minute tour of the four parts of Medicare and what each one covers.</p>
+          <div class="video-actions">
+            <a id="videoTranscript" href="medicare-basics.html" class="video-transcript">Read the transcript →</a>
+            <a href="sms:18013680700?body=Hi%20Bret%2C%20I%20have%20a%20question%20after%20watching%20a%20video." class="btn btn-primary">Still have a question? Text us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION 4: WHY ALTAMEDICARE ================= -->
+<section class="section-white">
+  <div class="container">
+    <div class="why-us">
+      <div>
+        <span class="eyebrow" style="display:inline-block; font-size:0.85rem; font-weight:600; text-transform:uppercase; letter-spacing:0.12em; color:var(--terracotta); margin-bottom:12px;">Why families choose us</span>
+        <h2>Why Utah Families Choose AltaMedicare</h2>
+        <p style="font-size:1.1rem; color:var(--charcoal-soft); margin-bottom:24px;">
+          We believe Medicare guidance should feel calm, clear, and personal — never pushy. Here's what makes our approach different:
+        </p>
+        <ul class="why-us-list">
+          <li><span class="check">✓</span> Personalized Medicare guidance based on your specific situation</li>
+          <li><span class="check">✓</span> Simple, jargon-free explanations without sales pressure</li>
+          <li><span class="check">✓</span> Help understanding and lowering prescription costs</li>
+          <li><span class="check">✓</span> Annual plan reviews to make sure you're still in the right plan</li>
+          <li><span class="check">✓</span> Local Utah support — we live and work where you do</li>
+          <li><span class="check">✓</span> One-on-one consultations at your pace</li>
+          <li><span class="check">✓</span> Educational approach — we want you to understand, not just sign</li>
+        </ul>
+      </div>
+
+      <div class="bret-card">
+        <img src="images/BretSwope.webp" alt="Bret Swope, founder of AltaMedicare" class="bret-photo" onerror="this.style.display='none'" />
+        <h3>Bret Swope</h3>
+        <p class="role">Founder · Licensed Medicare Agent</p>
+        <p style="color:var(--charcoal-soft);">"My goal is to make Medicare feel less confusing — so you can make confident decisions for yourself and your family. My consultations are always free."</p>
+        <div class="bret-actions">
+          <a href="tel:8013680700" class="btn btn-secondary">Call</a>
+          <a href="sms:18013680700?body=Hi%20Bret%2C%20I%20have%20a%20question%20about%20Medicare." class="btn btn-primary">Text</a>
+          <a href="contact.html" class="btn btn-outline">Schedule</a>
+        </div>
+        <p style="margin:14px 0 0;"><a href="about.html" style="font-weight:600;">Read Bret's full story &rarr;</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LATEST ARTICLES CAROUSEL ================= -->
+<section class="section-tinted">
+  <div class="container">
+    <div class="carousel-head">
+      <div class="section-header" style="text-align:left; margin:0; max-width:640px;">
+        <span class="eyebrow">From the blog</span>
+        <h2>Latest Articles</h2>
+        <p>Practical, jargon-free guides for Utah Medicare beneficiaries and their families.</p>
+      </div>
+      <div class="carousel-nav">
+        <button class="carousel-btn" id="articlesPrev" aria-label="Previous articles">&larr;</button>
+        <button class="carousel-btn" id="articlesNext" aria-label="Next articles">&rarr;</button>
+      </div>
+    </div>
+
+    <div class="article-track" id="articlesTrack">
+      <a href="turning-65.html" class="article-card">
+        <div class="article-img alt-2"><span class="article-tag">Getting Started</span></div>
+        <div class="article-body">
+          <div class="article-meta">5 min read</div>
+          <h3>Turning 65 Checklist</h3>
+          <p>Every step to enroll on time and avoid lifetime late penalties.</p>
+          <span class="card-link">Read more</span>
+        </div>
+      </a>
+      <a href="medicare-advantage.html" class="article-card">
+        <div class="article-img"><span class="article-tag">Plans</span></div>
+        <div class="article-body">
+          <div class="article-meta">6 min read</div>
+          <h3>Best Medicare Advantage Plans in Utah</h3>
+          <p>What to compare — networks, drug coverage, and extra benefits.</p>
+          <span class="card-link">Read more</span>
+        </div>
+      </a>
+      <a href="medicare-basics.html" class="article-card">
+        <div class="article-img alt-1"><span class="article-tag">Avoid Mistakes</span></div>
+        <div class="article-body">
+          <div class="article-meta">4 min read</div>
+          <h3>Avoiding Late Enrollment Penalties</h3>
+          <p>The deadlines that matter and how to never pay a penalty.</p>
+          <span class="card-link">Read more</span>
+        </div>
+      </a>
+      <a href="prescription-drug-plans.html" class="article-card">
+        <div class="article-img alt-2"><span class="article-tag">Savings</span></div>
+        <div class="article-body">
+          <div class="article-meta">5 min read</div>
+          <h3>Lowering Your Prescription Costs</h3>
+          <p>How the right Part D plan can save hundreds a year on medications.</p>
+          <span class="card-link">Read more</span>
+        </div>
+      </a>
+      <a href="medicare-news.html" class="article-card">
+        <div class="article-img"><span class="article-tag">Wellness</span></div>
+        <div class="article-body">
+          <div class="article-meta">3 min read</div>
+          <h3>Heart-Healthy Foods for Seniors</h3>
+          <p>Simple, affordable choices that support healthy aging.</p>
+          <span class="card-link">Read more</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MINI BANNER: TURNING 65 ================= -->
+<section class="mini-banner">
+  <div class="container">
+    <div>
+      <h2>Turning 65 soon?</h2>
+      <p>We'll help you understand Medicare and enroll on time — no penalties, no pressure.</p>
+    </div>
+    <div class="mini-banner-actions">
+      <a href="sms:18013680700?body=Hi%20Bret%2C%20I%27m%20turning%2065%20and%20have%20questions." class="btn btn-primary">Text Us</a>
+      <a href="turning-65.html" class="btn btn-outline">Turning 65 Guide</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION 6: PRESCRIPTION SAVINGS TOOL ================= -->
+<section class="prescription-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Free service</span>
+      <h2>Prescription Costs Too High?</h2>
+      <p>Send us your medications and we'll review whether your current plan is the most affordable option for you. No obligation — just clear answers.</p>
+    </div>
+
+    <div class="form-card contact-actions">
+      <div class="contact-action">
+        <div class="icon-circle" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <div class="contact-action-text">
+          <strong>Text your meds to Bret</strong>
+          <span>Fastest way &mdash; opens a text with your list already started</span>
+        </div>
+        <a href="sms:18013680700?body=Hi%20Bret%2C%20can%20you%20review%20my%20prescription%20costs%3F%20My%20medications%20are%3A%0D%0A" class="btn btn-primary btn-lg">Text Your Medications</a>
+      </div>
+
+      <div class="contact-action">
+        <div class="icon-circle" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+        </div>
+        <div class="contact-action-text">
+          <strong>Email your meds to Bret</strong>
+          <span>Opens your email with a quick template to fill in</span>
+        </div>
+        <a href="mailto:bret@altahealthins.com?subject=Free%20Prescription%20Review&body=Name%3A%0D%0APhone%3A%0D%0AZIP%3A%0D%0APreferred%20Pharmacy%3A%0D%0A%0D%0AMedications%20(one%20per%20line%2C%20with%20dose%20if%20known)%3A%0D%0A" class="btn btn-outline btn-lg">Email Your Medications</a>
+      </div>
+
+      <p style="font-size:0.9rem; color:var(--text-muted); text-align:center; margin:18px 0 0;">
+        Bret personally reviews every list &mdash; usually within a few hours. No cost, no obligation.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION 7: TESTIMONIALS ================= -->
+<section class="section-white">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">From our clients</span>
+      <h2>What Utah Families Are Saying</h2>
+    </div>
+
+    <div class="review-slider">
+      <div class="review-track">
+        <figure class="review-slide active">
+          <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>Bret explained Medicare in a way I finally understood. After three years of being confused, I finally feel confident in my plan.</blockquote>
+          <figcaption class="review-author">— Linda M., Orem</figcaption>
+        </figure>
+        <figure class="review-slide">
+          <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>AltaMedicare helped me lower my prescription costs by over $200 a month. I had no idea I was overpaying until Bret reviewed my plan.</blockquote>
+          <figcaption class="review-author">— Robert K., Provo</figcaption>
+        </figure>
+        <figure class="review-slide">
+          <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>Very patient and easy to work with. He never pressured me — he just laid out the options and let me decide. Wish I'd called him years ago.</blockquote>
+          <figcaption class="review-author">— Susan T., Salt Lake City</figcaption>
+        </figure>
+        <figure class="review-slide">
+          <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>Bret made my Turning-65 enrollment completely stress-free. He answered every question by text within minutes. I've already referred two neighbors.</blockquote>
+          <figcaption class="review-author">— David & Carol H., Lehi</figcaption>
+        </figure>
+      </div>
+      <div class="review-dots">
+        <button class="review-dot active" aria-label="Show review 1"></button>
+        <button class="review-dot" aria-label="Show review 2"></button>
+        <button class="review-dot" aria-label="Show review 3"></button>
+        <button class="review-dot" aria-label="Show review 4"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION 8: FAQ ================= -->
+<section class="section-tinted">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Common questions</span>
+      <h2>Medicare Questions, Answered</h2>
+      <p>Quick answers to the questions we hear most often. Don't see yours? Just give us a call.</p>
+    </div>
+
+    <div class="faq-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <label for="faq-search-input" class="sr-only">Search questions</label>
+      <input type="text" id="faq-search-input" autocomplete="off" placeholder="Search questions… e.g. &ldquo;doctor&rdquo;, &ldquo;cost&rdquo;, &ldquo;Part D&rdquo;" />
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">
+          What does Medicare cost?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Most people pay no premium for Part A (hospital). Part B (medical) has a standard monthly premium set each year by Medicare. Beyond that, your costs depend on which plan type you choose — Medicare Advantage plans often have very low or even $0 premiums, while Medicare Supplement plans have a separate monthly premium in exchange for lower out-of-pocket costs. We'll walk through real numbers based on your situation.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Can I keep my doctor?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>It depends on the plan type. Original Medicare and Medicare Supplement plans let you see any doctor in the U.S. who accepts Medicare. Medicare Advantage plans use networks, so you'll want to check that your preferred doctors are in-network before enrolling. We can verify this for you before you choose.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          What happens when I turn 65?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>You become eligible for Medicare. Your Initial Enrollment Period is a 7-month window — the 3 months before your 65th birthday month, your birthday month, and the 3 months after. Missing this window can lead to lifetime late penalties, so it's important to plan ahead. <a href="turning-65.html">Our Turning 65 page</a> walks through the timeline in detail.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          What's the difference between Medicare Advantage and Medicare Supplement?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Medicare Advantage (Part C) bundles your hospital, medical, and usually drug coverage into one plan from a private insurer — often with extras like dental and vision, but with networks and copays. Medicare Supplement (Medigap) works alongside Original Medicare and covers most of what Medicare doesn't pay, giving you predictable costs and any-doctor flexibility. Different needs, different fits — we'll help you compare.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Can I change plans later?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes — every fall there's an Annual Enrollment Period (October 15 through December 7) when you can switch plans for the following year. There are also Special Enrollment Periods if you move, lose other coverage, or qualify for low-income help. We do free annual reviews for our clients to make sure their plan still fits.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Are prescriptions covered?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Most Medicare Advantage plans include prescription drug coverage. If you choose Original Medicare or a Supplement, you'll typically add a standalone Part D drug plan. Either way, the right choice depends on which specific medications you take — that's why we always review your drug list before recommending anything.</p>
+        </div>
+      </div>
+      <p class="faq-no-results">No matching questions — <a href="contact.html">just ask Bret directly &rarr;</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION 9: FINAL CTA ================= -->
+<section class="final-cta">
+  <div class="container">
+    <h2>Need Medicare Help in Utah?</h2>
+    <p>One free, no-pressure call is all it takes to get clear answers and confident next steps.</p>
+    <div class="cta-buttons">
+      <a href="contact.html" class="btn btn-primary btn-lg">Schedule Consultation</a>
+      <a href="tel:8013680700" class="btn btn-outline btn-lg">Call (801) 368-0700</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+</MainLayout>

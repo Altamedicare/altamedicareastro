@@ -1,0 +1,93 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const available = [
+  { href: '/medicare-eligibility-calculator.html', icon: 'fa-calendar-check', title: 'Medicare Eligibility Calculator', desc: "Find out when you're eligible and calculate your Initial Enrollment Period." },
+  { href: '/medicare-irmaa-calculator.html', icon: 'fa-sack-dollar', title: 'IRMAA Calculator', desc: 'Estimate your Medicare Part B and Part D premiums based on income.' },
+  { href: '/medicare-penalty-calculator.html', icon: 'fa-triangle-exclamation', title: 'Late Enrollment Penalty Calculator', desc: 'See whether delaying Medicare could permanently increase your premiums.' },
+  { href: '/medicare-drug-cost-calculator.html', icon: 'fa-pills', title: 'Drug Cost Calculator', desc: 'Estimate medication costs and compare lower-cost generic alternatives.' },
+  { href: '/medicare-timeline-calculator.html', icon: 'fa-timeline', title: 'Medicare Timeline Calculator', desc: 'Visualize your enrollment windows and key Medicare deadlines.' },
+  { href: '/medicare-enrollment-countdown.html', icon: 'fa-stopwatch', title: 'Enrollment Countdown', desc: 'A live countdown to your Medicare enrollment deadlines.' },
+  { href: '/medicare-cost-estimator.html', icon: 'fa-coins', title: 'Medicare Cost Estimator', desc: 'Estimate your total annual costs and compare coverage options.' },
+  { href: '/medicare-formulary-lookup.html', icon: 'fa-prescription-bottle-medical', title: 'Formulary Lookup', desc: 'Search medications to see typical Part D coverage and restrictions.' },
+  { href: '/prescription-drug-assistance.html', icon: 'fa-hand-holding-dollar', title: 'Drug Assistance Finder', desc: 'Find Extra Help, copay grants, and manufacturer programs that lower medication costs.' },
+  { href: '/medicare-quiz.html', icon: 'fa-clipboard-question', title: 'Medicare Plan Quiz', desc: 'Answer 7 questions to discover which coverage type may fit you.' },
+  { href: '/medicare-glossary.html', icon: 'fa-book', title: 'Medicare Glossary', desc: 'Search 100+ Medicare terms explained in plain English.' },
+];
+
+const comingSoon: { icon: string; title: string }[] = [];
+---
+
+<MainLayout
+  title="Free Medicare Tools & Calculators | AltaMedicare"
+  description="Free, interactive Medicare calculators: eligibility and enrollment dates, IRMAA premiums, late enrollment penalties, and prescription drug costs."
+  canonical="/tools.html"
+>
+
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a> &nbsp;&rsaquo;&nbsp; Tools</div>
+    <h1>Free Medicare Tools</h1>
+    <p class="lede">Interactive calculators to help you make informed Medicare decisions — no sign-up, no cost, nothing saved.</p>
+  </div>
+</section>
+
+<section class="section-white">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Available now</span>
+      <h2>Calculators &amp; Estimators</h2>
+      <p>Built for Utah Medicare beneficiaries and their families.</p>
+    </div>
+
+    <div class="card-grid">
+      {
+        available.map((t) => (
+          <a href={t.href} class="card" style="text-decoration:none;">
+            <div class="card-icon"><i class={`fa-solid ${t.icon}`} style="font-size:1.6rem"></i></div>
+            <h3>{t.title}</h3>
+            <p>{t.desc}</p>
+            <span class="card-link">Learn More</span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+{
+  comingSoon.length > 0 && (
+    <section class="section-tinted">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">In development</span>
+          <h2>Coming Soon</h2>
+          <p>More free tools we're building to round out the AltaMedicare resource center.</p>
+        </div>
+
+        <div class="card-grid">
+          {comingSoon.map((t) => (
+            <div class="card" style="opacity:0.7;">
+              <div class="card-icon"><i class={`fa-solid ${t.icon}`} style="font-size:1.6rem"></i></div>
+              <h3>{t.title}</h3>
+              <span class="card-link" style="color:var(--text-muted);">Coming soon</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+<section class="final-cta">
+  <div class="container">
+    <h2>Prefer to talk it through?</h2>
+    <p>A licensed Utah agent can walk you through any of these numbers — free, no pressure.</p>
+    <div class="cta-buttons">
+      <a href="contact.html" class="btn btn-primary btn-lg">Schedule Consultation</a>
+      <a href="tel:8013680700" class="btn btn-outline btn-lg">Call (801) 368-0700</a>
+    </div>
+  </div>
+</section>
+
+</MainLayout>

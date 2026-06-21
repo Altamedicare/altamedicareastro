@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Medicare Late Enrollment Penalty Calculator | Part B &amp; Part D | AltaMedicare</title>
+<meta name="description" content="Free Medicare late enrollment penalty calculator. Estimate your lifetime Part B and Part D penalties for delaying Medicare without creditable coverage." />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<script type="application/ld+json">
+{ "@context":"https://schema.org","@type":"WebApplication","name":"Medicare Late Enrollment Penalty Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Estimate your Medicare Part B and Part D late enrollment penalties based on how long you delayed coverage." }
+</script>
+<script type="application/ld+json">
+{ "@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"What is the Part B late enrollment penalty?","acceptedAnswer":{"@type":"Answer","text":"Your Part B premium goes up 10% for each full 12-month period you could have had Part B but didn't sign up. In most cases you pay it for as long as you have Part B."}},
+  {"@type":"Question","name":"What is the Part D late enrollment penalty?","acceptedAnswer":{"@type":"Answer","text":"The Part D penalty is 1% of the national base beneficiary premium ($38.99 in 2026) times the number of full months you went without Part D or other creditable drug coverage. It is added to your premium for as long as you have Part D."}},
+  {"@type":"Question","name":"How do I avoid Medicare late enrollment penalties?","acceptedAnswer":{"@type":"Answer","text":"Enroll when you are first eligible, or keep creditable coverage (such as an employer plan or VA benefits) and enroll within your Special Enrollment Period when it ends."}},
+  {"@type":"Question","name":"Are the penalties permanent?","acceptedAnswer":{"@type":"Answer","text":"In most cases yes. The Part B and Part D late enrollment penalties are added to your monthly premiums for as long as you have that coverage."}},
+  {"@type":"Question","name":"What counts as creditable coverage?","acceptedAnswer":{"@type":"Answer","text":"Coverage that is at least as good as Medicare's, such as an active employer group health plan, union, or VA coverage. It lets you delay Medicare without a penalty."}},
+  {"@type":"Question","name":"Do the penalty amounts change each year?","acceptedAnswer":{"@type":"Answer","text":"Yes. Penalties are based on the standard Part B premium and the Part D national base premium, which are set annually, so the dollar amounts can change each year."}}
+]}
+</script>
+
+<style>
+  :root {
+    --mc-blue:#135aac; --mc-blue-dark:#0d3f86; --mc-blue-deep:#0a2540; --mc-blue-soft:#eaf2fd; --mc-blue-line:#cfe0f5;
+    --mc-red:#b42318; --mc-red-soft:#fef3f2; --mc-red-line:#fecdca; --mc-red-deep:#7a271a;
+    --mc-green:#15803d; --mc-green-soft:#ecfdf3; --mc-green-line:#bbf7d0;
+    --mc-amber:#b45309; --mc-amber-soft:#fff7ed; --mc-amber-line:#fed7aa;
+    --ink:#1f2a37; --ink-soft:#475467; --muted:#6b7280;
+    --radius:16px; --shadow:0 18px 50px -24px rgba(13,63,134,.4); --font:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:var(--font);color:var(--ink);line-height:1.55;background:radial-gradient(1200px 500px at 50% -220px,#dbeafe 0%,transparent 70%),#f3f7fc;padding:28px 16px 60px;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:720px;margin:0 auto;}
+  .card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--mc-blue-line);overflow:hidden;}
+  .head{background:linear-gradient(135deg,var(--mc-blue) 0%,var(--mc-blue-deep) 100%);color:#fff;padding:28px 26px;display:flex;align-items:center;gap:16px;}
+  .head .badge{flex:none;width:54px;height:54px;border-radius:14px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);display:grid;place-items:center;font-size:1.5rem;}
+  .head h1{margin:0;font-size:1.38rem;line-height:1.2;}
+  .head p{margin:4px 0 0;font-size:.95rem;opacity:.9;}
+  .body{padding:26px;}
+  .field{margin-bottom:22px;}
+  .field>label.q,.field legend{display:flex;align-items:center;gap:9px;font-weight:600;font-size:1.02rem;color:var(--ink);margin-bottom:10px;padding:0;}
+  i.qi{color:var(--mc-blue);width:20px;text-align:center;}
+  input[type="number"]{width:100%;font-family:inherit;font-size:1.15rem;min-height:52px;padding:13px 14px;border:2px solid var(--mc-blue-line);border-radius:10px;color:var(--ink);background:#fff;transition:border-color .2s,box-shadow .2s;}
+  input[type="number"]:focus{outline:none;border-color:var(--mc-blue);box-shadow:0 0 0 4px rgba(19,90,172,.15);}
+  .hint{margin:7px 0 0;font-size:.86rem;color:var(--muted);}
+  .seg{border:0;padding:0;margin:0;}
+  .seg-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .seg-options input{position:absolute;opacity:0;pointer-events:none;}
+  .seg-options label{display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:12px 10px;border:2px solid var(--mc-blue-line);border-radius:10px;font-weight:600;color:var(--ink-soft);cursor:pointer;background:#fff;transition:all .15s ease;user-select:none;text-align:center;}
+  .seg-options label:hover{border-color:var(--mc-blue);}
+  .seg-options input:checked + label{background:var(--mc-blue);border-color:var(--mc-blue);color:#fff;box-shadow:0 6px 16px -8px rgba(19,90,172,.8);}
+  .seg-options input:focus-visible + label{box-shadow:0 0 0 4px rgba(19,90,172,.25);}
+
+  .banner{border-radius:14px;padding:16px 20px;display:flex;gap:12px;align-items:flex-start;margin-bottom:16px;}
+  .banner i{font-size:1.5rem;flex:none;margin-top:1px;}
+  .banner strong{display:block;}
+  .banner.ok{background:var(--mc-green-soft);border:1px solid var(--mc-green-line);}
+  .banner.ok i,.banner.ok strong{color:var(--mc-green);}
+  .banner.warn{background:var(--mc-red-soft);border:1px solid var(--mc-red-line);}
+  .banner.warn i,.banner.warn strong{color:var(--mc-red);}
+
+  .result-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media(max-width:520px){.result-grid{grid-template-columns:1fr;}}
+  .result-card{border:1px solid var(--mc-blue-line);border-radius:14px;padding:18px;background:var(--mc-blue-soft);}
+  .result-card.total{background:var(--mc-red-soft);border-color:var(--mc-red-line);}
+  .result-card .rc-label{font-size:.9rem;font-weight:600;color:var(--ink-soft);display:flex;align-items:center;gap:8px;}
+  .result-card .rc-label i{color:var(--mc-blue);}
+  .result-card.total .rc-label i{color:var(--mc-red);}
+  .result-card .rc-value{font-size:1.7rem;font-weight:800;color:var(--mc-blue-deep);margin-top:6px;line-height:1.1;}
+  .result-card.total .rc-value{color:var(--mc-red-deep);}
+  .result-card .rc-unit{font-size:.9rem;font-weight:600;color:var(--muted);}
+  .lifetime{margin-top:14px;background:#f8fafc;border:1px solid #e6ebf2;border-radius:10px;padding:12px 14px;font-size:.92rem;color:var(--ink-soft);display:flex;gap:9px;}
+  .lifetime i{color:var(--mc-red);margin-top:2px;}
+
+  section.block{margin-top:28px;}
+  section.block>h2{font-size:1.35rem;color:var(--mc-blue-deep);margin:0 0 14px;display:flex;align-items:center;gap:10px;}
+  section.block>h2 i{color:var(--mc-blue);}
+  .edu .eitem{padding:16px 0;border-bottom:1px solid #eef2f7;}
+  .edu .eitem:last-child{border-bottom:0;}
+  .edu .eitem h3{margin:0 0 5px;font-size:1.05rem;color:var(--ink);}
+  .edu .eitem p{margin:0;color:var(--ink-soft);}
+
+  .cta-card{background:linear-gradient(135deg,var(--mc-blue) 0%,var(--mc-blue-deep) 100%);color:#fff;border-radius:var(--radius);padding:30px 26px;text-align:center;}
+  .cta-card h2{margin:0 0 6px;color:#fff;font-size:1.4rem;}
+  .cta-card p{margin:0 0 20px;opacity:.92;}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;}
+  .cta-row a{flex:1 1 200px;max-width:280px;text-decoration:none;min-height:52px;display:flex;align-items:center;justify-content:center;gap:9px;padding:14px 20px;border-radius:12px;font-weight:700;font-size:1.05rem;}
+  .cta-row a.primary{background:#fff;color:var(--mc-blue-dark);}
+  .cta-row a.ghost{background:rgba(255,255,255,.12);color:#fff;border:2px solid rgba(255,255,255,.5);}
+
+  .faq details{background:#fff;border:1px solid var(--mc-blue-line);border-radius:12px;margin-bottom:10px;overflow:hidden;}
+  .faq summary{list-style:none;cursor:pointer;padding:18px 20px;font-weight:600;font-size:1.05rem;color:var(--mc-blue-deep);display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:44px;}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary .chev{flex:none;width:30px;height:30px;border-radius:50%;background:var(--mc-blue-soft);display:grid;place-items:center;color:var(--mc-blue);transition:transform .2s;}
+  .faq details[open] summary .chev{transform:rotate(180deg);}
+  .faq .faq-a{padding:0 20px 18px;color:var(--ink-soft);}
+
+  .disclaimer{margin-top:26px;background:#f8fafc;border:1px solid #e6ebf2;border-radius:12px;padding:16px 18px;font-size:.86rem;color:var(--muted);display:flex;gap:10px;}
+  .disclaimer i{color:var(--mc-blue);margin-top:2px;flex:none;}
+  .disclaimer a{color:var(--mc-blue-dark);}
+  @media(max-width:480px){.head{padding:22px 18px;}.head h1{font-size:1.16rem;}.body{padding:20px 18px;}.result-card .rc-value{font-size:1.5rem;}}
+  @media(prefers-reduced-motion:reduce){*{transition:none !important;}}
+</style>
+</head>
+<body data-pagefind-body data-pagefind-meta="type:Calculator" data-pagefind-filter="type:Calculator">
+<div class="wrap">
+  <a href="/tools.html" style="display:inline-flex;align-items:center;gap:8px;margin-bottom:16px;color:var(--mc-blue,#135aac);font-family:inherit;font-weight:600;text-decoration:none;font-size:.95rem;"><i class="fa-solid fa-arrow-left"></i> Back to Tools</a>
+
+  <main class="card" role="main">
+    <header class="head">
+      <div class="badge"><i class="fa-solid fa-triangle-exclamation"></i></div>
+      <div>
+        <h1>Medicare Late Enrollment Penalty Calculator</h1>
+        <p>See whether delaying Medicare could permanently raise your premiums.</p>
+      </div>
+    </header>
+
+    <div class="body">
+      <form id="pen-form" novalidate>
+        <div class="field">
+          <label class="q" for="months"><i class="fa-solid fa-calendar-xmark qi"></i> Months you delayed Medicare</label>
+          <input type="number" id="months" min="0" max="600" step="1" value="0" inputmode="numeric" />
+          <p class="hint">Full months you were eligible for Medicare but did not enroll.</p>
+        </div>
+
+        <div class="field">
+          <fieldset class="seg">
+            <legend><i class="fa-solid fa-shield-halved qi"></i> Did you have creditable coverage during that time?</legend>
+            <div class="seg-options">
+              <input type="radio" id="cred-no" name="creditable" value="no" checked />
+              <label for="cred-no"><i class="fa-solid fa-xmark"></i> No</label>
+              <input type="radio" id="cred-yes" name="creditable" value="yes" />
+              <label for="cred-yes"><i class="fa-solid fa-check"></i> Yes</label>
+            </div>
+          </fieldset>
+          <p class="hint">Employer, union, or VA coverage as good as Medicare's usually counts.</p>
+        </div>
+      </form>
+
+      <div id="pen-results" aria-live="polite"></div>
+
+      <p class="disclaimer">
+        <i class="fa-solid fa-circle-info"></i>
+        <span><strong>Estimates only.</strong> This is not an official Medicare determination. Penalties use 2026 figures (standard Part&nbsp;B $202.90; Part&nbsp;D base $38.99) and can change annually. Confirm with <a href="https://www.medicare.gov" target="_blank" rel="noopener">Medicare.gov</a>, Social Security, or a licensed agent.</span>
+      </p>
+    </div>
+  </main>
+
+  <section class="block">
+    <h2><i class="fa-solid fa-book-open"></i> How Medicare Penalties Work</h2>
+    <div class="card edu" style="padding:8px 22px;">
+      <div class="eitem"><h3>Part B penalty</h3><p>Your Part&nbsp;B premium increases <strong>10% for each full 12-month period</strong> you could have had Part&nbsp;B but didn't enroll. In most cases you pay it for as long as you have Part&nbsp;B.</p></div>
+      <div class="eitem"><h3>Part D penalty</h3><p><strong>1% of the national base premium</strong> ($38.99 in 2026) for every full month you went without Part&nbsp;D or other creditable drug coverage — added to your premium for life and recalculated as the base changes.</p></div>
+      <div class="eitem"><h3>How to avoid them</h3><p>Enroll when first eligible, or keep <strong>creditable coverage</strong> (employer, union, VA) and enroll during your Special Enrollment Period when that coverage ends. Avoid gaps of 63+ days for drug coverage.</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="cta-card">
+      <h2>Worried about a penalty?</h2>
+      <p>A licensed Utah agent can check your situation and help you enroll on time — free, no pressure.</p>
+      <div class="cta-row">
+        <a class="primary" href="tel:8013680700"><i class="fa-solid fa-phone"></i> Call (801) 368-0700</a>
+        <a class="ghost" href="sms:18013680700?body=Hi%20Bret%2C%20I%20have%20a%20question%20about%20a%20Medicare%20late%20enrollment%20penalty."><i class="fa-solid fa-comment-sms"></i> Text Us</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block faq">
+    <h2><i class="fa-solid fa-circle-question"></i> Frequently Asked Questions</h2>
+    <details><summary>What is the Part B late enrollment penalty? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></summary><div class="faq-a">Your Part B premium goes up 10% for each full 12-month period you could have had Part B but didn't sign up. In most cases you pay it for as long as you have Part B.</div></details>
+    <details><summary>What is the Part D late enrollment penalty? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></summary><div class="faq-a">It's 1% of the national base beneficiary premium ($38.99 in 2026) times the number of full months you went without Part D or other creditable drug coverage, added to your premium for as long as you have Part D.</div></details>
+    <details><summary>How do I avoid Medicare late enrollment penalties? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></summary><div class="faq-a">Enroll when first eligible, or keep creditable coverage (employer, union, VA) and enroll within your Special Enrollment Period when it ends.</div></details>
+    <details><summary>Are the penalties permanent? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></summary><div class="faq-a">In most cases yes — they're added to your monthly premiums for as long as you have that coverage.</div></details>
+    <details><summary>What counts as creditable coverage? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></summary><div class="faq-a">Coverage at least as good as Medicare's, such as an active employer group plan, union, or VA benefits.</div></details>
+    <details><summary>Do the penalty amounts change each year? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></summary><div class="faq-a">Yes — they're based on the standard Part B premium and the Part D national base premium, which are set annually.</div></details>
+  </section>
+
+</div>
+
+<script src="/medicare-figures.js"></script>
+<script>
+(function(){
+  "use strict";
+  // Figures from the single source of truth (/medicare-figures.js); inline fallback.
+  var F = window.MEDICARE_FIGURES || null;
+  var STD_PARTB  = (F && F.partB) ? F.partB.premium     : 202.90; // standard Part B premium
+  var PARTD_BASE = (F && F.partD) ? F.partD.basePremium  : 38.99;  // Part D national base premium
+  var PARTB_RATE = (F && F.penalties) ? F.penalties.partBPerYearPct  : 0.10;
+  var PARTD_RATE = (F && F.penalties) ? F.penalties.partDPerMonthPct : 0.01;
+
+  var form = document.getElementById("pen-form");
+  var monthsEl = document.getElementById("months");
+  var results = document.getElementById("pen-results");
+
+  function usd(n){ return "$" + n.toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2}); }
+
+  function update(){
+    var months = Math.max(0, parseInt(monthsEl.value,10) || 0);
+    var creditable = form.creditable.value === "yes";
+
+    var fullYears = Math.floor(months/12);
+    var partB = creditable ? 0 : STD_PARTB * PARTB_RATE * fullYears;
+    var partD = creditable ? 0 : Math.round((PARTD_RATE * PARTD_BASE * months) * 10) / 10; // round to nearest $0.10
+    var total = partB + partD;
+    var tenYear = total * 12 * 10;
+
+    var html = "";
+    if (creditable) {
+      html += '<div class="banner ok"><i class="fa-solid fa-circle-check"></i><div><strong>You likely owe no penalty.</strong><span>Creditable coverage during that time generally protects you — just be sure to enroll within your Special Enrollment Period when it ends.</span></div></div>';
+    } else if (months === 0) {
+      html += '<div class="banner ok"><i class="fa-solid fa-circle-check"></i><div><strong>No delay, no penalty.</strong><span>Enter the months you delayed above to see the estimated penalty.</span></div></div>';
+    } else {
+      html += '<div class="banner warn"><i class="fa-solid fa-triangle-exclamation"></i><div><strong>A delay of ' + months + ' month' + (months===1?'':'s') + ' adds a lifetime penalty.</strong><span>Below is the estimated amount added to your monthly Medicare premiums.</span></div></div>';
+    }
+
+    html += '<div class="result-grid">' +
+      '<div class="result-card"><div class="rc-label"><i class="fa-solid fa-stethoscope"></i> Part B penalty</div><div class="rc-value">' + usd(partB) + '</div><div class="rc-unit">/ month' + (partB>0?' (' + (fullYears*10) + '%)':'') + '</div></div>' +
+      '<div class="result-card"><div class="rc-label"><i class="fa-solid fa-pills"></i> Part D penalty</div><div class="rc-value">' + usd(partD) + '</div><div class="rc-unit">/ month</div></div>' +
+      '<div class="result-card total"><div class="rc-label"><i class="fa-solid fa-coins"></i> Total added</div><div class="rc-value">' + usd(total) + '</div><div class="rc-unit">/ month</div></div>' +
+      '<div class="result-card total"><div class="rc-label"><i class="fa-solid fa-hourglass-half"></i> Over 10 years</div><div class="rc-value">' + usd(tenYear) + '</div><div class="rc-unit">added total</div></div>' +
+      '</div>';
+
+    if (!creditable && months > 0) {
+      html += '<p class="lifetime"><i class="fa-solid fa-circle-exclamation"></i><span>These penalties are added to your premiums for <strong>as long as you have Medicare</strong> and are recalculated as the base premiums rise each year — so the lifetime cost is usually much higher than the 10-year estimate.</span></p>';
+    }
+
+    results.innerHTML = html;
+  }
+
+  monthsEl.addEventListener("input", update);
+  form.addEventListener("change", update);
+  form.addEventListener("submit", function(e){ e.preventDefault(); });
+  update();
+})();
+</script>
+</body>
+</html>
