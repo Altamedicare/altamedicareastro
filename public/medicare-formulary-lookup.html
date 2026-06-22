@@ -227,8 +227,8 @@
       <h2>Questions about prescription coverage?</h2>
       <p>Send us your medication list — we'll find the plan that covers them for the least. Free, no pressure.</p>
       <div class="cta-row">
-        <a class="primary" href="tel:8013680700"><i class="fa-solid fa-phone"></i> Call (801) 368-0700</a>
-        <a class="ghost" href="sms:18013680700?body=Hi%20Bret%2C%20can%20you%20check%20which%20plan%20covers%20my%20medications%3F"><i class="fa-solid fa-comment-sms"></i> Text Your Meds</a>
+        <a class="primary" href="tel:4352925548"><i class="fa-solid fa-phone"></i> Call (435) 292-5548</a>
+        <a class="ghost" href="sms:14352925548?body=Hi%20Bret%2C%20can%20you%20check%20which%20plan%20covers%20my%20medications%3F"><i class="fa-solid fa-comment-sms"></i> Text Your Meds</a>
       </div>
       <div class="cta-row" style="margin-top:12px;">
         <a class="ghost" href="contact.html"><i class="fa-solid fa-calendar-check"></i> Free Medicare Review</a>
@@ -356,7 +356,7 @@
     countEl.textContent="Showing "+list.length+" of "+DRUGS.length+" medications.";
 
     if(!list.length){
-      gridEl.innerHTML='<div class="empty" style="grid-column:1/-1"><i class="fa-solid fa-magnifying-glass" style="font-size:1.6rem;color:var(--mc-blue);display:block;margin-bottom:8px"></i>No medications match. <a href="sms:18013680700?body=Hi%20Bret%2C%20can%20you%20look%20up%20coverage%20for%20my%20medication%3F">Text us the name &rarr;</a></div>';
+      gridEl.innerHTML='<div class="empty" style="grid-column:1/-1"><i class="fa-solid fa-magnifying-glass" style="font-size:1.6rem;color:var(--mc-blue);display:block;margin-bottom:8px"></i>No medications match. <a href="sms:14352925548?body=Hi%20Bret%2C%20can%20you%20look%20up%20coverage%20for%20my%20medication%3F">Text us the name &rarr;</a></div>';
       return;
     }
 
@@ -393,7 +393,7 @@
       '<div class="m-sec"><h4>Typical Medicare Part D coverage</h4><p>'+d.coverage+' Typical cost: <strong>'+d.cost+'</strong> per month.</p></div>'+
       '<div class="m-sec"><h4>Alternative drugs</h4><ul>'+d.alts.map(function(a){return '<li>'+a+'</li>';}).join("")+'</ul></div>'+
       '<div class="m-sec"><h4>Questions to ask your doctor</h4><ul>'+questions.map(function(x){return '<li>'+x+'</li>';}).join("")+'</ul></div>'+
-      '<div class="m-sec" style="margin-top:20px"><a class="badge-pill b-blue" style="text-decoration:none;display:inline-block;padding:10px 16px;font-size:.9rem" href="sms:18013680700?body=Hi%20Bret%2C%20is%20'+encodeURIComponent(d.name)+'%20covered%20on%20a%20good%20plan%20for%20me%3F"><i class="fa-solid fa-comment-sms"></i> Text Bret about '+d.name+'</a></div>';
+      '<div class="m-sec" style="margin-top:20px"><a class="badge-pill b-blue" style="text-decoration:none;display:inline-block;padding:10px 16px;font-size:.9rem" href="sms:14352925548?body=Hi%20Bret%2C%20is%20'+encodeURIComponent(d.name)+'%20covered%20on%20a%20good%20plan%20for%20me%3F"><i class="fa-solid fa-comment-sms"></i> Text Bret about '+d.name+'</a></div>';
     modal.classList.add("open");
     document.body.style.overflow="hidden";
   }

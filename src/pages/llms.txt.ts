@@ -41,7 +41,7 @@ export const GET: APIRoute = async () => {
   sections.push(
     `# AltaMedicare`,
     ``,
-    `> Independent, plain-English Medicare guidance for Utah from Bret Swope, a licensed local agent in Orem, UT. Free help understanding Medicare and comparing Medicare Advantage, Medigap (Medicare Supplement), and Part D — plus interactive calculators. Phone: (801) 368-0700.`,
+    `> Independent, plain-English Medicare guidance for Utah from Bret Swope, a licensed local agent in Orem, UT. Free help understanding Medicare and comparing Medicare Advantage, Medigap (Medicare Supplement), and Part D — plus interactive calculators. Phone: (435) 292-5548.`,
     ``,
     `AltaMedicare publishes evergreen educational content and free tools. We do not rank carriers, publish plan counts, or push "best plans" — plan comparisons and enrollment happen through a secure SunFire portal or by talking with Bret. All dollar figures are for 2026.`,
   );
@@ -109,7 +109,7 @@ export const GET: APIRoute = async () => {
     ``,
     `## Contact & Enrollment`,
     link('About Bret Swope', '/about.html', 'Licensed Utah Medicare agent based in Orem.'),
-    link('Contact', '/contact.html', 'Call or text (801) 368-0700 · Orem, Utah · Mon–Fri 9am–6pm MT.'),
+    link('Contact', '/contact.html', 'Call or text (435) 292-5548 · Orem, Utah · Mon–Fri 9am–6pm MT.'),
     `- Compare Plans Online (secure portal): ${'https://www.sunfirematrix.com/app/consumer/medicareadvocates/5454608/#/'}`,
     ``,
   );

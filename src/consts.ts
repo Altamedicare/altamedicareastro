@@ -3,8 +3,8 @@
 // destination, the tool registry, and blog categories. When the real SunFire
 // enrollment URL arrives, change COMPARE_PLANS_URL in one place.
 
-export const PHONE_DISPLAY = '(801) 368-0700';
-export const PHONE_TEL = 'tel:8013680700';
+export const PHONE_DISPLAY = '(435) 292-5548';
+export const PHONE_TEL = 'tel:4352925548';
 export const CONTACT_URL = '/contact.html';
 
 /** "Compare Plans Online" — Bret's SunFire consumer quoting/enrollment portal.

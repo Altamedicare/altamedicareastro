@@ -42,8 +42,8 @@
     bar.className = 'mobile-action-bar';
     bar.setAttribute('aria-label', 'Quick contact');
     bar.innerHTML =
-      '<a href="tel:8013680700" class="mab-item mab-call">' + phoneIcon + 'Call</a>' +
-      '<a href="sms:18013680700?body=Hi%20Bret%2C%20I%20have%20a%20question%20about%20Medicare." class="mab-item mab-text">' + textIcon + 'Text</a>' +
+      '<a href="tel:4352925548" class="mab-item mab-call">' + phoneIcon + 'Call</a>' +
+      '<a href="sms:14352925548?body=Hi%20Bret%2C%20I%20have%20a%20question%20about%20Medicare." class="mab-item mab-text">' + textIcon + 'Text</a>' +
       '<a href="' + COMPARE_PLANS_URL + '" target="_blank" rel="noopener" class="mab-item mab-enroll">' + enrollIcon + 'Enroll</a>' +
       '<a href="contact.html" class="mab-item mab-schedule">' + calIcon + 'Schedule</a>';
     document.body.appendChild(bar);
@@ -55,7 +55,7 @@
   if (headerCta && headerPhone && !headerCta.querySelector('.header-text')) {
     const textBtn = document.createElement('a');
     textBtn.className = 'header-text';
-    textBtn.href = 'sms:18013680700?body=Hi%20Bret%2C%20I%20have%20a%20question%20about%20Medicare.';
+    textBtn.href = 'sms:14352925548?body=Hi%20Bret%2C%20I%20have%20a%20question%20about%20Medicare.';
     textBtn.setAttribute('aria-label', 'Text AltaMedicare');
     textBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>Text Us';
     headerPhone.insertAdjacentElement('afterend', textBtn);
@@ -92,7 +92,7 @@
   if (oldBubble) {
     const newBubble = document.createElement('a');
     newBubble.className = 'chat-bubble';
-    newBubble.href = 'sms:18013680700?body=Hi%20Bret%2C%20I%20have%20a%20question%20about%20Medicare.';
+    newBubble.href = 'sms:14352925548?body=Hi%20Bret%2C%20I%20have%20a%20question%20about%20Medicare.';
     newBubble.setAttribute('aria-label', 'Text Bret a question');
     newBubble.innerHTML =
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>' +
@@ -249,7 +249,7 @@
       const card = btn.closest('.media-card');
       if (!activateMedia(card)) {
         // No video uploaded yet — guide them to the next best action.
-        window.location.href = 'sms:18013680700?body=Hi%20Bret%2C%20I%27d%20like%20to%20learn%20more%20about%20Medicare.';
+        window.location.href = 'sms:14352925548?body=Hi%20Bret%2C%20I%27d%20like%20to%20learn%20more%20about%20Medicare.';
       }
     });
   });
@@ -329,7 +329,7 @@
         videoPlayer.appendChild(poster);
         poster.querySelector('.media-play').addEventListener('click', () => {
           if (!activateMedia(videoPlayer)) {
-            window.location.href = 'sms:18013680700?body=Hi%20Bret%2C%20I%27d%20like%20to%20learn%20more%20about%20Medicare.';
+            window.location.href = 'sms:14352925548?body=Hi%20Bret%2C%20I%27d%20like%20to%20learn%20more%20about%20Medicare.';
           }
         });
       }
@@ -422,7 +422,7 @@
     const form = document.getElementById('estimatorForm');
     const resultsEl = document.getElementById('estimatorResults');
     const money = (n) => '$' + Math.round(n).toLocaleString('en-US');
-    const TEXT_LINK = 'sms:18013680700?body=Hi%20Bret%2C%20can%20you%20help%20me%20understand%20my%20Medicare%20costs%3F';
+    const TEXT_LINK = 'sms:14352925548?body=Hi%20Bret%2C%20can%20you%20help%20me%20understand%20my%20Medicare%20costs%3F';
     let lastEstimate = null;
 
     function openEstimator() { estimatorModal.classList.add('open'); document.body.style.overflow = 'hidden'; }
@@ -473,7 +473,7 @@
       html += '<div class="est-cta"><h4 class="est-subhead">Still have questions?</h4>' +
               '<p>Save this estimate and talk with a licensed Utah agent — free, no pressure.</p>' +
               '<div class="est-cta-btns">' +
-              '<a href="tel:8013680700" class="btn btn-secondary" data-est-link>Call</a>' +
+              '<a href="tel:4352925548" class="btn btn-secondary" data-est-link>Call</a>' +
               '<a href="' + TEXT_LINK + '" class="btn btn-primary" data-est-link>Text</a>' +
               '<a href="contact.html" class="btn btn-outline" data-est-link>Schedule</a>' +
               '<button type="button" class="btn btn-outline" data-print-estimate>Print / Save as PDF</button>' +
@@ -521,7 +521,7 @@
         '<tr class="total"><td>Estimated total</td><td class="r">' + money(d.lo) + '–' + money(d.hi) + '/mo</td></tr>' +
         '</table>' +
         '<div class="note"><strong>Medicare Part A:</strong> most people pay $0/month.</div>' +
-        '<p><strong>Questions?</strong> Call or text Bret Swope, licensed Utah agent: <a href="tel:8013680700">(801) 368-0700</a></p>' +
+        '<p><strong>Questions?</strong> Call or text Bret Swope, licensed Utah agent: <a href="tel:4352925548">(435) 292-5548</a></p>' +
         '<p class="disc">Educational estimate based on 2025 figures. Not a quote. Actual premiums and plan costs vary by location, age, income, and the coverage you choose.</p>' +
         '</body></html>'
       );
@@ -562,7 +562,7 @@
       { t: 'Medicare Cost Estimator', type: 'tool', url: 'index.html#tools', k: 'cost estimate estimator how much does medicare cost part b premium irmaa high income surcharge medigap budget calculator tool monthly what will i pay' },
       { t: 'Turning 65 Timeline Tool', type: 'tool', url: 'turning-65.html', k: 'turning 65 timeline tool when enroll birthday before after steps' },
       { t: 'Does Medicare cover my medications?', type: 'faq', url: 'prescription-drug-plans.html', k: 'cover covered medication drug ozempic lipitor eliquis jardiance formulary does medicare part d prescription' },
-      { t: 'Text Bret (licensed Utah agent)', type: 'contact', url: 'sms:18013680700?body=Hi%20Bret%2C%20I%20have%20a%20question%20about%20Medicare.', k: 'contact text message bret call phone talk licensed agent help human' }
+      { t: 'Text Bret (licensed Utah agent)', type: 'contact', url: 'sms:14352925548?body=Hi%20Bret%2C%20I%20have%20a%20question%20about%20Medicare.', k: 'contact text message bret call phone talk licensed agent help human' }
     ];
     const TYPE_LABEL = { tool: 'Tool', faq: 'FAQ', service: 'Plan', video: 'Video', article: 'Article', contact: 'Contact' };
     const GROUP_LABEL = { tool: 'Tools', faq: 'FAQs', service: 'Plans', video: 'Videos', article: 'Articles', contact: 'Contact' };
@@ -805,7 +805,7 @@
             </p>
             <a href="contact.html" class="btn btn-primary btn-lg">Schedule a Free Consultation</a>
             <div style="margin-top:18px;">
-              <a href="tel:8013680700" style="font-weight:600; font-size:1.1rem;">or call (801) 368-0700</a>
+              <a href="tel:4352925548" style="font-weight:600; font-size:1.1rem;">or call (435) 292-5548</a>
             </div>
             <button id="restartQuiz" style="margin-top:24px; background:none; border:0; color:var(--mountain-blue); cursor:pointer; text-decoration:underline; font-family:inherit; font-size:0.95rem;">Restart quiz</button>
           </div>
