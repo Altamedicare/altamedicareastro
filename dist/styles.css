@@ -1132,6 +1132,18 @@ section {
   color: #64748b;
 }
 .footer-bottom .disclaimer { max-width: 900px; margin: 0 auto 14px; line-height: 1.6; }
+.footer-powered { margin-top: 14px; }
+.footer-powered a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #94a3b8;
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.footer-powered a:hover { color: #fff; }
+.footer-powered .powered-logo { height: 20px; width: auto; vertical-align: middle; }
 
 /* ---------- ASK BRET CHAT BUBBLE ---------- */
 .chat-bubble {
