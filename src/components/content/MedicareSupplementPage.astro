@@ -1,0 +1,89 @@
+---
+// src/components/content/MedicareSupplementPage.astro — THE shared template.
+// Copy lives in src/i18n/content/{locale}/medicare-supplement.json.
+import MainLayout from '../../layouts/MainLayout.astro';
+import HelpfulTools from '../HelpfulTools.astro';
+import { DEFAULT_LOCALE, getLangFromUrl, getLocaleMeta } from '../../i18n/locales';
+import { getPageContent, hreflangAlternates, interp, localizeHref } from '../../i18n/content';
+import { COMPARE_PLANS_URL, PHONE_DISPLAY } from '../../consts';
+
+interface Block { h3Html: string; textHtml: string }
+interface MedicareSupplementContent {
+  page: { title: string; description: string };
+  breadcrumbHtml: string;
+  header: { h1: string; ledeHtml: string };
+  how: { h2: string; paragraphsHtml: string[] };
+  why: { h2: string; blocks: Block[] };
+  letters: { h2Html: string; paragraphsHtml: string[] };
+  partD: { h2: string; textHtml: string };
+  callout: { headingHtml: string; textHtml: string };
+  cta: { h2Html: string; textHtml: string; scheduleLabel: string; callLabel: string; compareLabel: string };
+}
+
+const lang = getLangFromUrl(Astro.url);
+const c = getPageContent<MedicareSupplementContent>('medicare-supplement', lang);
+const vars = { phone: PHONE_DISPLAY };
+const canonical = lang === DEFAULT_LOCALE ? '/medicare-supplement.html' : `/${lang}/medicare-supplement.html`;
+const alternates = hreflangAlternates('medicare-supplement');
+---
+
+<MainLayout
+  title={c.page.title}
+  description={c.page.description}
+  canonical={canonical}
+>
+  <Fragment slot="head">
+    {alternates.map((a) => <link rel="alternate" hreflang={a.code} href={a.href} />)}
+    {lang !== DEFAULT_LOCALE && <meta property="og:locale" content={getLocaleMeta(lang).ogLocale} />}
+  </Fragment>
+
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb" set:html={c.breadcrumbHtml}></div>
+    <h1>{c.header.h1}</h1>
+    <p class="lede" set:html={c.header.ledeHtml}></p>
+  </div>
+</section>
+
+<section class="section-white">
+  <div class="container content-narrow">
+    <h2>{c.how.h2}</h2>
+    {c.how.paragraphsHtml.map((p) => <p set:html={p} />)}
+
+    <h2>{c.why.h2}</h2>
+
+    {c.why.blocks.map((b) => (
+      <Fragment>
+        <h3 set:html={b.h3Html} />
+        <p set:html={b.textHtml} />
+      </Fragment>
+    ))}
+
+    <h2 set:html={c.letters.h2Html}></h2>
+    {c.letters.paragraphsHtml.map((p) => <p set:html={p} />)}
+
+    <h2>{c.partD.h2}</h2>
+    <p set:html={c.partD.textHtml}></p>
+
+    <div class="callout">
+      <strong set:html={c.callout.headingHtml}></strong>
+      <p style="margin:8px 0 0;" set:html={c.callout.textHtml}></p>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <h2 set:html={c.cta.h2Html}></h2>
+    <p set:html={c.cta.textHtml}></p>
+    <div class="cta-buttons">
+      <a href={localizeHref('contact.html', lang)} class="btn btn-primary btn-lg">{c.cta.scheduleLabel}</a>
+      <a href="tel:4352925548" class="btn btn-outline btn-lg">{interp(c.cta.callLabel, vars)}</a>
+      <a href={COMPARE_PLANS_URL} target="_blank" rel="noopener" class="btn btn-outline btn-lg">{c.cta.compareLabel}</a>
+    </div>
+  </div>
+</section>
+
+<HelpfulTools />
+
+</MainLayout>

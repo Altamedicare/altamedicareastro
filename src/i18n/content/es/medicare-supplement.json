@@ -1,0 +1,63 @@
+{
+  "__translation_note": "AI-translated from en/medicare-supplement.json by scripts/translate.js (model claude-opus-4-8) using src/i18n/glossary.json (CMS es.medicare.gov terminology). Machine-generated — pending human spot-check. Do not hand-edit copy here; fix the English master or pin the term in the glossary, then re-run npm run translate.",
+  "__note": "MASTER content for /medicare-supplement.html, extracted losslessly from src/pages/medicare-supplement.astro. HelpfulTools + SunFire portal stay in the component (boundaries).",
+  "page": {
+    "title": "Planes de Seguro Suplementario de Medicare (Medigap) | AltaMedicare",
+    "description": "Planes de Seguro Suplementario de Medicare para Utah: costos predecibles, flexibilidad para elegir médicos y aceptación en todo el país. Compare el Plan G, el Plan N y más."
+  },
+  "breadcrumbHtml": "<a href=\"index.html\">Inicio</a> &nbsp;&rsaquo;&nbsp; <a href=\"medicare-basics.html\">Planes</a> &nbsp;&rsaquo;&nbsp; Seguro Suplementario de Medicare",
+  "header": {
+    "h1": "Planes de Seguro Suplementario de Medicare (Medigap)",
+    "ledeHtml": "Costos predecibles, amplia flexibilidad para elegir médicos y tranquilidad. Aquí le explicamos cómo funcionan los planes de Seguro Suplementario de Medicare y a quién le convienen."
+  },
+  "how": {
+    "h2": "Cómo funciona el Seguro Suplementario de Medicare",
+    "paragraphsHtml": [
+      "Los planes de Seguro Suplementario de Medicare (también llamados Medigap) funcionan junto con Medicare Original. Medicare Original paga primero y, luego, su plan Suplementario paga la mayor parte o la totalidad de lo que Medicare no cubre: deducibles, copagos y coseguro.",
+      "El resultado son costos de atención médica muy predecibles: una prima mensual estable y muy poco (a menudo nada) de gastos de su bolsillo cuando de verdad usa los servicios."
+    ]
+  },
+  "why": {
+    "h2": "Por qué las personas eligen el Seguro Suplementario de Medicare",
+    "blocks": [
+      {
+        "h3Html": "Costos predecibles",
+        "textHtml": "Usted sabe cuánto pagará cada mes. No hay que adivinar los copagos en cada visita ni preocuparse por alcanzar un límite de gastos de su bolsillo. Para las personas con ingresos fijos que desean hacer un presupuesto con confianza, esa previsibilidad es enorme."
+      },
+      {
+        "h3Html": "Flexibilidad para elegir médicos",
+        "textHtml": "Los planes Suplementarios no usan redes. Usted puede consultar a <strong>cualquier médico en los EE. UU. que acepte Medicare</strong>. Esa es una gran ventaja si viaja, reparte su tiempo entre estados o tiene un especialista fuera de su zona."
+      },
+      {
+        "h3Html": "Aceptación en todo el país",
+        "textHtml": "Como Medicare Original se acepta en todas partes, su plan de Seguro Suplementario de Medicare funciona igual en todas partes. Viaje sin preocuparse por si su atención médica lo acompaña."
+      },
+      {
+        "h3Html": "No se necesitan referidos",
+        "textHtml": "No necesita que un médico de atención primaria lo remita a un especialista. Consulte a quien quiera, cuando lo necesite."
+      }
+    ]
+  },
+  "letters": {
+    "h2Html": "Letras de los planes: ¿cuál es la diferencia?",
+    "paragraphsHtml": [
+      "Los planes de Seguro Suplementario de Medicare están estandarizados por ley federal y se identifican con una letra (Plan G, Plan N, Plan F para quienes son elegibles, etc.). Los planes con la misma letra cubren lo mismo, sin importar qué aseguradora los venda; las únicas diferencias son la prima y el servicio de la compañía.",
+      "Los planes más populares hoy entre las personas que se inscriben por primera vez son el <strong>Plan G</strong> y el <strong>Plan N</strong>. Le explicaremos cuál se ajusta mejor a su situación y compararemos varias aseguradoras para encontrar el precio más bajo."
+    ]
+  },
+  "partD": {
+    "h2": "Importante: Agregue un plan de medicamentos de la Parte D",
+    "textHtml": "Los planes de Seguro Suplementario de Medicare no incluyen cobertura de medicamentos recetados. Si elige un plan Suplementario, por lo general lo combinará con un <a href=\"prescription-drug-plans.html\">plan de la Parte D</a> independiente. Nos encargaremos de esto en la misma conversación."
+  },
+  "callout": {
+    "headingHtml": "El mejor momento para inscribirse: cuando es elegible por primera vez.",
+    "textHtml": "Durante su Período de Inscripción Abierta del Seguro Suplementario de Medicare (los 6 meses que comienzan cuando cumple 65 años y está inscrito en la Parte B), las aseguradoras no pueden negarle la cobertura ni cobrarle más por motivos de salud. Después de que se cierra ese período, es posible que deba pasar por una evaluación médica (underwriting). Planifique con anticipación."
+  },
+  "cta": {
+    "h2Html": "¿Tiene preguntas? Hablemos.",
+    "textHtml": "Una llamada gratuita y sin presión &mdash; respuestas claras, sin argumentos de venta.",
+    "scheduleLabel": "Programar consulta",
+    "callLabel": "Llame al {phone}",
+    "compareLabel": "Comparar planes en línea"
+  }
+}

@@ -13,6 +13,7 @@ export const CONTENT_PAGES = [
   'contact',
   'turning-65',
   'medicare-basics',
+  'medicare-supplement',
 ] as const;
 
 export type ContentKey = (typeof CONTENT_PAGES)[number];

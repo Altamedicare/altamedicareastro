@@ -1,0 +1,62 @@
+{
+  "__note": "MASTER content for /medicare-supplement.html, extracted losslessly from src/pages/medicare-supplement.astro. HelpfulTools + SunFire portal stay in the component (boundaries).",
+  "page": {
+    "title": "Medicare Supplement (Medigap) Plans | AltaMedicare",
+    "description": "Medicare Supplement plans for Utah: predictable costs, doctor flexibility, nationwide acceptance. Compare Plan G, Plan N, and more."
+  },
+  "breadcrumbHtml": "<a href=\"index.html\">Home</a> &nbsp;&rsaquo;&nbsp; <a href=\"medicare-basics.html\">Plans</a> &nbsp;&rsaquo;&nbsp; Medicare Supplement",
+  "header": {
+    "h1": "Medicare Supplement (Medigap) Plans",
+    "ledeHtml": "Predictable costs, broad doctor flexibility, and peace of mind. Here&rsquo;s how Medicare Supplement plans work and who they fit."
+  },
+  "how": {
+    "h2": "How Medicare Supplement Works",
+    "paragraphsHtml": [
+      "Medicare Supplement plans (also called Medigap) work alongside Original Medicare. Original Medicare pays first, then your Supplement plan pays most or all of what Medicare doesn&rsquo;t cover &mdash; deductibles, copays, and coinsurance.",
+      "The result is very predictable healthcare costs: a stable monthly premium and very little (often nothing) out-of-pocket when you actually use care."
+    ]
+  },
+  "why": {
+    "h2": "Why People Choose Medicare Supplement",
+    "blocks": [
+      {
+        "h3Html": "Predictable Costs",
+        "textHtml": "You know what you&rsquo;ll pay each month. There&rsquo;s no guessing about copays at every visit or worrying about hitting an out-of-pocket maximum. For people on a fixed income who want to budget confidently, that predictability is huge."
+      },
+      {
+        "h3Html": "Doctor Flexibility",
+        "textHtml": "Supplement plans don&rsquo;t use networks. You can see <strong>any doctor in the U.S. who accepts Medicare</strong>. That&rsquo;s a huge advantage if you travel, split time between states, or have a specialist out of area."
+      },
+      {
+        "h3Html": "Nationwide Acceptance",
+        "textHtml": "Because Original Medicare is accepted everywhere, your Medicare Supplement plan effectively works everywhere too. Travel without worrying about whether your healthcare goes with you."
+      },
+      {
+        "h3Html": "No Referrals Needed",
+        "textHtml": "You don&rsquo;t need a primary care doctor to refer you to a specialist. See whoever you want, whenever you need to."
+      }
+    ]
+  },
+  "letters": {
+    "h2Html": "Plan Letters &mdash; What&rsquo;s the Difference?",
+    "paragraphsHtml": [
+      "Medicare Supplement plans are standardized by federal law and labeled by letter (Plan G, Plan N, Plan F for those eligible, etc.). Plans with the same letter cover the same things, no matter which insurer sells them &mdash; the only differences are the premium and the company&rsquo;s service.",
+      "The most popular plans for new enrollees today are <strong>Plan G</strong> and <strong>Plan N</strong>. We&rsquo;ll walk through which fits your situation best and shop multiple carriers to find the lowest price."
+    ]
+  },
+  "partD": {
+    "h2": "Important: Add a Part D Drug Plan",
+    "textHtml": "Medicare Supplement plans don&rsquo;t include prescription drug coverage. If you choose a Supplement, you&rsquo;ll typically pair it with a standalone <a href=\"prescription-drug-plans.html\">Part D plan</a>. We&rsquo;ll handle this in the same conversation."
+  },
+  "callout": {
+    "headingHtml": "Best time to enroll: when you&rsquo;re first eligible.",
+    "textHtml": "During your Medicare Supplement Open Enrollment Period (the 6 months starting when you&rsquo;re 65 and enrolled in Part B), insurers can&rsquo;t deny you or charge you more for health reasons. After that window closes, you may face medical underwriting. Plan ahead."
+  },
+  "cta": {
+    "h2Html": "Have Questions? Let's Talk.",
+    "textHtml": "One free, no-pressure call &mdash; clear answers, no sales pitch.",
+    "scheduleLabel": "Schedule Consultation",
+    "callLabel": "Call {phone}",
+    "compareLabel": "Compare Plans Online"
+  }
+}
