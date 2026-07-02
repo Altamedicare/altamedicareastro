@@ -26,7 +26,7 @@ generated Spanish (`/es/…`) via the multilingual framework.
 | Per-page status | [I18N-PROGRESS.md](I18N-PROGRESS.md) |
 | Editorial policy | [SPANISH-STYLE.md](SPANISH-STYLE.md) |
 | Release process | [RELEASE-CHECKLIST.md](RELEASE-CHECKLIST.md) |
-| Phase 2 architecture (shared modules) | [ADR-002](ADR-002-SHARED-MODULE-LOCALIZATION.md) + [inventory](I18N-P2-INVENTORY.md) |
+| Phase 2 architecture (shared modules) | [ADR-002](ADR-002-SHARED-MODULE-LOCALIZATION.md) + [inventory](I18N-P2-INVENTORY.md) + [test plan](P2-TEST-PLAN.md) |
 | Terminology (enforced) | [src/i18n/glossary.json](src/i18n/glossary.json) |
 | Compliance text (never machine-translated) | [src/i18n/compliance.ts](src/i18n/compliance.ts) |
 

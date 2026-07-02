@@ -12,11 +12,11 @@
 // exist. Missing translations fall back to the English master — never to a 404.
 //
 // URL POLICY (this repo): build.format:'file' + .html URLs. Master pages sit
-// at /{slug}.html; localized pages at /{locale}/{slug}.html. NOTE: Alta also
-// has nested English pages (utah/…, faq/…, blog/…) that this module does not
-// yet cover — localizeHref treats multi-segment paths as pass-through, which
-// is correct (they keep pointing at the English page) until Phase 2 makes
-// those data-driven clusters translation sources.
+// at /{slug}.html; localized pages at /{locale}/{slug}.html. Nested slugs
+// (faq/enrollment, utah/davis-county/part-d) are supported as of P2.1 —
+// localizeHref rewrites any .html path, and localePageHref emits
+// /{locale}/{nested/slug}.html when that translation exists, else the
+// absolutized English URL.
 
 import { DEFAULT_LOCALE, LOCALES } from './locales';
 import { CONTENT_PAGES } from './content-pages';
@@ -79,9 +79,13 @@ export function localizeHref(href: string, locale: string): string {
   const i = href.search(/[?#]/);
   const path = i === -1 ? href : href.slice(0, i);
   const rest = i === -1 ? '' : href.slice(i);
-  // Only single-segment .html links (or the root) are page links; anything
-  // else (/images/…, /pagefind/…, nested clusters) must not be rewritten.
-  const isPage = path === '/' || /^\/?[A-Za-z0-9_-]+\.html$/.test(path);
+  // Page links are .html paths (or the root) — including NESTED slugs
+  // (faq/enrollment.html, utah/davis-county/part-d.html) as of P2.1, the
+  // prerequisite for localizing the FAQ and location clusters. Assets keep
+  // passing through (they never end in .html); untranslated nested pages
+  // (blog/…, medicare-news/…) resolve through localePageHref to their
+  // absolutized English URL — existence-aware, nothing can 404.
+  const isPage = path === '/' || /^\/?[A-Za-z0-9_-]+(\/[A-Za-z0-9_-]+)*\.html$/.test(path);
   if (!isPage) return href;
   const slug = path === '/' ? 'index' : path.replace(/^\/+/, '').replace(/\.html$/, '');
   return localePageHref(slug, locale) + rest;

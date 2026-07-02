@@ -169,3 +169,20 @@ Classification key:
   availableLanguage/knowsLanguage would be an unstaffed-support claim —
   playbook §8 honesty check). Emitted instead as a WebPage JSON-LD with
   inLanguage on localized pages only; English output byte-stable.
+
+## P2.1 — shared-module engine infrastructure (no modules migrated)
+
+- **[GENERIC]** translate.js generalized from pages to SOURCES (page JSON +
+  shared modules). Field-level mask manifest (src/i18n/shared/masks.json):
+  unmasked module = hard error; unclassified field = hard error; verbatim
+  fields cloned from master and --check-enforced byte-identical. Fixture-
+  tested (4 scenarios), fixture deleted before commit.
+- **[GENERIC]** src/i18n/shared.ts accessor plumbing (getSharedModule with
+  master fallback; existence helper). No consumers yet.
+- **[GENERIC]** localizeHref/isPageSlug accept nested slugs
+  (faq/enrollment.html, utah/…/part-d.html) — the Phase 1 deferral, unblocking
+  P2.3/P2.5. Full-site 3-diff proved zero output change (163/163).
+- Maintenance note: translate.js rewritten in full (the sentinel now uses
+  printable   escapes — the earlier raw NUL bytes made the file grep
+  as binary). Behavioral checks re-run post-rewrite: idempotency, plural
+  wrapping, double-pass stability, --check, dry-run.

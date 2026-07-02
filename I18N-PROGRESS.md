@@ -35,6 +35,11 @@ Shared infrastructure:
 | Protocol-href non-translatable class (sms:/mailto:/tel:) | ✅ | `i18n-homepage` |
 | Search Console submission | ⬜ after go-live | |
 
+Phase 2: P2.0 planning (ADR-002 + inventory) and P2.1 engine
+infrastructure (sources abstraction, mask manifest + enforcement, shared
+accessor plumbing, multi-segment localizeHref) complete — full-site 3-diff
+163/163 identical; mask enforcement fixture-tested (4 scenarios).
+
 Glossary pins added: `Medicare Supplement`, `Annual Enrollment Period`,
 `Special Enrollment Periods` (plural). Validator catches to date: 3 real
 (SEP plural contraction ×2 → longest-match engine fix; Extra Help
