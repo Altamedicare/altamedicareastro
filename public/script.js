@@ -638,17 +638,10 @@
     /* --- Site-wide Spotlight-style modal --- */
     const searchIconSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>';
 
-    // Inject compact header trigger (before the phone link → 🔍 Search · Call · Text · Schedule)
-    const headerCtaEl = document.querySelector('.header-cta');
-    const phoneEl = document.querySelector('.header-phone');
-    if (headerCtaEl && phoneEl && !headerCtaEl.querySelector('.header-search-btn')) {
-      const trigger = document.createElement('button');
-      trigger.type = 'button';
-      trigger.className = 'header-search-btn';
-      trigger.setAttribute('aria-label', 'Search the site');
-      trigger.innerHTML = searchIconSvg + '<span>Search</span>';
-      phoneEl.insertAdjacentElement('beforebegin', trigger);
-    }
+    // Header trigger injection removed: the header's search entry point is the
+    // Pagefind button in MainLayout (.header-search, "/" shortcut). Injecting a
+    // second trigger here produced a duplicate search box in the header. The
+    // Spotlight modal below remains — it still powers the homepage hero search.
 
     // Build the modal once
     const modal = document.createElement('div');
