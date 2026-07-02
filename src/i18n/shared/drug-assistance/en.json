@@ -1,0 +1,323 @@
+{
+  "__note": "MASTER copy for the drug-assistance system (shared module, ADR-002 physical split): ONLY human-facing copy lives here, joined to the operational data in src/data/drugAssistance.ts by id/key/slug. URLs, phones, program names, statuses NEVER appear in this file — the quarterly audit edits the TS module and every locale follows. Field mask in ../masks.json.",
+  "shell": {
+    "title": "{drug} Assistance Programs — Help Paying for {drug} | AltaMedicare",
+    "description": "How to get help paying for {drug} ({generic}) on Medicare: manufacturer patient assistance, nonprofit copay grants, and Extra Help. Why copay coupons don't work on Medicare — and what does.",
+    "crumbTools": "Tools",
+    "crumbFinder": "Drug Assistance",
+    "h1": "{drug} Assistance Programs",
+    "lede": "Help paying for {drug} ({generic}) — manufacturer patient assistance, nonprofit copay grants, and Medicare Extra Help for {conditionLabel}.",
+    "calloutHtml": "<strong>On Medicare?</strong> You generally <strong>cannot use a {drug} copay coupon or savings card</strong> — federal anti-kickback rules block them. But the manufacturer's <strong>Patient Assistance Program</strong> (free drug by income) and nonprofit <strong>foundation grants</strong> still can help. Below are the routes that work <em>with</em> Medicare.",
+    "secManufacturerHeading": "{drug} Manufacturer Assistance",
+    "secManufacturerBlurb": "The company that makes {drug} may provide it free or at low cost to people who qualify by income — including many Medicare beneficiaries.",
+    "secFoundationHeading": "Nonprofit Copay Grant Foundations",
+    "secFoundationBlurb": "Disease-based charities that give grants you can use with Medicare for {conditionLabel}. Funds open and close based on availability.",
+    "secGovernmentHeading": "Government Programs",
+    "secGovernmentBlurb": "Federal and state programs that lower your overall drug and Medicare costs.",
+    "secDatabaseHeading": "Search & Discount Tools",
+    "secDatabaseBlurb": "Free databases that list additional programs and discounts.",
+    "whoMayQualify": "Who may qualify:",
+    "conditionsLabel": "Conditions:",
+    "finderCalloutHtml": "<strong>Not sure which one fits you?</strong> Use the free <a href=\"/prescription-drug-assistance.html\">Prescription Drug Assistance Finder</a> and its quick eligibility estimator, read <a href=\"/blog/{blogSlug}.html\">Does Medicare cover {drug}?</a>, or let Bret screen you and help you apply.",
+    "faqEyebrow": "Plain-English answers",
+    "faqH2": "{drug} Assistance — FAQ",
+    "faqs": [
+      {
+        "q": "Can I use a {drug} copay card if I have Medicare?",
+        "a": "Usually no. Federal anti-kickback rules generally prohibit people with Medicare from using manufacturer copay coupons or savings cards for {drug}. But you may still qualify for the manufacturer's Patient Assistance Program, which provides {drug} free or at low cost based on income."
+      },
+      {
+        "q": "How do I get help paying for {drug}?",
+        "a": "Start with the {drug} manufacturer assistance program, check whether a nonprofit foundation has an open fund for your condition, and apply for Medicare Extra Help if your income is limited. A licensed agent can screen you and help you apply — free."
+      },
+      {
+        "q": "Is {drug} covered by Medicare Part D?",
+        "a": "{drug} is often on Part D and Medicare Advantage drug formularies, frequently on a higher brand or specialty tier and sometimes with prior authorization. Coverage and cost vary by plan. See our guide on whether Medicare covers {drug}, or have us check your specific plan."
+      },
+      {
+        "q": "Is applying for {drug} assistance free?",
+        "a": "Yes. Every program here is free to apply for. Never pay a fee to enroll in Extra Help, a foundation grant, or a manufacturer assistance program — that's a red flag for a scam."
+      }
+    ],
+    "relatedEyebrow": "More medications",
+    "relatedH2": "Assistance for Other Costly Drugs",
+    "relatedCardTitle": "{drug} Assistance",
+    "relatedCardText": "Help paying for {drug} ({generic}).",
+    "relatedView": "View programs",
+    "finderBtn": "Open the full Drug Assistance Finder",
+    "ctaH2": "Struggling to afford {drug}?",
+    "ctaText": "Send Bret your medication list — he'll check assistance programs, Extra Help, and which Part D plan covers {drug} for the least. Free, no pressure.",
+    "ctaTextBtn": "Text Bret About {drug}",
+    "ctaCallLabel": "Call {phone}",
+    "smsBody": "Hi Bret, can you help me afford {drug}?"
+  },
+  "typeMeta": [
+    {
+      "key": "government",
+      "label": "Government program"
+    },
+    {
+      "key": "foundation",
+      "label": "Nonprofit grant"
+    },
+    {
+      "key": "manufacturer",
+      "label": "Manufacturer program"
+    },
+    {
+      "key": "database",
+      "label": "Search & discount"
+    }
+  ],
+  "statusMeta": [
+    {
+      "key": "open",
+      "label": "Fund open"
+    },
+    {
+      "key": "verify",
+      "label": "Verify availability"
+    },
+    {
+      "key": "closed",
+      "label": "Currently closed"
+    }
+  ],
+  "conditions": [
+    {
+      "key": "cancer",
+      "label": "Cancer"
+    },
+    {
+      "key": "diabetes",
+      "label": "Diabetes"
+    },
+    {
+      "key": "heart",
+      "label": "Heart & cardiovascular"
+    },
+    {
+      "key": "blood-clots",
+      "label": "Blood clots / AFib"
+    },
+    {
+      "key": "cholesterol",
+      "label": "High cholesterol"
+    },
+    {
+      "key": "autoimmune",
+      "label": "Autoimmune (RA, Crohn's, psoriasis)"
+    },
+    {
+      "key": "respiratory",
+      "label": "Asthma / COPD / lung"
+    },
+    {
+      "key": "kidney",
+      "label": "Kidney disease"
+    },
+    {
+      "key": "hiv",
+      "label": "HIV"
+    },
+    {
+      "key": "bone",
+      "label": "Bone / osteoporosis"
+    }
+  ],
+  "programs": [
+    {
+      "id": "extra-help",
+      "tagline": "Federal subsidy that lowers or eliminates Part D premiums, deductibles, and copays.",
+      "helps": "Lowers or eliminates your Part D premium, deductible, and drug copays. Many people who qualify never apply.",
+      "eligibility": "Based on limited income and resources. Apply free through Social Security; if you have Medicaid, SSI, or a Medicare Savings Program you may qualify automatically."
+    },
+    {
+      "id": "msp",
+      "tagline": "State programs that pay Medicare costs and can unlock Extra Help automatically.",
+      "helps": "Can pay your Part B premium and, by qualifying you, automatically grant Extra Help for drug costs.",
+      "typical": "May pay your Part B premium and unlock Extra Help for drug costs.",
+      "eligibility": "Income- and resource-based; administered by your state (Utah Department of Workforce Services / Medicaid). Limits are higher than many people expect."
+    },
+    {
+      "id": "pan",
+      "tagline": "Grants for out-of-pocket drug costs across 70+ disease funds.",
+      "helps": "Provides grants that cover copays, coinsurance, and other out-of-pocket medication costs. Can be used with Medicare.",
+      "eligibility": "Diagnosis must match an open disease fund; income generally up to 400–500% of the federal poverty level. Funds open and close based on availability."
+    },
+    {
+      "id": "healthwell",
+      "tagline": "Grants for copays, premiums, and even travel costs by disease fund.",
+      "helps": "Covers copays, coinsurance, premiums, deductibles, and sometimes travel costs for a covered condition.",
+      "typical": "May help with copays, premiums, deductibles, and sometimes travel costs.",
+      "eligibility": "Diagnosis must match an open fund; income generally up to 400–500% of the federal poverty level. Medicare beneficiaries are eligible."
+    },
+    {
+      "id": "gooddays",
+      "tagline": "Copay and travel assistance for costly chronic and life-threatening conditions.",
+      "helps": "Helps cover copays and treatment-related travel for high-cost medications and chronic diseases.",
+      "typical": "May help with copays and treatment-related travel.",
+      "eligibility": "Diagnosis-based with income limits; funds depend on availability. Open to people with Medicare."
+    },
+    {
+      "id": "paf-copay",
+      "tagline": "Copay grants plus free case management for many diseases.",
+      "helps": "Provides copay grants and connects you with a case manager who can help navigate insurance and appeals.",
+      "eligibility": "Diagnosis must match an open fund; income generally up to 400% of the federal poverty level. Available to Medicare beneficiaries."
+    },
+    {
+      "id": "needymeds",
+      "tagline": "Free searchable database of assistance and discount programs.",
+      "helps": "A free directory of patient assistance programs, manufacturer offers, diagnosis-based aid, and a drug discount card.",
+      "eligibility": "Free to use for anyone; individual programs in the database set their own rules."
+    },
+    {
+      "id": "mat",
+      "tagline": "PhRMA's search tool for hundreds of manufacturer programs.",
+      "helps": "Searches across hundreds of biopharmaceutical patient assistance programs to find ones for your medications.",
+      "eligibility": "Free to use; results depend on each program's criteria."
+    },
+    {
+      "id": "rxassist",
+      "tagline": "Directory of manufacturer patient assistance programs.",
+      "helps": "A free, regularly updated list of company programs that provide free or low-cost medicines.",
+      "eligibility": "Free to use; each listed program sets its own eligibility."
+    },
+    {
+      "id": "bms",
+      "tagline": "Free Bristol Myers Squibb medicines for eligible patients (Eliquis, Revlimid, and more).",
+      "helps": "Provides eligible Bristol Myers Squibb medications free of charge. Eliquis is also supported through Eliquis 360 Support.",
+      "eligibility": "Generally for uninsured or underinsured patients meeting income limits; Medicare beneficiaries may qualify through the foundation (not the copay card)."
+    },
+    {
+      "id": "jjpaf",
+      "tagline": "Free Janssen medicines for eligible patients (Xarelto, Stelara, Tremfya, Imbruvica).",
+      "helps": "Provides eligible Johnson & Johnson / Janssen prescription products at no cost. Janssen CarePath offers added support.",
+      "eligibility": "Income-based; generally for uninsured/underinsured patients. Medicare patients may qualify through the foundation."
+    },
+    {
+      "id": "novocare",
+      "tagline": "Patient assistance for Ozempic, insulins, and other Novo Nordisk drugs.",
+      "helps": "The Novo Nordisk Patient Assistance Program provides free medication to those who qualify; NovoCare helps you navigate coverage.",
+      "eligibility": "Generally for U.S. residents who are uninsured or have Medicare and meet income limits (up to ~400% FPL for the PAP)."
+    },
+    {
+      "id": "lillycares",
+      "tagline": "Free Eli Lilly medicines for eligible patients (Mounjaro, Trulicity, insulins).",
+      "helps": "Provides eligible Lilly medications free of charge to qualifying patients.",
+      "eligibility": "Income-based; available to many Medicare Part D patients who meet criteria. Lilly also offers an Insulin Value Program ($35/month)."
+    },
+    {
+      "id": "bicares",
+      "tagline": "Free Boehringer Ingelheim medicines (Jardiance, Ofev, Spiriva).",
+      "helps": "Provides eligible Boehringer Ingelheim medications at no cost through the BI Cares Foundation.",
+      "eligibility": "Income-based; open to qualifying uninsured and Medicare patients."
+    },
+    {
+      "id": "azme",
+      "tagline": "Free AstraZeneca medicines (Farxiga, Brilinta, Symbicort, oncology).",
+      "helps": "Provides eligible AstraZeneca medications at no cost, with a dedicated track for Medicare Part D patients.",
+      "eligibility": "Income-based; AZ&Me has a specific Medicare Part D eligibility pathway."
+    },
+    {
+      "id": "novartis",
+      "tagline": "Free Novartis medicines (Entresto, Cosentyx, Leqvio).",
+      "helps": "Provides eligible Novartis medications free of charge to qualifying patients.",
+      "eligibility": "Income-based; available to uninsured and Medicare patients who meet criteria."
+    },
+    {
+      "id": "abbvie",
+      "tagline": "Free AbbVie medicines for eligible patients (Humira, Skyrizi, Rinvoq).",
+      "helps": "Provides eligible AbbVie medications at no cost to qualifying patients.",
+      "eligibility": "Income-based; serves uninsured and many Medicare patients who meet criteria."
+    },
+    {
+      "id": "amgen",
+      "tagline": "Free Amgen medicines for eligible patients (Enbrel, Repatha, Prolia).",
+      "helps": "Provides eligible Amgen medications free of charge through the Safety Net Foundation.",
+      "eligibility": "Income-based; includes a pathway for Medicare patients who meet criteria."
+    },
+    {
+      "id": "sanofi",
+      "tagline": "Free Sanofi/Regeneron medicines (Dupixent, Praluent, Lantus).",
+      "helps": "Connects eligible patients to free medication and support; Dupixent MyWay offers additional help.",
+      "eligibility": "Income-based; serves uninsured and qualifying Medicare patients."
+    },
+    {
+      "id": "pfizer",
+      "tagline": "Help accessing many Pfizer medicines (Ibrance, Xeljanz, Eliquis).",
+      "helps": "Connects eligible patients with assistance programs that provide Pfizer medicines free or at a savings.",
+      "eligibility": "Income-based; includes options for insured and uninsured patients (free-drug track for those who qualify)."
+    },
+    {
+      "id": "astellas",
+      "tagline": "Patient assistance for Astellas medicines (Xtandi, Myrbetriq).",
+      "helps": "Provides eligible Astellas medications free or low-cost and helps with coverage navigation.",
+      "eligibility": "Income-based; includes support for Medicare patients who meet criteria."
+    },
+    {
+      "id": "gsk",
+      "tagline": "Free GSK medicines for eligible patients (Trelegy, Breo, Anoro).",
+      "helps": "Provides eligible GSK medications at no cost through the GSK for You / Bridges to Access programs.",
+      "eligibility": "Income-based; serves uninsured and qualifying Medicare patients."
+    }
+  ],
+  "featuredDrugs": [
+    {
+      "slug": "eliquis",
+      "conditionLabel": "blood clots & atrial fibrillation"
+    },
+    {
+      "slug": "xarelto",
+      "conditionLabel": "blood clots & atrial fibrillation"
+    },
+    {
+      "slug": "ozempic",
+      "conditionLabel": "type 2 diabetes"
+    },
+    {
+      "slug": "mounjaro",
+      "conditionLabel": "type 2 diabetes"
+    },
+    {
+      "slug": "trulicity",
+      "conditionLabel": "type 2 diabetes"
+    },
+    {
+      "slug": "jardiance",
+      "conditionLabel": "diabetes, heart & kidney"
+    },
+    {
+      "slug": "farxiga",
+      "conditionLabel": "diabetes, heart & kidney"
+    },
+    {
+      "slug": "entresto",
+      "conditionLabel": "heart failure"
+    },
+    {
+      "slug": "repatha",
+      "conditionLabel": "high cholesterol"
+    },
+    {
+      "slug": "humira",
+      "conditionLabel": "autoimmune conditions"
+    },
+    {
+      "slug": "enbrel",
+      "conditionLabel": "rheumatoid arthritis & psoriasis"
+    },
+    {
+      "slug": "skyrizi",
+      "conditionLabel": "psoriasis & Crohn’s disease"
+    },
+    {
+      "slug": "rinvoq",
+      "conditionLabel": "autoimmune conditions"
+    },
+    {
+      "slug": "dupixent",
+      "conditionLabel": "eczema, asthma & COPD"
+    }
+  ]
+}

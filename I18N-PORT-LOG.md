@@ -212,3 +212,22 @@ Classification key:
   /es/faq* — exactly ONE differing tag per page (principle 9 compounding),
   (b) EN faq pages gaining switcher+hreflang (whitelisted; strip-verified
   identical). FAQPage JSON-LD matches visible Spanish text exactly.
+
+## P2.4 — Drug assistance (the mask milestone)
+
+- **[ALTA→GENERIC]** Physical split by audit lifecycle (ADR-002 D4):
+  drugAssistance.ts now holds ONLY operational data (ids, names, URLs,
+  phones, drugs, statuses — the quarterly-audit surface, one clean file);
+  copy joined from shared/drug-assistance/{locale}.json by id/key/slug via
+  typed accessors. Landing template componentized (slug from URL).
+- Finder bridge (drug-assistance-data.js) BYTE-IDENTICAL after the split —
+  the joined English view reproduces each entry's original key order.
+- 22 glossary verbatim pins for program/support-brand names (Good Days,
+  PAN Foundation, Janssen CarePath, …) guard prose mentions; name FIELDS
+  never enter the pipeline at all.
+- Verification: full-site 3-diff 172/172 identical pre-translation;
+  translation 138/138 first-pass clean (0 validator issues); operational
+  URLs/phones 25/25 identical EN↔ES on the built pages; EN drug pages
+  strip-verified (switcher+hreflang only); 14 es pages + sitemap alternates.
+- NATIVE REVIEW GATE: eligibility strings (the most consequential Spanish
+  on the site) pending sign-off before push/deploy.

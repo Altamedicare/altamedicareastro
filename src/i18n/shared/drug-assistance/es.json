@@ -1,0 +1,324 @@
+{
+  "__translation_note": "AI-translated from shared/drug-assistance/en.json by scripts/translate.js (model claude-opus-4-8) using src/i18n/glossary.json (CMS es.medicare.gov terminology). Machine-generated — pending human spot-check. Do not hand-edit copy here; fix the English master or pin the term in the glossary, then re-run npm run translate.",
+  "__note": "MASTER copy for the drug-assistance system (shared module, ADR-002 physical split): ONLY human-facing copy lives here, joined to the operational data in src/data/drugAssistance.ts by id/key/slug. URLs, phones, program names, statuses NEVER appear in this file — the quarterly audit edits the TS module and every locale follows. Field mask in ../masks.json.",
+  "shell": {
+    "title": "Programas de Asistencia para {drug} — Ayuda para Pagar {drug} | AltaMedicare",
+    "description": "Cómo obtener ayuda para pagar {drug} ({generic}) con Medicare: asistencia al paciente del fabricante, subvenciones de copago sin fines de lucro y Ayuda Adicional (Extra Help). Por qué los cupones de copago no funcionan con Medicare, y qué sí funciona.",
+    "crumbTools": "Herramientas",
+    "crumbFinder": "Asistencia con Medicamentos",
+    "h1": "Programas de Asistencia para {drug}",
+    "lede": "Ayuda para pagar {drug} ({generic}): asistencia al paciente del fabricante, subvenciones de copago sin fines de lucro y Ayuda Adicional (Extra Help) de Medicare para {conditionLabel}.",
+    "calloutHtml": "<strong>¿Tiene Medicare?</strong> Por lo general, <strong>no puede usar un cupón de copago o tarjeta de descuento para {drug}</strong>: las reglas federales contra sobornos lo impiden. Pero el <strong>Programa de Asistencia al Paciente</strong> del fabricante (medicamento gratuito según ingresos) y las <strong>subvenciones de fundaciones</strong> sin fines de lucro sí pueden ayudar. A continuación están las vías que funcionan <em>con</em> Medicare.",
+    "secManufacturerHeading": "Asistencia del Fabricante de {drug}",
+    "secManufacturerBlurb": "La compañía que fabrica {drug} puede proporcionarlo gratis o a bajo costo a las personas que califican según sus ingresos, incluidos muchos beneficiarios de Medicare.",
+    "secFoundationHeading": "Fundaciones de Subvenciones de Copago Sin Fines de Lucro",
+    "secFoundationBlurb": "Organizaciones benéficas basadas en enfermedades que otorgan subvenciones que puede usar con Medicare para {conditionLabel}. Los fondos se abren y se cierran según la disponibilidad.",
+    "secGovernmentHeading": "Programas del Gobierno",
+    "secGovernmentBlurb": "Programas federales y estatales que reducen sus costos generales de medicamentos y de Medicare.",
+    "secDatabaseHeading": "Herramientas de Búsqueda y Descuentos",
+    "secDatabaseBlurb": "Bases de datos gratuitas que enumeran programas y descuentos adicionales.",
+    "whoMayQualify": "Quiénes pueden calificar:",
+    "conditionsLabel": "Condiciones:",
+    "finderCalloutHtml": "<strong>¿No está seguro de cuál le conviene?</strong> Use el <a href=\"/prescription-drug-assistance.html\">Buscador de Asistencia para Medicamentos Recetados</a> gratuito y su estimador rápido de elegibilidad, lea <a href=\"/blog/{blogSlug}.html\">¿Medicare cubre {drug}?</a>, o deje que Bret lo evalúe y le ayude a solicitar.",
+    "faqEyebrow": "Respuestas en lenguaje sencillo",
+    "faqH2": "Asistencia para {drug} — Preguntas Frecuentes",
+    "faqs": [
+      {
+        "q": "¿Puedo usar una tarjeta de copago para {drug} si tengo Medicare?",
+        "a": "Por lo general, no. Las reglas federales contra sobornos generalmente prohíben que las personas con Medicare usen cupones de copago o tarjetas de descuento del fabricante para {drug}. Pero aún puede calificar para el Programa de Asistencia al Paciente del fabricante, que proporciona {drug} gratis o a bajo costo según sus ingresos."
+      },
+      {
+        "q": "¿Cómo obtengo ayuda para pagar {drug}?",
+        "a": "Comience con el programa de asistencia del fabricante de {drug}, verifique si una fundación sin fines de lucro tiene un fondo abierto para su condición, y solicite la Ayuda Adicional (Extra Help) de Medicare si sus ingresos son limitados. Un agente con licencia puede evaluarlo y ayudarle a solicitar, gratis."
+      },
+      {
+        "q": "¿La Parte D de Medicare cubre {drug}?",
+        "a": "{drug} a menudo está en los formularios de medicamentos de la Parte D y de Medicare Advantage, con frecuencia en un nivel de marca o de especialidad más alto y a veces con autorización previa. La cobertura y el costo varían según el plan. Consulte nuestra guía sobre si Medicare cubre {drug}, o permítanos revisar su plan específico."
+      },
+      {
+        "q": "¿Es gratis solicitar asistencia para {drug}?",
+        "a": "Sí. Solicitar cualquiera de los programas aquí es gratis. Nunca pague una tarifa para inscribirse en la Ayuda Adicional (Extra Help), en una subvención de fundación o en un programa de asistencia del fabricante: eso es una señal de alerta de estafa."
+      }
+    ],
+    "relatedEyebrow": "Más medicamentos",
+    "relatedH2": "Asistencia para Otros Medicamentos Costosos",
+    "relatedCardTitle": "Asistencia para {drug}",
+    "relatedCardText": "Ayuda para pagar {drug} ({generic}).",
+    "relatedView": "Ver programas",
+    "finderBtn": "Abrir el Buscador completo de Asistencia para Medicamentos",
+    "ctaH2": "¿Tiene dificultades para pagar {drug}?",
+    "ctaText": "Envíe a Bret su lista de medicamentos: él revisará los programas de asistencia, la Ayuda Adicional (Extra Help), y cuál plan de la Parte D cubre {drug} al menor costo. Gratis, sin presión.",
+    "ctaTextBtn": "Envíe un Mensaje de Texto a Bret Sobre {drug}",
+    "ctaCallLabel": "Llame al {phone}",
+    "smsBody": "Hola Bret, ¿puede ayudarme a pagar {drug}?"
+  },
+  "typeMeta": [
+    {
+      "key": "government",
+      "label": "Programa del gobierno"
+    },
+    {
+      "key": "foundation",
+      "label": "Subvención sin fines de lucro"
+    },
+    {
+      "key": "manufacturer",
+      "label": "Programa del fabricante"
+    },
+    {
+      "key": "database",
+      "label": "Búsqueda y descuento"
+    }
+  ],
+  "statusMeta": [
+    {
+      "key": "open",
+      "label": "Fondo abierto"
+    },
+    {
+      "key": "verify",
+      "label": "Verificar disponibilidad"
+    },
+    {
+      "key": "closed",
+      "label": "Actualmente cerrado"
+    }
+  ],
+  "conditions": [
+    {
+      "key": "cancer",
+      "label": "Cáncer"
+    },
+    {
+      "key": "diabetes",
+      "label": "Diabetes"
+    },
+    {
+      "key": "heart",
+      "label": "Corazón y cardiovascular"
+    },
+    {
+      "key": "blood-clots",
+      "label": "Coágulos de sangre / fibrilación auricular"
+    },
+    {
+      "key": "cholesterol",
+      "label": "Colesterol alto"
+    },
+    {
+      "key": "autoimmune",
+      "label": "Autoinmune (AR, Crohn, psoriasis)"
+    },
+    {
+      "key": "respiratory",
+      "label": "Asma / EPOC / pulmón"
+    },
+    {
+      "key": "kidney",
+      "label": "Enfermedad renal"
+    },
+    {
+      "key": "hiv",
+      "label": "VIH"
+    },
+    {
+      "key": "bone",
+      "label": "Huesos / osteoporosis"
+    }
+  ],
+  "programs": [
+    {
+      "id": "extra-help",
+      "tagline": "Subsidio federal que reduce o elimina las primas, los deducibles y los copagos de la Parte D.",
+      "helps": "Reduce o elimina su prima, deducible y copagos de medicamentos de la Parte D. Muchas personas que califican nunca solicitan.",
+      "eligibility": "Basado en ingresos y recursos limitados. Solicite gratis a través del Seguro Social; si tiene Medicaid, SSI o un Programa de Ahorro de Medicare, puede calificar automáticamente."
+    },
+    {
+      "id": "msp",
+      "tagline": "Programas estatales que pagan los costos de Medicare y pueden desbloquear la Ayuda Adicional (Extra Help) automáticamente.",
+      "helps": "Puede pagar su prima de la Parte B y, al hacerlo calificar, otorgarle automáticamente la Ayuda Adicional (Extra Help) para los costos de medicamentos.",
+      "typical": "Puede pagar su prima de la Parte B y desbloquear la Ayuda Adicional (Extra Help) para los costos de medicamentos.",
+      "eligibility": "Basado en ingresos y recursos; administrado por su estado (Departamento de Servicios de la Fuerza Laboral de Utah / Medicaid). Los límites son más altos de lo que muchas personas esperan."
+    },
+    {
+      "id": "pan",
+      "tagline": "Subvenciones para costos de bolsillo de medicamentos en más de 70 fondos de enfermedades.",
+      "helps": "Proporciona subvenciones que cubren copagos, coseguros y otros costos de bolsillo de medicamentos. Se puede usar con Medicare.",
+      "eligibility": "El diagnóstico debe coincidir con un fondo de enfermedad abierto; los ingresos generalmente hasta el 400–500% del nivel federal de pobreza. Los fondos se abren y se cierran según la disponibilidad."
+    },
+    {
+      "id": "healthwell",
+      "tagline": "Subvenciones para copagos, primas e incluso costos de viaje según el fondo de enfermedad.",
+      "helps": "Cubre copagos, coseguros, primas, deducibles y a veces costos de viaje para una condición cubierta.",
+      "typical": "Puede ayudar con copagos, primas, deducibles y a veces costos de viaje.",
+      "eligibility": "El diagnóstico debe coincidir con un fondo abierto; los ingresos generalmente hasta el 400–500% del nivel federal de pobreza. Los beneficiarios de Medicare son elegibles."
+    },
+    {
+      "id": "gooddays",
+      "tagline": "Asistencia para copagos y viajes para condiciones crónicas y potencialmente mortales costosas.",
+      "helps": "Ayuda a cubrir los copagos y los viajes relacionados con el tratamiento para medicamentos de alto costo y enfermedades crónicas.",
+      "typical": "Puede ayudar con copagos y viajes relacionados con el tratamiento.",
+      "eligibility": "Basado en el diagnóstico con límites de ingresos; los fondos dependen de la disponibilidad. Abierto a personas con Medicare."
+    },
+    {
+      "id": "paf-copay",
+      "tagline": "Subvenciones de copago más gestión de casos gratuita para muchas enfermedades.",
+      "helps": "Proporciona subvenciones de copago y lo conecta con un administrador de casos que puede ayudarle a navegar el seguro y las apelaciones.",
+      "eligibility": "El diagnóstico debe coincidir con un fondo abierto; los ingresos generalmente hasta el 400% del nivel federal de pobreza. Disponible para los beneficiarios de Medicare."
+    },
+    {
+      "id": "needymeds",
+      "tagline": "Base de datos gratuita y con función de búsqueda de programas de asistencia y descuentos.",
+      "helps": "Un directorio gratuito de programas de asistencia al paciente, ofertas de fabricantes, ayuda basada en diagnóstico y una tarjeta de descuento para medicamentos.",
+      "eligibility": "Gratis para cualquier persona; los programas individuales en la base de datos establecen sus propias reglas."
+    },
+    {
+      "id": "mat",
+      "tagline": "La herramienta de búsqueda de PhRMA para cientos de programas de fabricantes.",
+      "helps": "Busca entre cientos de programas de asistencia al paciente biofarmacéuticos para encontrar los que corresponden a sus medicamentos.",
+      "eligibility": "Gratis para usar; los resultados dependen de los criterios de cada programa."
+    },
+    {
+      "id": "rxassist",
+      "tagline": "Directorio de programas de asistencia al paciente de los fabricantes.",
+      "helps": "Una lista gratuita y actualizada con regularidad de programas de empresas que proporcionan medicamentos gratuitos o de bajo costo.",
+      "eligibility": "De uso gratuito; cada programa de la lista establece sus propios requisitos de elegibilidad."
+    },
+    {
+      "id": "bms",
+      "tagline": "Medicamentos gratuitos de Bristol Myers Squibb para pacientes elegibles (Eliquis, Revlimid y otros).",
+      "helps": "Proporciona sin costo los medicamentos elegibles de Bristol Myers Squibb. Eliquis también cuenta con apoyo a través de Eliquis 360 Support.",
+      "eligibility": "Generalmente para pacientes sin seguro o con seguro insuficiente que cumplen con los límites de ingresos; los beneficiarios de Medicare pueden calificar a través de la fundación (no de la tarjeta de copago)."
+    },
+    {
+      "id": "jjpaf",
+      "tagline": "Medicamentos gratuitos de Janssen para pacientes elegibles (Xarelto, Stelara, Tremfya, Imbruvica).",
+      "helps": "Proporciona sin costo los productos recetados elegibles de Johnson & Johnson / Janssen. Janssen CarePath ofrece apoyo adicional.",
+      "eligibility": "Según los ingresos; generalmente para pacientes sin seguro o con seguro insuficiente. Los pacientes de Medicare pueden calificar a través de la fundación."
+    },
+    {
+      "id": "novocare",
+      "tagline": "Asistencia al paciente para Ozempic, insulinas y otros medicamentos de Novo Nordisk.",
+      "helps": "El Novo Nordisk Patient Assistance Program proporciona medicamentos gratuitos a quienes califican; NovoCare le ayuda a orientarse sobre la cobertura.",
+      "eligibility": "Generalmente para residentes de EE. UU. que no tienen seguro o que tienen Medicare y cumplen con los límites de ingresos (hasta ~400% del FPL para el PAP)."
+    },
+    {
+      "id": "lillycares",
+      "tagline": "Medicamentos gratuitos de Eli Lilly para pacientes elegibles (Mounjaro, Trulicity, insulinas).",
+      "helps": "Proporciona sin costo los medicamentos elegibles de Lilly a los pacientes que califican.",
+      "eligibility": "Según los ingresos; disponible para muchos pacientes de la Parte D de Medicare que cumplen con los criterios. Lilly también ofrece un Insulin Value Program ($35 al mes)."
+    },
+    {
+      "id": "bicares",
+      "tagline": "Medicamentos gratuitos de Boehringer Ingelheim (Jardiance, Ofev, Spiriva).",
+      "helps": "Proporciona sin costo los medicamentos elegibles de Boehringer Ingelheim a través de la BI Cares Foundation.",
+      "eligibility": "Según los ingresos; disponible para pacientes elegibles sin seguro y con Medicare."
+    },
+    {
+      "id": "azme",
+      "tagline": "Medicamentos gratuitos de AstraZeneca (Farxiga, Brilinta, Symbicort, oncología).",
+      "helps": "Proporciona sin costo los medicamentos elegibles de AstraZeneca, con una vía específica para pacientes de la Parte D de Medicare.",
+      "eligibility": "Según los ingresos; AZ&Me tiene una vía de elegibilidad específica para la Parte D de Medicare."
+    },
+    {
+      "id": "novartis",
+      "tagline": "Medicamentos gratuitos de Novartis (Entresto, Cosentyx, Leqvio).",
+      "helps": "Proporciona sin costo los medicamentos elegibles de Novartis a los pacientes que califican.",
+      "eligibility": "Según los ingresos; disponible para pacientes sin seguro y con Medicare que cumplen con los criterios."
+    },
+    {
+      "id": "abbvie",
+      "tagline": "Medicamentos gratuitos de AbbVie para pacientes elegibles (Humira, Skyrizi, Rinvoq).",
+      "helps": "Proporciona sin costo los medicamentos elegibles de AbbVie a los pacientes que califican.",
+      "eligibility": "Según los ingresos; atiende a pacientes sin seguro y a muchos pacientes de Medicare que cumplen con los criterios."
+    },
+    {
+      "id": "amgen",
+      "tagline": "Medicamentos gratuitos de Amgen para pacientes elegibles (Enbrel, Repatha, Prolia).",
+      "helps": "Proporciona sin costo los medicamentos elegibles de Amgen a través de la Safety Net Foundation.",
+      "eligibility": "Según los ingresos; incluye una vía para los pacientes de Medicare que cumplen con los criterios."
+    },
+    {
+      "id": "sanofi",
+      "tagline": "Medicamentos gratuitos de Sanofi/Regeneron (Dupixent, Praluent, Lantus).",
+      "helps": "Conecta a los pacientes elegibles con medicamentos y apoyo gratuitos; Dupixent MyWay ofrece ayuda adicional.",
+      "eligibility": "Según los ingresos; atiende a pacientes sin seguro y a pacientes de Medicare que califican."
+    },
+    {
+      "id": "pfizer",
+      "tagline": "Ayuda para acceder a muchos medicamentos de Pfizer (Ibrance, Xeljanz, Eliquis).",
+      "helps": "Conecta a los pacientes elegibles con programas de asistencia que proporcionan medicamentos de Pfizer gratuitos o con descuento.",
+      "eligibility": "Según los ingresos; incluye opciones para pacientes con y sin seguro (vía de medicamentos gratuitos para quienes califican)."
+    },
+    {
+      "id": "astellas",
+      "tagline": "Asistencia al paciente para medicamentos de Astellas (Xtandi, Myrbetriq).",
+      "helps": "Proporciona los medicamentos elegibles de Astellas gratuitos o de bajo costo y ayuda a orientarse sobre la cobertura.",
+      "eligibility": "Según los ingresos; incluye apoyo para los pacientes de Medicare que cumplen con los criterios."
+    },
+    {
+      "id": "gsk",
+      "tagline": "Medicamentos gratuitos de GSK para pacientes elegibles (Trelegy, Breo, Anoro).",
+      "helps": "Proporciona sin costo los medicamentos elegibles de GSK a través de los programas GSK for You / Bridges to Access.",
+      "eligibility": "Según los ingresos; atiende a pacientes sin seguro y a pacientes de Medicare que califican."
+    }
+  ],
+  "featuredDrugs": [
+    {
+      "slug": "eliquis",
+      "conditionLabel": "coágulos sanguíneos y fibrilación auricular"
+    },
+    {
+      "slug": "xarelto",
+      "conditionLabel": "coágulos sanguíneos y fibrilación auricular"
+    },
+    {
+      "slug": "ozempic",
+      "conditionLabel": "diabetes tipo 2"
+    },
+    {
+      "slug": "mounjaro",
+      "conditionLabel": "diabetes tipo 2"
+    },
+    {
+      "slug": "trulicity",
+      "conditionLabel": "diabetes tipo 2"
+    },
+    {
+      "slug": "jardiance",
+      "conditionLabel": "diabetes, corazón y riñón"
+    },
+    {
+      "slug": "farxiga",
+      "conditionLabel": "diabetes, corazón y riñón"
+    },
+    {
+      "slug": "entresto",
+      "conditionLabel": "insuficiencia cardíaca"
+    },
+    {
+      "slug": "repatha",
+      "conditionLabel": "colesterol alto"
+    },
+    {
+      "slug": "humira",
+      "conditionLabel": "enfermedades autoinmunes"
+    },
+    {
+      "slug": "enbrel",
+      "conditionLabel": "artritis reumatoide y psoriasis"
+    },
+    {
+      "slug": "skyrizi",
+      "conditionLabel": "psoriasis y enfermedad de Crohn"
+    },
+    {
+      "slug": "rinvoq",
+      "conditionLabel": "enfermedades autoinmunes"
+    },
+    {
+      "slug": "dupixent",
+      "conditionLabel": "eczema, asma y EPOC"
+    }
+  ]
+}

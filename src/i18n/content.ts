@@ -55,6 +55,12 @@ const VIRTUAL_PAGE_SOURCES: {
     slugs: () => ['faq'],
   },
   {
+    module: 'drug-assistance',
+    contentKey: 'drug-assistance',
+    slugs: (en) =>
+      ((en as { featuredDrugs: { slug: string }[] }).featuredDrugs ?? []).map((d) => `${d.slug}-assistance-program`),
+  },
+  {
     module: 'faqs',
     contentKey: 'faq-category',
     slugs: (en) =>

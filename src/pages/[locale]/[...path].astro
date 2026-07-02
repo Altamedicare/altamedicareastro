@@ -20,6 +20,7 @@ import MedicareAdvantagePage from '../../components/content/MedicareAdvantagePag
 import HomePage from '../../components/content/HomePage.astro';
 import FaqHubPage from '../../components/content/FaqHubPage.astro';
 import FaqCategoryPage from '../../components/content/FaqCategoryPage.astro';
+import DrugAssistancePage from '../../components/content/DrugAssistancePage.astro';
 
 const COMPONENTS: Record<string, (props: Record<string, never>) => unknown> = {
   'about': AboutPage,
@@ -32,6 +33,7 @@ const COMPONENTS: Record<string, (props: Record<string, never>) => unknown> = {
   'index': HomePage,
   'faq-hub': FaqHubPage,
   'faq-category': FaqCategoryPage,
+  'drug-assistance': DrugAssistancePage,
 };
 
 export function getStaticPaths() {

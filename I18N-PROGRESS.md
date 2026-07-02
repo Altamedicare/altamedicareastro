@@ -46,7 +46,13 @@ exactly the es guide pages, tag-structure-identical. P2.3: FAQ system —
 /es/faq* (9 pages) from the module; FAQPage JSON-LD matches visible
 Spanish 15/15 on spot-check; existing es pages auto-upgraded their FAQ
 links (principle 9). Seed guard added (fallback-freeze prevention).
-Native review of 100 answers pending.
+Native review of 100 answers pending. P2.4: drug assistance — physical
+split (copy JSON by id; URLs/phones/names/statuses stay in TS), 22 programs
++ shell templates translated (138 segs, 0 validator issues — 22 new
+verbatim pins held), 14 /es/*-assistance-program pages; finder bridge
+BYTE-IDENTICAL after the split; operational URLs/phones verified 25/25
+identical EN↔ES. NATIVE REVIEW GATE OPEN: eligibility strings must be
+signed off before push/deploy (test-plan P2.4 condition 4).
 
 Glossary pins added: `Medicare Supplement`, `Annual Enrollment Period`,
 `Special Enrollment Periods` (plural). Validator catches to date: 3 real

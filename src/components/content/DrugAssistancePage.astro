@@ -1,0 +1,196 @@
+---
+// src/components/content/DrugAssistancePage.astro — THE shared drug-assistance
+// landing template (14 slugs × every locale from one component). Copy comes
+// from the drug-assistance shared module; ALL operational data (program
+// names, URLs, phones, statuses) comes from the typed TS layer and is
+// byte-identical across locales by construction (ADR-002 physical split).
+// The drug slug derives from the URL: "<slug>-assistance-program".
+import MainLayout from '../../layouts/MainLayout.astro';
+import {
+  getDrugShell,
+  getFeaturedDrugs,
+  getTypeMeta,
+  getFundStatusMeta,
+  programsForDrug,
+  condLabel,
+  type Program,
+} from '../../data/drugAssistance';
+import { PHONE_DISPLAY } from '../../consts';
+import { DEFAULT_LOCALE, getLangFromUrl, getLocaleMeta, pageSlugFromUrl, t } from '../../i18n/locales';
+import { getAvailableLocales, hreflangAlternates, interp, localizeHref } from '../../i18n/content';
+
+const lang = getLangFromUrl(Astro.url);
+const pageSlug = pageSlugFromUrl(Astro.url); // "<slug>-assistance-program"
+const drugSlug = pageSlug.replace(/-assistance-program$/, '');
+const shell = getDrugShell(lang);
+const featured = getFeaturedDrugs(lang);
+const d = featured.find((x) => x.slug === drugSlug)!;
+const groups = programsForDrug(d.drug, d.conditions, lang);
+const typeMeta = getTypeMeta(lang);
+const statusMeta = getFundStatusMeta(lang);
+
+const canonical = lang === DEFAULT_LOCALE ? `/${pageSlug}.html` : `/${lang}/${pageSlug}.html`;
+const alternates = hreflangAlternates(pageSlug);
+const href = (h: string) => localizeHref(h, lang);
+const vars = { drug: d.drug, generic: d.generic, conditionLabel: d.conditionLabel, blogSlug: d.blogSlug, phone: PHONE_DISPLAY };
+
+const smsHref = (msg: string) => `sms:14352925548?body=${encodeURIComponent(msg)}`;
+const telLink = (phone: string) => `tel:${phone.replace(/[^0-9]/g, '')}`;
+
+// Ordered sections of programs shown on the page.
+const sections: { key: string; heading: string; blurb: string; items: Program[] }[] = [
+  { key: 'manufacturer', heading: interp(shell.secManufacturerHeading, vars), blurb: interp(shell.secManufacturerBlurb, vars), items: groups.manufacturer },
+  { key: 'foundation', heading: interp(shell.secFoundationHeading, vars), blurb: interp(shell.secFoundationBlurb, vars), items: groups.foundation },
+  { key: 'government', heading: interp(shell.secGovernmentHeading, vars), blurb: interp(shell.secGovernmentBlurb, vars), items: groups.government },
+  { key: 'database', heading: interp(shell.secDatabaseHeading, vars), blurb: interp(shell.secDatabaseBlurb, vars), items: groups.database },
+].filter((s) => s.items.length > 0);
+
+const related = featured.filter((x) => x.slug !== d.slug).slice(0, 6);
+
+const faqs = shell.faqs.map((f) => ({ q: interp(f.q, vars), a: interp(f.a, vars) }));
+
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+
+<MainLayout title={interp(shell.title, vars)} description={interp(shell.description, vars)} canonical={canonical} pageType="Guide">
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(faqLd)} />
+    {alternates.map((a) => <link rel="alternate" hreflang={a.code} href={a.href} />)}
+    {lang !== DEFAULT_LOCALE && <meta property="og:locale" content={getLocaleMeta(lang).ogLocale} />}
+  </Fragment>
+
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href={href('/')}>{t('nav.home', lang)}</a> &nbsp;&rsaquo;&nbsp; <a href={href('/tools.html')}>{shell.crumbTools}</a> &nbsp;&rsaquo;&nbsp;
+        <a href={href('/prescription-drug-assistance.html')}>{shell.crumbFinder}</a> &nbsp;&rsaquo;&nbsp; {d.drug}
+      </div>
+      <h1>{interp(shell.h1, vars)}</h1>
+      <p class="lede">{interp(shell.lede, vars)}</p>
+    </div>
+  </section>
+
+  <section class="section-white">
+    <div class="container content-narrow">
+      <div class="callout">
+        <p style="margin:0;" set:html={interp(shell.calloutHtml, vars)}></p>
+      </div>
+
+      {sections.map((s) => (
+        <section class="da-section">
+          <h2>{s.heading}</h2>
+          <p class="da-blurb">{s.blurb}</p>
+          <div class="da-list">
+            {s.items.map((p) => (
+              <div class="da-card">
+                <div class="da-card-head">
+                  <h3>{p.name}</h3>
+                  <div class="da-badges">
+                    <span class="da-badge">{typeMeta[p.type].label}</span>
+                    {p.status && <span class={`da-status ${statusMeta[p.status].cls}`}>{statusMeta[p.status].dot} {statusMeta[p.status].label}</span>}
+                  </div>
+                </div>
+                <p class="da-helps">{p.helps}</p>
+                <p class="da-elig"><strong>{shell.whoMayQualify}</strong> {p.eligibility}</p>
+                {p.conditions[0] !== 'any' && (
+                  <p class="da-conds"><strong>{shell.conditionsLabel}</strong> {p.conditions.map((c) => condLabel(c, lang)).join(', ')}</p>
+                )}
+                <div class="da-actions">
+                  <a class="btn btn-primary" href={p.url} target="_blank" rel="noopener">{p.urlLabel} &rarr;</a>
+                  {p.phone && <a class="btn btn-outline" href={telLink(p.phone)}>{p.phone}</a>}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      ))}
+
+      <div class="callout" style="margin-top:34px;">
+        <p style="margin:0;" set:html={interp(shell.finderCalloutHtml, vars)}></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tinted">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">{shell.faqEyebrow}</span>
+        <h2>{interp(shell.faqH2, vars)}</h2>
+      </div>
+      <div class="content-narrow">
+        {faqs.map((f) => (
+          <details class="da-faq">
+            <summary>{f.q}</summary>
+            <div class="da-faq-a">{f.a}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-white">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">{shell.relatedEyebrow}</span>
+        <h2>{shell.relatedH2}</h2>
+      </div>
+      <div class="card-grid">
+        {related.map((r) => (
+          <a class="card" href={href(`/${r.slug}-assistance-program.html`)} style="text-decoration:none;">
+            <div class="card-icon"><i class="fa-solid fa-hand-holding-dollar" style="font-size:1.5rem"></i></div>
+            <h3>{interp(shell.relatedCardTitle, { drug: r.drug })}</h3>
+            <p>{interp(shell.relatedCardText, { drug: r.drug, generic: r.generic })}</p>
+            <span class="card-link">{shell.relatedView}</span>
+          </a>
+        ))}
+      </div>
+      <div style="text-align:center; margin-top:32px;">
+        <a href={href('/prescription-drug-assistance.html')} class="btn btn-outline">{shell.finderBtn}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="container">
+      <h2>{interp(shell.ctaH2, vars)}</h2>
+      <p>{interp(shell.ctaText, vars)}</p>
+      <div class="cta-buttons">
+        <a href={smsHref(interp(shell.smsBody, vars))} class="btn btn-primary btn-lg">{interp(shell.ctaTextBtn, vars)}</a>
+        <a href="tel:4352925548" class="btn btn-outline btn-lg">{interp(shell.ctaCallLabel, vars)}</a>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .da-section { margin-top: 34px; }
+  .da-section > h2 { margin-bottom: 4px; }
+  .da-blurb { color: var(--text-muted, #6b7280); margin: 0 0 18px; }
+  .da-list { display: grid; gap: 16px; }
+  .da-card { border: 1px solid #e6ebf2; border-radius: 14px; padding: 20px 22px; background: #fff; box-shadow: 0 6px 18px -16px rgba(13, 63, 134, .5); }
+  .da-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
+  .da-card-head h3 { margin: 0; font-size: 1.18rem; }
+  .da-badges { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
+  .da-badge { flex: none; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; padding: 5px 11px; border-radius: 20px; background: #eaf2fd; color: #0d3f86; }
+  .da-status { flex: none; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; padding: 5px 11px; border-radius: 20px; }
+  .da-status.b-green { background: #ecfdf3; color: #15803d; }
+  .da-status.b-amber { background: #fff7ed; color: #b45309; }
+  .da-status.b-red { background: #fef3f2; color: #b42318; }
+  .da-helps { margin: 12px 0 0; }
+  .da-elig, .da-conds { margin: 8px 0 0; font-size: .94rem; color: var(--text-muted, #475467); }
+  .da-actions { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 10px; }
+  .da-actions .btn { padding: 10px 18px; }
+  .da-faq { background: #fff; border: 1px solid #e6ebf2; border-radius: 12px; margin-bottom: 10px; overflow: hidden; }
+  .da-faq summary { list-style: none; cursor: pointer; padding: 17px 20px; font-weight: 600; font-size: 1.05rem; color: #0a2540; }
+  .da-faq summary::-webkit-details-marker { display: none; }
+  .da-faq[open] summary { padding-bottom: 6px; }
+  .da-faq-a { padding: 0 20px 18px; color: var(--text-muted, #475467); }
+</style>

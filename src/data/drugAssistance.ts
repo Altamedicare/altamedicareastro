@@ -1,17 +1,20 @@
-// ── SINGLE SOURCE OF TRUTH for the Prescription Drug Assistance Finder ──────
-// Consumed in two ways so the data never drifts:
-//   1. The static finder (public/prescription-drug-assistance.html) reads it at
-//      runtime via the /drug-assistance-data.js bridge (src/pages/drug-assistance-data.js.ts).
-//   2. The drug-specific landing pages ([drug]-assistance-program.astro) import it
-//      directly at build time.
+// ── OPERATIONAL DATA for the Prescription Drug Assistance system ────────────
+// P2.4 (ADR-002 physical split): this file holds ONLY the audited operational
+// fields — ids, program names, URLs, phone numbers, covered drugs, condition
+// keys, fund statuses. The human-facing COPY (taglines, helps, eligibility
+// text, condition labels, page templates) lives in
+// src/i18n/shared/drug-assistance/{locale}.json and joins here by id/key/slug
+// through the typed accessors below. Pages and the finder bridge keep their
+// original shapes — they never learn the copy moved.
 //
-// VERIFY QUARTERLY: program names, URLs, phone numbers, and eligibility rules
-// change often, and nonprofit disease funds open and close based on availability.
+// VERIFY QUARTERLY: program names, URLs, phone numbers, and fund statuses
+// change often. Edit THIS file only — every locale follows automatically.
+
+import { getSharedModule } from '../i18n/shared';
 
 export type ProgramType = 'government' | 'foundation' | 'manufacturer' | 'database';
 
-/** Manually-maintained fund-availability status for nonprofit foundations.
- *  The September pre-AEP routine reports current values; update them here. */
+/** Manually-maintained fund-availability status for nonprofit foundations. */
 export type FundStatus = 'open' | 'verify' | 'closed';
 
 export interface Program {
@@ -34,284 +37,170 @@ export interface Program {
   status?: FundStatus;
 }
 
-export const FUND_STATUS_META: Record<FundStatus, { label: string; cls: string; dot: string }> = {
-  open: { label: 'Fund open', cls: 'b-green', dot: '🟢' },
-  verify: { label: 'Verify availability', cls: 'b-amber', dot: '🟡' },
-  closed: { label: 'Currently closed', cls: 'b-red', dot: '🔴' },
-};
+export interface Condition { key: string; label: string; }
 
-export interface Condition {
-  key: string;
-  label: string;
-}
-
-export const CONDITIONS: Condition[] = [
-  { key: 'cancer', label: 'Cancer' },
-  { key: 'diabetes', label: 'Diabetes' },
-  { key: 'heart', label: 'Heart & cardiovascular' },
-  { key: 'blood-clots', label: 'Blood clots / AFib' },
-  { key: 'cholesterol', label: 'High cholesterol' },
-  { key: 'autoimmune', label: "Autoimmune (RA, Crohn's, psoriasis)" },
-  { key: 'respiratory', label: 'Asthma / COPD / lung' },
-  { key: 'kidney', label: 'Kidney disease' },
-  { key: 'hiv', label: 'HIV' },
-  { key: 'bone', label: 'Bone / osteoporosis' },
-];
-
-export const PROGRAMS: Program[] = [
-  {
-    id: 'extra-help', type: 'government', name: 'Medicare Extra Help (Part D LIS)',
-    tagline: 'Federal subsidy that lowers or eliminates Part D premiums, deductibles, and copays.',
-    conditions: ['any'],
-    helps: 'Lowers or eliminates your Part D premium, deductible, and drug copays. Many people who qualify never apply.',
-    eligibility: 'Based on limited income and resources. Apply free through Social Security; if you have Medicaid, SSI, or a Medicare Savings Program you may qualify automatically.',
-    url: 'https://www.ssa.gov/medicare/part-d-extra-help', urlLabel: 'Apply at SSA.gov',
-    phone: '1-800-772-1213',
-  },
-  {
-    id: 'msp', type: 'government', name: 'Medicare Savings Programs & Medicaid',
-    tagline: 'State programs that pay Medicare costs and can unlock Extra Help automatically.',
-    conditions: ['any'],
-    helps: 'Can pay your Part B premium and, by qualifying you, automatically grant Extra Help for drug costs.',
-    typical: 'May pay your Part B premium and unlock Extra Help for drug costs.',
-    eligibility: 'Income- and resource-based; administered by your state (Utah Department of Workforce Services / Medicaid). Limits are higher than many people expect.',
-    url: 'https://www.medicare.gov/basics/costs/help/drug-costs', urlLabel: 'Medicare.gov — get help with costs',
-    phone: '1-866-435-7414',
-  },
-  {
-    id: 'pan', type: 'foundation', name: 'PAN Foundation', status: 'open',
-    tagline: 'Grants for out-of-pocket drug costs across 70+ disease funds.',
-    conditions: ['cancer', 'autoimmune', 'heart', 'diabetes', 'kidney', 'respiratory', 'bone'],
-    helps: 'Provides grants that cover copays, coinsurance, and other out-of-pocket medication costs. Can be used with Medicare.',
-    eligibility: 'Diagnosis must match an open disease fund; income generally up to 400–500% of the federal poverty level. Funds open and close based on availability.',
-    url: 'https://www.panfoundation.org/', urlLabel: 'panfoundation.org',
-    phone: '1-866-316-7263',
-  },
-  {
-    id: 'healthwell', type: 'foundation', name: 'HealthWell Foundation', status: 'verify',
-    tagline: 'Grants for copays, premiums, and even travel costs by disease fund.',
-    conditions: ['cancer', 'autoimmune', 'heart', 'diabetes', 'kidney', 'respiratory', 'bone'],
-    helps: 'Covers copays, coinsurance, premiums, deductibles, and sometimes travel costs for a covered condition.',
-    typical: 'May help with copays, premiums, deductibles, and sometimes travel costs.',
-    eligibility: 'Diagnosis must match an open fund; income generally up to 400–500% of the federal poverty level. Medicare beneficiaries are eligible.',
-    url: 'https://www.healthwellfoundation.org/', urlLabel: 'healthwellfoundation.org',
-    phone: '1-800-675-8416',
-  },
-  {
-    id: 'gooddays', type: 'foundation', name: 'Good Days', status: 'verify',
-    tagline: 'Copay and travel assistance for costly chronic and life-threatening conditions.',
-    conditions: ['cancer', 'autoimmune', 'heart', 'kidney', 'respiratory'],
-    helps: 'Helps cover copays and treatment-related travel for high-cost medications and chronic diseases.',
-    typical: 'May help with copays and treatment-related travel.',
-    eligibility: 'Diagnosis-based with income limits; funds depend on availability. Open to people with Medicare.',
-    url: 'https://www.mygooddays.org/', urlLabel: 'mygooddays.org',
-    phone: '1-877-968-7233',
-  },
-  {
-    id: 'paf-copay', type: 'foundation', name: 'Patient Advocate Foundation Co-Pay Relief', status: 'open',
-    tagline: 'Copay grants plus free case management for many diseases.',
-    conditions: ['cancer', 'diabetes', 'autoimmune', 'heart', 'respiratory', 'kidney'],
-    helps: 'Provides copay grants and connects you with a case manager who can help navigate insurance and appeals.',
-    eligibility: 'Diagnosis must match an open fund; income generally up to 400% of the federal poverty level. Available to Medicare beneficiaries.',
-    url: 'https://www.copays.org/', urlLabel: 'copays.org',
-    phone: '1-866-512-3861',
-  },
-  {
-    id: 'needymeds', type: 'database', name: 'NeedyMeds',
-    tagline: 'Free searchable database of assistance and discount programs.',
-    conditions: ['any'],
-    helps: 'A free directory of patient assistance programs, manufacturer offers, diagnosis-based aid, and a drug discount card.',
-    eligibility: 'Free to use for anyone; individual programs in the database set their own rules.',
-    url: 'https://www.needymeds.org/', urlLabel: 'needymeds.org',
-    phone: '1-800-503-6897',
-  },
-  {
-    id: 'mat', type: 'database', name: 'Medicine Assistance Tool (MAT)',
-    tagline: "PhRMA's search tool for hundreds of manufacturer programs.",
-    conditions: ['any'],
-    helps: 'Searches across hundreds of biopharmaceutical patient assistance programs to find ones for your medications.',
-    eligibility: "Free to use; results depend on each program's criteria.",
-    url: 'https://medicineassistancetool.org/', urlLabel: 'medicineassistancetool.org',
-  },
-  {
-    id: 'rxassist', type: 'database', name: 'RxAssist',
-    tagline: 'Directory of manufacturer patient assistance programs.',
-    conditions: ['any'],
-    helps: 'A free, regularly updated list of company programs that provide free or low-cost medicines.',
-    eligibility: 'Free to use; each listed program sets its own eligibility.',
-    url: 'https://www.rxassist.org/', urlLabel: 'rxassist.org',
-  },
-
-  /* ---- Manufacturer patient assistance programs ---- */
-  {
-    id: 'bms', type: 'manufacturer', name: 'BMS Patient Assistance Foundation',
-    tagline: 'Free Bristol Myers Squibb medicines for eligible patients (Eliquis, Revlimid, and more).',
-    conditions: ['blood-clots', 'heart', 'cancer'], drugs: ['Eliquis', 'Revlimid', 'Pomalyst', 'Opdivo', 'Sprycel'],
-    helps: 'Provides eligible Bristol Myers Squibb medications free of charge. Eliquis is also supported through Eliquis 360 Support.',
-    eligibility: 'Generally for uninsured or underinsured patients meeting income limits; Medicare beneficiaries may qualify through the foundation (not the copay card).',
-    url: 'https://www.bmspaf.org/', urlLabel: 'bmspaf.org',
-    phone: '1-800-736-0003',
-  },
-  {
-    id: 'jjpaf', type: 'manufacturer', name: 'Johnson & Johnson Patient Assistance Foundation',
-    tagline: 'Free Janssen medicines for eligible patients (Xarelto, Stelara, Tremfya, Imbruvica).',
-    conditions: ['blood-clots', 'heart', 'autoimmune', 'cancer'], drugs: ['Xarelto', 'Stelara', 'Tremfya', 'Imbruvica', 'Invega', 'Simponi'],
-    helps: 'Provides eligible Johnson & Johnson / Janssen prescription products at no cost. Janssen CarePath offers added support.',
-    eligibility: 'Income-based; generally for uninsured/underinsured patients. Medicare patients may qualify through the foundation.',
-    url: 'https://www.jjpaf.org/', urlLabel: 'jjpaf.org',
-    phone: '1-800-652-6227',
-  },
-  {
-    id: 'novocare', type: 'manufacturer', name: 'NovoCare / Novo Nordisk PAP',
-    tagline: 'Patient assistance for Ozempic, insulins, and other Novo Nordisk drugs.',
-    conditions: ['diabetes'], drugs: ['Ozempic', 'Rybelsus', 'Victoza', 'Tresiba', 'Levemir', 'NovoLog', 'Fiasp'],
-    helps: 'The Novo Nordisk Patient Assistance Program provides free medication to those who qualify; NovoCare helps you navigate coverage.',
-    eligibility: 'Generally for U.S. residents who are uninsured or have Medicare and meet income limits (up to ~400% FPL for the PAP).',
-    url: 'https://www.novocare.com/', urlLabel: 'novocare.com',
-    phone: '1-866-310-7549',
-  },
-  {
-    id: 'lillycares', type: 'manufacturer', name: 'Lilly Cares Foundation',
-    tagline: 'Free Eli Lilly medicines for eligible patients (Mounjaro, Trulicity, insulins).',
-    conditions: ['diabetes'], drugs: ['Mounjaro', 'Trulicity', 'Humalog', 'Basaglar', 'Jardiance', 'Zepbound', 'Verzenio'],
-    helps: 'Provides eligible Lilly medications free of charge to qualifying patients.',
-    eligibility: 'Income-based; available to many Medicare Part D patients who meet criteria. Lilly also offers an Insulin Value Program ($35/month).',
-    url: 'https://www.lillycares.com/', urlLabel: 'lillycares.com',
-    phone: '1-800-545-6962',
-  },
-  {
-    id: 'bicares', type: 'manufacturer', name: 'BI Cares Foundation',
-    tagline: 'Free Boehringer Ingelheim medicines (Jardiance, Ofev, Spiriva).',
-    conditions: ['diabetes', 'heart', 'kidney', 'respiratory'], drugs: ['Jardiance', 'Ofev', 'Spiriva', 'Trajenta', 'Combivent', 'Pradaxa'],
-    helps: 'Provides eligible Boehringer Ingelheim medications at no cost through the BI Cares Foundation.',
-    eligibility: 'Income-based; open to qualifying uninsured and Medicare patients.',
-    url: 'https://www.bicares.org/', urlLabel: 'bicares.org',
-    phone: '1-800-556-8317',
-  },
-  {
-    id: 'azme', type: 'manufacturer', name: 'AZ&Me Prescription Savings Program',
-    tagline: 'Free AstraZeneca medicines (Farxiga, Brilinta, Symbicort, oncology).',
-    conditions: ['diabetes', 'heart', 'kidney', 'respiratory', 'cancer'], drugs: ['Farxiga', 'Brilinta', 'Symbicort', 'Breztri', 'Tagrisso', 'Calquence', 'Lynparza'],
-    helps: 'Provides eligible AstraZeneca medications at no cost, with a dedicated track for Medicare Part D patients.',
-    eligibility: 'Income-based; AZ&Me has a specific Medicare Part D eligibility pathway.',
-    url: 'https://www.azandmeapp.com/', urlLabel: 'azandmeapp.com',
-    phone: '1-800-292-6363',
-  },
-  {
-    id: 'novartis', type: 'manufacturer', name: 'Novartis Patient Assistance Foundation',
-    tagline: 'Free Novartis medicines (Entresto, Cosentyx, Leqvio).',
-    conditions: ['heart', 'autoimmune', 'cholesterol', 'cancer'], drugs: ['Entresto', 'Cosentyx', 'Leqvio', 'Kisqali', 'Promacta'],
-    helps: 'Provides eligible Novartis medications free of charge to qualifying patients.',
-    eligibility: 'Income-based; available to uninsured and Medicare patients who meet criteria.',
-    url: 'https://www.patient.novartispharma.com/', urlLabel: 'Novartis Patient Assistance',
-    phone: '1-800-277-2254',
-  },
-  {
-    id: 'abbvie', type: 'manufacturer', name: 'myAbbVie Assist',
-    tagline: 'Free AbbVie medicines for eligible patients (Humira, Skyrizi, Rinvoq).',
-    conditions: ['autoimmune', 'cancer'], drugs: ['Humira', 'Skyrizi', 'Rinvoq', 'Imbruvica', 'Venclexta', 'Linzess'],
-    helps: 'Provides eligible AbbVie medications at no cost to qualifying patients.',
-    eligibility: 'Income-based; serves uninsured and many Medicare patients who meet criteria.',
-    url: 'https://www.abbvie.com/patients/patient-assistance.html', urlLabel: 'myAbbVie Assist',
-    phone: '1-800-222-6885',
-  },
-  {
-    id: 'amgen', type: 'manufacturer', name: 'Amgen Safety Net Foundation',
-    tagline: 'Free Amgen medicines for eligible patients (Enbrel, Repatha, Prolia).',
-    conditions: ['autoimmune', 'cholesterol', 'heart', 'bone', 'cancer'], drugs: ['Enbrel', 'Repatha', 'Otezla', 'Prolia', 'Aimovig', 'Neulasta'],
-    helps: 'Provides eligible Amgen medications free of charge through the Safety Net Foundation.',
-    eligibility: 'Income-based; includes a pathway for Medicare patients who meet criteria.',
-    url: 'https://www.amgensafetynetfoundation.com/', urlLabel: 'amgensafetynetfoundation.com',
-    phone: '1-888-762-6436',
-  },
-  {
-    id: 'sanofi', type: 'manufacturer', name: 'Sanofi Patient Connection',
-    tagline: 'Free Sanofi/Regeneron medicines (Dupixent, Praluent, Lantus).',
-    conditions: ['autoimmune', 'respiratory', 'cholesterol', 'heart', 'diabetes'], drugs: ['Dupixent', 'Praluent', 'Lantus', 'Toujeo', 'Admelog', 'Libtayo'],
-    helps: 'Connects eligible patients to free medication and support; Dupixent MyWay offers additional help.',
-    eligibility: 'Income-based; serves uninsured and qualifying Medicare patients.',
-    url: 'https://www.sanofipatientconnection.com/', urlLabel: 'sanofipatientconnection.com',
-    phone: '1-888-847-4877',
-  },
-  {
-    id: 'pfizer', type: 'manufacturer', name: 'Pfizer RxPathways',
-    tagline: 'Help accessing many Pfizer medicines (Ibrance, Xeljanz, Eliquis).',
-    conditions: ['cancer', 'autoimmune', 'blood-clots', 'heart'], drugs: ['Ibrance', 'Xeljanz', 'Eliquis', 'Lyrica', 'Xtandi', 'Inlyta'],
-    helps: 'Connects eligible patients with assistance programs that provide Pfizer medicines free or at a savings.',
-    eligibility: 'Income-based; includes options for insured and uninsured patients (free-drug track for those who qualify).',
-    url: 'https://www.pfizerrxpathways.com/', urlLabel: 'pfizerrxpathways.com',
-    phone: '1-844-989-7284',
-  },
-  {
-    id: 'astellas', type: 'manufacturer', name: 'Astellas Pharma Support Solutions',
-    tagline: 'Patient assistance for Astellas medicines (Xtandi, Myrbetriq).',
-    conditions: ['cancer'], drugs: ['Xtandi', 'Myrbetriq', 'Padcev', 'Xospata'],
-    helps: 'Provides eligible Astellas medications free or low-cost and helps with coverage navigation.',
-    eligibility: 'Income-based; includes support for Medicare patients who meet criteria.',
-    url: 'https://www.astellaspharmasupportsolutions.com/', urlLabel: 'Astellas Pharma Support',
-    phone: '1-800-477-6472',
-  },
-  {
-    id: 'gsk', type: 'manufacturer', name: 'GSK Patient Assistance Program',
-    tagline: 'Free GSK medicines for eligible patients (Trelegy, Breo, Anoro).',
-    conditions: ['respiratory'], drugs: ['Trelegy Ellipta', 'Breo Ellipta', 'Anoro Ellipta', 'Nucala', 'Advair'],
-    helps: 'Provides eligible GSK medications at no cost through the GSK for You / Bridges to Access programs.',
-    eligibility: 'Income-based; serves uninsured and qualifying Medicare patients.',
-    url: 'https://www.gskforyou.com/', urlLabel: 'gskforyou.com',
-    phone: '1-866-728-4368',
-  },
-];
-
-export const TYPE_META: Record<ProgramType, { label: string }> = {
-  government: { label: 'Government program' },
-  foundation: { label: 'Nonprofit grant' },
-  manufacturer: { label: 'Manufacturer program' },
-  database: { label: 'Search & discount' },
-};
-
-export const condLabel = (key: string): string =>
-  CONDITIONS.find((c) => c.key === key)?.label ?? key;
-
-/** Featured drugs that get their own SEO landing page. Each links to a matching
- *  "Does Medicare cover X" blog post (slugs verified to exist in the blog collection). */
 export interface FeaturedDrug {
   slug: string;          // URL slug → /<slug>-assistance-program.html
-  drug: string;          // brand name as it appears in PROGRAMS[].drugs
+  drug: string;          // brand name as it appears in PROGRAM_CORE[].drugs
   generic: string;
   conditionLabel: string;
-  conditions: string[];  // ConditionKey values — drives foundation matching on the landing page
+  conditions: string[];  // ConditionKey values — drives foundation matching
   blogSlug: string;      // /blog/<blogSlug>.html
 }
 
-export const FEATURED_DRUGS: FeaturedDrug[] = [
-  { slug: 'eliquis',   drug: 'Eliquis',   generic: 'apixaban',      conditionLabel: 'blood clots & atrial fibrillation', conditions: ['blood-clots', 'heart'],            blogSlug: 'does-medicare-cover-eliquis' },
-  { slug: 'xarelto',   drug: 'Xarelto',   generic: 'rivaroxaban',   conditionLabel: 'blood clots & atrial fibrillation', conditions: ['blood-clots', 'heart'],            blogSlug: 'does-medicare-cover-xarelto' },
-  { slug: 'ozempic',   drug: 'Ozempic',   generic: 'semaglutide',   conditionLabel: 'type 2 diabetes',                   conditions: ['diabetes'],                        blogSlug: 'does-medicare-cover-ozempic' },
-  { slug: 'mounjaro',  drug: 'Mounjaro',  generic: 'tirzepatide',   conditionLabel: 'type 2 diabetes',                   conditions: ['diabetes'],                        blogSlug: 'does-medicare-cover-mounjaro' },
-  { slug: 'trulicity', drug: 'Trulicity', generic: 'dulaglutide',   conditionLabel: 'type 2 diabetes',                   conditions: ['diabetes'],                        blogSlug: 'does-medicare-cover-trulicity' },
-  { slug: 'jardiance', drug: 'Jardiance', generic: 'empagliflozin', conditionLabel: 'diabetes, heart & kidney',          conditions: ['diabetes', 'heart', 'kidney'],     blogSlug: 'does-medicare-cover-jardiance' },
-  { slug: 'farxiga',   drug: 'Farxiga',   generic: 'dapagliflozin', conditionLabel: 'diabetes, heart & kidney',          conditions: ['diabetes', 'heart', 'kidney'],     blogSlug: 'does-medicare-cover-farxiga' },
-  { slug: 'entresto',  drug: 'Entresto',  generic: 'sacubitril/valsartan', conditionLabel: 'heart failure',             conditions: ['heart'],                           blogSlug: 'does-medicare-cover-entresto' },
-  { slug: 'repatha',   drug: 'Repatha',   generic: 'evolocumab',    conditionLabel: 'high cholesterol',                  conditions: ['cholesterol', 'heart'],            blogSlug: 'does-medicare-cover-repatha' },
-  { slug: 'humira',    drug: 'Humira',    generic: 'adalimumab',    conditionLabel: 'autoimmune conditions',             conditions: ['autoimmune'],                      blogSlug: 'does-medicare-cover-humira' },
-  { slug: 'enbrel',    drug: 'Enbrel',    generic: 'etanercept',    conditionLabel: 'rheumatoid arthritis & psoriasis',  conditions: ['autoimmune'],                      blogSlug: 'does-medicare-cover-enbrel' },
-  { slug: 'skyrizi',   drug: 'Skyrizi',   generic: 'risankizumab',  conditionLabel: 'psoriasis & Crohn’s disease',  conditions: ['autoimmune'],                      blogSlug: 'does-medicare-cover-skyrizi' },
-  { slug: 'rinvoq',    drug: 'Rinvoq',    generic: 'upadacitinib',  conditionLabel: 'autoimmune conditions',             conditions: ['autoimmune'],                      blogSlug: 'does-medicare-cover-rinvoq' },
-  { slug: 'dupixent',  drug: 'Dupixent',  generic: 'dupilumab',     conditionLabel: 'eczema, asthma & COPD',             conditions: ['autoimmune', 'respiratory'],       blogSlug: 'does-medicare-cover-dupixent' },
+type ProgramCore = Omit<Program, 'tagline' | 'helps' | 'typical' | 'eligibility'>;
+type FeaturedCore = Omit<FeaturedDrug, 'conditionLabel'>;
+
+/** THE quarterly-audit surface. Names/URLs/phones/statuses only — no copy. */
+const PROGRAM_CORE: ProgramCore[] = [
+  {id: "extra-help", type: "government", name: "Medicare Extra Help (Part D LIS)", conditions: ["any"], url: "https://www.ssa.gov/medicare/part-d-extra-help", urlLabel: "Apply at SSA.gov", phone: "1-800-772-1213"},
+  {id: "msp", type: "government", name: "Medicare Savings Programs & Medicaid", conditions: ["any"], url: "https://www.medicare.gov/basics/costs/help/drug-costs", urlLabel: "Medicare.gov — get help with costs", phone: "1-866-435-7414"},
+  {id: "pan", type: "foundation", name: "PAN Foundation", status: "open", conditions: ["cancer", "autoimmune", "heart", "diabetes", "kidney", "respiratory", "bone"], url: "https://www.panfoundation.org/", urlLabel: "panfoundation.org", phone: "1-866-316-7263"},
+  {id: "healthwell", type: "foundation", name: "HealthWell Foundation", status: "verify", conditions: ["cancer", "autoimmune", "heart", "diabetes", "kidney", "respiratory", "bone"], url: "https://www.healthwellfoundation.org/", urlLabel: "healthwellfoundation.org", phone: "1-800-675-8416"},
+  {id: "gooddays", type: "foundation", name: "Good Days", status: "verify", conditions: ["cancer", "autoimmune", "heart", "kidney", "respiratory"], url: "https://www.mygooddays.org/", urlLabel: "mygooddays.org", phone: "1-877-968-7233"},
+  {id: "paf-copay", type: "foundation", name: "Patient Advocate Foundation Co-Pay Relief", status: "open", conditions: ["cancer", "diabetes", "autoimmune", "heart", "respiratory", "kidney"], url: "https://www.copays.org/", urlLabel: "copays.org", phone: "1-866-512-3861"},
+  {id: "needymeds", type: "database", name: "NeedyMeds", conditions: ["any"], url: "https://www.needymeds.org/", urlLabel: "needymeds.org", phone: "1-800-503-6897"},
+  {id: "mat", type: "database", name: "Medicine Assistance Tool (MAT)", conditions: ["any"], url: "https://medicineassistancetool.org/", urlLabel: "medicineassistancetool.org"},
+  {id: "rxassist", type: "database", name: "RxAssist", conditions: ["any"], url: "https://www.rxassist.org/", urlLabel: "rxassist.org"},
+  {id: "bms", type: "manufacturer", name: "BMS Patient Assistance Foundation", conditions: ["blood-clots", "heart", "cancer"], drugs: ["Eliquis", "Revlimid", "Pomalyst", "Opdivo", "Sprycel"], url: "https://www.bmspaf.org/", urlLabel: "bmspaf.org", phone: "1-800-736-0003"},
+  {id: "jjpaf", type: "manufacturer", name: "Johnson & Johnson Patient Assistance Foundation", conditions: ["blood-clots", "heart", "autoimmune", "cancer"], drugs: ["Xarelto", "Stelara", "Tremfya", "Imbruvica", "Invega", "Simponi"], url: "https://www.jjpaf.org/", urlLabel: "jjpaf.org", phone: "1-800-652-6227"},
+  {id: "novocare", type: "manufacturer", name: "NovoCare / Novo Nordisk PAP", conditions: ["diabetes"], drugs: ["Ozempic", "Rybelsus", "Victoza", "Tresiba", "Levemir", "NovoLog", "Fiasp"], url: "https://www.novocare.com/", urlLabel: "novocare.com", phone: "1-866-310-7549"},
+  {id: "lillycares", type: "manufacturer", name: "Lilly Cares Foundation", conditions: ["diabetes"], drugs: ["Mounjaro", "Trulicity", "Humalog", "Basaglar", "Jardiance", "Zepbound", "Verzenio"], url: "https://www.lillycares.com/", urlLabel: "lillycares.com", phone: "1-800-545-6962"},
+  {id: "bicares", type: "manufacturer", name: "BI Cares Foundation", conditions: ["diabetes", "heart", "kidney", "respiratory"], drugs: ["Jardiance", "Ofev", "Spiriva", "Trajenta", "Combivent", "Pradaxa"], url: "https://www.bicares.org/", urlLabel: "bicares.org", phone: "1-800-556-8317"},
+  {id: "azme", type: "manufacturer", name: "AZ&Me Prescription Savings Program", conditions: ["diabetes", "heart", "kidney", "respiratory", "cancer"], drugs: ["Farxiga", "Brilinta", "Symbicort", "Breztri", "Tagrisso", "Calquence", "Lynparza"], url: "https://www.azandmeapp.com/", urlLabel: "azandmeapp.com", phone: "1-800-292-6363"},
+  {id: "novartis", type: "manufacturer", name: "Novartis Patient Assistance Foundation", conditions: ["heart", "autoimmune", "cholesterol", "cancer"], drugs: ["Entresto", "Cosentyx", "Leqvio", "Kisqali", "Promacta"], url: "https://www.patient.novartispharma.com/", urlLabel: "Novartis Patient Assistance", phone: "1-800-277-2254"},
+  {id: "abbvie", type: "manufacturer", name: "myAbbVie Assist", conditions: ["autoimmune", "cancer"], drugs: ["Humira", "Skyrizi", "Rinvoq", "Imbruvica", "Venclexta", "Linzess"], url: "https://www.abbvie.com/patients/patient-assistance.html", urlLabel: "myAbbVie Assist", phone: "1-800-222-6885"},
+  {id: "amgen", type: "manufacturer", name: "Amgen Safety Net Foundation", conditions: ["autoimmune", "cholesterol", "heart", "bone", "cancer"], drugs: ["Enbrel", "Repatha", "Otezla", "Prolia", "Aimovig", "Neulasta"], url: "https://www.amgensafetynetfoundation.com/", urlLabel: "amgensafetynetfoundation.com", phone: "1-888-762-6436"},
+  {id: "sanofi", type: "manufacturer", name: "Sanofi Patient Connection", conditions: ["autoimmune", "respiratory", "cholesterol", "heart", "diabetes"], drugs: ["Dupixent", "Praluent", "Lantus", "Toujeo", "Admelog", "Libtayo"], url: "https://www.sanofipatientconnection.com/", urlLabel: "sanofipatientconnection.com", phone: "1-888-847-4877"},
+  {id: "pfizer", type: "manufacturer", name: "Pfizer RxPathways", conditions: ["cancer", "autoimmune", "blood-clots", "heart"], drugs: ["Ibrance", "Xeljanz", "Eliquis", "Lyrica", "Xtandi", "Inlyta"], url: "https://www.pfizerrxpathways.com/", urlLabel: "pfizerrxpathways.com", phone: "1-844-989-7284"},
+  {id: "astellas", type: "manufacturer", name: "Astellas Pharma Support Solutions", conditions: ["cancer"], drugs: ["Xtandi", "Myrbetriq", "Padcev", "Xospata"], url: "https://www.astellaspharmasupportsolutions.com/", urlLabel: "Astellas Pharma Support", phone: "1-800-477-6472"},
+  {id: "gsk", type: "manufacturer", name: "GSK Patient Assistance Program", conditions: ["respiratory"], drugs: ["Trelegy Ellipta", "Breo Ellipta", "Anoro Ellipta", "Nucala", "Advair"], url: "https://www.gskforyou.com/", urlLabel: "gskforyou.com", phone: "1-866-728-4368"},
 ];
 
-/** Group the programs relevant to a specific drug: the manufacturer program(s) that
- *  list the drug, foundations whose disease funds overlap the drug's conditions, the
- *  universal government programs, and the search/discount databases.
- *  Pass the drug's clinical conditions (from FEATURED_DRUGS) for accurate foundation
- *  matching; if omitted, conditions are derived from the matching manufacturer programs. */
+const FEATURED_CORE: FeaturedCore[] = [
+  {slug: "eliquis", drug: "Eliquis", generic: "apixaban", conditions: ["blood-clots", "heart"], blogSlug: "does-medicare-cover-eliquis"},
+  {slug: "xarelto", drug: "Xarelto", generic: "rivaroxaban", conditions: ["blood-clots", "heart"], blogSlug: "does-medicare-cover-xarelto"},
+  {slug: "ozempic", drug: "Ozempic", generic: "semaglutide", conditions: ["diabetes"], blogSlug: "does-medicare-cover-ozempic"},
+  {slug: "mounjaro", drug: "Mounjaro", generic: "tirzepatide", conditions: ["diabetes"], blogSlug: "does-medicare-cover-mounjaro"},
+  {slug: "trulicity", drug: "Trulicity", generic: "dulaglutide", conditions: ["diabetes"], blogSlug: "does-medicare-cover-trulicity"},
+  {slug: "jardiance", drug: "Jardiance", generic: "empagliflozin", conditions: ["diabetes", "heart", "kidney"], blogSlug: "does-medicare-cover-jardiance"},
+  {slug: "farxiga", drug: "Farxiga", generic: "dapagliflozin", conditions: ["diabetes", "heart", "kidney"], blogSlug: "does-medicare-cover-farxiga"},
+  {slug: "entresto", drug: "Entresto", generic: "sacubitril/valsartan", conditions: ["heart"], blogSlug: "does-medicare-cover-entresto"},
+  {slug: "repatha", drug: "Repatha", generic: "evolocumab", conditions: ["cholesterol", "heart"], blogSlug: "does-medicare-cover-repatha"},
+  {slug: "humira", drug: "Humira", generic: "adalimumab", conditions: ["autoimmune"], blogSlug: "does-medicare-cover-humira"},
+  {slug: "enbrel", drug: "Enbrel", generic: "etanercept", conditions: ["autoimmune"], blogSlug: "does-medicare-cover-enbrel"},
+  {slug: "skyrizi", drug: "Skyrizi", generic: "risankizumab", conditions: ["autoimmune"], blogSlug: "does-medicare-cover-skyrizi"},
+  {slug: "rinvoq", drug: "Rinvoq", generic: "upadacitinib", conditions: ["autoimmune"], blogSlug: "does-medicare-cover-rinvoq"},
+  {slug: "dupixent", drug: "Dupixent", generic: "dupilumab", conditions: ["autoimmune", "respiratory"], blogSlug: "does-medicare-cover-dupixent"},
+];
+
+const CONDITION_KEYS: string[] = ["cancer","diabetes","heart","blood-clots","cholesterol","autoimmune","respiratory","kidney","hiv","bone"];
+
+/** Presentation metadata (badge colors/dots); labels join from the module. */
+const FUND_STATUS_PRESENTATION: Record<FundStatus, { cls: string; dot: string }> = {
+  open: { cls: 'b-green', dot: '🟢' },
+  verify: { cls: 'b-amber', dot: '🟡' },
+  closed: { cls: 'b-red', dot: '🔴' },
+};
+
+// ── Shared-module copy (translated; joined below) ────────────────────────────
+export interface DrugShell {
+  title: string; description: string; crumbTools: string; crumbFinder: string;
+  h1: string; lede: string; calloutHtml: string;
+  secManufacturerHeading: string; secManufacturerBlurb: string;
+  secFoundationHeading: string; secFoundationBlurb: string;
+  secGovernmentHeading: string; secGovernmentBlurb: string;
+  secDatabaseHeading: string; secDatabaseBlurb: string;
+  whoMayQualify: string; conditionsLabel: string; finderCalloutHtml: string;
+  faqEyebrow: string; faqH2: string;
+  faqs: { q: string; a: string }[];
+  relatedEyebrow: string; relatedH2: string; relatedCardTitle: string;
+  relatedCardText: string; relatedView: string; finderBtn: string;
+  ctaH2: string; ctaText: string; ctaTextBtn: string; ctaCallLabel: string;
+  smsBody: string;
+}
+interface DrugCopy {
+  shell: DrugShell;
+  typeMeta: { key: string; label: string }[];
+  statusMeta: { key: string; label: string }[];
+  conditions: { key: string; label: string }[];
+  programs: { id: string; tagline: string; helps: string; typical?: string; eligibility: string }[];
+  featuredDrugs: { slug: string; conditionLabel: string }[];
+}
+const copy = (locale?: string) => getSharedModule<DrugCopy>('drug-assistance', locale);
+
+/** Full Program objects in a locale (operational fields byte-identical across
+ *  locales by construction — they come from PROGRAM_CORE). Key order matches
+ *  the original literals so the finder bridge output stays byte-stable. */
+export function getPrograms(locale?: string): Program[] {
+  const byId = new Map(copy(locale).programs.map((p) => [p.id, p]));
+  return PROGRAM_CORE.map((c) => {
+    const t = byId.get(c.id);
+    if (!t) throw new Error(`drug-assistance: no copy for program "${c.id}" — regenerate the shared module`);
+    return {
+      id: c.id, type: c.type, name: c.name,
+      ...(c.status ? { status: c.status } : {}),
+      tagline: t.tagline,
+      conditions: c.conditions,
+      ...(c.drugs ? { drugs: c.drugs } : {}),
+      helps: t.helps,
+      ...(t.typical ? { typical: t.typical } : {}),
+      eligibility: t.eligibility,
+      url: c.url, urlLabel: c.urlLabel,
+      ...(c.phone ? { phone: c.phone } : {}),
+    } as Program;
+  });
+}
+
+export function getConditions(locale?: string): Condition[] {
+  const byKey = new Map(copy(locale).conditions.map((c) => [c.key, c.label]));
+  return CONDITION_KEYS.map((key) => ({ key, label: byKey.get(key) ?? key }));
+}
+
+export function getFeaturedDrugs(locale?: string): FeaturedDrug[] {
+  const bySlug = new Map(copy(locale).featuredDrugs.map((d) => [d.slug, d.conditionLabel]));
+  return FEATURED_CORE.map((c) => ({
+    slug: c.slug, drug: c.drug, generic: c.generic,
+    conditionLabel: bySlug.get(c.slug) ?? '',
+    conditions: c.conditions, blogSlug: c.blogSlug,
+  }));
+}
+
+export function getTypeMeta(locale?: string): Record<ProgramType, { label: string }> {
+  return Object.fromEntries(copy(locale).typeMeta.map((t) => [t.key, { label: t.label }])) as Record<ProgramType, { label: string }>;
+}
+
+export function getFundStatusMeta(locale?: string): Record<FundStatus, { label: string; cls: string; dot: string }> {
+  const labels = new Map(copy(locale).statusMeta.map((s) => [s.key, s.label]));
+  return Object.fromEntries(
+    (Object.keys(FUND_STATUS_PRESENTATION) as FundStatus[]).map((k) => [
+      k, { label: labels.get(k) ?? k, ...FUND_STATUS_PRESENTATION[k] },
+    ]),
+  ) as Record<FundStatus, { label: string; cls: string; dot: string }>;
+}
+
+export const getDrugShell = (locale?: string): DrugShell => copy(locale).shell;
+
+// ── English-default views (finder bridge, sitemap, llms.txt, legacy) ────────
+export const PROGRAMS: Program[] = getPrograms();
+export const CONDITIONS: Condition[] = getConditions();
+export const FEATURED_DRUGS: FeaturedDrug[] = getFeaturedDrugs();
+export const TYPE_META: Record<ProgramType, { label: string }> = getTypeMeta();
+export const FUND_STATUS_META: Record<FundStatus, { label: string; cls: string; dot: string }> = getFundStatusMeta();
+
+export const condLabel = (key: string, locale?: string): string =>
+  getConditions(locale).find((c) => c.key === key)?.label ?? key;
+
+/** Group the programs relevant to a specific drug (locale-aware). */
 export function programsForDrug(
   drugName: string,
   conditionKeys?: string[],
+  locale?: string,
 ): { manufacturer: Program[]; foundation: Program[]; government: Program[]; database: Program[] } {
+  const all = getPrograms(locale);
   const q = drugName.toLowerCase();
 
-  const manufacturer = PROGRAMS.filter(
+  const manufacturer = all.filter(
     (p) => p.type === 'manufacturer' && p.drugs?.some((d) => d.toLowerCase().includes(q)),
   );
 
@@ -320,11 +209,11 @@ export function programsForDrug(
     for (const p of manufacturer) p.conditions.filter((c) => c !== 'any').forEach((c) => drugConds.add(c));
   }
 
-  const foundation = PROGRAMS.filter(
+  const foundation = all.filter(
     (p) => p.type === 'foundation' && p.conditions.some((c) => drugConds.has(c)),
   );
-  const government = PROGRAMS.filter((p) => p.type === 'government');
-  const database = PROGRAMS.filter((p) => p.type === 'database');
+  const government = all.filter((p) => p.type === 'government');
+  const database = all.filter((p) => p.type === 'database');
 
   return { manufacturer, foundation, government, database };
 }
