@@ -109,6 +109,12 @@ export const strings = {
     // Search modal shell (runtime search-UI strings inside the inline script
     // remain English for now — documented boundary, see I18N-PORT-LOG.md)
     'search.modalAria': 'Search AltaMedicare',
+    // HelpfulTools band (HelpfulTools.astro — P2.2)
+    'tools.eyebrow': 'Free tools',
+    'tools.h2': 'Helpful Medicare Tools',
+    'tools.intro': 'Quick, interactive calculators to help you plan with confidence.',
+    'tools.open': 'Open tool',
+    'tools.seeAll': 'See all Medicare tools',
   },
   es: {
     'switcher.label': 'Idioma',
@@ -157,6 +163,11 @@ export const strings = {
     'chat.email': 'Envíele un correo a Bret',
     'chat.noBots': 'Sin robots automatizados — solo un verdadero agente de Medicare en Utah.',
     'search.modalAria': 'Buscar en AltaMedicare',
+    'tools.eyebrow': 'Herramientas gratuitas',
+    'tools.h2': 'Herramientas útiles de Medicare',
+    'tools.intro': 'Calculadoras rápidas e interactivas para ayudarle a planificar con confianza.',
+    'tools.open': 'Abrir herramienta',
+    'tools.seeAll': 'Ver todas las herramientas de Medicare',
   },
 } as const;
 
@@ -182,7 +193,36 @@ export function t(
 // error, matching the master-fallback rule.) Populated during Phase 1 chrome
 // localization; empty until then.
 const LABELS: Record<string, Record<string, string>> = {
-  es: {},
+  es: {
+    // HelpfulTools band inline data (HelpfulTools.astro — P2.2)
+    'Eligibility Calculator': 'Calculadora de elegibilidad',
+    'IRMAA Calculator': 'Calculadora de IRMAA',
+    'Late Enrollment Penalty': 'Multa por inscripción tardía',
+    "See when you're eligible and your enrollment dates.": 'Vea cuándo es elegible y sus fechas de inscripción.',
+    'Estimate your Part B & Part D premiums.': 'Estime sus primas de la Parte B y la Parte D.',
+    'See if delaying could raise your premiums.': 'Vea si retrasarse podría aumentar sus primas.',
+    // consts.ts TOOLS registry (P2.2 — consumers wrap in P2.3 faq chips /
+    // P2.5 location tools; en keys must stay byte-identical to consts.ts)
+    'Late Penalty Calculator': 'Calculadora de multas por inscripción tardía',
+    'Drug Cost Calculator': 'Calculadora de costos de medicamentos',
+    'Timeline Calculator': 'Calculadora de cronograma',
+    'Enrollment Countdown': 'Cuenta regresiva de inscripción',
+    'Cost Estimator': 'Estimador de costos',
+    'Formulary Lookup': 'Consulta de formulario',
+    'Drug Assistance Finder': 'Buscador de ayuda para medicamentos',
+    'Medicare Plan Quiz': 'Cuestionario de planes de Medicare',
+    'Medicare Glossary': 'Glosario de Medicare',
+    'Estimate your Part B & Part D premiums by income.': 'Estime sus primas de la Parte B y la Parte D según sus ingresos.',
+    'See if delaying could raise your premiums for life.': 'Vea si retrasarse podría aumentar sus primas de por vida.',
+    'Estimate medication costs and generic alternatives.': 'Estime costos de medicamentos y alternativas genéricas.',
+    'Visualize your enrollment windows and deadlines.': 'Visualice sus ventanas y fechas límite de inscripción.',
+    'A live countdown to your enrollment deadlines.': 'Una cuenta regresiva en vivo hacia sus fechas límite de inscripción.',
+    'Estimate total annual costs and compare coverage.': 'Estime los costos anuales totales y compare coberturas.',
+    'Search drugs for typical Part D coverage & rules.': 'Busque la cobertura y las reglas típicas de la Parte D para sus medicamentos.',
+    'Find grants & programs to help pay for costly drugs.': 'Encuentre subvenciones y programas que ayudan a pagar medicamentos costosos.',
+    'Answer 7 questions to find a coverage type that fits.': 'Responda 7 preguntas para encontrar el tipo de cobertura adecuado.',
+    '100+ Medicare terms in plain English.': 'Más de 100 términos de Medicare en lenguaje sencillo.',
+  },
 };
 
 /** Translate a data-driven label (nav item, tool title, category name) for a

@@ -38,7 +38,10 @@ Shared infrastructure:
 Phase 2: P2.0 planning (ADR-002 + inventory) and P2.1 engine
 infrastructure (sources abstraction, mask manifest + enforcement, shared
 accessor plumbing, multi-segment localizeHref) complete — full-site 3-diff
-163/163 identical; mask enforcement fixture-tested (4 scenarios).
+163/163 identical; mask enforcement fixture-tested (4 scenarios). P2.2:
+HelpfulTools band bilingual (t() + localizeLabel; consts.TOOLS labels
+provisioned for P2.3/P2.5 consumers) — 158/163 identical, the 5 diffs are
+exactly the es guide pages, tag-structure-identical.
 
 Glossary pins added: `Medicare Supplement`, `Annual Enrollment Period`,
 `Special Enrollment Periods` (plural). Validator catches to date: 3 real
