@@ -1,0 +1,89 @@
+{
+  "__translation_note": "AI-translated from en/turning-65.json by scripts/translate.js (model claude-opus-4-8) using src/i18n/glossary.json (CMS es.medicare.gov terminology). Machine-generated — pending human spot-check. Do not hand-edit copy here; fix the English master or pin the term in the glossary, then re-run npm run translate.",
+  "__note": "MASTER content for /turning-65.html, extracted losslessly from src/pages/turning-65.astro. HelpfulTools band is a shared module (consts.ts TOOLS) — stays in the component, English until Phase 2 makes it a translation source (§3).",
+  "page": {
+    "title": "Cumplir 65 años en Utah | Guía de Medicare | AltaMedicare",
+    "description": "Cronograma paso a paso de Medicare para quienes cumplen 65 años: períodos de inscripción, cobertura del empleador, problemas con la HSA y cómo evitar multas vitalicias por inscripción tardía."
+  },
+  "breadcrumbHtml": "<a href=\"index.html\">Inicio</a> &nbsp;&rsaquo;&nbsp; Cumplir 65 años",
+  "header": {
+    "h1Html": "¿Va a cumplir 65 años? Esta es su guía de Medicare",
+    "ledeHtml": "Entrar a Medicare por edad puede sentirse abrumador. Aquí tiene un cronograma tranquilo y paso a paso que le ayudará a evitar multas y a tomar la decisión correcta."
+  },
+  "timeline": {
+    "eyebrow": "Paso a paso",
+    "h2": "Su cronograma de Medicare",
+    "introHtml": "El período más importante es el Período de Inscripción Inicial de 7 meses alrededor de su cumpleaños número 65. Esto es lo que debe hacer y cuándo.",
+    "items": [
+      {
+        "age": "6 o más meses antes de los 65",
+        "h4Html": "Empiece a informarse",
+        "textHtml": "Comience a investigar sus opciones. Si todavía trabaja y tiene cobertura del empleador, averigüe si debe conservarla, cancelarla o coordinarla con Medicare. <a href=\"contact.html\">Una consulta gratuita ahora</a> puede ahorrarle multas más adelante."
+      },
+      {
+        "age": "3 meses antes de los 65",
+        "h4Html": "Comienza el Período de Inscripción Inicial",
+        "textHtml": "Comienza su Período de Inscripción Inicial de 7 meses. Este es el momento en que puede inscribirse en la Parte A, la Parte B y un plan de Medicare (Advantage o Suplementario + Parte D). Inscribirse antes significa que su cobertura empieza el mes en que cumple 65 años."
+      },
+      {
+        "age": "Mes de su cumpleaños",
+        "h4Html": "Ya es elegible",
+        "textHtml": "La cobertura de Medicare puede comenzar el primer día del mes de su cumpleaños si se inscribe con anticipación. Dejaremos su plan listo mucho antes de esta fecha."
+      },
+      {
+        "age": "3 meses después de los 65",
+        "h4Html": "Cierra el Período de Inscripción Inicial",
+        "textHtml": "Termina su Período de Inscripción Inicial. Perder este período puede generar multas vitalicias por inscripción tardía en la Parte B y la Parte D, a menos que tenga cobertura que califique de otra fuente (como un plan activo de empleador)."
+      },
+      {
+        "age": "Año tras año",
+        "h4Html": "Revisiones anuales",
+        "textHtml": "Los planes cambian cada año. Hacemos una revisión anual gratuita durante el Período de Inscripción Anual (del 15 de octubre al 7 de diciembre) para asegurarnos de que su plan siga siendo adecuado para sus medicamentos, sus médicos y su presupuesto."
+      }
+    ]
+  },
+  "situations": {
+    "h2": "Situaciones comunes al cumplir 65 años",
+    "blocks": [
+      {
+        "h3Html": "Todavía trabaja y tiene cobertura del empleador",
+        "textHtml": "Si usted (o su cónyuge) tiene <strong>cobertura acreditable</strong> de un empleador actual con 20 o más empleados, es posible que pueda retrasar la Parte B sin multa. Le ayudaremos a decidir si lo mejor para su situación es conservar la cobertura del empleador, cambiarse a Medicare o coordinar ambas."
+      },
+      {
+        "h3Html": "Tiene una HSA",
+        "textHtml": "Esto confunde a muchas personas. Una vez que se inscribe en cualquier parte de Medicare, ya no puede hacer aportaciones a una Cuenta de Ahorros para la Salud (HSA). Si todavía trabaja y aporta a una HSA, planifique con cuidado el momento de inscribirse en Medicare."
+      },
+      {
+        "h3Html": "COBRA, cobertura para jubilados o VA",
+        "textHtml": "Ninguna de estas cuenta como “cobertura acreditable” para efectos de la Parte B, como sí lo hace la cobertura activa de un empleador. Si depende de estas, casi siempre necesita inscribirse en la Parte B a los 65 años para evitar multas."
+      },
+      {
+        "h3Html": "Ya recibe Seguro Social",
+        "textHtml": "Si ya cobra Seguro Social, lo inscribirán automáticamente en la Parte A y la Parte B cuando cumpla 65 años. Aun así, debe revisar sus opciones: la inscripción automática no significa que tenga el mejor plan para sus medicamentos u otros beneficios."
+      }
+    ]
+  },
+  "penalties": {
+    "h2": "Multas que debe evitar",
+    "blocks": [
+      {
+        "h3Html": "Multa por inscripción tardía en la Parte B",
+        "textHtml": "Si no se inscribe en la Parte B cuando es elegible por primera vez (y no tiene cobertura que califique), su prima aumenta un 10% por cada período completo de 12 meses en que pudo haber tenido la Parte B pero no la tuvo. Esta multa lo acompaña de por vida."
+      },
+      {
+        "h3Html": "Multa por inscripción tardía en la Parte D",
+        "textHtml": "Si pasa más de 63 días sin cobertura acreditable de medicamentos, deberá pagar una multa de la Parte D: 1% de la prima base nacional por cada mes que estuvo sin ella. También es de por vida."
+      }
+    ]
+  },
+  "callout": {
+    "heading": "Buenas noticias: estas multas se pueden evitar por completo.",
+    "textHtml": "Una conversación de 30 minutos ahora es todo lo que se necesita para planificar el momento adecuado para su situación. <a href=\"contact.html\">Programe su consulta gratuita &rarr;</a>"
+  },
+  "cta": {
+    "h2Html": "¿Tiene preguntas? Hablemos.",
+    "textHtml": "Una llamada gratuita y sin presión &mdash; respuestas claras, sin argumentos de venta.",
+    "scheduleLabel": "Programar consulta",
+    "callLabel": "Llame al {phone}"
+  }
+}

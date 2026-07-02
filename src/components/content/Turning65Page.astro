@@ -1,0 +1,114 @@
+---
+// src/components/content/Turning65Page.astro — THE shared Turning 65 template.
+// Copy lives in src/i18n/content/{locale}/turning-65.json; presentation only.
+// HelpfulTools is a shared module (consts.ts TOOLS registry) — renders English
+// until Phase 2 makes it its own translation source (§3).
+import MainLayout from '../../layouts/MainLayout.astro';
+import HelpfulTools from '../HelpfulTools.astro';
+import { DEFAULT_LOCALE, getLangFromUrl, getLocaleMeta } from '../../i18n/locales';
+import { getPageContent, hreflangAlternates, interp, localizeHref } from '../../i18n/content';
+import { PHONE_DISPLAY } from '../../consts';
+
+interface Turning65Content {
+  page: { title: string; description: string };
+  breadcrumbHtml: string;
+  header: { h1Html: string; ledeHtml: string };
+  timeline: {
+    eyebrow: string;
+    h2: string;
+    introHtml: string;
+    items: { age: string; h4Html: string; textHtml: string }[];
+  };
+  situations: { h2: string; blocks: { h3Html: string; textHtml: string }[] };
+  penalties: { h2: string; blocks: { h3Html: string; textHtml: string }[] };
+  callout: { heading: string; textHtml: string };
+  cta: { h2Html: string; textHtml: string; scheduleLabel: string; callLabel: string };
+}
+
+const lang = getLangFromUrl(Astro.url);
+const c = getPageContent<Turning65Content>('turning-65', lang);
+const vars = { phone: PHONE_DISPLAY };
+const canonical = lang === DEFAULT_LOCALE ? '/turning-65.html' : `/${lang}/turning-65.html`;
+const alternates = hreflangAlternates('turning-65');
+---
+
+<MainLayout
+  title={c.page.title}
+  description={c.page.description}
+  canonical={canonical}
+>
+  <Fragment slot="head">
+    {alternates.map((a) => <link rel="alternate" hreflang={a.code} href={a.href} />)}
+    {lang !== DEFAULT_LOCALE && <meta property="og:locale" content={getLocaleMeta(lang).ogLocale} />}
+  </Fragment>
+
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb" set:html={c.breadcrumbHtml}></div>
+    <h1 set:html={c.header.h1Html}></h1>
+    <p class="lede" set:html={c.header.ledeHtml}></p>
+  </div>
+</section>
+
+<section class="section-tinted">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">{c.timeline.eyebrow}</span>
+      <h2>{c.timeline.h2}</h2>
+      <p set:html={c.timeline.introHtml}></p>
+    </div>
+
+    <div class="timeline">
+      {c.timeline.items.map((item) => (
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <span class="age">{item.age}</span>
+            <h4 set:html={item.h4Html} />
+            <p set:html={item.textHtml} />
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="section-white">
+  <div class="container content-narrow">
+    <h2>{c.situations.h2}</h2>
+
+    {c.situations.blocks.map((b) => (
+      <Fragment>
+        <h3 set:html={b.h3Html} />
+        <p set:html={b.textHtml} />
+      </Fragment>
+    ))}
+
+    <h2>{c.penalties.h2}</h2>
+    {c.penalties.blocks.map((b) => (
+      <Fragment>
+        <h3 set:html={b.h3Html} />
+        <p set:html={b.textHtml} />
+      </Fragment>
+    ))}
+
+    <div class="callout">
+      <strong>{c.callout.heading}</strong>
+      <p style="margin:8px 0 0;" set:html={c.callout.textHtml}></p>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <h2 set:html={c.cta.h2Html}></h2>
+    <p set:html={c.cta.textHtml}></p>
+    <div class="cta-buttons">
+      <a href={localizeHref('contact.html', lang)} class="btn btn-primary btn-lg">{c.cta.scheduleLabel}</a>
+      <a href="tel:4352925548" class="btn btn-outline btn-lg">{interp(c.cta.callLabel, vars)}</a>
+    </div>
+  </div>
+</section>
+
+<HelpfulTools />
+
+</MainLayout>

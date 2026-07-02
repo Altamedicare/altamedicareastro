@@ -1,0 +1,88 @@
+{
+  "__note": "MASTER content for /turning-65.html, extracted losslessly from src/pages/turning-65.astro. HelpfulTools band is a shared module (consts.ts TOOLS) — stays in the component, English until Phase 2 makes it a translation source (§3).",
+  "page": {
+    "title": "Turning 65 in Utah | Medicare Roadmap | AltaMedicare",
+    "description": "Step-by-step Medicare timeline for turning 65: enrollment periods, employer coverage, HSA issues, avoiding lifetime late penalties."
+  },
+  "breadcrumbHtml": "<a href=\"index.html\">Home</a> &nbsp;&rsaquo;&nbsp; Turning 65",
+  "header": {
+    "h1Html": "Turning 65? Here&rsquo;s Your Medicare Roadmap",
+    "ledeHtml": "Aging into Medicare can feel overwhelming. Here&rsquo;s a calm, step-by-step timeline to help you avoid penalties and make the right choice."
+  },
+  "timeline": {
+    "eyebrow": "Step by step",
+    "h2": "Your Medicare Timeline",
+    "introHtml": "The most important window is the 7-month Initial Enrollment Period around your 65th birthday. Here&rsquo;s what to do, when.",
+    "items": [
+      {
+        "age": "6+ Months Before 65",
+        "h4Html": "Start Learning",
+        "textHtml": "Begin researching your options. If you&rsquo;re still working with employer coverage, find out whether to keep it, drop it, or coordinate with Medicare. <a href=\"contact.html\">A free consultation now</a> can save penalties later."
+      },
+      {
+        "age": "3 Months Before 65",
+        "h4Html": "Initial Enrollment Period Begins",
+        "textHtml": "Your 7-month IEP starts. This is when you can enroll in Part A, Part B, and a Medicare plan (Advantage or Supplement + Part D). Earlier enrollment means coverage that starts the month you turn 65."
+      },
+      {
+        "age": "Birthday Month",
+        "h4Html": "You&rsquo;re Eligible",
+        "textHtml": "Medicare coverage can begin on the first of your birthday month if you enroll early. We&rsquo;ll have your plan locked in well before this date."
+      },
+      {
+        "age": "3 Months After 65",
+        "h4Html": "IEP Closes",
+        "textHtml": "Your Initial Enrollment Period ends. Missing this window can trigger lifetime Part B and Part D late penalties unless you have qualifying coverage from elsewhere (like an active employer plan)."
+      },
+      {
+        "age": "Year After Year",
+        "h4Html": "Annual Reviews",
+        "textHtml": "Plans change every year. We do a free annual review during the Annual Enrollment Period (Oct 15&ndash;Dec 7) to make sure your plan still fits your medications, doctors, and budget."
+      }
+    ]
+  },
+  "situations": {
+    "h2": "Common Turning-65 Situations",
+    "blocks": [
+      {
+        "h3Html": "Still Working with Employer Coverage",
+        "textHtml": "If you (or your spouse) have <strong>creditable coverage</strong> from a current employer with 20+ employees, you may be able to delay Part B without penalty. We&rsquo;ll help you decide whether keeping employer coverage, switching to Medicare, or coordinating both is best for your situation."
+      },
+      {
+        "h3Html": "You Have an HSA",
+        "textHtml": "This one trips a lot of people up. Once you enroll in any part of Medicare, you can no longer contribute to a Health Savings Account. If you&rsquo;re still working and contributing to an HSA, plan your Medicare timing carefully."
+      },
+      {
+        "h3Html": "COBRA, Retiree Coverage, or VA",
+        "textHtml": "None of these count as &ldquo;creditable coverage&rdquo; for Part B purposes the way active employer coverage does. If you&rsquo;re relying on these, you almost always need to enroll in Part B at 65 to avoid penalties."
+      },
+      {
+        "h3Html": "You&rsquo;re On Social Security Already",
+        "textHtml": "If you&rsquo;re already drawing Social Security, you&rsquo;ll be auto-enrolled in Part A and Part B when you turn 65. You should still review your options &mdash; auto-enrollment doesn&rsquo;t mean you have the best plan for prescriptions or other benefits."
+      }
+    ]
+  },
+  "penalties": {
+    "h2": "Penalties to Avoid",
+    "blocks": [
+      {
+        "h3Html": "Part B Late Enrollment Penalty",
+        "textHtml": "If you don&rsquo;t enroll in Part B when first eligible (and don&rsquo;t have qualifying coverage), your premium increases 10% for every full 12-month period you could have had Part B but didn&rsquo;t. This penalty stays with you for life."
+      },
+      {
+        "h3Html": "Part D Late Enrollment Penalty",
+        "textHtml": "If you go more than 63 days without creditable drug coverage, you&rsquo;ll owe a Part D penalty &mdash; 1% of the national base premium for every month you went without it. Also lifetime."
+      }
+    ]
+  },
+  "callout": {
+    "heading": "Good news: these penalties are entirely avoidable.",
+    "textHtml": "A 30-minute conversation now is all it takes to map out the right timing for your situation. <a href=\"contact.html\">Schedule your free consultation &rarr;</a>"
+  },
+  "cta": {
+    "h2Html": "Have Questions? Let's Talk.",
+    "textHtml": "One free, no-pressure call &mdash; clear answers, no sales pitch.",
+    "scheduleLabel": "Schedule Consultation",
+    "callLabel": "Call {phone}"
+  }
+}
