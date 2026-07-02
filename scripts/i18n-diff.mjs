@@ -49,10 +49,15 @@ function visibleText(html) {
   )).replace(/[\s ]+/g, '');
 }
 
-/** Tag sequence with Astro scope hashes stripped. */
+/** Tag sequence with Astro scope hashes stripped. Entities inside tags are
+ *  decoded before comparison: an attribute authored as placeholder="&ldquo;…"
+ *  and re-rendered from a JSON string holding the real “ glyph is the same
+ *  DOM — the glyph bar (§7), applied to attributes. */
 function tagSequence(html) {
   return (html.replace(/<!--[\s\S]*?-->/g, '').match(/<[^>]*>/g) ?? []).map((t) =>
-    t.replace(/\s+data-astro-cid-\w+(="[^"]*")?/g, '').replace(/\s+/g, ' ').trim(),
+    decodeEntities(
+      t.replace(/\s+data-astro-cid-\w+(="[^"]*")?/g, '').replace(/\s+/g, ' ').trim(),
+    ),
   );
 }
 

@@ -12,7 +12,7 @@ snapshot → extract JSON → componentize → 3-diff → translate → QA → c
 | Medicare Supplement | ✅ | ✅ | ✅ | ✅ | `3c284e3` |
 | Prescription Drug Plans | ✅ | ✅ | ✅ | ✅ | `bb0af9d` (figures tokenized §6.8) |
 | Medicare Advantage | ✅ | ✅ | ✅ | ✅ | `0dcf634` → tag `i18n-batch-2` |
-| Home | ⬜ | ⬜ | ⬜ | ⬜ | next — dedicated milestone (549 lines, special everywhere) |
+| Home | ✅ | ✅ | ✅ | ✅ | tag `i18n-homepage` (174 segments; approval gate after 3-diff) |
 
 Shared infrastructure:
 
@@ -29,9 +29,13 @@ Shared infrastructure:
 | Search-modal runtime strings | 🔲 boundary (English) | |
 | News ticker | 🔲 boundary (English) | |
 | Native-speaker review | ⬜ pending | |
-| ES sitemap entries + hreflang in sitemap.xml.ts | ⬜ with homepage milestone | |
+| ES sitemap entries + hreflang/x-default in sitemap.xml.ts | ✅ existence-aware | `i18n-homepage` |
+| WebPage inLanguage JSON-LD (es pages only) | ✅ | `i18n-homepage` |
+| Glossary longest-match precedence + plural pins | ✅ | `i18n-homepage` |
+| Protocol-href non-translatable class (sms:/mailto:/tel:) | ✅ | `i18n-homepage` |
 | Search Console submission | ⬜ after go-live | |
 
-Glossary pins added during Batch 2: `Medicare Supplement`, `Annual
-Enrollment Period`. Validator catches to date: 2 real (SEP plural
-contraction; Extra Help double-wrap → engine fix).
+Glossary pins added: `Medicare Supplement`, `Annual Enrollment Period`,
+`Special Enrollment Periods` (plural). Validator catches to date: 3 real
+(SEP plural contraction ×2 → longest-match engine fix; Extra Help
+double-wrap → idempotent post-pass fix).

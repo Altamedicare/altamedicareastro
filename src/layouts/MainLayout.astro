@@ -57,6 +57,24 @@ const localBusiness = {
   },
   founder: { '@type': 'Person', name: 'Bret Swope' },
 };
+
+// i18n structured data: inLanguage is NOT a valid property on
+// LocalBusiness/InsuranceAgency (schema.org: CreativeWork/Event only), and
+// availableLanguage/knowsLanguage would claim staffed Spanish support — an
+// honesty question (playbook §8), not a markup default. The valid, honest
+// signal is a WebPage entity carrying inLanguage, emitted ONLY on localized
+// pages so English output stays byte-identical.
+const webPage =
+  lang !== 'en'
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        url: canonicalUrl,
+        name: title,
+        description,
+        inLanguage: lang,
+      }
+    : null;
 ---
 
 <!DOCTYPE html>
@@ -95,6 +113,7 @@ const localBusiness = {
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <script type="application/ld+json" is:inline set:html={JSON.stringify(localBusiness)} />
+  {webPage && <script type="application/ld+json" is:inline set:html={JSON.stringify(webPage)} />}
   <slot name="head" />
 </head>
 <body>

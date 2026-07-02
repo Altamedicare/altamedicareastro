@@ -4,8 +4,38 @@ import { FAQ_CATEGORIES } from '../data/faqs';
 import { NEWS_CATEGORIES } from '../consts';
 import { PLACES, hubHref, pageHref } from '../data/places';
 import { FEATURED_DRUGS } from '../data/drugAssistance';
+import { hreflangAlternates, localePageHref, getAvailableLocales } from '../i18n/content';
+import { DEFAULT_LOCALE } from '../i18n/locales';
 
 const SITE = 'https://altamedicare.com';
+
+// ── i18n (existence-aware, playbook §5/§14) ─────────────────────────────────
+// A URL gets xhtml:link alternates — and its localized siblings get their own
+// <url> entries — ONLY when the translated content is committed. Untranslated
+// URLs emit exactly what they emitted before. Nothing here can reference a
+// page that doesn't exist.
+const slugFromLoc = (loc: string): string =>
+  loc === '/' ? 'index' : loc.replace(/^\//, '').replace(/\.html$/, '');
+
+/** xhtml:link alternate tags for a loc, '' when the page is untranslated. */
+const alternatesXml = (loc: string): string => {
+  const alts = hreflangAlternates(slugFromLoc(loc));
+  if (!alts.length) return '';
+  return alts
+    .map((a) => `<xhtml:link rel="alternate" hreflang="${a.code}" href="${a.href}"/>`)
+    .join('');
+};
+
+/** Localized <url> rows (e.g. /es.html, /es/about.html) for a translated loc. */
+const localizedRows = (loc: string, priority: number): string[] => {
+  const slug = slugFromLoc(loc);
+  return getAvailableLocales(slug)
+    .filter((l) => l !== DEFAULT_LOCALE)
+    .map(
+      (l) =>
+        `  <url><loc>${SITE}${localePageHref(slug, l)}</loc>${alternatesXml(loc)}<priority>${priority.toFixed(1)}</priority></url>`,
+    );
+};
 
 // Location cluster URLs (hub + 3 sub-pages per place), generated from PLACES.
 const locationUrls = PLACES.flatMap((p) => [
@@ -74,7 +104,8 @@ export const GET: APIRoute = async () => {
     .map((key) => ({ loc: `/medicare-news/category/${key}.html`, priority: 0.5 }));
 
   const rows = [
-    ...staticUrls.map((u) => `  <url><loc>${SITE}${u.loc}</loc><priority>${u.priority.toFixed(1)}</priority></url>`),
+    ...staticUrls.map((u) => `  <url><loc>${SITE}${u.loc}</loc>${alternatesXml(u.loc)}<priority>${u.priority.toFixed(1)}</priority></url>`),
+    ...staticUrls.flatMap((u) => localizedRows(u.loc, u.priority)),
     ...locationUrls.map((u) => `  <url><loc>${SITE}${u.loc}</loc><priority>${u.priority.toFixed(1)}</priority></url>`),
     ...blogUrls.map((u) => `  <url><loc>${SITE}${u.loc}</loc><lastmod>${u.lastmod}</lastmod><priority>${u.priority.toFixed(1)}</priority></url>`),
     ...newsUrls.map((u) => `  <url><loc>${SITE}${u.loc}</loc><lastmod>${u.lastmod}</lastmod><priority>${u.priority.toFixed(1)}</priority></url>`),
@@ -82,7 +113,7 @@ export const GET: APIRoute = async () => {
   ].join('\n');
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${rows}
 </urlset>
 `;

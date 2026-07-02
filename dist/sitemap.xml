@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://altamedicare.com/</loc><priority>1.0</priority></url>
-  <url><loc>https://altamedicare.com/medicare-basics.html</loc><priority>0.8</priority></url>
-  <url><loc>https://altamedicare.com/medicare-advantage.html</loc><priority>0.8</priority></url>
-  <url><loc>https://altamedicare.com/medicare-supplement.html</loc><priority>0.8</priority></url>
-  <url><loc>https://altamedicare.com/prescription-drug-plans.html</loc><priority>0.8</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://altamedicare.com/</loc><xhtml:link rel="alternate" hreflang="en" href="https://altamedicare.com/"/><xhtml:link rel="alternate" hreflang="es" href="https://altamedicare.com/es.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://altamedicare.com/"/><priority>1.0</priority></url>
+  <url><loc>https://altamedicare.com/medicare-basics.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://altamedicare.com/medicare-basics.html"/><xhtml:link rel="alternate" hreflang="es" href="https://altamedicare.com/es/medicare-basics.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://altamedicare.com/medicare-basics.html"/><priority>0.8</priority></url>
+  <url><loc>https://altamedicare.com/medicare-advantage.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://altamedicare.com/medicare-advantage.html"/><xhtml:link rel="alternate" hreflang="es" href="https://altamedicare.com/es/medicare-advantage.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://altamedicare.com/medicare-advantage.html"/><priority>0.8</priority></url>
+  <url><loc>https://altamedicare.com/medicare-supplement.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://altamedicare.com/medicare-supplement.html"/><xhtml:link rel="alternate" hreflang="es" href="https://altamedicare.com/es/medicare-supplement.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://altamedicare.com/medicare-supplement.html"/><priority>0.8</priority></url>
+  <url><loc>https://altamedicare.com/prescription-drug-plans.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://altamedicare.com/prescription-drug-plans.html"/><xhtml:link rel="alternate" hreflang="es" href="https://altamedicare.com/es/prescription-drug-plans.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://altamedicare.com/prescription-drug-plans.html"/><priority>0.8</priority></url>
   <url><loc>https://altamedicare.com/dual-eligible.html</loc><priority>0.7</priority></url>
   <url><loc>https://altamedicare.com/dental-vision-hearing.html</loc><priority>0.7</priority></url>
   <url><loc>https://altamedicare.com/drug-savings.html</loc><priority>0.7</priority></url>
-  <url><loc>https://altamedicare.com/turning-65.html</loc><priority>0.8</priority></url>
+  <url><loc>https://altamedicare.com/turning-65.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://altamedicare.com/turning-65.html"/><xhtml:link rel="alternate" hreflang="es" href="https://altamedicare.com/es/turning-65.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://altamedicare.com/turning-65.html"/><priority>0.8</priority></url>
   <url><loc>https://altamedicare.com/medicare-news.html</loc><priority>0.6</priority></url>
-  <url><loc>https://altamedicare.com/about.html</loc><priority>0.6</priority></url>
-  <url><loc>https://altamedicare.com/contact.html</loc><priority>0.7</priority></url>
+  <url><loc>https://altamedicare.com/about.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://altamedicare.com/about.html"/><xhtml:link rel="alternate" hreflang="es" href="https://altamedicare.com/es/about.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://altamedicare.com/about.html"/><priority>0.6</priority></url>
+  <url><loc>https://altamedicare.com/contact.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://altamedicare.com/contact.html"/><xhtml:link rel="alternate" hreflang="es" href="https://altamedicare.com/es/contact.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://altamedicare.com/contact.html"/><priority>0.7</priority></url>
   <url><loc>https://altamedicare.com/blog.html</loc><priority>0.8</priority></url>
   <url><loc>https://altamedicare.com/faq.html</loc><priority>0.8</priority></url>
   <url><loc>https://altamedicare.com/faq/enrollment.html</loc><priority>0.6</priority></url>
@@ -48,6 +48,14 @@
   <url><loc>https://altamedicare.com/skyrizi-assistance-program.html</loc><priority>0.7</priority></url>
   <url><loc>https://altamedicare.com/rinvoq-assistance-program.html</loc><priority>0.7</priority></url>
   <url><loc>https://altamedicare.com/dupixent-assistance-program.html</loc><priority>0.7</priority></url>
+  <url><loc>https://altamedicare.com/es.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://altamedicare.com/"/><xhtml:link rel="alternate" hreflang="es" href="https://altamedicare.com/es.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://altamedicare.com/"/><priority>1.0</priority></url>
+  <url><loc>https://altamedicare.com/es/medicare-basics.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://altamedicare.com/medicare-basics.html"/><xhtml:link rel="alternate" hreflang="es" href="https://altamedicare.com/es/medicare-basics.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://altamedicare.com/medicare-basics.html"/><priority>0.8</priority></url>
+  <url><loc>https://altamedicare.com/es/medicare-advantage.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://altamedicare.com/medicare-advantage.html"/><xhtml:link rel="alternate" hreflang="es" href="https://altamedicare.com/es/medicare-advantage.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://altamedicare.com/medicare-advantage.html"/><priority>0.8</priority></url>
+  <url><loc>https://altamedicare.com/es/medicare-supplement.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://altamedicare.com/medicare-supplement.html"/><xhtml:link rel="alternate" hreflang="es" href="https://altamedicare.com/es/medicare-supplement.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://altamedicare.com/medicare-supplement.html"/><priority>0.8</priority></url>
+  <url><loc>https://altamedicare.com/es/prescription-drug-plans.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://altamedicare.com/prescription-drug-plans.html"/><xhtml:link rel="alternate" hreflang="es" href="https://altamedicare.com/es/prescription-drug-plans.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://altamedicare.com/prescription-drug-plans.html"/><priority>0.8</priority></url>
+  <url><loc>https://altamedicare.com/es/turning-65.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://altamedicare.com/turning-65.html"/><xhtml:link rel="alternate" hreflang="es" href="https://altamedicare.com/es/turning-65.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://altamedicare.com/turning-65.html"/><priority>0.8</priority></url>
+  <url><loc>https://altamedicare.com/es/about.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://altamedicare.com/about.html"/><xhtml:link rel="alternate" hreflang="es" href="https://altamedicare.com/es/about.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://altamedicare.com/about.html"/><priority>0.6</priority></url>
+  <url><loc>https://altamedicare.com/es/contact.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://altamedicare.com/contact.html"/><xhtml:link rel="alternate" hreflang="es" href="https://altamedicare.com/es/contact.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://altamedicare.com/contact.html"/><priority>0.7</priority></url>
   <url><loc>https://altamedicare.com/utah.html</loc><priority>0.7</priority></url>
   <url><loc>https://altamedicare.com/utah/medicare-advantage.html</loc><priority>0.7</priority></url>
   <url><loc>https://altamedicare.com/utah/medicare-supplement.html</loc><priority>0.7</priority></url>

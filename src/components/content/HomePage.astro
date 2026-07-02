@@ -1,0 +1,491 @@
+---
+// src/components/content/HomePage.astro — THE shared homepage template.
+// Copy lives in src/i18n/content/{locale}/index.json; presentation only.
+// The homepage is "special everywhere" (playbook §10): slug is 'index',
+// master URL is '/', localized URL is /{lang}.html. Functional data (__yt,
+// __transcript, __q, __href, __imgClass, __icon, __cardClass) stays with the
+// content but is never translated (engine skips __ keys). sms:/mailto:
+// prefilled bodies remain component literals (protocol-href boundary —
+// English messages to Bret; documented in I18N-PORT-LOG.md).
+import MainLayout from '../../layouts/MainLayout.astro';
+import { DEFAULT_LOCALE, getLangFromUrl, getLocaleMeta } from '../../i18n/locales';
+import { getPageContent, hreflangAlternates, interp, localizeHref } from '../../i18n/content';
+import { COMPARE_PLANS_URL, PHONE_DISPLAY } from '../../consts';
+
+interface HomeContent {
+  page: { title: string; description: string };
+  hero: {
+    h1: string; subhead: string; scheduleLabel: string; drugLabel: string;
+    compareLabel: string; trust: string; searchSrLabel: string;
+    searchPlaceholder: string;
+    examples: { __q: string; label: string }[];
+    toolsLabel: string;
+    tools: { __href: string; title: string; label: string }[];
+  };
+  trustBar: string[];
+  toolsSection: {
+    eyebrow: string; h2: string; intro: string;
+    cards: { __href: string; __icon: string; h3: string; text: string; linkLabel: string }[];
+    allToolsLabel: string;
+  };
+  explain: {
+    eyebrow: string; h2: string; intro: string;
+    cards: { __href: string; __cardClass: string; h3: string; text: string; linkLabel: string }[];
+  };
+  videos: {
+    eyebrow: string; h2: string; intro: string; topicsAria: string;
+    topics: { __yt: string; __transcript: string; title: string; desc: string; buttonLabel: string }[];
+    playerAria: string; badge: string; playAria: string; watchLabel: string;
+    transcriptLabel: string; textLabel: string;
+  };
+  why: {
+    eyebrow: string; h2: string; intro: string; items: string[];
+    card: {
+      photoAlt: string; name: string; role: string; quote: string;
+      callLabel: string; textLabel: string; scheduleLabel: string; storyHtml: string;
+    };
+  };
+  articles: {
+    eyebrow: string; h2: string; intro: string; prevAria: string; nextAria: string;
+    cards: { __href: string; __imgClass: string; tag: string; meta: string; h3: string; text: string; linkLabel: string }[];
+  };
+  miniBanner: { h2: string; text: string; textLabel: string; guideLabel: string };
+  prescription: {
+    eyebrow: string; h2: string; intro: string;
+    textAction: { strong: string; span: string; label: string };
+    emailAction: { strong: string; span: string; label: string };
+    note: string;
+  };
+  reviews: {
+    eyebrow: string; h2: string; starsAria: string; dotAria: string;
+    slides: { quote: string; author: string }[];
+  };
+  faq: {
+    eyebrow: string; h2: string; intro: string; searchSrLabel: string;
+    searchPlaceholder: string;
+    items: { q: string; aHtml: string }[];
+    noResultsHtml: string;
+  };
+  cta: { h2: string; text: string; scheduleLabel: string; callLabel: string };
+}
+
+const lang = getLangFromUrl(Astro.url);
+const c = getPageContent<HomeContent>('index', lang);
+const vars = { phone: PHONE_DISPLAY };
+const canonical = lang === DEFAULT_LOCALE ? '/' : `/${lang}.html`;
+const alternates = hreflangAlternates('index');
+const href = (h: string) => localizeHref(h, lang);
+// Relative asset paths resolve against /es.html's directory fine (same root),
+// but keep the shared absolutizer pattern for safety on the hero photo.
+const asset = (p: string) => (lang === DEFAULT_LOCALE || p.startsWith('/') ? p : `/${p}`);
+const t0 = c.videos.topics[0];
+---
+
+<MainLayout
+  title={c.page.title}
+  description={c.page.description}
+  canonical={canonical}
+>
+  <Fragment slot="head">
+    {alternates.map((a) => <link rel="alternate" hreflang={a.code} href={a.href} />)}
+    {lang !== DEFAULT_LOCALE && <meta property="og:locale" content={getLocaleMeta(lang).ogLocale} />}
+  </Fragment>
+
+<!-- ================= SECTION 1: HERO ================= -->
+<section class="hero">
+  <!-- Auto-playing, muted, looping background reel that fills the whole section. -->
+  <div class="hero-video" aria-hidden="true">
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="https://res.cloudinary.com/dcev2u7ki/video/upload/v1781961129/DJI_Mavic_Pro_4K_-_Orem_Utah_-_Park_Vista_khUXpXJNQ54_kk8a1s.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="hero-inner">
+      <h1>{c.hero.h1}</h1>
+      <p class="subhead">
+        {c.hero.subhead}
+      </p>
+      <div class="hero-buttons">
+        <a href={href('contact.html')} class="btn btn-primary btn-lg">{c.hero.scheduleLabel}</a>
+        <a href={href('drug-savings.html')} class="btn btn-outline btn-lg">{c.hero.drugLabel}</a>
+        <a href={COMPARE_PLANS_URL} target="_blank" rel="noopener" class="btn btn-outline btn-lg">{c.hero.compareLabel}</a>
+      </div>
+      <a href="tel:4352925548" class="hero-phone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+        {PHONE_DISPLAY}
+      </a>
+      <p class="hero-trust">
+        <span class="stars" aria-hidden="true">★★★★★</span>{c.hero.trust}
+      </p>
+    </div>
+
+    <div class="site-search">
+      <label for="medicare-search" class="sr-only">{c.hero.searchSrLabel}</label>
+      <div class="site-search-field">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" id="medicare-search" autocomplete="off" placeholder={c.hero.searchPlaceholder} />
+      </div>
+      <div class="search-examples">
+        {c.hero.examples.map((e) => (
+          <button type="button" class="search-example" data-q={e.__q}>{e.label}</button>
+        ))}
+      </div>
+    </div>
+
+    <div class="hero-tools">
+      <span class="hero-tools-label">{c.hero.toolsLabel}</span>
+      {c.hero.tools.map((tool) => (
+        <a href={href(tool.__href)} title={tool.title}>{tool.label}</a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION 2: TRUST BAR ================= -->
+<section class="trust-bar">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg>
+        </div>
+        <h4>{c.trustBar[0]}</h4>
+      </div>
+      <div class="trust-item">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h4>{c.trustBar[1]}</h4>
+      </div>
+      <div class="trust-item">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+        </div>
+        <h4>{c.trustBar[2]}</h4>
+      </div>
+      <div class="trust-item">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg>
+        </div>
+        <h4>{c.trustBar[3]}</h4>
+      </div>
+      <div class="trust-item">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h4>{c.trustBar[4]}</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FREE MEDICARE TOOLS ================= -->
+<section class="section-tinted" id="tools">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">{c.toolsSection.eyebrow}</span>
+      <h2>{c.toolsSection.h2}</h2>
+      <p>{c.toolsSection.intro}</p>
+    </div>
+    <div class="card-grid">
+      {c.toolsSection.cards.map((card) => (
+        <a href={href(card.__href)} class="card" style="text-decoration:none;">
+          <div class="card-icon"><i class={`fa-solid ${card.__icon}`} style="font-size:1.6rem"></i></div>
+          <h3>{card.h3}</h3>
+          <p>{card.text}</p>
+          <span class="card-link">{card.linkLabel}</span>
+        </a>
+      ))}
+    </div>
+    <div style="text-align:center; margin-top:32px;">
+      <a href={href('/tools.html')} class="btn btn-outline">{c.toolsSection.allToolsLabel}</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION 3: SIMPLE MEDICARE EXPLANATION ================= -->
+<section class="section-white">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">{c.explain.eyebrow}</span>
+      <h2>{c.explain.h2}</h2>
+      <p>{c.explain.intro}</p>
+    </div>
+
+    <div class="card-grid">
+      <a href={href(c.explain.cards[0].__href)} class={c.explain.cards[0].__cardClass} style="text-decoration:none;">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>{c.explain.cards[0].h3}</h3>
+        <p>{c.explain.cards[0].text}</p>
+        <span class="card-link">{c.explain.cards[0].linkLabel}</span>
+      </a>
+
+      <a href={href(c.explain.cards[1].__href)} class={c.explain.cards[1].__cardClass} style="text-decoration:none;">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>{c.explain.cards[1].h3}</h3>
+        <p>{c.explain.cards[1].text}</p>
+        <span class="card-link">{c.explain.cards[1].linkLabel}</span>
+      </a>
+
+      <a href={href(c.explain.cards[2].__href)} class={c.explain.cards[2].__cardClass} style="text-decoration:none;">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.5 20.5l10-10a4.95 4.95 0 10-7-7l-10 10a4.95 4.95 0 107 7z"/><path d="M8.5 8.5l7 7"/></svg>
+        </div>
+        <h3>{c.explain.cards[2].h3}</h3>
+        <p>{c.explain.cards[2].text}</p>
+        <span class="card-link">{c.explain.cards[2].linkLabel}</span>
+      </a>
+
+      <a href={href(c.explain.cards[3].__href)} class={c.explain.cards[3].__cardClass} style="text-decoration:none;">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        </div>
+        <h3>{c.explain.cards[3].h3}</h3>
+        <p>{c.explain.cards[3].text}</p>
+        <span class="card-link">{c.explain.cards[3].linkLabel}</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EDUCATIONAL VIDEO CENTER ================= -->
+<section class="section-tinted" id="videos">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">{c.videos.eyebrow}</span>
+      <h2>{c.videos.h2}</h2>
+      <p>{c.videos.intro}</p>
+    </div>
+
+    <div class="video-center">
+      <div class="video-topics" role="tablist" aria-label={c.videos.topicsAria}>
+        {c.videos.topics.map((v, i) => (
+          <button class={i === 0 ? 'video-topic active' : 'video-topic'} role="tab" aria-selected={i === 0 ? 'true' : 'false'}
+            data-title={v.title}
+            data-desc={v.desc}
+            data-video="" data-yt={v.__yt} data-transcript={href(v.__transcript)}>
+            {v.buttonLabel}
+          </button>
+        ))}
+      </div>
+
+      <div class="video-stage">
+        <div class="media-card" id="videoPlayer" data-video="" data-yt={t0.__yt} aria-label={c.videos.playerAria}>
+          <div class="media-poster">
+            <span class="media-badge">{c.videos.badge}</span>
+            <button class="media-play" type="button" aria-label={c.videos.playAria}>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <span class="media-watch"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M8 5v14l11-7z"/></svg> {c.videos.watchLabel}</span>
+          </div>
+        </div>
+        <div class="video-meta">
+          <h3 id="videoTitle">{t0.title}</h3>
+          <p id="videoDesc">{t0.desc}</p>
+          <div class="video-actions">
+            <a id="videoTranscript" href={href(t0.__transcript)} class="video-transcript">{c.videos.transcriptLabel}</a>
+            <a href="sms:14352925548?body=Hi%20Bret%2C%20I%20have%20a%20question%20after%20watching%20a%20video." class="btn btn-primary">{c.videos.textLabel}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION 4: WHY ALTAMEDICARE ================= -->
+<section class="section-white">
+  <div class="container">
+    <div class="why-us">
+      <div>
+        <span class="eyebrow" style="display:inline-block; font-size:0.85rem; font-weight:600; text-transform:uppercase; letter-spacing:0.12em; color:var(--terracotta); margin-bottom:12px;">{c.why.eyebrow}</span>
+        <h2>{c.why.h2}</h2>
+        <p style="font-size:1.1rem; color:var(--charcoal-soft); margin-bottom:24px;">
+          {c.why.intro}
+        </p>
+        <ul class="why-us-list">
+          {c.why.items.map((item) => (
+            <li><span class="check">✓</span>{' '}{item}</li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="bret-card">
+        <img src={asset('images/BretSwope.webp')} alt={c.why.card.photoAlt} class="bret-photo" onerror="this.style.display='none'" />
+        <h3>{c.why.card.name}</h3>
+        <p class="role">{c.why.card.role}</p>
+        <p style="color:var(--charcoal-soft);">{c.why.card.quote}</p>
+        <div class="bret-actions">
+          <a href="tel:4352925548" class="btn btn-secondary">{c.why.card.callLabel}</a>
+          <a href="sms:14352925548?body=Hi%20Bret%2C%20I%20have%20a%20question%20about%20Medicare." class="btn btn-primary">{c.why.card.textLabel}</a>
+          <a href={href('contact.html')} class="btn btn-outline">{c.why.card.scheduleLabel}</a>
+        </div>
+        <p style="margin:14px 0 0;" set:html={c.why.card.storyHtml}></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LATEST ARTICLES CAROUSEL ================= -->
+<section class="section-tinted">
+  <div class="container">
+    <div class="carousel-head">
+      <div class="section-header" style="text-align:left; margin:0; max-width:640px;">
+        <span class="eyebrow">{c.articles.eyebrow}</span>
+        <h2>{c.articles.h2}</h2>
+        <p>{c.articles.intro}</p>
+      </div>
+      <div class="carousel-nav">
+        <button class="carousel-btn" id="articlesPrev" aria-label={c.articles.prevAria}>&larr;</button>
+        <button class="carousel-btn" id="articlesNext" aria-label={c.articles.nextAria}>&rarr;</button>
+      </div>
+    </div>
+
+    <div class="article-track" id="articlesTrack">
+      {c.articles.cards.map((card) => (
+        <a href={href(card.__href)} class="article-card">
+          <div class={card.__imgClass}><span class="article-tag">{card.tag}</span></div>
+          <div class="article-body">
+            <div class="article-meta">{card.meta}</div>
+            <h3>{card.h3}</h3>
+            <p>{card.text}</p>
+            <span class="card-link">{card.linkLabel}</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ================= MINI BANNER: TURNING 65 ================= -->
+<section class="mini-banner">
+  <div class="container">
+    <div>
+      <h2>{c.miniBanner.h2}</h2>
+      <p>{c.miniBanner.text}</p>
+    </div>
+    <div class="mini-banner-actions">
+      <a href="sms:14352925548?body=Hi%20Bret%2C%20I%27m%20turning%2065%20and%20have%20questions." class="btn btn-primary">{c.miniBanner.textLabel}</a>
+      <a href={href('turning-65.html')} class="btn btn-outline">{c.miniBanner.guideLabel}</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION 6: PRESCRIPTION SAVINGS TOOL ================= -->
+<section class="prescription-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">{c.prescription.eyebrow}</span>
+      <h2>{c.prescription.h2}</h2>
+      <p>{c.prescription.intro}</p>
+    </div>
+
+    <div class="form-card contact-actions">
+      <div class="contact-action">
+        <div class="icon-circle" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <div class="contact-action-text">
+          <strong>{c.prescription.textAction.strong}</strong>
+          <span>{c.prescription.textAction.span}</span>
+        </div>
+        <a href="sms:14352925548?body=Hi%20Bret%2C%20can%20you%20review%20my%20prescription%20costs%3F%20My%20medications%20are%3A%0D%0A" class="btn btn-primary btn-lg">{c.prescription.textAction.label}</a>
+      </div>
+
+      <div class="contact-action">
+        <div class="icon-circle" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+        </div>
+        <div class="contact-action-text">
+          <strong>{c.prescription.emailAction.strong}</strong>
+          <span>{c.prescription.emailAction.span}</span>
+        </div>
+        <a href="mailto:bret@altahealthins.com?subject=Free%20Prescription%20Review&body=Name%3A%0D%0APhone%3A%0D%0AZIP%3A%0D%0APreferred%20Pharmacy%3A%0D%0A%0D%0AMedications%20(one%20per%20line%2C%20with%20dose%20if%20known)%3A%0D%0A" class="btn btn-outline btn-lg">{c.prescription.emailAction.label}</a>
+      </div>
+
+      <p style="font-size:0.9rem; color:var(--text-muted); text-align:center; margin:18px 0 0;">
+        {c.prescription.note}
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION 7: TESTIMONIALS ================= -->
+<section class="section-white">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">{c.reviews.eyebrow}</span>
+      <h2>{c.reviews.h2}</h2>
+    </div>
+
+    <div class="review-slider">
+      <div class="review-track">
+        {c.reviews.slides.map((s, i) => (
+          <figure class={i === 0 ? 'review-slide active' : 'review-slide'}>
+            <div class="review-stars" aria-label={c.reviews.starsAria}>★★★★★</div>
+            <blockquote>{s.quote}</blockquote>
+            <figcaption class="review-author">{s.author}</figcaption>
+          </figure>
+        ))}
+      </div>
+      <div class="review-dots">
+        {c.reviews.slides.map((_s, i) => (
+          <button class={i === 0 ? 'review-dot active' : 'review-dot'} aria-label={interp(c.reviews.dotAria, { n: i + 1 })}></button>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION 8: FAQ ================= -->
+<section class="section-tinted">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">{c.faq.eyebrow}</span>
+      <h2>{c.faq.h2}</h2>
+      <p>{c.faq.intro}</p>
+    </div>
+
+    <div class="faq-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <label for="faq-search-input" class="sr-only">{c.faq.searchSrLabel}</label>
+      <input type="text" id="faq-search-input" autocomplete="off" placeholder={c.faq.searchPlaceholder} />
+    </div>
+
+    <div class="faq-list">
+      {c.faq.items.map((item) => (
+        <div class="faq-item">
+          <button class="faq-question">
+            {item.q}
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <p set:html={item.aHtml} />
+          </div>
+        </div>
+      ))}
+      <p class="faq-no-results" set:html={c.faq.noResultsHtml}></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION 9: FINAL CTA ================= -->
+<section class="final-cta">
+  <div class="container">
+    <h2>{c.cta.h2}</h2>
+    <p>{c.cta.text}</p>
+    <div class="cta-buttons">
+      <a href={href('contact.html')} class="btn btn-primary btn-lg">{c.cta.scheduleLabel}</a>
+      <a href="tel:4352925548" class="btn btn-outline btn-lg">{interp(c.cta.callLabel, vars)}</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+</MainLayout>

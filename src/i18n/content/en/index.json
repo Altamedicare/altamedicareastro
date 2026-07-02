@@ -1,0 +1,190 @@
+{
+  "__note": "MASTER content for the homepage (/), extracted losslessly from src/pages/index.astro. Keys prefixed __ are functional data (YouTube ids, transcript slugs, img classes, search seeds) — the engine never translates them. sms:/mailto: prefilled bodies stay in the component (protocol-href boundary). Entity-bearing strings are stored as real Unicode; the 3-diff tag comparator normalizes entities (glyph bar).",
+  "page": {
+    "title": "AltaMedicare | Simple Medicare Guidance for Utah Families",
+    "description": "Helping Orem and Utah residents understand Medicare, lower prescription costs, and make confident healthcare decisions. Licensed local Medicare guidance with no pressure."
+  },
+  "hero": {
+    "h1": "Simple Medicare Guidance for Utah Families",
+    "subhead": "Helping Orem and Utah residents understand Medicare, lower prescription\n        costs, and make confident healthcare decisions.",
+    "scheduleLabel": "Schedule Free Consultation",
+    "drugLabel": "Check Prescription Costs",
+    "compareLabel": "Compare Plans Online",
+    "trust": "Trusted by Utah families · Licensed · No-pressure guidance",
+    "searchSrLabel": "Ask a Medicare question",
+    "searchPlaceholder": "Ask a Medicare question — e.g. “Can I keep my doctor?”",
+    "examples": [
+      { "__q": "doctor", "label": "Can I keep my doctor?" },
+      { "__q": "enrollment when turning 65", "label": "When should I enroll?" },
+      { "__q": "advantage supplement", "label": "Advantage vs Supplement?" }
+    ],
+    "toolsLabel": "Free calculators",
+    "tools": [
+      { "__href": "/medicare-drug-cost-calculator.html", "title": "Estimate prescription costs and savings opportunities.", "label": "💊 Drug Costs" },
+      { "__href": "/medicare-irmaa-calculator.html", "title": "Estimate Medicare Part B and Part D premiums using 2026 figures.", "label": "💰 IRMAA Calculator" },
+      { "__href": "/medicare-penalty-calculator.html", "title": "Estimate lifetime Medicare late enrollment penalties.", "label": "⚠️ Penalties" },
+      { "__href": "/medicare-eligibility-calculator.html", "title": "See when you qualify and your Initial Enrollment Period.", "label": "💼 Eligibility" }
+    ]
+  },
+  "trustBar": [
+    "Licensed Utah Medicare Help",
+    "No-Cost Consultations",
+    "Prescription Savings Guidance",
+    "Annual Plan Reviews",
+    "Local Utah Support"
+  ],
+  "toolsSection": {
+    "eyebrow": "Free Medicare tools",
+    "h2": "Free Medicare Tools",
+    "intro": "Interactive calculators and resources to help you make informed Medicare decisions.",
+    "cards": [
+      { "__href": "/medicare-eligibility-calculator.html", "__icon": "fa-calendar-check", "h3": "Medicare Eligibility Calculator", "text": "Find out when you qualify for Medicare and calculate your Initial Enrollment Period.", "linkLabel": "Learn More" },
+      { "__href": "/medicare-irmaa-calculator.html", "__icon": "fa-sack-dollar", "h3": "IRMAA Calculator", "text": "Estimate your Medicare Part B and Part D premiums using 2026 figures.", "linkLabel": "Learn More" },
+      { "__href": "/medicare-penalty-calculator.html", "__icon": "fa-triangle-exclamation", "h3": "Late Enrollment Penalty Calculator", "text": "Estimate lifetime Medicare penalties and understand Special Enrollment Periods.", "linkLabel": "Learn More" },
+      { "__href": "/medicare-drug-cost-calculator.html", "__icon": "fa-pills", "h3": "Drug Cost Calculator", "text": "Estimate prescription costs and compare savings opportunities.", "linkLabel": "Learn More" }
+    ],
+    "allToolsLabel": "See all Medicare tools"
+  },
+  "explain": {
+    "eyebrow": "Medicare, simplified",
+    "h2": "The Four Things Most People Need to Know",
+    "intro": "Medicare can feel overwhelming. Here's a quick, friendly overview of the main pieces — explained without jargon.",
+    "cards": [
+      { "__href": "medicare-advantage.html", "__cardClass": "card", "h3": "Medicare Advantage", "text": "All-in-one plans with extra benefits like dental, vision, hearing, and prescription coverage.", "linkLabel": "Learn more" },
+      { "__href": "medicare-supplement.html", "__cardClass": "card card--sage", "h3": "Medicare Supplement", "text": "Lower surprise medical costs with predictable monthly premiums and broad doctor flexibility.", "linkLabel": "Learn more" },
+      { "__href": "prescription-drug-plans.html", "__cardClass": "card card--terracotta", "h3": "Prescription Drug Plans", "text": "Help lower medication expenses with the right Part D plan for your specific drugs.", "linkLabel": "Learn more" },
+      { "__href": "turning-65.html", "__cardClass": "card", "h3": "Turning 65", "text": "Learn enrollment timelines, avoid penalties, and start your Medicare journey on the right foot.", "linkLabel": "Learn more" }
+    ]
+  },
+  "videos": {
+    "eyebrow": "Watch & learn",
+    "h2": "Medicare, Explained in Plain English",
+    "intro": "Short, friendly videos on the questions we hear most — with a transcript for every one. Pick a topic to watch.",
+    "topicsAria": "Video topics",
+    "topics": [
+      { "__yt": "UDY-pF0Yek0", "__transcript": "medicare-basics.html", "title": "Understanding Medicare Parts A, B, C & D", "desc": "A 2-minute tour of the four parts of Medicare and what each one covers.", "buttonLabel": "Understanding Parts A, B, C & D" },
+      { "__yt": "TwwRovzjYMk", "__transcript": "medicare-advantage.html", "title": "Medicare Advantage vs Supplement", "desc": "The real differences — networks, costs, and flexibility — so you can choose with confidence.", "buttonLabel": "Medicare Advantage vs Supplement" },
+      { "__yt": "Yut_rz5cifs", "__transcript": "turning-65.html", "title": "When Can I Enroll?", "desc": "Your Initial Enrollment Period, the Annual Enrollment Period, and how to avoid penalties.", "buttonLabel": "When Can I Enroll?" },
+      { "__yt": "O2F1-u58YqI", "__transcript": "medicare-advantage.html", "title": "Can I Keep My Doctor?", "desc": "How plan networks work and how we check that your doctors are covered before you enroll.", "buttonLabel": "Can I Keep My Doctor?" },
+      { "__yt": "MLN3mjcvHWM", "__transcript": "prescription-drug-plans.html", "title": "Prescription Drug Plans", "desc": "How Part D works and how we match a plan to the exact medications you take.", "buttonLabel": "Prescription Drug Plans" }
+    ],
+    "playerAria": "Educational video",
+    "badge": "Medicare 101",
+    "playAria": "Play this video",
+    "watchLabel": "Watch the video",
+    "transcriptLabel": "Read the transcript →",
+    "textLabel": "Still have a question? Text us"
+  },
+  "why": {
+    "eyebrow": "Why families choose us",
+    "h2": "Why Utah Families Choose AltaMedicare",
+    "intro": "We believe Medicare guidance should feel calm, clear, and personal — never pushy. Here's what makes our approach different:",
+    "items": [
+      "Personalized Medicare guidance based on your specific situation",
+      "Simple, jargon-free explanations without sales pressure",
+      "Help understanding and lowering prescription costs",
+      "Annual plan reviews to make sure you're still in the right plan",
+      "Local Utah support — we live and work where you do",
+      "One-on-one consultations at your pace",
+      "Educational approach — we want you to understand, not just sign"
+    ],
+    "card": {
+      "photoAlt": "Bret Swope, founder of AltaMedicare",
+      "name": "Bret Swope",
+      "role": "Founder · Licensed Medicare Agent",
+      "quote": "\"My goal is to make Medicare feel less confusing — so you can make confident decisions for yourself and your family. My consultations are always free.\"",
+      "callLabel": "Call",
+      "textLabel": "Text",
+      "scheduleLabel": "Schedule",
+      "storyHtml": "<a href=\"about.html\" style=\"font-weight:600;\">Read Bret's full story &rarr;</a>"
+    }
+  },
+  "articles": {
+    "eyebrow": "From the blog",
+    "h2": "Latest Articles",
+    "intro": "Practical, jargon-free guides for Utah Medicare beneficiaries and their families.",
+    "prevAria": "Previous articles",
+    "nextAria": "Next articles",
+    "cards": [
+      { "__href": "turning-65.html", "__imgClass": "article-img alt-2", "tag": "Getting Started", "meta": "5 min read", "h3": "Turning 65 Checklist", "text": "Every step to enroll on time and avoid lifetime late penalties.", "linkLabel": "Read more" },
+      { "__href": "medicare-advantage.html", "__imgClass": "article-img", "tag": "Plans", "meta": "6 min read", "h3": "Best Medicare Advantage Plans in Utah", "text": "What to compare — networks, drug coverage, and extra benefits.", "linkLabel": "Read more" },
+      { "__href": "medicare-basics.html", "__imgClass": "article-img alt-1", "tag": "Avoid Mistakes", "meta": "4 min read", "h3": "Avoiding Late Enrollment Penalties", "text": "The deadlines that matter and how to never pay a penalty.", "linkLabel": "Read more" },
+      { "__href": "prescription-drug-plans.html", "__imgClass": "article-img alt-2", "tag": "Savings", "meta": "5 min read", "h3": "Lowering Your Prescription Costs", "text": "How the right Part D plan can save hundreds a year on medications.", "linkLabel": "Read more" },
+      { "__href": "medicare-news.html", "__imgClass": "article-img", "tag": "Wellness", "meta": "3 min read", "h3": "Heart-Healthy Foods for Seniors", "text": "Simple, affordable choices that support healthy aging.", "linkLabel": "Read more" }
+    ]
+  },
+  "miniBanner": {
+    "h2": "Turning 65 soon?",
+    "text": "We'll help you understand Medicare and enroll on time — no penalties, no pressure.",
+    "textLabel": "Text Us",
+    "guideLabel": "Turning 65 Guide"
+  },
+  "prescription": {
+    "eyebrow": "Free service",
+    "h2": "Prescription Costs Too High?",
+    "intro": "Send us your medications and we'll review whether your current plan is the most affordable option for you. No obligation — just clear answers.",
+    "textAction": {
+      "strong": "Text your meds to Bret",
+      "span": "Fastest way — opens a text with your list already started",
+      "label": "Text Your Medications"
+    },
+    "emailAction": {
+      "strong": "Email your meds to Bret",
+      "span": "Opens your email with a quick template to fill in",
+      "label": "Email Your Medications"
+    },
+    "note": "Bret personally reviews every list — usually within a few hours. No cost, no obligation."
+  },
+  "reviews": {
+    "eyebrow": "From our clients",
+    "h2": "What Utah Families Are Saying",
+    "starsAria": "5 out of 5 stars",
+    "dotAria": "Show review {n}",
+    "slides": [
+      { "quote": "Bret explained Medicare in a way I finally understood. After three years of being confused, I finally feel confident in my plan.", "author": "— Linda M., Orem" },
+      { "quote": "AltaMedicare helped me lower my prescription costs by over $200 a month. I had no idea I was overpaying until Bret reviewed my plan.", "author": "— Robert K., Provo" },
+      { "quote": "Very patient and easy to work with. He never pressured me — he just laid out the options and let me decide. Wish I'd called him years ago.", "author": "— Susan T., Salt Lake City" },
+      { "quote": "Bret made my Turning-65 enrollment completely stress-free. He answered every question by text within minutes. I've already referred two neighbors.", "author": "— David & Carol H., Lehi" }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Common questions",
+    "h2": "Medicare Questions, Answered",
+    "intro": "Quick answers to the questions we hear most often. Don't see yours? Just give us a call.",
+    "searchSrLabel": "Search questions",
+    "searchPlaceholder": "Search questions… e.g. “doctor”, “cost”, “Part D”",
+    "items": [
+      {
+        "q": "What does Medicare cost?",
+        "aHtml": "Most people pay no premium for Part A (hospital). Part B (medical) has a standard monthly premium set each year by Medicare. Beyond that, your costs depend on which plan type you choose — Medicare Advantage plans often have very low or even $0 premiums, while Medicare Supplement plans have a separate monthly premium in exchange for lower out-of-pocket costs. We'll walk through real numbers based on your situation."
+      },
+      {
+        "q": "Can I keep my doctor?",
+        "aHtml": "It depends on the plan type. Original Medicare and Medicare Supplement plans let you see any doctor in the U.S. who accepts Medicare. Medicare Advantage plans use networks, so you'll want to check that your preferred doctors are in-network before enrolling. We can verify this for you before you choose."
+      },
+      {
+        "q": "What happens when I turn 65?",
+        "aHtml": "You become eligible for Medicare. Your Initial Enrollment Period is a 7-month window — the 3 months before your 65th birthday month, your birthday month, and the 3 months after. Missing this window can lead to lifetime late penalties, so it's important to plan ahead. <a href=\"turning-65.html\">Our Turning 65 page</a> walks through the timeline in detail."
+      },
+      {
+        "q": "What's the difference between Medicare Advantage and Medicare Supplement?",
+        "aHtml": "Medicare Advantage (Part C) bundles your hospital, medical, and usually drug coverage into one plan from a private insurer — often with extras like dental and vision, but with networks and copays. Medicare Supplement (Medigap) works alongside Original Medicare and covers most of what Medicare doesn't pay, giving you predictable costs and any-doctor flexibility. Different needs, different fits — we'll help you compare."
+      },
+      {
+        "q": "Can I change plans later?",
+        "aHtml": "Yes — every fall there's an Annual Enrollment Period (October 15 through December 7) when you can switch plans for the following year. There are also Special Enrollment Periods if you move, lose other coverage, or qualify for low-income help. We do free annual reviews for our clients to make sure their plan still fits."
+      },
+      {
+        "q": "Are prescriptions covered?",
+        "aHtml": "Most Medicare Advantage plans include prescription drug coverage. If you choose Original Medicare or a Supplement, you'll typically add a standalone Part D drug plan. Either way, the right choice depends on which specific medications you take — that's why we always review your drug list before recommending anything."
+      }
+    ],
+    "noResultsHtml": "No matching questions — <a href=\"contact.html\">just ask Bret directly &rarr;</a>"
+  },
+  "cta": {
+    "h2": "Need Medicare Help in Utah?",
+    "text": "One free, no-pressure call is all it takes to get clear answers and confident next steps.",
+    "scheduleLabel": "Schedule Consultation",
+    "callLabel": "Call {phone}"
+  }
+}

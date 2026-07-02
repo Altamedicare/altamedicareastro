@@ -1,0 +1,346 @@
+{
+  "__translation_note": "AI-translated from en/index.json by scripts/translate.js (model claude-opus-4-8) using src/i18n/glossary.json (CMS es.medicare.gov terminology). Machine-generated — pending human spot-check. Do not hand-edit copy here; fix the English master or pin the term in the glossary, then re-run npm run translate.",
+  "__note": "MASTER content for the homepage (/), extracted losslessly from src/pages/index.astro. Keys prefixed __ are functional data (YouTube ids, transcript slugs, img classes, search seeds) — the engine never translates them. sms:/mailto: prefilled bodies stay in the component (protocol-href boundary). Entity-bearing strings are stored as real Unicode; the 3-diff tag comparator normalizes entities (glyph bar).",
+  "page": {
+    "title": "AltaMedicare | Orientación Sencilla sobre Medicare para Familias de Utah",
+    "description": "Ayudamos a los residentes de Orem y de Utah a entender Medicare, reducir los costos de sus medicamentos recetados y tomar decisiones de salud con confianza. Orientación local con licencia sobre Medicare, sin presión."
+  },
+  "hero": {
+    "h1": "Orientación Sencilla sobre Medicare para Familias de Utah",
+    "subhead": "Ayudamos a los residentes de Orem y de Utah a entender Medicare, reducir los\n        costos de sus medicamentos recetados y tomar decisiones de salud con confianza.",
+    "scheduleLabel": "Programe una Consulta Gratuita",
+    "drugLabel": "Consulte los Costos de sus Medicamentos",
+    "compareLabel": "Comparar planes en línea",
+    "trust": "La confianza de las familias de Utah · Con licencia · Orientación sin presión",
+    "searchSrLabel": "Haga una pregunta sobre Medicare",
+    "searchPlaceholder": "Haga una pregunta sobre Medicare — por ejemplo: «¿Puedo quedarme con mi médico?»",
+    "examples": [
+      {
+        "__q": "doctor",
+        "label": "¿Puedo mantener a mi médico?"
+      },
+      {
+        "__q": "enrollment when turning 65",
+        "label": "¿Cuándo debo inscribirme?"
+      },
+      {
+        "__q": "advantage supplement",
+        "label": "¿Advantage o Suplementario?"
+      }
+    ],
+    "toolsLabel": "Calculadoras gratuitas",
+    "tools": [
+      {
+        "__href": "/medicare-drug-cost-calculator.html",
+        "title": "Calcule los costos de sus medicamentos recetados y las oportunidades de ahorro.",
+        "label": "💊 Costos de Medicamentos"
+      },
+      {
+        "__href": "/medicare-irmaa-calculator.html",
+        "title": "Calcule las primas de la Parte B y la Parte D de Medicare usando las cifras de 2026.",
+        "label": "💰 Calculadora de IRMAA"
+      },
+      {
+        "__href": "/medicare-penalty-calculator.html",
+        "title": "Calcule las multas vitalicias de Medicare por inscripción tardía.",
+        "label": "⚠️ Multas"
+      },
+      {
+        "__href": "/medicare-eligibility-calculator.html",
+        "title": "Vea cuándo califica y cuál es su Período de Inscripción Inicial.",
+        "label": "💼 Elegibilidad"
+      }
+    ]
+  },
+  "trustBar": [
+    "Ayuda con Medicare en Utah, con Licencia",
+    "Consultas sin Costo",
+    "Orientación para Ahorrar en Medicamentos Recetados",
+    "Revisiones Anuales de su Plan",
+    "Apoyo Local en Utah"
+  ],
+  "toolsSection": {
+    "eyebrow": "Herramientas gratuitas de Medicare",
+    "h2": "Herramientas Gratuitas de Medicare",
+    "intro": "Calculadoras y recursos interactivos que le ayudan a tomar decisiones informadas sobre Medicare.",
+    "cards": [
+      {
+        "__href": "/medicare-eligibility-calculator.html",
+        "__icon": "fa-calendar-check",
+        "h3": "Calculadora de Elegibilidad para Medicare",
+        "text": "Averigüe cuándo califica para Medicare y calcule su Período de Inscripción Inicial.",
+        "linkLabel": "Más información"
+      },
+      {
+        "__href": "/medicare-irmaa-calculator.html",
+        "__icon": "fa-sack-dollar",
+        "h3": "Calculadora de IRMAA",
+        "text": "Calcule sus primas de la Parte B y la Parte D de Medicare usando las cifras de 2026.",
+        "linkLabel": "Más información"
+      },
+      {
+        "__href": "/medicare-penalty-calculator.html",
+        "__icon": "fa-triangle-exclamation",
+        "h3": "Calculadora de Multas por Inscripción Tardía",
+        "text": "Calcule las multas vitalicias de Medicare y entienda los Períodos de Inscripción Especial.",
+        "linkLabel": "Más información"
+      },
+      {
+        "__href": "/medicare-drug-cost-calculator.html",
+        "__icon": "fa-pills",
+        "h3": "Calculadora de Costos de Medicamentos",
+        "text": "Calcule los costos de sus medicamentos recetados y compare las oportunidades de ahorro.",
+        "linkLabel": "Más información"
+      }
+    ],
+    "allToolsLabel": "Ver todas las herramientas de Medicare"
+  },
+  "explain": {
+    "eyebrow": "Medicare, de forma sencilla",
+    "h2": "Las Cuatro Cosas que la Mayoría de las Personas Necesita Saber",
+    "intro": "Medicare puede parecer abrumador. Aquí tiene un resumen rápido y sencillo de las partes principales — explicado sin tecnicismos.",
+    "cards": [
+      {
+        "__href": "medicare-advantage.html",
+        "__cardClass": "card",
+        "h3": "Medicare Advantage",
+        "text": "Planes todo en uno con beneficios adicionales como servicios dentales, de la vista, auditivos y cobertura de medicamentos recetados.",
+        "linkLabel": "Más información"
+      },
+      {
+        "__href": "medicare-supplement.html",
+        "__cardClass": "card card--sage",
+        "h3": "Seguro Suplementario de Medicare",
+        "text": "Reduzca los costos médicos inesperados con primas mensuales predecibles y amplia flexibilidad para elegir médicos.",
+        "linkLabel": "Más información"
+      },
+      {
+        "__href": "prescription-drug-plans.html",
+        "__cardClass": "card card--terracotta",
+        "h3": "Planes de Medicamentos Recetados",
+        "text": "Ayuda para reducir los gastos de medicamentos con el plan de la Parte D adecuado para sus medicamentos específicos.",
+        "linkLabel": "Más información"
+      },
+      {
+        "__href": "turning-65.html",
+        "__cardClass": "card",
+        "h3": "Al Cumplir los 65 Años",
+        "text": "Conozca los plazos de inscripción, evite multas y comience su camino en Medicare con el pie derecho.",
+        "linkLabel": "Más información"
+      }
+    ]
+  },
+  "videos": {
+    "eyebrow": "Vea y aprenda",
+    "h2": "Medicare, Explicado en Palabras Sencillas",
+    "intro": "Videos cortos y amables sobre las preguntas que más escuchamos — con una transcripción para cada uno. Elija un tema para ver.",
+    "topicsAria": "Temas de los videos",
+    "topics": [
+      {
+        "__yt": "UDY-pF0Yek0",
+        "__transcript": "medicare-basics.html",
+        "title": "Cómo entender las Partes A, B, C y D de Medicare",
+        "desc": "Un recorrido de 2 minutos por las cuatro partes de Medicare y lo que cubre cada una.",
+        "buttonLabel": "Cómo entender las Partes A, B, C y D"
+      },
+      {
+        "__yt": "TwwRovzjYMk",
+        "__transcript": "medicare-advantage.html",
+        "title": "Medicare Advantage vs. Seguro Suplementario",
+        "desc": "Las diferencias reales — redes de proveedores, costos y flexibilidad — para que pueda elegir con confianza.",
+        "buttonLabel": "Medicare Advantage vs. Seguro Suplementario"
+      },
+      {
+        "__yt": "Yut_rz5cifs",
+        "__transcript": "turning-65.html",
+        "title": "¿Cuándo Puedo Inscribirme?",
+        "desc": "Su Período de Inscripción Inicial, el Período de Inscripción Anual y cómo evitar multas.",
+        "buttonLabel": "¿Cuándo Puedo Inscribirme?"
+      },
+      {
+        "__yt": "O2F1-u58YqI",
+        "__transcript": "medicare-advantage.html",
+        "title": "¿Puedo Quedarme con Mi Médico?",
+        "desc": "Cómo funcionan las redes de proveedores de los planes y cómo verificamos que sus médicos estén cubiertos antes de que se inscriba.",
+        "buttonLabel": "¿Puedo Quedarme con Mi Médico?"
+      },
+      {
+        "__yt": "MLN3mjcvHWM",
+        "__transcript": "prescription-drug-plans.html",
+        "title": "Planes de Medicamentos Recetados",
+        "desc": "Cómo funciona la Parte D y cómo buscamos un plan que coincida con los medicamentos exactos que usted toma.",
+        "buttonLabel": "Planes de Medicamentos Recetados"
+      }
+    ],
+    "playerAria": "Video educativo",
+    "badge": "Medicare 101",
+    "playAria": "Reproducir este video",
+    "watchLabel": "Ver el video",
+    "transcriptLabel": "Leer la transcripción →",
+    "textLabel": "¿Todavía tiene una pregunta? Envíenos un mensaje de texto"
+  },
+  "why": {
+    "eyebrow": "Por qué las familias nos eligen",
+    "h2": "Por Qué las Familias de Utah Eligen AltaMedicare",
+    "intro": "Creemos que la orientación sobre Medicare debe sentirse tranquila, clara y personal — nunca insistente. Esto es lo que hace diferente nuestro enfoque:",
+    "items": [
+      "Orientación personalizada sobre Medicare según su situación específica",
+      "Explicaciones sencillas y sin tecnicismos, sin presión de ventas",
+      "Ayuda para entender y reducir los costos de sus medicamentos recetados",
+      "Revisiones anuales del plan para asegurarnos de que sigue en el plan adecuado",
+      "Apoyo local en Utah — vivimos y trabajamos donde usted vive",
+      "Consultas individuales a su propio ritmo",
+      "Enfoque educativo — queremos que entienda, no solo que firme"
+    ],
+    "card": {
+      "photoAlt": "Bret Swope, fundador de AltaMedicare",
+      "name": "Bret Swope",
+      "role": "Fundador · Agente de Medicare con Licencia",
+      "quote": "«Mi objetivo es hacer que Medicare parezca menos confuso — para que pueda tomar decisiones con confianza para usted y su familia. Mis consultas siempre son gratuitas.»",
+      "callLabel": "Llamar",
+      "textLabel": "Mensaje de texto",
+      "scheduleLabel": "Programar",
+      "storyHtml": "<a href=\"about.html\" style=\"font-weight:600;\">Lea la historia completa de Bret &rarr;</a>"
+    }
+  },
+  "articles": {
+    "eyebrow": "Del blog",
+    "h2": "Artículos Más Recientes",
+    "intro": "Guías prácticas y sin tecnicismos para los beneficiarios de Medicare de Utah y sus familias.",
+    "prevAria": "Artículos anteriores",
+    "nextAria": "Artículos siguientes",
+    "cards": [
+      {
+        "__href": "turning-65.html",
+        "__imgClass": "article-img alt-2",
+        "tag": "Cómo Empezar",
+        "meta": "5 min de lectura",
+        "h3": "Lista de Verificación al Cumplir 65 Años",
+        "text": "Cada paso para inscribirse a tiempo y evitar las multas vitalicias por inscripción tardía.",
+        "linkLabel": "Leer más"
+      },
+      {
+        "__href": "medicare-advantage.html",
+        "__imgClass": "article-img",
+        "tag": "Planes",
+        "meta": "6 min de lectura",
+        "h3": "Los Mejores Planes Medicare Advantage en Utah",
+        "text": "Qué comparar — redes de proveedores, cobertura de medicamentos y beneficios adicionales.",
+        "linkLabel": "Leer más"
+      },
+      {
+        "__href": "medicare-basics.html",
+        "__imgClass": "article-img alt-1",
+        "tag": "Evite Errores",
+        "meta": "4 min de lectura",
+        "h3": "Cómo Evitar las Multas por Inscripción Tardía",
+        "text": "Los plazos que importan y cómo no pagar nunca una multa.",
+        "linkLabel": "Leer más"
+      },
+      {
+        "__href": "prescription-drug-plans.html",
+        "__imgClass": "article-img alt-2",
+        "tag": "Ahorros",
+        "meta": "5 min de lectura",
+        "h3": "Cómo Reducir los Costos de sus Medicamentos Recetados",
+        "text": "Cómo el plan de la Parte D adecuado puede ahorrarle cientos de dólares al año en medicamentos.",
+        "linkLabel": "Leer más"
+      },
+      {
+        "__href": "medicare-news.html",
+        "__imgClass": "article-img",
+        "tag": "Bienestar",
+        "meta": "3 min de lectura",
+        "h3": "Alimentos Saludables para el Corazón para Personas Mayores",
+        "text": "Opciones sencillas y económicas que apoyan un envejecimiento saludable.",
+        "linkLabel": "Leer más"
+      }
+    ]
+  },
+  "miniBanner": {
+    "h2": "¿Pronto cumplirá 65 años?",
+    "text": "Le ayudaremos a entender Medicare y a inscribirse a tiempo — sin multas, sin presión.",
+    "textLabel": "Envíenos un Mensaje de Texto",
+    "guideLabel": "Guía para Cumplir 65 Años"
+  },
+  "prescription": {
+    "eyebrow": "Servicio gratuito",
+    "h2": "¿Los Costos de sus Medicamentos son Demasiado Altos?",
+    "intro": "Envíenos la lista de sus medicamentos y revisaremos si su plan actual es la opción más económica para usted. Sin compromiso — solo respuestas claras.",
+    "textAction": {
+      "strong": "Envíele sus medicamentos a Bret por mensaje de texto",
+      "span": "La forma más rápida — abre un mensaje de texto con su lista ya iniciada",
+      "label": "Envíe sus Medicamentos por Mensaje de Texto"
+    },
+    "emailAction": {
+      "strong": "Envíele sus medicamentos a Bret por correo electrónico",
+      "span": "Abre su correo electrónico con una plantilla rápida para completar",
+      "label": "Envíe sus Medicamentos por Correo Electrónico"
+    },
+    "note": "Bret revisa personalmente cada lista — por lo general dentro de unas pocas horas. Sin costo, sin compromiso."
+  },
+  "reviews": {
+    "eyebrow": "De nuestros clientes",
+    "h2": "Lo que Dicen las Familias de Utah",
+    "starsAria": "5 de 5 estrellas",
+    "dotAria": "Mostrar reseña {n}",
+    "slides": [
+      {
+        "quote": "Bret me explicó Medicare de una manera que por fin entendí. Después de tres años de estar confundida, por fin me siento segura con mi plan.",
+        "author": "— Linda M., Orem"
+      },
+      {
+        "quote": "AltaMedicare me ayudó a reducir los costos de mis medicamentos recetados en más de $200 al mes. No tenía idea de que estaba pagando de más hasta que Bret revisó mi plan.",
+        "author": "— Robert K., Provo"
+      },
+      {
+        "quote": "Muy paciente y fácil de tratar. Nunca me presionó — solo me presentó las opciones y me dejó decidir. Ojalá lo hubiera llamado hace años.",
+        "author": "— Susan T., Salt Lake City"
+      },
+      {
+        "quote": "Bret hizo que mi inscripción al cumplir los 65 fuera completamente libre de estrés. Respondía cada pregunta por mensaje de texto en cuestión de minutos. Ya he recomendado a dos vecinos.",
+        "author": "— David y Carol H., Lehi"
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Preguntas frecuentes",
+    "h2": "Preguntas sobre Medicare, respondidas",
+    "intro": "Respuestas rápidas a las preguntas que escuchamos con más frecuencia. ¿No ve la suya? Solo llámenos.",
+    "searchSrLabel": "Buscar preguntas",
+    "searchPlaceholder": "Buscar preguntas… por ejemplo, «médico», «costo», «Parte D»",
+    "items": [
+      {
+        "q": "¿Cuánto cuesta Medicare?",
+        "aHtml": "La mayoría de las personas no pagan prima por la Parte A (hospital). La Parte B (médica) tiene una prima mensual estándar que Medicare fija cada año. Más allá de eso, sus costos dependen del tipo de plan que elija: los planes Medicare Advantage a menudo tienen primas muy bajas o incluso de $0, mientras que los planes de Seguro Suplementario de Medicare tienen una prima mensual aparte a cambio de menores costos de su bolsillo. Le explicaremos números reales según su situación."
+      },
+      {
+        "q": "¿Puedo mantener a mi médico?",
+        "aHtml": "Depende del tipo de plan. Medicare Original y los planes de Seguro Suplementario de Medicare le permiten consultar a cualquier médico en los EE. UU. que acepte Medicare. Los planes Medicare Advantage usan redes, así que conviene verificar que sus médicos preferidos estén dentro de la red antes de inscribirse. Podemos comprobarlo por usted antes de que elija."
+      },
+      {
+        "q": "¿Qué sucede cuando cumplo 65 años?",
+        "aHtml": "Usted reúne los requisitos para Medicare. Su Período de Inscripción Inicial es una ventana de 7 meses: los 3 meses antes del mes en que cumple 65 años, el mes de su cumpleaños y los 3 meses posteriores. Perder esta ventana puede generar multas por retraso de por vida, por lo que es importante planificar con anticipación. <a href=\"turning-65.html\">Nuestra página Al Cumplir los 65</a> explica el cronograma en detalle."
+      },
+      {
+        "q": "¿Cuál es la diferencia entre Medicare Advantage y el Seguro Suplementario de Medicare?",
+        "aHtml": "Medicare Advantage (Parte C) agrupa su cobertura de hospital, médica y, por lo general, de medicamentos en un solo plan de una aseguradora privada, a menudo con extras como cobertura dental y de la vista, pero con redes y copagos. El Seguro Suplementario de Medicare (Medigap) funciona junto con Medicare Original y cubre la mayor parte de lo que Medicare no paga, brindándole costos predecibles y la flexibilidad de elegir cualquier médico. Necesidades diferentes, opciones diferentes: le ayudaremos a compararlas."
+      },
+      {
+        "q": "¿Puedo cambiar de plan más adelante?",
+        "aHtml": "Sí: cada otoño hay un Período de Inscripción Anual (del 15 de octubre al 7 de diciembre) en el que puede cambiar de plan para el año siguiente. También hay Períodos de Inscripción Especial si se muda, pierde otra cobertura o califica para ayuda por bajos ingresos. Hacemos revisiones anuales gratuitas para nuestros clientes con el fin de asegurarnos de que su plan siga siendo adecuado."
+      },
+      {
+        "q": "¿Están cubiertos los medicamentos recetados?",
+        "aHtml": "La mayoría de los planes Medicare Advantage incluyen cobertura de medicamentos recetados. Si elige Medicare Original o un plan Suplementario, por lo general agregará un plan de medicamentos de la Parte D por separado. En cualquier caso, la elección correcta depende de qué medicamentos específicos toma; por eso siempre revisamos su lista de medicamentos antes de recomendarle algo."
+      }
+    ],
+    "noResultsHtml": "No hay preguntas que coincidan — <a href=\"contact.html\">simplemente pregúntele a Bret directamente &rarr;</a>"
+  },
+  "cta": {
+    "h2": "¿Necesita ayuda con Medicare en Utah?",
+    "text": "Una sola llamada gratuita y sin compromiso es todo lo que necesita para obtener respuestas claras y dar los siguientes pasos con confianza.",
+    "scheduleLabel": "Programar consulta",
+    "callLabel": "Llame al {phone}"
+  }
+}

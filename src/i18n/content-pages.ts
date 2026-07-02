@@ -16,6 +16,7 @@ export const CONTENT_PAGES = [
   'medicare-supplement',
   'prescription-drug-plans',
   'medicare-advantage',
+  'index',
 ] as const;
 
 export type ContentKey = (typeof CONTENT_PAGES)[number];

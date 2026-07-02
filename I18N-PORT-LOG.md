@@ -141,3 +141,31 @@ Classification key:
   runtime strings (inline JS — needs a lang-keyed dictionary, Phase 1+ item);
   MedicareNews ticker + items (news is outside the launch boundary);
   "powered by" footer credit.
+
+## Homepage milestone (tag: i18n-homepage)
+
+- Homepage extracted (174 segments incl. data-title/data-desc video-tab copy;
+  __-prefixed functional data never translated), componentized, 3-diff green
+  on first build (1223 tags / 8526 glyphs / 0 leaks), screenshot-verified.
+  Extraction approved by owner before translation (extra gate for the most
+  visible page).
+- **[GENERIC]** 3-diff harness: tag comparator now decodes entities inside
+  tags — attribute authored as &ldquo; vs re-rendered real “ is the same DOM
+  (glyph bar extended to attributes).
+- **[GENERIC]** Engine: protocol hrefs (sms:/mailto:/tel:) added to the
+  non-translatable classes. NOTE: first patch half-applied (usage without
+  definition) and the string-presence verification missed it; caught by the
+  --check crash. Lesson recorded: verify behavior, not string presence.
+- **[GENERIC]** Engine: glossary longest-match precedence in post-pass AND
+  validator, with plural pins ('Special Enrollment Periods'). Root cause: the
+  singular-substring check fired inside plural sources (hit twice —
+  medicare-basics and index). The earlier singular hand-fix on
+  medicare-basics was reverted to the model's natural plural, which now
+  validates. Flows upstream with the idempotent post-pass fix.
+- **[ALTA]** sitemap.xml.ts: existence-aware i18n — translated URLs gain
+  xhtml:link alternates (self + sibling + x-default) and their /es siblings
+  get their own entries; untranslated entries byte-unchanged.
+- **[ALTA→GENERIC]** inLanguage: NOT added to LocalBusiness (invalid property;
+  availableLanguage/knowsLanguage would be an unstaffed-support claim —
+  playbook §8 honesty check). Emitted instead as a WebPage JSON-LD with
+  inLanguage on localized pages only; English output byte-stable.
