@@ -33,6 +33,7 @@ already run automatically (3-diff, `translate --check`, per-page QA greps).
 - [ ] Analytics verified (GA events fire on /es/ pages)
 
 ## Release mechanics
+- [ ] Verify git working tree is clean (`git status`)
 - [ ] All work committed; `npm run translate -- --check` green
 - [ ] Annotated tag with QA record (tags are the rollback points)
 - [ ] Pushed: `git push origin main && git push --tags`
