@@ -1,0 +1,103 @@
+---
+// src/components/content/PrescriptionDrugPlansPage.astro — THE shared template.
+// Copy lives in src/i18n/content/{locale}/prescription-drug-plans.json.
+// CMS annual figures interpolate from src/data/figures.ts (§6.8) — the
+// January figures update flows to both languages from one data edit.
+import MainLayout from '../../layouts/MainLayout.astro';
+import HelpfulTools from '../HelpfulTools.astro';
+import { DEFAULT_LOCALE, getLangFromUrl, getLocaleMeta } from '../../i18n/locales';
+import { getPageContent, hreflangAlternates, interp, localizeHref } from '../../i18n/content';
+import { COMPARE_PLANS_URL, PHONE_DISPLAY } from '../../consts';
+import { CURRENT } from '../../data/figures';
+
+interface PdpContent {
+  page: { title: string; description: string };
+  breadcrumbHtml: string;
+  header: { h1: string; ledeHtml: string };
+  how: { h2: string; intro: string; itemsHtml: string[] };
+  choice: { h2: string; paragraphsHtml: string[] };
+  changes: { h2: string; blocks: { h3: string; textHtml: string }[] };
+  pharmacies: { h2: string; textHtml: string };
+  extraHelp: { h2: string; textHtml: string };
+  callout: { heading: string; textHtml: string };
+  cta: { h2Html: string; textHtml: string; scheduleLabel: string; callLabel: string; compareLabel: string };
+}
+
+const lang = getLangFromUrl(Astro.url);
+const c = getPageContent<PdpContent>('prescription-drug-plans', lang);
+const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
+const vars = {
+  phone: PHONE_DISPLAY,
+  year: CURRENT.year,
+  partDAnnualCap: usd(CURRENT.partD.annualCap),
+  insulinCap: usd(CURRENT.partD.insulinCap),
+};
+const canonical = lang === DEFAULT_LOCALE ? '/prescription-drug-plans.html' : `/${lang}/prescription-drug-plans.html`;
+const alternates = hreflangAlternates('prescription-drug-plans');
+---
+
+<MainLayout
+  title={c.page.title}
+  description={interp(c.page.description, vars)}
+  canonical={canonical}
+>
+  <Fragment slot="head">
+    {alternates.map((a) => <link rel="alternate" hreflang={a.code} href={a.href} />)}
+    {lang !== DEFAULT_LOCALE && <meta property="og:locale" content={getLocaleMeta(lang).ogLocale} />}
+  </Fragment>
+
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb" set:html={c.breadcrumbHtml}></div>
+    <h1>{c.header.h1}</h1>
+    <p class="lede" set:html={c.header.ledeHtml}></p>
+  </div>
+</section>
+
+<section class="section-white">
+  <div class="container content-narrow">
+    <h2>{c.how.h2}</h2>
+    <p>{c.how.intro}</p>
+    <ul>
+      {c.how.itemsHtml.map((item) => <li set:html={item} />)}
+    </ul>
+
+    <h2>{c.choice.h2}</h2>
+    {c.choice.paragraphsHtml.map((p) => <p set:html={p} />)}
+
+    <h2>{interp(c.changes.h2, vars)}</h2>
+    {c.changes.blocks.map((b) => (
+      <Fragment>
+        <h3>{interp(b.h3, vars)}</h3>
+        <p set:html={interp(b.textHtml, vars)} />
+      </Fragment>
+    ))}
+
+    <h2>{c.pharmacies.h2}</h2>
+    <p set:html={c.pharmacies.textHtml}></p>
+
+    <h2>{c.extraHelp.h2}</h2>
+    <p set:html={c.extraHelp.textHtml}></p>
+
+    <div class="callout">
+      <strong>{c.callout.heading}</strong>
+      <p style="margin:8px 0 0;" set:html={c.callout.textHtml}></p>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <h2 set:html={c.cta.h2Html}></h2>
+    <p set:html={c.cta.textHtml}></p>
+    <div class="cta-buttons">
+      <a href={localizeHref('contact.html', lang)} class="btn btn-primary btn-lg">{c.cta.scheduleLabel}</a>
+      <a href="tel:4352925548" class="btn btn-outline btn-lg">{interp(c.cta.callLabel, vars)}</a>
+      <a href={COMPARE_PLANS_URL} target="_blank" rel="noopener" class="btn btn-outline btn-lg">{c.cta.compareLabel}</a>
+    </div>
+  </div>
+</section>
+
+<HelpfulTools />
+
+</MainLayout>

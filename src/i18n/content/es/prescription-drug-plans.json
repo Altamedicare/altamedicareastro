@@ -1,0 +1,64 @@
+{
+  "__translation_note": "AI-translated from en/prescription-drug-plans.json by scripts/translate.js (model claude-opus-4-8) using src/i18n/glossary.json (CMS es.medicare.gov terminology). Machine-generated — pending human spot-check. Do not hand-edit copy here; fix the English master or pin the term in the glossary, then re-run npm run translate.",
+  "__note": "MASTER content for /prescription-drug-plans.html. CMS annual figures are {placeholder} tokens interpolated from src/data/figures.ts (§6.8 — the January figures update flows to both languages from one edit): {year}, {partDAnnualCap}, {insulinCap}. Illustrative copy examples ($4/$140/$0) are not CMS figures and stay literal.",
+  "page": {
+    "title": "Planes de Medicamentos Recetados de Medicare (Parte D) | AltaMedicare",
+    "description": "La Parte D de Medicare explicada: formularios, topes de insulina, farmacias, ahorros en medicamentos y los cambios de la Parte D en {year}, incluido el tope de gastos de bolsillo de {partDAnnualCap}."
+  },
+  "breadcrumbHtml": "<a href=\"index.html\">Inicio</a> &nbsp;&rsaquo;&nbsp; <a href=\"medicare-basics.html\">Planes</a> &nbsp;&rsaquo;&nbsp; Planes de Medicamentos Recetados",
+  "header": {
+    "h1": "Planes de Medicamentos Recetados de Medicare (Parte D)",
+    "ledeHtml": "El plan de la Parte D adecuado puede ahorrarle cientos &mdash; o miles &mdash; de dólares al año. Aquí le explicamos cómo funcionan y cómo buscamos el mejor para usted."
+  },
+  "how": {
+    "h2": "Cómo funciona la Parte D",
+    "intro": "La Parte D de Medicare es la cobertura de medicamentos recetados que ofrecen las aseguradoras privadas. Puede obtener la Parte D de dos maneras:",
+    "itemsHtml": [
+      "<strong>Plan independiente de la Parte D</strong> &mdash; combinado con Medicare Original o un Seguro Suplementario de Medicare",
+      "<strong>Incluido en un plan Medicare Advantage</strong> &mdash; llamado plan Medicare Advantage con Medicamentos Recetados (MAPD)"
+    ]
+  },
+  "choice": {
+    "h2": "Por qué es tan importante elegir bien el plan",
+    "paragraphsHtml": [
+      "Cada plan de la Parte D tiene su propio <strong>formulario</strong> &mdash; la lista de medicamentos que cubre y cuánto cuestan. El mismo medicamento puede costar $4 en un plan y $140 en otro. El plan adecuado para usted depende por completo de qué medicamentos específicos toma.",
+      "Por eso siempre empezamos por revisar sus medicamentos antes de recomendarle algo. No existe un &ldquo;mejor&rdquo; plan de la Parte D en general &mdash; solo el mejor para su lista específica de medicamentos."
+    ]
+  },
+  "changes": {
+    "h2": "Cambios de la Parte D en {year}",
+    "blocks": [
+      {
+        "h3": "Tope de gastos de bolsillo de {partDAnnualCap}",
+        "textHtml": "El cambio reciente más importante: ahora existe un tope anual sobre lo que usted paga de su bolsillo por los medicamentos recetados cubiertos por la Parte D. Una vez que lo alcanza, sus medicamentos cubiertos cuestan $0 durante el resto del año. Para las personas que toman medicamentos costosos, este es un cambio muy importante."
+      },
+      {
+        "h3": "Tope de insulina de {insulinCap}",
+        "textHtml": "Los costos de la insulina cubierta por Medicare tienen un tope de {insulinCap} al mes por receta. No se aplica ningún deducible a la insulina."
+      },
+      {
+        "h3": "Plan de Pago de Medicamentos Recetados de Medicare",
+        "textHtml": "Puede optar por repartir sus costos anuales de medicamentos en pagos mensuales en lugar de pagar una factura grande en el mostrador de la farmacia. Es útil si toma un medicamento especializado de alto costo."
+      }
+    ]
+  },
+  "pharmacies": {
+    "h2": "Las farmacias también importan",
+    "textHtml": "Los planes de la Parte D tienen <strong>farmacias preferidas</strong> que ofrecen los copagos más bajos, y farmacias estándar que cuestan más. Muchos planes también tienen opciones de <strong>pedido por correo</strong> de menor costo para los medicamentos de mantenimiento. El lugar donde surte sus recetas importa tanto como el plan que elija."
+  },
+  "extraHelp": {
+    "h2": "Ayuda Adicional (Extra Help) / Subsidio por Bajos Ingresos",
+    "textHtml": "Si sus ingresos están por debajo de ciertos límites, es posible que califique para la <strong>Ayuda Adicional (Extra Help)</strong> &mdash; un programa federal que reduce drásticamente sus costos de la Parte D. Muchas personas que califican no lo saben. Podemos ayudarle a verificarlo."
+  },
+  "callout": {
+    "heading": "Revisión gratuita de sus medicamentos.",
+    "textHtml": "Envíenos su lista de medicamentos y le diremos si su plan actual es su mejor opción. Sin compromiso. <a href=\"drug-savings.html\">Comience su revisión de medicamentos &rarr;</a>"
+  },
+  "cta": {
+    "h2Html": "¿Tiene preguntas? Hablemos.",
+    "textHtml": "Una llamada gratuita y sin presión &mdash; respuestas claras, sin argumentos de venta.",
+    "scheduleLabel": "Programar consulta",
+    "callLabel": "Llame al {phone}",
+    "compareLabel": "Comparar planes en línea"
+  }
+}
