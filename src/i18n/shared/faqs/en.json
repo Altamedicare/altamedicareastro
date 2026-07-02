@@ -1,0 +1,1702 @@
+{
+  "__note": "MASTER strings for the FAQ system (shared module, ADR-002). Field mask in ../masks.json: q/a/title/blurb/label + shell fields translate; key/icon/href/tools verbatim. Categories extracted losslessly from src/data/faq/*.ts (retired); shell strings transcribed byte-exact from the faq page templates.",
+  "shell": {
+    "catTitle": "{title} FAQ | Medicare Questions | AltaMedicare",
+    "catDescription": "{blurb} {count} plain-English Medicare answers from a licensed Utah agent, with links to guides and calculators.",
+    "faqCrumb": "FAQ",
+    "searchPlaceholder": "Search {count} {title} questions…",
+    "filterAria": "Filter questions",
+    "countSingular": "{shown} of {total} question",
+    "countPlural": "{shown} of {total} questions",
+    "emptyHtml": "No questions match that search. Try fewer words, or <a href=\"/contact.html\">ask Bret directly</a>.",
+    "compareLabel": "Compare plans online",
+    "talkLabel": "Talk to Bret",
+    "backHtml": "&larr; All FAQ topics",
+    "hubTitle": "Medicare FAQ | Answers from a Utah Agent | AltaMedicare",
+    "hubDescription": "Plain-English answers to 100+ common Medicare questions — enrollment, costs, drug coverage, Medicare Advantage, Medigap, and more, from a licensed Utah agent.",
+    "hubH1": "Medicare Questions, Answered",
+    "hubLedeHtml": "Plain-English answers to the {total} questions Utah families ask most &mdash; with links to the guides, calculators, and a real agent when you want to go deeper.",
+    "hubEyebrow": "Browse by topic",
+    "hubH2": "FAQ Categories",
+    "hubIntro": "Pick a topic to see its questions. Each answer links to the related guide and calculator.",
+    "questionSingular": "question",
+    "questionPlural": "questions",
+    "ctaH2": "Don't see your question?",
+    "ctaTextHtml": "Ask a licensed Utah Medicare agent directly &mdash; no bots, no pressure.",
+    "ctaAskLabel": "Ask Bret",
+    "ctaCallLabel": "Call {phone}"
+  },
+  "categories": [
+    {
+      "key": "enrollment",
+      "icon": "fa-calendar-check",
+      "title": "Enrollment",
+      "blurb": "Sign-up windows, deadlines, and penalties.",
+      "faqs": [
+        {
+          "q": "What is the Initial Enrollment Period?",
+          "a": "Your Initial Enrollment Period (IEP) is the 7-month window around your 65th birthday: the 3 months before your birthday month, the month itself, and the 3 months after. This is when most people first sign up for Medicare Part A and Part B. Enrolling before your birthday month helps your coverage start on time and avoids gaps.",
+          "links": [
+            {
+              "href": "/blog/initial-enrollment-period-explained.html",
+              "label": "Initial Enrollment Period Explained"
+            },
+            {
+              "href": "/blog/medicare-timeline-explained.html",
+              "label": "Medicare Timeline Explained"
+            }
+          ],
+          "tools": [
+            "timeline",
+            "eligibility",
+            "countdown"
+          ]
+        },
+        {
+          "q": "Can I delay Part B without a penalty?",
+          "a": "Yes, but only if you have active employer coverage through a job where you or your spouse still work and the employer has 20 or more employees. That coverage lets you delay Part B penalty-free and get a Special Enrollment Period later. COBRA, retiree plans, and VA benefits do NOT count, so delaying Part B with those can trigger a lifelong penalty.",
+          "links": [
+            {
+              "href": "/blog/can-i-delay-medicare-part-b.html",
+              "label": "Can I Delay Medicare Part B?"
+            },
+            {
+              "href": "/blog/medicare-and-employer-coverage-after-65.html",
+              "label": "Medicare and Employer Coverage After 65"
+            }
+          ],
+          "tools": [
+            "eligibility",
+            "penalty"
+          ]
+        },
+        {
+          "q": "What is a Special Enrollment Period?",
+          "a": "A Special Enrollment Period (SEP) is a window to sign up for Medicare or change plans outside the normal dates, triggered by a life event. Common triggers include losing employer coverage, moving out of your plan's service area, or qualifying for help paying costs. SEPs let you enroll without a late penalty when you act within the allowed time.",
+          "links": [
+            {
+              "href": "/blog/special-enrollment-period-explained.html",
+              "label": "Special Enrollment Period Explained"
+            }
+          ],
+          "tools": [
+            "eligibility",
+            "timeline"
+          ]
+        },
+        {
+          "q": "What happens if I miss Medicare enrollment?",
+          "a": "If you miss your Initial Enrollment Period and do not qualify for a Special Enrollment Period, you may have to wait for the General Enrollment Period (January 1 to March 31) to sign up. You could also owe lifelong late penalties for Part B and Part D. Acting quickly when you first become eligible is the best way to avoid gaps and added costs.",
+          "links": [
+            {
+              "href": "/blog/what-happens-if-you-miss-medicare-enrollment.html",
+              "label": "What Happens If You Miss Medicare Enrollment"
+            },
+            {
+              "href": "/blog/medicare-late-enrollment-penalties.html",
+              "label": "Medicare Late Enrollment Penalties"
+            }
+          ],
+          "tools": [
+            "penalty",
+            "timeline"
+          ]
+        },
+        {
+          "q": "What is the General Enrollment Period?",
+          "a": "The General Enrollment Period runs from January 1 to March 31 each year. It is for people who missed their Initial Enrollment Period and do not qualify for a Special Enrollment Period to sign up for Part A and Part B. Coverage begins the month after you enroll, and you may still owe a late enrollment penalty.",
+          "links": [
+            {
+              "href": "/blog/general-enrollment-period-explained.html",
+              "label": "General Enrollment Period Explained"
+            }
+          ],
+          "tools": [
+            "timeline",
+            "penalty"
+          ]
+        },
+        {
+          "q": "What is the Annual Enrollment Period?",
+          "a": "The Annual Enrollment Period (AEP) runs from October 15 to December 7 each year. During this time you can join, switch, or drop a Medicare Advantage plan or a Part D drug plan, with changes taking effect January 1. It is the main yearly chance to review your coverage and make sure your plan still fits your needs.",
+          "links": [
+            {
+              "href": "/blog/annual-enrollment-period-explained.html",
+              "label": "Annual Enrollment Period Explained"
+            }
+          ],
+          "tools": [
+            "timeline"
+          ]
+        },
+        {
+          "q": "What is the Medicare Advantage Open Enrollment Period?",
+          "a": "The Medicare Advantage Open Enrollment Period runs from January 1 to March 31 each year. If you are already in a Medicare Advantage plan, you can switch to a different Medicare Advantage plan or drop it and return to Original Medicare (with a Part D plan). You can make only one change during this period, and it is not for people on Original Medicare alone.",
+          "links": [
+            {
+              "href": "/blog/annual-enrollment-period-explained.html",
+              "label": "Annual Enrollment Period Explained"
+            }
+          ],
+          "tools": [
+            "timeline"
+          ]
+        },
+        {
+          "q": "When can I change my Medicare plan?",
+          "a": "You can change Medicare Advantage or Part D plans during the Annual Enrollment Period (October 15 to December 7). If you have a Medicare Advantage plan, you also get one change during the Medicare Advantage Open Enrollment Period (January 1 to March 31). Outside these windows, you generally need a Special Enrollment Period triggered by a qualifying life event.",
+          "links": [
+            {
+              "href": "/blog/annual-enrollment-period-explained.html",
+              "label": "Annual Enrollment Period Explained"
+            },
+            {
+              "href": "/blog/special-enrollment-period-explained.html",
+              "label": "Special Enrollment Period Explained"
+            }
+          ],
+          "tools": [
+            "timeline",
+            "eligibility"
+          ]
+        },
+        {
+          "q": "How do I sign up for Medicare?",
+          "a": "You can sign up for Medicare online at the Social Security website, by phone with Social Security, or in person at a local office. Many people enroll during their Initial Enrollment Period around age 65. If you already get Social Security benefits, you may be enrolled in Part A and Part B automatically when you turn 65.",
+          "links": [
+            {
+              "href": "/blog/initial-enrollment-period-explained.html",
+              "label": "Initial Enrollment Period Explained"
+            },
+            {
+              "href": "/blog/medicare-timeline-explained.html",
+              "label": "Medicare Timeline Explained"
+            }
+          ],
+          "tools": [
+            "eligibility",
+            "timeline",
+            "countdown"
+          ]
+        },
+        {
+          "q": "Do I have to enroll in Medicare at 65 if I am still working?",
+          "a": "Not always. If you have active coverage through a current employer with 20 or more employees, you can usually delay Part B without a penalty and enroll later through a Special Enrollment Period. Many people still take premium-free Part A at 65. If your employer has fewer than 20 employees, Medicare often becomes primary, so check before delaying.",
+          "links": [
+            {
+              "href": "/blog/medicare-and-employer-coverage-after-65.html",
+              "label": "Medicare and Employer Coverage After 65"
+            },
+            {
+              "href": "/blog/can-i-delay-medicare-part-b.html",
+              "label": "Can I Delay Medicare Part B?"
+            }
+          ],
+          "tools": [
+            "eligibility",
+            "penalty"
+          ]
+        },
+        {
+          "q": "What is the Part B late enrollment penalty?",
+          "a": "The Part B late enrollment penalty adds 10% to your Part B premium for each full 12-month period you could have had Part B but did not enroll. The 2026 Part B premium is $202.90 per month, and the penalty is added on top for as long as you have Part B. You can avoid it by enrolling on time or keeping qualifying employer coverage.",
+          "links": [
+            {
+              "href": "/blog/medicare-late-enrollment-penalties.html",
+              "label": "Medicare Late Enrollment Penalties"
+            },
+            {
+              "href": "/blog/can-i-delay-medicare-part-b.html",
+              "label": "Can I Delay Medicare Part B?"
+            }
+          ],
+          "tools": [
+            "penalty"
+          ]
+        },
+        {
+          "q": "What is the Part D late enrollment penalty?",
+          "a": "The Part D late enrollment penalty applies if you go 63 or more days without creditable drug coverage after your Initial Enrollment Period. It adds 1% of the national base premium ($38.99 in 2026) for each full month you went without coverage, and it is added to your Part D premium permanently. Keeping creditable coverage or enrolling on time avoids it.",
+          "links": [
+            {
+              "href": "/blog/medicare-late-enrollment-penalties.html",
+              "label": "Medicare Late Enrollment Penalties"
+            }
+          ],
+          "tools": [
+            "penalty"
+          ]
+        },
+        {
+          "q": "Is Medicare enrollment automatic?",
+          "a": "It depends. If you already receive Social Security or Railroad Retirement benefits before turning 65, you are usually enrolled in Part A and Part B automatically, with your card arriving before your birthday. If you are not yet drawing those benefits, enrollment is not automatic and you must sign up yourself during your Initial Enrollment Period.",
+          "links": [
+            {
+              "href": "/blog/initial-enrollment-period-explained.html",
+              "label": "Initial Enrollment Period Explained"
+            },
+            {
+              "href": "/blog/medicare-timeline-explained.html",
+              "label": "Medicare Timeline Explained"
+            }
+          ],
+          "tools": [
+            "eligibility",
+            "timeline"
+          ]
+        },
+        {
+          "q": "What is creditable coverage?",
+          "a": "Creditable coverage is health or drug coverage that is at least as good as Medicare's standard benefit. For Part D, having creditable drug coverage (such as from a current employer plan) means you can delay Part D without a late penalty. Your plan must tell you each year whether it is creditable, so keep those notices in case you need to prove it.",
+          "links": [
+            {
+              "href": "/blog/medicare-late-enrollment-penalties.html",
+              "label": "Medicare Late Enrollment Penalties"
+            },
+            {
+              "href": "/blog/medicare-and-employer-coverage-after-65.html",
+              "label": "Medicare and Employer Coverage After 65"
+            }
+          ],
+          "tools": [
+            "penalty"
+          ]
+        },
+        {
+          "q": "What is the 8-month Special Enrollment Period after employer coverage ends?",
+          "a": "When your active employer coverage (or your spouse's) ends, you get an 8-month Special Enrollment Period to sign up for Part B without a late penalty. This window starts the month after the employment or coverage ends, whichever comes first. COBRA and retiree coverage do not extend it, so enroll promptly to avoid a gap and lifelong penalties.",
+          "links": [
+            {
+              "href": "/blog/special-enrollment-period-explained.html",
+              "label": "Special Enrollment Period Explained"
+            },
+            {
+              "href": "/blog/medicare-and-employer-coverage-after-65.html",
+              "label": "Medicare and Employer Coverage After 65"
+            }
+          ],
+          "tools": [
+            "eligibility",
+            "timeline",
+            "penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "costs",
+      "icon": "fa-sack-dollar",
+      "title": "Costs & Premiums",
+      "blurb": "Premiums, deductibles, IRMAA, and savings help.",
+      "faqs": [
+        {
+          "q": "How much does Medicare cost in 2026?",
+          "a": "Most people pay nothing for Part A and $202.90 a month for Part B in 2026. On top of that you may have a Part D drug plan (base premium $38.99), plus deductibles and coinsurance. Higher earners pay IRMAA surcharges, and many people add a Medigap or Medicare Advantage plan, so total cost varies widely by the coverage you choose.",
+          "links": [
+            {
+              "href": "/blog/how-much-does-medicare-cost.html",
+              "label": "How Much Does Medicare Cost?"
+            }
+          ],
+          "tools": [
+            "cost-estimator"
+          ]
+        },
+        {
+          "q": "How much is the Medicare Part B premium in 2026?",
+          "a": "The standard Medicare Part B premium for 2026 is $202.90 per month. Most people pay this amount, and it is usually deducted automatically from your Social Security check. If your income is above $109,000 (single) or $218,000 (joint), you pay a higher premium because of the IRMAA surcharge.",
+          "links": [
+            {
+              "href": "/blog/medicare-part-b-premiums-2026.html",
+              "label": "Medicare Part B Premiums in 2026"
+            }
+          ],
+          "tools": [
+            "cost-estimator",
+            "irmaa"
+          ]
+        },
+        {
+          "q": "What is the Medicare Part B deductible?",
+          "a": "The Part B deductible is $283 in 2026. You pay this amount out of pocket for covered outpatient services before Medicare begins to pay its share. After you meet the deductible, you typically pay 20% coinsurance for most doctor visits and outpatient care, and Original Medicare has no annual out-of-pocket maximum.",
+          "links": [
+            {
+              "href": "/blog/what-is-the-medicare-part-b-deductible.html",
+              "label": "What Is the Medicare Part B Deductible?"
+            }
+          ],
+          "tools": [
+            "cost-estimator"
+          ]
+        },
+        {
+          "q": "What is the Medicare Part A deductible?",
+          "a": "The Part A hospital deductible is $1,736 per benefit period in 2026. You pay this when you are admitted as an inpatient, and it covers your first 60 days in the hospital. A benefit period resets if you go 60 days without inpatient care, so you could owe it more than once in a year.",
+          "links": [
+            {
+              "href": "/blog/how-much-does-medicare-cost.html",
+              "label": "How Much Does Medicare Cost?"
+            }
+          ],
+          "tools": [
+            "cost-estimator"
+          ]
+        },
+        {
+          "q": "Is Medicare Part A really free?",
+          "a": "For most people Part A has a $0 monthly premium, because they or their spouse paid Medicare taxes for at least 10 years (40 quarters) while working. Part A is not entirely free, though: if you are hospitalized you still owe the $1,736 deductible and later daily coinsurance. People without enough work history may have to pay a Part A premium.",
+          "links": [
+            {
+              "href": "/blog/how-much-does-medicare-cost.html",
+              "label": "How Much Does Medicare Cost?"
+            }
+          ]
+        },
+        {
+          "q": "What is the Medicare Part D premium?",
+          "a": "The national base Part D premium is $38.99 a month in 2026, but actual prices vary by plan and region. Your real premium depends on which drug plan you choose, and higher earners pay an extra IRMAA amount on top. Insulin is capped at $35 a month and recommended adult vaccines are $0 under every Part D plan.",
+          "links": [
+            {
+              "href": "/prescription-drug-plans.html",
+              "label": "Prescription Drug Plans"
+            }
+          ],
+          "tools": [
+            "drug-cost",
+            "formulary"
+          ]
+        },
+        {
+          "q": "What is IRMAA?",
+          "a": "IRMAA stands for Income-Related Monthly Adjustment Amount. It is an extra charge added to your Part B and Part D premiums if your income is above certain limits. In 2026 it starts above $109,000 for single filers and $218,000 for joint filers. The higher your income, the larger the surcharge you pay on top of the standard premiums.",
+          "links": [
+            {
+              "href": "/blog/irmaa-brackets-explained.html",
+              "label": "IRMAA Brackets Explained"
+            }
+          ],
+          "tools": [
+            "irmaa"
+          ]
+        },
+        {
+          "q": "How is IRMAA calculated?",
+          "a": "IRMAA is based on your modified adjusted gross income (MAGI) from your tax return two years earlier, so 2026 surcharges use your 2024 income. Social Security checks that income against a set of brackets and adds a fixed surcharge to both Part B and Part D once you cross the first threshold of $109,000 single or $218,000 joint.",
+          "links": [
+            {
+              "href": "/blog/irmaa-brackets-explained.html",
+              "label": "IRMAA Brackets Explained"
+            }
+          ],
+          "tools": [
+            "irmaa"
+          ]
+        },
+        {
+          "q": "Can I appeal IRMAA?",
+          "a": "Yes. If you have had a major life-changing event such as retirement, marriage, divorce, or the death of a spouse that lowered your income, you can ask Social Security to reconsider your IRMAA. You file Form SSA-44 with proof of the change. If approved, Social Security uses your more recent income instead of the return from two years ago.",
+          "links": [
+            {
+              "href": "/blog/irmaa-brackets-explained.html",
+              "label": "IRMAA Brackets Explained"
+            }
+          ],
+          "tools": [
+            "irmaa"
+          ]
+        },
+        {
+          "q": "Does Medicare have an out-of-pocket maximum?",
+          "a": "Original Medicare (Part A and Part B) has no annual out-of-pocket maximum, so your 20% coinsurance can add up with no ceiling. That is why many people add a Medigap policy or choose a Medicare Advantage plan, which does include a yearly out-of-pocket cap. Part D drug coverage also has its own separate $2,000 cap.",
+          "links": [
+            {
+              "href": "/blog/how-much-does-medicare-cost.html",
+              "label": "How Much Does Medicare Cost?"
+            },
+            {
+              "href": "/medicare-supplement.html",
+              "label": "Medicare Supplement Plans"
+            }
+          ],
+          "tools": [
+            "cost-estimator"
+          ]
+        },
+        {
+          "q": "What is the $2,000 drug cap?",
+          "a": "Starting in 2025, Part D includes a hard cap on what you pay out of pocket for covered prescription drugs, set at $2,000 a year in 2026. Once your out-of-pocket drug spending reaches that limit, you pay nothing more for covered drugs the rest of the year. This change replaced the old coverage gap, often called the donut hole, which no longer exists.",
+          "links": [
+            {
+              "href": "/blog/the-2000-drug-cap-explained.html",
+              "label": "The $2,000 Drug Cap Explained"
+            }
+          ],
+          "tools": [
+            "drug-cost"
+          ]
+        },
+        {
+          "q": "What is Extra Help?",
+          "a": "Extra Help is a federal program that lowers your Part D drug costs if you have limited income and resources. With full Extra Help in 2026, you pay no more than $12.65 for each covered drug, plus reduced or no premium and deductible. Resource limits are $16,590 for an individual and $33,100 for a married couple. You apply through Social Security.",
+          "links": [
+            {
+              "href": "/blog/extra-help-explained.html",
+              "label": "Extra Help Explained"
+            }
+          ],
+          "tools": [
+            "drug-cost"
+          ]
+        },
+        {
+          "q": "What are the Medicare Savings Programs?",
+          "a": "Medicare Savings Programs are state-run programs that help pay your Medicare premiums and sometimes deductibles and coinsurance. The three main ones are QMB, SLMB, and QI, each with its own monthly income limit and a shared resource limit of $9,950 single or $14,910 married in 2026. QMB even protects you from balance billing on covered services.",
+          "links": [
+            {
+              "href": "/blog/medicare-savings-programs.html",
+              "label": "Medicare Savings Programs"
+            }
+          ]
+        },
+        {
+          "q": "What does Medicare not cover?",
+          "a": "Original Medicare generally does not cover routine dental, vision, or hearing care, long-term custodial care, or most care outside the United States. It also will not cover drugs prescribed purely for weight loss, though some of those drugs are covered for approved uses like diabetes or cardiovascular risk. Standalone or Advantage plans can add some of these benefits.",
+          "links": [
+            {
+              "href": "/dental-vision-hearing.html",
+              "label": "Dental, Vision, and Hearing"
+            },
+            {
+              "href": "/medicare-advantage.html",
+              "label": "Medicare Advantage"
+            }
+          ]
+        },
+        {
+          "q": "How can I lower my Medicare costs?",
+          "a": "You can lower costs by applying for Extra Help or a Medicare Savings Program if your income qualifies, comparing Part D plans each year so your drugs are covered well, and appealing IRMAA after a life-changing event. Choosing the right Medigap or Medicare Advantage plan also caps your exposure. A licensed agent can review your situation at no cost.",
+          "links": [
+            {
+              "href": "/blog/medicare-savings-programs.html",
+              "label": "Medicare Savings Programs"
+            },
+            {
+              "href": "/blog/extra-help-explained.html",
+              "label": "Extra Help Explained"
+            }
+          ],
+          "tools": [
+            "cost-estimator",
+            "drug-cost"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "prescription-drugs",
+      "icon": "fa-pills",
+      "title": "Prescription Drugs",
+      "blurb": "Part D, coverage rules, and what your drugs cost.",
+      "faqs": [
+        {
+          "q": "Does Medicare cover Ozempic?",
+          "a": "Yes, Medicare Part D plans generally cover Ozempic when it is prescribed to treat type 2 diabetes, which is its FDA-approved use. Medicare cannot cover Ozempic when it is prescribed purely for weight loss. Coverage details, prior authorization rules, and your cost depend on your specific Part D plan's formulary, so it is worth checking yours directly.",
+          "links": [
+            {
+              "href": "/blog/does-medicare-cover-ozempic.html",
+              "label": "Does Medicare Cover Ozempic?"
+            }
+          ],
+          "tools": [
+            "formulary",
+            "drug-cost"
+          ]
+        },
+        {
+          "q": "Does Medicare cover Eliquis?",
+          "a": "Yes, Eliquis is a common blood thinner that is widely covered by Medicare Part D plans, though it sits on different tiers depending on the plan. Your monthly cost varies by plan, and prior authorization is not usually required. Because formularies and pricing differ, comparing plans can reveal meaningful savings on a drug taken long term like Eliquis.",
+          "links": [
+            {
+              "href": "/blog/does-medicare-cover-eliquis.html",
+              "label": "Does Medicare Cover Eliquis?"
+            }
+          ],
+          "tools": [
+            "formulary",
+            "drug-cost"
+          ]
+        },
+        {
+          "q": "Does Medicare cover Jardiance?",
+          "a": "Yes, most Medicare Part D plans cover Jardiance for type 2 diabetes and for some heart and kidney conditions it is approved to treat. Some plans may require prior authorization or step therapy first. Your out-of-pocket cost depends on the plan's formulary tier, so checking your plan or comparing options helps you find the best price.",
+          "links": [
+            {
+              "href": "/blog/does-medicare-cover-jardiance.html",
+              "label": "Does Medicare Cover Jardiance?"
+            }
+          ],
+          "tools": [
+            "formulary",
+            "drug-cost"
+          ]
+        },
+        {
+          "q": "Does Medicare cover insulin?",
+          "a": "Yes. Medicare Part D and Medicare Advantage drug plans cover insulin, and starting in 2026 your cost for a one-month supply of each covered insulin is capped at $35. There is no deductible applied to insulin. Insulin used with a traditional pump may instead be covered under Part B, also at the $35 monthly cap.",
+          "links": [
+            {
+              "href": "/blog/does-medicare-cover-insulin.html",
+              "label": "Does Medicare Cover Insulin?"
+            },
+            {
+              "href": "/blog/medicare-35-dollar-insulin-cap.html",
+              "label": "The $35 Insulin Cap Explained"
+            }
+          ],
+          "tools": [
+            "drug-cost"
+          ]
+        },
+        {
+          "q": "What is the $35 insulin cap?",
+          "a": "The $35 insulin cap limits what you pay for a one-month supply of each covered insulin product to no more than $35. It applies to insulin covered under Part D drug plans and to insulin used with a traditional pump under Part B. The Part D deductible does not apply, so you pay $35 even before meeting it.",
+          "links": [
+            {
+              "href": "/blog/medicare-35-dollar-insulin-cap.html",
+              "label": "The $35 Insulin Cap Explained"
+            },
+            {
+              "href": "/blog/does-medicare-cover-insulin.html",
+              "label": "Does Medicare Cover Insulin?"
+            }
+          ],
+          "tools": [
+            "drug-cost"
+          ]
+        },
+        {
+          "q": "What is prior authorization?",
+          "a": "Prior authorization is a rule that requires your plan to approve a drug before it will cover it. Your doctor must show the medication is medically necessary, often because it is expensive or has safety considerations. If the request is approved, the plan pays its share as usual. If it is denied, you can ask your doctor to appeal the decision.",
+          "links": [
+            {
+              "href": "/blog/what-is-prior-authorization.html",
+              "label": "What Is Prior Authorization?"
+            }
+          ],
+          "tools": [
+            "formulary"
+          ]
+        },
+        {
+          "q": "What is step therapy?",
+          "a": "Step therapy is a plan rule that asks you to try a lower-cost or preferred drug first before it will cover a more expensive alternative. If the first drug does not work or causes side effects, you can move up to the other medication. Your doctor can request an exception if stepping through is not appropriate for your health.",
+          "links": [
+            {
+              "href": "/blog/what-is-step-therapy.html",
+              "label": "What Is Step Therapy?"
+            }
+          ],
+          "tools": [
+            "formulary"
+          ]
+        },
+        {
+          "q": "What is a formulary?",
+          "a": "A formulary is the list of prescription drugs a Part D or Medicare Advantage drug plan covers. Each plan sets its own formulary, organizes drugs into tiers, and may apply rules like prior authorization or step therapy. Because formularies differ from plan to plan, checking that your medications are on a plan's list is one of the most important steps when choosing coverage.",
+          "links": [
+            {
+              "href": "/prescription-drug-plans.html",
+              "label": "Prescription Drug Plans"
+            }
+          ],
+          "tools": [
+            "formulary"
+          ]
+        },
+        {
+          "q": "What are drug tiers?",
+          "a": "Drug tiers are the cost levels a Part D plan uses to group covered medications. Lower tiers usually hold generic and preferred drugs with smaller copays, while higher tiers hold brand-name and specialty drugs that cost more. The same medication can sit on different tiers in different plans, which is why your price can vary a lot depending on the plan you choose.",
+          "links": [
+            {
+              "href": "/prescription-drug-plans.html",
+              "label": "Prescription Drug Plans"
+            }
+          ],
+          "tools": [
+            "formulary",
+            "drug-cost"
+          ]
+        },
+        {
+          "q": "What is the $2,000 Part D out-of-pocket cap?",
+          "a": "Starting in 2025 and continuing in 2026, Part D limits what you pay out of pocket for covered prescription drugs to $2,000 per year. Once your spending reaches that amount, you pay nothing more for covered drugs for the rest of the year. This cap replaced the old coverage gap, often called the donut hole, which no longer exists.",
+          "links": [
+            {
+              "href": "/blog/the-2000-drug-cap-explained.html",
+              "label": "The $2,000 Drug Cap Explained"
+            },
+            {
+              "href": "/blog/new-part-d-rules.html",
+              "label": "New Part D Rules"
+            }
+          ],
+          "tools": [
+            "drug-cost",
+            "cost-estimator"
+          ]
+        },
+        {
+          "q": "Does Medicare cover weight-loss drugs?",
+          "a": "No. By law, Medicare cannot cover drugs prescribed only for weight loss. However, some of these medications are covered when prescribed for a different approved condition, such as Wegovy to reduce cardiovascular risk, Zepbound for obstructive sleep apnea, or Ozempic and Mounjaro for type 2 diabetes. Coverage hinges on the diagnosis your doctor documents.",
+          "links": [
+            {
+              "href": "/blog/does-medicare-cover-wegovy.html",
+              "label": "Does Medicare Cover Wegovy?"
+            },
+            {
+              "href": "/blog/does-medicare-cover-mounjaro.html",
+              "label": "Does Medicare Cover Mounjaro?"
+            }
+          ],
+          "tools": [
+            "formulary"
+          ]
+        },
+        {
+          "q": "Does Medicare cover Wegovy?",
+          "a": "Medicare cannot cover Wegovy when it is prescribed solely for weight loss. It can be covered by Part D plans when prescribed to reduce the risk of heart attack and stroke in adults with heart disease who are overweight or obese, which is an FDA-approved use. Coverage and prior authorization rules depend on your specific plan.",
+          "links": [
+            {
+              "href": "/blog/does-medicare-cover-wegovy.html",
+              "label": "Does Medicare Cover Wegovy?"
+            }
+          ],
+          "tools": [
+            "formulary",
+            "drug-cost"
+          ]
+        },
+        {
+          "q": "Does Medicare cover Mounjaro?",
+          "a": "Yes, Medicare Part D plans generally cover Mounjaro when it is prescribed to treat type 2 diabetes, which is its FDA-approved use. Medicare cannot cover it when prescribed only for weight loss. Many plans require prior authorization, and your cost depends on the plan's formulary, so it pays to confirm coverage before filling it.",
+          "links": [
+            {
+              "href": "/blog/does-medicare-cover-mounjaro.html",
+              "label": "Does Medicare Cover Mounjaro?"
+            }
+          ],
+          "tools": [
+            "formulary",
+            "drug-cost"
+          ]
+        },
+        {
+          "q": "Does Medicare cover Humira?",
+          "a": "Yes, Humira is generally covered by Medicare Part D plans, typically on a specialty tier because it is a high-cost biologic. Plans often require prior authorization or step therapy before approving it. Thanks to the $2,000 annual out-of-pocket cap, your yearly cost for a drug like Humira is far more predictable than in past years.",
+          "links": [
+            {
+              "href": "/blog/does-medicare-cover-humira.html",
+              "label": "Does Medicare Cover Humira?"
+            },
+            {
+              "href": "/blog/the-2000-drug-cap-explained.html",
+              "label": "The $2,000 Drug Cap Explained"
+            }
+          ],
+          "tools": [
+            "formulary",
+            "drug-cost"
+          ]
+        },
+        {
+          "q": "What is the Medicare Prescription Payment Plan?",
+          "a": "The Medicare Prescription Payment Plan lets you spread your out-of-pocket Part D drug costs across the year in monthly payments instead of paying all at once at the pharmacy. It is free to join, and the total you pay does not change. It can help if you face a large bill early in the year, especially for high-cost medications.",
+          "links": [
+            {
+              "href": "/blog/new-part-d-rules.html",
+              "label": "New Part D Rules"
+            },
+            {
+              "href": "/blog/the-2000-drug-cap-explained.html",
+              "label": "The $2,000 Drug Cap Explained"
+            }
+          ],
+          "tools": [
+            "cost-estimator"
+          ]
+        },
+        {
+          "q": "Do I need Part D if I do not take any prescriptions?",
+          "a": "Even with no current prescriptions, enrolling in Part D when you are first eligible is usually wise. If you go without creditable drug coverage and sign up later, you pay a permanent late penalty of 1% of the base premium for each month you delayed. A low-cost plan now protects you from that penalty and covers you if your needs change.",
+          "links": [
+            {
+              "href": "/blog/new-part-d-rules.html",
+              "label": "New Part D Rules"
+            },
+            {
+              "href": "/prescription-drug-plans.html",
+              "label": "Prescription Drug Plans"
+            }
+          ],
+          "tools": [
+            "penalty"
+          ]
+        },
+        {
+          "q": "Does Part D cover vaccines?",
+          "a": "Yes. Part D covers vaccines recommended for adults by the CDC's advisory committee, such as the shingles and RSV vaccines, at $0 cost to you with no deductible. Some vaccines, including flu, COVID-19, and pneumococcal, are instead covered under Part B at no cost. Between the two, your recommended adult vaccines are generally free.",
+          "links": [
+            {
+              "href": "/blog/new-part-d-rules.html",
+              "label": "New Part D Rules"
+            },
+            {
+              "href": "/prescription-drug-plans.html",
+              "label": "Prescription Drug Plans"
+            }
+          ]
+        },
+        {
+          "q": "What is a coverage exception or appeal?",
+          "a": "A coverage exception is a request asking your plan to cover a drug it normally would not, or to waive a rule like step therapy or a tier restriction. Your doctor provides a statement explaining why it is medically necessary. If the plan denies your request, you have the right to appeal through several levels, and many appeals succeed.",
+          "links": [
+            {
+              "href": "/blog/what-is-prior-authorization.html",
+              "label": "What Is Prior Authorization?"
+            },
+            {
+              "href": "/blog/what-is-step-therapy.html",
+              "label": "What Is Step Therapy?"
+            }
+          ],
+          "tools": [
+            "formulary"
+          ]
+        },
+        {
+          "q": "What is the difference between Part B drugs and Part D drugs?",
+          "a": "Part B covers a limited set of drugs given in a clinical setting, such as infusions, injections administered by a provider, and some supplies. Part D covers the prescription drugs you fill at a pharmacy and take yourself at home. A few medications, like certain insulins used with a pump, can fall under either depending on how they are used.",
+          "links": [
+            {
+              "href": "/blog/does-medicare-cover-insulin.html",
+              "label": "Does Medicare Cover Insulin?"
+            },
+            {
+              "href": "/prescription-drug-plans.html",
+              "label": "Prescription Drug Plans"
+            }
+          ],
+          "tools": [
+            "drug-cost"
+          ]
+        },
+        {
+          "q": "How do I find a plan that covers my prescriptions?",
+          "a": "Start by making a list of your medications and doses, then compare each plan's formulary to confirm your drugs are covered and on an affordable tier. A cost estimator can total your expected yearly spending across premiums and copays. Because the right plan depends on your exact drugs, a licensed agent can help you compare options side by side.",
+          "links": [
+            {
+              "href": "/prescription-drug-plans.html",
+              "label": "Prescription Drug Plans"
+            },
+            {
+              "href": "/blog/extra-help-explained.html",
+              "label": "Extra Help Explained"
+            }
+          ],
+          "tools": [
+            "formulary",
+            "drug-cost",
+            "cost-estimator"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "medicare-advantage",
+      "icon": "fa-hospital",
+      "title": "Medicare Advantage",
+      "blurb": "How Advantage (Part C) plans work and who they fit.",
+      "faqs": [
+        {
+          "q": "What is Medicare Advantage?",
+          "a": "Medicare Advantage, also called Part C, is a private plan that bundles your Medicare benefits into one plan approved by Medicare. It replaces how you get Original Medicare (Parts A and B), and most plans also include prescription drug coverage and extra benefits. You still have Medicare, but the plan administers your care, usually through a provider network.",
+          "links": [
+            {
+              "href": "/medicare-advantage.html",
+              "label": "Medicare Advantage Overview"
+            },
+            {
+              "href": "/blog/which-medicare-plan-is-right-for-me.html",
+              "label": "Which Medicare Plan Is Right for Me?"
+            }
+          ],
+          "tools": [
+            "quiz"
+          ]
+        },
+        {
+          "q": "What is the difference between Medicare Advantage and Original Medicare?",
+          "a": "Original Medicare (Parts A and B) lets you see any provider nationwide that accepts Medicare, has no out-of-pocket maximum, and does not include drug coverage. Medicare Advantage bundles your coverage into one private plan that usually uses a provider network, caps your annual out-of-pocket costs, and often adds drug and extra benefits. Each path has trade-offs around freedom, cost, and convenience.",
+          "links": [
+            {
+              "href": "/blog/medicare-advantage-vs-medigap.html",
+              "label": "Medicare Advantage vs. Medigap"
+            },
+            {
+              "href": "/blog/which-medicare-plan-is-right-for-me.html",
+              "label": "Which Medicare Plan Is Right for Me?"
+            }
+          ],
+          "tools": [
+            "quiz",
+            "cost-estimator"
+          ]
+        },
+        {
+          "q": "Does Medicare Advantage cover prescription drugs?",
+          "a": "Most Medicare Advantage plans include prescription drug coverage built in, so you do not need a separate Part D plan. These are often called MAPD plans. A few Medicare Advantage plans do not include drugs, so always confirm before enrolling. In 2026, covered drug spending is capped at $2,000 per year, and insulin is capped at $35 per month.",
+          "links": [
+            {
+              "href": "/medicare-advantage.html",
+              "label": "Medicare Advantage Overview"
+            },
+            {
+              "href": "/blog/the-2000-drug-cap-explained.html",
+              "label": "The $2,000 Drug Cap Explained"
+            }
+          ],
+          "tools": [
+            "drug-cost",
+            "formulary"
+          ]
+        },
+        {
+          "q": "What are the pros and cons of Medicare Advantage?",
+          "a": "Pros include lower or $0 monthly premiums, an annual out-of-pocket maximum, bundled drug coverage, and extra benefits like dental and vision. Cons include provider networks that limit which doctors you can use, referral and prior authorization rules, and costs that vary based on the care you receive. The right choice depends on your health, budget, and preferred providers.",
+          "links": [
+            {
+              "href": "/blog/pros-and-cons-of-medicare-advantage.html",
+              "label": "Pros and Cons of Medicare Advantage"
+            },
+            {
+              "href": "/blog/which-medicare-plan-is-right-for-me.html",
+              "label": "Which Medicare Plan Is Right for Me?"
+            }
+          ],
+          "tools": [
+            "quiz",
+            "cost-estimator"
+          ]
+        },
+        {
+          "q": "Does Medicare Advantage have provider networks?",
+          "a": "Yes. Most Medicare Advantage plans use provider networks, and the type of plan affects your flexibility. HMO plans generally require you to use in-network providers and get referrals, while PPO plans let you go out of network at a higher cost. Before enrolling, confirm that your doctors, hospitals, and pharmacies are in the plan's network.",
+          "links": [
+            {
+              "href": "/blog/pros-and-cons-of-medicare-advantage.html",
+              "label": "Pros and Cons of Medicare Advantage"
+            },
+            {
+              "href": "/medicare-advantage.html",
+              "label": "Medicare Advantage Overview"
+            }
+          ],
+          "tools": [
+            "quiz"
+          ]
+        },
+        {
+          "q": "Do I still pay the Part B premium with Medicare Advantage?",
+          "a": "Yes. To stay enrolled in Medicare Advantage you must keep paying your Part B premium, which is $202.90 per month in 2026. The plan itself may charge little or no additional premium, but the Part B premium is separate and still required. Some plans help offset this through a Part B premium reduction benefit.",
+          "links": [
+            {
+              "href": "/blog/medicare-part-b-premiums-2026.html",
+              "label": "Medicare Part B Premiums 2026"
+            },
+            {
+              "href": "/blog/how-much-does-medicare-cost.html",
+              "label": "How Much Does Medicare Cost?"
+            }
+          ],
+          "tools": [
+            "cost-estimator"
+          ]
+        },
+        {
+          "q": "Does Medicare Advantage have an out-of-pocket maximum?",
+          "a": "Yes. Every Medicare Advantage plan must cap your annual out-of-pocket costs for covered Part A and Part B services, which protects you from unlimited spending. Once you reach that limit, the plan pays 100% of covered care for the rest of the year. This is a key advantage over Original Medicare, which has no out-of-pocket maximum.",
+          "links": [
+            {
+              "href": "/blog/medicare-advantage-vs-medigap.html",
+              "label": "Medicare Advantage vs. Medigap"
+            },
+            {
+              "href": "/blog/how-much-does-medicare-cost.html",
+              "label": "How Much Does Medicare Cost?"
+            }
+          ],
+          "tools": [
+            "cost-estimator"
+          ]
+        },
+        {
+          "q": "Can I switch from Medicare Advantage back to Original Medicare?",
+          "a": "Yes. You can switch during the Annual Enrollment Period (Oct 15 to Dec 7) or the Medicare Advantage Open Enrollment Period (Jan 1 to Mar 31). When you return to Original Medicare, you may want a Part D drug plan and a Medigap policy, but Medigap can require medical underwriting outside guaranteed-issue windows, so plan carefully.",
+          "links": [
+            {
+              "href": "/blog/annual-enrollment-period-explained.html",
+              "label": "Annual Enrollment Period Explained"
+            },
+            {
+              "href": "/blog/medicare-advantage-vs-medigap.html",
+              "label": "Medicare Advantage vs. Medigap"
+            }
+          ],
+          "tools": [
+            "timeline"
+          ]
+        },
+        {
+          "q": "What is a D-SNP?",
+          "a": "A D-SNP, or Dual Eligible Special Needs Plan, is a type of Medicare Advantage plan built for people who have both Medicare and Medicaid. These plans coordinate both programs, often charge $0 premiums, and add extra benefits tailored to dual-eligible members. To qualify, you must have Medicare and meet your state's Medicaid eligibility rules.",
+          "links": [
+            {
+              "href": "/blog/d-snp-plans-explained.html",
+              "label": "D-SNP Plans Explained"
+            },
+            {
+              "href": "/dual-eligible.html",
+              "label": "Dual Eligible Coverage"
+            }
+          ],
+          "tools": [
+            "eligibility"
+          ]
+        },
+        {
+          "q": "What extra benefits do Medicare Advantage plans offer?",
+          "a": "Many Medicare Advantage plans add benefits Original Medicare does not cover, such as dental, vision, hearing aids, and fitness memberships. Some plans also include over-the-counter allowances, transportation to appointments, and telehealth. Dual-eligible plans often offer even richer extras, like grocery or utility allowances. Benefits vary widely by plan, so compare options before enrolling.",
+          "links": [
+            {
+              "href": "/blog/extra-benefits-for-dual-eligible-beneficiaries.html",
+              "label": "Extra Benefits for Dual-Eligible Beneficiaries"
+            },
+            {
+              "href": "/dental-vision-hearing.html",
+              "label": "Dental, Vision, and Hearing"
+            }
+          ],
+          "tools": [
+            "quiz"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "medigap",
+      "icon": "fa-shield-halved",
+      "title": "Medigap",
+      "blurb": "Medicare Supplement plans, compared.",
+      "faqs": [
+        {
+          "q": "What is Medigap?",
+          "a": "Medigap, also called Medicare Supplement insurance, is a private policy that pairs with Original Medicare (Parts A and B) to help pay your share of covered costs, such as deductibles, copays, and the 20% coinsurance. Plans are standardized and sold by letter (like Plan G or Plan N), so the same lettered plan offers the same core benefits no matter the carrier. Medigap does not replace Medicare; it fills the gaps.",
+          "links": [
+            {
+              "href": "/medicare-supplement.html",
+              "label": "Medicare Supplement Overview"
+            },
+            {
+              "href": "/blog/which-medicare-plan-is-right-for-me.html",
+              "label": "Which Medicare Plan Is Right for Me?"
+            }
+          ],
+          "tools": [
+            "quiz"
+          ]
+        },
+        {
+          "q": "What is the difference between Medigap and Medicare Advantage?",
+          "a": "Medigap works alongside Original Medicare and pays your share of costs, letting you see any provider that accepts Medicare with no networks or referrals. Medicare Advantage replaces Original Medicare with an all-in-one private plan that usually uses networks and may include drug and extra benefits. You cannot have both at the same time, so most people choose one approach based on flexibility versus lower upfront premiums.",
+          "links": [
+            {
+              "href": "/blog/medicare-advantage-vs-medigap.html",
+              "label": "Medicare Advantage vs. Medigap"
+            },
+            {
+              "href": "/blog/which-medicare-plan-is-right-for-me.html",
+              "label": "Which Medicare Plan Is Right for Me?"
+            }
+          ],
+          "tools": [
+            "quiz"
+          ]
+        },
+        {
+          "q": "What is Medicare Supplement Plan G?",
+          "a": "Plan G is one of the most popular Medigap plans because it covers nearly all of your out-of-pocket costs under Original Medicare. After you pay the annual Part B deductible of $283, Plan G picks up the Part A and B coinsurance, hospital costs, and excess charges, leaving you with very predictable spending. It does not cover the Part B deductible itself, which is the only major gap.",
+          "links": [
+            {
+              "href": "/blog/what-is-medicare-supplement-plan-g.html",
+              "label": "What Is Medicare Supplement Plan G?"
+            }
+          ],
+          "tools": [
+            "cost-estimator"
+          ]
+        },
+        {
+          "q": "What is Medicare Supplement Plan N?",
+          "a": "Plan N offers strong coverage with a lower premium than Plan G in exchange for a few out-of-pocket items. After the Part B deductible of $283, you may pay small copays of up to $20 for office visits and up to $50 for emergency room trips, and Plan N does not cover Part B excess charges. It can be a good fit if you want lower monthly costs and do not mind modest copays.",
+          "links": [
+            {
+              "href": "/blog/what-is-medicare-supplement-plan-n.html",
+              "label": "What Is Medicare Supplement Plan N?"
+            }
+          ],
+          "tools": [
+            "cost-estimator"
+          ]
+        },
+        {
+          "q": "Does Medigap cover prescription drugs?",
+          "a": "No. Medigap policies sold today do not include prescription drug coverage. To get drug coverage while you have Medigap, you add a standalone Medicare Part D plan, which covers most outpatient medications and caps your annual out-of-pocket drug spending at $2,000 in 2026. Pairing Medigap with a Part D plan gives you broad medical and drug protection.",
+          "links": [
+            {
+              "href": "/prescription-drug-plans.html",
+              "label": "Prescription Drug Plans"
+            },
+            {
+              "href": "/blog/the-2000-drug-cap-explained.html",
+              "label": "The $2,000 Drug Cap Explained"
+            }
+          ],
+          "tools": [
+            "drug-cost",
+            "formulary"
+          ]
+        },
+        {
+          "q": "When is the best time to buy a Medigap policy?",
+          "a": "The best time is during your Medigap Open Enrollment Period, the six months that begin when you are 65 or older and enrolled in Part B. During this window you have guaranteed-issue rights, meaning you cannot be turned down or charged more for health reasons. Buying outside this period often means medical underwriting, so enrolling on time protects both your access and your price.",
+          "links": [
+            {
+              "href": "/medicare-supplement.html",
+              "label": "Medicare Supplement Overview"
+            },
+            {
+              "href": "/turning-65.html",
+              "label": "Turning 65"
+            }
+          ],
+          "tools": [
+            "timeline"
+          ]
+        },
+        {
+          "q": "Can I be denied a Medigap policy?",
+          "a": "Yes, outside of protected periods. During your six-month Medigap Open Enrollment Period, or when you have certain guaranteed-issue rights, insurers must sell you a policy regardless of health. If you apply later, carriers can use medical underwriting to deny coverage or charge more based on your health history. That is why enrolling during your open enrollment window is so important.",
+          "links": [
+            {
+              "href": "/medicare-supplement.html",
+              "label": "Medicare Supplement Overview"
+            },
+            {
+              "href": "/blog/which-medicare-plan-is-right-for-me.html",
+              "label": "Which Medicare Plan Is Right for Me?"
+            }
+          ],
+          "tools": [
+            "quiz"
+          ]
+        },
+        {
+          "q": "Does Medigap have provider networks?",
+          "a": "No. Because Medigap works with Original Medicare, you can see any doctor, specialist, or hospital in the country that accepts Medicare, with no networks and no referrals. This nationwide freedom is one of the main reasons people choose a supplement plan. As long as a provider accepts Medicare, your Medigap policy helps pay its share of the covered costs.",
+          "links": [
+            {
+              "href": "/blog/medicare-advantage-vs-medigap.html",
+              "label": "Medicare Advantage vs. Medigap"
+            }
+          ]
+        },
+        {
+          "q": "How much does Medigap cost?",
+          "a": "Medigap premiums vary by plan letter, your age, location, and the insurance company, often ranging from roughly $100 to $300 or more per month. You also continue paying your Part B premium of $202.90 in 2026. Because the same lettered plan offers identical benefits across carriers, comparing prices is the best way to find value for the coverage you want.",
+          "links": [
+            {
+              "href": "/blog/how-much-does-medicare-cost.html",
+              "label": "How Much Does Medicare Cost?"
+            },
+            {
+              "href": "/medicare-supplement.html",
+              "label": "Medicare Supplement Overview"
+            }
+          ],
+          "tools": [
+            "cost-estimator"
+          ]
+        },
+        {
+          "q": "Can I switch Medigap plans later?",
+          "a": "Yes, you can apply to change Medigap plans at any time of year, but timing matters. Unless you have a guaranteed-issue right, the new insurer can use medical underwriting, so you could be denied or charged more based on your health. If you are healthy and want to lower your premium or change benefits, comparing plans and applying before any health changes gives you the best odds.",
+          "links": [
+            {
+              "href": "/medicare-supplement.html",
+              "label": "Medicare Supplement Overview"
+            },
+            {
+              "href": "/blog/which-medicare-plan-is-right-for-me.html",
+              "label": "Which Medicare Plan Is Right for Me?"
+            }
+          ],
+          "tools": [
+            "cost-estimator",
+            "quiz"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "dual-eligible",
+      "icon": "fa-hand-holding-heart",
+      "title": "Dual Eligible",
+      "blurb": "Medicare + Medicaid, savings programs, D-SNPs.",
+      "faqs": [
+        {
+          "q": "What is dual eligibility?",
+          "a": "Dual eligibility means you qualify for both Medicare and Medicaid at the same time. Medicare is your primary coverage, and Medicaid helps pay costs Medicare leaves behind, such as premiums, deductibles, and coinsurance. People who are dual eligible often pay little or nothing out of pocket and may qualify for special plans built for their needs.",
+          "links": [
+            {
+              "href": "/blog/what-is-dual-eligibility.html",
+              "label": "What Is Dual Eligibility?"
+            },
+            {
+              "href": "/dual-eligible.html",
+              "label": "Dual Eligible Coverage"
+            }
+          ],
+          "tools": [
+            "eligibility"
+          ]
+        },
+        {
+          "q": "What is the difference between Medicare and Medicaid?",
+          "a": "Medicare is a federal health program for people 65 and older or with certain disabilities, regardless of income. Medicaid is a joint federal and state program that helps cover health costs for people with limited income and resources. If you qualify for both, Medicare pays first and Medicaid wraps around it to cover most remaining costs.",
+          "links": [
+            {
+              "href": "/blog/medicare-and-medicaid-together.html",
+              "label": "Medicare and Medicaid Together"
+            },
+            {
+              "href": "/blog/what-is-dual-eligibility.html",
+              "label": "What Is Dual Eligibility?"
+            }
+          ],
+          "tools": [
+            "eligibility"
+          ]
+        },
+        {
+          "q": "What are the Medicare Savings Programs?",
+          "a": "Medicare Savings Programs are state-run programs that help pay your Medicare costs if you have limited income and resources. The three main programs are QMB, SLMB, and QI, each with different income limits and benefits. In 2026 the shared resource limits are $9,950 for an individual and $14,910 for a married couple.",
+          "links": [
+            {
+              "href": "/blog/medicare-savings-programs.html",
+              "label": "Medicare Savings Programs"
+            },
+            {
+              "href": "/blog/qmb-vs-slmb-vs-qi.html",
+              "label": "QMB vs SLMB vs QI"
+            }
+          ],
+          "tools": [
+            "eligibility",
+            "cost-estimator"
+          ]
+        },
+        {
+          "q": "What is the QMB program?",
+          "a": "The Qualified Medicare Beneficiary (QMB) program is the most generous Medicare Savings Program. It pays your Part A and Part B premiums plus your deductibles, coinsurance, and copayments. In 2026 you may qualify with monthly income up to $1,350 single or $1,824 married. Under QMB, providers cannot bill you for covered Medicare costs.",
+          "links": [
+            {
+              "href": "/blog/what-is-the-qmb-program.html",
+              "label": "What Is the QMB Program?"
+            },
+            {
+              "href": "/blog/medicare-savings-programs.html",
+              "label": "Medicare Savings Programs"
+            }
+          ],
+          "tools": [
+            "eligibility"
+          ]
+        },
+        {
+          "q": "What is the difference between QMB, SLMB, and QI?",
+          "a": "All three are Medicare Savings Programs, but they cover different amounts. QMB pays Part A and B premiums plus all cost-sharing (2026 income up to $1,350 single). SLMB pays only the Part B premium (up to $1,616 single). QI also pays only the Part B premium (up to $1,816 single) but is first-come, first-served and funded yearly.",
+          "links": [
+            {
+              "href": "/blog/qmb-vs-slmb-vs-qi.html",
+              "label": "QMB vs SLMB vs QI"
+            },
+            {
+              "href": "/blog/medicare-savings-programs.html",
+              "label": "Medicare Savings Programs"
+            }
+          ],
+          "tools": [
+            "eligibility",
+            "cost-estimator"
+          ]
+        },
+        {
+          "q": "What is a D-SNP?",
+          "a": "A Dual Eligible Special Needs Plan (D-SNP) is a type of Medicare Advantage plan designed only for people who have both Medicare and Medicaid. These plans coordinate your Medicare and Medicaid benefits in one package and often add extras like dental, vision, hearing, and over-the-counter allowances. They are built to keep your out-of-pocket costs very low.",
+          "links": [
+            {
+              "href": "/blog/d-snp-plans-explained.html",
+              "label": "D-SNP Plans Explained"
+            },
+            {
+              "href": "/dual-eligible.html",
+              "label": "Dual Eligible Coverage"
+            }
+          ]
+        },
+        {
+          "q": "Do dual eligible members pay Medicare premiums?",
+          "a": "Most dual eligible members pay little or no Medicare premiums. If you qualify for QMB, SLMB, or QI, the program pays your Part B premium of $202.90 per month, and QMB also pays your Part A premium and cost-sharing. Many duals also get Extra Help, which lowers Part D drug costs. Your exact savings depend on which programs you qualify for.",
+          "links": [
+            {
+              "href": "/blog/do-dual-eligible-members-pay-medicare-costs.html",
+              "label": "Do Dual Eligible Members Pay Medicare Costs?"
+            },
+            {
+              "href": "/blog/medicare-savings-programs.html",
+              "label": "Medicare Savings Programs"
+            }
+          ],
+          "tools": [
+            "cost-estimator",
+            "eligibility"
+          ]
+        },
+        {
+          "q": "What is Extra Help and how do duals get it?",
+          "a": "Extra Help is a federal program that lowers your Medicare Part D prescription drug costs, including premiums, deductibles, and copays. With full Extra Help you pay no more than $12.65 per covered drug in 2026. If you have Medicaid or a Medicare Savings Program, you are automatically enrolled in Extra Help, so most dual eligible members get it without a separate application.",
+          "links": [
+            {
+              "href": "/blog/extra-help-and-dual-eligibility.html",
+              "label": "Extra Help and Dual Eligibility"
+            },
+            {
+              "href": "/blog/extra-help-explained.html",
+              "label": "Extra Help Explained"
+            }
+          ],
+          "tools": [
+            "eligibility",
+            "drug-cost"
+          ]
+        },
+        {
+          "q": "How do I apply for Medicaid in Utah?",
+          "a": "In Utah you apply for Medicaid through the Department of Workforce Services, online at jobs.utah.gov, by phone, or in person at a local office. You will need to share income, resource, and household information to confirm eligibility. A licensed agent can help you understand whether you qualify and how Medicaid will work alongside your Medicare coverage.",
+          "links": [
+            {
+              "href": "/blog/how-to-apply-for-medicaid-in-utah.html",
+              "label": "How to Apply for Medicaid in Utah"
+            },
+            {
+              "href": "/contact.html",
+              "label": "Talk to Bret"
+            }
+          ],
+          "tools": [
+            "eligibility"
+          ]
+        },
+        {
+          "q": "What happens if I lose Medicaid?",
+          "a": "If you lose Medicaid, you keep your Medicare coverage, but you may start paying premiums, deductibles, and coinsurance that Medicaid had covered. Losing Medicaid usually triggers a Special Enrollment Period so you can change your Medicare Advantage or drug plan. Acting quickly helps you avoid coverage gaps, and you may requalify for a Medicare Savings Program.",
+          "links": [
+            {
+              "href": "/blog/losing-medicaid-what-happens-to-medicare.html",
+              "label": "Losing Medicaid: What Happens to Medicare"
+            },
+            {
+              "href": "/blog/medicare-savings-programs.html",
+              "label": "Medicare Savings Programs"
+            }
+          ],
+          "tools": [
+            "eligibility",
+            "cost-estimator"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "turning-65",
+      "icon": "fa-cake-candles",
+      "title": "Turning 65",
+      "blurb": "What to do as you age into Medicare.",
+      "faqs": [
+        {
+          "q": "What do I need to do when I turn 65?",
+          "a": "Around your 65th birthday you should decide which parts of Medicare to take and when. Most people enroll in premium-free Part A, then weigh Part B, a Part D drug plan, and whether to add a Medicare Advantage or Medigap plan. If you have active employer coverage you may be able to delay Part B without penalty. A simple checklist keeps the steps in order.",
+          "links": [
+            {
+              "href": "/blog/medicare-checklist-turning-65.html",
+              "label": "Medicare Checklist for Turning 65"
+            },
+            {
+              "href": "/turning-65.html",
+              "label": "Turning 65 Guide"
+            }
+          ],
+          "tools": [
+            "timeline",
+            "eligibility"
+          ]
+        },
+        {
+          "q": "Do I have to sign up for Medicare at 65?",
+          "a": "You are not required to take everything at 65, but most people enroll in premium-free Part A since it costs nothing. Part B is optional and can be delayed without penalty only if you have active coverage from a current employer with 20 or more employees. Without that protection, delaying Part B triggers a lifelong late penalty of 10% for each full 12 months you go without it.",
+          "links": [
+            {
+              "href": "/blog/can-i-delay-medicare-part-b.html",
+              "label": "Can I Delay Medicare Part B?"
+            },
+            {
+              "href": "/blog/medicare-and-employer-coverage-after-65.html",
+              "label": "Medicare and Employer Coverage After 65"
+            }
+          ],
+          "tools": [
+            "eligibility",
+            "penalty"
+          ]
+        },
+        {
+          "q": "Can I keep my employer coverage after 65?",
+          "a": "Yes. If you or your spouse is still actively working for an employer with 20 or more employees, you can keep that group plan and delay Part B without a late penalty. When the job or coverage ends, you get an 8-month Special Enrollment Period to add Part B. COBRA and retiree coverage do not count as active coverage, so do not rely on them to delay.",
+          "links": [
+            {
+              "href": "/blog/medicare-and-employer-coverage-after-65.html",
+              "label": "Medicare and Employer Coverage After 65"
+            },
+            {
+              "href": "/blog/special-enrollment-period-explained.html",
+              "label": "Special Enrollment Period Explained"
+            }
+          ],
+          "tools": [
+            "eligibility",
+            "timeline"
+          ]
+        },
+        {
+          "q": "When does my Initial Enrollment Period start?",
+          "a": "Your Initial Enrollment Period is a 7-month window built around your 65th birthday. It starts 3 months before the month you turn 65, includes your birthday month, and ends 3 months after. Signing up in the first 3 months means coverage can start the month you turn 65. Missing this window can lead to penalties and gaps in coverage.",
+          "links": [
+            {
+              "href": "/blog/initial-enrollment-period-explained.html",
+              "label": "Initial Enrollment Period Explained"
+            }
+          ],
+          "tools": [
+            "timeline",
+            "countdown"
+          ]
+        },
+        {
+          "q": "Should I take Part A if I am still working?",
+          "a": "Most people take premium-free Part A at 65 even while working, since it adds hospital coverage at no cost. The big exception is if you contribute to a Health Savings Account: enrolling in any part of Medicare, including Part A, ends your ability to make HSA contributions. If you want to keep funding an HSA, you may choose to delay Part A while you have employer coverage.",
+          "links": [
+            {
+              "href": "/blog/medicare-and-employer-coverage-after-65.html",
+              "label": "Medicare and Employer Coverage After 65"
+            }
+          ],
+          "tools": [
+            "eligibility"
+          ]
+        },
+        {
+          "q": "Can I keep contributing to an HSA after enrolling in Medicare?",
+          "a": "No. Once you enroll in any part of Medicare, including premium-free Part A, you can no longer make new contributions to a Health Savings Account. You can still use the money already in the account for qualified expenses, but new deposits must stop. If you plan to keep contributing, you may need to delay Medicare enrollment while you have qualifying employer coverage.",
+          "links": [
+            {
+              "href": "/blog/can-i-delay-medicare-part-b.html",
+              "label": "Can I Delay Medicare Part B?"
+            }
+          ],
+          "tools": [
+            "eligibility"
+          ]
+        },
+        {
+          "q": "When should I start planning for Medicare?",
+          "a": "Start planning about 3 to 6 months before you turn 65, since your Initial Enrollment Period opens 3 months before your birthday month. Early planning gives you time to compare Part D, Medicare Advantage, and Medigap options and to confirm whether your employer coverage lets you delay Part B. A countdown can help you track each deadline so nothing slips.",
+          "links": [
+            {
+              "href": "/blog/medicare-timeline-explained.html",
+              "label": "Medicare Timeline Explained"
+            },
+            {
+              "href": "/blog/medicare-checklist-turning-65.html",
+              "label": "Medicare Checklist for Turning 65"
+            }
+          ],
+          "tools": [
+            "countdown",
+            "timeline"
+          ]
+        },
+        {
+          "q": "Does Medicare start automatically at 65?",
+          "a": "It depends on Social Security. If you are already collecting Social Security or Railroad Retirement benefits, you are usually enrolled automatically in Part A and Part B starting the month you turn 65. If you are not yet collecting those benefits, enrollment is not automatic and you must actively sign up during your Initial Enrollment Period.",
+          "links": [
+            {
+              "href": "/blog/initial-enrollment-period-explained.html",
+              "label": "Initial Enrollment Period Explained"
+            },
+            {
+              "href": "/blog/medicare-timeline-explained.html",
+              "label": "Medicare Timeline Explained"
+            }
+          ],
+          "tools": [
+            "timeline",
+            "eligibility"
+          ]
+        },
+        {
+          "q": "What is the first step to enrolling at 65?",
+          "a": "The first step is confirming your eligibility and your exact Initial Enrollment Period dates, which run for 7 months around your 65th birthday. From there you decide on premium-free Part A, whether to take Part B now or delay it because of active employer coverage, and which drug plan fits. Checking eligibility and your timeline first keeps the rest of the process simple.",
+          "links": [
+            {
+              "href": "/blog/medicare-checklist-turning-65.html",
+              "label": "Medicare Checklist for Turning 65"
+            },
+            {
+              "href": "/blog/initial-enrollment-period-explained.html",
+              "label": "Initial Enrollment Period Explained"
+            }
+          ],
+          "tools": [
+            "eligibility",
+            "timeline"
+          ]
+        },
+        {
+          "q": "What happens if I am not collecting Social Security yet at 65?",
+          "a": "If you are not yet receiving Social Security benefits at 65, Medicare does not start automatically. You must actively sign up for Part A and Part B during your 7-month Initial Enrollment Period, usually through Social Security. Acting during this window avoids lifelong late penalties and coverage gaps, so it helps to mark your dates early with a countdown.",
+          "links": [
+            {
+              "href": "/blog/initial-enrollment-period-explained.html",
+              "label": "Initial Enrollment Period Explained"
+            },
+            {
+              "href": "/blog/can-i-delay-medicare-part-b.html",
+              "label": "Can I Delay Medicare Part B?"
+            }
+          ],
+          "tools": [
+            "countdown",
+            "eligibility"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "general",
+      "icon": "fa-circle-question",
+      "title": "General Medicare",
+      "blurb": "The basics: parts, eligibility, and coverage.",
+      "faqs": [
+        {
+          "q": "What are the parts of Medicare (A, B, C, and D)?",
+          "a": "Medicare has four parts. Part A covers inpatient hospital, skilled nursing, and hospice care. Part B covers outpatient and doctor services. Part C, called Medicare Advantage, is a private plan that bundles A and B (and usually D) together. Part D covers prescription drugs. Most people combine these to build the coverage they need.",
+          "links": [
+            {
+              "href": "/medicare-basics.html",
+              "label": "Medicare Basics"
+            },
+            {
+              "href": "/blog/which-medicare-plan-is-right-for-me.html",
+              "label": "Which Medicare Plan Is Right for Me?"
+            }
+          ],
+          "tools": [
+            "quiz",
+            "glossary"
+          ]
+        },
+        {
+          "q": "What is Original Medicare?",
+          "a": "Original Medicare is the federal program made up of Part A (hospital) and Part B (medical). You can see any doctor or hospital nationwide that accepts Medicare, with no networks or referrals. Original Medicare has no out-of-pocket maximum, so many people add a Medicare Supplement (Medigap) policy and a Part D drug plan, or choose Medicare Advantage instead.",
+          "links": [
+            {
+              "href": "/medicare-basics.html",
+              "label": "Medicare Basics"
+            },
+            {
+              "href": "/medicare-supplement.html",
+              "label": "Medicare Supplement Plans"
+            },
+            {
+              "href": "/blog/medicare-advantage-vs-medigap.html",
+              "label": "Medicare Advantage vs. Medigap"
+            }
+          ],
+          "tools": [
+            "glossary"
+          ]
+        },
+        {
+          "q": "What is the difference between Medicare and Medicaid?",
+          "a": "Medicare is a federal health program based mainly on age (65+) or disability, regardless of income. Medicaid is a joint federal and state program based on income and resources. They cover different things, and some people qualify for both at once, called dual eligibility, which can sharply reduce or eliminate out-of-pocket costs.",
+          "links": [
+            {
+              "href": "/dual-eligible.html",
+              "label": "Dual-Eligible Coverage"
+            },
+            {
+              "href": "/blog/which-medicare-plan-is-right-for-me.html",
+              "label": "Which Medicare Plan Is Right for Me?"
+            }
+          ],
+          "tools": [
+            "glossary",
+            "eligibility"
+          ]
+        },
+        {
+          "q": "Who is eligible for Medicare?",
+          "a": "Most people qualify for Medicare at age 65 if they or a spouse paid Medicare taxes for at least 10 years. You can also qualify before 65 after 24 months of Social Security disability benefits, or right away with ALS or end-stage renal disease. U.S. citizens and certain lawful permanent residents are eligible. Use the eligibility tool to confirm your dates.",
+          "links": [
+            {
+              "href": "/medicare-basics.html",
+              "label": "Medicare Basics"
+            },
+            {
+              "href": "/blog/which-medicare-plan-is-right-for-me.html",
+              "label": "Which Medicare Plan Is Right for Me?"
+            }
+          ],
+          "tools": [
+            "eligibility",
+            "quiz"
+          ]
+        },
+        {
+          "q": "Does Medicare cover dental, vision, and hearing?",
+          "a": "Original Medicare (Parts A and B) does not cover routine dental, vision, or hearing care such as cleanings, eyeglasses, or hearing aids. It only covers these in limited medical situations, like an eye exam tied to diabetes or surgery after an injury. Many Medicare Advantage plans add some dental, vision, and hearing benefits, so it pays to compare what each plan includes.",
+          "links": [
+            {
+              "href": "/dental-vision-hearing.html",
+              "label": "Dental, Vision and Hearing"
+            },
+            {
+              "href": "/medicare-advantage.html",
+              "label": "Medicare Advantage Plans"
+            }
+          ],
+          "tools": [
+            "quiz"
+          ]
+        },
+        {
+          "q": "Does Medicare cover long-term care?",
+          "a": "Medicare does not pay for long-term custodial care, such as help with bathing, dressing, or eating in a nursing home or assisted living, when that is the only care you need. It does cover short-term skilled care, like rehab in a skilled nursing facility after a qualifying hospital stay. Long-term custodial care is generally paid through Medicaid, private long-term care insurance, or personal funds.",
+          "links": [
+            {
+              "href": "/medicare-basics.html",
+              "label": "Medicare Basics"
+            },
+            {
+              "href": "/dual-eligible.html",
+              "label": "Dual-Eligible Coverage"
+            }
+          ],
+          "tools": [
+            "glossary"
+          ]
+        },
+        {
+          "q": "What does Medicare Part A cover?",
+          "a": "Part A is hospital insurance. It covers inpatient hospital stays, skilled nursing facility care after a qualifying hospital stay, hospice, and some home health care. Most people pay no premium for Part A because they worked and paid Medicare taxes for at least 10 years. In 2026 the inpatient hospital deductible is $1,736 per benefit period.",
+          "links": [
+            {
+              "href": "/medicare-basics.html",
+              "label": "Medicare Basics"
+            },
+            {
+              "href": "/blog/how-much-does-medicare-cost.html",
+              "label": "How Much Does Medicare Cost?"
+            }
+          ],
+          "tools": [
+            "glossary"
+          ]
+        },
+        {
+          "q": "What does Medicare Part B cover?",
+          "a": "Part B is medical insurance covering doctor visits, outpatient care, lab tests, durable medical equipment, and many preventive services. The standard Part B premium in 2026 is $202.90 per month, with a $283 annual deductible and then 20% coinsurance for most services. Original Medicare has no out-of-pocket maximum, which is why many people add supplemental coverage.",
+          "links": [
+            {
+              "href": "/medicare-basics.html",
+              "label": "Medicare Basics"
+            },
+            {
+              "href": "/blog/how-much-does-medicare-cost.html",
+              "label": "How Much Does Medicare Cost?"
+            }
+          ],
+          "tools": [
+            "cost-estimator",
+            "glossary"
+          ]
+        },
+        {
+          "q": "Does it cost anything to work with a Medicare agent like Bret?",
+          "a": "No. Working with a licensed Medicare agent like Bret is free to you. Agents are paid by the insurance carriers, not by you, and plan premiums are set by Medicare and the carriers, so they are the exact same whether you enroll with an agent or on your own. You get personal guidance and ongoing help at no added cost.",
+          "links": [
+            {
+              "href": "/about.html",
+              "label": "About Bret"
+            },
+            {
+              "href": "/contact.html",
+              "label": "Contact Bret"
+            }
+          ],
+          "tools": [
+            "quiz"
+          ]
+        },
+        {
+          "q": "How do I get free help with Medicare in Utah?",
+          "a": "You can contact Bret Swope, a licensed Medicare agent in Orem, Utah, for free one-on-one guidance comparing your options. You can also reach Utah's State Health Insurance Assistance Program (SHIP), which offers free, unbiased Medicare counseling. Both are no-cost ways to get answers before you enroll or change plans.",
+          "links": [
+            {
+              "href": "/contact.html",
+              "label": "Contact Bret"
+            },
+            {
+              "href": "/about.html",
+              "label": "About Bret"
+            }
+          ],
+          "tools": [
+            "eligibility",
+            "glossary"
+          ]
+        }
+      ]
+    }
+  ]
+}

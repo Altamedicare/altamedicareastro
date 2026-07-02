@@ -1,12 +1,12 @@
+// FAQ system — TYPED ACCESSOR over the shared i18n module (ADR-002, P2.3).
+// The strings live in src/i18n/shared/faqs/{locale}.json (field mask in
+// src/i18n/shared/masks.json); this module keeps the interfaces and call-site
+// API the pages have always used — pages never learn that JSON exists.
+// The per-category src/data/faq/*.ts files are retired; edit the ENGLISH
+// entries in src/i18n/shared/faqs/en.json and re-run npm run translate.
+
 import type { Faq } from './faqTypes';
-import { faqs as enrollment } from './faq/enrollment';
-import { faqs as costs } from './faq/costs';
-import { faqs as prescriptionDrugs } from './faq/prescription-drugs';
-import { faqs as medicareAdvantage } from './faq/medicare-advantage';
-import { faqs as medigap } from './faq/medigap';
-import { faqs as dualEligible } from './faq/dual-eligible';
-import { faqs as turning65 } from './faq/turning-65';
-import { faqs as general } from './faq/general';
+import { getSharedModule } from '../i18n/shared';
 
 export interface FaqCategory {
   /** URL slug → /faq/<key>.html */
@@ -17,20 +17,52 @@ export interface FaqCategory {
   faqs: Faq[];
 }
 
-// Order drives the hub cards. Each category's questions live in its own data
-// file; the page rendering AND the FAQPage schema both read from `faqs` here.
-export const FAQ_CATEGORIES: FaqCategory[] = [
-  { key: 'enrollment',          title: 'Enrollment',          icon: 'fa-calendar-check',      blurb: 'Sign-up windows, deadlines, and penalties.',          faqs: enrollment },
-  { key: 'costs',               title: 'Costs & Premiums',    icon: 'fa-sack-dollar',         blurb: 'Premiums, deductibles, IRMAA, and savings help.',     faqs: costs },
-  { key: 'prescription-drugs',  title: 'Prescription Drugs',  icon: 'fa-pills',               blurb: 'Part D, coverage rules, and what your drugs cost.',   faqs: prescriptionDrugs },
-  { key: 'medicare-advantage',  title: 'Medicare Advantage',  icon: 'fa-hospital',            blurb: 'How Advantage (Part C) plans work and who they fit.', faqs: medicareAdvantage },
-  { key: 'medigap',             title: 'Medigap',             icon: 'fa-shield-halved',       blurb: 'Medicare Supplement plans, compared.',                faqs: medigap },
-  { key: 'dual-eligible',       title: 'Dual Eligible',       icon: 'fa-hand-holding-heart',  blurb: 'Medicare + Medicaid, savings programs, D-SNPs.',      faqs: dualEligible },
-  { key: 'turning-65',          title: 'Turning 65',          icon: 'fa-cake-candles',        blurb: 'What to do as you age into Medicare.',                faqs: turning65 },
-  { key: 'general',             title: 'General Medicare',    icon: 'fa-circle-question',      blurb: 'The basics: parts, eligibility, and coverage.',       faqs: general },
-];
+/** Template strings for the FAQ hub + category pages (translated with the
+ *  module so the whole FAQ system ships as one unit). */
+export interface FaqShell {
+  catTitle: string;
+  catDescription: string;
+  faqCrumb: string;
+  searchPlaceholder: string;
+  filterAria: string;
+  countSingular: string;
+  countPlural: string;
+  emptyHtml: string;
+  compareLabel: string;
+  talkLabel: string;
+  backHtml: string;
+  hubTitle: string;
+  hubDescription: string;
+  hubH1: string;
+  hubLedeHtml: string;
+  hubEyebrow: string;
+  hubH2: string;
+  hubIntro: string;
+  questionSingular: string;
+  questionPlural: string;
+  ctaH2: string;
+  ctaTextHtml: string;
+  ctaAskLabel: string;
+  ctaCallLabel: string;
+}
 
-export const getCategory = (key: string): FaqCategory | undefined =>
-  FAQ_CATEGORIES.find((c) => c.key === key);
+interface FaqData {
+  shell: FaqShell;
+  categories: FaqCategory[];
+}
+
+/** The whole FAQ system in a locale (master fallback — never 404s). */
+export const getFaqData = (locale?: string): FaqData =>
+  getSharedModule<FaqData>('faqs', locale);
+
+/** Locale-aware category list. Order drives the hub cards. */
+export const getFaqCategories = (locale?: string): FaqCategory[] =>
+  getFaqData(locale).categories;
+
+export const getCategory = (key: string, locale?: string): FaqCategory | undefined =>
+  getFaqCategories(locale).find((c) => c.key === key);
+
+// ── English-default views (sitemap, llms.txt, legacy call sites) ────────────
+export const FAQ_CATEGORIES: FaqCategory[] = getFaqCategories();
 
 export const TOTAL_FAQS = FAQ_CATEGORIES.reduce((n, c) => n + c.faqs.length, 0);

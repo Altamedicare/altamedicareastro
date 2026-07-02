@@ -186,3 +186,29 @@ Classification key:
   printable   escapes — the earlier raw NUL bytes made the file grep
   as binary). Behavioral checks re-run post-rewrite: idempotency, plural
   wrapping, double-pass stability, --check, dry-run.
+
+## P2.3 — FAQ system (first shared-module migration)
+
+- 100 FAQs + hub/category shell strings extracted losslessly (eval of the
+  data literals) to shared/faqs/en.json; 8 src/data/faq/*.ts files retired;
+  faqs.ts is now the typed accessor (FAQ_CATEGORIES stays as the English
+  view for sitemap/llms.txt).
+- **[GENERIC]** Virtual-page mechanism in content.ts: module-driven slugs
+  (VIRTUAL_PAGE_SOURCES) get existence-aware availability + route emission
+  without page JSON. hreflang/switcher/sitemap/localePageHref all work
+  unchanged because they read getAvailableLocales.
+- **[GENERIC]** Seed guard in translate.js: never adopt a target string
+  identical to its master source (an untranslated fallback from a partial
+  run would otherwise freeze as the 'translation'). Found while diagnosing
+  a 49/50 batch — that case self-healed via shared cacheKey for
+  duplicate-text segments, but the trap is real for unique text.
+- getSharedModule now deep-localizes embedded hrefs (same rule as
+  getPageContent); committed files stay verbatim-maskable.
+- Validator catches this run: 1 missing segment (self-healed), 1 real pin
+  drop ('las Partes A y B' → hand-fixed to 'la Parte A y la Parte B',
+  satisfying both Parte A and Parte B pins).
+- Verified: EN refactor 163/163 identical BEFORE translation; after
+  translation the only deltas are (a) es pages' FAQ links upgrading to
+  /es/faq* — exactly ONE differing tag per page (principle 9 compounding),
+  (b) EN faq pages gaining switcher+hreflang (whitelisted; strip-verified
+  identical). FAQPage JSON-LD matches visible Spanish text exactly.

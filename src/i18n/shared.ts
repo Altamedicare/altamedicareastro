@@ -11,6 +11,7 @@
 // matches nothing until P2.2+ commits the first en.json.
 
 import { DEFAULT_LOCALE } from './locales';
+import { deepLocalizeHrefs } from './content';
 
 const files = import.meta.glob('./shared/*/*.json', {
   eager: true,
@@ -28,7 +29,9 @@ export function getSharedModule<T>(module: string, locale: string = DEFAULT_LOCA
   if (!master)
     throw new Error(`Missing shared-module master: src/i18n/shared/${module}/${DEFAULT_LOCALE}.json`);
   if (locale === DEFAULT_LOCALE) return master as T;
-  return (load(module, locale) ?? master) as T;
+  // Embedded hrefs localize at load time, same rule as getPageContent —
+  // committed files stay verbatim-maskable; rewriting is a render concern.
+  return deepLocalizeHrefs(load(module, locale) ?? master, locale) as T;
 }
 
 /** Locales that have a committed file for this module (existence-awareness

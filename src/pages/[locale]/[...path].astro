@@ -9,7 +9,7 @@
 // One shared component per extracted page (content key === slug). Entries are
 // added as pages are componentized in Phase 1; until a page has both a
 // committed es JSON AND an entry here, no localized route is emitted for it.
-import { getLocalizedContent } from '../../i18n/content';
+import { getLocalizedContent, getVirtualLocalizedPages } from '../../i18n/content';
 import AboutPage from '../../components/content/AboutPage.astro';
 import ContactPage from '../../components/content/ContactPage.astro';
 import Turning65Page from '../../components/content/Turning65Page.astro';
@@ -18,6 +18,8 @@ import MedicareSupplementPage from '../../components/content/MedicareSupplementP
 import PrescriptionDrugPlansPage from '../../components/content/PrescriptionDrugPlansPage.astro';
 import MedicareAdvantagePage from '../../components/content/MedicareAdvantagePage.astro';
 import HomePage from '../../components/content/HomePage.astro';
+import FaqHubPage from '../../components/content/FaqHubPage.astro';
+import FaqCategoryPage from '../../components/content/FaqCategoryPage.astro';
 
 const COMPONENTS: Record<string, (props: Record<string, never>) => unknown> = {
   'about': AboutPage,
@@ -28,6 +30,8 @@ const COMPONENTS: Record<string, (props: Record<string, never>) => unknown> = {
   'prescription-drug-plans': PrescriptionDrugPlansPage,
   'medicare-advantage': MedicareAdvantagePage,
   'index': HomePage,
+  'faq-hub': FaqHubPage,
+  'faq-category': FaqCategoryPage,
 };
 
 export function getStaticPaths() {
@@ -37,10 +41,18 @@ export function getStaticPaths() {
   // filter is CONTENT_PAGES, applied inside getLocalizedContent().
   // The homepage's path is undefined so /es emits dist/es.html (URL /es.html),
   // matching localePageHref('index', locale) and the site's .html policy.
-  return getLocalizedContent().map(({ locale, page }) => ({
-    params: { locale, path: page === 'index' ? undefined : page },
-    props: { contentKey: page },
-  }));
+  return [
+    ...getLocalizedContent().map(({ locale, page }) => ({
+      params: { locale, path: page === 'index' ? undefined : page },
+      props: { contentKey: page },
+    })),
+    // Module-driven virtual pages (P2.3): emitted only when the shared
+    // module's locale JSON is committed — existence-aware like everything.
+    ...getVirtualLocalizedPages().map(({ locale, slug, contentKey }) => ({
+      params: { locale, path: slug },
+      props: { contentKey },
+    })),
+  ];
 }
 
 const Page = COMPONENTS[Astro.props.contentKey];

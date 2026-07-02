@@ -1,0 +1,68 @@
+---
+// src/components/content/FaqHubPage.astro — THE shared FAQ hub template.
+// Thin index of category links; copy lives in the faqs shared module.
+import MainLayout from '../../layouts/MainLayout.astro';
+import { getFaqData } from '../../data/faqs';
+import { PHONE_DISPLAY } from '../../consts';
+import { DEFAULT_LOCALE, getLangFromUrl, getLocaleMeta, t } from '../../i18n/locales';
+import { hreflangAlternates, interp, localizeHref } from '../../i18n/content';
+
+const lang = getLangFromUrl(Astro.url);
+const { shell, categories } = getFaqData(lang);
+const total = categories.reduce((n, c) => n + c.faqs.length, 0);
+const canonical = lang === DEFAULT_LOCALE ? '/faq.html' : `/${lang}/faq.html`;
+const alternates = hreflangAlternates('faq');
+const href = (h: string) => localizeHref(h, lang);
+---
+
+<MainLayout
+  title={shell.hubTitle}
+  description={shell.hubDescription}
+  canonical={canonical}
+  noIndex={true}
+>
+  <Fragment slot="head">
+    {alternates.map((a) => <link rel="alternate" hreflang={a.code} href={a.href} />)}
+    {lang !== DEFAULT_LOCALE && <meta property="og:locale" content={getLocaleMeta(lang).ogLocale} />}
+  </Fragment>
+
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href={href('/')}>{t('nav.home', lang)}</a> &nbsp;&rsaquo;&nbsp; {shell.faqCrumb}</div>
+    <h1>{shell.hubH1}</h1>
+    <p class="lede" set:html={interp(shell.hubLedeHtml, { total })}></p>
+  </div>
+</section>
+
+<section class="section-white">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">{shell.hubEyebrow}</span>
+      <h2>{shell.hubH2}</h2>
+      <p>{shell.hubIntro}</p>
+    </div>
+    <div class="card-grid">
+      {categories.map((c) => (
+        <a href={href(`/faq/${c.key}.html`)} class="card cat-card" style="text-decoration:none;">
+          <div class="card-icon"><i class={`fa-solid ${c.icon}`} style="font-size:1.5rem"></i></div>
+          <h3>{c.title}</h3>
+          <p>{c.blurb}</p>
+          <span class="card-link">{c.faqs.length} {c.faqs.length === 1 ? shell.questionSingular : shell.questionPlural}</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <h2>{shell.ctaH2}</h2>
+    <p set:html={shell.ctaTextHtml}></p>
+    <div class="cta-buttons">
+      <a href={href('/contact.html')} class="btn btn-primary btn-lg">{shell.ctaAskLabel}</a>
+      <a href="tel:4352925548" class="btn btn-outline btn-lg">{interp(shell.ctaCallLabel, { phone: PHONE_DISPLAY })}</a>
+    </div>
+  </div>
+</section>
+
+</MainLayout>

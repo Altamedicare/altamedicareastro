@@ -41,7 +41,12 @@ accessor plumbing, multi-segment localizeHref) complete — full-site 3-diff
 163/163 identical; mask enforcement fixture-tested (4 scenarios). P2.2:
 HelpfulTools band bilingual (t() + localizeLabel; consts.TOOLS labels
 provisioned for P2.3/P2.5 consumers) — 158/163 identical, the 5 diffs are
-exactly the es guide pages, tag-structure-identical.
+exactly the es guide pages, tag-structure-identical. P2.3: FAQ system —
+100 FAQs + shell to shared/faqs (masked), virtual-page mechanism emits
+/es/faq* (9 pages) from the module; FAQPage JSON-LD matches visible
+Spanish 15/15 on spot-check; existing es pages auto-upgraded their FAQ
+links (principle 9). Seed guard added (fallback-freeze prevention).
+Native review of 100 answers pending.
 
 Glossary pins added: `Medicare Supplement`, `Annual Enrollment Period`,
 `Special Enrollment Periods` (plural). Validator catches to date: 3 real

@@ -1,55 +1,7 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
-import { FAQ_CATEGORIES, TOTAL_FAQS } from '../data/faqs';
-
-// The hub is a thin index of links; the questions themselves live on the
-// category pages (which carry the FAQPage schema and Pagefind indexing).
+// Thin master wrapper — implemented once in
+// src/components/content/FaqHubPage.astro, shared with the dynamic route.
+import FaqHubPage from '../components/content/FaqHubPage.astro';
 ---
 
-<MainLayout
-  title="Medicare FAQ | Answers from a Utah Agent | AltaMedicare"
-  description="Plain-English answers to 100+ common Medicare questions — enrollment, costs, drug coverage, Medicare Advantage, Medigap, and more, from a licensed Utah agent."
-  canonical="/faq.html"
-  noIndex={true}
->
-
-<section class="page-header">
-  <div class="container">
-    <div class="breadcrumb"><a href="/">Home</a> &nbsp;&rsaquo;&nbsp; FAQ</div>
-    <h1>Medicare Questions, Answered</h1>
-    <p class="lede">Plain-English answers to the {TOTAL_FAQS} questions Utah families ask most &mdash; with links to the guides, calculators, and a real agent when you want to go deeper.</p>
-  </div>
-</section>
-
-<section class="section-white">
-  <div class="container">
-    <div class="section-header">
-      <span class="eyebrow">Browse by topic</span>
-      <h2>FAQ Categories</h2>
-      <p>Pick a topic to see its questions. Each answer links to the related guide and calculator.</p>
-    </div>
-    <div class="card-grid">
-      {FAQ_CATEGORIES.map((c) => (
-        <a href={`/faq/${c.key}.html`} class="card cat-card" style="text-decoration:none;">
-          <div class="card-icon"><i class={`fa-solid ${c.icon}`} style="font-size:1.5rem"></i></div>
-          <h3>{c.title}</h3>
-          <p>{c.blurb}</p>
-          <span class="card-link">{c.faqs.length} {c.faqs.length === 1 ? 'question' : 'questions'}</span>
-        </a>
-      ))}
-    </div>
-  </div>
-</section>
-
-<section class="final-cta">
-  <div class="container">
-    <h2>Don't see your question?</h2>
-    <p>Ask a licensed Utah Medicare agent directly &mdash; no bots, no pressure.</p>
-    <div class="cta-buttons">
-      <a href="/contact.html" class="btn btn-primary btn-lg">Ask Bret</a>
-      <a href="tel:4352925548" class="btn btn-outline btn-lg">Call (435) 292-5548</a>
-    </div>
-  </div>
-</section>
-
-</MainLayout>
+<FaqHubPage />

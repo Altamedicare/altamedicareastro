@@ -31,6 +31,70 @@ const files = import.meta.glob('./content/*/*.json', {
 const load = (locale: string, page: string): unknown =>
   files[`./content/${locale}/${page}.json`];
 
+// ── Module-driven "virtual" pages (P2.3) ─────────────────────────────────────
+// Some localized pages have no page JSON — their copy lives in a shared data
+// module (src/i18n/shared/<module>/<locale>.json) and one component renders
+// many slugs. VIRTUAL_PAGE_SOURCES maps each module to the slugs it powers;
+// existence stays committed-file-gated (a slug is available in a locale only
+// when the module's locale JSON is committed), so hreflang, the switcher,
+// localePageHref, and the sitemap remain existence-aware for free.
+const sharedFiles = import.meta.glob('./shared/*/*.json', {
+  eager: true,
+  import: 'default',
+}) as Record<string, unknown>;
+
+const VIRTUAL_PAGE_SOURCES: {
+  module: string;
+  /** contentKey the dynamic route's COMPONENTS map renders for these slugs. */
+  contentKey: string;
+  slugs: (masterJson: unknown) => string[];
+}[] = [
+  {
+    module: 'faqs',
+    contentKey: 'faq-hub',
+    slugs: () => ['faq'],
+  },
+  {
+    module: 'faqs',
+    contentKey: 'faq-category',
+    slugs: (en) =>
+      ((en as { categories: { key: string }[] }).categories ?? []).map((c) => `faq/${c.key}`),
+  },
+];
+
+const sharedFile = (module: string, locale: string): unknown =>
+  sharedFiles[`./shared/${module}/${locale}.json`];
+
+/** slug → locales that can render it via a shared module (master included). */
+function virtualAvailability(): Map<string, string[]> {
+  const map = new Map<string, string[]>();
+  for (const src of VIRTUAL_PAGE_SOURCES) {
+    const master = sharedFile(src.module, DEFAULT_LOCALE);
+    if (!master) continue;
+    const locales = LOCALES.map((l) => l.code).filter(
+      (c) => c === DEFAULT_LOCALE || !!sharedFile(src.module, c),
+    );
+    for (const slug of src.slugs(master)) map.set(slug, locales);
+  }
+  return map;
+}
+
+/** Every non-default (locale, slug, contentKey) for module-driven pages —
+ *  consumed by the dynamic route's getStaticPaths alongside
+ *  getLocalizedContent(). Data only (§6.4 gotcha). */
+export function getVirtualLocalizedPages(): { locale: string; slug: string; contentKey: string }[] {
+  const out: { locale: string; slug: string; contentKey: string }[] = [];
+  for (const src of VIRTUAL_PAGE_SOURCES) {
+    const master = sharedFile(src.module, DEFAULT_LOCALE);
+    if (!master) continue;
+    for (const l of LOCALES) {
+      if (l.code === DEFAULT_LOCALE || !sharedFile(src.module, l.code)) continue;
+      for (const slug of src.slugs(master)) out.push({ locale: l.code, slug, contentKey: src.contentKey });
+    }
+  }
+  return out;
+}
+
 /** Load a page's copy in a locale; falls back to the English master. For
  *  non-default locales the content's embedded hrefs are rewritten to stay
  *  in-locale where a translation exists, and absolutized to the English page
@@ -42,12 +106,15 @@ export function getPageContent<T>(page: string, locale: string = DEFAULT_LOCALE)
   return deepLocalizeHrefs(load(locale, page) ?? master, locale) as T;
 }
 
-/** Locales that actually have a committed file for this page. */
+/** Locales that actually have a committed file for this page — either its own
+ *  page JSON or, for module-driven slugs, the shared module's locale file. */
 export function getAvailableLocales(page: string): string[] {
-  return Object.keys(files)
+  const own = Object.keys(files)
     .map((k) => k.match(/^\.\/content\/([^/]+)\/([^/]+)\.json$/))
     .filter((m): m is RegExpMatchArray => !!m && m[2] === page)
     .map((m) => m[1]);
+  const virtual = virtualAvailability().get(page) ?? [];
+  return [...new Set([...own, ...virtual])];
 }
 
 /** Every committed non-default (locale, page) pair for a REGISTERED page —
@@ -97,7 +164,7 @@ export function localizeHtml(html: string, locale: string): string {
   return html.replace(/href="([^"]*)"/g, (_m, h: string) => `href="${localizeHref(h, locale)}"`);
 }
 
-function deepLocalizeHrefs(v: unknown, locale: string): unknown {
+export function deepLocalizeHrefs(v: unknown, locale: string): unknown {
   if (typeof v === 'string') return localizeHtml(v, locale);
   if (Array.isArray(v)) return v.map((x) => deepLocalizeHrefs(x, locale));
   if (v && typeof v === 'object')

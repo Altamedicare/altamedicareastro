@@ -1,0 +1,1703 @@
+{
+  "__translation_note": "AI-translated from shared/faqs/en.json by scripts/translate.js (model claude-opus-4-8) using src/i18n/glossary.json (CMS es.medicare.gov terminology). Machine-generated — pending human spot-check. Do not hand-edit copy here; fix the English master or pin the term in the glossary, then re-run npm run translate.",
+  "__note": "MASTER strings for the FAQ system (shared module, ADR-002). Field mask in ../masks.json: q/a/title/blurb/label + shell fields translate; key/icon/href/tools verbatim. Categories extracted losslessly from src/data/faq/*.ts (retired); shell strings transcribed byte-exact from the faq page templates.",
+  "shell": {
+    "catTitle": "Preguntas frecuentes sobre {title} | Preguntas sobre Medicare | AltaMedicare",
+    "catDescription": "{blurb} {count} respuestas sobre Medicare en lenguaje sencillo, de un agente con licencia en Utah, con enlaces a guías y calculadoras.",
+    "faqCrumb": "Preguntas frecuentes",
+    "searchPlaceholder": "Buscar entre {count} preguntas sobre {title}…",
+    "filterAria": "Filtrar preguntas",
+    "countSingular": "{shown} de {total} pregunta",
+    "countPlural": "{shown} de {total} preguntas",
+    "emptyHtml": "Ninguna pregunta coincide con esa búsqueda. Intente con menos palabras o <a href=\"/contact.html\">pregúntele directamente a Bret</a>.",
+    "compareLabel": "Compare planes en línea",
+    "talkLabel": "Hable con Bret",
+    "backHtml": "&larr; Todos los temas de preguntas frecuentes",
+    "hubTitle": "Preguntas frecuentes sobre Medicare | Respuestas de un agente en Utah | AltaMedicare",
+    "hubDescription": "Respuestas en lenguaje sencillo a más de 100 preguntas comunes sobre Medicare: inscripción, costos, cobertura de medicamentos, Medicare Advantage, Medigap y más, de un agente con licencia en Utah.",
+    "hubH1": "Preguntas sobre Medicare, respondidas",
+    "hubLedeHtml": "Respuestas en lenguaje sencillo a las {total} preguntas que más hacen las familias de Utah &mdash; con enlaces a las guías, calculadoras y a un agente de verdad cuando quiera profundizar.",
+    "hubEyebrow": "Explore por tema",
+    "hubH2": "Categorías de preguntas frecuentes",
+    "hubIntro": "Elija un tema para ver sus preguntas. Cada respuesta enlaza a la guía y calculadora relacionadas.",
+    "questionSingular": "pregunta",
+    "questionPlural": "preguntas",
+    "ctaH2": "¿No encuentra su pregunta?",
+    "ctaTextHtml": "Pregúntele directamente a un agente de Medicare con licencia en Utah &mdash; sin bots, sin presión.",
+    "ctaAskLabel": "Pregúntele a Bret",
+    "ctaCallLabel": "Llame al {phone}"
+  },
+  "categories": [
+    {
+      "key": "enrollment",
+      "icon": "fa-calendar-check",
+      "title": "Inscripción",
+      "blurb": "Plazos de inscripción, fechas límite y multas.",
+      "faqs": [
+        {
+          "q": "¿Qué es el Período de Inscripción Inicial?",
+          "a": "Su Período de Inscripción Inicial (IEP) es el plazo de 7 meses alrededor de su cumpleaños número 65: los 3 meses anteriores al mes de su cumpleaños, el mes en sí y los 3 meses posteriores. Es cuando la mayoría de las personas se inscriben por primera vez en la Parte A y la Parte B de Medicare. Inscribirse antes del mes de su cumpleaños ayuda a que su cobertura comience a tiempo y evita interrupciones.",
+          "links": [
+            {
+              "href": "/blog/initial-enrollment-period-explained.html",
+              "label": "El Período de Inscripción Inicial explicado"
+            },
+            {
+              "href": "/blog/medicare-timeline-explained.html",
+              "label": "La línea de tiempo de Medicare explicada"
+            }
+          ],
+          "tools": [
+            "timeline",
+            "eligibility",
+            "countdown"
+          ]
+        },
+        {
+          "q": "¿Puedo posponer la Parte B sin una multa?",
+          "a": "Sí, pero solo si tiene cobertura activa a través de un empleador donde usted o su cónyuge todavía trabajan y el empleador tiene 20 o más empleados. Esa cobertura le permite posponer la Parte B sin multa y obtener un Período de Inscripción Especial más adelante. COBRA, los planes para jubilados y los beneficios de VA NO cuentan, así que posponer la Parte B con esos puede generar una multa de por vida.",
+          "links": [
+            {
+              "href": "/blog/can-i-delay-medicare-part-b.html",
+              "label": "¿Puedo retrasar la Parte B de Medicare?"
+            },
+            {
+              "href": "/blog/medicare-and-employer-coverage-after-65.html",
+              "label": "Medicare y la cobertura del empleador después de los 65 años"
+            }
+          ],
+          "tools": [
+            "eligibility",
+            "penalty"
+          ]
+        },
+        {
+          "q": "¿Qué es un Período de Inscripción Especial?",
+          "a": "Un Período de Inscripción Especial (SEP) es un plazo para inscribirse en Medicare o cambiar de plan fuera de las fechas normales, activado por un evento de la vida. Los motivos comunes incluyen perder la cobertura del empleador, mudarse fuera del área de servicio de su plan o calificar para ayuda con el pago de costos. Los SEP le permiten inscribirse sin una multa por inscripción tardía cuando actúa dentro del tiempo permitido.",
+          "links": [
+            {
+              "href": "/blog/special-enrollment-period-explained.html",
+              "label": "El Período de Inscripción Especial explicado"
+            }
+          ],
+          "tools": [
+            "eligibility",
+            "timeline"
+          ]
+        },
+        {
+          "q": "¿Qué pasa si pierdo la inscripción de Medicare?",
+          "a": "Si pierde su Período de Inscripción Inicial y no califica para un Período de Inscripción Especial, es posible que tenga que esperar al Período General de Inscripción (del 1 de enero al 31 de marzo) para inscribirse. También podría deber multas de por vida por inscripción tardía en la Parte B y la Parte D. Actuar rápidamente cuando reúne los requisitos por primera vez es la mejor manera de evitar interrupciones y costos adicionales.",
+          "links": [
+            {
+              "href": "/blog/what-happens-if-you-miss-medicare-enrollment.html",
+              "label": "Qué pasa si pierde la inscripción de Medicare"
+            },
+            {
+              "href": "/blog/medicare-late-enrollment-penalties.html",
+              "label": "Multas por inscripción tardía en Medicare"
+            }
+          ],
+          "tools": [
+            "penalty",
+            "timeline"
+          ]
+        },
+        {
+          "q": "¿Qué es el Período General de Inscripción?",
+          "a": "El Período General de Inscripción va del 1 de enero al 31 de marzo de cada año. Es para las personas que perdieron su Período de Inscripción Inicial y no califican para un Período de Inscripción Especial, para inscribirse en la Parte A y la Parte B. La cobertura comienza el mes después de inscribirse, y aún podría deber una multa por inscripción tardía.",
+          "links": [
+            {
+              "href": "/blog/general-enrollment-period-explained.html",
+              "label": "El Período General de Inscripción explicado"
+            }
+          ],
+          "tools": [
+            "timeline",
+            "penalty"
+          ]
+        },
+        {
+          "q": "¿Qué es el Período de Inscripción Anual?",
+          "a": "El Período de Inscripción Anual (AEP) va del 15 de octubre al 7 de diciembre de cada año. Durante este tiempo puede unirse, cambiar o dejar un plan Medicare Advantage o un plan de medicamentos de la Parte D, y los cambios entran en vigor el 1 de enero. Es la principal oportunidad anual para revisar su cobertura y asegurarse de que su plan aún se ajuste a sus necesidades.",
+          "links": [
+            {
+              "href": "/blog/annual-enrollment-period-explained.html",
+              "label": "Explicación del Período de Inscripción Anual"
+            }
+          ],
+          "tools": [
+            "timeline"
+          ]
+        },
+        {
+          "q": "¿Qué es el Período de Inscripción Abierta de Medicare Advantage?",
+          "a": "El Período de Inscripción Abierta de Medicare Advantage va del 1 de enero al 31 de marzo de cada año. Si ya tiene un plan Medicare Advantage, puede cambiarse a un plan Medicare Advantage diferente o dejarlo y regresar a Medicare Original (con un plan de la Parte D). Solo puede hacer un cambio durante este período, y no es para las personas que solo tienen Medicare Original.",
+          "links": [
+            {
+              "href": "/blog/annual-enrollment-period-explained.html",
+              "label": "Explicación del Período de Inscripción Anual"
+            }
+          ],
+          "tools": [
+            "timeline"
+          ]
+        },
+        {
+          "q": "¿Cuándo puedo cambiar mi plan de Medicare?",
+          "a": "Puede cambiar de plan Medicare Advantage o de la Parte D durante el Período de Inscripción Anual (del 15 de octubre al 7 de diciembre). Si tiene un plan Medicare Advantage, también dispone de un cambio durante el Período de Inscripción Abierta de Medicare Advantage (del 1 de enero al 31 de marzo). Fuera de estos plazos, generalmente necesita un Período de Inscripción Especial activado por un evento de vida que reúna los requisitos.",
+          "links": [
+            {
+              "href": "/blog/annual-enrollment-period-explained.html",
+              "label": "Explicación del Período de Inscripción Anual"
+            },
+            {
+              "href": "/blog/special-enrollment-period-explained.html",
+              "label": "El Período de Inscripción Especial explicado"
+            }
+          ],
+          "tools": [
+            "timeline",
+            "eligibility"
+          ]
+        },
+        {
+          "q": "¿Cómo me inscribo en Medicare?",
+          "a": "Puede inscribirse en Medicare por internet en el sitio web del Seguro Social, por teléfono con el Seguro Social o en persona en una oficina local. Muchas personas se inscriben durante su Período de Inscripción Inicial, alrededor de los 65 años. Si ya recibe beneficios del Seguro Social, es posible que lo inscriban automáticamente en la Parte A y la Parte B al cumplir 65 años.",
+          "links": [
+            {
+              "href": "/blog/initial-enrollment-period-explained.html",
+              "label": "El Período de Inscripción Inicial explicado"
+            },
+            {
+              "href": "/blog/medicare-timeline-explained.html",
+              "label": "La línea de tiempo de Medicare explicada"
+            }
+          ],
+          "tools": [
+            "eligibility",
+            "timeline",
+            "countdown"
+          ]
+        },
+        {
+          "q": "¿Tengo que inscribirme en Medicare a los 65 si sigo trabajando?",
+          "a": "No siempre. Si tiene cobertura activa a través de un empleador actual con 20 o más empleados, por lo general puede posponer la Parte B sin una multa e inscribirse más adelante mediante un Período de Inscripción Especial. Muchas personas de todos modos toman la Parte A sin prima a los 65. Si su empleador tiene menos de 20 empleados, Medicare suele convertirse en el pagador principal, así que verifíquelo antes de posponer.",
+          "links": [
+            {
+              "href": "/blog/medicare-and-employer-coverage-after-65.html",
+              "label": "Medicare y la cobertura del empleador después de los 65 años"
+            },
+            {
+              "href": "/blog/can-i-delay-medicare-part-b.html",
+              "label": "¿Puedo retrasar la Parte B de Medicare?"
+            }
+          ],
+          "tools": [
+            "eligibility",
+            "penalty"
+          ]
+        },
+        {
+          "q": "¿Qué es la multa por inscripción tardía en la Parte B?",
+          "a": "La multa por inscripción tardía en la Parte B agrega un 10% a su prima de la Parte B por cada período completo de 12 meses en que pudo haber tenido la Parte B pero no se inscribió. La prima de la Parte B para 2026 es de $202.90 al mes, y la multa se suma por encima mientras tenga la Parte B. Puede evitarla inscribiéndose a tiempo o manteniendo una cobertura de empleador que reúna los requisitos.",
+          "links": [
+            {
+              "href": "/blog/medicare-late-enrollment-penalties.html",
+              "label": "Multas por inscripción tardía en Medicare"
+            },
+            {
+              "href": "/blog/can-i-delay-medicare-part-b.html",
+              "label": "¿Puedo retrasar la Parte B de Medicare?"
+            }
+          ],
+          "tools": [
+            "penalty"
+          ]
+        },
+        {
+          "q": "¿Qué es la multa por inscripción tardía en la Parte D?",
+          "a": "La multa por inscripción tardía en la Parte D se aplica si pasa 63 días o más sin cobertura acreditable de medicamentos después de su Período de Inscripción Inicial. Agrega el 1% de la prima base nacional ($38.99 en 2026) por cada mes completo que estuvo sin cobertura, y se suma a su prima de la Parte D de forma permanente. Mantener cobertura acreditable o inscribirse a tiempo lo evita.",
+          "links": [
+            {
+              "href": "/blog/medicare-late-enrollment-penalties.html",
+              "label": "Multas por inscripción tardía en Medicare"
+            }
+          ],
+          "tools": [
+            "penalty"
+          ]
+        },
+        {
+          "q": "¿La inscripción en Medicare es automática?",
+          "a": "Depende. Si ya recibe beneficios del Seguro Social o de Jubilación Ferroviaria antes de cumplir 65 años, por lo general se le inscribe automáticamente en la Parte A y la Parte B, y su tarjeta llega antes de su cumpleaños. Si aún no cobra esos beneficios, la inscripción no es automática y usted mismo debe inscribirse durante su Período de Inscripción Inicial.",
+          "links": [
+            {
+              "href": "/blog/initial-enrollment-period-explained.html",
+              "label": "El Período de Inscripción Inicial explicado"
+            },
+            {
+              "href": "/blog/medicare-timeline-explained.html",
+              "label": "La línea de tiempo de Medicare explicada"
+            }
+          ],
+          "tools": [
+            "eligibility",
+            "timeline"
+          ]
+        },
+        {
+          "q": "¿Qué es la cobertura acreditable?",
+          "a": "La cobertura acreditable es una cobertura médica o de medicamentos que es al menos tan buena como el beneficio estándar de Medicare. Para la Parte D, tener cobertura acreditable de medicamentos (como la de un plan de un empleador actual) significa que puede retrasar la Parte D sin una multa por inscripción tardía. Su plan debe informarle cada año si es acreditable, así que guarde esos avisos por si necesita comprobarlo.",
+          "links": [
+            {
+              "href": "/blog/medicare-late-enrollment-penalties.html",
+              "label": "Multas por inscripción tardía en Medicare"
+            },
+            {
+              "href": "/blog/medicare-and-employer-coverage-after-65.html",
+              "label": "Medicare y la cobertura del empleador después de los 65 años"
+            }
+          ],
+          "tools": [
+            "penalty"
+          ]
+        },
+        {
+          "q": "¿Qué es el Período de Inscripción Especial de 8 meses después de que termina la cobertura del empleador?",
+          "a": "Cuando termina su cobertura activa del empleador (o la de su cónyuge), obtiene un Período de Inscripción Especial de 8 meses para inscribirse en la Parte B sin multa por inscripción tardía. Esta ventana comienza el mes después de que termina el empleo o la cobertura, lo que ocurra primero. COBRA y la cobertura para jubilados no la extienden, así que inscríbase pronto para evitar una interrupción y multas de por vida.",
+          "links": [
+            {
+              "href": "/blog/special-enrollment-period-explained.html",
+              "label": "El Período de Inscripción Especial explicado"
+            },
+            {
+              "href": "/blog/medicare-and-employer-coverage-after-65.html",
+              "label": "Medicare y la cobertura del empleador después de los 65 años"
+            }
+          ],
+          "tools": [
+            "eligibility",
+            "timeline",
+            "penalty"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "costs",
+      "icon": "fa-sack-dollar",
+      "title": "Costos y primas",
+      "blurb": "Primas, deducibles, IRMAA y ayuda para ahorrar.",
+      "faqs": [
+        {
+          "q": "¿Cuánto cuesta Medicare en 2026?",
+          "a": "La mayoría de las personas no paga nada por la Parte A y paga $202.90 al mes por la Parte B en 2026. Además, es posible que tenga un plan de medicamentos de la Parte D (prima base $38.99), más deducibles y coseguro. Las personas con ingresos más altos pagan recargos de IRMAA, y muchas personas agregan un plan Medigap o Medicare Advantage, por lo que el costo total varía mucho según la cobertura que elija.",
+          "links": [
+            {
+              "href": "/blog/how-much-does-medicare-cost.html",
+              "label": "¿Cuánto cuesta Medicare?"
+            }
+          ],
+          "tools": [
+            "cost-estimator"
+          ]
+        },
+        {
+          "q": "¿Cuánto es la prima de la Parte B de Medicare en 2026?",
+          "a": "La prima estándar de la Parte B de Medicare para 2026 es de $202.90 al mes. La mayoría de las personas paga esta cantidad, y por lo general se deduce automáticamente de su cheque del Seguro Social. Si su ingreso supera los $109,000 (individual) o $218,000 (conjunto), paga una prima más alta debido al recargo de IRMAA.",
+          "links": [
+            {
+              "href": "/blog/medicare-part-b-premiums-2026.html",
+              "label": "Primas de la Parte B de Medicare en 2026"
+            }
+          ],
+          "tools": [
+            "cost-estimator",
+            "irmaa"
+          ]
+        },
+        {
+          "q": "¿Qué es el deducible de la Parte B de Medicare?",
+          "a": "El deducible de la Parte B es de $283 en 2026. Usted paga esta cantidad de su bolsillo por los servicios ambulatorios cubiertos antes de que Medicare comience a pagar su parte. Después de cumplir con el deducible, por lo general paga un 20% de coseguro por la mayoría de las visitas al médico y la atención ambulatoria, y Medicare Original no tiene un límite máximo anual de gastos de su bolsillo.",
+          "links": [
+            {
+              "href": "/blog/what-is-the-medicare-part-b-deductible.html",
+              "label": "¿Qué es el deducible de la Parte B de Medicare?"
+            }
+          ],
+          "tools": [
+            "cost-estimator"
+          ]
+        },
+        {
+          "q": "¿Qué es el deducible de la Parte A de Medicare?",
+          "a": "El deducible hospitalario de la Parte A es de $1,736 por período de beneficios en 2026. Usted lo paga cuando lo admiten como paciente hospitalizado, y cubre sus primeros 60 días en el hospital. Un período de beneficios se reinicia si pasa 60 días sin atención hospitalaria, así que podría deberlo más de una vez en un año.",
+          "links": [
+            {
+              "href": "/blog/how-much-does-medicare-cost.html",
+              "label": "¿Cuánto cuesta Medicare?"
+            }
+          ],
+          "tools": [
+            "cost-estimator"
+          ]
+        },
+        {
+          "q": "¿La Parte A de Medicare es realmente gratis?",
+          "a": "Para la mayoría de las personas, la Parte A tiene una prima mensual de $0, porque ellas o su cónyuge pagaron impuestos de Medicare durante al menos 10 años (40 trimestres) mientras trabajaban. Sin embargo, la Parte A no es totalmente gratis: si está hospitalizado, aún debe el deducible de $1,736 y luego el coseguro diario. Las personas sin suficiente historial laboral pueden tener que pagar una prima de la Parte A.",
+          "links": [
+            {
+              "href": "/blog/how-much-does-medicare-cost.html",
+              "label": "¿Cuánto cuesta Medicare?"
+            }
+          ]
+        },
+        {
+          "q": "¿Qué es la prima de la Parte D de Medicare?",
+          "a": "La prima base nacional de la Parte D es de $38.99 al mes en 2026, pero los precios reales varían según el plan y la región. Su prima real depende de qué plan de medicamentos elija, y las personas con ingresos más altos pagan una cantidad adicional de IRMAA. La insulina tiene un tope de $35 al mes y las vacunas recomendadas para adultos son $0 en todos los planes de la Parte D.",
+          "links": [
+            {
+              "href": "/prescription-drug-plans.html",
+              "label": "Planes de Medicamentos Recetados"
+            }
+          ],
+          "tools": [
+            "drug-cost",
+            "formulary"
+          ]
+        },
+        {
+          "q": "¿Qué es IRMAA?",
+          "a": "IRMAA significa Monto de Ajuste Mensual Relacionado con los Ingresos (Income-Related Monthly Adjustment Amount). Es un cargo adicional que se suma a sus primas de la Parte B y la Parte D si su ingreso supera ciertos límites. En 2026 comienza por encima de $109,000 para quienes declaran de forma individual y $218,000 para quienes declaran de forma conjunta. Cuanto más alto sea su ingreso, mayor será el recargo que paga además de las primas estándar.",
+          "links": [
+            {
+              "href": "/blog/irmaa-brackets-explained.html",
+              "label": "Explicación de los tramos de IRMAA"
+            }
+          ],
+          "tools": [
+            "irmaa"
+          ]
+        },
+        {
+          "q": "¿Cómo se calcula IRMAA?",
+          "a": "IRMAA se basa en su ingreso bruto ajustado modificado (MAGI) de su declaración de impuestos de dos años antes, por lo que los recargos de 2026 usan su ingreso de 2024. El Seguro Social compara ese ingreso con un conjunto de tramos y agrega un recargo fijo tanto a la Parte B como a la Parte D una vez que supera el primer umbral de $109,000 individual o $218,000 conjunto.",
+          "links": [
+            {
+              "href": "/blog/irmaa-brackets-explained.html",
+              "label": "Explicación de los tramos de IRMAA"
+            }
+          ],
+          "tools": [
+            "irmaa"
+          ]
+        },
+        {
+          "q": "¿Puedo apelar IRMAA?",
+          "a": "Sí. Si ha tenido un evento importante que le cambió la vida, como jubilación, matrimonio, divorcio o la muerte de un cónyuge, que redujo su ingreso, puede pedirle al Seguro Social que reconsidere su IRMAA. Presenta el Formulario SSA-44 con comprobante del cambio. Si se aprueba, el Seguro Social usa su ingreso más reciente en lugar de la declaración de hace dos años.",
+          "links": [
+            {
+              "href": "/blog/irmaa-brackets-explained.html",
+              "label": "Explicación de los tramos de IRMAA"
+            }
+          ],
+          "tools": [
+            "irmaa"
+          ]
+        },
+        {
+          "q": "¿Medicare tiene un límite máximo de gastos de su bolsillo?",
+          "a": "Medicare Original (Parte A y Parte B) no tiene un límite máximo anual de gastos de su bolsillo, así que su coseguro del 20% puede acumularse sin tope. Por eso muchas personas agregan una póliza Medigap o eligen un plan Medicare Advantage, que sí incluye un tope anual de gastos de su bolsillo. La cobertura de medicamentos de la Parte D también tiene su propio tope separado de $2,000.",
+          "links": [
+            {
+              "href": "/blog/how-much-does-medicare-cost.html",
+              "label": "¿Cuánto cuesta Medicare?"
+            },
+            {
+              "href": "/medicare-supplement.html",
+              "label": "Planes de Seguro Suplementario de Medicare"
+            }
+          ],
+          "tools": [
+            "cost-estimator"
+          ]
+        },
+        {
+          "q": "¿Qué es el tope de $2,000 para medicamentos?",
+          "a": "A partir de 2025, la Parte D incluye un límite máximo firme de lo que usted paga de su bolsillo por los medicamentos recetados cubiertos, fijado en $2,000 al año en 2026. Una vez que su gasto de bolsillo en medicamentos alcanza ese límite, no paga nada más por los medicamentos cubiertos durante el resto del año. Este cambio reemplazó la antigua brecha de cobertura, a menudo llamada el \"donut hole\" (agujero de rosquilla), que ya no existe.",
+          "links": [
+            {
+              "href": "/blog/the-2000-drug-cap-explained.html",
+              "label": "Explicación del límite de $2,000 para medicamentos"
+            }
+          ],
+          "tools": [
+            "drug-cost"
+          ]
+        },
+        {
+          "q": "¿Qué es la Ayuda Adicional (Extra Help)?",
+          "a": "La Ayuda Adicional (Extra Help) es un programa federal que reduce sus costos de medicamentos de la Parte D si tiene ingresos y recursos limitados. Con la Ayuda Adicional (Extra Help) completa en 2026, usted no paga más de $12.65 por cada medicamento cubierto, además de una prima y un deducible reducidos o eliminados. Los límites de recursos son $16,590 para una persona y $33,100 para una pareja casada. Usted solicita a través del Seguro Social.",
+          "links": [
+            {
+              "href": "/blog/extra-help-explained.html",
+              "label": "La Ayuda Adicional (Extra Help) explicada"
+            }
+          ],
+          "tools": [
+            "drug-cost"
+          ]
+        },
+        {
+          "q": "¿Qué son los Programas de Ahorro de Medicare?",
+          "a": "Los Programas de Ahorro de Medicare son programas administrados por el estado que ayudan a pagar sus primas de Medicare y, a veces, los deducibles y el coaseguro. Los tres principales son QMB, SLMB y QI, cada uno con su propio límite de ingresos mensual y un límite de recursos compartido de $9,950 para una persona sola o $14,910 para casados en 2026. El QMB incluso lo protege de la facturación de saldo en servicios cubiertos.",
+          "links": [
+            {
+              "href": "/blog/medicare-savings-programs.html",
+              "label": "Programas de Ahorro de Medicare"
+            }
+          ]
+        },
+        {
+          "q": "¿Qué no cubre Medicare?",
+          "a": "Medicare Original generalmente no cubre la atención dental, de la vista o de la audición de rutina, el cuidado personal de largo plazo, ni la mayoría de la atención fuera de los Estados Unidos. Tampoco cubre los medicamentos recetados únicamente para bajar de peso, aunque algunos de esos medicamentos sí están cubiertos para usos aprobados como la diabetes o el riesgo cardiovascular. Los planes independientes o los planes Medicare Advantage pueden añadir algunos de estos beneficios.",
+          "links": [
+            {
+              "href": "/dental-vision-hearing.html",
+              "label": "Dental, de la vista y auditivo"
+            },
+            {
+              "href": "/medicare-advantage.html",
+              "label": "Medicare Advantage"
+            }
+          ]
+        },
+        {
+          "q": "¿Cómo puedo reducir mis costos de Medicare?",
+          "a": "Puede reducir costos solicitando la Ayuda Adicional (Extra Help) o un Programa de Ahorro de Medicare si sus ingresos califican, comparando los planes de la Parte D cada año para que sus medicamentos estén bien cubiertos, y apelando el IRMAA después de un evento que cambie su vida. Elegir el plan Medigap o Medicare Advantage adecuado también limita su exposición. Un agente con licencia puede revisar su situación sin costo alguno.",
+          "links": [
+            {
+              "href": "/blog/medicare-savings-programs.html",
+              "label": "Programas de Ahorro de Medicare"
+            },
+            {
+              "href": "/blog/extra-help-explained.html",
+              "label": "La Ayuda Adicional (Extra Help) explicada"
+            }
+          ],
+          "tools": [
+            "cost-estimator",
+            "drug-cost"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "prescription-drugs",
+      "icon": "fa-pills",
+      "title": "Medicamentos recetados",
+      "blurb": "La Parte D, las reglas de cobertura y lo que cuestan sus medicamentos.",
+      "faqs": [
+        {
+          "q": "¿Cubre Medicare el Ozempic?",
+          "a": "Sí, los planes de la Parte D de Medicare generalmente cubren el Ozempic cuando se receta para tratar la diabetes tipo 2, que es su uso aprobado por la FDA. Medicare no puede cubrir el Ozempic cuando se receta únicamente para bajar de peso. Los detalles de cobertura, las reglas de autorización previa y su costo dependen del formulario específico de su plan de la Parte D, así que vale la pena revisar el suyo directamente.",
+          "links": [
+            {
+              "href": "/blog/does-medicare-cover-ozempic.html",
+              "label": "¿Cubre Medicare el Ozempic?"
+            }
+          ],
+          "tools": [
+            "formulary",
+            "drug-cost"
+          ]
+        },
+        {
+          "q": "¿Cubre Medicare el Eliquis?",
+          "a": "Sí, el Eliquis es un anticoagulante común que está ampliamente cubierto por los planes de la Parte D de Medicare, aunque se ubica en distintos niveles según el plan. Su costo mensual varía según el plan, y por lo general no se requiere autorización previa. Como los formularios y los precios difieren, comparar planes puede revelar ahorros significativos en un medicamento que se toma a largo plazo como el Eliquis.",
+          "links": [
+            {
+              "href": "/blog/does-medicare-cover-eliquis.html",
+              "label": "¿Cubre Medicare el Eliquis?"
+            }
+          ],
+          "tools": [
+            "formulary",
+            "drug-cost"
+          ]
+        },
+        {
+          "q": "¿Cubre Medicare el Jardiance?",
+          "a": "Sí, la mayoría de los planes de la Parte D de Medicare cubren el Jardiance para la diabetes tipo 2 y para algunas afecciones del corazón y de los riñones que está aprobado para tratar. Algunos planes pueden requerir primero una autorización previa o terapia escalonada. Su costo de bolsillo depende del nivel del formulario del plan, así que revisar su plan o comparar opciones lo ayuda a encontrar el mejor precio.",
+          "links": [
+            {
+              "href": "/blog/does-medicare-cover-jardiance.html",
+              "label": "¿Cubre Medicare el Jardiance?"
+            }
+          ],
+          "tools": [
+            "formulary",
+            "drug-cost"
+          ]
+        },
+        {
+          "q": "¿Cubre Medicare la insulina?",
+          "a": "Sí. Los planes de medicamentos de la Parte D de Medicare y de Medicare Advantage cubren la insulina, y a partir de 2026 su costo por un suministro de un mes de cada insulina cubierta tiene un límite de $35. No se aplica ningún deducible a la insulina. La insulina utilizada con una bomba tradicional puede cubrirse en cambio bajo la Parte B, también con el límite mensual de $35.",
+          "links": [
+            {
+              "href": "/blog/does-medicare-cover-insulin.html",
+              "label": "¿Cubre Medicare la insulina?"
+            },
+            {
+              "href": "/blog/medicare-35-dollar-insulin-cap.html",
+              "label": "El límite de $35 en insulina explicado"
+            }
+          ],
+          "tools": [
+            "drug-cost"
+          ]
+        },
+        {
+          "q": "¿Qué es el límite de $35 en insulina?",
+          "a": "El límite de $35 en insulina restringe lo que usted paga por un suministro de un mes de cada producto de insulina cubierto a no más de $35. Se aplica a la insulina cubierta bajo los planes de medicamentos de la Parte D y a la insulina utilizada con una bomba tradicional bajo la Parte B. El deducible de la Parte D no se aplica, así que usted paga $35 incluso antes de alcanzarlo.",
+          "links": [
+            {
+              "href": "/blog/medicare-35-dollar-insulin-cap.html",
+              "label": "El límite de $35 en insulina explicado"
+            },
+            {
+              "href": "/blog/does-medicare-cover-insulin.html",
+              "label": "¿Cubre Medicare la insulina?"
+            }
+          ],
+          "tools": [
+            "drug-cost"
+          ]
+        },
+        {
+          "q": "¿Qué es la autorización previa?",
+          "a": "La autorización previa es una regla que exige que su plan apruebe un medicamento antes de cubrirlo. Su médico debe demostrar que el medicamento es médicamente necesario, a menudo porque es costoso o tiene consideraciones de seguridad. Si la solicitud se aprueba, el plan paga su parte como de costumbre. Si se rechaza, usted puede pedirle a su médico que apele la decisión.",
+          "links": [
+            {
+              "href": "/blog/what-is-prior-authorization.html",
+              "label": "¿Qué es la autorización previa?"
+            }
+          ],
+          "tools": [
+            "formulary"
+          ]
+        },
+        {
+          "q": "¿Qué es la terapia escalonada?",
+          "a": "La terapia escalonada es una regla del plan que le pide probar primero un medicamento de menor costo o preferido antes de cubrir una alternativa más costosa. Si el primer medicamento no funciona o causa efectos secundarios, usted puede pasar al otro medicamento. Su médico puede solicitar una excepción si seguir la terapia escalonada no es apropiado para su salud.",
+          "links": [
+            {
+              "href": "/blog/what-is-step-therapy.html",
+              "label": "¿Qué es la terapia escalonada?"
+            }
+          ],
+          "tools": [
+            "formulary"
+          ]
+        },
+        {
+          "q": "¿Qué es un formulario?",
+          "a": "Un formulario es la lista de medicamentos recetados que cubre un plan de medicamentos de la Parte D o de Medicare Advantage. Cada plan establece su propio formulario, organiza los medicamentos en niveles y puede aplicar reglas como la autorización previa o la terapia escalonada. Como los formularios difieren de un plan a otro, verificar que sus medicamentos estén en la lista de un plan es uno de los pasos más importantes al elegir su cobertura.",
+          "links": [
+            {
+              "href": "/prescription-drug-plans.html",
+              "label": "Planes de Medicamentos Recetados"
+            }
+          ],
+          "tools": [
+            "formulary"
+          ]
+        },
+        {
+          "q": "¿Qué son los niveles de medicamentos?",
+          "a": "Los niveles de medicamentos son los niveles de costo que usa un plan de la Parte D para agrupar los medicamentos cubiertos. Los niveles más bajos suelen incluir los medicamentos genéricos y preferidos con copagos menores, mientras que los niveles más altos incluyen los medicamentos de marca y especializados que cuestan más. El mismo medicamento puede ubicarse en distintos niveles en diferentes planes, y por eso su precio puede variar mucho según el plan que elija.",
+          "links": [
+            {
+              "href": "/prescription-drug-plans.html",
+              "label": "Planes de Medicamentos Recetados"
+            }
+          ],
+          "tools": [
+            "formulary",
+            "drug-cost"
+          ]
+        },
+        {
+          "q": "¿Qué es el límite de $2,000 de bolsillo de la Parte D?",
+          "a": "A partir de 2025 y continuando en 2026, la Parte D limita lo que usted paga de su bolsillo por los medicamentos recetados cubiertos a $2,000 por año. Una vez que sus gastos alcanzan esa cantidad, usted no paga nada más por los medicamentos cubiertos durante el resto del año. Este límite reemplazó la antigua brecha de cobertura, que a menudo se llamaba el \"donut hole\" (hueco de la dona), y que ya no existe.",
+          "links": [
+            {
+              "href": "/blog/the-2000-drug-cap-explained.html",
+              "label": "Explicación del límite de $2,000 para medicamentos"
+            },
+            {
+              "href": "/blog/new-part-d-rules.html",
+              "label": "Nuevas reglas de la Parte D"
+            }
+          ],
+          "tools": [
+            "drug-cost",
+            "cost-estimator"
+          ]
+        },
+        {
+          "q": "¿Cubre Medicare los medicamentos para bajar de peso?",
+          "a": "No. Por ley, Medicare no puede cubrir medicamentos recetados únicamente para bajar de peso. Sin embargo, algunos de estos medicamentos sí se cubren cuando se recetan para otra afección aprobada, como Wegovy para reducir el riesgo cardiovascular, Zepbound para la apnea obstructiva del sueño, u Ozempic y Mounjaro para la diabetes tipo 2. La cobertura depende del diagnóstico que documente su médico.",
+          "links": [
+            {
+              "href": "/blog/does-medicare-cover-wegovy.html",
+              "label": "¿Cubre Medicare el Wegovy?"
+            },
+            {
+              "href": "/blog/does-medicare-cover-mounjaro.html",
+              "label": "¿Cubre Medicare el Mounjaro?"
+            }
+          ],
+          "tools": [
+            "formulary"
+          ]
+        },
+        {
+          "q": "¿Cubre Medicare el Wegovy?",
+          "a": "Medicare no puede cubrir Wegovy cuando se receta únicamente para bajar de peso. Los planes de la Parte D sí pueden cubrirlo cuando se receta para reducir el riesgo de ataque cardíaco y derrame cerebral en adultos con enfermedad cardíaca que tienen sobrepeso u obesidad, lo cual es un uso aprobado por la FDA. Las reglas de cobertura y de autorización previa dependen de su plan específico.",
+          "links": [
+            {
+              "href": "/blog/does-medicare-cover-wegovy.html",
+              "label": "¿Cubre Medicare el Wegovy?"
+            }
+          ],
+          "tools": [
+            "formulary",
+            "drug-cost"
+          ]
+        },
+        {
+          "q": "¿Cubre Medicare el Mounjaro?",
+          "a": "Sí, por lo general los planes de la Parte D de Medicare cubren Mounjaro cuando se receta para tratar la diabetes tipo 2, que es su uso aprobado por la FDA. Medicare no puede cubrirlo cuando se receta únicamente para bajar de peso. Muchos planes requieren autorización previa, y su costo depende del formulario del plan, por lo que conviene confirmar la cobertura antes de surtirlo.",
+          "links": [
+            {
+              "href": "/blog/does-medicare-cover-mounjaro.html",
+              "label": "¿Cubre Medicare el Mounjaro?"
+            }
+          ],
+          "tools": [
+            "formulary",
+            "drug-cost"
+          ]
+        },
+        {
+          "q": "¿Cubre Medicare el Humira?",
+          "a": "Sí, por lo general los planes de la Parte D de Medicare cubren Humira, normalmente en un nivel de especialidad porque es un biológico de alto costo. Los planes a menudo requieren autorización previa o terapia escalonada antes de aprobarlo. Gracias al límite anual de $2,000 de gastos de su bolsillo, su costo anual para un medicamento como Humira es mucho más predecible que en años anteriores.",
+          "links": [
+            {
+              "href": "/blog/does-medicare-cover-humira.html",
+              "label": "¿Cubre Medicare el Humira?"
+            },
+            {
+              "href": "/blog/the-2000-drug-cap-explained.html",
+              "label": "Explicación del límite de $2,000 para medicamentos"
+            }
+          ],
+          "tools": [
+            "formulary",
+            "drug-cost"
+          ]
+        },
+        {
+          "q": "¿Qué es el Plan de Pago de Medicamentos Recetados de Medicare?",
+          "a": "El Plan de Pago de Medicamentos Recetados de Medicare le permite distribuir a lo largo del año, en pagos mensuales, los gastos de su bolsillo por medicamentos de la Parte D, en lugar de pagarlos todos de una vez en la farmacia. Inscribirse es gratis, y el total que usted paga no cambia. Puede ayudarle si enfrenta una factura grande a principios del año, especialmente por medicamentos de alto costo.",
+          "links": [
+            {
+              "href": "/blog/new-part-d-rules.html",
+              "label": "Nuevas reglas de la Parte D"
+            },
+            {
+              "href": "/blog/the-2000-drug-cap-explained.html",
+              "label": "Explicación del límite de $2,000 para medicamentos"
+            }
+          ],
+          "tools": [
+            "cost-estimator"
+          ]
+        },
+        {
+          "q": "¿Necesito la Parte D si no tomo ningún medicamento recetado?",
+          "a": "Aunque no tome ningún medicamento actualmente, por lo general es prudente inscribirse en la Parte D en cuanto sea elegible. Si permanece sin cobertura de medicamentos acreditable y se inscribe más tarde, pagará una multa permanente por inscripción tardía del 1% de la prima base por cada mes que se demoró. Un plan de bajo costo ahora lo protege de esa multa y lo cubre si sus necesidades cambian.",
+          "links": [
+            {
+              "href": "/blog/new-part-d-rules.html",
+              "label": "Nuevas reglas de la Parte D"
+            },
+            {
+              "href": "/prescription-drug-plans.html",
+              "label": "Planes de Medicamentos Recetados"
+            }
+          ],
+          "tools": [
+            "penalty"
+          ]
+        },
+        {
+          "q": "¿Cubre la Parte D las vacunas?",
+          "a": "Sí. La Parte D cubre las vacunas recomendadas para adultos por el comité asesor de los CDC, como las vacunas contra la culebrilla y el VRS, sin costo para usted y sin deducible. Algunas vacunas, incluidas las de la gripe, el COVID-19 y la neumocócica, se cubren en cambio bajo la Parte B sin costo. Entre ambas, sus vacunas recomendadas para adultos generalmente son gratuitas.",
+          "links": [
+            {
+              "href": "/blog/new-part-d-rules.html",
+              "label": "Nuevas reglas de la Parte D"
+            },
+            {
+              "href": "/prescription-drug-plans.html",
+              "label": "Planes de Medicamentos Recetados"
+            }
+          ]
+        },
+        {
+          "q": "¿Qué es una excepción de cobertura o una apelación?",
+          "a": "Una excepción de cobertura es una solicitud para pedirle a su plan que cubra un medicamento que normalmente no cubriría, o que exima una regla como la terapia escalonada o una restricción de nivel. Su médico presenta una declaración explicando por qué es médicamente necesario. Si el plan rechaza su solicitud, usted tiene derecho a apelar a través de varios niveles, y muchas apelaciones tienen éxito.",
+          "links": [
+            {
+              "href": "/blog/what-is-prior-authorization.html",
+              "label": "¿Qué es la autorización previa?"
+            },
+            {
+              "href": "/blog/what-is-step-therapy.html",
+              "label": "¿Qué es la terapia escalonada?"
+            }
+          ],
+          "tools": [
+            "formulary"
+          ]
+        },
+        {
+          "q": "¿Cuál es la diferencia entre los medicamentos de la Parte B y los de la Parte D?",
+          "a": "La Parte B cubre un conjunto limitado de medicamentos administrados en un entorno clínico, como infusiones, inyecciones administradas por un proveedor y algunos suministros. La Parte D cubre los medicamentos recetados que usted surte en una farmacia y toma por su cuenta en casa. Algunos medicamentos, como ciertas insulinas usadas con una bomba, pueden entrar en cualquiera de las dos según cómo se usen.",
+          "links": [
+            {
+              "href": "/blog/does-medicare-cover-insulin.html",
+              "label": "¿Cubre Medicare la insulina?"
+            },
+            {
+              "href": "/prescription-drug-plans.html",
+              "label": "Planes de Medicamentos Recetados"
+            }
+          ],
+          "tools": [
+            "drug-cost"
+          ]
+        },
+        {
+          "q": "¿Cómo encuentro un plan que cubra mis medicamentos recetados?",
+          "a": "Comience por hacer una lista de sus medicamentos y dosis, luego compare el formulario de cada plan para confirmar que sus medicamentos estén cubiertos y en un nivel asequible. Un estimador de costos puede sumar sus gastos anuales previstos entre primas y copagos. Como el plan adecuado depende de sus medicamentos exactos, un agente con licencia puede ayudarle a comparar las opciones lado a lado.",
+          "links": [
+            {
+              "href": "/prescription-drug-plans.html",
+              "label": "Planes de Medicamentos Recetados"
+            },
+            {
+              "href": "/blog/extra-help-explained.html",
+              "label": "La Ayuda Adicional (Extra Help) explicada"
+            }
+          ],
+          "tools": [
+            "formulary",
+            "drug-cost",
+            "cost-estimator"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "medicare-advantage",
+      "icon": "fa-hospital",
+      "title": "Medicare Advantage",
+      "blurb": "Cómo funcionan los planes Advantage (Parte C) y a quién le convienen.",
+      "faqs": [
+        {
+          "q": "¿Qué es Medicare Advantage?",
+          "a": "Medicare Advantage, también llamado Parte C, es un plan privado que agrupa sus beneficios de Medicare en un solo plan aprobado por Medicare. Reemplaza la forma en que usted obtiene Medicare Original (Partes A y B), y la mayoría de los planes también incluyen cobertura de medicamentos recetados y beneficios adicionales. Usted sigue teniendo Medicare, pero el plan administra su atención, generalmente a través de una red de proveedores.",
+          "links": [
+            {
+              "href": "/medicare-advantage.html",
+              "label": "Resumen de Medicare Advantage"
+            },
+            {
+              "href": "/blog/which-medicare-plan-is-right-for-me.html",
+              "label": "¿Cuál plan de Medicare es el adecuado para mí?"
+            }
+          ],
+          "tools": [
+            "quiz"
+          ]
+        },
+        {
+          "q": "¿Cuál es la diferencia entre Medicare Advantage y Medicare Original?",
+          "a": "Medicare Original (Partes A y B) le permite consultar a cualquier proveedor en todo el país que acepte Medicare, no tiene un máximo de gastos de su bolsillo y no incluye cobertura de medicamentos. Medicare Advantage agrupa su cobertura en un solo plan privado que normalmente usa una red de proveedores, limita sus gastos anuales de su bolsillo y a menudo añade cobertura de medicamentos y beneficios adicionales. Cada opción tiene ventajas y desventajas en cuanto a libertad, costo y comodidad.",
+          "links": [
+            {
+              "href": "/blog/medicare-advantage-vs-medigap.html",
+              "label": "Medicare Advantage frente a Medigap"
+            },
+            {
+              "href": "/blog/which-medicare-plan-is-right-for-me.html",
+              "label": "¿Cuál plan de Medicare es el adecuado para mí?"
+            }
+          ],
+          "tools": [
+            "quiz",
+            "cost-estimator"
+          ]
+        },
+        {
+          "q": "La mayoría de los planes de Medicare Advantage incluyen cobertura de medicamentos recetados integrada, por lo que usted no necesita un plan aparte de la Parte D. A menudo se les llama planes MAPD. Algunos planes de Medicare Advantage no incluyen medicamentos, así que siempre confirme antes de inscribirse. En 2026, el gasto en medicamentos cubiertos tiene un límite de $2,000 por año, y la insulina tiene un límite de $35 por mes.",
+          "a": "Most Medicare Advantage plans include prescription drug coverage built in, so you do not need a separate Parte D plan. These are often called MAPD plans. A few Medicare Advantage plans do not include drugs, so always confirm before enrolling. In 2026, covered drug spending is capped at $2,000 per year, and insulin is capped at $35 per month.",
+          "links": [
+            {
+              "href": "/medicare-advantage.html",
+              "label": "Resumen de Medicare Advantage"
+            },
+            {
+              "href": "/blog/the-2000-drug-cap-explained.html",
+              "label": "Explicación del límite de $2,000 para medicamentos"
+            }
+          ],
+          "tools": [
+            "drug-cost",
+            "formulary"
+          ]
+        },
+        {
+          "q": "¿Cuáles son las ventajas y desventajas de Medicare Advantage?",
+          "a": "Las ventajas incluyen primas mensuales más bajas o de $0, un máximo anual de gastos de su bolsillo, cobertura de medicamentos incluida y beneficios adicionales como dental y de la vista. Las desventajas incluyen redes de proveedores que limitan qué médicos puede usar, reglas de referencias y autorización previa, y costos que varían según la atención que reciba. La elección correcta depende de su salud, su presupuesto y los proveedores de su preferencia.",
+          "links": [
+            {
+              "href": "/blog/pros-and-cons-of-medicare-advantage.html",
+              "label": "Ventajas y desventajas de Medicare Advantage"
+            },
+            {
+              "href": "/blog/which-medicare-plan-is-right-for-me.html",
+              "label": "¿Cuál plan de Medicare es el adecuado para mí?"
+            }
+          ],
+          "tools": [
+            "quiz",
+            "cost-estimator"
+          ]
+        },
+        {
+          "q": "¿Medicare Advantage tiene redes de proveedores?",
+          "a": "Sí. La mayoría de los planes Medicare Advantage usan redes de proveedores, y el tipo de plan afecta su flexibilidad. Los planes HMO generalmente exigen que use proveedores dentro de la red y que obtenga referencias, mientras que los planes PPO le permiten salir de la red a un costo más alto. Antes de inscribirse, confirme que sus médicos, hospitales y farmacias estén en la red del plan.",
+          "links": [
+            {
+              "href": "/blog/pros-and-cons-of-medicare-advantage.html",
+              "label": "Ventajas y desventajas de Medicare Advantage"
+            },
+            {
+              "href": "/medicare-advantage.html",
+              "label": "Resumen de Medicare Advantage"
+            }
+          ],
+          "tools": [
+            "quiz"
+          ]
+        },
+        {
+          "q": "¿Sigo pagando la prima de la Parte B con Medicare Advantage?",
+          "a": "Sí. Para mantenerse inscrito en Medicare Advantage debe seguir pagando su prima de la Parte B, que es de $202.90 al mes en 2026. El plan en sí puede cobrar poca o ninguna prima adicional, pero la prima de la Parte B es aparte y sigue siendo obligatoria. Algunos planes ayudan a compensar esto mediante un beneficio de reducción de la prima de la Parte B.",
+          "links": [
+            {
+              "href": "/blog/medicare-part-b-premiums-2026.html",
+              "label": "Primas de la Parte B de Medicare 2026"
+            },
+            {
+              "href": "/blog/how-much-does-medicare-cost.html",
+              "label": "¿Cuánto cuesta Medicare?"
+            }
+          ],
+          "tools": [
+            "cost-estimator"
+          ]
+        },
+        {
+          "q": "¿Medicare Advantage tiene un máximo de gastos de su bolsillo?",
+          "a": "Sí. Todo plan Medicare Advantage debe poner un límite a sus gastos anuales de su bolsillo por los servicios cubiertos de la Parte A y la Parte B, lo que lo protege de gastos ilimitados. Una vez que alcance ese límite, el plan paga el 100% de la atención cubierta durante el resto del año. Esta es una ventaja clave sobre Medicare Original, que no tiene un máximo de gastos de su bolsillo.",
+          "links": [
+            {
+              "href": "/blog/medicare-advantage-vs-medigap.html",
+              "label": "Medicare Advantage frente a Medigap"
+            },
+            {
+              "href": "/blog/how-much-does-medicare-cost.html",
+              "label": "¿Cuánto cuesta Medicare?"
+            }
+          ],
+          "tools": [
+            "cost-estimator"
+          ]
+        },
+        {
+          "q": "¿Puedo cambiarme de Medicare Advantage de regreso a Medicare Original?",
+          "a": "Sí. Puede cambiarse durante el Período de Inscripción Anual (del 15 de octubre al 7 de diciembre) o durante el Período de Inscripción Abierta de Medicare Advantage (del 1 de enero al 31 de marzo). Cuando regrese a Medicare Original, es posible que desee un plan de medicamentos de la Parte D y una póliza Medigap, pero Medigap puede exigir una evaluación médica fuera de los períodos de emisión garantizada, así que planifique con cuidado.",
+          "links": [
+            {
+              "href": "/blog/annual-enrollment-period-explained.html",
+              "label": "Explicación del Período de Inscripción Anual"
+            },
+            {
+              "href": "/blog/medicare-advantage-vs-medigap.html",
+              "label": "Medicare Advantage frente a Medigap"
+            }
+          ],
+          "tools": [
+            "timeline"
+          ]
+        },
+        {
+          "q": "¿Qué es un D-SNP?",
+          "a": "Un D-SNP, o Plan para Necesidades Especiales de Personas con Doble Elegibilidad, es un tipo de plan Medicare Advantage diseñado para personas que tienen tanto Medicare como Medicaid. Estos planes coordinan ambos programas, con frecuencia cobran primas de $0 y agregan beneficios adicionales adaptados a los miembros con doble elegibilidad. Para calificar, debe tener Medicare y cumplir con las reglas de elegibilidad de Medicaid de su estado.",
+          "links": [
+            {
+              "href": "/blog/d-snp-plans-explained.html",
+              "label": "Los planes D-SNP explicados"
+            },
+            {
+              "href": "/dual-eligible.html",
+              "label": "Cobertura de doble elegibilidad"
+            }
+          ],
+          "tools": [
+            "eligibility"
+          ]
+        },
+        {
+          "q": "¿Qué beneficios adicionales ofrecen los planes Medicare Advantage?",
+          "a": "Muchos planes Medicare Advantage agregan beneficios que Medicare Original no cubre, como dental, de la vista, audífonos y membresías de gimnasio. Algunos planes también incluyen asignaciones para medicamentos de venta libre, transporte a las citas y telesalud. Los planes para personas con doble elegibilidad a menudo ofrecen beneficios aún más completos, como asignaciones para comestibles o servicios públicos. Los beneficios varían mucho según el plan, así que compare las opciones antes de inscribirse.",
+          "links": [
+            {
+              "href": "/blog/extra-benefits-for-dual-eligible-beneficiaries.html",
+              "label": "Beneficios adicionales para beneficiarios con doble elegibilidad"
+            },
+            {
+              "href": "/dental-vision-hearing.html",
+              "label": "Dental, de la vista y auditivo"
+            }
+          ],
+          "tools": [
+            "quiz"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "medigap",
+      "icon": "fa-shield-halved",
+      "title": "Medigap",
+      "blurb": "Planes de Seguro Suplementario de Medicare, comparados.",
+      "faqs": [
+        {
+          "q": "¿Qué es Medigap?",
+          "a": "Medigap, también llamado Seguro Suplementario de Medicare, es una póliza privada que se combina con Medicare Original (Partes A y B) para ayudar a pagar la parte que le corresponde de los costos cubiertos, como deducibles, copagos y el coseguro del 20%. Los planes están estandarizados y se venden por letra (como el Plan G o el Plan N), así que el mismo plan con la misma letra ofrece los mismos beneficios básicos sin importar la aseguradora. Medigap no reemplaza a Medicare; llena los vacíos.",
+          "links": [
+            {
+              "href": "/medicare-supplement.html",
+              "label": "Descripción general del Seguro Suplementario de Medicare"
+            },
+            {
+              "href": "/blog/which-medicare-plan-is-right-for-me.html",
+              "label": "¿Cuál plan de Medicare es el adecuado para mí?"
+            }
+          ],
+          "tools": [
+            "quiz"
+          ]
+        },
+        {
+          "q": "¿Cuál es la diferencia entre Medigap y Medicare Advantage?",
+          "a": "Medigap funciona junto con Medicare Original y paga la parte que le corresponde de los costos, permitiéndole ver a cualquier proveedor que acepte Medicare, sin redes ni referencias. Medicare Advantage reemplaza a Medicare Original con un plan privado todo en uno que por lo general usa redes y puede incluir beneficios de medicamentos y beneficios adicionales. No puede tener ambos al mismo tiempo, así que la mayoría de las personas eligen un enfoque basándose en la flexibilidad frente a primas iniciales más bajas.",
+          "links": [
+            {
+              "href": "/blog/medicare-advantage-vs-medigap.html",
+              "label": "Medicare Advantage frente a Medigap"
+            },
+            {
+              "href": "/blog/which-medicare-plan-is-right-for-me.html",
+              "label": "¿Cuál plan de Medicare es el adecuado para mí?"
+            }
+          ],
+          "tools": [
+            "quiz"
+          ]
+        },
+        {
+          "q": "¿Qué es el Plan G del Seguro Suplementario de Medicare?",
+          "a": "El Plan G es uno de los planes Medigap más populares porque cubre casi todos sus gastos de su bolsillo bajo Medicare Original. Después de que usted paga el deducible anual de la Parte B de $283, el Plan G cubre el coseguro de la Parte A y la Parte B, los costos hospitalarios y los cargos excedentes, dejándole gastos muy predecibles. No cubre el deducible de la Parte B en sí, que es el único vacío importante.",
+          "links": [
+            {
+              "href": "/blog/what-is-medicare-supplement-plan-g.html",
+              "label": "¿Qué es el Plan G del Seguro Suplementario de Medicare?"
+            }
+          ],
+          "tools": [
+            "cost-estimator"
+          ]
+        },
+        {
+          "q": "¿Qué es el Plan N del Seguro Suplementario de Medicare?",
+          "a": "El Plan N ofrece una cobertura sólida con una prima más baja que el Plan G a cambio de algunos gastos de su bolsillo. Después del deducible de la Parte B de $283, es posible que pague copagos pequeños de hasta $20 por consultas médicas y hasta $50 por visitas a la sala de emergencias, y el Plan N no cubre los cargos excedentes de la Parte B. Puede ser una buena opción si desea costos mensuales más bajos y no le importa pagar copagos modestos.",
+          "links": [
+            {
+              "href": "/blog/what-is-medicare-supplement-plan-n.html",
+              "label": "¿Qué es el Plan N del Seguro Suplementario de Medicare?"
+            }
+          ],
+          "tools": [
+            "cost-estimator"
+          ]
+        },
+        {
+          "q": "¿Medigap cubre los medicamentos recetados?",
+          "a": "No. Las pólizas Medigap que se venden hoy en día no incluyen cobertura de medicamentos recetados. Para obtener cobertura de medicamentos mientras tiene Medigap, agrega un plan independiente de la Parte D de Medicare, que cubre la mayoría de los medicamentos ambulatorios y pone un límite a sus gastos anuales de su bolsillo por medicamentos de $2,000 en 2026. Combinar Medigap con un plan de la Parte D le brinda una amplia protección médica y de medicamentos.",
+          "links": [
+            {
+              "href": "/prescription-drug-plans.html",
+              "label": "Planes de Medicamentos Recetados"
+            },
+            {
+              "href": "/blog/the-2000-drug-cap-explained.html",
+              "label": "Explicación del límite de $2,000 para medicamentos"
+            }
+          ],
+          "tools": [
+            "drug-cost",
+            "formulary"
+          ]
+        },
+        {
+          "q": "¿Cuál es el mejor momento para comprar una póliza Medigap?",
+          "a": "El mejor momento es durante su Período de Inscripción Abierta de Medigap, los seis meses que comienzan cuando cumple 65 años o más y está inscrito en la Parte B. Durante este plazo tiene derechos de emisión garantizada, lo que significa que no le pueden negar la póliza ni cobrarle más por razones de salud. Comprar fuera de este período a menudo implica una evaluación médica, así que inscribirse a tiempo protege tanto su acceso como su precio.",
+          "links": [
+            {
+              "href": "/medicare-supplement.html",
+              "label": "Descripción general del Seguro Suplementario de Medicare"
+            },
+            {
+              "href": "/turning-65.html",
+              "label": "Al Cumplir los 65 Años"
+            }
+          ],
+          "tools": [
+            "timeline"
+          ]
+        },
+        {
+          "q": "¿Me pueden negar una póliza Medigap?",
+          "a": "Sí, fuera de los períodos protegidos. Durante su Período de Inscripción Abierta de Medigap de seis meses, o cuando tiene ciertos derechos de emisión garantizada, las aseguradoras deben venderle una póliza sin importar su estado de salud. Si solicita después, las compañías pueden usar una evaluación médica para negarle la cobertura o cobrarle más según su historial de salud. Por eso es tan importante inscribirse durante su plazo de inscripción abierta.",
+          "links": [
+            {
+              "href": "/medicare-supplement.html",
+              "label": "Descripción general del Seguro Suplementario de Medicare"
+            },
+            {
+              "href": "/blog/which-medicare-plan-is-right-for-me.html",
+              "label": "¿Cuál plan de Medicare es el adecuado para mí?"
+            }
+          ],
+          "tools": [
+            "quiz"
+          ]
+        },
+        {
+          "q": "¿Medigap tiene redes de proveedores?",
+          "a": "No. Como Medigap funciona con Medicare Original, puede consultar a cualquier médico, especialista u hospital del país que acepte Medicare, sin redes ni referencias. Esta libertad a nivel nacional es una de las principales razones por las que las personas eligen un plan suplementario. Mientras un proveedor acepte Medicare, su póliza Medigap ayuda a pagar su parte de los costos cubiertos.",
+          "links": [
+            {
+              "href": "/blog/medicare-advantage-vs-medigap.html",
+              "label": "Medicare Advantage frente a Medigap"
+            }
+          ]
+        },
+        {
+          "q": "¿Cuánto cuesta Medigap?",
+          "a": "Las primas de Medigap varían según la letra del plan, su edad, ubicación y la compañía de seguros, y a menudo van desde aproximadamente $100 hasta $300 o más por mes. También sigue pagando su prima de la Parte B de $202.90 en 2026. Como el mismo plan por letra ofrece beneficios idénticos entre las distintas compañías, comparar precios es la mejor manera de encontrar valor por la cobertura que desea.",
+          "links": [
+            {
+              "href": "/blog/how-much-does-medicare-cost.html",
+              "label": "¿Cuánto cuesta Medicare?"
+            },
+            {
+              "href": "/medicare-supplement.html",
+              "label": "Descripción general del Seguro Suplementario de Medicare"
+            }
+          ],
+          "tools": [
+            "cost-estimator"
+          ]
+        },
+        {
+          "q": "¿Puedo cambiar de plan Medigap más adelante?",
+          "a": "Sí, puede solicitar cambiar de plan Medigap en cualquier momento del año, pero el momento importa. A menos que tenga un derecho de emisión garantizada, la nueva aseguradora puede usar una evaluación médica, por lo que podrían negarle la cobertura o cobrarle más según su estado de salud. Si está sano y desea reducir su prima o cambiar de beneficios, comparar planes y solicitar antes de cualquier cambio en su salud le da las mejores posibilidades.",
+          "links": [
+            {
+              "href": "/medicare-supplement.html",
+              "label": "Descripción general del Seguro Suplementario de Medicare"
+            },
+            {
+              "href": "/blog/which-medicare-plan-is-right-for-me.html",
+              "label": "¿Cuál plan de Medicare es el adecuado para mí?"
+            }
+          ],
+          "tools": [
+            "cost-estimator",
+            "quiz"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "dual-eligible",
+      "icon": "fa-hand-holding-heart",
+      "title": "Doble elegibilidad",
+      "blurb": "Medicare + Medicaid, programas de ahorro, D-SNP.",
+      "faqs": [
+        {
+          "q": "¿Qué es la doble elegibilidad?",
+          "a": "La doble elegibilidad significa que califica para Medicare y Medicaid al mismo tiempo. Medicare es su cobertura primaria, y Medicaid ayuda a pagar los costos que Medicare deja pendientes, como primas, deducibles y coseguros. Las personas con doble elegibilidad a menudo pagan poco o nada de su bolsillo y pueden calificar para planes especiales diseñados para sus necesidades.",
+          "links": [
+            {
+              "href": "/blog/what-is-dual-eligibility.html",
+              "label": "¿Qué es la doble elegibilidad?"
+            },
+            {
+              "href": "/dual-eligible.html",
+              "label": "Cobertura de doble elegibilidad"
+            }
+          ],
+          "tools": [
+            "eligibility"
+          ]
+        },
+        {
+          "q": "¿Cuál es la diferencia entre Medicare y Medicaid?",
+          "a": "Medicare es un programa federal de salud para personas de 65 años o más o con ciertas discapacidades, sin importar sus ingresos. Medicaid es un programa conjunto federal y estatal que ayuda a cubrir los costos de salud de personas con ingresos y recursos limitados. Si califica para ambos, Medicare paga primero y Medicaid lo complementa para cubrir la mayoría de los costos restantes.",
+          "links": [
+            {
+              "href": "/blog/medicare-and-medicaid-together.html",
+              "label": "Medicare y Medicaid juntos"
+            },
+            {
+              "href": "/blog/what-is-dual-eligibility.html",
+              "label": "¿Qué es la doble elegibilidad?"
+            }
+          ],
+          "tools": [
+            "eligibility"
+          ]
+        },
+        {
+          "q": "¿Qué son los Programas de Ahorro de Medicare?",
+          "a": "Los Programas de Ahorro de Medicare son programas administrados por el estado que ayudan a pagar sus costos de Medicare si tiene ingresos y recursos limitados. Los tres programas principales son QMB, SLMB y QI, cada uno con diferentes límites de ingresos y beneficios. En 2026 los límites de recursos compartidos son de $9,950 para una persona y $14,910 para una pareja casada.",
+          "links": [
+            {
+              "href": "/blog/medicare-savings-programs.html",
+              "label": "Programas de Ahorro de Medicare"
+            },
+            {
+              "href": "/blog/qmb-vs-slmb-vs-qi.html",
+              "label": "QMB vs SLMB vs QI"
+            }
+          ],
+          "tools": [
+            "eligibility",
+            "cost-estimator"
+          ]
+        },
+        {
+          "q": "¿Qué es el programa QMB?",
+          "a": "El programa de Beneficiario Calificado de Medicare (QMB) es el más generoso de los Programas de Ahorro de Medicare. Paga sus primas de la Parte A y la Parte B, además de sus deducibles, coseguros y copagos. En 2026 puede calificar con ingresos mensuales de hasta $1,350 si es soltero o $1,824 si es casado. Con QMB, los proveedores no pueden facturarle los costos cubiertos por Medicare.",
+          "links": [
+            {
+              "href": "/blog/what-is-the-qmb-program.html",
+              "label": "¿Qué es el programa QMB?"
+            },
+            {
+              "href": "/blog/medicare-savings-programs.html",
+              "label": "Programas de Ahorro de Medicare"
+            }
+          ],
+          "tools": [
+            "eligibility"
+          ]
+        },
+        {
+          "q": "¿Cuál es la diferencia entre QMB, SLMB y QI?",
+          "a": "Los tres son Programas de Ahorro de Medicare, pero cubren montos diferentes. QMB paga las primas de la Parte A y B, además de todo el costo compartido (ingresos de 2026 hasta $1,350 si es soltero). SLMB paga solo la prima de la Parte B (hasta $1,616 si es soltero). QI también paga solo la prima de la Parte B (hasta $1,816 si es soltero), pero se otorga por orden de llegada y se financia cada año.",
+          "links": [
+            {
+              "href": "/blog/qmb-vs-slmb-vs-qi.html",
+              "label": "QMB vs SLMB vs QI"
+            },
+            {
+              "href": "/blog/medicare-savings-programs.html",
+              "label": "Programas de Ahorro de Medicare"
+            }
+          ],
+          "tools": [
+            "eligibility",
+            "cost-estimator"
+          ]
+        },
+        {
+          "q": "¿Qué es un D-SNP?",
+          "a": "Un Plan para Necesidades Especiales de Doble Elegibilidad (D-SNP) es un tipo de plan Medicare Advantage diseñado solo para personas que tienen tanto Medicare como Medicaid. Estos planes coordinan sus beneficios de Medicare y Medicaid en un solo paquete y a menudo agregan extras como cobertura dental, de la vista, auditiva y asignaciones para productos de venta libre. Están hechos para mantener sus costos de bolsillo muy bajos.",
+          "links": [
+            {
+              "href": "/blog/d-snp-plans-explained.html",
+              "label": "Los planes D-SNP explicados"
+            },
+            {
+              "href": "/dual-eligible.html",
+              "label": "Cobertura de doble elegibilidad"
+            }
+          ]
+        },
+        {
+          "q": "¿Los miembros con doble elegibilidad pagan las primas de Medicare?",
+          "a": "La mayoría de los miembros con doble elegibilidad pagan poco o nada de primas de Medicare. Si califica para QMB, SLMB o QI, el programa paga su prima de la Parte B de $202.90 por mes, y QMB también paga su prima de la Parte A y el costo compartido. Muchas personas con doble elegibilidad también obtienen Ayuda Adicional (Extra Help), que reduce los costos de medicamentos de la Parte D. Sus ahorros exactos dependen de los programas para los que califique.",
+          "links": [
+            {
+              "href": "/blog/do-dual-eligible-members-pay-medicare-costs.html",
+              "label": "¿Los miembros con doble elegibilidad pagan costos de Medicare?"
+            },
+            {
+              "href": "/blog/medicare-savings-programs.html",
+              "label": "Programas de Ahorro de Medicare"
+            }
+          ],
+          "tools": [
+            "cost-estimator",
+            "eligibility"
+          ]
+        },
+        {
+          "q": "¿Qué es la Ayuda Adicional (Extra Help) y cómo la obtienen las personas con doble elegibilidad?",
+          "a": "La Ayuda Adicional (Extra Help) es un programa federal que reduce los costos de sus medicamentos recetados de la Parte D de Medicare, incluyendo primas, deducibles y copagos. Con la Ayuda Adicional (Extra Help) completa, no paga más de $12.65 por medicamento cubierto en 2026. Si tiene Medicaid o un Programa de Ahorro de Medicare, se inscribe automáticamente en la Ayuda Adicional (Extra Help), por lo que la mayoría de los miembros con doble elegibilidad la obtienen sin una solicitud aparte.",
+          "links": [
+            {
+              "href": "/blog/extra-help-and-dual-eligibility.html",
+              "label": "La Ayuda Adicional (Extra Help) y la doble elegibilidad"
+            },
+            {
+              "href": "/blog/extra-help-explained.html",
+              "label": "La Ayuda Adicional (Extra Help) explicada"
+            }
+          ],
+          "tools": [
+            "eligibility",
+            "drug-cost"
+          ]
+        },
+        {
+          "q": "¿Cómo solicito Medicaid en Utah?",
+          "a": "En Utah, usted solicita Medicaid a través del Department of Workforce Services (Departamento de Servicios Laborales), en línea en jobs.utah.gov, por teléfono o en persona en una oficina local. Deberá compartir información sobre sus ingresos, recursos y hogar para confirmar su elegibilidad. Un agente con licencia puede ayudarle a entender si usted califica y cómo funcionará Medicaid junto con su cobertura de Medicare.",
+          "links": [
+            {
+              "href": "/blog/how-to-apply-for-medicaid-in-utah.html",
+              "label": "Cómo solicitar Medicaid en Utah"
+            },
+            {
+              "href": "/contact.html",
+              "label": "Hable con Bret"
+            }
+          ],
+          "tools": [
+            "eligibility"
+          ]
+        },
+        {
+          "q": "¿Qué pasa si pierdo Medicaid?",
+          "a": "Si usted pierde Medicaid, conserva su cobertura de Medicare, pero es posible que comience a pagar primas, deducibles y coseguro que Medicaid cubría. Perder Medicaid generalmente activa un Período de Inscripción Especial para que pueda cambiar su plan de Medicare Advantage o de medicamentos. Actuar rápidamente le ayuda a evitar interrupciones en la cobertura, y es posible que vuelva a calificar para un Programa de Ahorro de Medicare.",
+          "links": [
+            {
+              "href": "/blog/losing-medicaid-what-happens-to-medicare.html",
+              "label": "Perder Medicaid: qué pasa con Medicare"
+            },
+            {
+              "href": "/blog/medicare-savings-programs.html",
+              "label": "Programas de Ahorro de Medicare"
+            }
+          ],
+          "tools": [
+            "eligibility",
+            "cost-estimator"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "turning-65",
+      "icon": "fa-cake-candles",
+      "title": "Al Cumplir los 65 Años",
+      "blurb": "Qué hacer al cumplir la edad para Medicare.",
+      "faqs": [
+        {
+          "q": "¿Qué necesito hacer cuando cumpla 65 años?",
+          "a": "Alrededor de su cumpleaños número 65, usted debe decidir qué partes de Medicare tomar y cuándo. La mayoría de las personas se inscriben en la Parte A sin prima, luego evalúan la Parte B, un plan de medicamentos de la Parte D, y si agregar un plan Medicare Advantage o Medigap. Si tiene cobertura activa de un empleador, es posible que pueda retrasar la Parte B sin penalización. Una lista de verificación simple mantiene los pasos en orden.",
+          "links": [
+            {
+              "href": "/blog/medicare-checklist-turning-65.html",
+              "label": "Lista de verificación de Medicare al cumplir 65 años"
+            },
+            {
+              "href": "/turning-65.html",
+              "label": "Guía para Cumplir 65 Años"
+            }
+          ],
+          "tools": [
+            "timeline",
+            "eligibility"
+          ]
+        },
+        {
+          "q": "¿Tengo que inscribirme en Medicare a los 65 años?",
+          "a": "No está obligado a tomar todo a los 65 años, pero la mayoría de las personas se inscriben en la Parte A sin prima ya que no cuesta nada. La Parte B es opcional y puede retrasarse sin penalización solo si tiene cobertura activa de un empleador actual con 20 o más empleados. Sin esa protección, retrasar la Parte B activa una penalización tardía de por vida del 10% por cada 12 meses completos que pase sin ella.",
+          "links": [
+            {
+              "href": "/blog/can-i-delay-medicare-part-b.html",
+              "label": "¿Puedo retrasar la Parte B de Medicare?"
+            },
+            {
+              "href": "/blog/medicare-and-employer-coverage-after-65.html",
+              "label": "Medicare y la cobertura del empleador después de los 65 años"
+            }
+          ],
+          "tools": [
+            "eligibility",
+            "penalty"
+          ]
+        },
+        {
+          "q": "¿Puedo mantener la cobertura de mi empleador después de los 65 años?",
+          "a": "Sí. Si usted o su cónyuge todavía trabajan activamente para un empleador con 20 o más empleados, puede mantener ese plan grupal y retrasar la Parte B sin una penalización tardía. Cuando el trabajo o la cobertura termine, usted obtiene un Período de Inscripción Especial de 8 meses para agregar la Parte B. COBRA y la cobertura de jubilado no cuentan como cobertura activa, así que no confíe en ellas para retrasar.",
+          "links": [
+            {
+              "href": "/blog/medicare-and-employer-coverage-after-65.html",
+              "label": "Medicare y la cobertura del empleador después de los 65 años"
+            },
+            {
+              "href": "/blog/special-enrollment-period-explained.html",
+              "label": "El Período de Inscripción Especial explicado"
+            }
+          ],
+          "tools": [
+            "eligibility",
+            "timeline"
+          ]
+        },
+        {
+          "q": "¿Cuándo comienza mi Período de Inscripción Inicial?",
+          "a": "Su Período de Inscripción Inicial es una ventana de 7 meses centrada en su cumpleaños número 65. Comienza 3 meses antes del mes en que cumple 65 años, incluye el mes de su cumpleaños y termina 3 meses después. Inscribirse en los primeros 3 meses significa que la cobertura puede comenzar el mes en que cumple 65 años. Perder esta ventana puede provocar penalizaciones e interrupciones en la cobertura.",
+          "links": [
+            {
+              "href": "/blog/initial-enrollment-period-explained.html",
+              "label": "El Período de Inscripción Inicial explicado"
+            }
+          ],
+          "tools": [
+            "timeline",
+            "countdown"
+          ]
+        },
+        {
+          "q": "¿Debo tomar la Parte A si todavía estoy trabajando?",
+          "a": "La mayoría de las personas toman la Parte A sin prima a los 65 años incluso mientras trabajan, ya que agrega cobertura hospitalaria sin costo. La gran excepción es si usted contribuye a una Cuenta de Ahorros para la Salud (HSA): inscribirse en cualquier parte de Medicare, incluida la Parte A, termina su capacidad de hacer contribuciones a la HSA. Si desea seguir aportando a una HSA, puede optar por retrasar la Parte A mientras tenga cobertura del empleador.",
+          "links": [
+            {
+              "href": "/blog/medicare-and-employer-coverage-after-65.html",
+              "label": "Medicare y la cobertura del empleador después de los 65 años"
+            }
+          ],
+          "tools": [
+            "eligibility"
+          ]
+        },
+        {
+          "q": "¿Puedo seguir contribuyendo a una HSA después de inscribirme en Medicare?",
+          "a": "No. Una vez que se inscribe en cualquier parte de Medicare, incluida la Parte A sin prima, ya no puede hacer nuevas contribuciones a una Cuenta de Ahorros para la Salud (HSA). Todavía puede usar el dinero que ya está en la cuenta para gastos calificados, pero los nuevos depósitos deben detenerse. Si planea seguir contribuyendo, es posible que necesite retrasar la inscripción en Medicare mientras tenga cobertura calificada del empleador.",
+          "links": [
+            {
+              "href": "/blog/can-i-delay-medicare-part-b.html",
+              "label": "¿Puedo retrasar la Parte B de Medicare?"
+            }
+          ],
+          "tools": [
+            "eligibility"
+          ]
+        },
+        {
+          "q": "¿Cuándo debo empezar a planificar para Medicare?",
+          "a": "Comience a planificar entre 3 y 6 meses antes de cumplir 65 años, ya que su Período de Inscripción Inicial se abre 3 meses antes del mes de su cumpleaños. Planificar con anticipación le da tiempo para comparar las opciones de la Parte D, Medicare Advantage y Medigap, y para confirmar si su cobertura del empleador le permite retrasar la Parte B. Una cuenta regresiva puede ayudarle a llevar el control de cada fecha límite para que nada se le escape.",
+          "links": [
+            {
+              "href": "/blog/medicare-timeline-explained.html",
+              "label": "La línea de tiempo de Medicare explicada"
+            },
+            {
+              "href": "/blog/medicare-checklist-turning-65.html",
+              "label": "Lista de verificación de Medicare al cumplir 65 años"
+            }
+          ],
+          "tools": [
+            "countdown",
+            "timeline"
+          ]
+        },
+        {
+          "q": "¿Medicare comienza automáticamente a los 65 años?",
+          "a": "Depende del Seguro Social. Si ya está recibiendo beneficios del Seguro Social o de la Jubilación Ferroviaria, generalmente se le inscribe automáticamente en la Parte A y la Parte B a partir del mes en que cumple 65 años. Si aún no está recibiendo esos beneficios, la inscripción no es automática y debe inscribirse activamente durante su Período de Inscripción Inicial.",
+          "links": [
+            {
+              "href": "/blog/initial-enrollment-period-explained.html",
+              "label": "El Período de Inscripción Inicial explicado"
+            },
+            {
+              "href": "/blog/medicare-timeline-explained.html",
+              "label": "La línea de tiempo de Medicare explicada"
+            }
+          ],
+          "tools": [
+            "timeline",
+            "eligibility"
+          ]
+        },
+        {
+          "q": "¿Cuál es el primer paso para inscribirse a los 65 años?",
+          "a": "El primer paso es confirmar su elegibilidad y las fechas exactas de su Período de Inscripción Inicial, que dura 7 meses alrededor de su cumpleaños número 65. A partir de ahí, usted decide sobre la Parte A sin prima, si toma la Parte B ahora o la retrasa debido a cobertura activa del empleador, y qué plan de medicamentos le conviene. Verificar primero su elegibilidad y su línea de tiempo mantiene simple el resto del proceso.",
+          "links": [
+            {
+              "href": "/blog/medicare-checklist-turning-65.html",
+              "label": "Lista de verificación de Medicare al cumplir 65 años"
+            },
+            {
+              "href": "/blog/initial-enrollment-period-explained.html",
+              "label": "El Período de Inscripción Inicial explicado"
+            }
+          ],
+          "tools": [
+            "eligibility",
+            "timeline"
+          ]
+        },
+        {
+          "q": "¿Qué pasa si aún no estoy recibiendo el Seguro Social a los 65 años?",
+          "a": "Si aún no está recibiendo beneficios del Seguro Social a los 65 años, Medicare no comienza automáticamente. Debe inscribirse activamente en la Parte A y la Parte B durante su Período de Inscripción Inicial de 7 meses, generalmente a través del Seguro Social. Actuar durante esta ventana evita penalizaciones tardías de por vida e interrupciones en la cobertura, por lo que ayuda marcar sus fechas con anticipación con una cuenta regresiva.",
+          "links": [
+            {
+              "href": "/blog/initial-enrollment-period-explained.html",
+              "label": "El Período de Inscripción Inicial explicado"
+            },
+            {
+              "href": "/blog/can-i-delay-medicare-part-b.html",
+              "label": "¿Puedo retrasar la Parte B de Medicare?"
+            }
+          ],
+          "tools": [
+            "countdown",
+            "eligibility"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "general",
+      "icon": "fa-circle-question",
+      "title": "Medicare general",
+      "blurb": "Lo básico: partes, elegibilidad y cobertura.",
+      "faqs": [
+        {
+          "q": "¿Cuáles son las partes de Medicare (A, B, C y D)?",
+          "a": "Medicare tiene cuatro partes. La Parte A cubre atención hospitalaria como paciente internado, enfermería especializada y cuidados paliativos. La Parte B cubre servicios ambulatorios y de médicos. La Parte C, llamada Medicare Advantage, es un plan privado que combina la A y la B (y generalmente la D) juntas. La Parte D cubre medicamentos recetados. La mayoría de las personas combinan estas para armar la cobertura que necesitan.",
+          "links": [
+            {
+              "href": "/medicare-basics.html",
+              "label": "Conceptos Básicos de Medicare"
+            },
+            {
+              "href": "/blog/which-medicare-plan-is-right-for-me.html",
+              "label": "¿Cuál plan de Medicare es el adecuado para mí?"
+            }
+          ],
+          "tools": [
+            "quiz",
+            "glossary"
+          ]
+        },
+        {
+          "q": "¿Qué es Medicare Original?",
+          "a": "Medicare Original es el programa federal compuesto por la Parte A (hospital) y la Parte B (médica). Puede consultar a cualquier médico u hospital del país que acepte Medicare, sin redes ni referencias. Medicare Original no tiene un máximo de gastos de su bolsillo, por lo que muchas personas agregan una póliza de Seguro Suplementario de Medicare (Medigap) y un plan de medicamentos de la Parte D, o eligen Medicare Advantage en su lugar.",
+          "links": [
+            {
+              "href": "/medicare-basics.html",
+              "label": "Conceptos Básicos de Medicare"
+            },
+            {
+              "href": "/medicare-supplement.html",
+              "label": "Planes de Seguro Suplementario de Medicare"
+            },
+            {
+              "href": "/blog/medicare-advantage-vs-medigap.html",
+              "label": "Medicare Advantage frente a Medigap"
+            }
+          ],
+          "tools": [
+            "glossary"
+          ]
+        },
+        {
+          "q": "¿Cuál es la diferencia entre Medicare y Medicaid?",
+          "a": "Medicare es un programa federal de salud que se basa principalmente en la edad (65 años o más) o la discapacidad, sin importar los ingresos. Medicaid es un programa conjunto federal y estatal que se basa en los ingresos y los recursos. Cubren cosas distintas, y algunas personas califican para ambos a la vez, lo que se llama doble elegibilidad, lo cual puede reducir o eliminar considerablemente los gastos de su bolsillo.",
+          "links": [
+            {
+              "href": "/dual-eligible.html",
+              "label": "Cobertura para Doble Elegibilidad"
+            },
+            {
+              "href": "/blog/which-medicare-plan-is-right-for-me.html",
+              "label": "¿Cuál plan de Medicare es el adecuado para mí?"
+            }
+          ],
+          "tools": [
+            "glossary",
+            "eligibility"
+          ]
+        },
+        {
+          "q": "¿Quién es elegible para Medicare?",
+          "a": "La mayoría de las personas califican para Medicare a los 65 años si ellas o su cónyuge pagaron impuestos de Medicare durante al menos 10 años. También puede calificar antes de los 65 años tras 24 meses de recibir beneficios por discapacidad del Seguro Social, o de inmediato si tiene ELA (ALS) o enfermedad renal en etapa terminal. Los ciudadanos estadounidenses y ciertos residentes permanentes legales son elegibles. Use la herramienta de elegibilidad para confirmar sus fechas.",
+          "links": [
+            {
+              "href": "/medicare-basics.html",
+              "label": "Conceptos Básicos de Medicare"
+            },
+            {
+              "href": "/blog/which-medicare-plan-is-right-for-me.html",
+              "label": "¿Cuál plan de Medicare es el adecuado para mí?"
+            }
+          ],
+          "tools": [
+            "eligibility",
+            "quiz"
+          ]
+        },
+        {
+          "q": "¿Medicare cubre servicios dentales, de la vista y de audición?",
+          "a": "Medicare Original (Partes A y B) no cubre la atención dental, de la vista ni de audición de rutina, como limpiezas, anteojos o audífonos. Solo los cubre en situaciones médicas limitadas, como un examen de la vista relacionado con la diabetes o una cirugía después de una lesión. Muchos planes de Medicare Advantage agregan algunos beneficios dentales, de la vista y de audición, por lo que conviene comparar lo que incluye cada plan.",
+          "links": [
+            {
+              "href": "/dental-vision-hearing.html",
+              "label": "Servicios Dentales, de la Vista y de Audición"
+            },
+            {
+              "href": "/medicare-advantage.html",
+              "label": "Planes de Medicare Advantage"
+            }
+          ],
+          "tools": [
+            "quiz"
+          ]
+        },
+        {
+          "q": "¿Medicare cubre el cuidado a largo plazo?",
+          "a": "Medicare no paga el cuidado de custodia a largo plazo, como la ayuda para bañarse, vestirse o comer en un hogar de ancianos o en una residencia de vida asistida, cuando ese es el único cuidado que usted necesita. Sí cubre el cuidado especializado a corto plazo, como la rehabilitación en un centro de enfermería especializada después de una estadía hospitalaria que califique. El cuidado de custodia a largo plazo generalmente se paga a través de Medicaid, un seguro privado de cuidado a largo plazo o fondos personales.",
+          "links": [
+            {
+              "href": "/medicare-basics.html",
+              "label": "Conceptos Básicos de Medicare"
+            },
+            {
+              "href": "/dual-eligible.html",
+              "label": "Cobertura para Doble Elegibilidad"
+            }
+          ],
+          "tools": [
+            "glossary"
+          ]
+        },
+        {
+          "q": "¿Qué cubre la Parte A de Medicare?",
+          "a": "La Parte A es el seguro de hospital. Cubre estadías hospitalarias como paciente internado, el cuidado en un centro de enfermería especializada después de una estadía hospitalaria que califique, los cuidados paliativos (hospicio) y algunos servicios de salud en el hogar. La mayoría de las personas no pagan prima por la Parte A porque trabajaron y pagaron impuestos de Medicare durante al menos 10 años. En 2026, el deducible por hospitalización como paciente internado es de $1,736 por período de beneficios.",
+          "links": [
+            {
+              "href": "/medicare-basics.html",
+              "label": "Conceptos Básicos de Medicare"
+            },
+            {
+              "href": "/blog/how-much-does-medicare-cost.html",
+              "label": "¿Cuánto cuesta Medicare?"
+            }
+          ],
+          "tools": [
+            "glossary"
+          ]
+        },
+        {
+          "q": "¿Qué cubre la Parte B de Medicare?",
+          "a": "La Parte B es el seguro médico que cubre las consultas con el médico, la atención ambulatoria, los análisis de laboratorio, el equipo médico duradero y muchos servicios preventivos. La prima estándar de la Parte B en 2026 es de $202.90 al mes, con un deducible anual de $283 y luego un coseguro del 20% para la mayoría de los servicios. Medicare Original no tiene un máximo de gastos de su bolsillo, y por eso muchas personas agregan cobertura suplementaria.",
+          "links": [
+            {
+              "href": "/medicare-basics.html",
+              "label": "Conceptos Básicos de Medicare"
+            },
+            {
+              "href": "/blog/how-much-does-medicare-cost.html",
+              "label": "¿Cuánto cuesta Medicare?"
+            }
+          ],
+          "tools": [
+            "cost-estimator",
+            "glossary"
+          ]
+        },
+        {
+          "q": "¿Cuesta algo trabajar con un agente de Medicare como Bret?",
+          "a": "No. Trabajar con un agente de Medicare con licencia como Bret es gratis para usted. A los agentes les pagan las compañías de seguros, no usted, y las primas de los planes las establecen Medicare y las compañías, así que son exactamente iguales ya sea que se inscriba con un agente o por su cuenta. Usted recibe orientación personal y ayuda continua sin ningún costo adicional.",
+          "links": [
+            {
+              "href": "/about.html",
+              "label": "Acerca de Bret"
+            },
+            {
+              "href": "/contact.html",
+              "label": "Comuníquese con Bret"
+            }
+          ],
+          "tools": [
+            "quiz"
+          ]
+        },
+        {
+          "q": "¿Cómo obtengo ayuda gratuita con Medicare en Utah?",
+          "a": "Puede comunicarse con Bret Swope, un agente de Medicare con licencia en Orem, Utah, para recibir orientación personalizada y gratuita al comparar sus opciones. También puede comunicarse con el Programa Estatal de Asistencia con el Seguro Médico (SHIP) de Utah, que ofrece asesoría gratuita e imparcial sobre Medicare. Ambas son maneras sin costo de obtener respuestas antes de inscribirse o cambiar de plan.",
+          "links": [
+            {
+              "href": "/contact.html",
+              "label": "Comuníquese con Bret"
+            },
+            {
+              "href": "/about.html",
+              "label": "Acerca de Bret"
+            }
+          ],
+          "tools": [
+            "eligibility",
+            "glossary"
+          ]
+        }
+      ]
+    }
+  ]
+}
