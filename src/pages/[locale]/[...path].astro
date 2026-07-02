@@ -11,9 +11,11 @@
 // committed es JSON AND an entry here, no localized route is emitted for it.
 import { getLocalizedContent } from '../../i18n/content';
 import AboutPage from '../../components/content/AboutPage.astro';
+import ContactPage from '../../components/content/ContactPage.astro';
 
 const COMPONENTS: Record<string, (props: Record<string, never>) => unknown> = {
   'about': AboutPage,
+  'contact': ContactPage,
 };
 
 export function getStaticPaths() {

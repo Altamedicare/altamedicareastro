@@ -10,6 +10,7 @@
 // cannot see .astro component imports (playbook §6.4 gotcha).
 export const CONTENT_PAGES = [
   'about',
+  'contact',
 ] as const;
 
 export type ContentKey = (typeof CONTENT_PAGES)[number];

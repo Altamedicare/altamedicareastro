@@ -1,0 +1,47 @@
+{
+  "__translation_note": "AI-translated from en/contact.json by scripts/translate.js (model claude-opus-4-8) using src/i18n/glossary.json (CMS es.medicare.gov terminology). Machine-generated — pending human spot-check. Do not hand-edit copy here; fix the English master or pin the term in the glossary, then re-run npm run translate.",
+  "__note": "MASTER content for /contact.html, extracted losslessly from src/pages/contact.astro. HTML-bearing strings stored verbatim (entities included), rendered via set:html. {phone} interpolates from consts.ts PHONE_DISPLAY (§6.8). External-system boundaries (Cal.com widget, SunFire portal) stay in the component.",
+  "page": {
+    "title": "Contacte a Bret | AltaMedicare",
+    "description": "Póngase en contacto con AltaMedicare para una consulta de Medicare gratuita y sin presión. Llame al {phone} o envíe un mensaje."
+  },
+  "breadcrumbHtml": "<a href=\"/\">Inicio</a> &nbsp;&rsaquo;&nbsp; Contacto",
+  "header": {
+    "h1": "Póngase en contacto",
+    "ledeHtml": "Ya sea que esté cumpliendo 65 años, comparando planes o simplemente tenga una pregunta &mdash; nos encantaría saber de usted."
+  },
+  "info": {
+    "h3": "Cómo comunicarse con Bret",
+    "phoneLabel": "Teléfono",
+    "phoneHoursHtml": "Lun&ndash;Vie 9am&ndash;6pm hora de la montaña (MT)",
+    "emailLabel": "Correo electrónico",
+    "emailNote": "Generalmente responde en unas pocas horas",
+    "officeLabel": "Oficina",
+    "officeCity": "Orem, Utah",
+    "officeNote": "Atendiendo a todo el estado de Utah",
+    "afterHeading": "¿Qué sucede después de que lo contacte?",
+    "afterTextHtml": "Bret se comunicará personalmente con usted dentro de un día hábil para organizar una conversación sin presión. Puede hacer la llamada por teléfono, video o en persona &mdash; lo que usted prefiera. No tiene ningún costo."
+  },
+  "actions": {
+    "h3": "¿Listo para conversar?",
+    "ledeHtml": "Elija lo que le resulte más fácil &mdash; Bret atiende personalmente cada mensaje.",
+    "callTitle": "Llame a Bret",
+    "callSubHtml": "Conversemos &mdash; Lun&ndash;Vie 9am&ndash;6pm hora de la montaña (MT)",
+    "callLabel": "Llame al {phone}",
+    "emailTitle": "Envíe un correo a Bret",
+    "emailSub": "Abre su correo electrónico con algunas indicaciones rápidas",
+    "emailLabel": "Enviar un correo electrónico",
+    "bookTitle": "Programe una consulta",
+    "bookSub": "Reserve un horario gratuito y sin presión que le funcione",
+    "bookLabel": "Reservar cita",
+    "browseTitle": "¿Prefiere explorar por su cuenta?",
+    "browseSubHtml": "Compare planes de Medicare e inscríbase en línea &mdash; abre nuestro portal seguro de planes",
+    "browseLabel": "Comparar planes en línea"
+  },
+  "cta": {
+    "h2Html": "¿Tiene preguntas? Hablemos.",
+    "textHtml": "Una llamada gratuita y sin presión &mdash; respuestas claras, sin argumentos de venta.",
+    "scheduleLabel": "Programar consulta",
+    "callLabel": "Llame al {phone}"
+  }
+}

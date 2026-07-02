@@ -1,0 +1,46 @@
+{
+  "__note": "MASTER content for /contact.html, extracted losslessly from src/pages/contact.astro. HTML-bearing strings stored verbatim (entities included), rendered via set:html. {phone} interpolates from consts.ts PHONE_DISPLAY (§6.8). External-system boundaries (Cal.com widget, SunFire portal) stay in the component.",
+  "page": {
+    "title": "Contact Bret | AltaMedicare",
+    "description": "Get in touch with AltaMedicare for a free, no-pressure Medicare consultation. Call {phone} or send a message."
+  },
+  "breadcrumbHtml": "<a href=\"/\">Home</a> &nbsp;&rsaquo;&nbsp; Contact",
+  "header": {
+    "h1": "Get In Touch",
+    "ledeHtml": "Whether you&rsquo;re turning 65, comparing plans, or just have a question &mdash; we&rsquo;d love to hear from you."
+  },
+  "info": {
+    "h3": "How to Reach Bret",
+    "phoneLabel": "Phone",
+    "phoneHoursHtml": "Mon&ndash;Fri 9am&ndash;6pm MT",
+    "emailLabel": "Email",
+    "emailNote": "Usually responds within a few hours",
+    "officeLabel": "Office",
+    "officeCity": "Orem, Utah",
+    "officeNote": "Serving the entire state of Utah",
+    "afterHeading": "What happens after I contact you?",
+    "afterTextHtml": "Bret will personally reach out within one business day to set up a no-pressure conversation. You can do the call by phone, video, or in person &mdash; whichever you prefer. There&rsquo;s no cost."
+  },
+  "actions": {
+    "h3": "Ready to talk?",
+    "ledeHtml": "Pick whatever&rsquo;s easiest for you &mdash; Bret personally handles every message.",
+    "callTitle": "Call Bret",
+    "callSubHtml": "Talk it through &mdash; Mon&ndash;Fri 9am&ndash;6pm MT",
+    "callLabel": "Call {phone}",
+    "emailTitle": "Email Bret",
+    "emailSub": "Opens your email with a few quick prompts",
+    "emailLabel": "Send an Email",
+    "bookTitle": "Schedule a Consultation",
+    "bookSub": "Book a free, no-pressure time that works for you",
+    "bookLabel": "Book Appointment",
+    "browseTitle": "Prefer to browse on your own?",
+    "browseSubHtml": "Compare Medicare plans and enroll online &mdash; opens our secure plan portal",
+    "browseLabel": "Compare Plans Online"
+  },
+  "cta": {
+    "h2Html": "Have Questions? Let's Talk.",
+    "textHtml": "One free, no-pressure call &mdash; clear answers, no sales pitch.",
+    "scheduleLabel": "Schedule Consultation",
+    "callLabel": "Call {phone}"
+  }
+}
