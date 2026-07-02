@@ -109,9 +109,35 @@ Classification key:
   `/es/`; AboutPage carries a local `asset()` absolutizer (identity for the
   default locale). Generalize into content.ts when a second page needs it.
 - **[ALTA]** `@anthropic-ai/sdk` added to devDependencies. Live translation
-  NOT yet run — no ANTHROPIC_API_KEY available in the build environment.
-  Next command (needs the key): `npm run translate -- --locale es`
-  (~26 segments, ≈ $0.03), then `npm run translate -- --check`, then
-  `npm run build` and QA `/es/about.html` (links absolutized, glossary terms,
-  `<html lang="es">`, canonical `/es/about.html`, hreflang pair on both pages
-  — the EN page gaining hreflang links is the expected, whitelisted delta).
+  ran 2026-07-02: es/about.json (26/26 segments, $0.05), validator green.
+  Committed + tagged `i18n-batch-1`.
+
+## Chrome milestone (tag: i18n-chrome)
+
+- **Glossary**: pinned `Medicare Supplement → Seguro Suplementario de
+  Medicare` (CMS vocabulary); corrected the one committed occurrence in
+  es/about.json ("Complementario" → "Suplementario"); `--check` green.
+  Seeding makes the hand-correction authoritative (§9).
+- **[ALTA]** `src/i18n/compliance.ts`: TPMO multi-plan disclaimer (footer,
+  every page). English byte-identical to the previous literal; Spanish is the
+  CMS-published wording (structure ported from Vernal's
+  `businessDisclaimers()`, text adapted to Alta's SHIP-variant English).
+  NEVER machine-translated.
+- **[ALTA]** Chrome `t()` dictionary populated: 48 keys (nav, footer, chat
+  panel, aria labels, search-modal shell). Every `en` value byte-identical to
+  the literal it replaced — verified by 3-diff (index/contact glyph-identical
+  after the conversion). `es` values hand-authored, reusing Vernal's vetted
+  labels where the English matched. Native-speaker review still pending
+  (YMYL rule: machine rules necessary, not sufficient).
+- **[GENERIC]** `LanguageSwitcher.astro`: existence-aware (renders nothing on
+  untranslated pages — verified: index/contact emit no switcher and are
+  byte-identical); current language links to itself; scoped styles.
+  Mounted in MainLayout's `.header-cta`.
+- **Verification record**: untranslated EN pages glyph-identical; EN about's
+  ONLY delta is the switcher block (proven by strip-and-rediff); /es/about
+  chrome fully Spanish (nav, footer, disclaimer, chat, arias), zero relative
+  links, `--check` green.
+- **Documented boundaries (still English by design)**: Pagefind search-modal
+  runtime strings (inline JS — needs a lang-keyed dictionary, Phase 1+ item);
+  MedicareNews ticker + items (news is outside the launch boundary);
+  "powered by" footer credit.

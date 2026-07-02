@@ -1,7 +1,10 @@
 ---
 import MedicareNews from '../components/MedicareNews.astro';
-import { getLangFromUrl } from '../i18n/locales';
+import LanguageSwitcher from '../components/LanguageSwitcher.astro';
+import { getLangFromUrl, t } from '../i18n/locales';
 import { localizeHref } from '../i18n/content';
+import { businessDisclaimers } from '../i18n/compliance';
+import { PHONE_DISPLAY } from '../consts';
 
 interface Props {
   title: string;
@@ -24,6 +27,10 @@ const { title, description, canonical, ogImage = '/images/og-image.svg', pageTyp
 // localization milestone.
 const lang = getLangFromUrl(Astro.url);
 const href = (h: string) => localizeHref(h, lang);
+// Chrome strings come from the t() dictionary (en values byte-identical to
+// the literals they replaced); compliance text is CMS-published wording from
+// src/i18n/compliance.ts — never machine-translated.
+const dz = businessDisclaimers(lang);
 const canonicalUrl = new URL(canonical, Astro.site).href;
 const ogUrl = canonicalUrl;
 const ogImageUrl = new URL(ogImage, Astro.site).href;
@@ -96,52 +103,53 @@ const localBusiness = {
 <header class="site-header">
   <div class="container header-inner">
     <a href={href('/')} class="logo">
-      <img src="/images/logo2.webp" alt="AltaMedicare logo" class="logo-img" width="46" height="36" />
+      <img src="/images/logo2.webp" alt={t('logo.alt', lang)} class="logo-img" width="46" height="36" />
       <span>AltaMedicare</span>
     </a>
 
-    <nav class="main-nav" aria-label="Main navigation">
+    <nav class="main-nav" aria-label={t('nav.aria', lang)}>
       <ul>
-        <li><a href={href('/')}>Home</a></li>
-        <li><a href={href('medicare-basics.html')}>Medicare Basics</a></li>
+        <li><a href={href('/')}>{t('nav.home', lang)}</a></li>
+        <li><a href={href('medicare-basics.html')}>{t('nav.basics', lang)}</a></li>
         <li class="has-dropdown">
-          <a href="#">Plans</a>
+          <a href="#">{t('nav.plans', lang)}</a>
           <div class="dropdown">
-            <a href={href('medicare-advantage.html')}>Medicare Advantage</a>
-            <a href={href('medicare-supplement.html')}>Medicare Supplement</a>
-            <a href={href('prescription-drug-plans.html')}>Prescription Drug Plans</a>
-            <a href={href('dual-eligible.html')}>Dual Eligible / Medicaid</a>
-            <a href={href('dental-vision-hearing.html')}>Dental, Vision, Hearing</a>
+            <a href={href('medicare-advantage.html')}>{t('nav.ma', lang)}</a>
+            <a href={href('medicare-supplement.html')}>{t('nav.supplement', lang)}</a>
+            <a href={href('prescription-drug-plans.html')}>{t('nav.pdp', lang)}</a>
+            <a href={href('dual-eligible.html')}>{t('nav.dual', lang)}</a>
+            <a href={href('dental-vision-hearing.html')}>{t('nav.dvh', lang)}</a>
           </div>
         </li>
         <li class="has-dropdown">
-          <a href={href('/tools.html')}>Tools</a>
+          <a href={href('/tools.html')}>{t('nav.tools', lang)}</a>
           <div class="dropdown">
-            <a href={href('/medicare-eligibility-calculator.html')}>Medicare Eligibility Calculator</a>
-            <a href={href('/medicare-irmaa-calculator.html')}>IRMAA Calculator</a>
-            <a href={href('/medicare-penalty-calculator.html')}>Late Enrollment Penalty Calculator</a>
-            <a href={href('/medicare-drug-cost-calculator.html')}>Drug Cost Calculator</a>
-            <a href={href('/tools.html')}>All Medicare Tools &rarr;</a>
+            <a href={href('/medicare-eligibility-calculator.html')}>{t('nav.calcEligibility', lang)}</a>
+            <a href={href('/medicare-irmaa-calculator.html')}>{t('nav.calcIrmaa', lang)}</a>
+            <a href={href('/medicare-penalty-calculator.html')}>{t('nav.calcPenalty', lang)}</a>
+            <a href={href('/medicare-drug-cost-calculator.html')}>{t('nav.calcDrugCost', lang)}</a>
+            <a href={href('/tools.html')} set:html={t('nav.allTools', lang)} />
           </div>
         </li>
-        <li><a href={href('drug-savings.html')}>Drug Savings</a></li>
-        <li><a href={href('turning-65.html')}>Turning 65</a></li>
-        <li><a href={href('medicare-news.html')}>Medicare News</a></li>
-        <li><a href={href('about.html')}>About Bret</a></li>
-        <li><a href={href('contact.html')}>Contact</a></li>
+        <li><a href={href('drug-savings.html')}>{t('nav.drugSavings', lang)}</a></li>
+        <li><a href={href('turning-65.html')}>{t('nav.turning65', lang)}</a></li>
+        <li><a href={href('medicare-news.html')}>{t('nav.news', lang)}</a></li>
+        <li><a href={href('about.html')}>{t('nav.about', lang)}</a></li>
+        <li><a href={href('contact.html')}>{t('nav.contact', lang)}</a></li>
       </ul>
     </nav>
 
     <div class="header-cta">
-      <button class="header-search" aria-label="Search the site" aria-haspopup="dialog" data-search-open>
+      <LanguageSwitcher />
+      <button class="header-search" aria-label={t('header.searchAria', lang)} aria-haspopup="dialog" data-search-open>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
         <span class="hs-key">/</span>
       </button>
-      <a href="tel:4352925548" class="header-phone" aria-label="Call AltaMedicare">
+      <a href="tel:4352925548" class="header-phone" aria-label={t('header.callAria', lang)}>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
         (435) 292-5548
       </a>
-      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <button class="menu-toggle" aria-label={t('header.menuAria', lang)} aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -166,52 +174,52 @@ const localBusiness = {
     <div class="footer-grid">
       <div class="footer-brand">
         <a href={href('/')} class="logo">
-          <img src="/images/logo2.webp" alt="AltaMedicare logo" class="logo-img" width="46" height="36" />
+          <img src="/images/logo2.webp" alt={t('logo.alt', lang)} class="logo-img" width="46" height="36" />
           <span>AltaMedicare</span>
         </a>
-        <p>Trusted local Medicare education and guidance for Utah families. Based in Orem, serving the entire state.</p>
+        <p>{t('footer.blurb', lang)}</p>
       </div>
 
       <div>
-        <h4>Plans</h4>
+        <h4>{t('footer.plansHeading', lang)}</h4>
         <ul>
-          <li><a href={href('medicare-advantage.html')}>Medicare Advantage</a></li>
-          <li><a href={href('medicare-supplement.html')}>Medicare Supplement</a></li>
-          <li><a href={href('prescription-drug-plans.html')}>Prescription Drug Plans</a></li>
-          <li><a href={href('dual-eligible.html')}>Dual Eligible / Medicaid</a></li>
-          <li><a href={href('dental-vision-hearing.html')}>Dental, Vision, Hearing</a></li>
+          <li><a href={href('medicare-advantage.html')}>{t('nav.ma', lang)}</a></li>
+          <li><a href={href('medicare-supplement.html')}>{t('nav.supplement', lang)}</a></li>
+          <li><a href={href('prescription-drug-plans.html')}>{t('nav.pdp', lang)}</a></li>
+          <li><a href={href('dual-eligible.html')}>{t('nav.dual', lang)}</a></li>
+          <li><a href={href('dental-vision-hearing.html')}>{t('nav.dvh', lang)}</a></li>
         </ul>
       </div>
 
       <div>
-        <h4>Resources</h4>
+        <h4>{t('footer.resourcesHeading', lang)}</h4>
         <ul>
-          <li><a href={href('/blog.html')}>Medicare Blog</a></li>
-          <li><a href={href('/faq.html')}>Medicare FAQ</a></li>
-          <li><a href={href('/utah.html')}>Medicare in Utah</a></li>
-          <li><a href={href('medicare-news.html')}>Medicare News</a></li>
-          <li><a href={href('medicare-basics.html')}>Medicare Basics</a></li>
-          <li><a href={href('/tools.html')}>Medicare Tools</a></li>
-          <li><a href={href('turning-65.html')}>Turning 65</a></li>
-          <li><a href={href('drug-savings.html')}>Drug Savings</a></li>
-          <li><a href={href('contact.html')}>Contact</a></li>
+          <li><a href={href('/blog.html')}>{t('footer.blog', lang)}</a></li>
+          <li><a href={href('/faq.html')}>{t('footer.faq', lang)}</a></li>
+          <li><a href={href('/utah.html')}>{t('footer.utah', lang)}</a></li>
+          <li><a href={href('medicare-news.html')}>{t('nav.news', lang)}</a></li>
+          <li><a href={href('medicare-basics.html')}>{t('nav.basics', lang)}</a></li>
+          <li><a href={href('/tools.html')}>{t('footer.tools', lang)}</a></li>
+          <li><a href={href('turning-65.html')}>{t('nav.turning65', lang)}</a></li>
+          <li><a href={href('drug-savings.html')}>{t('nav.drugSavings', lang)}</a></li>
+          <li><a href={href('contact.html')}>{t('nav.contact', lang)}</a></li>
         </ul>
       </div>
 
       <div class="footer-contact">
-        <h4>Contact</h4>
+        <h4>{t('footer.contactHeading', lang)}</h4>
         <p class="footer-phone"><a href="tel:4352925548">(435) 292-5548</a></p>
         <p>Orem, Utah</p>
-        <p>Mon–Fri: 9am–6pm MT</p>
-        <p style="margin-top:14px;"><a href={href('contact.html')} class="btn btn-outline" style="border-color:rgba(255,255,255,0.3); color:#fff; padding:10px 20px;">Schedule a Call</a></p>
+        <p>{t('footer.hours', lang)}</p>
+        <p style="margin-top:14px;"><a href={href('contact.html')} class="btn btn-outline" style="border-color:rgba(255,255,255,0.3); color:#fff; padding:10px 20px;">{t('footer.schedule', lang)}</a></p>
       </div>
     </div>
 
     <div class="footer-bottom">
       <p class="disclaimer">
-        We do not offer every plan available in your area. Currently we represent organizations which offer plans in Utah. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Assistance Program (SHIP) to get information on all of your options.
+        {dz.footer}
       </p>
-      <p>&copy; <span id="year">2026</span> AltaMedicare. All rights reserved. · Bret Swope, Licensed Insurance Agent</p>
+      <p>&copy; <span id="year">2026</span>{' '}{t('footer.rights', lang)}</p>
       <p class="footer-powered">
         <a href="https://cozelosdata.com" target="_blank" rel="noopener">
           <span>powered by</span>
@@ -224,27 +232,27 @@ const localBusiness = {
 </footer>
 
 <!-- ================= ASK BRET CHAT BUBBLE ================= -->
-<button class="chat-bubble" aria-label="Ask Bret a question">
+<button class="chat-bubble" aria-label={t('chat.bubbleAria', lang)}>
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-  Ask Bret
+  {t('chat.bubble', lang)}
 </button>
 
-<div class="chat-panel" role="dialog" aria-label="Ask Bret">
-  <button class="chat-close" aria-label="Close chat">×</button>
+<div class="chat-panel" role="dialog" aria-label={t('chat.bubble', lang)}>
+  <button class="chat-close" aria-label={t('chat.closeAria', lang)}>×</button>
   <div class="chat-header">
-    <h4>Have a Medicare question?</h4>
-    <p>Bret personally responds — usually within a few hours.</p>
+    <h4>{t('chat.heading', lang)}</h4>
+    <p>{t('chat.sub', lang)}</p>
   </div>
   <div class="chat-body">
-    <p>Pick the option that's easiest for you:</p>
-    <a href="tel:4352925548" class="btn btn-primary">Call (435) 292-5548</a>
-    <a href="mailto:bret@altahealthins.com?subject=Medicare%20Question&body=Name%3A%0D%0APhone%3A%0D%0AQuestion%3A%0D%0A" class="btn btn-outline">Email Bret</a>
-    <p style="margin-top:14px; font-size:0.85rem; color:var(--text-muted);">No automated bots — just a real Utah Medicare agent.</p>
+    <p>{t('chat.pick', lang)}</p>
+    <a href="tel:4352925548" class="btn btn-primary">{t('chat.call', lang, { phone: PHONE_DISPLAY })}</a>
+    <a href="mailto:bret@altahealthins.com?subject=Medicare%20Question&body=Name%3A%0D%0APhone%3A%0D%0AQuestion%3A%0D%0A" class="btn btn-outline">{t('chat.email', lang)}</a>
+    <p style="margin-top:14px; font-size:0.85rem; color:var(--text-muted);">{t('chat.noBots', lang)}</p>
   </div>
 </div>
 
 <!-- ================= SEARCH MODAL ================= -->
-<div class="pf-modal" id="searchModal" role="dialog" aria-modal="true" aria-label="Search AltaMedicare" data-pagefind-ignore hidden>
+<div class="pf-modal" id="searchModal" role="dialog" aria-modal="true" aria-label={t('search.modalAria', lang)} data-pagefind-ignore hidden>
   <div class="pf-backdrop" data-search-close></div>
   <div class="pf-panel" data-search-root data-variant="modal"></div>
 </div>

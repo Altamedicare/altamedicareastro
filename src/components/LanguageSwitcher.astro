@@ -1,0 +1,63 @@
+---
+// src/components/LanguageSwitcher.astro — existence-aware language switcher.
+// Renders NOTHING unless the current page has a committed translation
+// (playbook: a switcher option is emitted only if the localized content
+// exists), so untranslated pages stay byte-identical to their pre-i18n
+// output. The current language links to itself (master fallback rule).
+import { DEFAULT_LOCALE, LOCALES, getLangFromUrl, pageSlugFromUrl, t } from '../i18n/locales';
+import { getAvailableLocales, localePageHref } from '../i18n/content';
+
+const lang = getLangFromUrl(Astro.url);
+const slug = pageSlugFromUrl(Astro.url);
+const avail = getAvailableLocales(slug);
+// Show only when at least one non-default locale has this page.
+const show = avail.some((c) => c !== DEFAULT_LOCALE);
+const options = LOCALES.filter((l) => avail.includes(l.code));
+---
+
+{show && (
+  <nav class="lang-switcher" aria-label={t('switcher.label', lang)}>
+    {options.map((l) => (
+      <a
+        href={localePageHref(slug, l.code)}
+        class:list={['ls-opt', { 'is-current': l.code === lang }]}
+        lang={l.code}
+        hreflang={l.code}
+        aria-current={l.code === lang ? 'page' : undefined}
+      >
+        {l.code.toUpperCase()}
+      </a>
+    ))}
+  </nav>
+)}
+
+<style>
+  .lang-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+  }
+  .ls-opt {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 4px 6px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: inherit;
+    opacity: 0.55;
+  }
+  .ls-opt:hover {
+    opacity: 1;
+  }
+  .ls-opt.is-current {
+    opacity: 1;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .ls-opt + .ls-opt::before {
+    content: '·';
+    margin-right: 6px;
+    opacity: 0.4;
+  }
+</style>
