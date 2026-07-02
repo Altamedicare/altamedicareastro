@@ -83,3 +83,7 @@ file records the judgment calls.
 20. **Every new page**: pin new terms first → translate → `--check` →
     build → QA against this guide → commit. Native-speaker review before
     launch is required — machine rules are necessary, not sufficient (YMYL).
+21. **English is the source of truth.** All substantive content changes begin
+    in the English master. Spanish (and future locales) mirror the English
+    source unless a localization adjustment is intentionally documented.
+    Translations never become independent content branches.
