@@ -1,0 +1,46 @@
+{
+  "__translation_note": "AI-translated from en/about.json by scripts/translate.js (model claude-opus-4-8) using src/i18n/glossary.json (CMS es.medicare.gov terminology). Machine-generated — pending human spot-check. Do not hand-edit copy here; fix the English master or pin the term in the glossary, then re-run npm run translate.",
+  "__note": "MASTER content for /about.html, extracted losslessly from src/pages/about.astro (extraction spike). HTML-bearing strings are stored verbatim (entities included) and rendered via set:html. {phone} is interpolated from consts.ts PHONE_DISPLAY (§6.8 — numbers never live in translatable copy).",
+  "page": {
+    "title": "Acerca de Bret Swope | AltaMedicare",
+    "description": "Conozca a Bret Swope, fundador de AltaMedicare y guía de Medicare con licencia en Utah. Ayuda educativa con Medicare, sin presión, desde Orem y para todo Utah."
+  },
+  "breadcrumbHtml": "<a href=\"index.html\">Inicio</a> &nbsp;&rsaquo;&nbsp; Acerca de Bret",
+  "header": {
+    "h1": "Conozca a Bret Swope",
+    "ledeHtml": "Fundador de AltaMedicare y su guía local de Medicare en Utah. Aquí le cuento un poco sobre quién soy y por qué hago este trabajo."
+  },
+  "card": {
+    "photoAlt": "Bret Swope, fundador de AltaMedicare",
+    "name": "Bret Swope",
+    "roleHtml": "Fundador &middot; Agente de Medicare con licencia",
+    "location": "Ubicado en Orem, Utah"
+  },
+  "body": {
+    "h2Why": "Por qué fundé AltaMedicare",
+    "whyHtml": [
+      "Fundé AltaMedicare porque vi a demasiadas personas de mi propia comunidad batallar para entender Medicare. Los bombardeaban con folletos por correo, los llamaban agentes de otros estados que no conocían Utah, y los presionaban a inscribirse en planes que en realidad no se ajustaban a sus vidas.",
+      "Mi enfoque es diferente. Me tomo el tiempo para entender su situación, le explico Medicare en palabras sencillas y le muestro sus opciones &mdash; sin empujarlo hacia ningún plan en particular. Si un Seguro Complementario de Medicare tiene más sentido para usted que un plan Medicare Advantage, se lo diré. Si su plan actual ya es una buena opción, también se lo diré."
+    ],
+    "h2Expect": "Qué puede esperar",
+    "expectItemsHtml": [
+      "<strong>La educación primero.</strong> Quiero que de verdad entienda sus opciones, no solo que firme algo.",
+      "<strong>Conocimiento local de Utah.</strong> Sé qué médicos, hospitales y farmacias están en cada red &mdash; porque yo también vivo aquí.",
+      "<strong>Sin presión, nunca.</strong> Si necesita tiempo para pensarlo, tómese su tiempo. Si quiere traer a un familiar, hágalo con gusto.",
+      "<strong>Revisiones anuales.</strong> Los planes cambian cada año. Cada otoño reviso el suyo para asegurarme de que siga siendo adecuado.",
+      "<strong>Ayuda todo el año.</strong> Si tiene una pregunta sobre facturación en marzo o un problema con una receta en julio, aquí estoy."
+    ],
+    "h2Mission": "Mi misión",
+    "missionHtml": "Hacer que Medicare sea menos confuso, menos estresante y menos costoso para las familias de Utah &mdash; una conversación honesta a la vez."
+  },
+  "callout": {
+    "heading": "¿Quiere platicar?",
+    "textHtml": "No hay ningún costo, ninguna obligación y ninguna presión de ventas. Solo una conversación real sobre sus opciones de Medicare. Llame al <a href=\"tel:4352925548\">{phone}</a> o <a href=\"contact.html\">programe una cita</a> que le convenga."
+  },
+  "cta": {
+    "h2Html": "¿Tiene preguntas? Hablemos.",
+    "textHtml": "Una llamada gratuita y sin presión &mdash; respuestas claras, sin argumentos de venta.",
+    "scheduleLabel": "Programar consulta",
+    "callLabel": "Llame al {phone}"
+  }
+}

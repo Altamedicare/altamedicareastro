@@ -1,0 +1,117 @@
+# I18N Port Log — Vernal → Alta (Phase 0)
+
+Upstream: `../vernalmedicareastro` (v2 of the multilingual framework; playbook:
+`Multilingual_Astro_Playbook.pdf`). This log classifies **every modification**
+made while porting, so the eventual framework extraction knows which
+differences are architectural and which are project-specific.
+
+Classification key:
+- **[GENERIC]** — improvement that should flow back into the reusable framework
+- **[ALTA]** — Alta-specific adaptation; belongs only in this repo
+- **[LEGACY]** — Vernal assumption that should be eliminated from the framework
+
+## Files ported
+
+| Alta file | Upstream | Status |
+|---|---|---|
+| `src/i18n/locales.ts` | `src/i18n/locales.ts` | ported, chrome dictionary reset |
+| `src/i18n/content.ts` | `src/i18n/content.ts` | ported, origin + policy notes changed |
+| `src/i18n/content-pages.ts` | `src/i18n/content-pages.ts` | ported, registry emptied (spike page only) |
+| `src/i18n/glossary.json` | `src/i18n/glossary.json` | ported, brand terms swapped |
+| `scripts/translate.js` | `scripts/translate.js` | ported verbatim except branding |
+| `src/pages/[locale]/[...path].astro` | same path | ported, component map emptied |
+| `scripts/i18n-diff.mjs` | *(none — Vernal ran diffs ad hoc)* | new |
+
+## Changes, classified
+
+### [GENERIC] — should flow upstream into the framework
+- **`scripts/i18n-diff.mjs`**: the playbook's 3-diff verification (tag
+  structure / visible text / entity-leak scan) as a committed, cross-platform
+  Node script instead of the ad-hoc bash+perl snippet. Vernal never committed
+  its harness; every future site should get this file as-is.
+- **`content.ts` URL-policy comment** now states explicitly that multi-segment
+  paths pass through `localizeHref` unrewritten. This was implicit in Vernal
+  (it had no nested pages); making the boundary explicit is a framework
+  improvement (and a Phase 2 extension point — see [ALTA] below).
+
+### [ALTA] — project-specific; do not generalize
+- `SITE_ORIGIN = 'https://altamedicare.com'` in `content.ts`.
+- Glossary brand terms: `AltaMedicare`, `Bret Swope`, `SunFire` verbatim;
+  dropped Vernal's `Uintah Basin`; added `Low Income Subsidy` (used on Alta's
+  dual-eligible/drug-savings pages). CMS-pinned Spanish terms carried over
+  unchanged — they are regulator vocabulary, not project data.
+- `translate.js` system prompt branding (altamedicare.com / Bret Swope / Orem).
+- **Nested-page clusters** (`utah/…`, `faq/…`, `blog/…`): `localizeHref` only
+  rewrites single-segment `.html` links; nested paths pass through to the
+  English page. Correct for launch (those clusters are outside the ES
+  boundary), but Phase 2 (places/faq as translation sources) will need
+  multi-segment support — that extension is Alta's contribution and should
+  then flow upstream, reclassified as [GENERIC].
+- Chrome dictionary (`strings`) and `LABELS` in `locales.ts` reset to
+  near-empty: the INVARIANT (every `en` value byte-identical to the component
+  literal it replaces) means entries can only be added while localizing Alta's
+  actual chrome (Phase 1). Vernal's entries were Vernal's literals.
+
+### [LEGACY] — Vernal assumptions removed / flagged
+- Header comments referencing Vernal milestone numbers ("Phase A.5",
+  "Milestone 2", "M3/M44") stripped. The framework should not carry one
+  project's roadmap labels.
+- Vernal's `content-pages.ts` registry and `[...path].astro` COMPONENTS map
+  enumerated 16 Vernal pages — emptied here. **Framework note:** the component
+  map + registry pairing is boilerplate every site re-fills by hand; the
+  extraction should consider generating both from one declaration.
+- Vernal is Astro 6 / Alta is Astro 4.16: no code changes were required
+  (`import.meta.glob`, dynamic routes, and `set:html` behave identically), but
+  the framework extraction must not assume Astro 6-only APIs.
+- Vernal's `verify.mjs` (vitest + astro-check ratchet) was **not** ported —
+  Alta has no test suite or typecheck baseline yet. Decide separately whether
+  to adopt it; it is quality infrastructure, not part of the i18n system.
+
+## Environment / decisions record
+- **No Astro i18n config block** — same as Vernal: localized routes come
+  entirely from the dynamic route + `format:'file'` naming. `astro.config.mjs`
+  comment updated (also fixed its stale claim that the sitemap is
+  hand-maintained; it's generated at `src/pages/sitemap.xml.ts`).
+- Model `claude-opus-4-8` at $5/$25 per MTok re-verified current 2026-07-01
+  via the claude-api reference; engine's API usage (structured outputs via
+  `output_config.format`, adaptive thinking, streaming) is current.
+- `@anthropic-ai/sdk` intentionally **not** added to package.json yet —
+  `--check`/`--dry-run` need no SDK; add it when Phase 1 runs live translation.
+- New npm scripts: `translate`, `i18n-diff`.
+
+## Extraction spike (about.html)
+- `src/pages/about.astro` → `src/i18n/content/en/about.json`, lossless:
+  HTML-bearing strings stored verbatim (entities included) and rendered via
+  `set:html`; phone display tokenized as `{phone}` from `consts.PHONE_DISPLAY`
+  (§6.8). Registered in `content-pages.ts`. 3-diff result recorded below.
+
+### 3-diff record
+- **Extraction spike** (about.astro → JSON, rendered in place): ✓ tag
+  structure (584 tags) / ✓ visible text (3381 glyphs) / ✓ zero entity leaks.
+- **Componentization** (AboutPage.astro shared component + thin wrapper +
+  COMPONENTS registration): re-diffed against both the post-extraction and
+  the original pre-extraction snapshots — all ✓.
+- **Chrome-link refactor** (MainLayout page hrefs → `localizeHref`, `<html
+  lang>` → derived): index.html (1223 tags / 8526 glyphs) and contact.html
+  (669 tags / 2750 glyphs) both ✓ — `localizeHref` is an identity for the
+  default locale, so English output is glyph-stable site-wide.
+
+## Post-Phase-0 session (first localized page loop)
+
+- **[GENERIC]** `MainLayout.astro` made locale-aware: `lang` derives from
+  `getLangFromUrl(Astro.url)` (no prop threading), all 35 chrome page-link
+  hrefs route through a `href()` helper wrapping `localizeHref`. Chrome TEXT
+  remains English pending the Phase 1 chrome milestone.
+- **[GENERIC]** `AboutPage.astro` injects hreflang alternates + `og:locale`
+  through MainLayout's existing `<slot name="head">` — per-page, existence-
+  aware head additions with zero layout changes. Pattern worth keeping.
+- **[ALTA]** Relative asset paths (`images/bret-photo.svg`) break under
+  `/es/`; AboutPage carries a local `asset()` absolutizer (identity for the
+  default locale). Generalize into content.ts when a second page needs it.
+- **[ALTA]** `@anthropic-ai/sdk` added to devDependencies. Live translation
+  NOT yet run — no ANTHROPIC_API_KEY available in the build environment.
+  Next command (needs the key): `npm run translate -- --locale es`
+  (~26 segments, ≈ $0.03), then `npm run translate -- --check`, then
+  `npm run build` and QA `/es/about.html` (links absolutized, glossary terms,
+  `<html lang="es">`, canonical `/es/about.html`, hreflang pair on both pages
+  — the EN page gaining hreflang links is the expected, whitelisted delta).

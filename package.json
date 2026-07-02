@@ -8,12 +8,15 @@
     "build": "astro build && pagefind --site dist",
     "preview": "astro preview",
     "fetch-news": "node scripts/fetch-news.mjs",
+    "translate": "node scripts/translate.js",
+    "i18n-diff": "node scripts/i18n-diff.mjs",
     "astro": "astro"
   },
   "dependencies": {
     "astro": "^4.16.19"
   },
   "devDependencies": {
+    "@anthropic-ai/sdk": "^0.109.1",
     "@astrojs/sitemap": "^3.2.1",
     "pagefind": "^1.5.2"
   }

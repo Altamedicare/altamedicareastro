@@ -1,5 +1,7 @@
 ---
 import MedicareNews from '../components/MedicareNews.astro';
+import { getLangFromUrl } from '../i18n/locales';
+import { localizeHref } from '../i18n/content';
 
 interface Props {
   title: string;
@@ -14,6 +16,14 @@ interface Props {
 }
 
 const { title, description, canonical, ogImage = '/images/og-image.svg', pageType = 'Guide', noIndex = false } = Astro.props;
+
+// Locale-aware chrome: lang derives from the URL (no prop threading — playbook
+// §10). Every page link routes through localizeHref(): identity for English
+// (output byte-stable), absolutized/localized under /es/ where relative hrefs
+// would otherwise 404. Chrome TEXT stays English until the Phase 1 chrome-
+// localization milestone.
+const lang = getLangFromUrl(Astro.url);
+const href = (h: string) => localizeHref(h, lang);
 const canonicalUrl = new URL(canonical, Astro.site).href;
 const ogUrl = canonicalUrl;
 const ogImageUrl = new URL(ogImage, Astro.site).href;
@@ -43,7 +53,7 @@ const localBusiness = {
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={lang}>
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-D6LJEQ61V0"></script>
@@ -85,40 +95,40 @@ const localBusiness = {
 <!-- ================= HEADER ================= -->
 <header class="site-header">
   <div class="container header-inner">
-    <a href="/" class="logo">
+    <a href={href('/')} class="logo">
       <img src="/images/logo2.webp" alt="AltaMedicare logo" class="logo-img" width="46" height="36" />
       <span>AltaMedicare</span>
     </a>
 
     <nav class="main-nav" aria-label="Main navigation">
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="medicare-basics.html">Medicare Basics</a></li>
+        <li><a href={href('/')}>Home</a></li>
+        <li><a href={href('medicare-basics.html')}>Medicare Basics</a></li>
         <li class="has-dropdown">
           <a href="#">Plans</a>
           <div class="dropdown">
-            <a href="medicare-advantage.html">Medicare Advantage</a>
-            <a href="medicare-supplement.html">Medicare Supplement</a>
-            <a href="prescription-drug-plans.html">Prescription Drug Plans</a>
-            <a href="dual-eligible.html">Dual Eligible / Medicaid</a>
-            <a href="dental-vision-hearing.html">Dental, Vision, Hearing</a>
+            <a href={href('medicare-advantage.html')}>Medicare Advantage</a>
+            <a href={href('medicare-supplement.html')}>Medicare Supplement</a>
+            <a href={href('prescription-drug-plans.html')}>Prescription Drug Plans</a>
+            <a href={href('dual-eligible.html')}>Dual Eligible / Medicaid</a>
+            <a href={href('dental-vision-hearing.html')}>Dental, Vision, Hearing</a>
           </div>
         </li>
         <li class="has-dropdown">
-          <a href="/tools.html">Tools</a>
+          <a href={href('/tools.html')}>Tools</a>
           <div class="dropdown">
-            <a href="/medicare-eligibility-calculator.html">Medicare Eligibility Calculator</a>
-            <a href="/medicare-irmaa-calculator.html">IRMAA Calculator</a>
-            <a href="/medicare-penalty-calculator.html">Late Enrollment Penalty Calculator</a>
-            <a href="/medicare-drug-cost-calculator.html">Drug Cost Calculator</a>
-            <a href="/tools.html">All Medicare Tools &rarr;</a>
+            <a href={href('/medicare-eligibility-calculator.html')}>Medicare Eligibility Calculator</a>
+            <a href={href('/medicare-irmaa-calculator.html')}>IRMAA Calculator</a>
+            <a href={href('/medicare-penalty-calculator.html')}>Late Enrollment Penalty Calculator</a>
+            <a href={href('/medicare-drug-cost-calculator.html')}>Drug Cost Calculator</a>
+            <a href={href('/tools.html')}>All Medicare Tools &rarr;</a>
           </div>
         </li>
-        <li><a href="drug-savings.html">Drug Savings</a></li>
-        <li><a href="turning-65.html">Turning 65</a></li>
-        <li><a href="medicare-news.html">Medicare News</a></li>
-        <li><a href="about.html">About Bret</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href={href('drug-savings.html')}>Drug Savings</a></li>
+        <li><a href={href('turning-65.html')}>Turning 65</a></li>
+        <li><a href={href('medicare-news.html')}>Medicare News</a></li>
+        <li><a href={href('about.html')}>About Bret</a></li>
+        <li><a href={href('contact.html')}>Contact</a></li>
       </ul>
     </nav>
 
@@ -155,7 +165,7 @@ const localBusiness = {
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="/" class="logo">
+        <a href={href('/')} class="logo">
           <img src="/images/logo2.webp" alt="AltaMedicare logo" class="logo-img" width="46" height="36" />
           <span>AltaMedicare</span>
         </a>
@@ -165,26 +175,26 @@ const localBusiness = {
       <div>
         <h4>Plans</h4>
         <ul>
-          <li><a href="medicare-advantage.html">Medicare Advantage</a></li>
-          <li><a href="medicare-supplement.html">Medicare Supplement</a></li>
-          <li><a href="prescription-drug-plans.html">Prescription Drug Plans</a></li>
-          <li><a href="dual-eligible.html">Dual Eligible / Medicaid</a></li>
-          <li><a href="dental-vision-hearing.html">Dental, Vision, Hearing</a></li>
+          <li><a href={href('medicare-advantage.html')}>Medicare Advantage</a></li>
+          <li><a href={href('medicare-supplement.html')}>Medicare Supplement</a></li>
+          <li><a href={href('prescription-drug-plans.html')}>Prescription Drug Plans</a></li>
+          <li><a href={href('dual-eligible.html')}>Dual Eligible / Medicaid</a></li>
+          <li><a href={href('dental-vision-hearing.html')}>Dental, Vision, Hearing</a></li>
         </ul>
       </div>
 
       <div>
         <h4>Resources</h4>
         <ul>
-          <li><a href="/blog.html">Medicare Blog</a></li>
-          <li><a href="/faq.html">Medicare FAQ</a></li>
-          <li><a href="/utah.html">Medicare in Utah</a></li>
-          <li><a href="medicare-news.html">Medicare News</a></li>
-          <li><a href="medicare-basics.html">Medicare Basics</a></li>
-          <li><a href="/tools.html">Medicare Tools</a></li>
-          <li><a href="turning-65.html">Turning 65</a></li>
-          <li><a href="drug-savings.html">Drug Savings</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href={href('/blog.html')}>Medicare Blog</a></li>
+          <li><a href={href('/faq.html')}>Medicare FAQ</a></li>
+          <li><a href={href('/utah.html')}>Medicare in Utah</a></li>
+          <li><a href={href('medicare-news.html')}>Medicare News</a></li>
+          <li><a href={href('medicare-basics.html')}>Medicare Basics</a></li>
+          <li><a href={href('/tools.html')}>Medicare Tools</a></li>
+          <li><a href={href('turning-65.html')}>Turning 65</a></li>
+          <li><a href={href('drug-savings.html')}>Drug Savings</a></li>
+          <li><a href={href('contact.html')}>Contact</a></li>
         </ul>
       </div>
 
@@ -193,7 +203,7 @@ const localBusiness = {
         <p class="footer-phone"><a href="tel:4352925548">(435) 292-5548</a></p>
         <p>Orem, Utah</p>
         <p>Mon–Fri: 9am–6pm MT</p>
-        <p style="margin-top:14px;"><a href="contact.html" class="btn btn-outline" style="border-color:rgba(255,255,255,0.3); color:#fff; padding:10px 20px;">Schedule a Call</a></p>
+        <p style="margin-top:14px;"><a href={href('contact.html')} class="btn btn-outline" style="border-color:rgba(255,255,255,0.3); color:#fff; padding:10px 20px;">Schedule a Call</a></p>
       </div>
     </div>
 

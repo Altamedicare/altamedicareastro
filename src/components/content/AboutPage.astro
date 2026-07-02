@@ -1,0 +1,100 @@
+---
+// src/components/content/AboutPage.astro — THE shared About template.
+// Rendered by both the master route (src/pages/about.astro, thin wrapper) and
+// the dynamic localized route (src/pages/[locale]/[...path].astro). Copy lives
+// in src/i18n/content/{locale}/about.json; this file is presentation only.
+// {phone} interpolates from consts.ts so the number never lives in
+// translatable copy (§6.8).
+import MainLayout from '../../layouts/MainLayout.astro';
+import { DEFAULT_LOCALE, getLangFromUrl, getLocaleMeta } from '../../i18n/locales';
+import { getPageContent, hreflangAlternates, interp, localizeHref } from '../../i18n/content';
+import { PHONE_DISPLAY } from '../../consts';
+
+interface AboutContent {
+  page: { title: string; description: string };
+  breadcrumbHtml: string;
+  header: { h1: string; ledeHtml: string };
+  card: { photoAlt: string; name: string; roleHtml: string; location: string };
+  body: {
+    h2Why: string;
+    whyHtml: string[];
+    h2Expect: string;
+    expectItemsHtml: string[];
+    h2Mission: string;
+    missionHtml: string;
+  };
+  callout: { heading: string; textHtml: string };
+  cta: { h2Html: string; textHtml: string; scheduleLabel: string; callLabel: string };
+}
+
+const lang = getLangFromUrl(Astro.url);
+const c = getPageContent<AboutContent>('about', lang);
+const vars = { phone: PHONE_DISPLAY };
+const canonical = lang === DEFAULT_LOCALE ? '/about.html' : `/${lang}/about.html`;
+const alternates = hreflangAlternates('about');
+// Relative asset paths resolve against /es/ on localized pages — absolutize
+// there; untouched (byte-stable) on the English master.
+const asset = (p: string) => (lang === DEFAULT_LOCALE || p.startsWith('/') ? p : `/${p}`);
+---
+
+<MainLayout
+  title={c.page.title}
+  description={c.page.description}
+  canonical={canonical}
+>
+  <Fragment slot="head">
+    {alternates.map((a) => <link rel="alternate" hreflang={a.code} href={a.href} />)}
+    {lang !== DEFAULT_LOCALE && <meta property="og:locale" content={getLocaleMeta(lang).ogLocale} />}
+  </Fragment>
+
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb" set:html={c.breadcrumbHtml}></div>
+    <h1 id="bret-swope">{c.header.h1}</h1>
+    <p class="lede" set:html={c.header.ledeHtml}></p>
+  </div>
+</section>
+
+<section class="section-white">
+  <div class="container">
+    <div class="why-us">
+      <div class="bret-card" style="text-align:center;">
+        <img src={asset('images/bret-photo.svg')} alt={c.card.photoAlt} class="bret-photo" onerror="this.style.display='none'" />
+        <h3>{c.card.name}</h3>
+        <p class="role" set:html={c.card.roleHtml}></p>
+        <p style="color:var(--charcoal-soft);">{c.card.location}</p>
+      </div>
+
+      <div class="content-narrow" style="margin:0;">
+        <h2>{c.body.h2Why}</h2>
+        {c.body.whyHtml.map((p) => <p set:html={p} />)}
+
+        <h2>{c.body.h2Expect}</h2>
+        <ul>
+          {c.body.expectItemsHtml.map((item) => <li set:html={item} />)}
+        </ul>
+
+        <h2>{c.body.h2Mission}</h2>
+        <p set:html={c.body.missionHtml}></p>
+
+        <div class="callout">
+          <strong>{c.callout.heading}</strong>
+          <p style="margin:8px 0 0;" set:html={interp(c.callout.textHtml, vars)}></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <h2 set:html={c.cta.h2Html}></h2>
+    <p set:html={c.cta.textHtml}></p>
+    <div class="cta-buttons">
+      <a href={localizeHref('contact.html', lang)} class="btn btn-primary btn-lg">{c.cta.scheduleLabel}</a>
+      <a href="tel:4352925548" class="btn btn-outline btn-lg">{interp(c.cta.callLabel, vars)}</a>
+    </div>
+  </div>
+</section>
+
+</MainLayout>

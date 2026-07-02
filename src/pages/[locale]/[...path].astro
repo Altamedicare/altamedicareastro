@@ -1,0 +1,35 @@
+---
+// src/pages/[locale]/[...path].astro — the dynamic localized route.
+// One route generates EVERY localized page: a path is emitted only for
+// (locale, page) pairs whose translated JSON is committed (existence-aware —
+// getLocalizedContent), so this route cannot produce a 404.
+// With build.format:'file' this emits /es/about.html, matching the site's
+// .html URL policy. Ported from vernalmedicareastro (see I18N-PORT-LOG.md).
+//
+// One shared component per extracted page (content key === slug). Entries are
+// added as pages are componentized in Phase 1; until a page has both a
+// committed es JSON AND an entry here, no localized route is emitted for it.
+import { getLocalizedContent } from '../../i18n/content';
+import AboutPage from '../../components/content/AboutPage.astro';
+
+const COMPONENTS: Record<string, (props: Record<string, never>) => unknown> = {
+  'about': AboutPage,
+};
+
+export function getStaticPaths() {
+  // DATA ONLY — getStaticPaths is extracted into an isolated prerender chunk
+  // that cannot see the component imports above. Filtering on COMPONENTS here
+  // throws "COMPONENTS is not defined" (playbook §6.4 gotcha). The data-side
+  // filter is CONTENT_PAGES, applied inside getLocalizedContent().
+  // The homepage's path is undefined so /es emits dist/es.html (URL /es.html),
+  // matching localePageHref('index', locale) and the site's .html policy.
+  return getLocalizedContent().map(({ locale, page }) => ({
+    params: { locale, path: page === 'index' ? undefined : page },
+    props: { contentKey: page },
+  }));
+}
+
+const Page = COMPONENTS[Astro.props.contentKey];
+---
+
+<Page />
