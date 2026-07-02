@@ -1,0 +1,97 @@
+---
+// src/components/content/MedicareAdvantagePage.astro — THE shared template.
+// Copy lives in src/i18n/content/{locale}/medicare-advantage.json.
+import MainLayout from '../../layouts/MainLayout.astro';
+import HelpfulTools from '../HelpfulTools.astro';
+import { DEFAULT_LOCALE, getLangFromUrl, getLocaleMeta } from '../../i18n/locales';
+import { getPageContent, hreflangAlternates, interp, localizeHref } from '../../i18n/content';
+import { COMPARE_PLANS_URL, PHONE_DISPLAY } from '../../consts';
+
+interface MaContent {
+  page: { title: string; description: string };
+  breadcrumbHtml: string;
+  header: { h1: string; ledeHtml: string };
+  includes: {
+    h2: string;
+    introHtml: string;
+    benefitsH3: string;
+    benefitsHtml: string[];
+    networksH3: string;
+    networksHtml: string;
+    moopH3: string;
+    moopHtml: string;
+  };
+  fit: { h2: string; intro: string; itemsHtml: string[] };
+  callout: { heading: string; textHtml: string };
+  cta: { h2Html: string; textHtml: string; scheduleLabel: string; callLabel: string; compareLabel: string };
+}
+
+const lang = getLangFromUrl(Astro.url);
+const c = getPageContent<MaContent>('medicare-advantage', lang);
+const vars = { phone: PHONE_DISPLAY };
+const canonical = lang === DEFAULT_LOCALE ? '/medicare-advantage.html' : `/${lang}/medicare-advantage.html`;
+const alternates = hreflangAlternates('medicare-advantage');
+---
+
+<MainLayout
+  title={c.page.title}
+  description={c.page.description}
+  canonical={canonical}
+>
+  <Fragment slot="head">
+    {alternates.map((a) => <link rel="alternate" hreflang={a.code} href={a.href} />)}
+    {lang !== DEFAULT_LOCALE && <meta property="og:locale" content={getLocaleMeta(lang).ogLocale} />}
+  </Fragment>
+
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb" set:html={c.breadcrumbHtml}></div>
+    <h1>{c.header.h1}</h1>
+    <p class="lede" set:html={c.header.ledeHtml}></p>
+  </div>
+</section>
+
+<section class="section-white">
+  <div class="container content-narrow">
+    <h2>{c.includes.h2}</h2>
+    <p set:html={c.includes.introHtml}></p>
+
+    <h3>{c.includes.benefitsH3}</h3>
+    <ul>
+      {c.includes.benefitsHtml.map((item) => <li set:html={item} />)}
+    </ul>
+
+    <h3>{c.includes.networksH3}</h3>
+    <p set:html={c.includes.networksHtml}></p>
+
+    <h3>{c.includes.moopH3}</h3>
+    <p set:html={c.includes.moopHtml}></p>
+
+    <h2>{c.fit.h2}</h2>
+    <p>{c.fit.intro}</p>
+    <ul>
+      {c.fit.itemsHtml.map((item) => <li set:html={item} />)}
+    </ul>
+
+    <div class="callout">
+      <strong>{c.callout.heading}</strong>
+      <p style="margin:8px 0 0;" set:html={c.callout.textHtml}></p>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <h2 set:html={c.cta.h2Html}></h2>
+    <p set:html={c.cta.textHtml}></p>
+    <div class="cta-buttons">
+      <a href={localizeHref('contact.html', lang)} class="btn btn-primary btn-lg">{c.cta.scheduleLabel}</a>
+      <a href="tel:4352925548" class="btn btn-outline btn-lg">{interp(c.cta.callLabel, vars)}</a>
+      <a href={COMPARE_PLANS_URL} target="_blank" rel="noopener" class="btn btn-outline btn-lg">{c.cta.compareLabel}</a>
+    </div>
+  </div>
+</section>
+
+<HelpfulTools />
+
+</MainLayout>

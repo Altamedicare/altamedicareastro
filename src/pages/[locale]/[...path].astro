@@ -16,6 +16,7 @@ import Turning65Page from '../../components/content/Turning65Page.astro';
 import MedicareBasicsPage from '../../components/content/MedicareBasicsPage.astro';
 import MedicareSupplementPage from '../../components/content/MedicareSupplementPage.astro';
 import PrescriptionDrugPlansPage from '../../components/content/PrescriptionDrugPlansPage.astro';
+import MedicareAdvantagePage from '../../components/content/MedicareAdvantagePage.astro';
 
 const COMPONENTS: Record<string, (props: Record<string, never>) => unknown> = {
   'about': AboutPage,
@@ -24,6 +25,7 @@ const COMPONENTS: Record<string, (props: Record<string, never>) => unknown> = {
   'medicare-basics': MedicareBasicsPage,
   'medicare-supplement': MedicareSupplementPage,
   'prescription-drug-plans': PrescriptionDrugPlansPage,
+  'medicare-advantage': MedicareAdvantagePage,
 };
 
 export function getStaticPaths() {

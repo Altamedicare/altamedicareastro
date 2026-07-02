@@ -1,0 +1,53 @@
+{
+  "__note": "MASTER content for /medicare-advantage.html, extracted losslessly from src/pages/medicare-advantage.astro. Illustrative copay examples ($0/$40) are copy, not CMS figures — stay literal. SilverSneakers is a brand — model keeps it verbatim per YMYL rules.",
+  "page": {
+    "title": "Medicare Advantage Plans Utah | AltaMedicare",
+    "description": "Medicare Advantage explained: networks, copays, dental, vision, hearing, OTC, transportation, and maximum out-of-pocket. Local Utah guidance."
+  },
+  "breadcrumbHtml": "<a href=\"index.html\">Home</a> &nbsp;&rsaquo;&nbsp; <a href=\"medicare-basics.html\">Plans</a> &nbsp;&rsaquo;&nbsp; Medicare Advantage",
+  "header": {
+    "h1": "Medicare Advantage Plans in Utah",
+    "ledeHtml": "All-in-one Medicare plans that bundle hospital, medical, and usually drug coverage &mdash; often with extras like dental, vision, and hearing."
+  },
+  "includes": {
+    "h2": "What Medicare Advantage Includes",
+    "introHtml": "Medicare Advantage plans (Part C) are offered by private insurers approved by Medicare. They cover everything Original Medicare covers, plus often add benefits Original Medicare doesn&rsquo;t include.",
+    "benefitsH3": "Common Medicare Advantage Benefits",
+    "benefitsHtml": [
+      "<strong>Hospital and medical coverage</strong> &mdash; everything Part A and Part B cover",
+      "<strong>Prescription drug coverage</strong> &mdash; most Advantage plans include Part D built-in",
+      "<strong>Dental</strong> &mdash; cleanings, exams, and often more extensive work depending on the plan",
+      "<strong>Vision</strong> &mdash; eye exams and an allowance for glasses or contacts",
+      "<strong>Hearing</strong> &mdash; hearing exams and hearing aid coverage",
+      "<strong>Over-the-counter (OTC)</strong> &mdash; quarterly allowances for pharmacy items",
+      "<strong>Transportation</strong> &mdash; rides to medical appointments on some plans",
+      "<strong>Fitness benefits</strong> &mdash; SilverSneakers or similar gym memberships"
+    ],
+    "networksH3": "How Networks Work",
+    "networksHtml": "Medicare Advantage plans use provider networks. Most are <strong>HMO</strong> (in-network only) or <strong>PPO</strong> (in-network preferred, out-of-network allowed at higher cost). Before choosing a plan, we always verify your doctors and preferred hospitals are in-network.",
+    "moopH3": "Copays and Maximum Out-of-Pocket (MOOP)",
+    "moopHtml": "Instead of paying a percentage of every service like Original Medicare, Advantage plans typically use flat copays (e.g., $0 for primary care, $40 for specialist). Every Advantage plan also has an annual <strong>maximum out-of-pocket limit</strong> &mdash; once you hit it, the plan pays 100% for the rest of the year."
+  },
+  "fit": {
+    "h2": "Is Medicare Advantage Right for You?",
+    "intro": "Medicare Advantage tends to make sense if:",
+    "itemsHtml": [
+      "You want low (or $0) monthly premiums",
+      "You want extras like dental, vision, and hearing built in",
+      "Your doctors are in-network",
+      "You don&rsquo;t travel extensively for healthcare",
+      "You&rsquo;re generally healthy and want a budget-friendly option"
+    ]
+  },
+  "callout": {
+    "heading": "Plans change every year.",
+    "textHtml": "Networks shift, formularies update, and benefits adjust. We do free annual reviews to make sure your Medicare Advantage plan still fits &mdash; or to switch you to one that does."
+  },
+  "cta": {
+    "h2Html": "Have Questions? Let's Talk.",
+    "textHtml": "One free, no-pressure call &mdash; clear answers, no sales pitch.",
+    "scheduleLabel": "Schedule Consultation",
+    "callLabel": "Call {phone}",
+    "compareLabel": "Compare Plans Online"
+  }
+}

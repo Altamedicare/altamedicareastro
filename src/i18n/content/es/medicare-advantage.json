@@ -1,0 +1,54 @@
+{
+  "__translation_note": "AI-translated from en/medicare-advantage.json by scripts/translate.js (model claude-opus-4-8) using src/i18n/glossary.json (CMS es.medicare.gov terminology). Machine-generated — pending human spot-check. Do not hand-edit copy here; fix the English master or pin the term in the glossary, then re-run npm run translate.",
+  "__note": "MASTER content for /medicare-advantage.html, extracted losslessly from src/pages/medicare-advantage.astro. Illustrative copay examples ($0/$40) are copy, not CMS figures — stay literal. SilverSneakers is a brand — model keeps it verbatim per YMYL rules.",
+  "page": {
+    "title": "Planes Medicare Advantage en Utah | AltaMedicare",
+    "description": "Medicare Advantage explicado: redes, copagos, dental, visión, audición, medicamentos de venta libre (OTC), transporte y máximo de gastos de su bolsillo. Orientación local en Utah."
+  },
+  "breadcrumbHtml": "<a href=\"index.html\">Inicio</a> &nbsp;&rsaquo;&nbsp; <a href=\"medicare-basics.html\">Planes</a> &nbsp;&rsaquo;&nbsp; Medicare Advantage",
+  "header": {
+    "h1": "Planes Medicare Advantage en Utah",
+    "ledeHtml": "Planes de Medicare todo en uno que combinan cobertura hospitalaria, médica y, por lo general, de medicamentos &mdash; a menudo con extras como dental, visión y audición."
+  },
+  "includes": {
+    "h2": "Qué incluye Medicare Advantage",
+    "introHtml": "Los planes Medicare Advantage (Parte C) son ofrecidos por aseguradoras privadas aprobadas por Medicare. Cubren todo lo que cubre Medicare Original y, además, con frecuencia agregan beneficios que Medicare Original no incluye.",
+    "benefitsH3": "Beneficios comunes de Medicare Advantage",
+    "benefitsHtml": [
+      "<strong>Cobertura hospitalaria y médica</strong> &mdash; todo lo que cubren la Parte A y la Parte B",
+      "<strong>Cobertura de medicamentos recetados</strong> &mdash; la mayoría de los planes Advantage incluyen la Parte D integrada",
+      "<strong>Dental</strong> &mdash; limpiezas, exámenes y, a menudo, tratamientos más extensos según el plan",
+      "<strong>Visión</strong> &mdash; exámenes de la vista y un monto asignado para anteojos o lentes de contacto",
+      "<strong>Audición</strong> &mdash; exámenes auditivos y cobertura de audífonos",
+      "<strong>Medicamentos de venta libre (OTC)</strong> &mdash; montos trimestrales para artículos de farmacia",
+      "<strong>Transporte</strong> &mdash; viajes a citas médicas en algunos planes",
+      "<strong>Beneficios de gimnasio</strong> &mdash; membresías de SilverSneakers o gimnasios similares"
+    ],
+    "networksH3": "Cómo funcionan las redes",
+    "networksHtml": "Los planes Medicare Advantage usan redes de proveedores. La mayoría son <strong>HMO</strong> (solo dentro de la red) o <strong>PPO</strong> (se prefiere dentro de la red, pero se permite fuera de la red a un costo mayor). Antes de elegir un plan, siempre verificamos que sus médicos y hospitales preferidos estén dentro de la red.",
+    "moopH3": "Copagos y máximo de gastos de su bolsillo (MOOP)",
+    "moopHtml": "En lugar de pagar un porcentaje de cada servicio como en Medicare Original, los planes Advantage suelen usar copagos fijos (por ejemplo, $0 por atención primaria, $40 por especialista). Todo plan Advantage también tiene un <strong>límite máximo anual de gastos de su bolsillo</strong> &mdash; una vez que lo alcanza, el plan paga el 100% durante el resto del año."
+  },
+  "fit": {
+    "h2": "¿Es Medicare Advantage adecuado para usted?",
+    "intro": "Medicare Advantage suele tener sentido si:",
+    "itemsHtml": [
+      "Desea primas mensuales bajas (o de $0)",
+      "Desea extras como dental, visión y audición integrados",
+      "Sus médicos están dentro de la red",
+      "No viaja mucho para recibir atención médica",
+      "Goza de buena salud en general y quiere una opción económica"
+    ]
+  },
+  "callout": {
+    "heading": "Los planes cambian todos los años.",
+    "textHtml": "Las redes cambian, los formularios se actualizan y los beneficios se ajustan. Hacemos revisiones anuales gratuitas para asegurarnos de que su plan Medicare Advantage siga siendo el adecuado &mdash; o para cambiarlo a uno que lo sea."
+  },
+  "cta": {
+    "h2Html": "¿Tiene preguntas? Hablemos.",
+    "textHtml": "Una llamada gratuita y sin presión &mdash; respuestas claras, sin argumentos de venta.",
+    "scheduleLabel": "Programar consulta",
+    "callLabel": "Llame al {phone}",
+    "compareLabel": "Comparar planes en línea"
+  }
+}
