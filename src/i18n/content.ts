@@ -66,6 +66,26 @@ const VIRTUAL_PAGE_SOURCES: {
     slugs: (en) =>
       ((en as { categories: { key: string }[] }).categories ?? []).map((c) => `faq/${c.key}`),
   },
+  {
+    module: 'location',
+    contentKey: 'location-hub',
+    slugs: (en) => ((en as { places: { slug: string }[] }).places ?? []).map((p) => p.slug),
+  },
+  {
+    module: 'location',
+    contentKey: 'location-advantage',
+    slugs: (en) => ((en as { places: { slug: string }[] }).places ?? []).map((p) => `${p.slug}/medicare-advantage`),
+  },
+  {
+    module: 'location',
+    contentKey: 'location-supplement',
+    slugs: (en) => ((en as { places: { slug: string }[] }).places ?? []).map((p) => `${p.slug}/medicare-supplement`),
+  },
+  {
+    module: 'location',
+    contentKey: 'location-partd',
+    slugs: (en) => ((en as { places: { slug: string }[] }).places ?? []).map((p) => `${p.slug}/part-d`),
+  },
 ];
 
 const sharedFile = (module: string, locale: string): unknown =>

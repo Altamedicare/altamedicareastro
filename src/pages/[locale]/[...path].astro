@@ -21,6 +21,10 @@ import HomePage from '../../components/content/HomePage.astro';
 import FaqHubPage from '../../components/content/FaqHubPage.astro';
 import FaqCategoryPage from '../../components/content/FaqCategoryPage.astro';
 import DrugAssistancePage from '../../components/content/DrugAssistancePage.astro';
+import LocationOverview from '../../components/location/LocationOverview.astro';
+import LocationAdvantage from '../../components/location/LocationAdvantage.astro';
+import LocationSupplement from '../../components/location/LocationSupplement.astro';
+import LocationPartD from '../../components/location/LocationPartD.astro';
 
 const COMPONENTS: Record<string, (props: Record<string, never>) => unknown> = {
   'about': AboutPage,
@@ -34,6 +38,10 @@ const COMPONENTS: Record<string, (props: Record<string, never>) => unknown> = {
   'faq-hub': FaqHubPage,
   'faq-category': FaqCategoryPage,
   'drug-assistance': DrugAssistancePage,
+  'location-hub': LocationOverview,
+  'location-advantage': LocationAdvantage,
+  'location-supplement': LocationSupplement,
+  'location-partd': LocationPartD,
 };
 
 export function getStaticPaths() {

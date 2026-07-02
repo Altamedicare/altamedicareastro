@@ -115,6 +115,7 @@ export const strings = {
     'tools.intro': 'Quick, interactive calculators to help you plan with confidence.',
     'tools.open': 'Open tool',
     'tools.seeAll': 'See all Medicare tools',
+    'crumb.aria': 'Breadcrumb',
   },
   es: {
     'switcher.label': 'Idioma',
@@ -168,6 +169,7 @@ export const strings = {
     'tools.intro': 'Calculadoras rápidas e interactivas para ayudarle a planificar con confianza.',
     'tools.open': 'Abrir herramienta',
     'tools.seeAll': 'Ver todas las herramientas de Medicare',
+    'crumb.aria': 'Ruta de navegación',
   },
 } as const;
 

@@ -52,7 +52,11 @@ split (copy JSON by id; URLs/phones/names/statuses stay in TS), 22 programs
 verbatim pins held), 14 /es/*-assistance-program pages; finder bridge
 BYTE-IDENTICAL after the split; operational URLs/phones verified 25/25
 identical EN↔ES. NATIVE REVIEW GATE OPEN: eligibility strings must be
-signed off before push/deploy (test-plan P2.4 condition 4).
+signed off before push/deploy (test-plan P2.4 condition 4). P2.5:
+location system — one {placeName} template set serves all 6 places ×
+4 page types; 24 Spanish location pages from ONE translation run (~/usr/bin/bash.38);
+EN location pages 3-diff identical through the refactor; figures tokenized;
+breadcrumb + FAQPage JSON-LD localized; 24 es sitemap URLs + alternates.
 
 Glossary pins added: `Medicare Supplement`, `Annual Enrollment Period`,
 `Special Enrollment Periods` (plural). Validator catches to date: 3 real

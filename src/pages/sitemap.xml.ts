@@ -106,7 +106,8 @@ export const GET: APIRoute = async () => {
   const rows = [
     ...staticUrls.map((u) => `  <url><loc>${SITE}${u.loc}</loc>${alternatesXml(u.loc)}<priority>${u.priority.toFixed(1)}</priority></url>`),
     ...staticUrls.flatMap((u) => localizedRows(u.loc, u.priority)),
-    ...locationUrls.map((u) => `  <url><loc>${SITE}${u.loc}</loc><priority>${u.priority.toFixed(1)}</priority></url>`),
+    ...locationUrls.map((u) => `  <url><loc>${SITE}${u.loc}</loc>${alternatesXml(u.loc)}<priority>${u.priority.toFixed(1)}</priority></url>`),
+    ...locationUrls.flatMap((u) => localizedRows(u.loc, u.priority)),
     ...blogUrls.map((u) => `  <url><loc>${SITE}${u.loc}</loc><lastmod>${u.lastmod}</lastmod><priority>${u.priority.toFixed(1)}</priority></url>`),
     ...newsUrls.map((u) => `  <url><loc>${SITE}${u.loc}</loc><lastmod>${u.lastmod}</lastmod><priority>${u.priority.toFixed(1)}</priority></url>`),
     ...newsCategoryUrls.map((u) => `  <url><loc>${SITE}${u.loc}</loc><priority>${u.priority.toFixed(1)}</priority></url>`),

@@ -1,85 +1,101 @@
 ---
+// Location Medicare Supplement template (P2.5) — see LocationOverview for the
+// shared-module pattern notes.
 import MainLayout from '../../layouts/MainLayout.astro';
 import LocationTools from './LocationTools.astro';
 import LocationFaq from './LocationFaq.astro';
 import LocationCTA from './LocationCTA.astro';
 import LocationBreadcrumb from './LocationBreadcrumb.astro';
-import { pageHref, trail, type Place } from '../../data/places';
+import { getLocationCopy, hubHref, pageHref, parentStateHub, placeFromSlug, type Crumb } from '../../data/places';
+import { PHONE_DISPLAY } from '../../consts';
+import { DEFAULT_LOCALE, getLangFromUrl, getLocaleMeta, pageSlugFromUrl, t } from '../../i18n/locales';
+import { SITE_ORIGIN, hreflangAlternates, interp, localizeHref } from '../../i18n/content';
 
-interface Props {
-  place: Place;
-}
-const { place } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const slug = pageSlugFromUrl(Astro.url);
+const { place } = placeFromSlug(slug)!;
 const n = place.name;
-const canonical = pageHref(place, 'medicare-supplement');
-const SITE = 'https://altamedicare.com';
+const copy = getLocationCopy(lang);
+const c = copy.supplement;
+const shell = copy.shell;
+const vars = {
+  placeName: n,
+  phone: PHONE_DISPLAY,
+  partDHref: localizeHref(pageHref(place, 'part-d'), lang),
+};
+const canonicalEn = pageHref(place, 'medicare-supplement');
+const canonical = lang === DEFAULT_LOCALE ? canonicalEn : `/${lang}${canonicalEn}`;
+const alternates = hreflangAlternates(slug);
+const SITE = SITE_ORIGIN;
 
-const faqs = [
-  { q: `Are Medicare Supplement plans standardized in ${n}?`, a: `Yes. Medigap plans are standardized by letter, so a Plan G offers the same core benefits no matter which company sells it in ${n}. Because the coverage is identical, the main things that differ between companies are price and service.` },
-  { q: `Does a Medicare Supplement plan cover prescriptions?`, a: `No. Medigap policies do not include drug coverage, so you add a standalone Part D plan alongside one. Going without creditable drug coverage can trigger a lifetime Part D late penalty.` },
-  { q: `When is the best time to buy a Medigap policy in ${n}?`, a: `Your Medigap Open Enrollment Period is the 6 months that start when you are 65 or older and enrolled in Part B. During that window you have guaranteed issue rights, meaning you cannot be turned down or charged more for health reasons.` },
-  { q: `Can I be denied a Medigap policy?`, a: `Outside of guaranteed-issue situations, insurers in most states can use medical underwriting and may decline you or charge more based on health. That is why enrolling during your Medigap Open Enrollment Period, or another guaranteed-issue window, matters so much.` },
-  { q: `Does Medigap work when I travel?`, a: `Yes. Because Original Medicare has no networks, a Medigap policy works with any provider nationwide that accepts Medicare. Several Medigap plans, including Plan G and Plan N, also include limited foreign travel emergency coverage.` },
-];
+const faqs = c.faqs.map((f) => ({ q: interp(f.q, vars), a: interp(f.a, vars) }));
 const faqLd = {
   '@context': 'https://schema.org', '@type': 'FAQPage',
   mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
-const crumbs = trail(place, { name: 'Medicare Supplement', href: canonical });
+const crumbs: Crumb[] = [{ name: t('nav.home', lang), href: localizeHref('/', lang) }];
+const parent = parentStateHub(place);
+if (place.kind === 'county' && place.stateName && parent) {
+  crumbs.push({ name: interp(shell.crumbPlace, { placeName: place.stateName }), href: localizeHref(parent, lang) });
+}
+crumbs.push({ name: interp(shell.crumbPlace, { placeName: n }), href: localizeHref(hubHref(place), lang) });
+crumbs.push({ name: c.crumbLeaf!, href: canonical });
 const breadcrumbLd = {
   '@context': 'https://schema.org', '@type': 'BreadcrumbList',
-  itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: `${SITE}${c.href}` })),
+  itemListElement: crumbs.map((cr, i) => ({ '@type': 'ListItem', position: i + 1, name: cr.name, item: `${SITE}${cr.href}` })),
 };
 ---
 
 <MainLayout
-  title={`Medicare Supplement Plans in ${n} | Medigap Plan G & N | AltaMedicare`}
-  description={`How Medicare Supplement (Medigap) plans work in ${n}: Plan G, Plan N, foreign travel coverage, premiums, and your guaranteed issue rights.`}
+  title={interp(c.title, vars)}
+  description={interp(c.description, vars)}
   canonical={canonical}
   pageType="Guide"
 >
   <Fragment slot="head">
     <script type="application/ld+json" is:inline set:html={JSON.stringify(faqLd)} />
     <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbLd)} />
+    {alternates.map((a) => <link rel="alternate" hreflang={a.code} href={a.href} />)}
+    {lang !== DEFAULT_LOCALE && <meta property="og:locale" content={getLocaleMeta(lang).ogLocale} />}
   </Fragment>
 
   <section class="page-header">
     <div class="container">
       <LocationBreadcrumb crumbs={crumbs} />
-      <h1>Medicare Supplement Plans in {n}</h1>
-      <p class="lede">Predictable costs and the freedom to see any provider that accepts Medicare &mdash; here is how Medigap works in {n}, including Plan G and Plan N.</p>
+      <h1>{interp(c.h1, vars)}</h1>
+      <p class="lede" set:html={interp(c.ledeHtml, vars)}></p>
     </div>
   </section>
 
   <section class="section-white">
     <div class="container content-narrow">
-      <h2>How Medigap works with Original Medicare</h2>
-      <p>A Medicare Supplement (Medigap) policy pairs with <strong>Original Medicare</strong>. Medicare pays its share first, then your Medigap plan pays many of the costs Medicare leaves behind &mdash; deductibles, coinsurance, and copays. There are no networks, so you can use any provider in the country that accepts Medicare, and the plans are standardized by letter, which makes comparing them refreshingly simple. You add a standalone <a href={pageHref(place, 'part-d')}>Part D drug plan</a> for prescriptions.</p>
+      <h2>{interp(c.s1H2 as string, vars)}</h2>
+      <p set:html={interp(c.s1PHtml as string, vars)}></p>
 
-      <h2>Plan G</h2>
-      <p>Plan G is the most popular choice for people new to Medicare. After you pay the once-a-year Part B deductible, Plan G covers virtually everything else Original Medicare would leave to you &mdash; including the 20% coinsurance and hospital costs. It offers the most predictable budgeting short of the (now closed to new enrollees) Plan F. Learn more in our <a href="/blog/what-is-medicare-supplement-plan-g.html">Plan G guide</a>.</p>
+      <h2>{interp(c.s2H2 as string, vars)}</h2>
+      <p set:html={interp(c.s2PHtml as string, vars)}></p>
 
-      <h2>Plan N</h2>
-      <p>Plan N trades a lower monthly premium for a little cost-sharing: you pay the Part B deductible, small copays for some office and emergency-room visits, and any Part B &ldquo;excess charges&rdquo; if a provider does not accept assignment. For people who do not visit the doctor often, that trade can mean real savings. Our <a href="/blog/what-is-medicare-supplement-plan-n.html">Plan N guide</a> compares it directly to Plan G.</p>
+      <h2>{interp(c.s3H2 as string, vars)}</h2>
+      <p set:html={interp(c.s3PHtml as string, vars)}></p>
 
-      <h2>Foreign travel coverage</h2>
-      <p>Original Medicare generally does not cover care outside the United States. Several Medigap plans &mdash; including Plan G and Plan N &mdash; add <strong>foreign travel emergency coverage</strong>, which can help with emergency care during the first 60 days of a trip, subject to a deductible and a lifetime limit. If you travel internationally, this is a meaningful benefit to weigh.</p>
+      <h2>{interp(c.s4H2 as string, vars)}</h2>
+      <p set:html={interp(c.s4PHtml as string, vars)}></p>
 
-      <h2>Premium considerations</h2>
-      <p>Because the coverage within a lettered plan is identical from company to company, the difference between carriers comes down to price and how rates are likely to change over time. A lower starting premium is not always the best long-term value, so it is worth comparing the companies offering the same plan. Our <a href="/medicare-cost-estimator.html">cost estimator</a> helps you weigh premiums against expected out-of-pocket costs.</p>
+      <h2>{interp(c.s5H2 as string, vars)}</h2>
+      <p set:html={interp(c.s5PHtml as string, vars)}></p>
 
-      <h2>Guaranteed issue rights</h2>
-      <p>The best time to buy a Medigap policy is during your <strong>Medigap Open Enrollment Period</strong> &mdash; the 6 months that begin when you are 65 or older and enrolled in Part B. In that window you have <strong>guaranteed issue rights</strong>: insurers cannot deny you or charge more because of your health. Certain life events create other guaranteed-issue windows too. Outside those windows, you may have to pass medical underwriting, so timing matters. Not sure whether Medigap or Medicare Advantage fits you better? See our <a href="/blog/medicare-advantage-vs-medigap.html">side-by-side comparison</a>.</p>
+      <h2>{interp(c.s6H2 as string, vars)}</h2>
+      <p set:html={interp(c.s6PHtml as string, vars)}></p>
     </div>
   </section>
 
   <LocationTools
     tools={['cost-estimator', 'quiz', 'drug-cost']}
-    heading="Tools to plan your coverage"
-    sub="Estimate your total costs, find your fit, and price out your prescriptions."
+    heading={interp(c.toolsHeading, vars)}
+    sub={interp(c.toolsSub, vars)}
   />
 
-  <LocationFaq faqs={faqs} heading={`Medicare Supplement in ${n}: FAQs`} />
+  <LocationFaq faqs={faqs} heading={interp(c.faqHeading, vars)} />
 
   <LocationCTA place={place} />
 </MainLayout>

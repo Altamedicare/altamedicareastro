@@ -1,0 +1,235 @@
+{
+  "__note": "MASTER copy for the location page system (shared module, ADR-002). One set of {placeName}/{stateName} templates serves every place — translating this file localizes all 24 location pages. CMS figures interpolate from src/data/figures.ts via {year}/{partDAnnualCap} (§6.8). The `places` array is the verbatim slug registry driving virtual localized routes; adding a place = add it to src/data/places.ts AND here.",
+  "places": [
+    {
+      "slug": "utah"
+    },
+    {
+      "slug": "utah/salt-lake-county"
+    },
+    {
+      "slug": "utah/utah-county"
+    },
+    {
+      "slug": "utah/davis-county"
+    },
+    {
+      "slug": "utah/weber-county"
+    },
+    {
+      "slug": "utah/washington-county"
+    }
+  ],
+  "shell": {
+    "crumbPlace": "Medicare in {placeName}",
+    "faqDefaultHeading": "Frequently Asked Questions",
+    "ctaH2": "Local Medicare help in {placeName}",
+    "ctaTextHtml": "Bret Swope is a licensed Utah Medicare agent &mdash; no bots, no pressure, no cost to you. Get clear answers or compare plans on your own.",
+    "ctaTalk": "Talk to Bret",
+    "ctaCompare": "Compare Plans Online",
+    "ctaCall": "Call {phone}"
+  },
+  "overview": {
+    "title": "Medicare in {placeName} | Plans, Enrollment & Local Help | AltaMedicare",
+    "description": "A plain-English guide to Medicare in {placeName}: how Medicare Advantage, Medicare Supplement, and Part D work, when to enroll, and free local help from a licensed Utah agent.",
+    "h1": "Medicare in {placeName}",
+    "ledeHtml": "Everything you need to understand your Medicare options in {placeName} &mdash; explained in plain English by a licensed local agent, and updated for {year}.",
+    "s1H2": "Understanding Medicare in {placeName}",
+    "s1P1Html": "Medicare itself is a federal program, so the rules, parts, and enrollment windows are the same in {placeName} as they are across the country. What changes locally is which <strong>private plans</strong> are offered at your ZIP code &mdash; the Medicare Advantage and Part D plans available to you, and the Medigap policies sold in your area. That is exactly where a local agent helps: matching the national rules to the specific plans you can actually choose from.",
+    "s1P2": "Most people in {placeName} build their coverage one of two ways:",
+    "s1ItemsHtml": [
+      "<strong>Original Medicare + a Medigap policy + a Part D drug plan</strong> &mdash; maximum freedom to see any provider that accepts Medicare, with predictable costs.",
+      "<strong>A Medicare Advantage (Part C) plan</strong> &mdash; an all-in-one plan, usually with a low premium, a network, built-in drug coverage, and extra benefits."
+    ],
+    "s1P3Html": "Neither is automatically &ldquo;better.&rdquo; The right path depends on your doctors, your prescriptions, your budget, and how much you travel. Our <a href=\"/medicare-quiz.html\">plan quiz</a> and <a href=\"/blog/which-medicare-plan-is-right-for-me.html\">plan-selection guide</a> are good places to start.",
+    "maH2": "Medicare Advantage in {placeName}",
+    "maPHtml": "Medicare Advantage (Part C) plans are offered by private insurers and bundle your Part A, Part B, and usually Part D into a single plan &mdash; often with a $0 or low premium and extras like dental, vision, and hearing. They use provider networks (HMO or PPO) and have a yearly out-of-pocket maximum that Original Medicare alone does not.",
+    "maLinkLabelHtml": "Read the full guide: Medicare Advantage in {placeName} &rarr;",
+    "msH2": "Medicare Supplement Plans in {placeName}",
+    "msPHtml": "Medicare Supplement (Medigap) policies pair with Original Medicare and pay many of the out-of-pocket costs it leaves behind. There are no networks &mdash; you can see any provider nationwide that accepts Medicare &mdash; and the plans are standardized, so a Plan G is the same coverage from every company. You add a standalone Part D plan for drugs.",
+    "msLinkLabelHtml": "Read the full guide: Medicare Supplement in {placeName} &rarr;",
+    "pdH2": "Part D Prescription Drug Plans in {placeName}",
+    "pdPHtml": "Part D covers prescription drugs, either as a standalone plan (with Original Medicare) or built into a Medicare Advantage plan. Every plan has its own formulary &mdash; the list of drugs it covers and the tier each sits on &mdash; so the &ldquo;best&rdquo; Part D plan is simply the one that covers your specific medications for the least total cost. In {year}, Part D also has a <strong>{partDAnnualCap} annual cap</strong> on what you pay out of pocket for covered drugs.",
+    "pdLinkLabelHtml": "Read the full guide: Part D in {placeName} &rarr;",
+    "t65H2": "Turning 65 in {placeName}",
+    "t65P1Html": "If you are approaching 65 in {placeName}, your most important window is the <strong>Initial Enrollment Period</strong> &mdash; the 7 months around your birthday when you can sign up without penalty. Miss it without qualifying coverage and you can face lifetime late penalties. If you are still working past 65, whether to take Medicare or keep your employer plan depends on your employer's size and your HSA.",
+    "t65P2Html": "Our <a href=\"/blog/medicare-checklist-turning-65.html\">turning-65 checklist</a> walks through the steps, and the <a href=\"/medicare-timeline-calculator.html\">timeline calculator</a> maps your exact dates.",
+    "helpH2": "Help from Bret",
+    "helpPHtml": "Bret Swope is a licensed Medicare agent based in Orem who helps {placeName} families sort through their options &mdash; at no cost to you. There are no call centers and no pressure: just a local person who explains things clearly, compares the plans available at your address, and helps you enroll if you choose to. Have a question? <a href=\"/contact.html\">Reach out anytime</a> or call <a href=\"tel:4352925548\">(435) 292-5548</a>.",
+    "toolsHeading": "{placeName} Medicare tools",
+    "toolsSub": "Free, private calculators to plan your own situation — no sign-up required.",
+    "faqHeading": "Medicare in {placeName}: Common Questions",
+    "faqs": [
+      {
+        "q": "Who is eligible for Medicare in {placeName}?",
+        "a": "Medicare eligibility is federal, so it works the same in {placeName} as everywhere else. Most people qualify at age 65, and some qualify earlier through Social Security disability. You can check your dates with our eligibility calculator."
+      },
+      {
+        "q": "What types of Medicare plans are available in {placeName}?",
+        "a": "{placeName} residents can choose Original Medicare (Parts A and B), often paired with a Medicare Supplement (Medigap) policy and a standalone Part D drug plan, or a Medicare Advantage (Part C) plan that bundles coverage together. The right fit depends on your doctors, prescriptions, budget, and travel."
+      },
+      {
+        "q": "Does it cost anything to work with a local Medicare agent in {placeName}?",
+        "a": "No. Working with a licensed agent like Bret is free to you. Agents are paid by the insurance carriers, and plan premiums are the same whether you enroll on your own or with help."
+      },
+      {
+        "q": "When can I enroll in Medicare in {placeName}?",
+        "a": "Most people first enroll during their 7-month Initial Enrollment Period around their 65th birthday. After that, the Annual Enrollment Period (October 15 to December 7) lets you change drug and Medicare Advantage plans for the following year."
+      },
+      {
+        "q": "How do I compare Medicare plans in {placeName}?",
+        "a": "You can compare plans available at your ZIP code online through our secure comparison portal, or talk through your options with Bret. We look at your doctors, prescriptions, and budget rather than chasing whichever plan is advertised most."
+      }
+    ]
+  },
+  "advantage": {
+    "title": "Medicare Advantage in {placeName} | How Part C Works | AltaMedicare",
+    "description": "How Medicare Advantage works in {placeName}: HMO vs PPO, prescription coverage, extra benefits, enrollment periods, and the questions to ask before choosing a plan.",
+    "crumbLeaf": "Medicare Advantage",
+    "h1": "Medicare Advantage in {placeName}",
+    "ledeHtml": "An all-in-one way to get your Medicare &mdash; here is how Medicare Advantage (Part C) works in {placeName}, and how to tell whether it fits you.",
+    "s1H2": "How Medicare Advantage works in {placeName}",
+    "s1PHtml": "A Medicare Advantage (Part C) plan is offered by a private insurer approved by Medicare. When you join one, the plan provides your Part A and Part B benefits in one package &mdash; usually with Part D drug coverage and extra benefits built in. You keep paying your Part B premium, and you follow the plan's rules for networks and referrals. In exchange, you get a single card, a predictable copay structure, and a yearly out-of-pocket maximum.",
+    "s2H2": "HMO vs PPO",
+    "s2P1": "The two most common Medicare Advantage plan types are HMO and PPO:",
+    "s2ItemsHtml": [
+      "<strong>HMO</strong> &mdash; usually the lowest cost. You stay within the plan's network and often choose a primary care doctor who coordinates referrals.",
+      "<strong>PPO</strong> &mdash; more flexibility. You can see out-of-network providers, though you pay a higher share. Referrals are usually not required."
+    ],
+    "s2P2Html": "If keeping a specific doctor matters, check whether they are in the plan's network before you enroll &mdash; that single detail decides a lot.",
+    "s3H2": "Prescription coverage",
+    "s3PHtml": "Most Medicare Advantage plans include Part D drug coverage, so you do not need a separate drug plan. Because each plan has its own formulary, the smartest move is to confirm your exact medications are covered &mdash; and at what tier &mdash; before choosing. Our <a href=\"/medicare-formulary-lookup.html\">formulary lookup</a> and <a href=\"/medicare-drug-cost-calculator.html\">drug cost calculator</a> make that quick.",
+    "s4H2": "Extra benefits",
+    "s4PHtml": "One reason Medicare Advantage is popular is the extras Original Medicare does not cover &mdash; commonly dental, vision, hearing, fitness memberships, and sometimes an over-the-counter allowance or transportation. Benefits vary by plan and change each year, so treat them as a tiebreaker, not the headline.",
+    "s5H2": "Enrollment periods",
+    "s5PHtml": "You can join a Medicare Advantage plan during your <strong>Initial Enrollment Period</strong> at 65, the <strong>Annual Enrollment Period</strong> (October 15 to December 7), and &mdash; if you are already in an Advantage plan &mdash; the <strong>Medicare Advantage Open Enrollment Period</strong> (January 1 to March 31). See your exact windows with the <a href=\"/medicare-timeline-calculator.html\">timeline calculator</a>, and read our <a href=\"/blog/annual-enrollment-period-explained.html\">guide to the Annual Enrollment Period</a>.",
+    "s6H2": "Questions to ask before choosing a plan",
+    "s6Items": [
+      "Are my doctors and preferred hospital in the plan's network?",
+      "Are all of my prescriptions on the formulary, and at what tier?",
+      "What is the out-of-pocket maximum, and what are the copays for the services I use?",
+      "Does it include the extra benefits I will actually use?",
+      "Is it an HMO or PPO &mdash; and does that match how I like to get care?"
+    ],
+    "s6PHtml": "Not sure where to start? Our <a href=\"/blog/pros-and-cons-of-medicare-advantage.html\">pros and cons guide</a> and <a href=\"/blog/medicare-advantage-vs-medigap.html\">Advantage vs. Medigap comparison</a> lay out the trade-offs, and Bret can compare the plans available at your address with you.",
+    "toolsHeading": "Tools to compare your options",
+    "toolsSub": "See which coverage type fits, estimate your costs, and check your drugs.",
+    "faqHeading": "Medicare Advantage in {placeName}: FAQs",
+    "faqs": [
+      {
+        "q": "Does Medicare Advantage cost extra in {placeName}?",
+        "a": "You still pay your Part B premium, but many Medicare Advantage plans in {placeName} have a $0 or low monthly plan premium. Your real costs come from copays, coinsurance, and your plan's out-of-pocket maximum, so it pays to compare the whole picture, not just the premium."
+      },
+      {
+        "q": "What is the difference between an HMO and a PPO?",
+        "a": "An HMO generally keeps costs lower but asks you to stay in-network and often use a primary doctor for referrals. A PPO costs a bit more but lets you see out-of-network providers at a higher share of the cost. The best choice depends on your doctors and how much flexibility you want."
+      },
+      {
+        "q": "Does Medicare Advantage in {placeName} include drug coverage?",
+        "a": "Most Medicare Advantage plans include Part D prescription coverage built in. Always confirm your specific medications are on the plan's formulary before enrolling, because every plan covers a different list of drugs."
+      },
+      {
+        "q": "Can I switch Medicare Advantage plans later?",
+        "a": "Yes. You can change plans during the Annual Enrollment Period (October 15 to December 7), and the Medicare Advantage Open Enrollment Period (January 1 to March 31) lets you switch to another Advantage plan or move back to Original Medicare once."
+      },
+      {
+        "q": "Do Medicare Advantage plans in {placeName} have an out-of-pocket maximum?",
+        "a": "Yes. Every Medicare Advantage plan has a yearly cap on what you pay for covered medical services, which Original Medicare alone does not. Once you reach it, the plan covers 100% of covered services for the rest of the year."
+      }
+    ]
+  },
+  "supplement": {
+    "title": "Medicare Supplement Plans in {placeName} | Medigap Plan G & N | AltaMedicare",
+    "description": "How Medicare Supplement (Medigap) plans work in {placeName}: Plan G, Plan N, foreign travel coverage, premiums, and your guaranteed issue rights.",
+    "crumbLeaf": "Medicare Supplement",
+    "h1": "Medicare Supplement Plans in {placeName}",
+    "ledeHtml": "Predictable costs and the freedom to see any provider that accepts Medicare &mdash; here is how Medigap works in {placeName}, including Plan G and Plan N.",
+    "s1H2": "How Medigap works with Original Medicare",
+    "s1PHtml": "A Medicare Supplement (Medigap) policy pairs with <strong>Original Medicare</strong>. Medicare pays its share first, then your Medigap plan pays many of the costs Medicare leaves behind &mdash; deductibles, coinsurance, and copays. There are no networks, so you can use any provider in the country that accepts Medicare, and the plans are standardized by letter, which makes comparing them refreshingly simple. You add a standalone <a href=\"{partDHref}\">Part D drug plan</a> for prescriptions.",
+    "s2H2": "Plan G",
+    "s2PHtml": "Plan G is the most popular choice for people new to Medicare. After you pay the once-a-year Part B deductible, Plan G covers virtually everything else Original Medicare would leave to you &mdash; including the 20% coinsurance and hospital costs. It offers the most predictable budgeting short of the (now closed to new enrollees) Plan F. Learn more in our <a href=\"/blog/what-is-medicare-supplement-plan-g.html\">Plan G guide</a>.",
+    "s3H2": "Plan N",
+    "s3PHtml": "Plan N trades a lower monthly premium for a little cost-sharing: you pay the Part B deductible, small copays for some office and emergency-room visits, and any Part B &ldquo;excess charges&rdquo; if a provider does not accept assignment. For people who do not visit the doctor often, that trade can mean real savings. Our <a href=\"/blog/what-is-medicare-supplement-plan-n.html\">Plan N guide</a> compares it directly to Plan G.",
+    "s4H2": "Foreign travel coverage",
+    "s4PHtml": "Original Medicare generally does not cover care outside the United States. Several Medigap plans &mdash; including Plan G and Plan N &mdash; add <strong>foreign travel emergency coverage</strong>, which can help with emergency care during the first 60 days of a trip, subject to a deductible and a lifetime limit. If you travel internationally, this is a meaningful benefit to weigh.",
+    "s5H2": "Premium considerations",
+    "s5PHtml": "Because the coverage within a lettered plan is identical from company to company, the difference between carriers comes down to price and how rates are likely to change over time. A lower starting premium is not always the best long-term value, so it is worth comparing the companies offering the same plan. Our <a href=\"/medicare-cost-estimator.html\">cost estimator</a> helps you weigh premiums against expected out-of-pocket costs.",
+    "s6H2": "Guaranteed issue rights",
+    "s6PHtml": "The best time to buy a Medigap policy is during your <strong>Medigap Open Enrollment Period</strong> &mdash; the 6 months that begin when you are 65 or older and enrolled in Part B. In that window you have <strong>guaranteed issue rights</strong>: insurers cannot deny you or charge more because of your health. Certain life events create other guaranteed-issue windows too. Outside those windows, you may have to pass medical underwriting, so timing matters. Not sure whether Medigap or Medicare Advantage fits you better? See our <a href=\"/blog/medicare-advantage-vs-medigap.html\">side-by-side comparison</a>.",
+    "toolsHeading": "Tools to plan your coverage",
+    "toolsSub": "Estimate your total costs, find your fit, and price out your prescriptions.",
+    "faqHeading": "Medicare Supplement in {placeName}: FAQs",
+    "faqs": [
+      {
+        "q": "Are Medicare Supplement plans standardized in {placeName}?",
+        "a": "Yes. Medigap plans are standardized by letter, so a Plan G offers the same core benefits no matter which company sells it in {placeName}. Because the coverage is identical, the main things that differ between companies are price and service."
+      },
+      {
+        "q": "Does a Medicare Supplement plan cover prescriptions?",
+        "a": "No. Medigap policies do not include drug coverage, so you add a standalone Part D plan alongside one. Going without creditable drug coverage can trigger a lifetime Part D late penalty."
+      },
+      {
+        "q": "When is the best time to buy a Medigap policy in {placeName}?",
+        "a": "Your Medigap Open Enrollment Period is the 6 months that start when you are 65 or older and enrolled in Part B. During that window you have guaranteed issue rights, meaning you cannot be turned down or charged more for health reasons."
+      },
+      {
+        "q": "Can I be denied a Medigap policy?",
+        "a": "Outside of guaranteed-issue situations, insurers in most states can use medical underwriting and may decline you or charge more based on health. That is why enrolling during your Medigap Open Enrollment Period, or another guaranteed-issue window, matters so much."
+      },
+      {
+        "q": "Does Medigap work when I travel?",
+        "a": "Yes. Because Original Medicare has no networks, a Medigap policy works with any provider nationwide that accepts Medicare. Several Medigap plans, including Plan G and Plan N, also include limited foreign travel emergency coverage."
+      }
+    ]
+  },
+  "partd": {
+    "title": "Medicare Part D in {placeName} | Prescription Drug Plans | AltaMedicare",
+    "description": "How Medicare Part D prescription drug plans work in {placeName}: formularies, drug tiers, prior authorization, step therapy, Extra Help, and the {year} {partDAnnualCap} cap.",
+    "crumbLeaf": "Part D",
+    "h1": "Medicare Part D in {placeName}",
+    "ledeHtml": "Prescription drug coverage, explained &mdash; how Part D plans work in {placeName}, what drives your costs, and how the {year} {partDAnnualCap} cap protects you.",
+    "s1H2": "Prescription coverage in {placeName}",
+    "s1PHtml": "Part D is Medicare's prescription drug coverage. You can get it two ways: as a <strong>standalone Part D plan</strong> alongside Original Medicare (and usually a Medigap policy), or <strong>built into a Medicare Advantage plan</strong>. Either way, the coverage is delivered by private insurers, and the plan you pick determines which drugs are covered and what you pay.",
+    "s2H2": "Formularies",
+    "s2PHtml": "Every Part D plan has a <strong>formulary</strong> &mdash; its list of covered drugs. Two plans with similar premiums can treat your medications very differently, so the single most important step is confirming your drugs are on a plan's formulary before you enroll. Our <a href=\"/medicare-formulary-lookup.html\">formulary lookup</a> shows typical coverage, and the <a href=\"/medicare-drug-cost-calculator.html\">drug cost calculator</a> estimates your costs.",
+    "s3H2": "Drug tiers",
+    "s3PHtml": "Formularies group drugs into <strong>tiers</strong>, usually from preferred generics up to specialty drugs. Lower tiers cost less; higher tiers cost more. The same drug can sit on different tiers in different plans, which is another reason the cheapest premium is not always the cheapest plan for you.",
+    "s4H2": "Prior authorization and step therapy",
+    "s4P1": "Plans use a few rules to manage costs:",
+    "s4ItemsHtml": [
+      "<strong>Prior authorization</strong> &mdash; the plan must approve certain drugs before they are covered.",
+      "<strong>Step therapy</strong> &mdash; you may need to try a preferred, often lower-cost drug first.",
+      "<strong>Quantity limits</strong> &mdash; the plan covers a set amount per fill without an approved exception."
+    ],
+    "s4P2Html": "If a rule gets in the way, your prescriber can request an exception, and you have appeal rights. Our guides to <a href=\"/blog/what-is-prior-authorization.html\">prior authorization</a> and <a href=\"/blog/what-is-step-therapy.html\">step therapy</a> explain the process.",
+    "s5H2": "Extra Help",
+    "s5PHtml": "<strong>Extra Help</strong> (the Low-Income Subsidy) lowers Part D premiums, deductibles, and copays for people with limited income and resources. If you qualify, your prescription costs drop substantially. It is worth applying through Social Security even if you are not sure you are eligible &mdash; our <a href=\"/blog/extra-help-explained.html\">Extra Help guide</a> has the details.",
+    "s6H2": "The {partDAnnualCap} cap",
+    "s6PHtml": "In {year}, Part D includes a <strong>{partDAnnualCap} annual cap</strong> on what you pay out of pocket for covered drugs. Once your out-of-pocket spending hits {partDAnnualCap}, you pay nothing more for covered drugs that year &mdash; and the old coverage gap (the &ldquo;donut hole&rdquo;) is gone. If your costs are high, you can also spread them across the year through the Medicare Prescription Payment Plan. Read more in our <a href=\"/blog/the-2000-drug-cap-explained.html\">guide to the {partDAnnualCap} cap</a>.",
+    "toolsHeading": "Tools to price your prescriptions",
+    "toolsSub": "Check coverage, estimate drug costs, and compare your total spend.",
+    "faqHeading": "Medicare Part D in {placeName}: FAQs",
+    "faqs": [
+      {
+        "q": "How do I choose a Part D plan in {placeName}?",
+        "a": "Start with your medications. Because every Part D plan in {placeName} has its own formulary, the best plan is simply the one that covers your specific drugs for the lowest total yearly cost, not the one with the cheapest premium. Our drug cost calculator and formulary lookup make that comparison quick."
+      },
+      {
+        "q": "What is the {partDAnnualCap} drug cap?",
+        "a": "In {year}, Part D caps what you pay out of pocket for covered drugs at {partDAnnualCap} for the year. Once your out-of-pocket spending reaches {partDAnnualCap}, you pay $0 for covered drugs for the rest of the year. The old coverage gap, or donut hole, is gone."
+      },
+      {
+        "q": "Why does my plan need to approve a drug first?",
+        "a": "Plans use tools like prior authorization (approval before the drug is covered), step therapy (trying a preferred drug first), and quantity limits to manage costs. Your doctor can request an exception, and you have the right to appeal a denial."
+      },
+      {
+        "q": "Do I need Part D if I do not take any prescriptions?",
+        "a": "Usually yes. Going more than 63 days without creditable drug coverage after you are first eligible can trigger a lifetime Part D late penalty. Many people enroll in a low-cost plan just to avoid the penalty and be protected if they need a drug later."
+      },
+      {
+        "q": "What is Extra Help?",
+        "a": "Extra Help, also called the Low-Income Subsidy, lowers Part D premiums, deductibles, and copays for people with limited income and resources. If you qualify, your covered-drug costs are sharply reduced. It is worth applying through Social Security even if you are unsure you qualify."
+      }
+    ]
+  }
+}

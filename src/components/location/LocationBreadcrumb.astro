@@ -1,14 +1,17 @@
 ---
+// Locale-aware aria label (P2.5); crumbs arrive already localized.
 import type { Crumb } from '../../data/places';
+import { getLangFromUrl, t } from '../../i18n/locales';
 
 interface Props {
   crumbs: Crumb[];
 }
 const { crumbs } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
 const last = crumbs.length - 1;
 ---
 
-<nav class="breadcrumb" aria-label="Breadcrumb">
+<nav class="breadcrumb" aria-label={t('crumb.aria', lang)}>
   {crumbs.map((c, i) => (
     i < last
       ? <Fragment><a href={c.href}>{c.name}</a> &nbsp;&rsaquo;&nbsp; </Fragment>

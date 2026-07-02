@@ -1,0 +1,236 @@
+{
+  "__translation_note": "AI-translated from shared/location/en.json by scripts/translate.js (model claude-opus-4-8) using src/i18n/glossary.json (CMS es.medicare.gov terminology). Machine-generated — pending human spot-check. Do not hand-edit copy here; fix the English master or pin the term in the glossary, then re-run npm run translate.",
+  "__note": "MASTER copy for the location page system (shared module, ADR-002). One set of {placeName}/{stateName} templates serves every place — translating this file localizes all 24 location pages. CMS figures interpolate from src/data/figures.ts via {year}/{partDAnnualCap} (§6.8). The `places` array is the verbatim slug registry driving virtual localized routes; adding a place = add it to src/data/places.ts AND here.",
+  "places": [
+    {
+      "slug": "utah"
+    },
+    {
+      "slug": "utah/salt-lake-county"
+    },
+    {
+      "slug": "utah/utah-county"
+    },
+    {
+      "slug": "utah/davis-county"
+    },
+    {
+      "slug": "utah/weber-county"
+    },
+    {
+      "slug": "utah/washington-county"
+    }
+  ],
+  "shell": {
+    "crumbPlace": "Medicare en {placeName}",
+    "faqDefaultHeading": "Preguntas Frecuentes",
+    "ctaH2": "Ayuda local con Medicare en {placeName}",
+    "ctaTextHtml": "Bret Swope es un agente de Medicare con licencia en Utah &mdash; sin robots, sin presión y sin costo para usted. Obtenga respuestas claras o compare planes por su cuenta.",
+    "ctaTalk": "Hable con Bret",
+    "ctaCompare": "Comparar planes en línea",
+    "ctaCall": "Llame al {phone}"
+  },
+  "overview": {
+    "title": "Medicare en {placeName} | Planes, Inscripción y Ayuda Local | AltaMedicare",
+    "description": "Una guía en lenguaje sencillo sobre Medicare en {placeName}: cómo funcionan Medicare Advantage, el Seguro Suplementario de Medicare y la Parte D, cuándo inscribirse y ayuda local gratuita de un agente con licencia en Utah.",
+    "h1": "Medicare en {placeName}",
+    "ledeHtml": "Todo lo que necesita para entender sus opciones de Medicare en {placeName} &mdash; explicado en lenguaje sencillo por un agente local con licencia, y actualizado para {year}.",
+    "s1H2": "Entendiendo Medicare en {placeName}",
+    "s1P1Html": "Medicare en sí es un programa federal, así que las reglas, las partes y los períodos de inscripción son los mismos en {placeName} que en todo el país. Lo que cambia localmente es cuáles <strong>planes privados</strong> se ofrecen en su código postal &mdash; los planes de Medicare Advantage y de la Parte D disponibles para usted, y las pólizas Medigap que se venden en su área. Ahí es exactamente donde ayuda un agente local: hacer coincidir las reglas nacionales con los planes específicos que realmente puede elegir.",
+    "s1P2": "La mayoría de las personas en {placeName} arman su cobertura de una de dos maneras:",
+    "s1ItemsHtml": [
+      "<strong>Medicare Original + una póliza Medigap + un plan de medicamentos de la Parte D</strong> &mdash; máxima libertad para ver a cualquier proveedor que acepte Medicare, con costos predecibles.",
+      "<strong>Un plan Medicare Advantage (Parte C)</strong> &mdash; un plan todo en uno, generalmente con una prima baja, una red, cobertura de medicamentos incorporada y beneficios adicionales."
+    ],
+    "s1P3Html": "Ninguno es automáticamente &ldquo;mejor&rdquo;. El camino correcto depende de sus médicos, sus recetas, su presupuesto y cuánto viaja. Nuestro <a href=\"/medicare-quiz.html\">cuestionario de planes</a> y nuestra <a href=\"/blog/which-medicare-plan-is-right-for-me.html\">guía de selección de planes</a> son buenos lugares para empezar.",
+    "maH2": "Medicare Advantage en {placeName}",
+    "maPHtml": "Los planes Medicare Advantage (Parte C) los ofrecen aseguradoras privadas y combinan su Parte A, Parte B y, por lo general, la Parte D en un solo plan &mdash; a menudo con una prima de $0 o baja y extras como dental, visión y audición. Usan redes de proveedores (HMO o PPO) y tienen un máximo anual de gastos de bolsillo que Medicare Original por sí solo no ofrece.",
+    "maLinkLabelHtml": "Lea la guía completa: Medicare Advantage en {placeName} &rarr;",
+    "msH2": "Planes de Seguro Suplementario de Medicare en {placeName}",
+    "msPHtml": "Las pólizas de Seguro Suplementario de Medicare (Medigap) se combinan con Medicare Original y pagan muchos de los costos de bolsillo que este deja pendientes. No hay redes &mdash; puede ver a cualquier proveedor en todo el país que acepte Medicare &mdash; y los planes están estandarizados, así que un Plan G ofrece la misma cobertura en todas las compañías. Usted agrega un plan independiente de la Parte D para los medicamentos.",
+    "msLinkLabelHtml": "Lea la guía completa: Seguro Suplementario de Medicare en {placeName} &rarr;",
+    "pdH2": "Planes de Medicamentos Recetados de la Parte D en {placeName}",
+    "pdPHtml": "La Parte D cubre los medicamentos recetados, ya sea como un plan independiente (con Medicare Original) o incorporado en un plan Medicare Advantage. Cada plan tiene su propio formulario &mdash; la lista de medicamentos que cubre y el nivel en el que se ubica cada uno &mdash; así que el &ldquo;mejor&rdquo; plan de la Parte D es simplemente el que cubre sus medicamentos específicos al menor costo total. En {year}, la Parte D también tiene un <strong>tope anual de {partDAnnualCap}</strong> sobre lo que usted paga de su bolsillo por medicamentos cubiertos.",
+    "pdLinkLabelHtml": "Lea la guía completa: Parte D en {placeName} &rarr;",
+    "t65H2": "Cumplir 65 años en {placeName}",
+    "t65P1Html": "Si se acerca a los 65 años en {placeName}, su ventana más importante es el <strong>Período de Inscripción Inicial</strong> &mdash; los 7 meses alrededor de su cumpleaños en los que puede inscribirse sin penalización. Si lo pierde sin tener cobertura que califique, puede enfrentar penalizaciones por inscripción tardía de por vida. Si sigue trabajando después de los 65, la decisión de tomar Medicare o mantener el plan de su empleador depende del tamaño de su empleador y de su HSA.",
+    "t65P2Html": "Nuestra <a href=\"/blog/medicare-checklist-turning-65.html\">lista de verificación para cumplir 65 años</a> le explica los pasos, y la <a href=\"/medicare-timeline-calculator.html\">calculadora de cronograma</a> traza sus fechas exactas.",
+    "helpH2": "Ayuda de Bret",
+    "helpPHtml": "Bret Swope es un agente de Medicare con licencia con sede en Orem que ayuda a las familias de {placeName} a analizar sus opciones &mdash; sin costo para usted. No hay centros de llamadas ni presión: solo una persona local que explica las cosas con claridad, compara los planes disponibles en su domicilio y le ayuda a inscribirse si así lo decide. ¿Tiene alguna pregunta? <a href=\"/contact.html\">Comuníquese en cualquier momento</a> o llame al <a href=\"tel:4352925548\">(435) 292-5548</a>.",
+    "toolsHeading": "Herramientas de Medicare en {placeName}",
+    "toolsSub": "Calculadoras gratuitas y privadas para planificar su propia situación — no se requiere registro.",
+    "faqHeading": "Medicare en {placeName}: Preguntas Comunes",
+    "faqs": [
+      {
+        "q": "¿Quién es elegible para Medicare en {placeName}?",
+        "a": "La elegibilidad para Medicare es federal, así que funciona igual en {placeName} que en todos lados. La mayoría de las personas califican a los 65 años, y algunas califican antes a través de la incapacidad del Seguro Social. Puede verificar sus fechas con nuestra calculadora de elegibilidad."
+      },
+      {
+        "q": "¿Qué tipos de planes de Medicare están disponibles en {placeName}?",
+        "a": "Los residentes de {placeName} pueden elegir Medicare Original (Partes A y B), a menudo combinado con una póliza de Seguro Suplementario de Medicare (Medigap) y un plan independiente de medicamentos de la Parte D, o un plan Medicare Advantage (Parte C) que combina toda la cobertura. La opción adecuada depende de sus médicos, sus recetas, su presupuesto y sus viajes."
+      },
+      {
+        "q": "¿Cuesta algo trabajar con un agente local de Medicare en {placeName}?",
+        "a": "No. Trabajar con un agente con licencia como Bret es gratis para usted. A los agentes les pagan las compañías de seguros, y las primas de los planes son las mismas ya sea que se inscriba por su cuenta o con ayuda."
+      },
+      {
+        "q": "¿Cuándo puedo inscribirme en Medicare en {placeName}?",
+        "a": "La mayoría de las personas se inscriben por primera vez durante su Período de Inscripción Inicial de 7 meses alrededor de su cumpleaños número 65. Después de eso, el Período de Inscripción Anual (del 15 de octubre al 7 de diciembre) le permite cambiar de planes de medicamentos y de Medicare Advantage para el año siguiente."
+      },
+      {
+        "q": "¿Cómo comparo los planes de Medicare en {placeName}?",
+        "a": "Puede comparar los planes disponibles en su código postal en línea a través de nuestro portal de comparación seguro, o hablar sobre sus opciones con Bret. Analizamos sus médicos, sus recetas y su presupuesto en lugar de perseguir cualquier plan que se anuncie más."
+      }
+    ]
+  },
+  "advantage": {
+    "title": "Medicare Advantage en {placeName} | Cómo funciona la Parte C | AltaMedicare",
+    "description": "Cómo funciona Medicare Advantage en {placeName}: HMO vs PPO, cobertura de medicamentos recetados, beneficios adicionales, períodos de inscripción y las preguntas que debe hacer antes de elegir un plan.",
+    "crumbLeaf": "Medicare Advantage",
+    "h1": "Medicare Advantage en {placeName}",
+    "ledeHtml": "Una forma todo en uno de obtener su Medicare &mdash; aquí le explicamos cómo funciona Medicare Advantage (Parte C) en {placeName}, y cómo saber si es adecuado para usted.",
+    "s1H2": "Cómo funciona Medicare Advantage en {placeName}",
+    "s1PHtml": "Un plan Medicare Advantage (Parte C) lo ofrece una aseguradora privada aprobada por Medicare. Cuando se inscribe en uno, el plan le brinda sus beneficios de la Parte A y la Parte B en un solo paquete &mdash; por lo general con cobertura de medicamentos de la Parte D y beneficios adicionales incluidos. Usted sigue pagando su prima de la Parte B y sigue las reglas del plan en cuanto a redes y referidos. A cambio, recibe una sola tarjeta, una estructura de copagos predecible y un máximo anual de gastos de su bolsillo.",
+    "s2H2": "HMO vs PPO",
+    "s2P1": "Los dos tipos de plan Medicare Advantage más comunes son HMO y PPO:",
+    "s2ItemsHtml": [
+      "<strong>HMO</strong> &mdash; por lo general el de menor costo. Usted permanece dentro de la red del plan y a menudo elige un médico de atención primaria que coordina los referidos.",
+      "<strong>PPO</strong> &mdash; más flexibilidad. Puede consultar a proveedores fuera de la red, aunque paga una parte más alta. Por lo general no se requieren referidos."
+    ],
+    "s2P2Html": "Si le importa mantener a un médico específico, verifique si está en la red del plan antes de inscribirse &mdash; ese solo detalle decide mucho.",
+    "s3H2": "Cobertura de medicamentos recetados",
+    "s3PHtml": "La mayoría de los planes Medicare Advantage incluyen cobertura de medicamentos de la Parte D, por lo que no necesita un plan de medicamentos por separado. Como cada plan tiene su propio formulario, lo más inteligente es confirmar que sus medicamentos exactos estén cubiertos &mdash; y en qué nivel &mdash; antes de elegir. Nuestra <a href=\"/medicare-formulary-lookup.html\">búsqueda de formulario</a> y <a href=\"/medicare-drug-cost-calculator.html\">calculadora de costos de medicamentos</a> lo hacen rápido.",
+    "s4H2": "Beneficios adicionales",
+    "s4PHtml": "Una razón por la que Medicare Advantage es popular son los extras que Medicare Original no cubre &mdash; comúnmente dental, visión, audición, membresías de gimnasio y, a veces, una asignación para productos de venta libre o transporte. Los beneficios varían según el plan y cambian cada año, así que trátelos como un factor de desempate, no como lo principal.",
+    "s5H2": "Períodos de inscripción",
+    "s5PHtml": "Puede inscribirse en un plan Medicare Advantage durante su <strong>Período de Inscripción Inicial</strong> a los 65 años, el <strong>Período de Inscripción Anual</strong> (del 15 de octubre al 7 de diciembre) y &mdash; si ya está en un plan Advantage &mdash; el <strong>Período de Inscripción Abierta de Medicare Advantage</strong> (del 1 de enero al 31 de marzo). Consulte sus fechas exactas con la <a href=\"/medicare-timeline-calculator.html\">calculadora de cronograma</a> y lea nuestra <a href=\"/blog/annual-enrollment-period-explained.html\">guía sobre el Período de Inscripción Anual</a>.",
+    "s6H2": "Preguntas que debe hacer antes de elegir un plan",
+    "s6Items": [
+      "¿Están mis médicos y mi hospital preferido en la red del plan?",
+      "¿Están todos mis medicamentos recetados en el formulario, y en qué nivel?",
+      "¿Cuál es el máximo de gastos de su bolsillo, y cuáles son los copagos por los servicios que uso?",
+      "¿Incluye los beneficios adicionales que realmente voy a usar?",
+      "¿Es un HMO o un PPO &mdash; y coincide con la forma en que me gusta recibir atención?"
+    ],
+    "s6PHtml": "¿No está seguro de por dónde empezar? Nuestra <a href=\"/blog/pros-and-cons-of-medicare-advantage.html\">guía de ventajas y desventajas</a> y nuestra <a href=\"/blog/medicare-advantage-vs-medigap.html\">comparación de Advantage vs. Medigap</a> exponen las ventajas y desventajas, y Bret puede comparar con usted los planes disponibles en su dirección.",
+    "toolsHeading": "Herramientas para comparar sus opciones",
+    "toolsSub": "Vea qué tipo de cobertura le conviene, estime sus costos y revise sus medicamentos.",
+    "faqHeading": "Medicare Advantage en {placeName}: Preguntas frecuentes",
+    "faqs": [
+      {
+        "q": "¿Medicare Advantage cuesta más en {placeName}?",
+        "a": "Usted sigue pagando su prima de la Parte B, pero muchos planes Medicare Advantage en {placeName} tienen una prima mensual del plan de $0 o baja. Sus costos reales provienen de los copagos, el coseguro y el máximo de gastos de su bolsillo de su plan, así que conviene comparar el panorama completo, no solo la prima."
+      },
+      {
+        "q": "¿Cuál es la diferencia entre un HMO y un PPO?",
+        "a": "Un HMO por lo general mantiene los costos más bajos, pero le pide que permanezca dentro de la red y que a menudo use un médico principal para los referidos. Un PPO cuesta un poco más, pero le permite consultar a proveedores fuera de la red pagando una parte más alta del costo. La mejor opción depende de sus médicos y de cuánta flexibilidad desea."
+      },
+      {
+        "q": "¿Medicare Advantage en {placeName} incluye cobertura de medicamentos?",
+        "a": "La mayoría de los planes Medicare Advantage incluyen cobertura de medicamentos recetados de la Parte D. Siempre confirme que sus medicamentos específicos estén en el formulario del plan antes de inscribirse, porque cada plan cubre una lista diferente de medicamentos."
+      },
+      {
+        "q": "¿Puedo cambiar de plan Medicare Advantage más adelante?",
+        "a": "Sí. Puede cambiar de plan durante el Período de Inscripción Anual (del 15 de octubre al 7 de diciembre), y el Período de Inscripción Abierta de Medicare Advantage (del 1 de enero al 31 de marzo) le permite cambiar a otro plan Advantage o volver a Medicare Original una vez."
+      },
+      {
+        "q": "¿Los planes Medicare Advantage en {placeName} tienen un máximo de gastos de su bolsillo?",
+        "a": "Sí. Cada plan Medicare Advantage tiene un tope anual sobre lo que usted paga por los servicios médicos cubiertos, algo que Medicare Original por sí solo no tiene. Una vez que lo alcanza, el plan cubre el 100% de los servicios cubiertos por el resto del año."
+      }
+    ]
+  },
+  "supplement": {
+    "title": "Planes de Seguro Suplementario de Medicare en {placeName} | Medigap Plan G y N | AltaMedicare",
+    "description": "Cómo funcionan los planes de Seguro Suplementario de Medicare (Medigap) en {placeName}: Plan G, Plan N, cobertura para viajes al extranjero, primas y sus derechos de emisión garantizada.",
+    "crumbLeaf": "Seguro Suplementario de Medicare",
+    "h1": "Planes de Seguro Suplementario de Medicare en {placeName}",
+    "ledeHtml": "Costos predecibles y la libertad de consultar a cualquier proveedor que acepte Medicare &mdash; aquí le explicamos cómo funciona Medigap en {placeName}, incluidos el Plan G y el Plan N.",
+    "s1H2": "Cómo funciona Medigap con Medicare Original",
+    "s1PHtml": "Una póliza de Seguro Suplementario de Medicare (Medigap) se combina con <strong>Medicare Original</strong>. Medicare paga su parte primero, luego su plan Medigap paga muchos de los costos que Medicare deja pendientes &mdash; deducibles, coseguro y copagos. No hay redes, por lo que puede usar cualquier proveedor del país que acepte Medicare, y los planes están estandarizados por letra, lo que hace que compararlos sea sorprendentemente sencillo. Usted agrega un <a href=\"{partDHref}\">plan de medicamentos de la Parte D</a> independiente para los medicamentos recetados.",
+    "s2H2": "Plan G",
+    "s2PHtml": "El Plan G es la opción más popular entre las personas que recién ingresan a Medicare. Después de pagar el deducible anual de la Parte B, el Plan G cubre prácticamente todo lo demás que Medicare Original le dejaría a usted &mdash; incluyendo el coaseguro del 20% y los costos hospitalarios. Ofrece el presupuesto más predecible, después del Plan F (ahora cerrado a nuevos inscritos). Aprenda más en nuestra <a href=\"/blog/what-is-medicare-supplement-plan-g.html\">guía del Plan G</a>.",
+    "s3H2": "Plan N",
+    "s3PHtml": "El Plan N cambia una prima mensual más baja por un poco de costos compartidos: usted paga el deducible de la Parte B, copagos pequeños por algunas consultas médicas y visitas a la sala de emergencias, y cualquier &ldquo;cargo excedente&rdquo; de la Parte B si un proveedor no acepta la asignación. Para las personas que no van al médico con frecuencia, ese intercambio puede significar ahorros reales. Nuestra <a href=\"/blog/what-is-medicare-supplement-plan-n.html\">guía del Plan N</a> lo compara directamente con el Plan G.",
+    "s4H2": "Cobertura para viajes al extranjero",
+    "s4PHtml": "Medicare Original por lo general no cubre la atención fuera de los Estados Unidos. Varios planes Medigap &mdash; incluyendo el Plan G y el Plan N &mdash; agregan <strong>cobertura de emergencia para viajes al extranjero</strong>, que puede ayudar con la atención de emergencia durante los primeros 60 días de un viaje, sujeta a un deducible y un límite de por vida. Si usted viaja al extranjero, este es un beneficio importante a considerar.",
+    "s5H2": "Consideraciones sobre la prima",
+    "s5PHtml": "Debido a que la cobertura dentro de un plan con letra es idéntica de una compañía a otra, la diferencia entre las aseguradoras se reduce al precio y a cómo es probable que cambien las tarifas con el tiempo. Una prima inicial más baja no siempre es el mejor valor a largo plazo, así que vale la pena comparar las compañías que ofrecen el mismo plan. Nuestro <a href=\"/medicare-cost-estimator.html\">estimador de costos</a> le ayuda a comparar las primas con los costos de bolsillo previstos.",
+    "s6H2": "Derechos de emisión garantizada",
+    "s6PHtml": "El mejor momento para comprar una póliza Medigap es durante su <strong>Período de Inscripción Abierta de Medigap</strong> &mdash; los 6 meses que comienzan cuando usted tiene 65 años o más y está inscrito en la Parte B. En ese período usted tiene <strong>derechos de emisión garantizada</strong>: las aseguradoras no pueden negarle la cobertura ni cobrarle más debido a su salud. Ciertos eventos de la vida también crean otros períodos de emisión garantizada. Fuera de esos períodos, es posible que tenga que pasar por una evaluación médica, así que el momento importa. ¿No está seguro de si Medigap o Medicare Advantage le conviene más? Vea nuestra <a href=\"/blog/medicare-advantage-vs-medigap.html\">comparación lado a lado</a>.",
+    "toolsHeading": "Herramientas para planificar su cobertura",
+    "toolsSub": "Estime sus costos totales, encuentre lo que le conviene y calcule el precio de sus medicamentos recetados.",
+    "faqHeading": "Seguro Suplementario de Medicare en {placeName}: Preguntas frecuentes",
+    "faqs": [
+      {
+        "q": "¿Están estandarizados los planes del Seguro Suplementario de Medicare en {placeName}?",
+        "a": "Sí. Los planes Medigap están estandarizados por letra, así que un Plan G ofrece los mismos beneficios básicos sin importar qué compañía lo venda en {placeName}. Debido a que la cobertura es idéntica, lo que principalmente difiere entre las compañías es el precio y el servicio."
+      },
+      {
+        "q": "¿Un plan del Seguro Suplementario de Medicare cubre los medicamentos recetados?",
+        "a": "No. Las pólizas Medigap no incluyen cobertura de medicamentos, así que usted agrega un plan independiente de la Parte D junto con ella. No tener una cobertura de medicamentos acreditable puede provocar una multa por inscripción tardía en la Parte D de por vida."
+      },
+      {
+        "q": "¿Cuándo es el mejor momento para comprar una póliza Medigap en {placeName}?",
+        "a": "Su Período de Inscripción Abierta de Medigap son los 6 meses que comienzan cuando usted tiene 65 años o más y está inscrito en la Parte B. Durante ese período usted tiene derechos de emisión garantizada, lo que significa que no pueden rechazarlo ni cobrarle más por razones de salud."
+      },
+      {
+        "q": "¿Me pueden negar una póliza Medigap?",
+        "a": "Fuera de las situaciones de emisión garantizada, las aseguradoras en la mayoría de los estados pueden usar la evaluación médica y pueden rechazarlo o cobrarle más según su salud. Por eso es tan importante inscribirse durante su Período de Inscripción Abierta de Medigap, u otro período de emisión garantizada."
+      },
+      {
+        "q": "¿Funciona Medigap cuando viajo?",
+        "a": "Sí. Debido a que Medicare Original no tiene redes, una póliza Medigap funciona con cualquier proveedor en todo el país que acepte Medicare. Varios planes Medigap, incluyendo el Plan G y el Plan N, también incluyen cobertura limitada de emergencia para viajes al extranjero."
+      }
+    ]
+  },
+  "partd": {
+    "title": "Parte D de Medicare en {placeName} | Planes de Medicamentos Recetados | AltaMedicare",
+    "description": "Cómo funcionan los planes de medicamentos recetados de la Parte D de Medicare en {placeName}: formularios, niveles de medicamentos, autorización previa, terapia escalonada, Ayuda Adicional (Extra Help) y el tope de {partDAnnualCap} de {year}.",
+    "crumbLeaf": "Parte D",
+    "h1": "Parte D de Medicare en {placeName}",
+    "ledeHtml": "La cobertura de medicamentos recetados, explicada &mdash; cómo funcionan los planes de la Parte D en {placeName}, qué determina sus costos y cómo lo protege el tope de {partDAnnualCap} de {year}.",
+    "s1H2": "Cobertura de medicamentos recetados en {placeName}",
+    "s1PHtml": "La Parte D es la cobertura de medicamentos recetados de Medicare. Puede obtenerla de dos maneras: como un <strong>plan independiente de la Parte D</strong> junto con Medicare Original (y por lo general una póliza Medigap), o <strong>integrada en un plan Medicare Advantage</strong>. De cualquier manera, la cobertura la brindan aseguradoras privadas, y el plan que elija determina qué medicamentos están cubiertos y cuánto paga usted.",
+    "s2H2": "Formularios",
+    "s2PHtml": "Cada plan de la Parte D tiene un <strong>formulario</strong> &mdash; su lista de medicamentos cubiertos. Dos planes con primas similares pueden tratar sus medicamentos de manera muy diferente, así que el paso más importante es confirmar que sus medicamentos estén en el formulario de un plan antes de inscribirse. Nuestra <a href=\"/medicare-formulary-lookup.html\">búsqueda de formularios</a> muestra la cobertura típica, y la <a href=\"/medicare-drug-cost-calculator.html\">calculadora de costos de medicamentos</a> estima sus costos.",
+    "s3H2": "Niveles de medicamentos",
+    "s3PHtml": "Los formularios agrupan los medicamentos en <strong>niveles</strong>, generalmente desde los genéricos preferidos hasta los medicamentos especializados. Los niveles más bajos cuestan menos; los niveles más altos cuestan más. El mismo medicamento puede estar en diferentes niveles en distintos planes, lo cual es otra razón por la que la prima más barata no siempre es el plan más barato para usted.",
+    "s4H2": "Autorización previa y terapia escalonada",
+    "s4P1": "Los planes usan algunas reglas para controlar los costos:",
+    "s4ItemsHtml": [
+      "<strong>Autorización previa</strong> &mdash; el plan debe aprobar ciertos medicamentos antes de que estén cubiertos.",
+      "<strong>Terapia escalonada</strong> &mdash; es posible que primero deba probar un medicamento preferido, a menudo de menor costo.",
+      "<strong>Límites de cantidad</strong> &mdash; el plan cubre una cantidad establecida por surtido sin una excepción aprobada."
+    ],
+    "s4P2Html": "Si una regla se interpone, quien le receta puede solicitar una excepción, y usted tiene derecho a apelar. Nuestras guías sobre la <a href=\"/blog/what-is-prior-authorization.html\">autorización previa</a> y la <a href=\"/blog/what-is-step-therapy.html\">terapia escalonada</a> explican el proceso.",
+    "s5H2": "Ayuda Adicional (Extra Help)",
+    "s5PHtml": "La <strong>Ayuda Adicional (Extra Help)</strong> (el Subsidio por Bajos Ingresos) reduce las primas, los deducibles y los copagos de la Parte D para personas con ingresos y recursos limitados. Si usted califica, sus costos de medicamentos bajan considerablemente. Vale la pena solicitarla a través del Seguro Social aunque no esté seguro de ser elegible &mdash; nuestra <a href=\"/blog/extra-help-explained.html\">guía sobre la Ayuda Adicional (Extra Help)</a> tiene los detalles.",
+    "s6H2": "El tope de {partDAnnualCap}",
+    "s6PHtml": "En {year}, la Parte D incluye un <strong>tope anual de {partDAnnualCap}</strong> sobre lo que usted paga de su bolsillo por los medicamentos cubiertos. Una vez que sus gastos de bolsillo llegan a {partDAnnualCap}, no paga nada más por los medicamentos cubiertos ese año &mdash; y la antigua brecha de cobertura (el &ldquo;agujero de la dona&rdquo;) desapareció. Si sus costos son altos, también puede repartirlos a lo largo del año mediante el Plan de Pago de Medicamentos Recetados de Medicare. Lea más en nuestra <a href=\"/blog/the-2000-drug-cap-explained.html\">guía sobre el tope de {partDAnnualCap}</a>.",
+    "toolsHeading": "Herramientas para calcular el precio de sus medicamentos",
+    "toolsSub": "Verifique la cobertura, estime los costos de los medicamentos y compare su gasto total.",
+    "faqHeading": "Medicare Parte D en {placeName}: preguntas frecuentes",
+    "faqs": [
+      {
+        "q": "¿Cómo elijo un plan de la Parte D en {placeName}?",
+        "a": "Empiece por sus medicamentos. Como cada plan de la Parte D en {placeName} tiene su propio formulario (lista de medicamentos cubiertos), el mejor plan es simplemente el que cubre sus medicamentos específicos con el menor costo total anual, no el que tiene la prima más barata. Nuestra calculadora de costos de medicamentos y la búsqueda de formularios hacen esa comparación rápida."
+      },
+      {
+        "q": "¿Qué es el tope de medicamentos de {partDAnnualCap}?",
+        "a": "En {year}, la Parte D limita lo que usted paga de su bolsillo por los medicamentos cubiertos a {partDAnnualCap} por el año. Una vez que sus gastos de bolsillo llegan a {partDAnnualCap}, paga $0 por los medicamentos cubiertos durante el resto del año. La antigua brecha de cobertura, o agujero de la dona, desapareció."
+      },
+      {
+        "q": "¿Por qué mi plan tiene que aprobar primero un medicamento?",
+        "a": "Los planes usan herramientas como la autorización previa (aprobación antes de que se cubra el medicamento), la terapia escalonada (probar primero un medicamento preferido) y los límites de cantidad para controlar los costos. Su médico puede solicitar una excepción, y usted tiene derecho a apelar una denegación."
+      },
+      {
+        "q": "¿Necesito la Parte D si no tomo ningún medicamento recetado?",
+        "a": "Por lo general, sí. Pasar más de 63 días sin cobertura acreditable de medicamentos después de ser elegible por primera vez puede generar una penalización vitalicia por inscripción tardía en la Parte D. Muchas personas se inscriben en un plan de bajo costo solo para evitar la penalización y quedar protegidas si necesitan un medicamento más adelante."
+      },
+      {
+        "q": "¿Qué es la Ayuda Adicional (Extra Help)?",
+        "a": "La Ayuda Adicional (Extra Help), también llamada Subsidio por Bajos Ingresos, reduce las primas, los deducibles y los copagos de la Parte D para personas con ingresos y recursos limitados. Si usted califica, sus costos de medicamentos cubiertos se reducen considerablemente. Vale la pena solicitarla a través del Seguro Social aunque no esté seguro de calificar."
+      }
+    ]
+  }
+}

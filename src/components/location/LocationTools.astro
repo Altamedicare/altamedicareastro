@@ -1,5 +1,9 @@
 ---
+// Locale-aware (P2.5): registry labels via localizeLabel (LABELS provisioned
+// in P2.2), chrome via t(), hrefs via localizeHref — all identity for English.
 import { TOOLS } from '../../consts';
+import { getLangFromUrl, localizeLabel, t } from '../../i18n/locales';
+import { localizeHref } from '../../i18n/content';
 
 interface Props {
   tools: string[];
@@ -8,23 +12,24 @@ interface Props {
   tint?: boolean;
 }
 const { tools, heading = 'Free Medicare tools', sub, tint = true } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
 const cards = tools.filter((k): k is keyof typeof TOOLS => k in TOOLS).map((k) => TOOLS[k]);
 ---
 
 <section class={tint ? 'section-tinted' : 'section-white'}>
   <div class="container">
     <div class="section-header">
-      <span class="eyebrow">Free tools</span>
+      <span class="eyebrow">{t('tools.eyebrow', lang)}</span>
       <h2>{heading}</h2>
       {sub && <p>{sub}</p>}
     </div>
     <div class="card-grid">
-      {cards.map((t) => (
-        <a href={t.href} class="card" style="text-decoration:none;">
-          <div class="card-icon"><i class={`fa-solid ${t.icon}`} style="font-size:1.6rem"></i></div>
-          <h3>{t.title}</h3>
-          <p>{t.desc}</p>
-          <span class="card-link">Open tool</span>
+      {cards.map((tool) => (
+        <a href={localizeHref(tool.href, lang)} class="card" style="text-decoration:none;">
+          <div class="card-icon"><i class={`fa-solid ${tool.icon}`} style="font-size:1.6rem"></i></div>
+          <h3>{localizeLabel(tool.title, lang)}</h3>
+          <p>{localizeLabel(tool.desc, lang)}</p>
+          <span class="card-link">{t('tools.open', lang)}</span>
         </a>
       ))}
     </div>

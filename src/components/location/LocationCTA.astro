@@ -1,21 +1,29 @@
 ---
+// Locale-aware (P2.5): copy from the location shared module; identity for
+// English by the usual invariant.
 import type { Place } from '../../data/places';
+import { getLocationCopy } from '../../data/places';
 import { COMPARE_PLANS_URL, CONTACT_URL, PHONE_TEL, PHONE_DISPLAY } from '../../consts';
+import { getLangFromUrl } from '../../i18n/locales';
+import { interp, localizeHref } from '../../i18n/content';
 
 interface Props {
   place: Place;
 }
 const { place } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const shell = getLocationCopy(lang).shell;
+const vars = { placeName: place.name, phone: PHONE_DISPLAY };
 ---
 
 <section class="final-cta">
   <div class="container">
-    <h2>Local Medicare help in {place.name}</h2>
-    <p>Bret Swope is a licensed Utah Medicare agent &mdash; no bots, no pressure, no cost to you. Get clear answers or compare plans on your own.</p>
+    <h2>{interp(shell.ctaH2, vars)}</h2>
+    <p set:html={shell.ctaTextHtml}></p>
     <div class="cta-buttons">
-      <a href={CONTACT_URL} class="btn btn-primary btn-lg">Talk to Bret</a>
-      <a href={COMPARE_PLANS_URL} class="btn btn-outline btn-lg" target="_blank" rel="noopener">Compare Plans Online</a>
-      <a href={PHONE_TEL} class="btn btn-outline btn-lg">Call {PHONE_DISPLAY}</a>
+      <a href={localizeHref(CONTACT_URL, lang)} class="btn btn-primary btn-lg">{shell.ctaTalk}</a>
+      <a href={COMPARE_PLANS_URL} class="btn btn-outline btn-lg" target="_blank" rel="noopener">{shell.ctaCompare}</a>
+      <a href={PHONE_TEL} class="btn btn-outline btn-lg">{interp(shell.ctaCall, vars)}</a>
     </div>
   </div>
 </section>

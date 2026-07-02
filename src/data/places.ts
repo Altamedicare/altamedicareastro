@@ -56,3 +56,37 @@ export function trail(place: Place, leaf?: Crumb): Crumb[] {
   if (leaf) crumbs.push(leaf);
   return crumbs;
 }
+
+// ── i18n accessor (P2.5, ADR-002): location copy lives in
+// src/i18n/shared/location/{locale}.json — one set of {placeName} templates
+// serves every place. Operational Place data above never translates.
+import { getSharedModule } from '../i18n/shared';
+
+export interface LocationFaq { q: string; a: string }
+export interface LocationPageCopy {
+  title: string; description: string; crumbLeaf?: string; h1: string; ledeHtml: string;
+  toolsHeading: string; toolsSub: string; faqHeading: string; faqs: LocationFaq[];
+  [key: string]: unknown;
+}
+export interface LocationCopy {
+  shell: {
+    crumbPlace: string; faqDefaultHeading: string; ctaH2: string; ctaTextHtml: string;
+    ctaTalk: string; ctaCompare: string; ctaCall: string;
+  };
+  overview: LocationPageCopy;
+  advantage: LocationPageCopy;
+  supplement: LocationPageCopy;
+  partd: LocationPageCopy;
+}
+export const getLocationCopy = (locale?: string): LocationCopy =>
+  getSharedModule<LocationCopy>('location', locale);
+
+/** Resolve a location URL slug (hub or sub-page) to its Place + page type. */
+export function placeFromSlug(slug: string): { place: Place; pageType: 'hub' | 'medicare-advantage' | 'medicare-supplement' | 'part-d' } | undefined {
+  const hub = PLACES.find((p) => p.slug === slug);
+  if (hub) return { place: hub, pageType: 'hub' };
+  const m = slug.match(/^(.*)\/(medicare-advantage|medicare-supplement|part-d)$/);
+  if (!m) return undefined;
+  const place = PLACES.find((p) => p.slug === m[1]);
+  return place ? { place, pageType: m[2] as 'medicare-advantage' | 'medicare-supplement' | 'part-d' } : undefined;
+}

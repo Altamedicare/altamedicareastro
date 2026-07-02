@@ -231,3 +231,23 @@ Classification key:
   strip-verified (switcher+hreflang only); 14 es pages + sitemap alternates.
 - NATIVE REVIEW GATE: eligibility strings (the most consequential Spanish
   on the site) pending sign-off before push/deploy.
+
+## P2.5 — Location templates (the {placeName} payoff)
+
+- Location copy (4 page types, ~55 template strings + 20 FAQs) extracted to
+  shared/location/en.json with {placeName}/{stateName}/{year}/{partDAnnualCap}
+  placeholders — ONE translated file renders all 24 location pages. Place
+  data (names, slugs) never translates; components derive Place from the URL
+  (placeFromSlug), so masters and localized routes share everything.
+- Virtual pages ×4 contentKeys reuse the P2.3 mechanism unchanged. Sitemap
+  location rows gained alternates + es siblings via the existing helpers.
+- Chrome addition: crumb.aria; LocationTools now consumes the P2.2 LABELS.
+- Verification: all 24 EN location pages 3-diff identical through the
+  refactor (the 14 non-location diffs vs the stale baseline were P2.4's
+  already-verified switcher/hreflang deltas — strip-confirmed); es QA:
+  placeholders 0 unreplaced, Medicare en {Place} h1s across places,
+  localized breadcrumb + FAQPage JSON-LD, figures interpolated.
+- Two shell-escaping slips during codegen (regex / eaten; template
+  literal mangled) — both caught immediately by the build, both fixed via
+  direct Edit. Reinforces the P2.4 lesson: generated edits go through
+  script files, not inline shell.
