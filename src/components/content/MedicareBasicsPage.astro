@@ -1,0 +1,95 @@
+---
+// src/components/content/MedicareBasicsPage.astro — THE shared template.
+// Copy lives in src/i18n/content/{locale}/medicare-basics.json.
+import MainLayout from '../../layouts/MainLayout.astro';
+import HelpfulTools from '../HelpfulTools.astro';
+import { DEFAULT_LOCALE, getLangFromUrl, getLocaleMeta } from '../../i18n/locales';
+import { getPageContent, hreflangAlternates, interp, localizeHref } from '../../i18n/content';
+import { PHONE_DISPLAY } from '../../consts';
+
+interface Block { h3Html: string; textHtml: string }
+interface MedicareBasicsContent {
+  page: { title: string; description: string };
+  breadcrumbHtml: string;
+  header: { h1: string; lede: string };
+  parts: { h2: string; introHtml: string; blocks: Block[] };
+  enrollment: { h2: string; blocks: Block[] };
+  callout: { heading: string; textHtml: string };
+  comparison: { h2: string; intro: string; itemsHtml: string[]; outroHtml: string };
+  cta: { h2Html: string; textHtml: string; scheduleLabel: string; callLabel: string };
+}
+
+const lang = getLangFromUrl(Astro.url);
+const c = getPageContent<MedicareBasicsContent>('medicare-basics', lang);
+const vars = { phone: PHONE_DISPLAY };
+const canonical = lang === DEFAULT_LOCALE ? '/medicare-basics.html' : `/${lang}/medicare-basics.html`;
+const alternates = hreflangAlternates('medicare-basics');
+---
+
+<MainLayout
+  title={c.page.title}
+  description={c.page.description}
+  canonical={canonical}
+>
+  <Fragment slot="head">
+    {alternates.map((a) => <link rel="alternate" hreflang={a.code} href={a.href} />)}
+    {lang !== DEFAULT_LOCALE && <meta property="og:locale" content={getLocaleMeta(lang).ogLocale} />}
+  </Fragment>
+
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb" set:html={c.breadcrumbHtml}></div>
+    <h1>{c.header.h1}</h1>
+    <p class="lede">{c.header.lede}</p>
+  </div>
+</section>
+
+<section class="section-white">
+  <div class="container content-narrow">
+    <h2>{c.parts.h2}</h2>
+    <p set:html={c.parts.introHtml}></p>
+
+    {c.parts.blocks.map((b) => (
+      <Fragment>
+        <h3 set:html={b.h3Html} />
+        <p set:html={b.textHtml} />
+      </Fragment>
+    ))}
+
+    <h2>{c.enrollment.h2}</h2>
+
+    {c.enrollment.blocks.map((b) => (
+      <Fragment>
+        <h3 set:html={b.h3Html} />
+        <p set:html={b.textHtml} />
+      </Fragment>
+    ))}
+
+    <div class="callout">
+      <strong>{c.callout.heading}</strong>
+      <p style="margin:8px 0 0;" set:html={c.callout.textHtml}></p>
+    </div>
+
+    <h2>{c.comparison.h2}</h2>
+    <p>{c.comparison.intro}</p>
+    <ul>
+      {c.comparison.itemsHtml.map((item) => <li set:html={item} />)}
+    </ul>
+    <p set:html={c.comparison.outroHtml}></p>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <h2 set:html={c.cta.h2Html}></h2>
+    <p set:html={c.cta.textHtml}></p>
+    <div class="cta-buttons">
+      <a href={localizeHref('contact.html', lang)} class="btn btn-primary btn-lg">{c.cta.scheduleLabel}</a>
+      <a href="tel:4352925548" class="btn btn-outline btn-lg">{interp(c.cta.callLabel, vars)}</a>
+    </div>
+  </div>
+</section>
+
+<HelpfulTools />
+
+</MainLayout>

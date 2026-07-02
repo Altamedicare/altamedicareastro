@@ -13,11 +13,13 @@ import { getLocalizedContent } from '../../i18n/content';
 import AboutPage from '../../components/content/AboutPage.astro';
 import ContactPage from '../../components/content/ContactPage.astro';
 import Turning65Page from '../../components/content/Turning65Page.astro';
+import MedicareBasicsPage from '../../components/content/MedicareBasicsPage.astro';
 
 const COMPONENTS: Record<string, (props: Record<string, never>) => unknown> = {
   'about': AboutPage,
   'contact': ContactPage,
   'turning-65': Turning65Page,
+  'medicare-basics': MedicareBasicsPage,
 };
 
 export function getStaticPaths() {

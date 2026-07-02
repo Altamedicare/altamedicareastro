@@ -1,0 +1,74 @@
+{
+  "__note": "MASTER content for /medicare-basics.html, extracted losslessly from src/pages/medicare-basics.astro. HelpfulTools band stays in the component (shared-module boundary, Phase 2).",
+  "page": {
+    "title": "Medicare Basics | AltaMedicare",
+    "description": "Plain-English Medicare guide: Parts A, B, C, D explained, enrollment periods, penalties, and how to choose between Advantage and Supplement."
+  },
+  "breadcrumbHtml": "<a href=\"index.html\">Home</a> &nbsp;&rsaquo;&nbsp; Medicare Basics",
+  "header": {
+    "h1": "Medicare Basics",
+    "lede": "A plain-English guide to the parts of Medicare, when you can enroll, and how to avoid penalties."
+  },
+  "parts": {
+    "h2": "The Four Parts of Medicare",
+    "introHtml": "Medicare is split into four parts. Together, they cover hospital care, doctor visits, all-in-one plan options, and prescription drugs. Here&rsquo;s how each one works.",
+    "blocks": [
+      {
+        "h3Html": "Part A &mdash; Hospital Insurance",
+        "textHtml": "Covers inpatient hospital stays, skilled nursing facility care, hospice, and some home health care. Most people pay no premium for Part A because they (or their spouse) paid Medicare taxes while working."
+      },
+      {
+        "h3Html": "Part B &mdash; Medical Insurance",
+        "textHtml": "Covers doctor visits, outpatient care, preventive services, and durable medical equipment. Part B has a standard monthly premium set by Medicare each year."
+      },
+      {
+        "h3Html": "Part C &mdash; Medicare Advantage",
+        "textHtml": "An all-in-one alternative to Original Medicare offered by private insurance companies approved by Medicare. Most Advantage plans bundle Part A, Part B, and Part D, and often add extras like dental, vision, and hearing."
+      },
+      {
+        "h3Html": "Part D &mdash; Prescription Drug Coverage",
+        "textHtml": "Helps cover the cost of prescription medications. You can get Part D as a standalone plan (alongside Original Medicare) or as part of a Medicare Advantage plan."
+      }
+    ]
+  },
+  "enrollment": {
+    "h2": "Enrollment Periods (and How to Avoid Penalties)",
+    "blocks": [
+      {
+        "h3Html": "Initial Enrollment Period (IEP)",
+        "textHtml": "Your 7-month window around your 65th birthday: the 3 months before, your birthday month, and the 3 months after. This is the most important window &mdash; missing it can mean lifetime late penalties."
+      },
+      {
+        "h3Html": "Annual Enrollment Period (AEP)",
+        "textHtml": "October 15 through December 7 every year. During AEP you can switch Medicare Advantage plans, switch from Advantage to Original Medicare, or change your Part D plan. Changes take effect January 1."
+      },
+      {
+        "h3Html": "Medicare Advantage Open Enrollment",
+        "textHtml": "January 1 through March 31. If you&rsquo;re already on a Medicare Advantage plan, you get one chance to switch to a different Advantage plan or back to Original Medicare."
+      },
+      {
+        "h3Html": "Special Enrollment Periods (SEPs)",
+        "textHtml": "Triggered by life events like moving, losing employer coverage, qualifying for Extra Help, or moving in or out of a Medicaid program. These give you a window to change plans outside the normal periods."
+      }
+    ]
+  },
+  "callout": {
+    "heading": "Late enrollment penalties are permanent.",
+    "textHtml": "If you don&rsquo;t sign up for Part B or Part D when you&rsquo;re first eligible (and don&rsquo;t have qualifying coverage from elsewhere), you&rsquo;ll likely owe a penalty for the rest of your life. We help you avoid this by planning ahead."
+  },
+  "comparison": {
+    "h2": "Medicare Supplement vs. Medicare Advantage",
+    "intro": "This is the most common decision people face. The short version:",
+    "itemsHtml": [
+      "<strong>Medicare Advantage</strong> tends to have lower (or $0) monthly premiums but uses networks and copays. Great if you&rsquo;re generally healthy and want extras like dental and vision.",
+      "<strong>Medicare Supplement</strong> has a higher monthly premium but very low out-of-pocket costs and any-doctor flexibility. Great if you want predictable costs and travel often."
+    ],
+    "outroHtml": "There&rsquo;s no universally &ldquo;better&rdquo; option &mdash; it depends on your health, your budget, where you travel, and how you use healthcare. <a href=\"contact.html\">Let&rsquo;s talk through it.</a>"
+  },
+  "cta": {
+    "h2Html": "Have Questions? Let's Talk.",
+    "textHtml": "One free, no-pressure call &mdash; clear answers, no sales pitch.",
+    "scheduleLabel": "Schedule Consultation",
+    "callLabel": "Call {phone}"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "__translation_note": "AI-translated from en/medicare-basics.json by scripts/translate.js (model claude-opus-4-8) using src/i18n/glossary.json (CMS es.medicare.gov terminology). Machine-generated — pending human spot-check. Do not hand-edit copy here; fix the English master or pin the term in the glossary, then re-run npm run translate.",
+  "__note": "MASTER content for /medicare-basics.html, extracted losslessly from src/pages/medicare-basics.astro. HelpfulTools band stays in the component (shared-module boundary, Phase 2).",
+  "page": {
+    "title": "Conceptos Básicos de Medicare | AltaMedicare",
+    "description": "Guía de Medicare en lenguaje sencillo: explicación de las Partes A, B, C y D, períodos de inscripción, multas y cómo elegir entre Medicare Advantage y el Seguro Suplementario de Medicare."
+  },
+  "breadcrumbHtml": "<a href=\"index.html\">Inicio</a> &nbsp;&rsaquo;&nbsp; Conceptos Básicos de Medicare",
+  "header": {
+    "h1": "Conceptos Básicos de Medicare",
+    "lede": "Una guía en lenguaje sencillo sobre las partes de Medicare, cuándo puede inscribirse y cómo evitar multas."
+  },
+  "parts": {
+    "h2": "Las Cuatro Partes de Medicare",
+    "introHtml": "Medicare se divide en cuatro partes. En conjunto, cubren la atención hospitalaria, las consultas médicas, las opciones de planes todo en uno y los medicamentos recetados. Así funciona cada una.",
+    "blocks": [
+      {
+        "h3Html": "Parte A &mdash; Seguro de Hospital",
+        "textHtml": "Cubre las hospitalizaciones como paciente internado, la atención en un centro de enfermería especializada, los cuidados paliativos (hospicio) y parte de la atención médica en el hogar. La mayoría de las personas no paga prima por la Parte A porque ellas (o su cónyuge) pagaron impuestos de Medicare mientras trabajaban."
+      },
+      {
+        "h3Html": "Parte B &mdash; Seguro Médico",
+        "textHtml": "Cubre las consultas médicas, la atención ambulatoria, los servicios preventivos y los equipos médicos duraderos. La Parte B tiene una prima mensual estándar que Medicare establece cada año."
+      },
+      {
+        "h3Html": "Parte C &mdash; Medicare Advantage",
+        "textHtml": "Una alternativa todo en uno a Medicare Original que ofrecen las compañías de seguros privadas aprobadas por Medicare. La mayoría de los planes Medicare Advantage combinan la Parte A, la Parte B y la Parte D, y a menudo agregan beneficios adicionales como servicios dentales, de la vista y de la audición."
+      },
+      {
+        "h3Html": "Parte D &mdash; Cobertura de Medicamentos Recetados",
+        "textHtml": "Ayuda a cubrir el costo de los medicamentos recetados. Puede obtener la Parte D como un plan independiente (junto con Medicare Original) o como parte de un plan Medicare Advantage."
+      }
+    ]
+  },
+  "enrollment": {
+    "h2": "Períodos de Inscripción (y Cómo Evitar Multas)",
+    "blocks": [
+      {
+        "h3Html": "Período de Inscripción Inicial (IEP)",
+        "textHtml": "Su ventana de 7 meses en torno a su cumpleaños número 65: los 3 meses anteriores, el mes de su cumpleaños y los 3 meses posteriores. Esta es la ventana más importante &mdash; perderla puede significar multas permanentes por inscripción tardía."
+      },
+      {
+        "h3Html": "Período de Inscripción Anual (AEP)",
+        "textHtml": "Del 15 de octubre al 7 de diciembre de cada año. Durante el AEP puede cambiar de plan Medicare Advantage, pasar de Medicare Advantage a Medicare Original o cambiar su plan de la Parte D. Los cambios entran en vigor el 1 de enero."
+      },
+      {
+        "h3Html": "Inscripción Abierta de Medicare Advantage",
+        "textHtml": "Del 1 de enero al 31 de marzo. Si ya tiene un plan Medicare Advantage, tiene una oportunidad para cambiarse a otro plan Medicare Advantage o regresar a Medicare Original."
+      },
+      {
+        "h3Html": "Períodos de Inscripción Especial (SEP)",
+        "textHtml": "Se activan por eventos de la vida como mudarse, perder la cobertura de un empleador, calificar para la Ayuda Adicional (Ayuda Adicional (Extra Help)), o entrar o salir de un programa de Medicaid. Estos le dan una ventana para cambiar de plan fuera de los períodos normales."
+      }
+    ]
+  },
+  "callout": {
+    "heading": "Las multas por inscripción tardía son permanentes.",
+    "textHtml": "Si no se inscribe en la Parte B o la Parte D cuando es elegible por primera vez (y no tiene una cobertura que califique de otra fuente), es probable que deba pagar una multa por el resto de su vida. Le ayudamos a evitar esto planificando con anticipación."
+  },
+  "comparison": {
+    "h2": "Seguro Suplementario de Medicare vs. Medicare Advantage",
+    "intro": "Esta es la decisión más común que enfrentan las personas. En resumen:",
+    "itemsHtml": [
+      "<strong>Medicare Advantage</strong> suele tener primas mensuales más bajas (o de $0), pero usa redes de proveedores y copagos. Excelente si por lo general goza de buena salud y desea beneficios adicionales como servicios dentales y de la vista.",
+      "<strong>El Seguro Suplementario de Medicare</strong> tiene una prima mensual más alta, pero costos de bolsillo muy bajos y la flexibilidad de acudir a cualquier médico. Excelente si desea costos predecibles y viaja con frecuencia."
+    ],
+    "outroHtml": "No hay una opción que sea universalmente &ldquo;mejor&rdquo; &mdash; depende de su salud, su presupuesto, a dónde viaja y cómo usa los servicios de salud. <a href=\"contact.html\">Conversemos al respecto.</a>"
+  },
+  "cta": {
+    "h2Html": "¿Tiene preguntas? Hablemos.",
+    "textHtml": "Una llamada gratuita y sin presión &mdash; respuestas claras, sin argumentos de venta.",
+    "scheduleLabel": "Programar consulta",
+    "callLabel": "Llame al {phone}"
+  }
+}
