@@ -24,6 +24,7 @@ Shared infrastructure:
 | Compliance disclaimer (CMS Spanish) | ✅ | `i18n-chrome` |
 | Language switcher | ✅ | `i18n-chrome` |
 | Idempotent glossary post-pass (engine fix) | ✅ | `76ca95a` |
+| Spanish style guide (SPANISH-STYLE.md) | ✅ | |
 | CMS figures → {placeholder} interpolation | ✅ (PDP page) | `bb0af9d` |
 | Search-modal runtime strings | 🔲 boundary (English) | |
 | News ticker | 🔲 boundary (English) | |
