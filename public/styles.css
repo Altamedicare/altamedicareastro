@@ -1927,18 +1927,19 @@ section {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px;
-  margin-top: 14px;
+  gap: 6px;
+  margin-top: 10px;
 }
 .search-example {
   background: rgba(255, 255, 255, 0.72);
   border: 1px solid var(--border-light);
   border-radius: 20px;
-  padding: 7px 15px;
+  padding: 6px 11px;
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   color: var(--charcoal-soft);
   cursor: pointer;
+  white-space: nowrap;
   transition: all var(--transition);
 }
 .search-example:hover {
@@ -1953,28 +1954,30 @@ section {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  max-width: 620px;
-  margin: 16px auto 0;
+  gap: 8px;
+  max-width: 900px;
+  margin: 14px auto 0;
 }
 .hero-tools-label {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.09em;
   color: var(--text-muted);
+  white-space: nowrap;
 }
 .hero-tools a {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   background: #fff;
   border: 1px solid var(--border-light);
   border-radius: 22px;
-  padding: 8px 16px;
+  padding: 7px 14px;
   font-weight: 600;
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   color: var(--charcoal);
+  white-space: nowrap;
   box-shadow: var(--shadow-sm);
   transition: all var(--transition);
 }
