@@ -3,7 +3,7 @@
   "__note": "MASTER content for /about.html, extracted losslessly from src/pages/about.astro (extraction spike). HTML-bearing strings are stored verbatim (entities included) and rendered via set:html. {phone} is interpolated from consts.ts PHONE_DISPLAY (§6.8 — numbers never live in translatable copy).",
   "page": {
     "title": "Acerca de Bret Swope | AltaMedicare",
-    "description": "Conozca a Bret Swope, fundador de AltaMedicare y guía de Medicare con licencia en Utah. Ayuda educativa con Medicare, sin presión, desde Orem y para todo Utah."
+    "description": "Conozca a Bret Swope, fundador de AltaMedicare y guía de Medicare con licencia en Utah. Ayuda educativa con Medicare, sin presión, desde Alpine y para todo Utah."
   },
   "breadcrumbHtml": "<a href=\"index.html\">Inicio</a> &nbsp;&rsaquo;&nbsp; Acerca de Bret",
   "header": {
@@ -14,7 +14,7 @@
     "photoAlt": "Bret Swope, fundador de AltaMedicare",
     "name": "Bret Swope",
     "roleHtml": "Fundador &middot; Agente de Medicare con licencia",
-    "location": "Ubicado en Orem, Utah"
+    "location": "Ubicado en Alpine, Utah"
   },
   "body": {
     "h2Why": "Por qué fundé AltaMedicare",
