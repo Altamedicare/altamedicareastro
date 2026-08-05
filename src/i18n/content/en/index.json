@@ -2,11 +2,11 @@
   "__note": "MASTER content for the homepage (/), extracted losslessly from src/pages/index.astro. Keys prefixed __ are functional data (YouTube ids, transcript slugs, img classes, search seeds) — the engine never translates them. sms:/mailto: prefilled bodies stay in the component (protocol-href boundary). Entity-bearing strings are stored as real Unicode; the 3-diff tag comparator normalizes entities (glyph bar).",
   "page": {
     "title": "AltaMedicare | Simple Medicare Guidance for Utah Families",
-    "description": "Helping Orem and Utah residents understand Medicare, lower prescription costs, and make confident healthcare decisions. Licensed local Medicare guidance with no pressure."
+    "description": "Helping Alpine and Utah residents understand Medicare, lower prescription costs, and make confident healthcare decisions. Licensed local Medicare guidance with no pressure."
   },
   "hero": {
     "h1": "Simple Medicare Guidance for Utah Families",
-    "subhead": "Helping Orem and Utah residents understand Medicare, lower prescription\n        costs, and make confident healthcare decisions.",
+    "subhead": "Helping Alpine and Utah residents understand Medicare, lower prescription\n        costs, and make confident healthcare decisions.",
     "scheduleLabel": "Schedule Free Consultation",
     "drugLabel": "Check Prescription Costs",
     "compareLabel": "Compare Plans Online",

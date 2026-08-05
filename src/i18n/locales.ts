@@ -85,7 +85,7 @@ export const strings = {
     'header.callAria': 'Call AltaMedicare',
     'header.menuAria': 'Toggle menu',
     // Footer
-    'footer.blurb': 'Trusted local Medicare education and guidance for Utah families. Based in Orem, serving the entire state.',
+    'footer.blurb': 'Trusted local Medicare education and guidance for Utah families. Based in Alpine, serving the entire state.',
     'footer.plansHeading': 'Plans',
     'footer.resourcesHeading': 'Resources',
     'footer.contactHeading': 'Contact',
@@ -143,7 +143,7 @@ export const strings = {
     'header.searchAria': 'Buscar en el sitio',
     'header.callAria': 'Llamar a AltaMedicare',
     'header.menuAria': 'Abrir o cerrar el menú',
-    'footer.blurb': 'Educación y orientación local de confianza sobre Medicare para las familias de Utah. Con sede en Orem, sirviendo a todo el estado.',
+    'footer.blurb': 'Educación y orientación local de confianza sobre Medicare para las familias de Utah. Con sede en Alpine, sirviendo a todo el estado.',
     'footer.plansHeading': 'Planes',
     'footer.resourcesHeading': 'Recursos',
     'footer.contactHeading': 'Contacto',
