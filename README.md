@@ -1,7 +1,7 @@
 # AltaMedicare.com
 
 Astro static site for AltaMedicare — local Medicare education and guidance
-for Utah families (Bret Swope, licensed agent, Orem UT). English master with
+for Utah families (Bret Swope, licensed agent, Alpine UT). English master with
 generated Spanish (`/es/…`) via the multilingual framework.
 
 ## Commands
