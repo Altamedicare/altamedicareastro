@@ -1,5 +1,5 @@
 {
-  "__note": "MASTER content for /medicare-advantage.html, extracted losslessly from src/pages/medicare-advantage.astro. Illustrative copay examples ($0/$40) are copy, not CMS figures — stay literal. SilverSneakers is a brand — model keeps it verbatim per YMYL rules.",
+  "__note": "MASTER content for /medicare-advantage.html, extracted losslessly from src/pages/medicare-advantage.astro. Illustrative copay examples ($0/$40) are copy, not CMS figures — stay literal. SilverSneakers is a brand — model keeps it verbatim per YMYL rules. PARKED — `__notFitPendingTranslation` holds newly authored balance copy (general Medicare guidance only; no carrier, plan, pricing, or benefit specifics). The `__` prefix keeps it out of flatten()/--check so no locale is forced to carry hand-authored Spanish. TO ACTIVATE: (1) YMYL-review the English, (2) rename the key to `notFit` here, (3) run `npm run translate -- --locale es --page medicare-advantage` (needs ANTHROPIC_API_KEY). The component already renders it existence-aware.",
   "page": {
     "title": "Medicare Advantage Plans Utah | AltaMedicare",
     "description": "Medicare Advantage explained: networks, copays, dental, vision, hearing, OTC, transportation, and maximum out-of-pocket. Local Utah guidance."
@@ -33,10 +33,21 @@
     "intro": "Medicare Advantage tends to make sense if:",
     "itemsHtml": [
       "You want low (or $0) monthly premiums",
-      "You want extras like dental, vision, and hearing built in",
+      "You want extras like <a href=\"dental-vision-hearing.html\">dental, vision, and hearing</a> built in",
       "Your doctors are in-network",
       "You don&rsquo;t travel extensively for healthcare",
       "You&rsquo;re generally healthy and want a budget-friendly option"
+    ]
+  },
+  "__notFitPendingTranslation": {
+    "h2": "When Medicare Advantage May Not Be the Best Fit",
+    "intro": "It&rsquo;s worth looking at other options if:",
+    "itemsHtml": [
+      "You spend part of the year in another state or travel often &mdash; Advantage networks are built around where you live",
+      "Your doctors or preferred hospitals are outside the plan&rsquo;s network",
+      "You want to see any provider in the U.S. who accepts Medicare, without network rules",
+      "You&rsquo;d rather pay a predictable monthly premium than a copay each time you get care",
+      "You want to compare a <a href=\"medicare-supplement.html\">Medicare Supplement</a> first"
     ]
   },
   "callout": {

@@ -1,12 +1,16 @@
 ---
 // src/components/content/Turning65Page.astro — THE shared Turning 65 template.
 // Copy lives in src/i18n/content/{locale}/turning-65.json; presentation only.
-// HelpfulTools is a shared module (consts.ts TOOLS registry) — renders English
-// until Phase 2 makes it its own translation source (§3).
+// The tools band is LocationTools (consts.ts TOOLS registry) rather than the
+// generic HelpfulTools trio: this page is about enrollment TIMING, so it shows
+// the four timing/penalty calculators instead of the sitewide default set.
+// Band chrome reuses the existing t('tools.*') dictionary — no new copy, so
+// English and Spanish stay in parity without a translation pass.
 import MainLayout from '../../layouts/MainLayout.astro';
-import HelpfulTools from '../HelpfulTools.astro';
-import { DEFAULT_LOCALE, getLangFromUrl, getLocaleMeta } from '../../i18n/locales';
+import LocationTools from '../location/LocationTools.astro';
+import { DEFAULT_LOCALE, getLangFromUrl, getLocaleMeta, t } from '../../i18n/locales';
 import { getPageContent, hreflangAlternates, interp, localizeHref } from '../../i18n/content';
+import { breadcrumbLd, crumbsFromHtml } from '../../i18n/breadcrumbs';
 import { PHONE_DISPLAY } from '../../consts';
 
 interface Turning65Content {
@@ -30,6 +34,8 @@ const c = getPageContent<Turning65Content>('turning-65', lang);
 const vars = { phone: PHONE_DISPLAY };
 const canonical = lang === DEFAULT_LOCALE ? '/turning-65.html' : `/${lang}/turning-65.html`;
 const alternates = hreflangAlternates('turning-65');
+// Schema built from the SAME string the breadcrumb renders (Home › Turning 65).
+const crumbLd = breadcrumbLd(crumbsFromHtml(c.breadcrumbHtml), lang, canonical);
 ---
 
 <MainLayout
@@ -38,6 +44,7 @@ const alternates = hreflangAlternates('turning-65');
   canonical={canonical}
 >
   <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(crumbLd)} />
     {alternates.map((a) => <link rel="alternate" hreflang={a.code} href={a.href} />)}
     {lang !== DEFAULT_LOCALE && <meta property="og:locale" content={getLocaleMeta(lang).ogLocale} />}
   </Fragment>
@@ -109,6 +116,10 @@ const alternates = hreflangAlternates('turning-65');
   </div>
 </section>
 
-<HelpfulTools />
+<LocationTools
+  tools={['eligibility', 'timeline', 'countdown', 'penalty']}
+  heading={t('tools.h2', lang)}
+  sub={t('tools.intro', lang)}
+/>
 
 </MainLayout>

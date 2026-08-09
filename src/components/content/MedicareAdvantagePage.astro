@@ -5,6 +5,8 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import HelpfulTools from '../HelpfulTools.astro';
 import { DEFAULT_LOCALE, getLangFromUrl, getLocaleMeta } from '../../i18n/locales';
 import { getPageContent, hreflangAlternates, interp, localizeHref } from '../../i18n/content';
+import { breadcrumbLd, crumbsFromHtml } from '../../i18n/breadcrumbs';
+import { PLACES, getLocationCopy, hubHref, pageHref } from '../../data/places';
 import { COMPARE_PLANS_URL, PHONE_DISPLAY } from '../../consts';
 
 interface MaContent {
@@ -22,6 +24,10 @@ interface MaContent {
     moopHtml: string;
   };
   fit: { h2: string; intro: string; itemsHtml: string[] };
+  /** Optional until translated — existence-aware, same rule as every other
+   *  localized surface here: a locale renders the section only once its copy is
+   *  committed. Never falls back to English prose on a Spanish page. */
+  notFit?: { h2: string; intro: string; itemsHtml: string[] };
   callout: { heading: string; textHtml: string };
   cta: { h2Html: string; textHtml: string; scheduleLabel: string; callLabel: string; compareLabel: string };
 }
@@ -31,6 +37,33 @@ const c = getPageContent<MaContent>('medicare-advantage', lang);
 const vars = { phone: PHONE_DISPLAY };
 const canonical = lang === DEFAULT_LOCALE ? '/medicare-advantage.html' : `/${lang}/medicare-advantage.html`;
 const alternates = hreflangAlternates('medicare-advantage');
+// Schema mirrors the rendered trail (Home › Plans › Medicare Advantage).
+const crumbLd = breadcrumbLd(crumbsFromHtml(c.breadcrumbHtml), lang, canonical);
+
+// Utah cluster links. Labels reuse the location module's already-translated
+// "Medicare Advantage in {placeName}" / "Medicare en {placeName}" templates, so
+// this section needs no new copy in any locale. The state hub heads the block;
+// its counties follow. Nothing here is hand-written per place.
+// LocationCopy widens its leaf values to `unknown` (the shared module is
+// mask-driven), so callers cast at the edge — same as LocationOverview does.
+const loc = getLocationCopy(lang);
+const maLabel = loc.overview.maH2 as string;
+const placeLabel = loc.shell.crumbPlace as string;
+const utah = PLACES.find((p) => p.kind === 'state')!;
+const counties = PLACES.filter((p) => p.kind === 'county');
+const utahH2 = interp(maLabel, { placeName: utah.name });
+const utahHubLink = {
+  href: localizeHref(hubHref(utah), lang),
+  label: interp(placeLabel, { placeName: utah.name }),
+};
+const countyLinks = counties.map((p) => ({
+  href: localizeHref(pageHref(p, 'medicare-advantage'), lang),
+  label: interp(maLabel, { placeName: p.name }),
+}));
+
+// Hoisted so TS narrowing survives into the JSX below (`c.notFit &&` alone does
+// not narrow inside child expressions). Absent until the locale is translated.
+const notFit = c.notFit;
 ---
 
 <MainLayout
@@ -39,6 +72,7 @@ const alternates = hreflangAlternates('medicare-advantage');
   canonical={canonical}
 >
   <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(crumbLd)} />
     {alternates.map((a) => <link rel="alternate" hreflang={a.code} href={a.href} />)}
     {lang !== DEFAULT_LOCALE && <meta property="og:locale" content={getLocaleMeta(lang).ogLocale} />}
   </Fragment>
@@ -71,6 +105,22 @@ const alternates = hreflangAlternates('medicare-advantage');
     <p>{c.fit.intro}</p>
     <ul>
       {c.fit.itemsHtml.map((item) => <li set:html={item} />)}
+    </ul>
+
+    {notFit && (
+      <Fragment>
+        <h2>{notFit.h2}</h2>
+        <p>{notFit.intro}</p>
+        <ul>
+          {notFit.itemsHtml.map((item) => <li set:html={item} />)}
+        </ul>
+      </Fragment>
+    )}
+
+    <h2>{utahH2}</h2>
+    <ul>
+      <li><a href={utahHubLink.href}>{utahHubLink.label}</a></li>
+      {countyLinks.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
     </ul>
 
     <div class="callout">

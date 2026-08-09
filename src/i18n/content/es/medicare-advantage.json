@@ -1,6 +1,6 @@
 {
   "__translation_note": "AI-translated from en/medicare-advantage.json by scripts/translate.js (model claude-opus-4-8) using src/i18n/glossary.json (CMS es.medicare.gov terminology). Machine-generated — pending human spot-check. Do not hand-edit copy here; fix the English master or pin the term in the glossary, then re-run npm run translate.",
-  "__note": "MASTER content for /medicare-advantage.html, extracted losslessly from src/pages/medicare-advantage.astro. Illustrative copay examples ($0/$40) are copy, not CMS figures — stay literal. SilverSneakers is a brand — model keeps it verbatim per YMYL rules.",
+  "__note": "MASTER content for /medicare-advantage.html, extracted losslessly from src/pages/medicare-advantage.astro. Illustrative copay examples ($0/$40) are copy, not CMS figures — stay literal. SilverSneakers is a brand — model keeps it verbatim per YMYL rules. PENDING TRANSLATION: the master's `notFit` block has no Spanish yet — run `npm run translate -- --locale es --page medicare-advantage` (needs ANTHROPIC_API_KEY). Until then the component omits the section on /es/ rather than showing English copy.",
   "page": {
     "title": "Planes Medicare Advantage en Utah | AltaMedicare",
     "description": "Medicare Advantage explicado: redes, copagos, dental, visión, audición, medicamentos de venta libre (OTC), transporte y máximo de gastos de su bolsillo. Orientación local en Utah."
@@ -34,7 +34,7 @@
     "intro": "Medicare Advantage suele tener sentido si:",
     "itemsHtml": [
       "Desea primas mensuales bajas (o de $0)",
-      "Desea extras como dental, visión y audición integrados",
+      "Desea extras como <a href=\"dental-vision-hearing.html\">dental, visión y audición</a> integrados",
       "Sus médicos están dentro de la red",
       "No viaja mucho para recibir atención médica",
       "Goza de buena salud en general y quiere una opción económica"

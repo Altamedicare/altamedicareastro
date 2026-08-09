@@ -14,11 +14,24 @@ interface Props {
   ogImage?: string;
   /** Pagefind result type/badge + filter value. */
   pageType?: string;
-  /** Skip Pagefind indexing for this page (e.g. the search page itself). */
+  /** Exclude from SEARCH ENGINES: emits <meta name="robots" content="noindex, follow">.
+   *  Implies noSearch — a page hidden from Google has no business in site search either. */
   noIndex?: boolean;
+  /** Exclude from ON-SITE Pagefind search ONLY. Leaves the page fully indexable by
+   *  Google. For thin hubs whose children carry the real content (the FAQ hub is a
+   *  card index of the 9 /faq/{category}.html pages, so it would only dilute site
+   *  search) — but which are still sitemapped, linked sitewide, and meant to rank. */
+  noSearch?: boolean;
 }
 
-const { title, description, canonical, ogImage = '/images/og-image.svg', pageType = 'Guide', noIndex = false } = Astro.props;
+const { title, description, canonical, ogImage = '/images/og-image.svg', pageType = 'Guide', noIndex = false, noSearch = false } = Astro.props;
+
+// These were ONE overloaded prop until this split. `noIndex` originally governed
+// Pagefind only (robots was hardcoded "index, follow"); when 81a1de5 correctly
+// wired robots to the prop, every page already using it for search-exclusion was
+// silently de-indexed too — including the FAQ hub, which is sitemapped at 0.8 and
+// ranking. Two concepts, two props; noIndex still implies noSearch.
+const excludeFromSearch = noIndex || noSearch;
 
 // Locale-aware chrome: lang derives from the URL (no prop threading — playbook
 // §10). Every page link routes through localizeHref(): identity for English
@@ -177,9 +190,9 @@ const webPage =
 
 <main
   id="main"
-  data-pagefind-body={noIndex ? undefined : true}
-  data-pagefind-meta={noIndex ? undefined : `type:${pageType}`}
-  data-pagefind-filter={noIndex ? undefined : `type:${pageType}`}
+  data-pagefind-body={excludeFromSearch ? undefined : true}
+  data-pagefind-meta={excludeFromSearch ? undefined : `type:${pageType}`}
+  data-pagefind-filter={excludeFromSearch ? undefined : `type:${pageType}`}
 >
   <!-- Rendered here for SSR (links crawlable, no-JS fallback); the script below
        relocates it to sit just under the hero on every page. -->

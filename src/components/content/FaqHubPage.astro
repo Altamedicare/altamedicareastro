@@ -1,6 +1,9 @@
 ---
 // src/components/content/FaqHubPage.astro — THE shared FAQ hub template.
 // Thin index of category links; copy lives in the faqs shared module.
+// noSearch (NOT noIndex): the hub duplicates its 9 category pages in Pagefind
+// results, but it is sitemapped at 0.8, linked sitewide, and ranking — it must
+// stay index,follow for Google. See the prop docs in MainLayout.
 import MainLayout from '../../layouts/MainLayout.astro';
 import { getFaqData } from '../../data/faqs';
 import { PHONE_DISPLAY } from '../../consts';
@@ -19,7 +22,7 @@ const href = (h: string) => localizeHref(h, lang);
   title={shell.hubTitle}
   description={shell.hubDescription}
   canonical={canonical}
-  noIndex={true}
+  noSearch={true}
 >
   <Fragment slot="head">
     {alternates.map((a) => <link rel="alternate" hreflang={a.code} href={a.href} />)}

@@ -23,7 +23,7 @@
       {
         "age": "3 meses antes de los 65",
         "h4Html": "Comienza el Período de Inscripción Inicial",
-        "textHtml": "Comienza su Período de Inscripción Inicial de 7 meses. Este es el momento en que puede inscribirse en la Parte A, la Parte B y un plan de Medicare (Advantage o Suplementario + Parte D). Inscribirse antes significa que su cobertura empieza el mes en que cumple 65 años."
+        "textHtml": "Comienza su Período de Inscripción Inicial de 7 meses. Este es el momento en que puede inscribirse en la Parte A, la Parte B y un plan de Medicare (<a href=\"medicare-advantage.html\">Advantage</a> o <a href=\"medicare-supplement.html\">Suplementario</a> + <a href=\"prescription-drug-plans.html\">Parte D</a>). Inscribirse antes significa que su cobertura empieza el mes en que cumple 65 años."
       },
       {
         "age": "Mes de su cumpleaños",
@@ -72,7 +72,7 @@
       },
       {
         "h3Html": "Multa por inscripción tardía en la Parte D",
-        "textHtml": "Si pasa más de 63 días sin cobertura acreditable de medicamentos, deberá pagar una multa de la Parte D: 1% de la prima base nacional por cada mes que estuvo sin ella. También es de por vida."
+        "textHtml": "Si pasa más de 63 días sin <a href=\"prescription-drug-plans.html\">cobertura acreditable de medicamentos</a>, deberá pagar una multa de la Parte D: 1% de la prima base nacional por cada mes que estuvo sin ella. También es de por vida."
       }
     ]
   },

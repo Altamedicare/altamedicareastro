@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(echo \"=== TOOLS HUB: URL+order diff vs committed HEAD ===\" *)",
+      "Bash(grep '\\\\.html$')",
+      "Bash(tr '\\\\\\\\' '/')",
+      "Bash(curl -sI --max-time 25 https://altamedicare.com/faq.html)",
+      "Bash(curl -s --max-time 25 https://altamedicare.com/faq.html)",
+      "Bash(curl -sL --max-time 25 https://altamedicare.com/medicare-eligibility-calculator)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" --max-time 20 https://altamedicare.com/utah)"
+    ],
+    "additionalDirectories": [
+      "\\tmp"
+    ]
+  }
+}

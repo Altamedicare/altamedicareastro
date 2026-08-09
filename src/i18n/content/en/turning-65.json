@@ -22,7 +22,7 @@
       {
         "age": "3 Months Before 65",
         "h4Html": "Initial Enrollment Period Begins",
-        "textHtml": "Your 7-month IEP starts. This is when you can enroll in Part A, Part B, and a Medicare plan (Advantage or Supplement + Part D). Earlier enrollment means coverage that starts the month you turn 65."
+        "textHtml": "Your 7-month IEP starts. This is when you can enroll in Part A, Part B, and a Medicare plan (<a href=\"medicare-advantage.html\">Advantage</a> or <a href=\"medicare-supplement.html\">Supplement</a> + <a href=\"prescription-drug-plans.html\">Part D</a>). Earlier enrollment means coverage that starts the month you turn 65."
       },
       {
         "age": "Birthday Month",
@@ -71,7 +71,7 @@
       },
       {
         "h3Html": "Part D Late Enrollment Penalty",
-        "textHtml": "If you go more than 63 days without creditable drug coverage, you&rsquo;ll owe a Part D penalty &mdash; 1% of the national base premium for every month you went without it. Also lifetime."
+        "textHtml": "If you go more than 63 days without <a href=\"prescription-drug-plans.html\">creditable drug coverage</a>, you&rsquo;ll owe a Part D penalty &mdash; 1% of the national base premium for every month you went without it. Also lifetime."
       }
     ]
   },

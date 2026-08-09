@@ -1,13 +1,34 @@
 ---
+// English-only master (no /es/ sibling committed) — chrome still routes through
+// the locale helpers so the page behaves like every other one.
 import MainLayout from '../layouts/MainLayout.astro';
+import LocationTools from '../components/location/LocationTools.astro';
+import { getLangFromUrl, t } from '../i18n/locales';
+import { breadcrumbLd } from '../i18n/breadcrumbs';
 import { COMPARE_PLANS_URL } from '../consts';
+
+const lang = getLangFromUrl(Astro.url);
+const canonical = '/dental-vision-hearing.html';
+// Mirrors the visible trail below exactly — no invented levels.
+const crumbLd = breadcrumbLd(
+  [
+    { name: 'Home', href: 'index.html' },
+    { name: 'Plans', href: 'medicare-basics.html' },
+    { name: 'Dental, Vision, Hearing' },
+  ],
+  lang,
+  canonical,
+);
 ---
 
 <MainLayout
   title={"Dental, Vision & Hearing Coverage | AltaMedicare"}
   description={"Original Medicare doesn’t cover routine dental, vision, or hearing. Here are your options through Medicare Advantage and standalone plans."}
-  canonical="/dental-vision-hearing.html"
+  canonical={canonical}
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(crumbLd)} />
+  </Fragment>
 
 <section class="page-header">
   <div class="container">
@@ -33,7 +54,7 @@ import { COMPARE_PLANS_URL } from '../consts';
     <p>If dental, vision, and hearing are important to you, this is often the simplest path.</p>
 
     <h2>Option 2: Standalone Dental, Vision &amp; Hearing Plans</h2>
-    <p>Available alongside Original Medicare and Medicare Supplement plans. These let you keep the doctor flexibility of Original Medicare/Supplement while adding ancillary coverage. Premiums and benefits vary widely.</p>
+    <p>Available alongside Original Medicare and <a href="medicare-supplement.html">Medicare Supplement</a> plans. These let you keep the doctor flexibility of Original Medicare/Supplement while adding ancillary coverage. Premiums and benefits vary widely.</p>
 
     <h2>Option 3: Discount Programs</h2>
     <p>Some dental and vision discount programs aren&rsquo;t insurance, but offer reduced rates at participating providers. Useful for occasional needs without committing to a full insurance premium.</p>
@@ -54,6 +75,12 @@ import { COMPARE_PLANS_URL } from '../consts';
     </div>
   </div>
 </section>
+
+<LocationTools
+  tools={['quiz', 'cost-estimator']}
+  heading={t('tools.h2', lang)}
+  sub={t('tools.intro', lang)}
+/>
 
 <section class="final-cta">
   <div class="container">

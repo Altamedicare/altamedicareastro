@@ -1,28 +1,50 @@
 ---
+// The hub renders from the TOOLS registry (src/consts.ts) — one source of truth
+// for every tool's URL and icon, shared with HelpfulTools, LocationTools and the
+// header dropdown. Previously this file kept a second hardcoded copy of all 11
+// tools, which had already drifted from the registry.
+//
+// Hub-specific titles/descriptions are intentionally longer than the registry's
+// compact card labels, so they stay here as explicit overrides. ORDER, URLS, and
+// all visible copy are unchanged by this refactor.
 import MainLayout from '../layouts/MainLayout.astro';
+import { TOOLS, type ToolKey } from '../consts';
+import { getLangFromUrl } from '../i18n/locales';
+import { breadcrumbLd } from '../i18n/breadcrumbs';
 
-const available = [
-  { href: '/medicare-eligibility-calculator.html', icon: 'fa-calendar-check', title: 'Medicare Eligibility Calculator', desc: "Find out when you're eligible and calculate your Initial Enrollment Period." },
-  { href: '/medicare-irmaa-calculator.html', icon: 'fa-sack-dollar', title: 'IRMAA Calculator', desc: 'Estimate your Medicare Part B and Part D premiums based on income.' },
-  { href: '/medicare-penalty-calculator.html', icon: 'fa-triangle-exclamation', title: 'Late Enrollment Penalty Calculator', desc: 'See whether delaying Medicare could permanently increase your premiums.' },
-  { href: '/medicare-drug-cost-calculator.html', icon: 'fa-pills', title: 'Drug Cost Calculator', desc: 'Estimate medication costs and compare lower-cost generic alternatives.' },
-  { href: '/medicare-timeline-calculator.html', icon: 'fa-timeline', title: 'Medicare Timeline Calculator', desc: 'Visualize your enrollment windows and key Medicare deadlines.' },
-  { href: '/medicare-enrollment-countdown.html', icon: 'fa-stopwatch', title: 'Enrollment Countdown', desc: 'A live countdown to your Medicare enrollment deadlines.' },
-  { href: '/medicare-cost-estimator.html', icon: 'fa-coins', title: 'Medicare Cost Estimator', desc: 'Estimate your total annual costs and compare coverage options.' },
-  { href: '/medicare-formulary-lookup.html', icon: 'fa-prescription-bottle-medical', title: 'Formulary Lookup', desc: 'Search medications to see typical Part D coverage and restrictions.' },
-  { href: '/prescription-drug-assistance.html', icon: 'fa-hand-holding-dollar', title: 'Drug Assistance Finder', desc: 'Find Extra Help, copay grants, and manufacturer programs that lower medication costs.' },
-  { href: '/medicare-quiz.html', icon: 'fa-clipboard-question', title: 'Medicare Plan Quiz', desc: 'Answer 7 questions to discover which coverage type may fit you.' },
-  { href: '/medicare-glossary.html', icon: 'fa-book', title: 'Medicare Glossary', desc: 'Search 100+ Medicare terms explained in plain English.' },
+const hubCopy: { key: ToolKey; title: string; desc: string }[] = [
+  { key: 'eligibility', title: 'Medicare Eligibility Calculator', desc: "Find out when you're eligible and calculate your Initial Enrollment Period." },
+  { key: 'irmaa', title: 'IRMAA Calculator', desc: 'Estimate your Medicare Part B and Part D premiums based on income.' },
+  { key: 'penalty', title: 'Late Enrollment Penalty Calculator', desc: 'See whether delaying Medicare could permanently increase your premiums.' },
+  { key: 'drug-cost', title: 'Drug Cost Calculator', desc: 'Estimate medication costs and compare lower-cost generic alternatives.' },
+  { key: 'timeline', title: 'Medicare Timeline Calculator', desc: 'Visualize your enrollment windows and key Medicare deadlines.' },
+  { key: 'countdown', title: 'Enrollment Countdown', desc: 'A live countdown to your Medicare enrollment deadlines.' },
+  { key: 'cost-estimator', title: 'Medicare Cost Estimator', desc: 'Estimate your total annual costs and compare coverage options.' },
+  { key: 'formulary', title: 'Formulary Lookup', desc: 'Search medications to see typical Part D coverage and restrictions.' },
+  { key: 'drug-assistance', title: 'Drug Assistance Finder', desc: 'Find Extra Help, copay grants, and manufacturer programs that lower medication costs.' },
+  { key: 'quiz', title: 'Medicare Plan Quiz', desc: 'Answer 7 questions to discover which coverage type may fit you.' },
+  { key: 'glossary', title: 'Medicare Glossary', desc: 'Search 100+ Medicare terms explained in plain English.' },
 ];
 
+// href + icon come from the registry; the hub only supplies its own wording.
+const available = hubCopy.map((t) => ({ href: TOOLS[t.key].href, icon: TOOLS[t.key].icon, title: t.title, desc: t.desc }));
+
 const comingSoon: { icon: string; title: string }[] = [];
+
+const lang = getLangFromUrl(Astro.url);
+const canonical = '/tools.html';
+// Mirrors the visible trail below exactly — no invented levels.
+const crumbLd = breadcrumbLd([{ name: 'Home', href: '/' }, { name: 'Tools' }], lang, canonical);
 ---
 
 <MainLayout
   title="Free Medicare Tools & Calculators | AltaMedicare"
   description="Free, interactive Medicare calculators: eligibility and enrollment dates, IRMAA premiums, late enrollment penalties, and prescription drug costs."
-  canonical="/tools.html"
+  canonical={canonical}
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(crumbLd)} />
+  </Fragment>
 
 <section class="page-header">
   <div class="container">
