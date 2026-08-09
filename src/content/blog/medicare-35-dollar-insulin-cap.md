@@ -45,7 +45,7 @@ This is a big change from the way things used to be. In the past, insulin costs 
 
 Most insulin is self-administered, so it falls under **Part D** (either a standalone Part D plan or a Medicare Advantage plan that includes drug coverage). The $35 cap applies to these Part D-covered insulins.
 
-But the cap also reaches further. It applies to insulin used with a **Part B durable insulin pump**, too. So whether you take insulin by pen or vial through your drug plan, or you use insulin through a covered pump, the $35-per-month protection follows you. If you would like a broader look at how Medicare handles this medication, our guide on [whether Medicare covers insulin](/blog/does-medicare-cover-insulin.html) walks through the details.
+But the cap also reaches further. It applies to insulin used with a **Part B durable insulin pump**, too. So whether you take insulin by pen or vial through your drug plan, or you use insulin through a covered pump, the $35-per-month protection follows you. If you would like a broader look at how Medicare handles this medication, our guide on [whether Medicare covers insulin](/blog/does-medicare-cover-insulin) walks through the details.
 
 ## How to make sure you get it
 
@@ -55,8 +55,8 @@ Different plans cover different insulins on their formularies, which are the lis
 
 Here are two easy ways to check:
 
-- Look up your insulin with our [Formulary Lookup](/medicare-formulary-lookup.html) to confirm it is covered by your plan.
-- Run your medications through our [Drug Cost Calculator](/medicare-drug-cost-calculator.html) to see your expected costs for the year, insulin included.
+- Look up your insulin with our [Formulary Lookup](/medicare-formulary-lookup) to confirm it is covered by your plan.
+- Run your medications through our [Drug Cost Calculator](/medicare-drug-cost-calculator) to see your expected costs for the year, insulin included.
 
 If your insulin is not on your plan's list, that does not necessarily mean you are stuck. You and your prescriber can ask your plan for a coverage exception, and during the Annual Enrollment Period you may be able to switch to a plan that covers your insulin. Never change how you take your insulin on your own, though. Any dosing or medication decisions should always go through your doctor.
 
@@ -64,10 +64,10 @@ If your insulin is not on your plan's list, that does not necessarily mean you a
 
 The $35 cap helps anyone with Medicare who relies on insulin, and it makes the biggest difference for people who use multiple insulins or who used to face high costs early in the year. Because there is no deductible to meet first and the price is capped each month, you can budget with confidence and avoid those unwelcome surprises at the counter.
 
-It is also worth knowing that insulin costs still count toward your overall Part D out-of-pocket total. Once your covered drug spending reaches the annual limit, you pay $0 for covered drugs the rest of the year. You can read more about that protection in our guide to [the $2,000 drug cap](/blog/the-2000-drug-cap-explained.html).
+It is also worth knowing that insulin costs still count toward your overall Part D out-of-pocket total. Once your covered drug spending reaches the annual limit, you pay $0 for covered drugs the rest of the year. You can read more about that protection in our guide to [the $2,000 drug cap](/blog/the-2000-drug-cap-explained).
 
 ## A quick word of reassurance
 
 The insulin cap is one of the clearest, friendliest changes Medicare has made in recent years. A covered month's supply of insulin costs no more than $35, there is no deductible to clear first, and it happens automatically.
 
-If you would like help making sure your insulin is covered or comparing plans that fit your medications, I am glad to walk through it with you, no pressure at all. Just reach out through our [contact page](/contact.html) and we will take it one step at a time.
+If you would like help making sure your insulin is covered or comparing plans that fit your medications, I am glad to walk through it with you, no pressure at all. Just reach out through our [contact page](/contact) and we will take it one step at a time.

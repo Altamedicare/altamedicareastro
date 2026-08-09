@@ -37,7 +37,7 @@ Because Xarelto is a pill you take at home, it's covered under **Medicare Part D
 
 Original Medicare (Part A and Part B) by itself does not cover drugs you pick up at the pharmacy, so having some form of Part D is what makes coverage for Xarelto possible.
 
-Every plan has its own **formulary** — the list of drugs it covers — and sorts those drugs into **tiers** that set your copay or coinsurance. As a brand-name drug, Xarelto is most often placed on a brand tier, which usually means a higher copay than a generic. The exact dollar amount varies from plan to plan and changes each year, so two neighbors can pay different prices for the same prescription. Our [Formulary Lookup](/medicare-formulary-lookup.html) lets you confirm Xarelto is covered and see which tier it falls on, and the [Drug Cost Calculator](/medicare-drug-cost-calculator.html) helps you estimate a full year of out-of-pocket spending.
+Every plan has its own **formulary** — the list of drugs it covers — and sorts those drugs into **tiers** that set your copay or coinsurance. As a brand-name drug, Xarelto is most often placed on a brand tier, which usually means a higher copay than a generic. The exact dollar amount varies from plan to plan and changes each year, so two neighbors can pay different prices for the same prescription. Our [Formulary Lookup](/medicare-formulary-lookup) lets you confirm Xarelto is covered and see which tier it falls on, and the [Drug Cost Calculator](/medicare-drug-cost-calculator) helps you estimate a full year of out-of-pocket spending.
 
 ### The 2026 price negotiation and the $2,000 cap
 
@@ -45,7 +45,7 @@ Here's the genuinely new part. Through Medicare Drug Price Negotiation, the gove
 
 I want to be straight about what that means at the counter: the negotiation lowers the underlying price of the drug, which is real progress, but it doesn't set one fixed price everyone pays. What you actually owe still depends on your plan's tier and where you stand against the yearly cap.
 
-And that cap is the bigger protection. In 2026, Part D has a **$2,000 out-of-pocket maximum** for the year — the old "donut hole" coverage gap is gone. Once your out-of-pocket spending on covered drugs reaches $2,000, your covered prescriptions, including Xarelto, cost you nothing for the rest of the calendar year. For someone on a steady brand-name drug, that ceiling is predictable and easy to plan around. You can read more in [the $2,000 drug cap explained](/blog/the-2000-drug-cap-explained.html). If a big bill early in the year would be hard to manage, there's also a free option to spread that $2,000 into smoother monthly payments.
+And that cap is the bigger protection. In 2026, Part D has a **$2,000 out-of-pocket maximum** for the year — the old "donut hole" coverage gap is gone. Once your out-of-pocket spending on covered drugs reaches $2,000, your covered prescriptions, including Xarelto, cost you nothing for the rest of the calendar year. For someone on a steady brand-name drug, that ceiling is predictable and easy to plan around. You can read more in [the $2,000 drug cap explained](/blog/the-2000-drug-cap-explained). If a big bill early in the year would be hard to manage, there's also a free option to spread that $2,000 into smoother monthly payments.
 
 ## Coverage rules to expect
 
@@ -62,7 +62,7 @@ If a plan won't cover Xarelto, places it on a high tier, or applies a rule that 
 
 ## Alternatives to discuss with your doctor
 
-If cost or coverage becomes a hurdle, it's worth asking your doctor whether another option fits your situation. Other anticoagulants include **apixaban (Eliquis)** — you can read more in [does Medicare cover Eliquis](/blog/does-medicare-cover-eliquis.html) — and the older, lower-cost **warfarin**. Each works a bit differently and isn't right for everyone, so this is strictly a conversation for you and your physician. I can tell you what your plan covers; your doctor decides what's medically appropriate.
+If cost or coverage becomes a hurdle, it's worth asking your doctor whether another option fits your situation. Other anticoagulants include **apixaban (Eliquis)** — you can read more in [does Medicare cover Eliquis](/blog/does-medicare-cover-eliquis) — and the older, lower-cost **warfarin**. Each works a bit differently and isn't right for everyone, so this is strictly a conversation for you and your physician. I can tell you what your plan covers; your doctor decides what's medically appropriate.
 
 ## Questions to ask your doctor
 
@@ -71,4 +71,4 @@ If cost or coverage becomes a hurdle, it's worth asking your doctor whether anot
 - Are there reasons I should stay on Xarelto specifically?
 - If my plan requires prior authorization, can you help submit the documentation?
 
-Picking the right plan comes down to the details — which formulary covers your drugs, on what tier, and at which pharmacy. You can run the numbers yourself with the tools above, and when you're ready, [reach out to me](/contact.html) for a no-pressure conversation about which plan covers your medications best. No hard sell — just clear answers so you know what you'll pay.
+Picking the right plan comes down to the details — which formulary covers your drugs, on what tier, and at which pharmacy. You can run the numbers yourself with the tools above, and when you're ready, [reach out to me](/contact) for a no-pressure conversation about which plan covers your medications best. No hard sell — just clear answers so you know what you'll pay.

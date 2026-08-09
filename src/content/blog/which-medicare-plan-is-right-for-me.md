@@ -45,7 +45,7 @@ Plan G is the most popular choice. After you pay the $283 Part B deductible, it 
 
 If keeping your monthly cost down matters most and your doctors are local, Medicare Advantage may be the better fit. These all-in-one plans often have a $0 or low premium, usually fold in Part D drug coverage, and frequently add dental, vision, and hearing benefits. The trade-off is that you stay within the plan's network and your costs can vary more from visit to visit, up to that annual out-of-pocket maximum.
 
-One thing that surprises people: you still pay the Part B premium of $202.90 a month even with a $0-premium Advantage plan. The plan's premium is separate from — and on top of — your Part B premium. Our [Cost Estimator](/medicare-cost-estimator.html) can help you sketch out the full monthly picture for either path.
+One thing that surprises people: you still pay the Part B premium of $202.90 a month even with a $0-premium Advantage plan. The plan's premium is separate from — and on top of — your Part B premium. Our [Cost Estimator](/medicare-cost-estimator) can help you sketch out the full monthly picture for either path.
 
 ## What prescriptions do you take?
 
@@ -68,6 +68,6 @@ A couple of things hold true on every path:
 
 ## A simple next step
 
-If your head is spinning, that's normal — this is a lot to weigh. A good way to get your bearings is to take our [Medicare Plan Quiz](/medicare-quiz.html), which turns these questions into a few quick prompts and points you toward the type of plan that tends to fit. From there, comparing real plans against your doctors and drug list is what seals the decision.
+If your head is spinning, that's normal — this is a lot to weigh. A good way to get your bearings is to take our [Medicare Plan Quiz](/medicare-quiz), which turns these questions into a few quick prompts and points you toward the type of plan that tends to fit. From there, comparing real plans against your doctors and drug list is what seals the decision.
 
-When you're ready to put names and numbers to it, [reach out to Bret](/contact.html) for a no-pressure conversation. There's no single best plan — but there is a best fit for you, and a short talk is often all it takes to find it.
+When you're ready to put names and numbers to it, [reach out to Bret](/contact) for a no-pressure conversation. There's no single best plan — but there is a best fit for you, and a short talk is often all it takes to find it.

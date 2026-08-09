@@ -47,7 +47,7 @@ IRMAA is based on your **modified adjusted gross income (MAGI)** — your adjust
 
 The **Part D surcharge** is added to whatever your drug plan's monthly premium already is — even if you're enrolled in a $0-premium Medicare Advantage plan that includes drug coverage. Both surcharges are charged per person, so a married couple who both cross the threshold each pay their own IRMAA.
 
-You can see exactly where you land — and what it costs for the year — with the [IRMAA Calculator](/medicare-irmaa-calculator.html).
+You can see exactly where you land — and what it costs for the year — with the [IRMAA Calculator](/medicare-irmaa-calculator).
 
 ## The two-year lookback, and why it matters
 
@@ -78,4 +78,4 @@ Because IRMAA is a cliff, staying *just under* a threshold can be worth real mon
 - **Time Roth conversions** in lower-income years, before you start Medicare if possible.
 - **Watch tax-exempt interest** — it counts toward MAGI even though it's not taxable.
 
-IRMAA is one of those Medicare details that's invisible until it shows up on your statement. If you're near a bracket — or you just got an IRMAA notice you weren't expecting — run your numbers in the [IRMAA Calculator](/medicare-irmaa-calculator.html) first, then let's talk through whether an appeal makes sense for your situation.
+IRMAA is one of those Medicare details that's invisible until it shows up on your statement. If you're near a bracket — or you just got an IRMAA notice you weren't expecting — run your numbers in the [IRMAA Calculator](/medicare-irmaa-calculator) first, then let's talk through whether an appeal makes sense for your situation.

@@ -25,7 +25,7 @@ Turning 65 comes with one new piece of paperwork most people don't think about u
 
 Start early — the decisions are easier when you're not rushed.
 
-- **Confirm your timeline.** Your Medicare eligibility is tied to your 65th birthday. The [Eligibility Calculator](/medicare-eligibility-calculator.html) will tell you the exact dates that matter for you in under a minute.
+- **Confirm your timeline.** Your Medicare eligibility is tied to your 65th birthday. The [Eligibility Calculator](/medicare-eligibility-calculator) will tell you the exact dates that matter for you in under a minute.
 - **Decide about employer coverage.** Still working, or covered by a spouse who is? Coverage that lets you delay Part B penalty-free generally means *active* coverage from an employer with **20 or more employees**. If that's you, you may be able to wait — and you'll get an 8-month Special Enrollment Period once that coverage ends. COBRA, retiree plans, and VA benefits do **not** count for delaying Part B, so don't lean on those.
 - **Plan to stop HSA contributions.** This one surprises people. Once you enroll in **any** part of Medicare, you can no longer contribute to a Health Savings Account. You can still spend what you've saved, but you'll want to stop new contributions before your Medicare coverage begins. If the tax timing is tricky, a quick word with your tax advisor is worth it.
 
@@ -34,7 +34,7 @@ Start early — the decisions are easier when you're not rushed.
 This is when the clock really starts. Your **Initial Enrollment Period (IEP)** is seven months long: the three months before your birthday month, the month itself, and the three months after. Signing up in those **first three months** is the move that gets your coverage started right at 65 with no gap.
 
 - **Enroll in Part A and (usually) Part B.** Most people get **Part A for $0** because they worked at least 10 years paying Medicare taxes. The standard **Part B premium is $202.90 a month** in 2026. If you're not delaying for employer coverage, sign up now to avoid the Part B late penalty — **10% added for each full 12 months** you could have had it.
-- **Map your exact dates.** The [Timeline Calculator](/medicare-timeline-calculator.html) lays out your IEP, when to enroll, and when each piece of coverage starts, so nothing slips by.
+- **Map your exact dates.** The [Timeline Calculator](/medicare-timeline-calculator) lays out your IEP, when to enroll, and when each piece of coverage starts, so nothing slips by.
 - **Gather your meds and doctors.** Make a list of every prescription you take and the doctors you want to keep. You'll use this list to compare plans — it's the single most useful thing you can prepare.
 
 ## Your birthday month
@@ -49,9 +49,9 @@ Now you choose how you'll fill the gaps Original Medicare leaves behind. Remembe
 | Drug coverage | Usually built in | Add a standalone Part D plan |
 | Extras | Often dental/vision/hearing | Not included |
 
-A **Medigap** plan like **Plan G** covers nearly everything after you pay the **$283 Part B deductible**, while **Plan N** trades a lower premium for small copays. **Medicare Advantage** bundles everything together with an annual out-of-pocket cap, though you stay inside a network. Either way, you still pay your Part B premium. This is where your meds-and-doctors list pays off — it shows which plan actually fits your life. If you'd like help comparing options side by side, you can [reach out to me directly](/contact.html) for a no-pressure look.
+A **Medigap** plan like **Plan G** covers nearly everything after you pay the **$283 Part B deductible**, while **Plan N** trades a lower premium for small copays. **Medicare Advantage** bundles everything together with an annual out-of-pocket cap, though you stay inside a network. Either way, you still pay your Part B premium. This is where your meds-and-doctors list pays off — it shows which plan actually fits your life. If you'd like help comparing options side by side, you can [reach out to me directly](/contact) for a no-pressure look.
 
-Want a gentle nudge as the deadline nears? The [Enrollment Countdown](/medicare-enrollment-countdown.html) tracks the days left in your IEP so you never have to wonder.
+Want a gentle nudge as the deadline nears? The [Enrollment Countdown](/medicare-enrollment-countdown) tracks the days left in your IEP so you never have to wonder.
 
 ## After you enroll / each year
 

@@ -52,7 +52,7 @@ Because coverage depends so heavily on the *why*, plans lean on utilization mana
 - **Step therapy.** Some plans may ask you to try a preferred alternative first before they'll cover this one.
 - **Quantity limits.** Plans often cover only a set amount per fill or period without an approved exception.
 
-None of these are dead ends — they're steps your doctor's office handles routinely. You can read more about [prior authorization](/blog/what-is-prior-authorization.html) and [step therapy](/blog/what-is-step-therapy.html) if you'd like to understand the process.
+None of these are dead ends — they're steps your doctor's office handles routinely. You can read more about [prior authorization](/blog/what-is-prior-authorization) and [step therapy](/blog/what-is-step-therapy) if you'd like to understand the process.
 
 ## Coverage exceptions and appeals
 
@@ -62,9 +62,9 @@ If your plan denies Wegovy, you and your prescriber have the right to request a 
 
 Because Wegovy serves two very different goals, the right alternative depends on what you and your doctor are treating. I'm an insurance agent, not a physician, so think of these as conversations to have with your prescriber — not recommendations:
 
-- If the goal is **managing type 2 diabetes**, there are several covered drug classes worth discussing, and our [Ozempic article](/blog/does-medicare-cover-ozempic.html) walks through that side.
+- If the goal is **managing type 2 diabetes**, there are several covered drug classes worth discussing, and our [Ozempic article](/blog/does-medicare-cover-ozempic) walks through that side.
 - If the goal is **reducing cardiovascular risk**, your doctor can talk through which therapies fit your heart history.
-- Another GLP-1-type option in this space is Zepbound — you can see how Medicare treats it in our [Zepbound article](/blog/does-medicare-cover-zepbound.html).
+- Another GLP-1-type option in this space is Zepbound — you can see how Medicare treats it in our [Zepbound article](/blog/does-medicare-cover-zepbound).
 
 Please don't start, stop, or change any medication on your own. Your doctor decides what's right for your health; my job is just to help you understand the coverage.
 
@@ -81,6 +81,6 @@ One piece of forward-looking news: semaglutide is in the **second group of drugs
 
 ## Check your plan, then let's talk
 
-Coverage for Wegovy really does come down to the documented reason behind the prescription and the fine print of your specific plan. The most useful first step is to look it up on your own plan's covered-drug list. Our [Formulary Lookup](/medicare-formulary-lookup.html) shows how a drug is treated, the [Drug Cost Calculator](/medicare-drug-cost-calculator.html) helps you estimate what you'd pay across the year, and the [Medicare Cost Estimator](/medicare-cost-estimator.html) gives you the bigger picture.
+Coverage for Wegovy really does come down to the documented reason behind the prescription and the fine print of your specific plan. The most useful first step is to look it up on your own plan's covered-drug list. Our [Formulary Lookup](/medicare-formulary-lookup) shows how a drug is treated, the [Drug Cost Calculator](/medicare-drug-cost-calculator) helps you estimate what you'd pay across the year, and the [Medicare Cost Estimator](/medicare-cost-estimator) gives you the bigger picture.
 
-If you'd like a hand sorting out where your plan stands — no pressure — you can [reach out anytime](/contact.html) and we'll look at your formulary and costs together.
+If you'd like a hand sorting out where your plan stands — no pressure — you can [reach out anytime](/contact) and we'll look at your formulary and costs together.

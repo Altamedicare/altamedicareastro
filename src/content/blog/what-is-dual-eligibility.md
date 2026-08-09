@@ -27,7 +27,7 @@ Being dual eligible simply means you qualify for **both Medicare and Medicaid** 
 
 When you have both, Medicare stays your **main** health insurance — it pays first for your doctor visits, hospital stays, and prescriptions. Medicaid then steps in to help with the costs Medicare leaves behind, and sometimes for care Medicare doesn't cover at all. You don't have to choose between them; they're designed to coordinate.
 
-If you're not sure whether you might qualify, our [Eligibility Calculator](/medicare-eligibility-calculator.html) is a gentle, no-pressure place to start.
+If you're not sure whether you might qualify, our [Eligibility Calculator](/medicare-eligibility-calculator) is a gentle, no-pressure place to start.
 
 ## Full duals vs. partial duals
 
@@ -36,7 +36,7 @@ There are two broad groups, and the difference matters for what you get.
 - **Full duals** have **full Medicaid plus Medicare.** Medicaid may cover your Medicare premiums and cost-sharing, *and* things Medicare doesn't — like long-term care, extra dental and vision, and transportation to appointments.
 - **Partial duals** qualify for a **Medicare Savings Program** that helps pay Medicare costs, but they don't have full Medicaid. So they get help with premiums and sometimes cost-sharing, but not the broader Medicaid benefits.
 
-It's a meaningful distinction, and we cover it more fully in [full vs. partial dual eligibility](/blog/full-vs-partial-dual-eligibility.html).
+It's a meaningful distinction, and we cover it more fully in [full vs. partial dual eligibility](/blog/full-vs-partial-dual-eligibility).
 
 ## What Medicaid can cover that Medicare doesn't
 
@@ -55,7 +55,7 @@ In plain terms: Medicare handles most of your medical care, and Medicaid fills i
 
 Prescriptions are where a lot of people feel the squeeze, and here's some good news. If you're a **full dual**, you **automatically get Extra Help** — also called the Low-Income Subsidy, or LIS — for your Part D drug coverage. There's no separate application; it comes with the territory.
 
-Extra Help can lower or eliminate your Part D premium and deductible, and in 2026 you'll pay **no more than $12.65 per covered drug**. On top of that, everyone with Part D now has a **$2,000 yearly cap** on out-of-pocket drug costs, so your spending can't run away from you. You can read more in our [Extra Help guide](/blog/extra-help-explained.html).
+Extra Help can lower or eliminate your Part D premium and deductible, and in 2026 you'll pay **no more than $12.65 per covered drug**. On top of that, everyone with Part D now has a **$2,000 yearly cap** on out-of-pocket drug costs, so your spending can't run away from you. You can read more in our [Extra Help guide](/blog/extra-help-explained).
 
 ## The gateway for partial duals: Medicare Savings Programs
 
@@ -67,10 +67,10 @@ If you don't qualify for full Medicaid, a **Medicare Savings Program (MSP)** is 
 | SLMB | Part B premium only | ~$1,616 / $2,184 |
 | QI | Part B premium only | ~$1,816 / $2,455 |
 
-These are **2026 limits** — check current figures and apply through Utah Medicaid or Social Security, since Utah may disregard some income and makes the final call. Our [Medicare Savings Programs guide](/blog/medicare-savings-programs.html) walks through each one in detail.
+These are **2026 limits** — check current figures and apply through Utah Medicaid or Social Security, since Utah may disregard some income and makes the final call. Our [Medicare Savings Programs guide](/blog/medicare-savings-programs) walks through each one in detail.
 
 ## A quick look at the savings
 
-Want to see what your costs might look like with this help in place? The [Cost Estimator](/medicare-cost-estimator.html) can give you a rough picture so you can plan with a little more confidence.
+Want to see what your costs might look like with this help in place? The [Cost Estimator](/medicare-cost-estimator) can give you a rough picture so you can plan with a little more confidence.
 
-Sorting out two programs at once can feel overwhelming, especially if money is already tight — and that's completely understandable. You don't have to figure it out alone. If you'd like a calm, plain-English walk-through of what you may qualify for, [reach out](/contact.html) anytime. There's no pressure and no cost to ask.
+Sorting out two programs at once can feel overwhelming, especially if money is already tight — and that's completely understandable. You don't have to figure it out alone. If you'd like a calm, plain-English walk-through of what you may qualify for, [reach out](/contact) anytime. There's no pressure and no cost to ask.

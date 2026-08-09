@@ -35,14 +35,14 @@ Humira doesn't have a traditional generic, but it does have something close: sev
 
 Because Humira is **self-administered at home**, it falls under **Medicare Part D**, the part of Medicare that handles prescription drugs. You get Part D either through a standalone drug plan that pairs with Original Medicare, or built into a Medicare Advantage plan. Original Medicare (Part A and Part B) on its own doesn't cover drugs you give yourself at home, so having some form of Part D is what makes coverage possible.
 
-As a high-cost biologic, Humira is **usually placed on a specialty tier**. Every Part D plan has its own **formulary** (its list of covered drugs) with tiers, and both coverage and tier can change from plan to plan and year to year. That's why two people on the same drug can pay very different amounts. The simplest way to know where you stand is to check the drug list for any plan you're considering. Our [Formulary Lookup](/medicare-formulary-lookup.html) lets you see whether Humira is covered, what tier it's on, and whether any restrictions apply.
+As a high-cost biologic, Humira is **usually placed on a specialty tier**. Every Part D plan has its own **formulary** (its list of covered drugs) with tiers, and both coverage and tier can change from plan to plan and year to year. That's why two people on the same drug can pay very different amounts. The simplest way to know where you stand is to check the drug list for any plan you're considering. Our [Formulary Lookup](/medicare-formulary-lookup) lets you see whether Humira is covered, what tier it's on, and whether any restrictions apply.
 
 ## Coverage rules to expect
 
 With a specialty biologic like Humira, a few utilization rules are common. They don't mean the drug isn't covered — they're hoops the plan may ask you to clear first:
 
-- **Prior authorization.** This is common with Humira. Your plan will likely need your doctor to submit medical documentation confirming the drug is appropriate for your condition before it's covered. We explain this in more detail in [what prior authorization is](/blog/what-is-prior-authorization.html).
-- **Step therapy with a biosimilar.** Some plans ask you to try a lower-cost adalimumab biosimilar first, and will only cover Humira itself if that doesn't work well enough for you. That's a form of [step therapy](/blog/what-is-step-therapy.html).
+- **Prior authorization.** This is common with Humira. Your plan will likely need your doctor to submit medical documentation confirming the drug is appropriate for your condition before it's covered. We explain this in more detail in [what prior authorization is](/blog/what-is-prior-authorization).
+- **Step therapy with a biosimilar.** Some plans ask you to try a lower-cost adalimumab biosimilar first, and will only cover Humira itself if that doesn't work well enough for you. That's a form of [step therapy](/blog/what-is-step-therapy).
 - **Quantity limits.** A plan may cover only a set amount per fill or period without an approved exception.
 
 Which of these apply depends entirely on the plan, so it's worth checking rather than assuming.
@@ -55,13 +55,13 @@ If your plan won't cover Humira, requires a biosimilar you can't tolerate, or pl
 
 I'm an insurance agent, not a physician, so I'd never tell you to start, stop, or switch a medication — that's a conversation for you and your doctor. But it helps to know what the options look like.
 
-If cost or coverage is a hurdle, your doctor might talk with you about **adalimumab biosimilars**, which often sit on lower tiers, or **other biologics** that treat the same conditions. Drugs like [Enbrel](/blog/does-medicare-cover-enbrel.html) and [Rinvoq](/blog/does-medicare-cover-rinvoq.html) are sometimes part of that conversation. Whether any alternative is right for you is strictly a medical decision — your doctor knows your history and what you've already tried.
+If cost or coverage is a hurdle, your doctor might talk with you about **adalimumab biosimilars**, which often sit on lower tiers, or **other biologics** that treat the same conditions. Drugs like [Enbrel](/blog/does-medicare-cover-enbrel) and [Rinvoq](/blog/does-medicare-cover-rinvoq) are sometimes part of that conversation. Whether any alternative is right for you is strictly a medical decision — your doctor knows your history and what you've already tried.
 
 ## The $2,000 cap is real protection
 
 For anyone on a specialty drug, this is the most important change to know about. In 2026, Part D has a **$2,000 out-of-pocket maximum** for the year. Once your out-of-pocket spending on covered drugs reaches $2,000, you pay nothing more for your covered prescriptions for the rest of the calendar year.
 
-That cap is **especially meaningful for a specialty biologic like Humira**, where a single month's cost can be high. There's also a free option to spread that $2,000 into smoother monthly payments across the year, so a big bill early on doesn't have to land all at once. You can read more in our guide to [the $2,000 drug cap](/blog/the-2000-drug-cap-explained.html).
+That cap is **especially meaningful for a specialty biologic like Humira**, where a single month's cost can be high. There's also a free option to spread that $2,000 into smoother monthly payments across the year, so a big bill early on doesn't have to land all at once. You can read more in our guide to [the $2,000 drug cap](/blog/the-2000-drug-cap-explained).
 
 ## Questions to ask your doctor
 
@@ -74,6 +74,6 @@ When you next talk with your prescriber, these are useful to raise:
 
 ## How to see your real cost
 
-The best way to stop guessing is to look at your own situation. Run Humira — along with your other medications — through the [Drug Cost Calculator](/medicare-drug-cost-calculator.html) to estimate what you'd pay across the year under a given plan, and pair it with the Formulary Lookup to confirm coverage and tier.
+The best way to stop guessing is to look at your own situation. Run Humira — along with your other medications — through the [Drug Cost Calculator](/medicare-drug-cost-calculator) to estimate what you'd pay across the year under a given plan, and pair it with the Formulary Lookup to confirm coverage and tier.
 
-If you'd like help comparing plans with Humira in mind, that's exactly what I do for folks here in Utah. Reach out through the [contact page](/contact.html) and we'll walk through it together — no pressure, no cost, just a clear answer.
+If you'd like help comparing plans with Humira in mind, that's exactly what I do for folks here in Utah. Reach out through the [contact page](/contact) and we'll walk through it together — no pressure, no cost, just a clear answer.

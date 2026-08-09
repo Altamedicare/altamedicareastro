@@ -25,7 +25,7 @@ Once a year, the door opens for nearly everyone on Medicare to rethink their cov
 
 The **Annual Enrollment Period (AEP)** — sometimes called fall open enrollment — runs from **October 15 through December 7** every year. Whatever changes you make during that window take effect on **January 1** of the following year.
 
-That timing is the same for everyone, so it's easy to plan around. If you'd like to see how the AEP fits alongside your other Medicare dates, the [Timeline Calculator](/medicare-timeline-calculator.html) lays them out for you, and the [Enrollment Countdown](/medicare-enrollment-countdown.html) shows exactly how many days are left before December 7 so the deadline doesn't sneak up on you.
+That timing is the same for everyone, so it's easy to plan around. If you'd like to see how the AEP fits alongside your other Medicare dates, the [Timeline Calculator](/medicare-timeline-calculator) lays them out for you, and the [Enrollment Countdown](/medicare-enrollment-countdown) shows exactly how many days are left before December 7 so the deadline doesn't sneak up on you.
 
 ## What you can do during the AEP
 
@@ -68,4 +68,4 @@ So the spring window is a narrower, second-chance period — useful if you signe
 
 You don't have to overhaul anything during the AEP. For most people, a smart approach looks like this: read your Annual Notice of Change when it arrives, list your current prescriptions and doctors, and check whether your plan still covers them well for the coming year. If it does, you can sit tight. If it doesn't, you've got from October 15 to December 7 to make a better choice.
 
-If you'd rather not sort through plan changes on your own — or you just want a second set of eyes before December 7 — that's exactly what I do. Feel free to [reach out](/contact.html) for a no-pressure review, and we'll make sure your coverage still fits before the new year begins.
+If you'd rather not sort through plan changes on your own — or you just want a second set of eyes before December 7 — that's exactly what I do. Feel free to [reach out](/contact) for a no-pressure review, and we'll make sure your coverage still fits before the new year begins.

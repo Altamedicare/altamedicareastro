@@ -36,7 +36,7 @@ A regular Medicare Advantage plan is open to **anyone** with Medicare, no matter
 - It usually comes with a **$0 premium**, and because you also have Medicaid and typically Extra Help, your out-of-pocket costs tend to be very low.
 - It often includes **extra benefits** geared toward dual members, which we'll get to next.
 
-In short, every D-SNP is a Medicare Advantage plan, but not every Medicare Advantage plan is a D-SNP. If you're weighing your options and aren't sure which path fits, our [Medicare Plan Quiz](/medicare-quiz.html) is a gentle place to start sorting it out.
+In short, every D-SNP is a Medicare Advantage plan, but not every Medicare Advantage plan is a D-SNP. If you're weighing your options and aren't sure which path fits, our [Medicare Plan Quiz](/medicare-quiz) is a gentle place to start sorting it out.
 
 ## The extras D-SNPs often include
 
@@ -47,22 +47,22 @@ Beyond your core medical and drug coverage, many D-SNPs offer benefits that Orig
 - **Transportation** to and from medical appointments
 - **Care coordination** to help manage your overall health
 
-These extras vary from plan to plan, so it's worth checking the details of any plan you're considering. We dig deeper into these perks in [extra benefits for dual eligible beneficiaries](/blog/extra-benefits-for-dual-eligible-beneficiaries.html).
+These extras vary from plan to plan, so it's worth checking the details of any plan you're considering. We dig deeper into these perks in [extra benefits for dual eligible beneficiaries](/blog/extra-benefits-for-dual-eligible-beneficiaries).
 
 ## Check your drugs before you commit
 
 Because a D-SNP includes Part D drug coverage, it has its own **formulary** — the list of medications it covers. Two plans can both look great on paper but cover your prescriptions very differently. Before you settle on a plan, it's smart to make sure your specific drugs are on its list.
 
-Our [Formulary Lookup](/medicare-formulary-lookup.html) lets you check that in a few minutes, so there are no surprises at the pharmacy counter later. It's one of the most useful steps you can take before enrolling.
+Our [Formulary Lookup](/medicare-formulary-lookup) lets you check that in a few minutes, so there are no surprises at the pharmacy counter later. It's one of the most useful steps you can take before enrolling.
 
 ## You get extra chances to switch
 
 Here's some good news that many people don't realize. Most folks can only change Medicare plans during the fall enrollment window, but **duals get extra opportunities to switch plans during the year.** If a plan isn't meeting your needs — maybe a medication dropped off the formulary, or you'd like better extras — you generally don't have to wait until next fall to make a change.
 
-That flexibility means you're never truly stuck, which is reassuring when you're trying something new. When you're ready to actually compare or enroll, the steps are laid out in [how to enroll in a D-SNP](/blog/how-to-enroll-in-a-d-snp.html).
+That flexibility means you're never truly stuck, which is reassuring when you're trying something new. When you're ready to actually compare or enroll, the steps are laid out in [how to enroll in a D-SNP](/blog/how-to-enroll-in-a-d-snp).
 
 ## Is a D-SNP right for you?
 
 If you have both Medicare and Medicaid, a D-SNP is worth a close look. It can simplify your coverage, lower your costs, and add benefits that make day-to-day life a little easier. The right plan depends on your doctors, your prescriptions, and the extras that matter most to you.
 
-Sorting through plans can feel like a lot, especially when money is tight — and that's completely understandable. You don't have to do it alone. If you'd like a calm, plain-English walk-through of your options, [reach out](/contact.html) anytime. There's no pressure and no cost to ask.
+Sorting through plans can feel like a lot, especially when money is tight — and that's completely understandable. You don't have to do it alone. If you'd like a calm, plain-English walk-through of your options, [reach out](/contact) anytime. There's no pressure and no cost to ask.

@@ -37,7 +37,7 @@ No more falling into a gap mid-year. The path is steady and predictable from Jan
 
 The biggest change is the new **$2,000 annual out-of-pocket cap** on covered drugs in 2026. Once your own spending on covered prescriptions adds up to $2,000, you're done paying for them for the rest of the calendar year.
 
-For someone on an expensive specialty medication, this is a major relief — in the past, those costs could run into the thousands with no ceiling. If you'd like to see how your specific prescriptions stack up against the cap, our [Drug Cost Calculator](/medicare-drug-cost-calculator.html) can give you a clear estimate. You can read a fuller breakdown in [the $2,000 drug cap explained](/blog/the-2000-drug-cap-explained.html).
+For someone on an expensive specialty medication, this is a major relief — in the past, those costs could run into the thousands with no ceiling. If you'd like to see how your specific prescriptions stack up against the cap, our [Drug Cost Calculator](/medicare-drug-cost-calculator) can give you a clear estimate. You can read a fuller breakdown in [the $2,000 drug cap explained](/blog/the-2000-drug-cap-explained).
 
 ## Paying in monthly installments instead of all at once
 
@@ -58,7 +58,7 @@ These apply across Part D plans, so they're not something you have to shop aroun
 
 Even with all these improvements, plans are not identical. The **national base premium** for 2026 is **$38.99 a month**, but individual plans price above and below that, and — just as importantly — they cover different drugs with different copay tiers.
 
-That means the plan that fit you best last year may not be the best fit now. Drug lists change, prices shift, and your own prescriptions change too. A quick check during the [Annual Enrollment Period](/blog/annual-enrollment-period-explained.html) each fall can save real money. Before you decide, it's smart to confirm your medications are covered using our [Formulary Lookup](/medicare-formulary-lookup.html).
+That means the plan that fit you best last year may not be the best fit now. Drug lists change, prices shift, and your own prescriptions change too. A quick check during the [Annual Enrollment Period](/blog/annual-enrollment-period-explained) each fall can save real money. Before you decide, it's smart to confirm your medications are covered using our [Formulary Lookup](/medicare-formulary-lookup).
 
 ## What to do next
 
@@ -69,4 +69,4 @@ The redesigned Part D quietly removed a lot of the old guesswork. To make the mo
 - Confirm your **insulin** is being charged at $35 or less.
 - **Review your plan** every fall, since premiums and drug lists vary.
 
-If you'd like a second set of eyes on whether your current plan still fits, I'm happy to walk through it with you. Reach out any time through our [contact page](/contact.html) — no pressure, just a friendly conversation about what works best for you.
+If you'd like a second set of eyes on whether your current plan still fits, I'm happy to walk through it with you. Reach out any time through our [contact page](/contact) — no pressure, just a friendly conversation about what works best for you.

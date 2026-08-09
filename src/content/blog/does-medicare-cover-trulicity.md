@@ -35,7 +35,7 @@ Trulicity is **brand-only** right now — there's **no generic** version availab
 
 Trulicity is a self-administered injection you give yourself at home, so it's covered under **Medicare Part D** — your prescription drug benefit. Part D comes in two forms: a standalone drug plan you add to Original Medicare, or the drug coverage built into a **Medicare Advantage** plan. Either way, coverage runs through that Part D benefit.
 
-Here's the catch that trips a lot of people up: every Part D and Medicare Advantage drug plan has its own **formulary** (its list of covered drugs), and each plan decides which tier a drug lands on. Coverage and tier vary from plan to plan and can change each year. That's exactly why checking your own plan matters so much. Our [Formulary Lookup](/medicare-formulary-lookup.html) lets you see how Trulicity is treated on a specific plan, and the [Drug Cost Calculator](/medicare-drug-cost-calculator.html) helps you estimate what you'd actually pay across the year.
+Here's the catch that trips a lot of people up: every Part D and Medicare Advantage drug plan has its own **formulary** (its list of covered drugs), and each plan decides which tier a drug lands on. Coverage and tier vary from plan to plan and can change each year. That's exactly why checking your own plan matters so much. Our [Formulary Lookup](/medicare-formulary-lookup) lets you see how Trulicity is treated on a specific plan, and the [Drug Cost Calculator](/medicare-drug-cost-calculator) helps you estimate what you'd actually pay across the year.
 
 ## Coverage rules to expect
 
@@ -44,7 +44,7 @@ Even when Trulicity is covered for diabetes, getting it filled isn't always auto
 - **Prior authorization (PA).** Your plan may require your doctor to submit documentation confirming you're using Trulicity for an approved reason — type 2 diabetes — before it will cover the prescription.
 - **Step therapy.** Some plans ask you to try a preferred, often lower-cost diabetes medicine first, and show it didn't work well enough, before they'll cover Trulicity.
 
-Your plan may also apply **quantity limits**, covering only a set amount per fill without an approved exception. None of these are dead ends — they're just steps, and your doctor's office handles them all the time. If you'd like a plain-English walkthrough, see our guides on [prior authorization](/blog/what-is-prior-authorization.html) and [step therapy](/blog/what-is-step-therapy.html).
+Your plan may also apply **quantity limits**, covering only a set amount per fill without an approved exception. None of these are dead ends — they're just steps, and your doctor's office handles them all the time. If you'd like a plain-English walkthrough, see our guides on [prior authorization](/blog/what-is-prior-authorization) and [step therapy](/blog/what-is-step-therapy).
 
 ## Coverage exceptions and appeals
 
@@ -52,7 +52,7 @@ If Trulicity isn't on your plan's formulary, or it's on a higher tier than you'd
 
 ## Alternatives to discuss with your doctor
 
-If cost or coverage rules become a hurdle, the best move is a conversation with your doctor — never a change you make on your own. There are other GLP-1 medicines approved for type 2 diabetes that your doctor might consider, such as **semaglutide (Ozempic)** or **tirzepatide (Mounjaro)**. Each works a little differently and may sit on a different tier or have different rules on your plan. You can read more in our guides on [Ozempic](/blog/does-medicare-cover-ozempic.html) and [Mounjaro](/blog/does-medicare-cover-mounjaro.html). Your doctor can help decide what fits your health needs best.
+If cost or coverage rules become a hurdle, the best move is a conversation with your doctor — never a change you make on your own. There are other GLP-1 medicines approved for type 2 diabetes that your doctor might consider, such as **semaglutide (Ozempic)** or **tirzepatide (Mounjaro)**. Each works a little differently and may sit on a different tier or have different rules on your plan. You can read more in our guides on [Ozempic](/blog/does-medicare-cover-ozempic) and [Mounjaro](/blog/does-medicare-cover-mounjaro). Your doctor can help decide what fits your health needs best.
 
 ## Questions to ask your doctor
 
@@ -63,4 +63,4 @@ If cost or coverage rules become a hurdle, the best move is a conversation with 
 
 ## A friendly next step
 
-Trulicity coverage really comes down to the *why* behind the prescription and the fine print of your particular plan. If you're not sure where your plan stands — or you're shopping for one that handles your medications well — I'm happy to walk through it with you, no pressure. You can [reach out anytime](/contact.html) and we'll look at your formulary and costs together.
+Trulicity coverage really comes down to the *why* behind the prescription and the fine print of your particular plan. If you're not sure where your plan stands — or you're shopping for one that handles your medications well — I'm happy to walk through it with you, no pressure. You can [reach out anytime](/contact) and we'll look at your formulary and costs together.

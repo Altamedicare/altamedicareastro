@@ -62,7 +62,7 @@ Here's the simple math of a Plan G year:
 | Most costs after the deductible | Covered by Plan G |
 | Part D drug plan | A separate monthly premium |
 
-One thing to know: because Plan G is **standardized by law**, the coverage is identical no matter which insurance company sells it. A more expensive Plan G is not a "better" Plan G. That makes it worth comparing prices. Our [Cost Estimator](/medicare-cost-estimator.html) can help you sketch out what a full year might look like with the premium, deductible, and a drug plan all in one picture.
+One thing to know: because Plan G is **standardized by law**, the coverage is identical no matter which insurance company sells it. A more expensive Plan G is not a "better" Plan G. That makes it worth comparing prices. Our [Cost Estimator](/medicare-cost-estimator) can help you sketch out what a full year might look like with the premium, deductible, and a drug plan all in one picture.
 
 ## Who Plan G fits
 
@@ -73,6 +73,6 @@ Plan G tends to be the right fit when you want **freedom and budget certainty** 
 - Would rather pay a steady premium than face an open-ended 20% in a bad health year.
 - Like knowing your costs in advance, down to the dollar.
 
-If a low monthly premium and built-in extras like dental and vision matter more to you, a Medicare Advantage plan might fit better instead. There's no single right answer — it depends on your health, your budget, and how much predictability you want. You can read more comparisons on our [blog](/blog.html) if you're weighing your options.
+If a low monthly premium and built-in extras like dental and vision matter more to you, a Medicare Advantage plan might fit better instead. There's no single right answer — it depends on your health, your budget, and how much predictability you want. You can read more comparisons on our [blog](/blog) if you're weighing your options.
 
-If Plan G sounds like your speed, the next step is comparing what it would actually cost with the companies available to you. [Reach out to Bret](/contact.html) for a no-pressure conversation — a few minutes on the phone often clears things up faster than an afternoon of reading.
+If Plan G sounds like your speed, the next step is comparing what it would actually cost with the companies available to you. [Reach out to Bret](/contact) for a no-pressure conversation — a few minutes on the phone often clears things up faster than an afternoon of reading.

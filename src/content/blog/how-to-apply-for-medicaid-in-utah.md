@@ -25,7 +25,7 @@ If Medicare's premiums and bills feel heavier than your budget can carry, Utah h
 
 In Utah, Medicaid and Medicare can work together. If you qualify for full Medicaid, it can cover your Medicare premiums and cost-sharing, plus things Medicare doesn't — like long-term care, extra dental and vision, and transportation. Full Medicaid also automatically brings Extra Help for your Part D drugs.
 
-If your income is a little too high for full Medicaid, you may still qualify for a [Medicare Savings Program](/blog/medicare-savings-programs.html), which pays your Part B premium and sometimes more. Either way, applying is the first step, and you apply for both through the same Utah agency.
+If your income is a little too high for full Medicaid, you may still qualify for a [Medicare Savings Program](/blog/medicare-savings-programs), which pays your Part B premium and sometimes more. Either way, applying is the first step, and you apply for both through the same Utah agency.
 
 ## What to gather before you apply
 
@@ -36,7 +36,7 @@ A little preparation makes the whole thing smoother. Before you start, pull toge
 - **Proof of income** — recent Social Security award letters, pension or annuity statements, and any pay stubs.
 - **Information about your resources** — checking and savings account balances, and any investments. Some Medicare Savings Programs and Extra Help have resource limits, so this matters.
 
-If you're not sure whether your numbers fall under the limits, our [Eligibility Calculator](/medicare-eligibility-calculator.html) can give you a quick read before you apply, and the [Cost Estimator](/medicare-cost-estimator.html) helps you picture what your Medicare costs might look like with and without help. You can also see the figures in [Medicaid income limits](/blog/medicaid-income-limits.html). Treat all of these as a starting point — Utah Medicaid makes the final call, and the state may not count some of your income.
+If you're not sure whether your numbers fall under the limits, our [Eligibility Calculator](/medicare-eligibility-calculator) can give you a quick read before you apply, and the [Cost Estimator](/medicare-cost-estimator) helps you picture what your Medicare costs might look like with and without help. You can also see the figures in [Medicaid income limits](/blog/medicaid-income-limits). Treat all of these as a starting point — Utah Medicaid makes the final call, and the state may not count some of your income.
 
 ## Where Utah residents apply
 
@@ -62,4 +62,4 @@ If you're approved, you'll get a notice explaining what's covered and when it st
 - **Keep your information current.** If your income or living situation changes, let the agency know — it can affect what you qualify for.
 - **Reapply when asked.** Some help, like the QI program, is funded first-come and must be renewed each year.
 
-Applying for Medicaid or a Medicare Savings Program is one of the most worthwhile things you can do if money is tight, and you don't have to figure it out alone. If you'd like a calm, no-pressure walkthrough of what to gather and where to send it, [reach out](/contact.html) — I'm happy to help you take the first step.
+Applying for Medicaid or a Medicare Savings Program is one of the most worthwhile things you can do if money is tight, and you don't have to figure it out alone. If you'd like a calm, no-pressure walkthrough of what to gather and where to send it, [reach out](/contact) — I'm happy to help you take the first step.

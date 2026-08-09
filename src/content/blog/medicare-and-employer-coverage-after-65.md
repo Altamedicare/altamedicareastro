@@ -28,7 +28,7 @@ The single most important factor is how many people your employer has. Medicare 
 - **20 or more employees:** Your group health plan pays **primary**, and Medicare pays second. Because your job-based coverage is doing the heavy lifting, you can usually **delay Part B** without a late penalty and pick it up later.
 - **Fewer than 20 employees:** **Medicare usually pays primary**, and your group plan pays second. In this case you most likely **need Part B at 65**, because your employer plan assumes Medicare is covering its share — and if you don't have it, you could be stuck with large bills.
 
-If you're not sure which rule applies to you, your HR or benefits office can confirm the employer's size and how the plan coordinates with Medicare. You can also check your timing with the [Eligibility Calculator](/medicare-eligibility-calculator.html) to see exactly when your enrollment window opens.
+If you're not sure which rule applies to you, your HR or benefits office can confirm the employer's size and how the plan coordinates with Medicare. You can also check your timing with the [Eligibility Calculator](/medicare-eligibility-calculator) to see exactly when your enrollment window opens.
 
 ## Almost everyone still takes Part A
 
@@ -58,7 +58,7 @@ A few cautions here:
 - **COBRA, retiree plans, and VA benefits do not count** as active employer coverage for this purpose. If you're relying on COBRA after you stop working, your SEP is already running, and waiting too long can cost you.
 - The Part B late penalty isn't a one-time fee. It adds **10% to your premium for each full 12 months** you could have had Part B but didn't — and it sticks for as long as you have Part B.
 
-Because that penalty is permanent, it's worth seeing the real cost before you risk it. The [Late Enrollment Penalty Calculator](/medicare-penalty-calculator.html) shows you what a delay would add to your premium each month.
+Because that penalty is permanent, it's worth seeing the real cost before you risk it. The [Late Enrollment Penalty Calculator](/medicare-penalty-calculator) shows you what a delay would add to your premium each month.
 
 ## Weighing the cost
 
@@ -68,4 +68,4 @@ There's no universal answer — it comes down to your plan, your premiums, and w
 
 ## A quick way to decide
 
-Working past 65 gives you options, and that's a good thing. Run the numbers, check your employer's size, and mind the HSA and SEP rules so a small timing mistake doesn't turn into a lasting penalty. If you'd like a second set of eyes on whether to take Medicare now or hold off, [reach out for a no-pressure call](/contact.html) — talking it through for your specific situation usually makes the choice clear.
+Working past 65 gives you options, and that's a good thing. Run the numbers, check your employer's size, and mind the HSA and SEP rules so a small timing mistake doesn't turn into a lasting penalty. If you'd like a second set of eyes on whether to take Medicare now or hold off, [reach out for a no-pressure call](/contact) — talking it through for your specific situation usually makes the choice clear.

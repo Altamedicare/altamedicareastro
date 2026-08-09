@@ -40,7 +40,7 @@ This is where Skyrizi is a little different from many drugs, because it can fall
 
 For Crohn's specifically, this can mean the **induction** doses run through Part B, while the later self-injected **maintenance** doses run through Part D. In other words, which part pays can depend on how and why the drug is being given.
 
-Here's the catch that trips a lot of people up on the Part D side: every Part D and Medicare Advantage drug plan has its own **formulary** (its list of covered drugs), and each plan decides which tier a drug lands on. Coverage and tier vary from plan to plan and can change each year. That's exactly why checking your own plan matters. Our [Formulary Lookup](/medicare-formulary-lookup.html) lets you see how Skyrizi is treated on a specific plan, and the [Drug Cost Calculator](/medicare-drug-cost-calculator.html) helps you estimate what you'd actually pay across the year.
+Here's the catch that trips a lot of people up on the Part D side: every Part D and Medicare Advantage drug plan has its own **formulary** (its list of covered drugs), and each plan decides which tier a drug lands on. Coverage and tier vary from plan to plan and can change each year. That's exactly why checking your own plan matters. Our [Formulary Lookup](/medicare-formulary-lookup) lets you see how Skyrizi is treated on a specific plan, and the [Drug Cost Calculator](/medicare-drug-cost-calculator) helps you estimate what you'd actually pay across the year.
 
 ## Coverage rules to expect
 
@@ -50,7 +50,7 @@ Even when Skyrizi is covered, getting it approved isn't always automatic. With a
 - **Step therapy.** Some plans ask you to try a preferred, often lower-cost medicine first, and show it didn't work well enough, before they'll cover Skyrizi.
 - **Quantity limits.** Your plan may cover only a set amount per fill or period without an approved exception.
 
-None of these are dead ends — they're just steps, and your doctor's office handles them all the time. If you'd like a plain-English walkthrough, see our guides on [prior authorization](/blog/what-is-prior-authorization.html) and [step therapy](/blog/what-is-step-therapy.html).
+None of these are dead ends — they're just steps, and your doctor's office handles them all the time. If you'd like a plain-English walkthrough, see our guides on [prior authorization](/blog/what-is-prior-authorization) and [step therapy](/blog/what-is-step-therapy).
 
 ## Coverage exceptions and appeals
 
@@ -58,7 +58,7 @@ If Skyrizi isn't on your plan's formulary, or it's on a higher tier than you'd l
 
 ## Alternatives to discuss with your doctor
 
-If cost or coverage rules become a hurdle, the best move is a conversation with your doctor — never a change you make on your own. There are **other biologics** approved for psoriasis, psoriatic arthritis, and Crohn's disease that your doctor might consider, and the right alternative depends on your specific condition. Each works a little differently and may sit on a different tier or have different rules on your plan. You can read more in our guides on [Humira](/blog/does-medicare-cover-humira.html) and [Rinvoq](/blog/does-medicare-cover-rinvoq.html). Your doctor can help decide what fits your health needs best.
+If cost or coverage rules become a hurdle, the best move is a conversation with your doctor — never a change you make on your own. There are **other biologics** approved for psoriasis, psoriatic arthritis, and Crohn's disease that your doctor might consider, and the right alternative depends on your specific condition. Each works a little differently and may sit on a different tier or have different rules on your plan. You can read more in our guides on [Humira](/blog/does-medicare-cover-humira) and [Rinvoq](/blog/does-medicare-cover-rinvoq). Your doctor can help decide what fits your health needs best.
 
 ## Questions to ask your doctor
 
@@ -69,4 +69,4 @@ If cost or coverage rules become a hurdle, the best move is a conversation with 
 
 ## A friendly next step
 
-Skyrizi coverage comes down to two things: how and why you're taking it, and the fine print of your particular plan. If you're not sure whether your costs run through Part B or Part D — or you're shopping for a plan that handles your medications well — I'm happy to walk through it with you, no pressure. You can [reach out anytime](/contact.html) and we'll look at your formulary and costs together.
+Skyrizi coverage comes down to two things: how and why you're taking it, and the fine print of your particular plan. If you're not sure whether your costs run through Part B or Part D — or you're shopping for a plan that handles your medications well — I'm happy to walk through it with you, no pressure. You can [reach out anytime](/contact) and we'll look at your formulary and costs together.

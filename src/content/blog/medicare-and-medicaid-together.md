@@ -21,7 +21,7 @@ faqs:
 
 If you qualify for both Medicare and Medicaid, you might worry about how two big programs are supposed to work together without leaving you stuck in the middle. The good news is that they're built to coordinate — and for most people in this situation, that coordination means paying very little, if anything, out of pocket.
 
-Having both is called being **dual eligible**. If you're still sorting out whether you qualify, our [guide to dual eligibility](/blog/what-is-dual-eligibility.html) walks through the basics. This article is about what actually happens once you have both.
+Having both is called being **dual eligible**. If you're still sorting out whether you qualify, our [guide to dual eligibility](/blog/what-is-dual-eligibility) walks through the basics. This article is about what actually happens once you have both.
 
 ## Medicare pays first, Medicaid pays second
 
@@ -54,7 +54,7 @@ For most full duals, the answer is reassuring: **you pay little to nothing out o
 
 A big piece of that protection comes from the **Qualified Medicare Beneficiary (QMB)** program, which many full duals are enrolled in. QMB pays your Part A and Part B premiums *and* your deductibles, coinsurance, and copays. On top of that, federal rules say providers **may not balance-bill** QMB members for Medicare cost-sharing — meaning a provider can't turn around and ask you to cover that 20% yourself.
 
-If you want to see how the pieces stack up for your own situation, our [Cost Estimator](/medicare-cost-estimator.html) can help you picture what Medicare would charge before Medicaid steps in. And if any of these terms are new, the [Glossary](/medicare-glossary.html) keeps plain-English definitions in one place.
+If you want to see how the pieces stack up for your own situation, our [Cost Estimator](/medicare-cost-estimator) can help you picture what Medicare would charge before Medicaid steps in. And if any of these terms are new, the [Glossary](/medicare-glossary) keeps plain-English definitions in one place.
 
 ## Your prescriptions are covered too
 
@@ -72,4 +72,4 @@ Extra Help dramatically lowers what you pay at the pharmacy, with reduced or $0 
 
 Having both Medicare and Medicaid is genuinely good news — it's one of the most complete forms of coverage available, and it's designed so almost nothing falls through the cracks. The hard part is just knowing what you're entitled to.
 
-If you'd like someone to walk through your specific coverage and make sure you're getting everything you qualify for, [reach out anytime](/contact.html). There's no pressure and no cost to ask — just a clear answer from someone local who does this every day.
+If you'd like someone to walk through your specific coverage and make sure you're getting everything you qualify for, [reach out anytime](/contact). There's no pressure and no cost to ask — just a clear answer from someone local who does this every day.

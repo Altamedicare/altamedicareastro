@@ -51,7 +51,7 @@ Plan G and Plan N are close cousins. Both leave you the Part B deductible and bo
 
 Think of it as a trade. With **Plan G**, you pay a bit more each month and almost never see a bill after the deductible. With **Plan N**, you pay less each month but accept a few small, predictable costs when you actually use care.
 
-To see how those premiums and copays might add up for a typical year, our [Cost Estimator](/medicare-cost-estimator.html) can help you put real numbers next to each option.
+To see how those premiums and copays might add up for a typical year, our [Cost Estimator](/medicare-cost-estimator) can help you put real numbers next to each option.
 
 ## Who Plan N fits best
 
@@ -71,4 +71,4 @@ One thing both Plan G and Plan N have in common: **no built-in drug coverage.** 
 
 The choice between Plan N and Plan G usually comes down to one question: would you rather pay a little more every month, or a little less every month with a few small copays when you use care? Both are solid, predictable plans — there's no wrong answer.
 
-If you'd like a second set of eyes on the math for your own situation, [reach out to Bret](/contact.html) for a no-pressure conversation. A few minutes on the phone can make the trade-offs a lot clearer than a chart ever will.
+If you'd like a second set of eyes on the math for your own situation, [reach out to Bret](/contact) for a no-pressure conversation. A few minutes on the phone can make the trade-offs a lot clearer than a chart ever will.

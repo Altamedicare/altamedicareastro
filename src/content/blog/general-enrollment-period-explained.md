@@ -25,7 +25,7 @@ If you missed your chance to sign up for Medicare and you're not sure what to do
 
 The **General Enrollment Period (GEP)** runs every year from **January 1 through March 31**. It exists for people who missed their **Initial Enrollment Period** — the 7-month window around your 65th birthday — and who don't qualify for a **Special Enrollment Period**.
 
-A Special Enrollment Period is triggered by a qualifying event, most commonly losing active employer coverage. If that's your situation, you'll generally get an **8-month** window to sign up for Part B without a penalty — and that's almost always a better path than the GEP. So before you rely on the General Enrollment Period, it's worth confirming you don't have a better option. The [Timeline Calculator](/medicare-timeline-calculator.html) can help you see which window actually applies to you.
+A Special Enrollment Period is triggered by a qualifying event, most commonly losing active employer coverage. If that's your situation, you'll generally get an **8-month** window to sign up for Part B without a penalty — and that's almost always a better path than the GEP. So before you rely on the General Enrollment Period, it's worth confirming you don't have a better option. The [Timeline Calculator](/medicare-timeline-calculator) can help you see which window actually applies to you.
 
 The GEP is the fallback when nothing else fits. It's there so no one is locked out of Medicare forever, but it's the least forgiving way in.
 
@@ -50,7 +50,7 @@ This is the part I want to be straight with you about. Using the General Enrollm
 - **Part B late penalty.** You pay an extra **10% of the Part B premium for each full 12 months** you could have had Part B but didn't. The 2026 standard Part B premium is **$202.90 a month**, and this surcharge is added on top of it for as long as you have Part B.
 - **Part D late penalty.** If you went without creditable drug coverage, you pay **1% of the $38.99 base premium** for each full month you were uncovered, added to your Part D premium permanently.
 
-These add up quietly over time, which is why the penalties matter as much as the deadline itself. To see roughly what a delay might cost in your situation, the [Late Enrollment Penalty Calculator](/medicare-penalty-calculator.html) can put real numbers to it.
+These add up quietly over time, which is why the penalties matter as much as the deadline itself. To see roughly what a delay might cost in your situation, the [Late Enrollment Penalty Calculator](/medicare-penalty-calculator) can put real numbers to it.
 
 One important reminder: not every kind of coverage protects you from these penalties. To delay Part B without a penalty, you generally need **active employer coverage from an employer with 20 or more employees**. COBRA, retiree plans, and VA benefits do **not** count for this purpose — a common and costly surprise.
 
@@ -69,4 +69,4 @@ So the spring window isn't just about getting in the door — it's a chance to p
 
 Missing your enrollment window is frustrating, but it isn't the end of the road. The General Enrollment Period gives you a clear way back in, and the key is simply understanding what it'll cost and acting early so your coverage gap stays as short as possible.
 
-If you're not certain whether the GEP is your best option — or you want help sorting out the penalties and picking a drug or Advantage plan once you're enrolled — that's exactly what I'm here for. Feel free to [reach out](/contact.html) for a no-pressure conversation, and we'll figure out the smartest path for your situation together.
+If you're not certain whether the GEP is your best option — or you want help sorting out the penalties and picking a drug or Advantage plan once you're enrolled — that's exactly what I'm here for. Feel free to [reach out](/contact) for a no-pressure conversation, and we'll figure out the smartest path for your situation together.

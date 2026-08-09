@@ -43,7 +43,7 @@ That last point matters. Many people lose coverage not because they no longer qu
 - **Keep your address and phone number current** with the state so notices reach you.
 - If the loss was a paperwork issue, you can often reapply and get coverage restored.
 
-If your income and savings are still modest, it's worth checking whether you qualify again — or for a Medicare Savings Program or Extra Help. Our [Eligibility Calculator](/medicare-eligibility-calculator.html) can give you a quick read before you reapply. For a step-by-step walk-through, see [how to apply for Medicaid in Utah](/blog/how-to-apply-for-medicaid-in-utah.html).
+If your income and savings are still modest, it's worth checking whether you qualify again — or for a Medicare Savings Program or Extra Help. Our [Eligibility Calculator](/medicare-eligibility-calculator) can give you a quick read before you reapply. For a step-by-step walk-through, see [how to apply for Medicaid in Utah](/blog/how-to-apply-for-medicaid-in-utah).
 
 ## Your Special Enrollment Period
 
@@ -67,7 +67,7 @@ Because your costs can shift, it helps to see the new picture before bills arriv
 | Part B deductible | Often covered | $283 in 2026 |
 | Coinsurance/copays | Often covered | Typically 20% |
 
-To estimate your own out-of-pocket picture with these costs back in play, our [Cost Estimator](/medicare-cost-estimator.html) can help you plan. Knowing the numbers takes some of the worry out of the change.
+To estimate your own out-of-pocket picture with these costs back in play, our [Cost Estimator](/medicare-cost-estimator) can help you plan. Knowing the numbers takes some of the worry out of the change.
 
 ## If you think it's a mistake — appeal
 
@@ -83,4 +83,4 @@ So you really have three paths, and you can pursue more than one:
 
 Losing Medicaid can feel like the floor shifting under you, and on a tight budget that's a real worry — but the situation is usually more workable than it first appears. Acting quickly is the main thing: open your mail, respond to renewals, and use the windows Medicare gives you.
 
-If you'd like a calm, plain-English hand sorting out your options, [reach out](/contact.html) anytime. There's no pressure and no cost to ask.
+If you'd like a calm, plain-English hand sorting out your options, [reach out](/contact) anytime. There's no pressure and no cost to ask.

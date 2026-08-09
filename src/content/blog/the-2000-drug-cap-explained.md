@@ -57,14 +57,14 @@ If steady monthly payments would be easier on your budget than one big bill, it 
 
 ## Who this helps the most
 
-The $2,000 cap helps everyone with Part D, but it makes the biggest difference for people on expensive brand-name medications. If you take a drug like a blood thinner, a diabetes medication, or another high-cost brand, you may reach the cap fairly early and then pay nothing for the rest of the year. You can read more about one common example in our guide on [whether Medicare covers Eliquis](/blog/does-medicare-cover-eliquis.html).
+The $2,000 cap helps everyone with Part D, but it makes the biggest difference for people on expensive brand-name medications. If you take a drug like a blood thinner, a diabetes medication, or another high-cost brand, you may reach the cap fairly early and then pay nothing for the rest of the year. You can read more about one common example in our guide on [whether Medicare covers Eliquis](/blog/does-medicare-cover-eliquis).
 
 If your prescriptions are inexpensive generics, you might never reach $2,000 in a year, and that is perfectly fine. The cap is a ceiling, not a target. It is there as protection in case your needs change or a new medication is added.
 
-The best way to see where you might land is to run your actual drug list through our [Drug Cost Calculator](/medicare-drug-cost-calculator.html). To get a fuller picture of premiums, deductibles, and overall spending for the year, our [Cost Estimator](/medicare-cost-estimator.html) puts it all in one place.
+The best way to see where you might land is to run your actual drug list through our [Drug Cost Calculator](/medicare-drug-cost-calculator). To get a fuller picture of premiums, deductibles, and overall spending for the year, our [Cost Estimator](/medicare-cost-estimator) puts it all in one place.
 
 ## A quick word of reassurance
 
 Big Medicare changes can sound complicated, but this one is genuinely good news. You now have a firm limit on what your covered drugs can cost you in a year, the confusing donut hole is behind us, and there is a free way to spread payments out if that helps.
 
-If you would like a hand reviewing your plan or checking how the cap affects your specific medications, I am happy to talk it through with no pressure. Just reach out through our [contact page](/contact.html) and we will take it one step at a time.
+If you would like a hand reviewing your plan or checking how the cap affects your specific medications, I am happy to talk it through with no pressure. Just reach out through our [contact page](/contact) and we will take it one step at a time.

@@ -39,7 +39,7 @@ A **formulary** is simply the list of drugs a plan covers. Plans sort those drug
 | Brand tiers | Brand-name drugs like Eliquis | Higher copays or coinsurance |
 | Specialty tier | High-cost specialty drugs | The largest share |
 
-Because Eliquis is a brand-name drug, it most often sits on a brand tier, which means a somewhat higher copay than a generic. The exact dollar amount varies from plan to plan, so two neighbors can pay different prices for the same prescription. That's why it pays to check the specifics before you choose a plan. Our [Formulary Lookup](/medicare-formulary-lookup.html) lets you confirm Eliquis is covered and see which tier it lands on, and the [Drug Cost Calculator](/medicare-drug-cost-calculator.html) helps you estimate your year of out-of-pocket spending.
+Because Eliquis is a brand-name drug, it most often sits on a brand tier, which means a somewhat higher copay than a generic. The exact dollar amount varies from plan to plan, so two neighbors can pay different prices for the same prescription. That's why it pays to check the specifics before you choose a plan. Our [Formulary Lookup](/medicare-formulary-lookup) lets you confirm Eliquis is covered and see which tier it lands on, and the [Drug Cost Calculator](/medicare-drug-cost-calculator) helps you estimate your year of out-of-pocket spending.
 
 ## The 2026 price negotiation
 
@@ -64,4 +64,4 @@ A few quick steps go a long way:
 
 Plans change their formularies and pricing every year, so it's worth a fresh look each fall during open enrollment rather than assuming last year's plan is still the best fit.
 
-If you'd like a second set of eyes, I'm happy to help. You can run the numbers yourself with the tools above or browse more guidance on the [blog](/blog.html), and when you're ready, [reach out to me](/contact.html) for a no-pressure conversation about which plan covers your medications best. No hard sell — just clear answers so you know what you'll pay.
+If you'd like a second set of eyes, I'm happy to help. You can run the numbers yourself with the tools above or browse more guidance on the [blog](/blog), and when you're ready, [reach out to me](/contact) for a no-pressure conversation about which plan covers your medications best. No hard sell — just clear answers so you know what you'll pay.

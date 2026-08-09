@@ -31,7 +31,7 @@ Your first window is the **Initial Enrollment Period (IEP)**, a seven-month stre
 
 This is the cleanest, penalty-free time to sign up for Part A and Part B and to add a plan like Medicare Advantage, a Medigap policy, or a standalone Part D drug plan. Enrolling in the first three months means your coverage is ready the day you turn 65; wait until the back half and your start date can slip by a month or more.
 
-Not sure exactly when your window opens? The [Timeline Calculator](/medicare-timeline-calculator.html) maps your personal dates from your birthday, and the [Eligibility Calculator](/medicare-eligibility-calculator.html) confirms you've got the work credits for premium-free Part A.
+Not sure exactly when your window opens? The [Timeline Calculator](/medicare-timeline-calculator) maps your personal dates from your birthday, and the [Eligibility Calculator](/medicare-eligibility-calculator) confirms you've got the work credits for premium-free Part A.
 
 ## The windows that come back every year
 
@@ -65,10 +65,10 @@ Most Medicare penalties come from missing a window, not from making a wrong choi
 - **Going without creditable drug coverage.** The Part D penalty is **1% of the national base premium ($38.99 in 2026) for each full month** you went without — added to your premium permanently.
 - **Not reviewing during AEP.** Plans change every year; staying on autopilot can quietly raise your costs.
 
-If a deadline is sneaking up, the [Enrollment Countdown](/medicare-enrollment-countdown.html) shows exactly how many days you have left so nothing slips past you.
+If a deadline is sneaking up, the [Enrollment Countdown](/medicare-enrollment-countdown) shows exactly how many days you have left so nothing slips past you.
 
 ## Putting the roadmap together
 
 Here's the timeline at a glance: sign up during your **IEP at 65**, then mark your calendar for **AEP every fall (Oct 15 – Dec 7)** to review your coverage. Keep the **Jan 1 – Mar 31** windows in your back pocket for switching Medicare Advantage plans or catching up if you missed enrolling, and remember that **life events can open an SEP** anytime in between.
 
-If you're staring at these dates and not sure which one applies to you — or you just want a second set of eyes before a deadline — that's exactly what I'm here for. Feel free to [reach out](/contact.html) for a no-pressure call, and we'll make sure your timeline lines up the way it should.
+If you're staring at these dates and not sure which one applies to you — or you just want a second set of eyes before a deadline — that's exactly what I'm here for. Feel free to [reach out](/contact) for a no-pressure call, and we'll make sure your timeline lines up the way it should.

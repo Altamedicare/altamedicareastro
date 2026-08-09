@@ -33,13 +33,13 @@ This is an important one for your wallet: there is **no generic or biosimilar** 
 
 Dupixent is covered under **Medicare Part D**, your prescription drug coverage. You get Part D one of two ways: as a standalone drug plan that pairs with Original Medicare, or built into a Medicare Advantage plan. Original Medicare (Part A and Part B) on its own does not cover a self-injected medicine you fill at the pharmacy, so having some form of Part D is what makes coverage for Dupixent possible.
 
-Every plan keeps its own **formulary** — the list of drugs it covers — and sorts those drugs into **tiers** that set your copay or coinsurance. Because Dupixent is a self-administered biologic with no generic, it's typically placed on a **specialty tier**, which is the plan's tier for higher-cost drugs. The exact amount varies from plan to plan and can change each year, which is why two neighbors can pay different prices for the same prescription. Our [Formulary Lookup](/medicare-formulary-lookup.html) lets you confirm Dupixent is covered and see which tier it lands on, and the [Drug Cost Calculator](/medicare-drug-cost-calculator.html) helps you estimate your year of out-of-pocket spending.
+Every plan keeps its own **formulary** — the list of drugs it covers — and sorts those drugs into **tiers** that set your copay or coinsurance. Because Dupixent is a self-administered biologic with no generic, it's typically placed on a **specialty tier**, which is the plan's tier for higher-cost drugs. The exact amount varies from plan to plan and can change each year, which is why two neighbors can pay different prices for the same prescription. Our [Formulary Lookup](/medicare-formulary-lookup) lets you confirm Dupixent is covered and see which tier it lands on, and the [Drug Cost Calculator](/medicare-drug-cost-calculator) helps you estimate your year of out-of-pocket spending.
 
 ## The $2,000 cap helps with specialty costs
 
 Here's the part that matters most for a specialty drug like this. In 2026, Part D has a **$2,000 out-of-pocket maximum** for the year, and the old "donut hole" coverage gap is gone. Once your out-of-pocket spending on covered drugs reaches $2,000, you pay nothing more for your covered prescriptions for the rest of the calendar year.
 
-For a medicine that can carry a high coinsurance early on, that ceiling is real protection — it caps what a specialty drug can cost you over a year and makes your spending predictable. You can read more in [the $2,000 drug cap explained](/blog/the-2000-drug-cap-explained.html). There's also a free option, the Medicare Prescription Payment Plan, that lets you spread that $2,000 into smoother monthly payments across the year instead of facing a big bill all at once at the pharmacy.
+For a medicine that can carry a high coinsurance early on, that ceiling is real protection — it caps what a specialty drug can cost you over a year and makes your spending predictable. You can read more in [the $2,000 drug cap explained](/blog/the-2000-drug-cap-explained). There's also a free option, the Medicare Prescription Payment Plan, that lets you spread that $2,000 into smoother monthly payments across the year instead of facing a big bill all at once at the pharmacy.
 
 ## Coverage rules to expect
 
@@ -53,7 +53,7 @@ If a plan doesn't cover Dupixent, places it on a high tier, or denies a prior au
 
 ## Alternatives to discuss with your doctor
 
-If cost or coverage is a concern, that's a conversation worth having with your physician. There are other biologics that may be appropriate for your specific condition, and what fits eczema may differ from what fits asthma. I'm not here to suggest any medical change — only to point out that you and your doctor have choices to weigh. For another self-injected biologic option, you might also look at how coverage works in our guide on whether [Medicare covers Rinvoq](/blog/does-medicare-cover-rinvoq.html). The right medicine is a medical decision, not an insurance one.
+If cost or coverage is a concern, that's a conversation worth having with your physician. There are other biologics that may be appropriate for your specific condition, and what fits eczema may differ from what fits asthma. I'm not here to suggest any medical change — only to point out that you and your doctor have choices to weigh. For another self-injected biologic option, you might also look at how coverage works in our guide on whether [Medicare covers Rinvoq](/blog/does-medicare-cover-rinvoq). The right medicine is a medical decision, not an insurance one.
 
 ## Questions to ask your doctor
 
@@ -62,4 +62,4 @@ If cost or coverage is a concern, that's a conversation worth having with your p
 - Are there alternatives that might sit on a lower tier?
 - Is there anything in my health history that affects which treatment I should use?
 
-If you'd like a second set of eyes on whether your plan covers Dupixent well — or which plan would — I'm glad to help. You can run the numbers yourself with the tools above, and when you're ready, [reach out to me](/contact.html) for a no-pressure conversation. No hard sell, just clear answers so you know what you'll pay.
+If you'd like a second set of eyes on whether your plan covers Dupixent well — or which plan would — I'm glad to help. You can run the numbers yourself with the tools above, and when you're ready, [reach out to me](/contact) for a no-pressure conversation. No hard sell, just clear answers so you know what you'll pay.

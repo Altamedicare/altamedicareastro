@@ -47,7 +47,7 @@ This is where the categories really differ — and where the savings get largest
 - The **Part A hospital deductible** ($1,736 per benefit period)
 - The **20% coinsurance** and copays you'd otherwise owe under Original Medicare
 
-That last point matters a lot, because Original Medicare alone has **no out-of-pocket maximum**. A long hospital stay or a run of specialist visits could otherwise pile up with no ceiling. For QMB members there's an extra safeguard: providers **may not balance-bill** you for Medicare cost-sharing. If you're billed anyway, you can show your QMB notice. You can read more in our guide to [the QMB program](/blog/what-is-the-qmb-program.html).
+That last point matters a lot, because Original Medicare alone has **no out-of-pocket maximum**. A long hospital stay or a run of specialist visits could otherwise pile up with no ceiling. For QMB members there's an extra safeguard: providers **may not balance-bill** you for Medicare cost-sharing. If you're billed anyway, you can show your QMB notice. You can read more in our guide to [the QMB program](/blog/what-is-the-qmb-program).
 
 **SLMB and QI** are narrower. They pay your Part B premium, but they don't cover your deductibles, coinsurance, or copays. You'd still owe those out of pocket.
 
@@ -68,12 +68,12 @@ So instead of a deductible and a long stretch of cost-sharing, your prescription
 
 You may have heard about **IRMAA**, an income surcharge that raises the Part B and Part D premiums for higher earners. For dual eligible members, this almost never comes up. IRMAA only kicks in above **$109,000** for a single person (based on income from two years prior), and duals have limited income well below that line. In short, if you're a dual, IRMAA generally doesn't apply to you.
 
-If your income is higher and you're *not* a dual, it's a different story — our [IRMAA Calculator](/medicare-irmaa-calculator.html) can show you what those surcharges would look like.
+If your income is higher and you're *not* a dual, it's a different story — our [IRMAA Calculator](/medicare-irmaa-calculator) can show you what those surcharges would look like.
 
 ## So what do you actually pay?
 
 For full duals and QMB members, the realistic answer is that your out-of-pocket Medicare cost is often **near $0** — premiums covered, deductibles covered, copays covered, and drugs down to a few dollars each. For SLMB and QI, you save the Part B premium but still handle your own cost-sharing.
 
-These are 2026 figures, and they update periodically. **Utah Medicaid makes the final call** on which program you qualify for, so it's always worth checking the current numbers and applying through the state. To see how your specific costs might shake out, try the [Medicare Cost Estimator](/medicare-cost-estimator.html).
+These are 2026 figures, and they update periodically. **Utah Medicaid makes the final call** on which program you qualify for, so it's always worth checking the current numbers and applying through the state. To see how your specific costs might shake out, try the [Medicare Cost Estimator](/medicare-cost-estimator).
 
-If you're not sure where you land — or you think you should be getting more help than you are — I'm happy to look at it with you. You can [reach out anytime](/contact.html) for a calm, no-pressure conversation about your situation.
+If you're not sure where you land — or you think you should be getting more help than you are — I'm happy to look at it with you. You can [reach out anytime](/contact) for a calm, no-pressure conversation about your situation.

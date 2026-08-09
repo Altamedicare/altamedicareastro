@@ -43,7 +43,7 @@ Right now, Farxiga is a **brand-only** medication; there isn't a generic dapagli
 
 On most Part D plans, Farxiga lands on a **brand-name drug tier** because there's no generic version. A higher tier usually means a higher copay than you'd pay for an everyday generic.
 
-Here's the important part: which tier Farxiga sits on, and what it costs, **varies by plan and changes each year**. Two people on the same medication can pay very different amounts depending on the plan they chose. The way to know your situation is to check the plan's drug list — called the **formulary**. You can do that quickly with the [Formulary Lookup](/medicare-formulary-lookup.html) tool to see whether Farxiga is covered, what tier it's on, and whether any restrictions apply.
+Here's the important part: which tier Farxiga sits on, and what it costs, **varies by plan and changes each year**. Two people on the same medication can pay very different amounts depending on the plan they chose. The way to know your situation is to check the plan's drug list — called the **formulary**. You can do that quickly with the [Formulary Lookup](/medicare-formulary-lookup) tool to see whether Farxiga is covered, what tier it's on, and whether any restrictions apply.
 
 ## Coverage rules to expect
 
@@ -66,11 +66,11 @@ First, Farxiga is one of the **first 10 drugs** Medicare negotiated a price on d
 
 Second — and for many people this matters even more — every Part D plan now caps your out-of-pocket prescription costs at **$2,000 for the year**. Once your spending hits $2,000, you pay nothing more for covered drugs for the rest of the calendar year. The old "donut hole" gap is gone. If Farxiga is one of several prescriptions you fill regularly, that cap puts a firm ceiling on a cost that used to feel open-ended.
 
-To see what Farxiga might actually cost you, run it — along with your other medications — through the [Drug Cost Calculator](/medicare-drug-cost-calculator.html) to estimate your spending across the year under a given plan. If you want the bigger picture, the [Medicare Cost Estimator](/medicare-cost-estimator.html) can help you weigh premiums and drug costs together.
+To see what Farxiga might actually cost you, run it — along with your other medications — through the [Drug Cost Calculator](/medicare-drug-cost-calculator) to estimate your spending across the year under a given plan. If you want the bigger picture, the [Medicare Cost Estimator](/medicare-cost-estimator) can help you weigh premiums and drug costs together.
 
 ## Alternatives to discuss with your doctor
 
-If cost or a coverage rule becomes a roadblock, there may be other options in the same drug family worth raising with your physician. Another SGLT2 inhibitor, **empagliflozin (Jardiance)**, treats similar conditions — you can read more in our guide on [whether Medicare covers Jardiance](/blog/does-medicare-cover-jardiance.html). I'm an insurance agent, not a doctor, so any switch is a medical decision: bring it to your physician, who knows your health history.
+If cost or a coverage rule becomes a roadblock, there may be other options in the same drug family worth raising with your physician. Another SGLT2 inhibitor, **empagliflozin (Jardiance)**, treats similar conditions — you can read more in our guide on [whether Medicare covers Jardiance](/blog/does-medicare-cover-jardiance). I'm an insurance agent, not a doctor, so any switch is a medical decision: bring it to your physician, who knows your health history.
 
 ## Questions to ask your doctor
 
@@ -78,4 +78,4 @@ If cost or a coverage rule becomes a roadblock, there may be other options in th
 - If my plan requires step therapy, what would I need to try first?
 - Can you help with a prior authorization or coverage exception if my plan asks for one?
 
-If you'd like help comparing plans with Farxiga in mind, or you're just not sure your current plan is the best fit, that's exactly what I do for folks here in Utah. Reach out through the [contact page](/contact.html) and we'll walk through it together — no pressure, no cost, just a clear answer.
+If you'd like help comparing plans with Farxiga in mind, or you're just not sure your current plan is the best fit, that's exactly what I do for folks here in Utah. Reach out through the [contact page](/contact) and we'll walk through it together — no pressure, no cost, just a clear answer.

@@ -54,7 +54,7 @@ The **Income-Related Monthly Adjustment Amount (IRMAA)** raises your Part B (and
 
 A key detail people miss: **IRMAA looks back two years.** Your 2026 premium is based on the income you reported on your 2024 tax return. If your income has dropped since then because of a life-changing event — retirement, the death of a spouse, divorce — you can ask Social Security to use more recent income by filing **Form SSA-44**.
 
-Want to see your own number in seconds? Run the [IRMAA Calculator](/medicare-irmaa-calculator.html) with your income and filing status.
+Want to see your own number in seconds? Run the [IRMAA Calculator](/medicare-irmaa-calculator) with your income and filing status.
 
 ## How you actually pay it
 
@@ -66,6 +66,6 @@ A few practical moves keep Part B from catching you off guard:
 
 - **Budget for the full year.** Between the premium and the deductible, plan on roughly $2,718 in baseline Part B costs for 2026 before any coinsurance.
 - **Watch your income two years out.** A large one-time event — selling a home, a big Roth conversion, capital gains — can push you into an IRMAA bracket two years later.
-- **Estimate your total picture.** Premiums are only part of the story. The [Medicare Cost Estimator](/medicare-cost-estimator.html) helps you add up premiums, deductibles, and expected out-of-pocket costs so there are no surprises.
+- **Estimate your total picture.** Premiums are only part of the story. The [Medicare Cost Estimator](/medicare-cost-estimator) helps you add up premiums, deductibles, and expected out-of-pocket costs so there are no surprises.
 
 The Part B premium changes every year, but the planning never really does: know your number, watch your income, and pair Part B with coverage that caps your spending. If you'd like a second set of eyes on how 2026 affects you specifically, that's exactly the kind of question a quick call can answer.

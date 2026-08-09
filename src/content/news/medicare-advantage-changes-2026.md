@@ -18,6 +18,6 @@ Every year, Medicare Advantage plans send out an **Annual Notice of Change (ANOC
 
 ## What to do about it
 
-Read your ANOC, then check three things: are your **doctors still in network**, are your **drugs still covered affordably**, and did your **out-of-pocket costs** change? The [Annual Enrollment Period](/turning-65.html) (October 15 – December 7) is your window to switch for the coming year.
+Read your ANOC, then check three things: are your **doctors still in network**, are your **drugs still covered affordably**, and did your **out-of-pocket costs** change? The [Annual Enrollment Period](/turning-65) (October 15 – December 7) is your window to switch for the coming year.
 
-Not sure if your plan still fits? We do **free annual reviews** — compare your options on the [Medicare Advantage](/medicare-advantage.html) page, run the numbers with our [Cost Estimator](/medicare-cost-estimator.html), or [book a quick call](/contact.html) and we'll review it with you.
+Not sure if your plan still fits? We do **free annual reviews** — compare your options on the [Medicare Advantage](/medicare-advantage) page, run the numbers with our [Cost Estimator](/medicare-cost-estimator), or [book a quick call](/contact) and we'll review it with you.

@@ -25,7 +25,7 @@ Joining a D-SNP doesn't have to be complicated. If you have both Medicare and Me
 
 A D-SNP, or Dual Eligible Special Needs Plan, is a Medicare Advantage plan built only for people who have **both Medicare and Medicaid** at the same time. So the very first step is making sure you actually have both.
 
-You can read a fuller overview in [D-SNP plans explained](/blog/d-snp-plans-explained.html), but the short version is this: you need to be enrolled in Medicare (Part A and Part B) and also qualify for Medicaid through the state. If you're not certain where you stand, our [Eligibility Calculator](/medicare-eligibility-calculator.html) can help you get a quick read on your situation before you go further.
+You can read a fuller overview in [D-SNP plans explained](/blog/d-snp-plans-explained), but the short version is this: you need to be enrolled in Medicare (Part A and Part B) and also qualify for Medicaid through the state. If you're not certain where you stand, our [Eligibility Calculator](/medicare-eligibility-calculator) can help you get a quick read on your situation before you go further.
 
 If it turns out you don't yet have Medicaid, that's worth sorting out first, since it's the doorway to a D-SNP. A licensed agent can point you toward applying through Utah's Medicaid agency.
 
@@ -50,7 +50,7 @@ Not every D-SNP is offered in every area, so the next step is seeing which ones 
 | Extra benefits | Dental, vision, hearing, an OTC allowance, and transportation can vary |
 | Care coordination | Some plans assign a coordinator to help manage your care |
 
-If you're not sure which direction fits you best, our [Medicare Plan Quiz](/medicare-quiz.html) is a gentle, no-pressure way to start narrowing things down.
+If you're not sure which direction fits you best, our [Medicare Plan Quiz](/medicare-quiz) is a gentle, no-pressure way to start narrowing things down.
 
 ## Step 4: Enroll
 
@@ -68,4 +68,4 @@ That means if a plan isn't meeting your needs — maybe a medication dropped off
 
 Enrolling in a D-SNP comes down to confirming you have both programs, checking your doctors and drugs, comparing your options, and signing up — with the comfort of knowing you can adjust later if you need to.
 
-If any of that feels like a lot to take on alone, that's completely understandable, and you don't have to. A short, plain-English conversation can clear up a great deal. When you're ready, [reach out](/contact.html) for a no-pressure look at the D-SNPs available to you.
+If any of that feels like a lot to take on alone, that's completely understandable, and you don't have to. A short, plain-English conversation can clear up a great deal. When you're ready, [reach out](/contact) for a no-pressure look at the D-SNPs available to you.

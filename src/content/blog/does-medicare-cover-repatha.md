@@ -33,13 +33,13 @@ Repatha is a brand-name medication, and right now there's no generic version of 
 
 Repatha is covered under **Medicare Part D**, your prescription drug coverage. You get Part D one of two ways: as a standalone drug plan that pairs with Original Medicare, or built into a Medicare Advantage plan. Original Medicare (Part A and Part B) on its own doesn't cover a self-injected drug you fill at the pharmacy, so having some form of Part D is what makes coverage for Repatha possible.
 
-Every plan keeps its own **formulary** — the list of drugs it covers — and sorts those drugs into **tiers** that set your copay or coinsurance. Repatha is often placed on a brand or specialty tier. The exact dollar amount varies from plan to plan and can change each year, which is why two neighbors can pay different prices for the same prescription. Our [Formulary Lookup](/medicare-formulary-lookup.html) lets you confirm Repatha is covered and see which tier it lands on, and the [Drug Cost Calculator](/medicare-drug-cost-calculator.html) helps you estimate your out-of-pocket spending for the year.
+Every plan keeps its own **formulary** — the list of drugs it covers — and sorts those drugs into **tiers** that set your copay or coinsurance. Repatha is often placed on a brand or specialty tier. The exact dollar amount varies from plan to plan and can change each year, which is why two neighbors can pay different prices for the same prescription. Our [Formulary Lookup](/medicare-formulary-lookup) lets you confirm Repatha is covered and see which tier it lands on, and the [Drug Cost Calculator](/medicare-drug-cost-calculator) helps you estimate your out-of-pocket spending for the year.
 
 ## Coverage rules to expect
 
 Because Repatha is a brand-name drug with no generic, plans commonly add utilization rules. The two you're most likely to run into are:
 
-- **Step therapy.** Plans often require you to try a preferred, lower-cost medicine first — usually statins, and sometimes other cholesterol medicines — before they'll cover Repatha. You can read more about how this works in [what is step therapy](/blog/what-is-step-therapy.html).
+- **Step therapy.** Plans often require you to try a preferred, lower-cost medicine first — usually statins, and sometimes other cholesterol medicines — before they'll cover Repatha. You can read more about how this works in [what is step therapy](/blog/what-is-step-therapy).
 - **Prior authorization.** The plan needs to approve the drug before it's covered, and your doctor's office submits the medical documentation to make that happen.
 
 None of this means you can't get Repatha. It usually means there's a paperwork step handled between your prescriber and the plan. If you've already tried statins and they didn't work for you or you couldn't tolerate them, that history is exactly what your doctor documents to satisfy these rules. Checking a plan's requirements ahead of time saves surprises at the pharmacy.
@@ -63,4 +63,4 @@ If cost or coverage is a concern, that's a conversation worth having with your p
 - If my plan requires prior authorization, can your office help submit it?
 - Are there alternatives that might sit on a lower, cheaper tier?
 
-If you'd like a second set of eyes on whether your plan covers Repatha well — or which plan would — I'm glad to help. You can run the numbers yourself with the tools above, and when you're ready, [reach out to me](/contact.html) for a no-pressure conversation. No hard sell, just clear answers so you know what you'll pay.
+If you'd like a second set of eyes on whether your plan covers Repatha well — or which plan would — I'm glad to help. You can run the numbers yourself with the tools above, and when you're ready, [reach out to me](/contact) for a no-pressure conversation. No hard sell, just clear answers so you know what you'll pay.

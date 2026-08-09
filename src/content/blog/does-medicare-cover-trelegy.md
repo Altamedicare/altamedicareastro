@@ -25,7 +25,7 @@ If you or someone you care for uses Trelegy to breathe easier, you've probably w
 
 Trelegy Ellipta is a **once-daily maintenance inhaler** that combines three medicines in one device — fluticasone furoate, umeclidinium, and vilanterol. It's used for **COPD** (chronic obstructive pulmonary disease) and, in some cases, **asthma**.
 
-One important distinction: Trelegy is a **maintenance inhaler, not a rescue inhaler**. It's meant to be used every day to keep your airways open over the long run — not for sudden flare-ups when you need quick relief. (For a broader look at how Medicare handles breathing medications, see our guide on [whether Medicare covers inhalers](/blog/does-medicare-cover-inhalers.html).)
+One important distinction: Trelegy is a **maintenance inhaler, not a rescue inhaler**. It's meant to be used every day to keep your airways open over the long run — not for sudden flare-ups when you need quick relief. (For a broader look at how Medicare handles breathing medications, see our guide on [whether Medicare covers inhalers](/blog/does-medicare-cover-inhalers).)
 
 ## Brand vs. generic
 
@@ -35,14 +35,14 @@ Right now, there is **no generic version of Trelegy** — it's brand-only. That 
 
 Because Trelegy is a **self-administered inhaler** — you use it yourself at home, not in a clinic — it falls under **Medicare Part D**, the part of Medicare that handles prescription drugs. You get Part D either through a standalone drug plan that pairs with Original Medicare, or built into a Medicare Advantage plan.
 
-Every Part D plan has its own **formulary** (its list of covered drugs) with tiers, and both coverage and tier can change from plan to plan and year to year. That's why two people on the very same inhaler can pay very different amounts. The simplest way to know where you stand is to check the drug list for any plan you're considering. You can do that with the [Formulary Lookup](/medicare-formulary-lookup.html) tool to see whether Trelegy is covered, what tier it's on, and whether any restrictions apply.
+Every Part D plan has its own **formulary** (its list of covered drugs) with tiers, and both coverage and tier can change from plan to plan and year to year. That's why two people on the very same inhaler can pay very different amounts. The simplest way to know where you stand is to check the drug list for any plan you're considering. You can do that with the [Formulary Lookup](/medicare-formulary-lookup) tool to see whether Trelegy is covered, what tier it's on, and whether any restrictions apply.
 
 ## Coverage rules to expect
 
 With a brand-only inhaler like Trelegy, a few utilization rules are common. They don't mean the drug isn't covered — they're hoops the plan may ask you to clear first:
 
 - **Prior authorization.** Your plan may need your doctor to submit documentation confirming Trelegy is appropriate for your condition before it's covered.
-- **Step therapy.** Some plans ask you to try one or more other inhalers first, and will only cover Trelegy if those don't work well enough for you. We explain this in more detail in [what step therapy is](/blog/what-is-step-therapy.html).
+- **Step therapy.** Some plans ask you to try one or more other inhalers first, and will only cover Trelegy if those don't work well enough for you. We explain this in more detail in [what step therapy is](/blog/what-is-step-therapy).
 - **Quantity limits.** A plan may cover only a set amount per fill or period without an approved exception.
 
 Which of these apply depends entirely on the plan, so it's worth checking rather than assuming.
@@ -72,6 +72,6 @@ When you next talk with your prescriber, these are useful to raise:
 
 ## How to see your real cost
 
-The best way to stop guessing is to look at your own situation. Run Trelegy — along with your other medications — through the [Drug Cost Calculator](/medicare-drug-cost-calculator.html) to estimate what you'd pay across the year under a given plan, and pair it with the [Formulary Lookup](/medicare-formulary-lookup.html) to confirm coverage and tier.
+The best way to stop guessing is to look at your own situation. Run Trelegy — along with your other medications — through the [Drug Cost Calculator](/medicare-drug-cost-calculator) to estimate what you'd pay across the year under a given plan, and pair it with the [Formulary Lookup](/medicare-formulary-lookup) to confirm coverage and tier.
 
-If you'd like help comparing plans with Trelegy in mind, that's exactly what I do for folks here in Utah. Reach out through the [contact page](/contact.html) and we'll walk through it together — no pressure, no cost, just a clear answer.
+If you'd like help comparing plans with Trelegy in mind, that's exactly what I do for folks here in Utah. Reach out through the [contact page](/contact) and we'll walk through it together — no pressure, no cost, just a clear answer.

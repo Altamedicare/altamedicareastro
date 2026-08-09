@@ -25,7 +25,7 @@ If your Medicare costs feel heavier than your budget can carry, a few numbers ma
 
 Medicare is the same for everyone, but the help that lowers your Medicare costs is means-tested. That means two figures gate the door: your **monthly income** and your **countable resources** (money in the bank and most investments, but generally not your home or car).
 
-If you land under both limits, you may qualify for a **Medicare Savings Program (MSP)** that pays your Part B premium — and sometimes your Part A premium, deductibles, and copays. You may also qualify for **Extra Help**, which lowers your Part D drug costs. To see how those savings stack up against your current bills, the [Cost Estimator](/medicare-cost-estimator.html) is a good place to start.
+If you land under both limits, you may qualify for a **Medicare Savings Program (MSP)** that pays your Part B premium — and sometimes your Part A premium, deductibles, and copays. You may also qualify for **Extra Help**, which lowers your Part D drug costs. To see how those savings stack up against your current bills, the [Cost Estimator](/medicare-cost-estimator) is a good place to start.
 
 ## The 2026 Medicare Savings Program limits
 
@@ -43,13 +43,13 @@ QMB is the most generous — it even protects you from being balance-billed for 
 
 ## Extra Help uses higher limits
 
-Extra Help (also called the Low-Income Subsidy) works on its own scale, and the resource limits are more generous: **$16,590 for a single person and $33,100 for a married couple** in 2026. So even if your savings put you just over an MSP limit, you might still qualify for Extra Help and lower drug costs. To check where you might land across these programs, the [Eligibility Calculator](/medicare-eligibility-calculator.html) can give you a quick read.
+Extra Help (also called the Low-Income Subsidy) works on its own scale, and the resource limits are more generous: **$16,590 for a single person and $33,100 for a married couple** in 2026. So even if your savings put you just over an MSP limit, you might still qualify for Extra Help and lower drug costs. To check where you might land across these programs, the [Eligibility Calculator](/medicare-eligibility-calculator) can give you a quick read.
 
 ## These are baselines — Utah makes the final call
 
 Here's the part that matters most: the numbers above are **2026 federal baselines**. They update periodically, and **Utah Medicaid makes the final eligibility determination**. When Utah runs your application, it may **disregard some of your income** — meaning the figure it counts can be lower than your full paycheck or benefit.
 
-Because of that, a hard line on paper isn't really a hard line in practice. If you're a little over a limit, you should still apply. Applying is free, and the worst outcome is a "no" — while many people who assumed they wouldn't qualify end up getting help. For a step-by-step walk-through of the paperwork, see [how to apply for Medicaid in Utah](/blog/how-to-apply-for-medicaid-in-utah.html).
+Because of that, a hard line on paper isn't really a hard line in practice. If you're a little over a limit, you should still apply. Applying is free, and the worst outcome is a "no" — while many people who assumed they wouldn't qualify end up getting help. For a step-by-step walk-through of the paperwork, see [how to apply for Medicaid in Utah](/blog/how-to-apply-for-medicaid-in-utah).
 
 ## A few things worth knowing
 
@@ -57,4 +57,4 @@ Because of that, a hard line on paper isn't really a hard line in practice. If y
 - **Income includes more than wages.** Social Security, pensions, and similar payments count, but Utah may set part of it aside.
 - **Married vs. single matters.** The limits are higher for couples, so check the column that fits your household.
 
-If you're not sure which side of these limits you fall on, that's normal — the rules are genuinely confusing. You're welcome to [reach out](/contact.html) and talk it through, with no pressure either way. Sometimes a five-minute conversation is all it takes to find out there's help you didn't know was waiting.
+If you're not sure which side of these limits you fall on, that's normal — the rules are genuinely confusing. You're welcome to [reach out](/contact) and talk it through, with no pressure either way. Sometimes a five-minute conversation is all it takes to find out there's help you didn't know was waiting.

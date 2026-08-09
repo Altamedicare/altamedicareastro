@@ -27,7 +27,7 @@ A **Special Enrollment Period (SEP)** is an extra window to enroll in or change 
 
 The best part is that an SEP usually lets you make a change **without a late penalty**, as long as you act within the window. That's a real advantage, because missing your normal sign-up window can otherwise leave you waiting for the General Enrollment Period (January 1 – March 31) and paying a Part B penalty that sticks around for as long as you have Part B.
 
-Not sure whether an event in your life counts? The [Eligibility Calculator](/medicare-eligibility-calculator.html) is a quick way to see where you stand and what you may qualify for.
+Not sure whether an event in your life counts? The [Eligibility Calculator](/medicare-eligibility-calculator) is a quick way to see where you stand and what you may qualify for.
 
 ## The big one: losing employer coverage
 
@@ -35,7 +35,7 @@ By far the most common SEP is the one for people who keep working past 65 and st
 
 That 8-month clock generally starts the month after your employment ends or the month after the group coverage ends, whichever comes first. Here's the part that trips people up: **COBRA, retiree plans, and VA benefits do not count** as active employer coverage for this purpose. So if you leave a job and switch to COBRA, your 8-month window is already ticking even though you still have health insurance. Waiting until COBRA runs out is one of the most common — and most expensive — Medicare mistakes I see.
 
-If you're weighing when to drop a work plan and pick up Part B, the [Timeline Calculator](/medicare-timeline-calculator.html) can map out your dates so the window doesn't slip past you.
+If you're weighing when to drop a work plan and pick up Part B, the [Timeline Calculator](/medicare-timeline-calculator) can map out your dates so the window doesn't slip past you.
 
 ## Other events that open a window
 
@@ -65,4 +65,4 @@ Because the rules differ from one situation to the next, the safest move is to t
 
 Special Enrollment Periods are one of the more forgiving corners of Medicare — but only if you use them before they close. The hard part is usually just knowing that your particular life event counts and how long you have to act.
 
-If something has changed for you — a retirement, a move, a coverage loss, a new qualification for help — that's a perfect time to [reach out](/contact.html). We can look at your situation together, figure out which window applies, and make sure you get enrolled in time and penalty-free. No pressure, just a clear answer.
+If something has changed for you — a retirement, a move, a coverage loss, a new qualification for help — that's a perfect time to [reach out](/contact). We can look at your situation together, figure out which window applies, and make sure you get enrolled in time and penalty-free. No pressure, just a clear answer.

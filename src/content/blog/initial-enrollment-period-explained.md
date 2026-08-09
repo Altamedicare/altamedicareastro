@@ -31,7 +31,7 @@ Your **Initial Enrollment Period (IEP)** is built around your 65th birthday, and
 
 So if you turn 65 in June, your IEP runs from March 1 through September 30. This window is the same for almost everyone, and it's the easiest, cleanest time to get on Medicare — no penalties, no extra hoops.
 
-If you're not sure exactly when your window opens, the [Timeline Calculator](/medicare-timeline-calculator.html) maps out your personal dates based on your birthday, and the [Enrollment Countdown](/medicare-enrollment-countdown.html) shows how many days you have left so nothing slips by.
+If you're not sure exactly when your window opens, the [Timeline Calculator](/medicare-timeline-calculator) maps out your personal dates based on your birthday, and the [Enrollment Countdown](/medicare-enrollment-countdown) shows how many days you have left so nothing slips by.
 
 ## What you can sign up for
 
@@ -41,7 +41,7 @@ Your IEP isn't just for one thing — it's your chance to put your whole Medicar
 - **Part B (medical insurance).** This covers doctor visits, outpatient care, and equipment. The 2026 standard premium is **$202.90 a month** with a **$283 annual deductible**.
 - **A way to round out coverage.** You can add a **Medicare Advantage plan** (an all-in-one option from a private insurer), a **Medigap policy** to fill Original Medicare's gaps, and a **Part D drug plan** for your prescriptions.
 
-Want to confirm you're even eligible yet, or check your Part A work credits? The [Eligibility Calculator](/medicare-eligibility-calculator.html) walks you through it in a couple of minutes.
+Want to confirm you're even eligible yet, or check your Part A work credits? The [Eligibility Calculator](/medicare-eligibility-calculator) walks you through it in a couple of minutes.
 
 ## When your coverage actually starts
 
@@ -69,6 +69,6 @@ If you're **still working at 65** and have active coverage from an employer with
 
 ## A simple plan
 
-For most people turning 65, the smart move is to mark the start of your IEP, enroll in the first three months, and decide on a plan to go with Original Medicare before your birthday rolls around. Run your dates through the [Timeline Calculator](/medicare-timeline-calculator.html), confirm your eligibility, and you'll be set.
+For most people turning 65, the smart move is to mark the start of your IEP, enroll in the first three months, and decide on a plan to go with Original Medicare before your birthday rolls around. Run your dates through the [Timeline Calculator](/medicare-timeline-calculator), confirm your eligibility, and you'll be set.
 
-If any of this feels fuzzy — especially the "still working" or "which plan" parts — that's exactly what I'm here for. Feel free to [reach out](/contact.html) for a no-pressure call, and we'll make sure your start date and your coverage line up the way they should.
+If any of this feels fuzzy — especially the "still working" or "which plan" parts — that's exactly what I'm here for. Feel free to [reach out](/contact) for a no-pressure call, and we'll make sure your start date and your coverage line up the way they should.

@@ -40,9 +40,9 @@ Insulin is covered in one of two ways, depending on how you use it:
 - **Part D** covers most insulin — the kind you inject yourself with a pen or syringe. This is your standalone Part D drug plan or a Medicare Advantage plan that includes drug coverage. Under the Inflation Reduction Act, a covered one-month supply is capped at **no more than $35**, and the **Part D deductible doesn't apply** to insulin. So you don't have to meet a deductible first.
 - **Part B** covers insulin used in a **traditional, durable insulin pump**, because the pump is considered durable medical equipment. The **$35 monthly cap applies here too**.
 
-Each Part D and Medicare Advantage plan has its own **formulary** (covered-drug list), and different insulins appear on different formularies. So while *insulin* is covered, your *specific* insulin may be on one plan's list and not another's. That's why it's worth using a [Formulary Lookup](/medicare-formulary-lookup.html) to confirm your exact insulin is covered before you choose a plan. You can also estimate your year of drug costs with the [Drug Cost Calculator](/medicare-drug-cost-calculator.html).
+Each Part D and Medicare Advantage plan has its own **formulary** (covered-drug list), and different insulins appear on different formularies. So while *insulin* is covered, your *specific* insulin may be on one plan's list and not another's. That's why it's worth using a [Formulary Lookup](/medicare-formulary-lookup) to confirm your exact insulin is covered before you choose a plan. You can also estimate your year of drug costs with the [Drug Cost Calculator](/medicare-drug-cost-calculator).
 
-If you want to read more about how the cap works, see our guide to the [$35 insulin cap](/blog/medicare-35-dollar-insulin-cap.html).
+If you want to read more about how the cap works, see our guide to the [$35 insulin cap](/blog/medicare-35-dollar-insulin-cap).
 
 ## Coverage rules to expect
 
@@ -63,7 +63,7 @@ There are several insulins and delivery methods, and the right one is a medical 
 - A **follow-on or biosimilar insulin** may be on a lower tier on your plan.
 - The **delivery method** (pen, syringe, or a durable pump under Part B) affects which part of Medicare pays.
 
-Bring these up with your doctor, who can tell you what's medically appropriate for you. If you also take other diabetes medications, you may find our articles on [Ozempic](/blog/does-medicare-cover-ozempic.html) helpful for understanding how those are covered.
+Bring these up with your doctor, who can tell you what's medically appropriate for you. If you also take other diabetes medications, you may find our articles on [Ozempic](/blog/does-medicare-cover-ozempic) helpful for understanding how those are covered.
 
 ## Questions to ask your doctor
 
@@ -72,4 +72,4 @@ Bring these up with your doctor, who can tell you what's medically appropriate f
 - How many units or pens do I use in a typical month? (This helps me check quantity limits.)
 - Are there documentation needs if my plan asks for prior authorization?
 
-The bottom line: Medicare covers insulin, and your covered monthly cost is capped at $35. If you'd like help confirming your specific insulin is covered or comparing plans before you enroll, I'm glad to walk through it with you — no pressure. Reach out any time through our [contact page](/contact.html), and we'll make sure your coverage fits the insulin you actually take.
+The bottom line: Medicare covers insulin, and your covered monthly cost is capped at $35. If you'd like help confirming your specific insulin is covered or comparing plans before you enroll, I'm glad to walk through it with you — no pressure. Reach out any time through our [contact page](/contact), and we'll make sure your coverage fits the insulin you actually take.

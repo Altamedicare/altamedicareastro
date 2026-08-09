@@ -48,8 +48,8 @@ Every Part D plan has its own **formulary** — its list of covered drugs, sorte
 
 Even though Rinvoq is widely covered, getting it filled isn't always automatic. Plans use a few common tools to manage higher-cost specialty drugs like this one:
 
-- **Prior authorization.** Your plan may ask your doctor to confirm, in writing, that Rinvoq is medically appropriate for your condition before it will cover the prescription. (Here's a plain-English explainer on [prior authorization](/blog/what-is-prior-authorization.html).)
-- **Step therapy.** This is a common one with Rinvoq. Many plans ask you to try a **biologic first — such as a TNF blocker** — and show it didn't work well enough before they'll cover Rinvoq. Our guide to [step therapy](/blog/what-is-step-therapy.html) walks through how that works.
+- **Prior authorization.** Your plan may ask your doctor to confirm, in writing, that Rinvoq is medically appropriate for your condition before it will cover the prescription. (Here's a plain-English explainer on [prior authorization](/blog/what-is-prior-authorization).)
+- **Step therapy.** This is a common one with Rinvoq. Many plans ask you to try a **biologic first — such as a TNF blocker** — and show it didn't work well enough before they'll cover Rinvoq. Our guide to [step therapy](/blog/what-is-step-therapy) walks through how that works.
 - **Quantity limits.** A plan may cover only a set amount per fill or period without an approved exception.
 
 None of these are dead ends. They're just steps, and your doctor's office handles them all the time.
@@ -60,7 +60,7 @@ If your plan denies Rinvoq or places it on a costly tier, you're not out of opti
 
 ## Alternatives to discuss with your doctor
 
-I'm an insurance agent, not a doctor, so I'd never tell you to start, stop, or switch a medication — those decisions belong with your physician. But it can help to walk into that appointment knowing there are other options. Depending on your specific condition, your doctor may discuss **biologics or other targeted treatments**. For example, you can read about how Medicare handles [Humira](/blog/does-medicare-cover-humira.html) or [Skyrizi](/blog/does-medicare-cover-skyrizi.html) if you'd like to compare. The right choice depends on your diagnosis and your medical history — that's a conversation for you and your doctor.
+I'm an insurance agent, not a doctor, so I'd never tell you to start, stop, or switch a medication — those decisions belong with your physician. But it can help to walk into that appointment knowing there are other options. Depending on your specific condition, your doctor may discuss **biologics or other targeted treatments**. For example, you can read about how Medicare handles [Humira](/blog/does-medicare-cover-humira) or [Skyrizi](/blog/does-medicare-cover-skyrizi) if you'd like to compare. The right choice depends on your diagnosis and your medical history — that's a conversation for you and your doctor.
 
 ## Questions to ask your doctor
 
@@ -71,6 +71,6 @@ I'm an insurance agent, not a doctor, so I'd never tell you to start, stop, or s
 
 ## A friendly next step
 
-Rinvoq coverage really comes down to the fine print of your particular plan — its tier, and whether prior authorization or step therapy applies. The best move is to look it up on **your own plan's formulary.** Our [Formulary Lookup](/medicare-formulary-lookup.html) shows how a drug is treated, and the [Drug Cost Calculator](/medicare-drug-cost-calculator.html) helps you estimate what you'd pay across the year — and remember, in 2026 your out-of-pocket Part D drug costs are capped at $2,000 for the year.
+Rinvoq coverage really comes down to the fine print of your particular plan — its tier, and whether prior authorization or step therapy applies. The best move is to look it up on **your own plan's formulary.** Our [Formulary Lookup](/medicare-formulary-lookup) shows how a drug is treated, and the [Drug Cost Calculator](/medicare-drug-cost-calculator) helps you estimate what you'd pay across the year — and remember, in 2026 your out-of-pocket Part D drug costs are capped at $2,000 for the year.
 
-If you're not sure where your plan stands, or you're shopping for one that handles your medications well, I'm happy to walk through it with you, no pressure. You can [reach out anytime](/contact.html) and we'll look at your formulary and costs together.
+If you're not sure where your plan stands, or you're shopping for one that handles your medications well, I'm happy to walk through it with you, no pressure. You can [reach out anytime](/contact) and we'll look at your formulary and costs together.

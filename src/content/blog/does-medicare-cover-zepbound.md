@@ -30,7 +30,7 @@ Zepbound (the brand name for **tirzepatide**) is a once-weekly injection that's 
 
 That second use is the one that opens the door to Medicare coverage, and I'll explain why in a moment.
 
-Here's a detail that trips a lot of people up: the *same medicine*, tirzepatide, is also sold under a different brand name, **Mounjaro**, for type 2 diabetes. Same active ingredient, different label, different approved use. If you'd like to compare that side of it, see our guide on whether [Medicare covers Mounjaro](/blog/does-medicare-cover-mounjaro.html).
+Here's a detail that trips a lot of people up: the *same medicine*, tirzepatide, is also sold under a different brand name, **Mounjaro**, for type 2 diabetes. Same active ingredient, different label, different approved use. If you'd like to compare that side of it, see our guide on whether [Medicare covers Mounjaro](/blog/does-medicare-cover-mounjaro).
 
 ## Brand vs. generic
 
@@ -52,8 +52,8 @@ But there's an important exception. Treating obstructive sleep apnea is a **sepa
 
 Because the diagnosis matters so much here, plans lean heavily on **prior authorization** for Zepbound. That means your plan will ask your doctor to confirm, in writing, that you're using it for the sleep apnea indication — not for weight loss — before it will cover the prescription. Plans may also use a couple of other common tools:
 
-- **Prior authorization.** Your doctor submits medical documentation showing the OSA diagnosis. (Here's a plain-English explainer on [prior authorization](/blog/what-is-prior-authorization.html).)
-- **Step therapy.** Some plans ask you to try a preferred option first before they'll cover this one. Our guide to [step therapy](/blog/what-is-step-therapy.html) walks through how that works.
+- **Prior authorization.** Your doctor submits medical documentation showing the OSA diagnosis. (Here's a plain-English explainer on [prior authorization](/blog/what-is-prior-authorization).)
+- **Step therapy.** Some plans ask you to try a preferred option first before they'll cover this one. Our guide to [step therapy](/blog/what-is-step-therapy) walks through how that works.
 - **Quantity limits.** A plan may cover only a set amount per fill or period without an approved exception.
 
 None of these are dead ends. They're just steps, and your doctor's office handles them all the time.
@@ -64,7 +64,7 @@ If your plan denies Zepbound or places it on a costly tier, you're not out of op
 
 ## Alternatives to discuss with your doctor
 
-I'm an insurance agent, not a doctor, so I'd never tell you to start, stop, or switch a medication — those decisions belong with your physician. But it helps to walk into that appointment knowing the right options depend on your goal. If you're being treated for sleep apnea, your doctor can talk through whether Zepbound or another covered approach fits best. If weight is the focus, it's worth asking what your plan will and won't cover, since other weight-management drugs face the same federal rule — you can see how that plays out in our guide on [Medicare and Wegovy](/blog/does-medicare-cover-wegovy.html).
+I'm an insurance agent, not a doctor, so I'd never tell you to start, stop, or switch a medication — those decisions belong with your physician. But it helps to walk into that appointment knowing the right options depend on your goal. If you're being treated for sleep apnea, your doctor can talk through whether Zepbound or another covered approach fits best. If weight is the focus, it's worth asking what your plan will and won't cover, since other weight-management drugs face the same federal rule — you can see how that plays out in our guide on [Medicare and Wegovy](/blog/does-medicare-cover-wegovy).
 
 ## Questions to ask your doctor
 
@@ -75,6 +75,6 @@ I'm an insurance agent, not a doctor, so I'd never tell you to start, stop, or s
 
 ## A friendly next step
 
-Zepbound coverage really comes down to the *why* behind the prescription and the fine print of your particular plan. The best move is to look it up on **your own plan's formulary.** Our [Formulary Lookup](/medicare-formulary-lookup.html) shows how a drug is treated, and the [Drug Cost Calculator](/medicare-drug-cost-calculator.html) helps you estimate what you'd pay across the year — and remember, in 2026 your out-of-pocket Part D drug costs are capped at $2,000 for the year.
+Zepbound coverage really comes down to the *why* behind the prescription and the fine print of your particular plan. The best move is to look it up on **your own plan's formulary.** Our [Formulary Lookup](/medicare-formulary-lookup) shows how a drug is treated, and the [Drug Cost Calculator](/medicare-drug-cost-calculator) helps you estimate what you'd pay across the year — and remember, in 2026 your out-of-pocket Part D drug costs are capped at $2,000 for the year.
 
-If you're not sure where your plan stands, or you're shopping for one that handles your medications well, I'm happy to walk through it with you, no pressure. You can [reach out anytime](/contact.html) and we'll look at your formulary and costs together.
+If you're not sure where your plan stands, or you're shopping for one that handles your medications well, I'm happy to walk through it with you, no pressure. You can [reach out anytime](/contact) and we'll look at your formulary and costs together.

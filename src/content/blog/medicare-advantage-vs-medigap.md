@@ -68,8 +68,8 @@ It really comes down to a few honest questions:
 - **Budget style:** Would you rather pay less each month and more as you go (Advantage), or more each month for very few surprises (Medigap)?
 - **Health:** Do you expect a lot of care this year, or are you mostly healthy?
 
-There's no universal winner here — there's only the plan that matches your life. If you'd like to see which direction leans your way, the [Medicare Plan Quiz](/medicare-quiz.html) walks you through it in a few minutes, and the [Cost Estimator](/medicare-cost-estimator.html) helps you compare what each path might actually run for your situation.
+There's no universal winner here — there's only the plan that matches your life. If you'd like to see which direction leans your way, the [Medicare Plan Quiz](/medicare-quiz) walks you through it in a few minutes, and the [Cost Estimator](/medicare-cost-estimator) helps you compare what each path might actually run for your situation.
 
 One more thing worth saying: your first choice carries weight. When you're new to Medicare, you have a one-time window to buy Medigap without health questions. Switch later and an insurer can often look at your health first. That's not a reason to rush — it's a reason to think it through before you decide.
 
-If you'd like a calm second set of eyes on it, [reach out](/contact.html) and we can compare your real options side by side. No pressure, just a clear look at what fits you best.
+If you'd like a calm second set of eyes on it, [reach out](/contact) and we can compare your real options side by side. No pressure, just a clear look at what fits you best.

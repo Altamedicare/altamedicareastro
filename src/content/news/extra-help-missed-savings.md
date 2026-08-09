@@ -19,4 +19,4 @@ Recent rules expanded Extra Help so that more people now get the **full** benefi
 
 ## How to check
 
-There's no harm in applying — it's free, and approval can substantially cut your prescription costs. Start with our [IRMAA & income tools](/medicare-irmaa-calculator.html) to understand where you stand, learn more on the [prescription drug plans](/prescription-drug-plans.html) page, or just [ask Bret](/contact.html). We'll help you figure out if you qualify and walk through the application — at no cost.
+There's no harm in applying — it's free, and approval can substantially cut your prescription costs. Start with our [IRMAA & income tools](/medicare-irmaa-calculator) to understand where you stand, learn more on the [prescription drug plans](/prescription-drug-plans) page, or just [ask Bret](/contact). We'll help you figure out if you qualify and walk through the application — at no cost.

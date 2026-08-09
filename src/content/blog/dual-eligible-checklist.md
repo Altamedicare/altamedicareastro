@@ -28,7 +28,7 @@ Being "dual eligible" simply means you qualify for both Medicare and Medicaid. T
 - **Full duals** have full Medicaid alongside Medicare. Medicaid may cover your Medicare premiums and cost-sharing, plus things Medicare doesn't — long-term care, more dental and vision, and transportation. Full duals **automatically get Extra Help** for their Part D drugs.
 - **Partial duals** qualify for a Medicare Savings Program that helps with Medicare costs but don't have full Medicaid.
 
-Not sure where you land? Our [Eligibility Calculator](/medicare-eligibility-calculator.html) is a gentle place to start. Utah Medicaid makes the final call, and these are 2026 limits that change over time — so check current figures and apply through Utah Medicaid or Social Security.
+Not sure where you land? Our [Eligibility Calculator](/medicare-eligibility-calculator) is a gentle place to start. Utah Medicaid makes the final call, and these are 2026 limits that change over time — so check current figures and apply through Utah Medicaid or Social Security.
 
 ## Step 2: Make sure a Medicare Savings Program is paying your premiums
 
@@ -40,7 +40,7 @@ A **Medicare Savings Program (MSP)** can pay your Part B premium — and sometim
 | SLMB | Part B premium only | ~$1,616 / $2,184 |
 | QI | Part B premium only (reapply yearly) | ~$1,816 / $2,455 |
 
-If you're a QMB member, providers **may not balance-bill you** for Medicare cost-sharing. For a fuller walk-through, see our guide to [Medicare Savings Programs](/blog/medicare-savings-programs.html).
+If you're a QMB member, providers **may not balance-bill you** for Medicare cost-sharing. For a fuller walk-through, see our guide to [Medicare Savings Programs](/blog/medicare-savings-programs).
 
 ## Step 3: Confirm your Extra Help is active
 
@@ -52,7 +52,7 @@ With Extra Help in 2026, you pay **no more than $12.65 per covered drug**, plus 
 
 A **Dual Eligible Special Needs Plan (D-SNP)** is a Medicare Advantage plan built specifically for people with both Medicare and Medicaid. It coordinates the two programs for you, usually comes with a **$0 premium**, and often adds extras like dental, vision, hearing, an over-the-counter allowance, and transportation.
 
-You must have both Medicare and Medicaid to enroll, and duals get extra chances to change plans during the year. To weigh whether the extras are worth it for you, our [Cost Estimator](/medicare-cost-estimator.html) can help you compare, and our explainer on [D-SNP plans](/blog/d-snp-plans-explained.html) covers how they work.
+You must have both Medicare and Medicaid to enroll, and duals get extra chances to change plans during the year. To weigh whether the extras are worth it for you, our [Cost Estimator](/medicare-cost-estimator) can help you compare, and our explainer on [D-SNP plans](/blog/d-snp-plans-explained) covers how they work.
 
 ## Step 5: Keep your Medicaid active through renewals
 
@@ -68,4 +68,4 @@ Plans change their benefits, drug lists, and pharmacy networks each year, and so
 
 A short annual review keeps you from paying for coverage that no longer fits.
 
-You don't have to sort all of this out alone. If you'd like a calm, no-pressure walk-through of where you stand and what you might be missing, [reach out](/contact.html) — we're happy to help you make sure every benefit you've qualified for is actually working for you.
+You don't have to sort all of this out alone. If you'd like a calm, no-pressure walk-through of where you stand and what you might be missing, [reach out](/contact) — we're happy to help you make sure every benefit you've qualified for is actually working for you.

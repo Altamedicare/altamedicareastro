@@ -51,7 +51,7 @@ None of these are dead ends. They're just steps, and your doctor's office deals 
 
 Because coverage rules vary so much from plan to plan, the single most useful thing you can do is look up Ozempic on **your own plan's formulary.** That tells you whether it's covered, what tier it's on, and whether prior authorization or step therapy applies.
 
-Our [Formulary Lookup](/medicare-formulary-lookup.html) is a quick way to see how a drug is treated, and the [Drug Cost Calculator](/medicare-drug-cost-calculator.html) can help you estimate what you'd actually pay across the year. I'd encourage you to run both before you settle on a plan — the right drug coverage can make a real difference in your monthly budget.
+Our [Formulary Lookup](/medicare-formulary-lookup) is a quick way to see how a drug is treated, and the [Drug Cost Calculator](/medicare-drug-cost-calculator) can help you estimate what you'd actually pay across the year. I'd encourage you to run both before you settle on a plan — the right drug coverage can make a real difference in your monthly budget.
 
 ## The $2,000 cap helps in 2026
 
@@ -61,4 +61,4 @@ For a higher-cost brand-name drug, that cap can turn a scary, unpredictable expe
 
 ## A friendly next step
 
-Ozempic coverage really does come down to the *why* behind the prescription and the fine print of your particular plan. If you're not sure where your plan stands — or you're shopping for one that handles your medications well — I'm happy to walk through it with you, no pressure. You can [reach out anytime](/contact.html) and we'll look at your formulary and costs together.
+Ozempic coverage really does come down to the *why* behind the prescription and the fine print of your particular plan. If you're not sure where your plan stands — or you're shopping for one that handles your medications well — I'm happy to walk through it with you, no pressure. You can [reach out anytime](/contact) and we'll look at your formulary and costs together.

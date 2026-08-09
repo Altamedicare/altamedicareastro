@@ -17,4 +17,4 @@ If you use insulin, here's good news that's easy to miss: under Medicare, your c
 
 The key word is **covered** — each plan has its own formulary, so it's worth confirming that the specific insulin you use is on your plan's list at the $35 price.
 
-Want to double-check yours? Use the [Formulary Lookup](/medicare-formulary-lookup.html) tool, or send us your medications for a [free prescription review](/drug-savings.html). If your insulin isn't covered the way it should be, a different [Part D plan](/prescription-drug-plans.html) may fit better — [reach out](/contact.html) and we'll take a look together.
+Want to double-check yours? Use the [Formulary Lookup](/medicare-formulary-lookup) tool, or send us your medications for a [free prescription review](/drug-savings). If your insulin isn't covered the way it should be, a different [Part D plan](/prescription-drug-plans) may fit better — [reach out](/contact) and we'll take a look together.

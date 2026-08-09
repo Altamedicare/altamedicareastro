@@ -39,7 +39,7 @@ The Bridge covers these medications **when used to reduce excess body weight and
 - **Wegovy®** — all formulations (injection and tablets)
 - **Zepbound®** — the KwikPen® formulation
 
-Note that **Ozempic® is not included**. Ozempic remains covered under regular [Part D](/prescription-drug-plans.html) when prescribed for type 2 diabetes, not for weight loss.
+Note that **Ozempic® is not included**. Ozempic remains covered under regular [Part D](/prescription-drug-plans) when prescribed for type 2 diabetes, not for weight loss.
 
 ## Who qualifies
 
@@ -56,8 +56,8 @@ This isn't automatic. Your **prescriber must submit a prior authorization reques
 
 ## What to do next
 
-If you or a loved one might qualify, the first step is a conversation with your prescriber about whether one of these medications is appropriate. From there, we can help with the Medicare side: [compare Medicare Part D plans](/prescription-drug-plans.html) to make sure yours and your pharmacy are set up correctly, [learn about ways to lower your Medicare prescription drug costs](/drug-savings.html), and check whether [a Medicare Advantage plan that includes prescription drug coverage](/medicare-advantage.html) fits your needs.
+If you or a loved one might qualify, the first step is a conversation with your prescriber about whether one of these medications is appropriate. From there, we can help with the Medicare side: [compare Medicare Part D plans](/prescription-drug-plans) to make sure yours and your pharmacy are set up correctly, [learn about ways to lower your Medicare prescription drug costs](/drug-savings), and check whether [a Medicare Advantage plan that includes prescription drug coverage](/medicare-advantage) fits your needs.
 
-Have questions about Medicare drug coverage? [Contact AltaMedicare](/contact.html) — Bret Swope is a licensed Utah Medicare agent, and the consultation is free with no pressure. You can also read our plain-English guides on [whether Medicare covers Wegovy](/blog/does-medicare-cover-wegovy.html) and [whether Medicare covers Zepbound](/blog/does-medicare-cover-zepbound.html).
+Have questions about Medicare drug coverage? [Contact AltaMedicare](/contact) — Bret Swope is a licensed Utah Medicare agent, and the consultation is free with no pressure. You can also read our plain-English guides on [whether Medicare covers Wegovy](/blog/does-medicare-cover-wegovy) and [whether Medicare covers Zepbound](/blog/does-medicare-cover-zepbound).
 
 *This article is general education, not medical advice or a guarantee of coverage. Eligibility, covered drugs, and costs are set by Medicare and can change. Always confirm current details with your plan, your prescriber, or a licensed agent.*

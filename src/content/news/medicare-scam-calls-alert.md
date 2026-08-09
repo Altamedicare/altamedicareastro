@@ -23,4 +23,4 @@ Scammers target Medicare beneficiaries year-round, and Utah seniors are no excep
 3. **Guard your Medicare card** like a credit card.
 4. When in doubt, call **1-800-MEDICARE** directly, or talk to someone you trust.
 
-Already enrolled and want to review your coverage the safe way? Work with a **licensed local agent** instead of a cold caller. [Reach out to Bret](/contact.html) — a real Utah Medicare agent — or learn the basics on our [Medicare Basics](/medicare-basics.html) page.
+Already enrolled and want to review your coverage the safe way? Work with a **licensed local agent** instead of a cold caller. [Reach out to Bret](/contact) — a real Utah Medicare agent — or learn the basics on our [Medicare Basics](/medicare-basics) page.

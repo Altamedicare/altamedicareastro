@@ -62,6 +62,6 @@ Now the other side of the ledger — the trade-offs the commercials tend to skip
 
 There's no universal answer, and anyone who gives you one without asking questions isn't really helping. The right path depends on which doctors you want to keep, the medications you take, how much travel you do, and how you feel about networks versus freedom of choice. Someone who splits the year between two states, for example, often leans away from a network plan, while a homebody who wants dental built in may love one.
 
-If you'd like a quick gut-check, the [Medicare Plan Quiz](/medicare-quiz.html) walks you through a few questions and points you toward the type of coverage that tends to match your situation. It's a good starting place before you compare specific plans.
+If you'd like a quick gut-check, the [Medicare Plan Quiz](/medicare-quiz) walks you through a few questions and points you toward the type of coverage that tends to match your situation. It's a good starting place before you compare specific plans.
 
-At the end of the day, Medicare Advantage is a strong choice for many people and the wrong choice for others, and that's perfectly normal. If you want a plain-English second opinion on whether it fits your life — and which plans in your area actually keep your doctors and drugs — [reach out](/contact.html) and we'll talk it through. No pressure, no script, just a straight answer.
+At the end of the day, Medicare Advantage is a strong choice for many people and the wrong choice for others, and that's perfectly normal. If you want a plain-English second opinion on whether it fits your life — and which plans in your area actually keep your doctors and drugs — [reach out](/contact) and we'll talk it through. No pressure, no script, just a straight answer.

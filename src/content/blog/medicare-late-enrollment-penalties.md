@@ -48,7 +48,7 @@ Here's how that plays out. Suppose you went 20 full months without Part D or oth
 | Part B | +10% of the premium per full 12 months late | As long as you have Part B |
 | Part D | 1% of $38.99 per full month without creditable coverage | As long as you have Part D |
 
-If you'd like to see what a delay would cost in real dollars for your own situation, the [Late Enrollment Penalty Calculator](/medicare-penalty-calculator.html) runs the math for you.
+If you'd like to see what a delay would cost in real dollars for your own situation, the [Late Enrollment Penalty Calculator](/medicare-penalty-calculator) runs the math for you.
 
 ## Creditable coverage: the thing that protects you
 
@@ -62,7 +62,7 @@ One common trap worth repeating: **COBRA, retiree plans, and VA benefits do not 
 
 Avoiding these penalties really comes down to a few habits:
 
-1. **Know your dates.** Your Initial Enrollment Period is a 7-month window around your 65th birthday. Mapping it out with the [Timeline Calculator](/medicare-timeline-calculator.html) keeps the deadlines from sneaking up on you.
+1. **Know your dates.** Your Initial Enrollment Period is a 7-month window around your 65th birthday. Mapping it out with the [Timeline Calculator](/medicare-timeline-calculator) keeps the deadlines from sneaking up on you.
 2. **Don't drop drug coverage with nothing to replace it.** If you ever go without a Part D plan, make sure whatever you do have is creditable. Plans send you a notice each year telling you whether your coverage qualifies — keep those notices.
 3. **Watch the clock when you stop working.** When active employer coverage ends, your 8-month Part B window starts. Eight months passes faster than you'd think.
 
@@ -70,4 +70,4 @@ Avoiding these penalties really comes down to a few habits:
 
 Late penalties are permanent, but they're also entirely avoidable. Most people who get hit with one simply didn't realize a deadline had passed or assumed a plan counted as creditable when it didn't.
 
-If you're not sure whether your current coverage protects you, or you just want a second set of eyes on your timing, that's exactly what a quick, no-pressure call is for. You can [reach out here](/contact.html) and we'll sort out your dates together.
+If you're not sure whether your current coverage protects you, or you just want a second set of eyes on your timing, that's exactly what a quick, no-pressure call is for. You can [reach out here](/contact) and we'll sort out your dates together.

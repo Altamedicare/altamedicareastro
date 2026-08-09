@@ -49,13 +49,13 @@ All three programs share the same **resource limits: $9,950 for a single person 
 
 A helpful detail: notice that the income limit climbs as the help narrows. If your income is a little too high for QMB, you may still qualify for SLMB or QI. So even if one program is out of reach, it's worth seeing whether another fits.
 
-If you're trying to figure out where your numbers land, our [Eligibility Calculator](/medicare-eligibility-calculator.html) can give you a quick read, and the [Cost Estimator](/medicare-cost-estimator.html) can show what your Medicare costs might look like with and without help.
+If you're trying to figure out where your numbers land, our [Eligibility Calculator](/medicare-eligibility-calculator) can give you a quick read, and the [Cost Estimator](/medicare-cost-estimator) can show what your Medicare costs might look like with and without help.
 
 ## A bonus most people miss: Extra Help
 
 Here's something worth knowing. When you enroll in **any** Medicare Savings Program, you **automatically qualify for Extra Help** — the program that lowers your Part D prescription drug costs. You don't file a separate application for it; signing up for an MSP starts it for you.
 
-That means one application can lower both your Medicare premiums and your drug costs at the same time. For a closer look at how QMB, SLMB, and QI compare side by side, see our guide on [QMB vs. SLMB vs. QI](/blog/qmb-vs-slmb-vs-qi.html).
+That means one application can lower both your Medicare premiums and your drug costs at the same time. For a closer look at how QMB, SLMB, and QI compare side by side, see our guide on [QMB vs. SLMB vs. QI](/blog/qmb-vs-slmb-vs-qi).
 
 ## How to apply in Utah
 
@@ -65,4 +65,4 @@ If you're close to the limits, apply anyway. The worst outcome is a no, and the 
 
 ## A gentle next step
 
-These programs exist for exactly this reason — to make Medicare manageable for people doing their best on a fixed income. If you'd like a hand checking which one might fit, [reach out](/contact.html) for a no-pressure conversation. There's no cost to ask, and no obligation to do anything but get your questions answered.
+These programs exist for exactly this reason — to make Medicare manageable for people doing their best on a fixed income. If you'd like a hand checking which one might fit, [reach out](/contact) for a no-pressure conversation. There's no cost to ask, and no obligation to do anything but get your questions answered.

@@ -58,10 +58,10 @@ The simplest way to think about it is by income, lowest to highest:
 
 You don't have to pick the program yourself — when you apply, the **Utah Medicaid agency** reviews your income and resources and determines which one you qualify for. One application covers the review.
 
-Want to see how these savings could change your overall costs? The [Cost Estimator](/medicare-cost-estimator.html) can help you picture your monthly Medicare spending, and if a term here is fuzzy, the [Glossary](/medicare-glossary.html) breaks it down in plain language. For a closer look at the most comprehensive program, see [what the QMB program covers](/blog/what-is-the-qmb-program.html).
+Want to see how these savings could change your overall costs? The [Cost Estimator](/medicare-cost-estimator) can help you picture your monthly Medicare spending, and if a term here is fuzzy, the [Glossary](/medicare-glossary) breaks it down in plain language. For a closer look at the most comprehensive program, see [what the QMB program covers](/blog/what-is-the-qmb-program).
 
 ## A few things to keep in mind
 
 These programs can also open other doors. Qualifying for any MSP automatically signs you up for **Extra Help**, which lowers Part D prescription costs too — so applying is often worth more than the premium savings alone.
 
-If you're not sure where your income lands or which program fits, you don't have to sort it out by yourself. Reach out through our [contact page](/contact.html) and we'll walk through it together — no pressure, just a straight answer about what you may qualify for and how to apply through Utah Medicaid.
+If you're not sure where your income lands or which program fits, you don't have to sort it out by yourself. Reach out through our [contact page](/contact) and we'll walk through it together — no pressure, just a straight answer about what you may qualify for and how to apply through Utah Medicaid.

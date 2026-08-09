@@ -50,7 +50,7 @@ To put that in perspective, here's a simple before-and-after picture:
 | Annual deductible | Varies by plan | Reduced or $0 |
 | Per covered drug | Varies, can be high | No more than $12.65 |
 
-If you want to see what your specific medications might cost under a plan, the [Drug Cost Calculator](/medicare-drug-cost-calculator.html) can walk you through it. And to confirm a plan actually covers the drugs you take, the [Formulary Lookup](/medicare-formulary-lookup.html) is a quick way to check before you commit.
+If you want to see what your specific medications might cost under a plan, the [Drug Cost Calculator](/medicare-drug-cost-calculator) can walk you through it. And to confirm a plan actually covers the drugs you take, the [Formulary Lookup](/medicare-formulary-lookup) is a quick way to check before you commit.
 
 ## If you apply for Extra Help on your own
 
@@ -70,8 +70,8 @@ Here's some reassuring news that applies to all Medicare drug plans, with or wit
 
 The old "donut hole" coverage gap is gone. So even if you don't qualify for Extra Help, there's a firm ceiling on what you'll spend. And if you do qualify, you'll likely never get anywhere near that cap.
 
-If you'd like a deeper look at how Extra Help works and who else might qualify, our guide on [Extra Help explained](/blog/extra-help-explained.html) covers it in more detail.
+If you'd like a deeper look at how Extra Help works and who else might qualify, our guide on [Extra Help explained](/blog/extra-help-explained) covers it in more detail.
 
 ## A calm next step
 
-Dual eligibility and Extra Help can feel like a maze, but the good news is that most of it happens automatically once you're enrolled. If you're not sure whether your Extra Help is active, or you just want someone to look at your situation and explain it plainly, [reach out anytime](/contact.html). There's no pressure and no cost to talk it through — just clear answers so you know exactly where you stand.
+Dual eligibility and Extra Help can feel like a maze, but the good news is that most of it happens automatically once you're enrolled. If you're not sure whether your Extra Help is active, or you just want someone to look at your situation and explain it plainly, [reach out anytime](/contact). There's no pressure and no cost to talk it through — just clear answers so you know exactly where you stand.

@@ -35,7 +35,7 @@ That's why we won't list 2027 dollar amounts here. Instead, use the **2026 figur
 | Part D national base premium | $38.99/month |
 | Part D out-of-pocket drug cap | $2,000/year |
 
-Premiums and deductibles have generally risen from year to year, so it's reasonable to budget for modest increases. But we'd rather you plan with real numbers than chase a rumor. When the official 2027 amounts land, you can plug them into our [Cost Estimator](/medicare-cost-estimator.html) to see your full picture.
+Premiums and deductibles have generally risen from year to year, so it's reasonable to budget for modest increases. But we'd rather you plan with real numbers than chase a rumor. When the official 2027 amounts land, you can plug them into our [Cost Estimator](/medicare-cost-estimator) to see your full picture.
 
 ## What's already scheduled for 2027
 
@@ -51,7 +51,7 @@ One thing to expect: the cap amount is **indexed to rise gradually over time**, 
 
 Medicare's drug price negotiation program started with its first **10 negotiated prices taking effect January 1, 2026** — including widely used medications like Eliquis, Jardiance, Xarelto, and Entresto. The program is designed to **add more drugs in later rounds**, so additional medications are expected to gain negotiated prices in the years ahead.
 
-The practical takeaway isn't an exact price — those vary by plan and pharmacy — it's the direction: alongside the $2,000 cap, this is meant to ease the burden of expensive prescriptions over time. You can read more in our overview of the [Inflation Reduction Act's Medicare changes](/blog/inflation-reduction-act-medicare-changes.html).
+The practical takeaway isn't an exact price — those vary by plan and pharmacy — it's the direction: alongside the $2,000 cap, this is meant to ease the burden of expensive prescriptions over time. You can read more in our overview of the [Inflation Reduction Act's Medicare changes](/blog/inflation-reduction-act-medicare-changes).
 
 ### Familiar protections stay put
 
@@ -62,11 +62,11 @@ Other consumer protections carry forward, too: **insulin** stays capped at **$35
 You don't have to wait for the 2027 figures to take smart steps now.
 
 - **Review your plan at AEP.** The Annual Enrollment Period each fall (October 15 to December 7) is your chance to compare drug and doctor coverage for the coming year. Plans change their formularies and networks annually, so a quick review can save real money.
-- **Watch your income for IRMAA.** Higher earners pay a surcharge on Part B and Part D, and it's based on your income from **two years prior**. That means decisions you make this year — a large IRA withdrawal, selling property, a Roth conversion — can affect your 2027 surcharge. Our [IRMAA Calculator](/medicare-irmaa-calculator.html) can help you see where you stand.
+- **Watch your income for IRMAA.** Higher earners pay a surcharge on Part B and Part D, and it's based on your income from **two years prior**. That means decisions you make this year — a large IRA withdrawal, selling property, a Roth conversion — can affect your 2027 surcharge. Our [IRMAA Calculator](/medicare-irmaa-calculator) can help you see where you stand.
 - **Keep records handy.** If a life event lowered your income (retirement, loss of a spouse), you may be able to ask Social Security to reconsider an IRMAA surcharge.
 
 ## The bottom line
 
 The big-picture story for 2027 is steadiness: the $2,000 drug cap continues, more drugs join price negotiation, and the official premiums and brackets will be announced in late 2026 as usual. Plan with the 2026 baseline, review your coverage each fall, and keep an eye on your income.
 
-If you'd like a second set of eyes on your plan before next year — or you just want to understand how these changes affect you personally — feel free to [reach out](/contact.html). It's a no-pressure conversation, and I'm happy to walk through it with you.
+If you'd like a second set of eyes on your plan before next year — or you just want to understand how these changes affect you personally — feel free to [reach out](/contact). It's a no-pressure conversation, and I'm happy to walk through it with you.

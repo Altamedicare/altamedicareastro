@@ -61,7 +61,7 @@ If the plan says no, you have the right to appeal, and many exceptions are appro
 
 The best time to deal with step therapy is before you pick a plan, not at the pharmacy. Two plans covering the same drug can apply very different rules to it.
 
-Before you enroll, look up each of your prescriptions and check for a step-therapy flag. Our [Formulary Lookup](/medicare-formulary-lookup.html) lets you see whether a plan covers your drugs and what rules — step therapy, prior authorization, quantity limits — come attached. If a drug you rely on sits behind a step you've already failed, that's a strong reason to favor a plan that covers it more cleanly.
+Before you enroll, look up each of your prescriptions and check for a step-therapy flag. Our [Formulary Lookup](/medicare-formulary-lookup) lets you see whether a plan covers your drugs and what rules — step therapy, prior authorization, quantity limits — come attached. If a drug you rely on sits behind a step you've already failed, that's a strong reason to favor a plan that covers it more cleanly.
 
 ## Step therapy vs. prior authorization
 
@@ -74,4 +74,4 @@ People mix these two up, and they do overlap, but they're not the same:
 
 A single drug can carry both. The good news is that the fix is the same in either case: your doctor documents why you need the medication, and the plan reviews it.
 
-Step therapy sounds bureaucratic, but in practice it's manageable once you know the path through it. If you're not sure whether your plan's rules fit your prescriptions — or you want help comparing plans before the next enrollment window — [reach out to Bret](/contact.html) for a no-pressure look at your options. A short conversation now can save a frustrating trip to the pharmacy later.
+Step therapy sounds bureaucratic, but in practice it's manageable once you know the path through it. If you're not sure whether your plan's rules fit your prescriptions — or you want help comparing plans before the next enrollment window — [reach out to Bret](/contact) for a no-pressure look at your options. A short conversation now can save a frustrating trip to the pharmacy later.

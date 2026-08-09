@@ -55,7 +55,7 @@ The big improvement for 2026 is a hard limit: once your out-of-pocket spending o
 
 If your income is above a certain level, you'll pay an extra surcharge called **IRMAA** on both your Part B and Part D premiums. It's based on the income from your tax return **two years prior**, so your 2026 surcharge looks at your 2024 return. IRMAA starts once your income tops **$109,000 (single)** or **$218,000 (married filing jointly)**.
 
-Because the brackets step up at several income levels, the easiest way to see your number is to run the [IRMAA Calculator](/medicare-irmaa-calculator.html) with your income and filing status — it'll show exactly what you'd add to the standard premiums above.
+Because the brackets step up at several income levels, the easiest way to see your number is to run the [IRMAA Calculator](/medicare-irmaa-calculator) with your income and filing status — it'll show exactly what you'd add to the standard premiums above.
 
 ## Capping your costs
 
@@ -68,4 +68,4 @@ Either route turns Medicare from an open-ended bill into something you can plan 
 
 ## Putting it all together
 
-For a quick personal estimate that adds up premiums, deductibles, and expected spending, the [Medicare Cost Estimator](/medicare-cost-estimator.html) does the math for you. And if you'd like a second set of eyes on which mix of coverage fits your budget, that's exactly the kind of thing a short, no-pressure call can sort out — [reach out anytime](/contact.html) and we'll walk through your numbers together.
+For a quick personal estimate that adds up premiums, deductibles, and expected spending, the [Medicare Cost Estimator](/medicare-cost-estimator) does the math for you. And if you'd like a second set of eyes on which mix of coverage fits your budget, that's exactly the kind of thing a short, no-pressure call can sort out — [reach out anytime](/contact) and we'll walk through your numbers together.

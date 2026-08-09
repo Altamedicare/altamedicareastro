@@ -58,7 +58,7 @@ Applying is free, and you have a couple of good paths:
 
 Either way, you'll want to have a rough sense of your income and savings handy. You don't need to have everything perfect to start — getting the application in is the important part.
 
-If you'd like a hand figuring out whether it's worth applying, or sorting out which drug plan pairs best with Extra Help, that's exactly the kind of thing I help Utah folks with — just reach out through the [contact page](/contact.html). No pressure, no cost.
+If you'd like a hand figuring out whether it's worth applying, or sorting out which drug plan pairs best with Extra Help, that's exactly the kind of thing I help Utah folks with — just reach out through the [contact page](/contact). No pressure, no cost.
 
 ## The $2,000 cap helps everyone in 2026
 
@@ -68,6 +68,6 @@ That cap is a real safety net for anyone on expensive medications — and it sta
 
 ## See what your drugs would cost
 
-The best way to make this concrete is to look at your own medications. You can run your prescription list through the [Drug Cost Calculator](/medicare-drug-cost-calculator.html) to estimate what you'd pay under a given plan, and use the [Cost Estimator](/medicare-cost-estimator.html) to get a fuller picture of your overall Medicare costs for the year. Seeing the numbers usually makes it obvious whether Extra Help is worth pursuing.
+The best way to make this concrete is to look at your own medications. You can run your prescription list through the [Drug Cost Calculator](/medicare-drug-cost-calculator) to estimate what you'd pay under a given plan, and use the [Cost Estimator](/medicare-cost-estimator) to get a fuller picture of your overall Medicare costs for the year. Seeing the numbers usually makes it obvious whether Extra Help is worth pursuing.
 
 Extra Help is one of those programs that can make a genuine difference, but only if someone tells you it's there. If you think you might qualify — or you're just not sure — give me a call and we'll walk through it together, no rush and no obligation.

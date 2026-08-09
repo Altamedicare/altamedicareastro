@@ -42,7 +42,7 @@ A couple of common hurdles to watch for:
 - **Prior authorization.** Some plans want your doctor to confirm you're using Jardiance for an approved condition before they'll cover it.
 - **Step therapy.** A plan might ask you to try a lower-cost alternative first, and only cover Jardiance if that one doesn't work for you.
 
-These rules vary from plan to plan, which is exactly why two people on the same medication can pay very different amounts. The fix is simple: check the drug list — called the **formulary** — for any plan you're considering. You can do that quickly with the [Formulary Lookup](/medicare-formulary-lookup.html) tool to see whether Jardiance is covered, what tier it's on, and whether any of those restrictions apply.
+These rules vary from plan to plan, which is exactly why two people on the same medication can pay very different amounts. The fix is simple: check the drug list — called the **formulary** — for any plan you're considering. You can do that quickly with the [Formulary Lookup](/medicare-formulary-lookup) tool to see whether Jardiance is covered, what tier it's on, and whether any of those restrictions apply.
 
 ## The 2026 negotiation: what it means for you
 
@@ -62,7 +62,7 @@ If Jardiance is one of several prescriptions you fill regularly, that cap can be
 
 ## How to see your real cost
 
-The best way to stop guessing is to look at your own situation. Run Jardiance — along with your other medications — through the [Drug Cost Calculator](/medicare-drug-cost-calculator.html) to estimate what you'd pay across the year under a given plan. Pair that with the [Formulary Lookup](/medicare-formulary-lookup.html) to confirm coverage and tier on the specific plans you're weighing.
+The best way to stop guessing is to look at your own situation. Run Jardiance — along with your other medications — through the [Drug Cost Calculator](/medicare-drug-cost-calculator) to estimate what you'd pay across the year under a given plan. Pair that with the [Formulary Lookup](/medicare-formulary-lookup) to confirm coverage and tier on the specific plans you're weighing.
 
 A quick checklist when you compare plans:
 
@@ -75,4 +75,4 @@ A quick checklist when you compare plans:
 
 Plans can look similar on paper and still treat the same drug very differently, so it pays to check the details rather than assume.
 
-If you'd like help comparing plans with Jardiance in mind, or you're just not sure your current plan is the best fit, that's exactly what I do for folks here in Utah. Reach out through the [contact page](/contact.html) and we'll walk through it together — no pressure, no cost, just a clear answer.
+If you'd like help comparing plans with Jardiance in mind, or you're just not sure your current plan is the best fit, that's exactly what I do for folks here in Utah. Reach out through the [contact page](/contact) and we'll walk through it together — no pressure, no cost, just a clear answer.

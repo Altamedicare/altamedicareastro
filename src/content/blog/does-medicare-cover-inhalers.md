@@ -40,7 +40,7 @@ The good news: some inhalers **do** have a **generic or "authorized generic" ver
 
 Because inhalers are **self-administered** — you use them yourself at home, not in a clinic — they fall under **Medicare Part D**, the part of Medicare that handles prescription drugs. You get Part D either through a standalone drug plan that pairs with Original Medicare, or built into a Medicare Advantage plan.
 
-Every Part D plan has its own **formulary** (its list of covered drugs) with tiers, and both coverage and tier can change from plan to plan and year to year. That's why two people on the very same inhaler can pay very different amounts — and why checking that **your specific inhaler** is covered really matters. The simplest way to know where you stand is the [Formulary Lookup](/medicare-formulary-lookup.html) tool, which shows whether your inhaler is covered, what tier it's on, and whether any restrictions apply.
+Every Part D plan has its own **formulary** (its list of covered drugs) with tiers, and both coverage and tier can change from plan to plan and year to year. That's why two people on the very same inhaler can pay very different amounts — and why checking that **your specific inhaler** is covered really matters. The simplest way to know where you stand is the [Formulary Lookup](/medicare-formulary-lookup) tool, which shows whether your inhaler is covered, what tier it's on, and whether any restrictions apply.
 
 ## Coverage rules to expect
 
@@ -54,7 +54,7 @@ Which of these apply depends entirely on the plan, so it's worth checking rather
 
 ## How the $2,000 cap and manufacturer programs help
 
-Two things can ease the cost of inhalers. First, the **$2,000 annual Part D out-of-pocket cap**: in 2026, once you spend $2,000 out of pocket on covered drugs, you pay **$0** for them the rest of the year. For someone using more than one inhaler — say a daily maintenance inhaler plus a rescue inhaler — that cap can be a real relief. You can see how it all fits together in [the $2,000 drug cap explained](/blog/the-2000-drug-cap-explained.html).
+Two things can ease the cost of inhalers. First, the **$2,000 annual Part D out-of-pocket cap**: in 2026, once you spend $2,000 out of pocket on covered drugs, you pay **$0** for them the rest of the year. For someone using more than one inhaler — say a daily maintenance inhaler plus a rescue inhaler — that cap can be a real relief. You can see how it all fits together in [the $2,000 drug cap explained](/blog/the-2000-drug-cap-explained).
 
 Second, some **inhaler manufacturers have voluntarily capped the out-of-pocket cost** for their own products. These programs come from the drugmakers, not Medicare, and the details change, so it's worth asking your pharmacist or checking the manufacturer's website to see whether one applies to what you use.
 
@@ -66,7 +66,7 @@ If your plan won't cover your inhaler, or places it on a tier that feels steep, 
 
 I'm an insurance agent, not a physician, so I'd never tell you to start, stop, or switch a medication — that's a conversation for you and your doctor. But it helps to know what the options look like.
 
-If cost or coverage is a hurdle, your doctor might talk with you about a **different inhaler in the same class**, a **combination inhaler**, or one that happens to have a **generic version** on a lower tier. Some of these may be cheaper on your particular plan. Whether any alternative is right for you is strictly a medical decision — your doctor knows your breathing history and what you've already tried. (If you use a specific combination inhaler, our guide on [whether Medicare covers Trelegy](/blog/does-medicare-cover-trelegy.html) walks through one common example.)
+If cost or coverage is a hurdle, your doctor might talk with you about a **different inhaler in the same class**, a **combination inhaler**, or one that happens to have a **generic version** on a lower tier. Some of these may be cheaper on your particular plan. Whether any alternative is right for you is strictly a medical decision — your doctor knows your breathing history and what you've already tried. (If you use a specific combination inhaler, our guide on [whether Medicare covers Trelegy](/blog/does-medicare-cover-trelegy) walks through one common example.)
 
 ## Questions to ask your doctor
 
@@ -79,6 +79,6 @@ When you next talk with your prescriber, these are useful to raise:
 
 ## How to see your real cost
 
-The best way to stop guessing is to look at your own situation. Run your inhalers — along with your other medications — through the [Drug Cost Calculator](/medicare-drug-cost-calculator.html) to estimate what you'd pay across the year under a given plan, and pair it with the Formulary Lookup to confirm coverage and tier.
+The best way to stop guessing is to look at your own situation. Run your inhalers — along with your other medications — through the [Drug Cost Calculator](/medicare-drug-cost-calculator) to estimate what you'd pay across the year under a given plan, and pair it with the Formulary Lookup to confirm coverage and tier.
 
-If you'd like help comparing plans with your inhalers in mind, that's exactly what I do for folks here in Utah. Reach out through the [contact page](/contact.html) and we'll walk through it together — no pressure, no cost, just a clear answer.
+If you'd like help comparing plans with your inhalers in mind, that's exactly what I do for folks here in Utah. Reach out through the [contact page](/contact) and we'll walk through it together — no pressure, no cost, just a clear answer.

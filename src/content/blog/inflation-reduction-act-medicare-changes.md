@@ -25,7 +25,7 @@ If your prescription costs have felt a little lighter lately, you're not imagini
 
 This is the change people feel the most. Under Part D, the part of Medicare that covers prescription drugs, there's now a **$2,000 annual cap** on what you pay out of pocket for covered drugs. Once your spending on covered drugs reaches $2,000 in a year, you pay **$0** for them the rest of the year.
 
-That cap also closed the old "donut hole," the coverage gap that used to leave people on the hook for a big chunk of their drug costs in the middle of the year. Part D now moves through three simpler phases: your deductible, initial coverage, and then catastrophic coverage where you pay nothing once you've hit the cap. If you take several maintenance medications, this can make a real difference in your budget. You can see roughly where you'd land with our [Drug Cost Calculator](/medicare-drug-cost-calculator.html), and there's more detail in our companion piece, [the $2,000 drug cap explained](/blog/the-2000-drug-cap-explained.html).
+That cap also closed the old "donut hole," the coverage gap that used to leave people on the hook for a big chunk of their drug costs in the middle of the year. Part D now moves through three simpler phases: your deductible, initial coverage, and then catastrophic coverage where you pay nothing once you've hit the cap. If you take several maintenance medications, this can make a real difference in your budget. You can see roughly where you'd land with our [Drug Cost Calculator](/medicare-drug-cost-calculator), and there's more detail in our companion piece, [the $2,000 drug cap explained](/blog/the-2000-drug-cap-explained).
 
 ## $35 insulin and free vaccines
 
@@ -45,7 +45,7 @@ For the first time, Medicare is allowed to **negotiate the price** of some of th
 | Eliquis · Jardiance · Xarelto · Januvia |
 | Farxiga · Entresto · Enbrel · Imbruvica |
 
-More drugs are added to the negotiation list in the years ahead. The exact savings depend on your plan and which drugs you take, but the goal is lower prices on medicines a lot of people rely on. If you take something like [Eliquis](/blog/does-medicare-cover-eliquis.html) or [Jardiance](/blog/does-medicare-cover-jardiance.html), it's worth checking how your plan covers it. Our [Formulary Lookup](/medicare-formulary-lookup.html) can help you see whether a specific drug is on your plan's list.
+More drugs are added to the negotiation list in the years ahead. The exact savings depend on your plan and which drugs you take, but the goal is lower prices on medicines a lot of people rely on. If you take something like [Eliquis](/blog/does-medicare-cover-eliquis) or [Jardiance](/blog/does-medicare-cover-jardiance), it's worth checking how your plan covers it. Our [Formulary Lookup](/medicare-formulary-lookup) can help you see whether a specific drug is on your plan's list.
 
 ## Spreading your costs with the payment plan
 
@@ -59,4 +59,4 @@ Put together, these changes do something simple: they make drug costs more predi
 
 The one thing the law doesn't do is pick the right plan for you. Drug coverage still varies a lot from one plan to the next, and the plan that covers your medications best this year might not be the best fit next year. That's worth a yearly look.
 
-If you'd like a second set of eyes on your Part D coverage, or you just want to understand how these changes affect your own list of medications, I'm happy to walk through it with you. There's no pressure and no cost — [reach out anytime](/contact.html) and we'll sort it out together.
+If you'd like a second set of eyes on your Part D coverage, or you just want to understand how these changes affect your own list of medications, I'm happy to walk through it with you. There's no pressure and no cost — [reach out anytime](/contact) and we'll sort it out together.

@@ -48,7 +48,7 @@ The **Part D** drug penalty works a little differently. It's **1% of the nationa
 
 Neither penalty is a one-time fee. They're permanent surcharges baked into your monthly premium.
 
-If you want to see what a delay would actually cost in your situation, the [Late Enrollment Penalty Calculator](/medicare-penalty-calculator.html) will run the numbers for you.
+If you want to see what a delay would actually cost in your situation, the [Late Enrollment Penalty Calculator](/medicare-penalty-calculator) will run the numbers for you.
 
 ## When the penalty doesn't apply — the SEP exceptions
 
@@ -68,10 +68,10 @@ If you've realized you slipped through the cracks, don't panic — but do act.
 
 1. **Figure out whether an SEP still applies.** If you had qualifying employer coverage, you may be able to enroll now without a penalty. This is worth checking before you assume the worst.
 2. **If no SEP applies, plan for the GEP.** Mark January 1 through March 31 and apply through Social Security. Remember your coverage starts the first of the following month, so build a bridge plan for any gap.
-3. **Get your dates straight.** Knowing exactly when your windows open and close is half the battle. The [Timeline Calculator](/medicare-timeline-calculator.html) lays out your enrollment dates so nothing sneaks up on you.
+3. **Get your dates straight.** Knowing exactly when your windows open and close is half the battle. The [Timeline Calculator](/medicare-timeline-calculator) lays out your enrollment dates so nothing sneaks up on you.
 
 ## The bottom line
 
 Missing your Initial Enrollment Period can mean a coverage gap and penalties that stick with you for life — but the outcome depends entirely on your situation, and there are more exceptions than most people realize. The worst thing you can do is guess.
 
-If you're not sure whether you owe a penalty, whether an SEP covers you, or how to time your enrollment, that's exactly the kind of thing a quick, no-pressure call can sort out. You can [reach out here](/contact.html) and we'll walk through your specific dates together.
+If you're not sure whether you owe a penalty, whether an SEP covers you, or how to time your enrollment, that's exactly the kind of thing a quick, no-pressure call can sort out. You can [reach out here](/contact) and we'll walk through your specific dates together.

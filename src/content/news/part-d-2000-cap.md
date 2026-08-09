@@ -23,4 +23,4 @@ For people taking several medications — or even one or two high-cost specialty
 
 The cap applies to **covered** drugs under your plan's formulary, so the specific plan you choose still matters. You can also spread your costs across the year with the **Medicare Prescription Payment Plan** instead of paying large amounts up front.
 
-Not sure your current plan covers your drugs the most affordable way? Our [Drug Cost Calculator](/medicare-drug-cost-calculator.html) gives you a quick estimate, and a [free plan review](/drug-savings.html) checks whether a different [Part D plan](/prescription-drug-plans.html) would save you money. Questions? [Talk to Bret](/contact.html) — no cost, no pressure.
+Not sure your current plan covers your drugs the most affordable way? Our [Drug Cost Calculator](/medicare-drug-cost-calculator) gives you a quick estimate, and a [free plan review](/drug-savings) checks whether a different [Part D plan](/prescription-drug-plans) would save you money. Questions? [Talk to Bret](/contact) — no cost, no pressure.

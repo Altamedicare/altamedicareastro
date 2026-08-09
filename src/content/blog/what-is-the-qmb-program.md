@@ -38,7 +38,7 @@ If you qualify for QMB, the program can pay:
 
 That last piece is a big deal. Original Medicare alone has **no out-of-pocket maximum**, so a hospital stay or a string of specialist visits can add up fast. QMB takes that worry off the table.
 
-Want to see what your Medicare costs would look like with and without help? The [Cost Estimator](/medicare-cost-estimator.html) can give you a clearer picture.
+Want to see what your Medicare costs would look like with and without help? The [Cost Estimator](/medicare-cost-estimator) can give you a clearer picture.
 
 ## The balance-billing protection
 
@@ -69,12 +69,12 @@ A couple of honest caveats. These are **2026 federal baseline figures**, and the
 
 QMB also comes with a nice bonus: if you qualify, you **automatically get Extra Help** with your Part D prescription drug costs, so your medications get cheaper too.
 
-If your income is a bit above the QMB limits, you may still qualify for one of the other Medicare Savings Programs. I walk through the differences in [QMB vs. SLMB vs. QI](/blog/qmb-vs-slmb-vs-qi.html).
+If your income is a bit above the QMB limits, you may still qualify for one of the other Medicare Savings Programs. I walk through the differences in [QMB vs. SLMB vs. QI](/blog/qmb-vs-slmb-vs-qi).
 
 ## How to apply in Utah
 
 You apply for QMB through **Utah Medicaid**. There's no cost to apply, and you can fill out the application even if you're not sure you'll qualify — it's worth letting the state decide. When you apply, it helps to have proof of your income and a rough list of your savings and accounts ready.
 
-If the process feels overwhelming, you don't have to sort it out alone. Reach out through [our contact page](/contact.html) and we can talk through whether QMB looks like a fit and what the next step would be.
+If the process feels overwhelming, you don't have to sort it out alone. Reach out through [our contact page](/contact) and we can talk through whether QMB looks like a fit and what the next step would be.
 
 There's no pressure and no cost for a conversation — just clear answers from someone local who does this every day.

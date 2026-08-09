@@ -33,7 +33,7 @@ Entresto is a brand-name medication, which matters for your wallet. Plans usuall
 
 Entresto is covered under **Medicare Part D**, your prescription drug coverage. You get Part D one of two ways: as a standalone drug plan that pairs with Original Medicare, or built into a Medicare Advantage plan. Original Medicare (Part A and Part B) on its own does not cover the pills you pick up at the pharmacy, so having some form of Part D is what makes coverage for Entresto possible.
 
-Every plan keeps its own **formulary** — the list of drugs it covers — and sorts those drugs into **tiers** that set your copay or coinsurance. Entresto is most often placed on a brand tier. The exact dollar amount varies from plan to plan and can change each year, which is why two neighbors can pay different prices for the same prescription. Our [Formulary Lookup](/medicare-formulary-lookup.html) lets you confirm Entresto is covered and see which tier it lands on, and the [Drug Cost Calculator](/medicare-drug-cost-calculator.html) helps you estimate your year of out-of-pocket spending.
+Every plan keeps its own **formulary** — the list of drugs it covers — and sorts those drugs into **tiers** that set your copay or coinsurance. Entresto is most often placed on a brand tier. The exact dollar amount varies from plan to plan and can change each year, which is why two neighbors can pay different prices for the same prescription. Our [Formulary Lookup](/medicare-formulary-lookup) lets you confirm Entresto is covered and see which tier it lands on, and the [Drug Cost Calculator](/medicare-drug-cost-calculator) helps you estimate your year of out-of-pocket spending.
 
 ## The 2026 price negotiation and the $2,000 cap
 
@@ -41,7 +41,7 @@ Here's the genuinely new part. Through Medicare Drug Price Negotiation, the gove
 
 I want to be straight with you about what that means at the counter: the negotiation lowers the underlying price of the drug, which is real progress, but it doesn't set one fixed price everyone pays. What you actually owe still depends on your plan's tier for Entresto and how much you've already spent toward your yearly cap.
 
-That cap is the bigger protection for most people. In 2026, Part D has a **$2,000 out-of-pocket maximum** for the year, and the old "donut hole" coverage gap is gone. Once your out-of-pocket spending on covered drugs reaches $2,000, you pay nothing more for your covered prescriptions for the rest of the calendar year. For someone on a steady brand-name medication, that ceiling makes costs predictable — and you can read more in [the $2,000 drug cap explained](/blog/the-2000-drug-cap-explained.html). There's also a free option to spread that $2,000 into smoother monthly payments across the year if a big bill at once would be hard to manage.
+That cap is the bigger protection for most people. In 2026, Part D has a **$2,000 out-of-pocket maximum** for the year, and the old "donut hole" coverage gap is gone. Once your out-of-pocket spending on covered drugs reaches $2,000, you pay nothing more for your covered prescriptions for the rest of the calendar year. For someone on a steady brand-name medication, that ceiling makes costs predictable — and you can read more in [the $2,000 drug cap explained](/blog/the-2000-drug-cap-explained). There's also a free option to spread that $2,000 into smoother monthly payments across the year if a big bill at once would be hard to manage.
 
 ## Coverage rules to expect
 
@@ -64,4 +64,4 @@ If cost or coverage is a concern, that's a conversation worth having with your p
 - If my plan requires prior authorization, can your office help submit it?
 - Is there anything in my health history that affects which drug I should take?
 
-If you'd like a second set of eyes on whether your plan covers Entresto well — or which plan would — I'm glad to help. You can run the numbers yourself with the tools above, and when you're ready, [reach out to me](/contact.html) for a no-pressure conversation. No hard sell, just clear answers so you know what you'll pay.
+If you'd like a second set of eyes on whether your plan covers Entresto well — or which plan would — I'm glad to help. You can run the numbers yourself with the tools above, and when you're ready, [reach out to me](/contact) for a no-pressure conversation. No hard sell, just clear answers so you know what you'll pay.

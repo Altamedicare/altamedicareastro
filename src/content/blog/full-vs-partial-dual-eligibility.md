@@ -25,7 +25,7 @@ If you've heard the term "dual eligible" and assumed it meant one thing, you're 
 
 Being **dual eligible** simply means you qualify for **both Medicare and Medicaid**. Medicare is the federal program tied to age or disability; Medicaid is a needs-based program that, in Utah, is run through the state Medicaid agency.
 
-The confusion comes from the fact that "Medicaid help" isn't one single thing. Some people get the full Medicaid program. Others get a narrower form of help aimed only at their Medicare costs. That difference is what separates **full duals** from **partial duals** — and it's worth understanding before you assume what you're entitled to. If any of these terms feel like alphabet soup, our plain-English [Medicare glossary](/medicare-glossary.html) breaks them down one at a time.
+The confusion comes from the fact that "Medicaid help" isn't one single thing. Some people get the full Medicaid program. Others get a narrower form of help aimed only at their Medicare costs. That difference is what separates **full duals** from **partial duals** — and it's worth understanding before you assume what you're entitled to. If any of these terms feel like alphabet soup, our plain-English [Medicare glossary](/medicare-glossary) breaks them down one at a time.
 
 ## Full duals: Medicare plus complete Medicaid
 
@@ -48,7 +48,7 @@ There are three main Medicare Savings Programs, and they all share the same 2026
 - **SLMB** pays your **Part B premium only**.
 - **QI** also pays your **Part B premium only**, but it's first-come funding you must reapply for each year, and you can't also have full Medicaid.
 
-If you want to see how these stack up side by side, we walk through them in [Medicare Savings Programs](/blog/medicare-savings-programs.html) and compare them directly in [QMB vs SLMB vs QI](/blog/qmb-vs-slmb-vs-qi.html).
+If you want to see how these stack up side by side, we walk through them in [Medicare Savings Programs](/blog/medicare-savings-programs) and compare them directly in [QMB vs SLMB vs QI](/blog/qmb-vs-slmb-vs-qi).
 
 ## A side-by-side comparison
 
@@ -73,8 +73,8 @@ A few clues can point you in the right direction:
 - If you got approved specifically to have your Part B premium (and maybe more) paid, but you don't have full Medicaid, you're likely a **partial dual**.
 - If you're unsure, that's normal — these categories aren't always spelled out clearly on a card.
 
-Want to get a feel for what your Medicare costs might look like either way? Our [cost estimator](/medicare-cost-estimator.html) can help you picture the numbers before you apply.
+Want to get a feel for what your Medicare costs might look like either way? Our [cost estimator](/medicare-cost-estimator) can help you picture the numbers before you apply.
 
 ## A calm next step
 
-Sorting out full versus partial dual eligibility can feel overwhelming, especially when money is tight and the paperwork looks daunting. You don't have to figure it out alone. If you'd like a patient walk-through of where you might fit and what to apply for, [reach out](/contact.html) for a no-pressure conversation — no obligation, just answers.
+Sorting out full versus partial dual eligibility can feel overwhelming, especially when money is tight and the paperwork looks daunting. You don't have to figure it out alone. If you'd like a patient walk-through of where you might fit and what to apply for, [reach out](/contact) for a no-pressure conversation — no obligation, just answers.

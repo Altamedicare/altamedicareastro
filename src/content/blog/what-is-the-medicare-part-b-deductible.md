@@ -46,7 +46,7 @@ And on **Original Medicare alone, there is no out-of-pocket maximum.** There's n
 | Before you meet the deductible | First $283 of covered Part B costs |
 | After the deductible | 20% coinsurance, with no cap on Original Medicare alone |
 
-If you'd like to put real numbers to your own situation, our [Cost Estimator](/medicare-cost-estimator.html) walks through the premium, deductible, and coinsurance so you can see roughly what a year might look like.
+If you'd like to put real numbers to your own situation, our [Cost Estimator](/medicare-cost-estimator) walks through the premium, deductible, and coinsurance so you can see roughly what a year might look like.
 
 ## How Medigap changes the math
 
@@ -74,4 +74,4 @@ There's no single right answer — it depends on your health, your budget, your 
 - **Original Medicare + Medigap:** higher monthly premium, but very predictable costs and any-provider freedom.
 - **Medicare Advantage:** lower or $0 premium, built-in extras, an out-of-pocket cap, but networks and plan rules.
 
-Either way, the $283 deductible is just one piece of a bigger picture. If you want help comparing what these paths would actually cost you — and which doctors stay in the mix — [reach out to Bret](/contact.html) for a no-pressure conversation. Sometimes ten minutes on the phone clears up more than an afternoon of reading.
+Either way, the $283 deductible is just one piece of a bigger picture. If you want help comparing what these paths would actually cost you — and which doctors stay in the mix — [reach out to Bret](/contact) for a no-pressure conversation. Sometimes ten minutes on the phone clears up more than an afternoon of reading.

@@ -32,7 +32,7 @@ A couple of things to confirm before you delay:
 - The employer truly has **20+ employees**. At smaller companies, Medicare usually becomes the *primary* payer at 65, and the group plan pays second — which means skipping Part B can leave big gaps.
 - The coverage is **active**, tied to current employment. The moment that changes, the clock starts.
 
-Not sure whether your situation qualifies? The [Eligibility Calculator](/medicare-eligibility-calculator.html) walks you through your dates and coverage so you know where you stand.
+Not sure whether your situation qualifies? The [Eligibility Calculator](/medicare-eligibility-calculator) walks you through your dates and coverage so you know where you stand.
 
 ## When delaying Part B is a costly mistake
 
@@ -64,10 +64,10 @@ The Part B late enrollment penalty is **10% added to your premium for each full 
 
 A quick example: go three full years without enrolling when you should have, and you're looking at a 30% surcharge on top of the standard premium — every month, for life. On a $202.90 premium, that adds up fast.
 
-You can see what a delay might cost in your own case with the [Late Enrollment Penalty Calculator](/medicare-penalty-calculator.html). Plug in your months without coverage and it shows the lifetime impact in plain numbers.
+You can see what a delay might cost in your own case with the [Late Enrollment Penalty Calculator](/medicare-penalty-calculator). Plug in your months without coverage and it shows the lifetime impact in plain numbers.
 
 ## A simple rule of thumb
 
 If you have active employer coverage from a company with 20 or more employees, delaying Part B is usually fine. If you're relying on COBRA, a retiree plan, VA benefits, or a small-employer plan, you should almost always take Part B on time.
 
-The stakes are high enough that it's worth getting a second opinion before you decide. If you'd like to talk through your specific coverage and timing, [reach out](/contact.html) for a no-pressure conversation — we'll help you figure out whether waiting is safe or whether it's time to enroll.
+The stakes are high enough that it's worth getting a second opinion before you decide. If you'd like to talk through your specific coverage and timing, [reach out](/contact) for a no-pressure conversation — we'll help you figure out whether waiting is safe or whether it's time to enroll.

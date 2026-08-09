@@ -33,7 +33,7 @@ Enbrel is a brand-name biologic. Biologics don't have ordinary generics — inst
 
 Enbrel is covered under **Medicare Part D**, your prescription drug coverage. You get Part D one of two ways: as a standalone drug plan that pairs with Original Medicare, or built into a Medicare Advantage plan. Original Medicare (Part A and Part B) on its own does not cover the medicines you handle yourself at the pharmacy, so having some form of Part D is what makes coverage for Enbrel possible.
 
-Every plan keeps its own **formulary** — the list of drugs it covers — and sorts those drugs into **tiers** that set your copay or coinsurance. Because Enbrel is a high-cost biologic, it's typically placed on a **specialty tier**. The exact amount varies from plan to plan and can change each year, which is why two neighbors can pay different prices for the same prescription. Our [Formulary Lookup](/medicare-formulary-lookup.html) lets you confirm Enbrel is covered and see which tier it lands on, and the [Drug Cost Calculator](/medicare-drug-cost-calculator.html) helps you estimate your year of out-of-pocket spending.
+Every plan keeps its own **formulary** — the list of drugs it covers — and sorts those drugs into **tiers** that set your copay or coinsurance. Because Enbrel is a high-cost biologic, it's typically placed on a **specialty tier**. The exact amount varies from plan to plan and can change each year, which is why two neighbors can pay different prices for the same prescription. Our [Formulary Lookup](/medicare-formulary-lookup) lets you confirm Enbrel is covered and see which tier it lands on, and the [Drug Cost Calculator](/medicare-drug-cost-calculator) helps you estimate your year of out-of-pocket spending.
 
 ## The 2026 price negotiation and the $2,000 cap
 
@@ -41,7 +41,7 @@ Here's the genuinely new part. Through Medicare Drug Price Negotiation, the gove
 
 I want to be straight with you about what that means at the counter: the negotiation lowers the underlying price of the drug, which is real progress, but it doesn't set one fixed price everyone pays. What you actually owe still depends on your plan's tier for Enbrel and how much you've already spent toward your yearly cap.
 
-That cap is the bigger protection for most people, especially for a specialty drug. In 2026, Part D has a **$2,000 out-of-pocket maximum** for the year, and the old "donut hole" coverage gap is gone. Once your out-of-pocket spending on covered drugs reaches $2,000, you pay nothing more for your covered prescriptions for the rest of the calendar year. For someone on a steady specialty medicine, that ceiling makes costs predictable — and you can read more in [the $2,000 drug cap explained](/blog/the-2000-drug-cap-explained.html). There's also a free option to spread that $2,000 into smoother monthly payments across the year if a big bill at once would be hard to manage.
+That cap is the bigger protection for most people, especially for a specialty drug. In 2026, Part D has a **$2,000 out-of-pocket maximum** for the year, and the old "donut hole" coverage gap is gone. Once your out-of-pocket spending on covered drugs reaches $2,000, you pay nothing more for your covered prescriptions for the rest of the calendar year. For someone on a steady specialty medicine, that ceiling makes costs predictable — and you can read more in [the $2,000 drug cap explained](/blog/the-2000-drug-cap-explained). There's also a free option to spread that $2,000 into smoother monthly payments across the year if a big bill at once would be hard to manage.
 
 ## Coverage rules to expect
 
@@ -55,7 +55,7 @@ If a plan doesn't cover Enbrel, places it on a high tier, or denies a prior auth
 
 ## Alternatives to discuss with your doctor
 
-If cost or coverage is a concern, that's a conversation worth having with your physician. There are other biologics, and biosimilar versions of some of them, that your doctor may consider. I'm not here to suggest any medical change — only to point out that you and your doctor have choices to weigh, and the right one is a medical decision, not an insurance one. If you take other biologics, you may also want to read whether [Medicare covers Humira](/blog/does-medicare-cover-humira.html), which works in a similar way.
+If cost or coverage is a concern, that's a conversation worth having with your physician. There are other biologics, and biosimilar versions of some of them, that your doctor may consider. I'm not here to suggest any medical change — only to point out that you and your doctor have choices to weigh, and the right one is a medical decision, not an insurance one. If you take other biologics, you may also want to read whether [Medicare covers Humira](/blog/does-medicare-cover-humira), which works in a similar way.
 
 ## Questions to ask your doctor
 
@@ -64,4 +64,4 @@ If cost or coverage is a concern, that's a conversation worth having with your p
 - If my plan requires prior authorization or step therapy, can your office help submit the paperwork?
 - Is there anything in my health history that affects which drug I should take?
 
-If you'd like a second set of eyes on whether your plan covers Enbrel well — or which plan would — I'm glad to help. You can run the numbers yourself with the tools above, and when you're ready, [reach out to me](/contact.html) for a no-pressure conversation. No hard sell, just clear answers so you know what you'll pay.
+If you'd like a second set of eyes on whether your plan covers Enbrel well — or which plan would — I'm glad to help. You can run the numbers yourself with the tools above, and when you're ready, [reach out to me](/contact) for a no-pressure conversation. No hard sell, just clear answers so you know what you'll pay.
