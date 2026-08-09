@@ -8,7 +8,7 @@ import { breadcrumbLd } from '../i18n/breadcrumbs';
 import { COMPARE_PLANS_URL } from '../consts';
 
 const lang = getLangFromUrl(Astro.url);
-const canonical = '/dental-vision-hearing.html';
+const canonical = '/dental-vision-hearing';
 // Mirrors the visible trail below exactly — no invented levels.
 const crumbLd = breadcrumbLd(
   [
@@ -32,7 +32,7 @@ const crumbLd = breadcrumbLd(
 
 <section class="page-header">
   <div class="container">
-    <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;&rsaquo;&nbsp; <a href="medicare-basics.html">Plans</a> &nbsp;&rsaquo;&nbsp; Dental, Vision, Hearing</div>
+    <div class="breadcrumb"><a href="/index">Home</a> &nbsp;&rsaquo;&nbsp; <a href="/medicare-basics">Plans</a> &nbsp;&rsaquo;&nbsp; Dental, Vision, Hearing</div>
     <h1>Dental, Vision &amp; Hearing Coverage</h1>
     <p class="lede">Original Medicare doesn&rsquo;t cover routine dental, vision, or hearing care &mdash; but you have options.</p>
   </div>
@@ -50,11 +50,11 @@ const crumbLd = breadcrumbLd(
     <p>The good news: there are several ways to add this coverage.</p>
 
     <h2>Option 1: Medicare Advantage Plans</h2>
-    <p>Most <a href="medicare-advantage.html">Medicare Advantage</a> plans include dental, vision, and hearing benefits at no extra premium. Coverage levels vary by plan &mdash; some include only cleanings and exams, while others cover crowns, dentures, and hearing aids with meaningful allowances.</p>
+    <p>Most <a href="/medicare-advantage">Medicare Advantage</a> plans include dental, vision, and hearing benefits at no extra premium. Coverage levels vary by plan &mdash; some include only cleanings and exams, while others cover crowns, dentures, and hearing aids with meaningful allowances.</p>
     <p>If dental, vision, and hearing are important to you, this is often the simplest path.</p>
 
     <h2>Option 2: Standalone Dental, Vision &amp; Hearing Plans</h2>
-    <p>Available alongside Original Medicare and <a href="medicare-supplement.html">Medicare Supplement</a> plans. These let you keep the doctor flexibility of Original Medicare/Supplement while adding ancillary coverage. Premiums and benefits vary widely.</p>
+    <p>Available alongside Original Medicare and <a href="/medicare-supplement">Medicare Supplement</a> plans. These let you keep the doctor flexibility of Original Medicare/Supplement while adding ancillary coverage. Premiums and benefits vary widely.</p>
 
     <h2>Option 3: Discount Programs</h2>
     <p>Some dental and vision discount programs aren&rsquo;t insurance, but offer reduced rates at participating providers. Useful for occasional needs without committing to a full insurance premium.</p>
@@ -87,7 +87,7 @@ const crumbLd = breadcrumbLd(
     <h2>Have Questions? Let's Talk.</h2>
     <p>One free, no-pressure call &mdash; clear answers, no sales pitch.</p>
     <div class="cta-buttons">
-      <a href="contact.html" class="btn btn-primary btn-lg">Schedule Consultation</a>
+      <a href="/contact" class="btn btn-primary btn-lg">Schedule Consultation</a>
       <a href="tel:4352925548" class="btn btn-outline btn-lg">Call (435) 292-5548</a>
       <a href={COMPARE_PLANS_URL} target="_blank" rel="noopener" class="btn btn-outline btn-lg">Compare Plans Online</a>
     </div>

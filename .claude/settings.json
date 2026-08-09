@@ -7,7 +7,12 @@
       "Bash(curl -sI --max-time 25 https://altamedicare.com/faq.html)",
       "Bash(curl -s --max-time 25 https://altamedicare.com/faq.html)",
       "Bash(curl -sL --max-time 25 https://altamedicare.com/medicare-eligibility-calculator)",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" --max-time 20 https://altamedicare.com/utah)"
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" --max-time 20 https://altamedicare.com/utah)",
+      "Bash(grep -vE \"^\\\\s*//|glob\")",
+      "Bash(grep -oE \"'/[^']*\\\\.html'|\\\\`/\\\\\\\\\\\\$\\\\{[a-z]+\\\\}/[a-z-]*\\\\.html\\\\`\")",
+      "Bash(grep -ro 'href=\\\\\\\\\"[^\"]*\\\\.html' src/i18n/content src/i18n/shared)",
+      "Bash(grep -ro 'href=\\\\\\\\\"[^\"]*\\\\.html' src/i18n/shared)",
+      "Bash(grep -ro 'href=\\\\\\\\\"[^\"]*\\\\.html' src/i18n/content/en)"
     ],
     "additionalDirectories": [
       "\\tmp"

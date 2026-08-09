@@ -38,7 +38,7 @@ const fmt = (d: Date) =>
       </div>
       <div class="card-grid">
         {featured.map((p) => (
-          <a href={`/blog/${p.slug}.html`} class="card card-feature" style="text-decoration:none;">
+          <a href={`/blog/${p.slug}`} class="card card-feature" style="text-decoration:none;">
             <span class="card-eyebrow"><i class={`fa-solid ${CATEGORIES[p.data.category].icon}`}></i> {CATEGORIES[p.data.category].title}</span>
             <h3>{p.data.title}</h3>
             <p>{p.data.description}</p>
@@ -59,7 +59,7 @@ const fmt = (d: Date) =>
     </div>
     <div class="card-grid">
       {Object.entries(CATEGORIES).map(([key, c]) => (
-        <a href={`/blog/category/${key}.html`} class="card cat-card" style="text-decoration:none;">
+        <a href={`/blog/category/${key}`} class="card cat-card" style="text-decoration:none;">
           <div class="card-icon"><i class={`fa-solid ${c.icon}`} style="font-size:1.5rem"></i></div>
           <h3>{c.title}</h3>
           <p>{c.blurb}</p>
@@ -78,7 +78,7 @@ const fmt = (d: Date) =>
     </div>
     <div class="post-list">
       {recent.map((p) => (
-        <a href={`/blog/${p.slug}.html`} class="post-row">
+        <a href={`/blog/${p.slug}`} class="post-row">
           <div class="pr-main">
             <span class="pr-cat">{CATEGORIES[p.data.category].title}</span>
             <h3>{p.data.title}</h3>
@@ -96,7 +96,7 @@ const fmt = (d: Date) =>
     <h2>Still have questions?</h2>
     <p>One free, no-pressure call with a licensed Utah Medicare agent.</p>
     <div class="cta-buttons">
-      <a href="/contact.html" class="btn btn-primary btn-lg">Talk to Bret</a>
+      <a href="/contact" class="btn btn-primary btn-lg">Talk to Bret</a>
       <a href="tel:4352925548" class="btn btn-outline btn-lg">Call (435) 292-5548</a>
     </div>
   </div>

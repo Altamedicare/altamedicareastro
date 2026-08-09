@@ -28,9 +28,11 @@ export function getSharedModule<T>(module: string, locale: string = DEFAULT_LOCA
   const master = load(module, DEFAULT_LOCALE);
   if (!master)
     throw new Error(`Missing shared-module master: src/i18n/shared/${module}/${DEFAULT_LOCALE}.json`);
-  if (locale === DEFAULT_LOCALE) return master as T;
   // Embedded hrefs localize at load time, same rule as getPageContent —
   // committed files stay verbatim-maskable; rewriting is a render concern.
+  // English is included: it needs the .html → extensionless normalization even
+  // though it needs no translation.
+  if (locale === DEFAULT_LOCALE) return deepLocalizeHrefs(master, locale) as T;
   return deepLocalizeHrefs(load(module, locale) ?? master, locale) as T;
 }
 

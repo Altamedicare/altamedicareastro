@@ -18,11 +18,11 @@
 <title>Medicare Eligibility &amp; Timeline Calculator | When Can I Enroll? | AltaMedicare</title>
 <meta name="description" content="Free Medicare eligibility and timeline calculator. See if you qualify, your Initial Enrollment Period dates, your Medicare start date, and key deadlines based on your date of birth." />
 <meta name="robots" content="index, follow" />
-<link rel="canonical" href="https://altamedicare.com/medicare-eligibility-calculator.html" />
+<link rel="canonical" href="https://altamedicare.com/medicare-eligibility-calculator" />
 <meta property="og:title" content="Medicare Eligibility &amp; Timeline Calculator | When Can I Enroll? | AltaMedicare" />
 <meta property="og:description" content="Free Medicare eligibility and timeline calculator. See if you qualify, your Initial Enrollment Period dates, your Medicare start date, and key deadlines based on your date of birth." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://altamedicare.com/medicare-eligibility-calculator.html" />
+<meta property="og:url" content="https://altamedicare.com/medicare-eligibility-calculator" />
 <meta property="og:image" content="https://altamedicare.com/images/og-image.svg" />
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -217,7 +217,7 @@
 </head>
 <body data-pagefind-body data-pagefind-meta="type:Calculator" data-pagefind-filter="type:Calculator">
 <div class="wrap">
-  <a href="/tools.html" style="display:inline-flex;align-items:center;gap:8px;margin-bottom:16px;color:var(--mc-blue,#135aac);font-family:inherit;font-weight:600;text-decoration:none;font-size:.95rem;"><i class="fa-solid fa-arrow-left"></i> Back to Tools</a>
+  <a href="/tools" style="display:inline-flex;align-items:center;gap:8px;margin-bottom:16px;color:var(--mc-blue,#135aac);font-family:inherit;font-weight:600;text-decoration:none;font-size:.95rem;"><i class="fa-solid fa-arrow-left"></i> Back to Tools</a>
 
   <main class="card" role="main">
     <header class="head">
@@ -307,7 +307,7 @@
         <a class="ghost" href="sms:14352925548?body=Hi%20Bret%2C%20I%20have%20a%20question%20about%20my%20Medicare%20eligibility%20and%20timeline."><i class="fa-solid fa-comment-sms"></i> Text Us</a>
       </div>
       <div class="cta-row" style="margin-top:12px;">
-        <a class="ghost" href="contact.html"><i class="fa-solid fa-calendar-check"></i> Free Medicare Review</a>
+        <a class="ghost" href="/contact"><i class="fa-solid fa-calendar-check"></i> Free Medicare Review</a>
       </div>
     </div>
   </section>
@@ -387,7 +387,7 @@
     } else if (data.ssdi === "yes") {
       recs.push({ type: "ok", html: "Watch your mail for your Medicare card around month 25 — enrollment is usually automatic." });
     } else {
-      recs.push({ type: "ok", html: 'Compare <a href="medicare-advantage.html">Medicare Advantage</a>, <a href="medicare-supplement.html">Medicare Supplement</a>, and <a href="prescription-drug-plans.html">Part D</a> plans.' });
+      recs.push({ type: "ok", html: 'Compare <a href="/medicare-advantage">Medicare Advantage</a>, <a href="/medicare-supplement">Medicare Supplement</a>, and <a href="/prescription-drug-plans">Part D</a> plans.' });
     }
     recs.push({ type: "ok", html: "Enroll through the Social Security Administration at SSA.gov or 1-800-772-1213." });
     if (data.employer === "yes") {
@@ -398,7 +398,7 @@
     } else if (now > iepEnd) {
       recs.push({ type: "warn", html: "If you missed your Initial Enrollment Period without other coverage, act soon — penalties can last a lifetime." });
     }
-    recs.push({ type: "ok", html: 'Speak with a <a href="contact.html">licensed Utah Medicare agent</a> for free, personalized guidance.' });
+    recs.push({ type: "ok", html: 'Speak with a <a href="/contact">licensed Utah Medicare agent</a> for free, personalized guidance.' });
 
     // ----- Detail cards -----
     var cards = [];
@@ -456,7 +456,7 @@
     html += '<div class="lead"><h3>Still have questions?</h3><p>Talk to a local Medicare agent — free, no pressure.</p><div class="cta-row">' +
       '<a class="primary" href="sms:14352925548?body=Hi%20Bret%2C%20I%20have%20a%20question%20about%20my%20Medicare%20timeline."><i class="fa-solid fa-comment-sms"></i> Text</a>' +
       '<a class="ghost" href="tel:4352925548"><i class="fa-solid fa-phone"></i> Call</a>' +
-      '<a class="ghost" href="contact.html"><i class="fa-solid fa-calendar-check"></i> Schedule</a>' +
+      '<a class="ghost" href="/contact"><i class="fa-solid fa-calendar-check"></i> Schedule</a>' +
       '</div></div>';
 
     results.innerHTML = html;

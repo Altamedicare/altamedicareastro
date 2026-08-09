@@ -17,7 +17,7 @@ const slug = pageSlugFromUrl(Astro.url); // "faq/<key>"
 const key = slug.split('/')[1];
 const { shell, categories } = getFaqData(lang);
 const cat = categories.find((c) => c.key === key)!;
-const canonical = lang === DEFAULT_LOCALE ? `/faq/${key}.html` : `/${lang}/faq/${key}.html`;
+const canonical = lang === DEFAULT_LOCALE ? `/faq/${key}` : `/${lang}/faq/${key}`;
 const alternates = hreflangAlternates(slug);
 const SITE = SITE_ORIGIN;
 const href = (h: string) => localizeHref(h, lang);
@@ -59,7 +59,7 @@ const breadcrumbLd = {
 
   <section class="page-header">
     <div class="container">
-      <div class="breadcrumb"><a href={href('/')}>{t('nav.home', lang)}</a> &nbsp;&rsaquo;&nbsp; <a href={href('/faq.html')}>{shell.faqCrumb}</a> &nbsp;&rsaquo;&nbsp; {cat.title}</div>
+      <div class="breadcrumb"><a href={href('/')}>{t('nav.home', lang)}</a> &nbsp;&rsaquo;&nbsp; <a href={href('/faq')}>{shell.faqCrumb}</a> &nbsp;&rsaquo;&nbsp; {cat.title}</div>
       <h1><i class={`fa-solid ${cat.icon}`} style="margin-right:10px;color:var(--mountain-blue);"></i>{cat.title}</h1>
       <p class="lede">{cat.blurb}</p>
     </div>
@@ -103,7 +103,7 @@ const breadcrumbLd = {
       <p class="faq-empty" id="faqEmpty" hidden set:html={shell.emptyHtml}></p>
 
       <div style="text-align:center; margin-top:36px;">
-        <a href={href('/faq.html')} class="btn btn-outline" set:html={shell.backHtml} />
+        <a href={href('/faq')} class="btn btn-outline" set:html={shell.backHtml} />
       </div>
     </div>
   </section>

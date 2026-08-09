@@ -30,7 +30,7 @@ interface AboutContent {
 const lang = getLangFromUrl(Astro.url);
 const c = getPageContent<AboutContent>('about', lang);
 const vars = { phone: PHONE_DISPLAY };
-const canonical = lang === DEFAULT_LOCALE ? '/about.html' : `/${lang}/about.html`;
+const canonical = lang === DEFAULT_LOCALE ? '/about' : `/${lang}/about`;
 const alternates = hreflangAlternates('about');
 // Relative asset paths resolve against /es/ on localized pages — absolutize
 // there; untouched (byte-stable) on the English master.

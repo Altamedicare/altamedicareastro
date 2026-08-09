@@ -23,7 +23,7 @@ interface MedicareSupplementContent {
 const lang = getLangFromUrl(Astro.url);
 const c = getPageContent<MedicareSupplementContent>('medicare-supplement', lang);
 const vars = { phone: PHONE_DISPLAY };
-const canonical = lang === DEFAULT_LOCALE ? '/medicare-supplement.html' : `/${lang}/medicare-supplement.html`;
+const canonical = lang === DEFAULT_LOCALE ? '/medicare-supplement' : `/${lang}/medicare-supplement`;
 const alternates = hreflangAlternates('medicare-supplement');
 ---
 

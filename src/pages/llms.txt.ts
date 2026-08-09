@@ -69,8 +69,8 @@ export const GET: APIRoute = async () => {
   sections.push(
     ``,
     `## Medicare FAQ`,
-    link('Medicare FAQ Hub', '/faq.html', `${FAQ_CATEGORIES.reduce((n, c) => n + c.faqs.length, 0)} common Medicare questions answered, organized by topic.`),
-    ...FAQ_CATEGORIES.map((c) => link(`${c.title} FAQ`, `/faq/${c.key}.html`, `${c.faqs.length} answers — ${c.blurb}`)),
+    link('Medicare FAQ Hub', '/faq', `${FAQ_CATEGORIES.reduce((n, c) => n + c.faqs.length, 0)} common Medicare questions answered, organized by topic.`),
+    ...FAQ_CATEGORIES.map((c) => link(`${c.title} FAQ`, `/faq/${c.key}`, `${c.faqs.length} answers — ${c.blurb}`)),
   );
 
   // Guides, grouped by blog category in the canonical CATEGORIES order.
@@ -81,7 +81,7 @@ export const GET: APIRoute = async () => {
     sections.push(
       ``,
       `## Guides — ${heading}`,
-      ...group.map((p) => link(p.data.title, `/blog/${p.slug}.html`, p.data.description)),
+      ...group.map((p) => link(p.data.title, `/blog/${p.slug}`, p.data.description)),
     );
   }
 
@@ -95,21 +95,21 @@ export const GET: APIRoute = async () => {
   sections.push(
     ``,
     `## Plans & Topics`,
-    link('Medicare Basics', '/medicare-basics.html', 'Parts A, B, C, and D explained in plain English.'),
-    link('Medicare Advantage', '/medicare-advantage.html', 'All-in-one Part C plans with networks and extra benefits.'),
-    link('Medicare Supplement (Medigap)', '/medicare-supplement.html', 'Predictable costs and nationwide provider flexibility.'),
-    link('Prescription Drug Plans (Part D)', '/prescription-drug-plans.html', 'Formularies, insulin caps, and the $2,000 out-of-pocket cap.'),
-    link('Dual Eligible / Medicaid (D-SNP)', '/dual-eligible.html', 'Extra benefits for people with both Medicare and Medicaid.'),
-    link('Dental, Vision & Hearing', '/dental-vision-hearing.html', 'Coverage Original Medicare leaves out.'),
-    link('Turning 65', '/turning-65.html', 'Enrollment timeline and avoiding lifetime late penalties.'),
-    link('Drug Savings', '/drug-savings.html', 'Free prescription review across Part D plans and pharmacies.'),
+    link('Medicare Basics', '/medicare-basics', 'Parts A, B, C, and D explained in plain English.'),
+    link('Medicare Advantage', '/medicare-advantage', 'All-in-one Part C plans with networks and extra benefits.'),
+    link('Medicare Supplement (Medigap)', '/medicare-supplement', 'Predictable costs and nationwide provider flexibility.'),
+    link('Prescription Drug Plans (Part D)', '/prescription-drug-plans', 'Formularies, insulin caps, and the $2,000 out-of-pocket cap.'),
+    link('Dual Eligible / Medicaid (D-SNP)', '/dual-eligible', 'Extra benefits for people with both Medicare and Medicaid.'),
+    link('Dental, Vision & Hearing', '/dental-vision-hearing', 'Coverage Original Medicare leaves out.'),
+    link('Turning 65', '/turning-65', 'Enrollment timeline and avoiding lifetime late penalties.'),
+    link('Drug Savings', '/drug-savings', 'Free prescription review across Part D plans and pharmacies.'),
   );
 
   sections.push(
     ``,
     `## Contact & Enrollment`,
-    link('About Bret Swope', '/about.html', 'Licensed Utah Medicare agent based in Alpine.'),
-    link('Contact', '/contact.html', 'Call or text (435) 292-5548 · Alpine, Utah · Mon–Fri 9am–6pm MT.'),
+    link('About Bret Swope', '/about', 'Licensed Utah Medicare agent based in Alpine.'),
+    link('Contact', '/contact', 'Call or text (435) 292-5548 · Alpine, Utah · Mon–Fri 9am–6pm MT.'),
     `- Compare Plans Online (secure portal): ${'https://www.sunfirematrix.com/app/consumer/medicareadvocates/5454608/#/'}`,
     ``,
   );

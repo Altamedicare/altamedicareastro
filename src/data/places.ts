@@ -33,16 +33,16 @@ export const PLACES: Place[] = [
 ];
 
 /** Hub URL for a place, e.g. "/utah.html" or "/utah/davis-county.html". */
-export const hubHref = (p: Place) => `/${p.slug}.html`;
+export const hubHref = (p: Place) => `/${p.slug}`;
 /** Sub-page URL, e.g. "/utah/medicare-advantage.html". */
 export const pageHref = (p: Place, type: 'medicare-advantage' | 'medicare-supplement' | 'part-d') =>
-  `/${p.slug}/${type}.html`;
+  `/${p.slug}/${type}`;
 
 export interface Crumb { name: string; href: string; }
 
 /** State hub URL for a county (the slug minus its last segment), else null. */
 export const parentStateHub = (p: Place): string | null =>
-  p.kind === 'county' ? `/${p.slug.split('/').slice(0, -1).join('/')}.html` : null;
+  p.kind === 'county' ? `/${p.slug.split('/').slice(0, -1).join('/')}` : null;
 
 /** Breadcrumb trail for a location page. Counties nest under their state hub.
  *  `leaf` is the current sub-page (omit on the hub page itself). */

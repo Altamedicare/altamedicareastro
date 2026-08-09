@@ -29,7 +29,7 @@ const groups = programsForDrug(d.drug, d.conditions, lang);
 const typeMeta = getTypeMeta(lang);
 const statusMeta = getFundStatusMeta(lang);
 
-const canonical = lang === DEFAULT_LOCALE ? `/${pageSlug}.html` : `/${lang}/${pageSlug}.html`;
+const canonical = lang === DEFAULT_LOCALE ? `/${pageSlug}` : `/${lang}/${pageSlug}`;
 const alternates = hreflangAlternates(pageSlug);
 const href = (h: string) => localizeHref(h, lang);
 const vars = { drug: d.drug, generic: d.generic, conditionLabel: d.conditionLabel, blogSlug: d.blogSlug, phone: PHONE_DISPLAY };
@@ -70,8 +70,8 @@ const faqLd = {
   <section class="page-header">
     <div class="container">
       <div class="breadcrumb">
-        <a href={href('/')}>{t('nav.home', lang)}</a> &nbsp;&rsaquo;&nbsp; <a href={href('/tools.html')}>{shell.crumbTools}</a> &nbsp;&rsaquo;&nbsp;
-        <a href={href('/prescription-drug-assistance.html')}>{shell.crumbFinder}</a> &nbsp;&rsaquo;&nbsp; {d.drug}
+        <a href={href('/')}>{t('nav.home', lang)}</a> &nbsp;&rsaquo;&nbsp; <a href={href('/tools')}>{shell.crumbTools}</a> &nbsp;&rsaquo;&nbsp;
+        <a href={href('/prescription-drug-assistance')}>{shell.crumbFinder}</a> &nbsp;&rsaquo;&nbsp; {d.drug}
       </div>
       <h1>{interp(shell.h1, vars)}</h1>
       <p class="lede">{interp(shell.lede, vars)}</p>
@@ -144,7 +144,7 @@ const faqLd = {
       </div>
       <div class="card-grid">
         {related.map((r) => (
-          <a class="card" href={href(`/${r.slug}-assistance-program.html`)} style="text-decoration:none;">
+          <a class="card" href={href(`/${r.slug}-assistance-program`)} style="text-decoration:none;">
             <div class="card-icon"><i class="fa-solid fa-hand-holding-dollar" style="font-size:1.5rem"></i></div>
             <h3>{interp(shell.relatedCardTitle, { drug: r.drug })}</h3>
             <p>{interp(shell.relatedCardText, { drug: r.drug, generic: r.generic })}</p>
@@ -153,7 +153,7 @@ const faqLd = {
         ))}
       </div>
       <div style="text-align:center; margin-top:32px;">
-        <a href={href('/prescription-drug-assistance.html')} class="btn btn-outline">{shell.finderBtn}</a>
+        <a href={href('/prescription-drug-assistance')} class="btn btn-outline">{shell.finderBtn}</a>
       </div>
     </div>
   </section>

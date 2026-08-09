@@ -35,7 +35,7 @@ interface MaContent {
 const lang = getLangFromUrl(Astro.url);
 const c = getPageContent<MaContent>('medicare-advantage', lang);
 const vars = { phone: PHONE_DISPLAY };
-const canonical = lang === DEFAULT_LOCALE ? '/medicare-advantage.html' : `/${lang}/medicare-advantage.html`;
+const canonical = lang === DEFAULT_LOCALE ? '/medicare-advantage' : `/${lang}/medicare-advantage`;
 const alternates = hreflangAlternates('medicare-advantage');
 // Schema mirrors the rendered trail (Home › Plans › Medicare Advantage).
 const crumbLd = breadcrumbLd(crumbsFromHtml(c.breadcrumbHtml), lang, canonical);

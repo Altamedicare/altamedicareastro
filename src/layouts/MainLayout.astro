@@ -4,6 +4,7 @@ import LanguageSwitcher from '../components/LanguageSwitcher.astro';
 import { getLangFromUrl, t } from '../i18n/locales';
 import { localizeHref } from '../i18n/content';
 import { businessDisclaimers } from '../i18n/compliance';
+import { toPageUrl } from '../i18n/urls';
 import { PHONE_DISPLAY } from '../consts';
 
 interface Props {
@@ -44,7 +45,10 @@ const href = (h: string) => localizeHref(h, lang);
 // the literals they replaced); compliance text is CMS-published wording from
 // src/i18n/compliance.ts — never machine-translated.
 const dz = businessDisclaimers(lang);
-const canonicalUrl = new URL(canonical, Astro.site).href;
+// Callers still pass the authored ".html" path (it matches the route and the
+// file on disk); toPageUrl converts it to the form Cloudflare Pages actually
+// serves, so the canonical never points at a URL that 308s away. og:url follows.
+const canonicalUrl = new URL(toPageUrl(canonical), Astro.site).href;
 const ogUrl = canonicalUrl;
 const ogImageUrl = new URL(ogImage, Astro.site).href;
 
@@ -154,13 +158,13 @@ const webPage =
           </div>
         </li>
         <li class="has-dropdown">
-          <a href={href('/tools.html')}>{t('nav.tools', lang)}</a>
+          <a href={href('/tools')}>{t('nav.tools', lang)}</a>
           <div class="dropdown">
-            <a href={href('/medicare-eligibility-calculator.html')}>{t('nav.calcEligibility', lang)}</a>
-            <a href={href('/medicare-irmaa-calculator.html')}>{t('nav.calcIrmaa', lang)}</a>
-            <a href={href('/medicare-penalty-calculator.html')}>{t('nav.calcPenalty', lang)}</a>
-            <a href={href('/medicare-drug-cost-calculator.html')}>{t('nav.calcDrugCost', lang)}</a>
-            <a href={href('/tools.html')} set:html={t('nav.allTools', lang)} />
+            <a href={href('/medicare-eligibility-calculator')}>{t('nav.calcEligibility', lang)}</a>
+            <a href={href('/medicare-irmaa-calculator')}>{t('nav.calcIrmaa', lang)}</a>
+            <a href={href('/medicare-penalty-calculator')}>{t('nav.calcPenalty', lang)}</a>
+            <a href={href('/medicare-drug-cost-calculator')}>{t('nav.calcDrugCost', lang)}</a>
+            <a href={href('/tools')} set:html={t('nav.allTools', lang)} />
           </div>
         </li>
         <li><a href={href('drug-savings.html')}>{t('nav.drugSavings', lang)}</a></li>
@@ -226,12 +230,12 @@ const webPage =
       <div>
         <h4>{t('footer.resourcesHeading', lang)}</h4>
         <ul>
-          <li><a href={href('/blog.html')}>{t('footer.blog', lang)}</a></li>
-          <li><a href={href('/faq.html')}>{t('footer.faq', lang)}</a></li>
-          <li><a href={href('/utah.html')}>{t('footer.utah', lang)}</a></li>
+          <li><a href={href('/blog')}>{t('footer.blog', lang)}</a></li>
+          <li><a href={href('/faq')}>{t('footer.faq', lang)}</a></li>
+          <li><a href={href('/utah')}>{t('footer.utah', lang)}</a></li>
           <li><a href={href('medicare-news.html')}>{t('nav.news', lang)}</a></li>
           <li><a href={href('medicare-basics.html')}>{t('nav.basics', lang)}</a></li>
-          <li><a href={href('/tools.html')}>{t('footer.tools', lang)}</a></li>
+          <li><a href={href('/tools')}>{t('footer.tools', lang)}</a></li>
           <li><a href={href('turning-65.html')}>{t('nav.turning65', lang)}</a></li>
           <li><a href={href('drug-savings.html')}>{t('nav.drugSavings', lang)}</a></li>
           <li><a href={href('contact.html')}>{t('nav.contact', lang)}</a></li>

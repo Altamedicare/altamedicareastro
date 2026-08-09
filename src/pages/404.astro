@@ -1,0 +1,95 @@
+---
+// src/pages/404.astro — the real 404.
+//
+// Cloudflare Pages serves a build's 404.html for unmatched routes WITH a 404
+// status. Without this file it falls back to index.html at 200, which made every
+// mistyped or stale URL a soft-404 duplicate of the homepage (SEO-AUDIT-PLAYBOOK
+// §1c) — and made "does this URL resolve?" unanswerable, since everything did.
+//
+// noIndex: a 404 must never be indexed. It still links onward (follow), and the
+// search modal in MainLayout gives a no-JS-free way to recover.
+import MainLayout from '../layouts/MainLayout.astro';
+import { TOOLS } from '../consts';
+
+const destinations = [
+  { href: '/medicare-basics', title: 'Medicare Basics', desc: 'Parts A, B, C and D explained without jargon.' },
+  { href: '/medicare-advantage', title: 'Medicare Advantage', desc: 'How Part C plans, networks and extra benefits work.' },
+  { href: '/medicare-supplement', title: 'Medicare Supplement', desc: 'Medigap plans and predictable out-of-pocket costs.' },
+  { href: '/prescription-drug-plans', title: 'Prescription Drug Plans', desc: 'Part D coverage matched to the drugs you take.' },
+  { href: '/turning-65', title: 'Turning 65', desc: 'Your enrollment timeline and how to avoid penalties.' },
+  { href: '/utah', title: 'Medicare in Utah', desc: 'Local guidance for Utah counties and communities.' },
+];
+
+const quickTools = [TOOLS.eligibility, TOOLS.quiz, TOOLS['drug-cost']];
+---
+
+<MainLayout
+  title="Page Not Found | AltaMedicare"
+  description="That page doesn’t exist. Find Medicare guides, calculators, and local Utah help here."
+  canonical="/404.html"
+  noIndex={true}
+>
+
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a> &nbsp;&rsaquo;&nbsp; Page Not Found</div>
+    <h1>We couldn&rsquo;t find that page</h1>
+    <p class="lede">The link may be outdated or mistyped &mdash; but the answer you were after is probably one click away.</p>
+  </div>
+</section>
+
+<section class="section-white">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Popular pages</span>
+      <h2>Where would you like to go?</h2>
+      <p>Or press <strong>/</strong> to search the whole site.</p>
+    </div>
+
+    <div class="card-grid">
+      {
+        destinations.map((d) => (
+          <a href={d.href} class="card" style="text-decoration:none;">
+            <h3>{d.title}</h3>
+            <p>{d.desc}</p>
+            <span class="card-link">Open</span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section-tinted">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Free tools</span>
+      <h2>Or start with a calculator</h2>
+    </div>
+    <div class="card-grid">
+      {
+        quickTools.map((t) => (
+          <a href={t.href} class="card" style="text-decoration:none;">
+            <div class="card-icon"><i class={`fa-solid ${t.icon}`} style="font-size:1.6rem"></i></div>
+            <h3>{t.title}</h3>
+            <p>{t.desc}</p>
+            <span class="card-link">Open tool</span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <h2>Still stuck? Just ask.</h2>
+    <p>One free, no-pressure call &mdash; clear answers, no sales pitch.</p>
+    <div class="cta-buttons">
+      <a href="/contact" class="btn btn-primary btn-lg">Schedule Consultation</a>
+      <a href="tel:4352925548" class="btn btn-outline btn-lg">Call (435) 292-5548</a>
+    </div>
+  </div>
+</section>
+
+</MainLayout>

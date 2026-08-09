@@ -26,13 +26,13 @@ const fmt = (d: Date) =>
 <MainLayout
   title={`${cat.title} | Medicare Articles | AltaMedicare`}
   description={`${cat.blurb} Plain-English Medicare guides from a licensed Utah agent.`}
-  canonical={`/blog/category/${key}.html`}
+  canonical={`/blog/category/${key}`}
   noIndex={true}
 >
 
 <section class="page-header">
   <div class="container">
-    <div class="breadcrumb"><a href="/">Home</a> &nbsp;&rsaquo;&nbsp; <a href="/blog.html">Blog</a> &nbsp;&rsaquo;&nbsp; {cat.title}</div>
+    <div class="breadcrumb"><a href="/">Home</a> &nbsp;&rsaquo;&nbsp; <a href="/blog">Blog</a> &nbsp;&rsaquo;&nbsp; {cat.title}</div>
     <h1><i class={`fa-solid ${cat.icon}`} style="margin-right:10px;color:var(--mountain-blue);"></i>{cat.title}</h1>
     <p class="lede">{cat.blurb}</p>
   </div>
@@ -43,7 +43,7 @@ const fmt = (d: Date) =>
     {posts.length > 0 ? (
       <div class="post-list">
         {posts.map((p) => (
-          <a href={`/blog/${p.slug}.html`} class="post-row">
+          <a href={`/blog/${p.slug}`} class="post-row">
             <div class="pr-main">
               <span class="pr-cat">{cat.title}</span>
               <h3>{p.title}</h3>
@@ -56,12 +56,12 @@ const fmt = (d: Date) =>
     ) : (
       <div class="callout" style="max-width:680px;margin:0 auto;">
         <strong>New articles are on the way.</strong>
-        <p style="margin:8px 0 0;">We&rsquo;re actively writing for this topic. In the meantime, <a href="/contact.html">ask Bret directly</a> or <a href="/blog.html">browse all articles</a>.</p>
+        <p style="margin:8px 0 0;">We&rsquo;re actively writing for this topic. In the meantime, <a href="/contact">ask Bret directly</a> or <a href="/blog">browse all articles</a>.</p>
       </div>
     )}
 
     <div style="text-align:center; margin-top:36px;">
-      <a href="/blog.html" class="btn btn-outline">&larr; All categories</a>
+      <a href="/blog" class="btn btn-outline">&larr; All categories</a>
     </div>
   </div>
 </section>

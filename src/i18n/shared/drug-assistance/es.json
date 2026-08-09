@@ -19,7 +19,7 @@
     "secDatabaseBlurb": "Bases de datos gratuitas que enumeran programas y descuentos adicionales.",
     "whoMayQualify": "Quiénes pueden calificar:",
     "conditionsLabel": "Condiciones:",
-    "finderCalloutHtml": "<strong>¿No está seguro de cuál le conviene?</strong> Use el <a href=\"/prescription-drug-assistance.html\">Buscador de Asistencia para Medicamentos Recetados</a> gratuito y su estimador rápido de elegibilidad, lea <a href=\"/blog/{blogSlug}.html\">¿Medicare cubre {drug}?</a>, o deje que Bret lo evalúe y le ayude a solicitar.",
+    "finderCalloutHtml": "<strong>¿No está seguro de cuál le conviene?</strong> Use el <a href=\"/prescription-drug-assistance.html\">Buscador de Asistencia para Medicamentos Recetados</a> gratuito y su estimador rápido de elegibilidad, lea <a href=\"/blog/{blogSlug}\">¿Medicare cubre {drug}?</a>, o deje que Bret lo evalúe y le ayude a solicitar.",
     "faqEyebrow": "Respuestas en lenguaje sencillo",
     "faqH2": "Asistencia para {drug} — Preguntas Frecuentes",
     "faqs": [

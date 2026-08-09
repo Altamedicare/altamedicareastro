@@ -28,7 +28,7 @@ const {
   author, tags, image, faqs, relatedTools, readingTime, related, prev, next,
 } = Astro.props;
 
-const canonical = `/blog/${slug}.html`;
+const canonical = `/blog/${slug}`;
 const cat = CATEGORIES[category];
 const SITE = 'https://altamedicare.com';
 const ogImage = image || '/images/og-image.svg';
@@ -68,8 +68,8 @@ const breadcrumbLd = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
-    { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE}/blog.html` },
-    { '@type': 'ListItem', position: 3, name: cat.title, item: `${SITE}/blog/category/${category}.html` },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE}/blog` },
+    { '@type': 'ListItem', position: 3, name: cat.title, item: `${SITE}/blog/category/${category}` },
     { '@type': 'ListItem', position: 4, name: title, item: `${SITE}${canonical}` },
   ],
 };
@@ -100,8 +100,8 @@ const faqLd = faqs.length
       <div class="container content-narrow">
         <nav class="breadcrumb" aria-label="Breadcrumb">
           <a href="/">Home</a> &nbsp;&rsaquo;&nbsp;
-          <a href="/blog.html">Blog</a> &nbsp;&rsaquo;&nbsp;
-          <a href={`/blog/category/${category}.html`}>{cat.title}</a>
+          <a href="/blog">Blog</a> &nbsp;&rsaquo;&nbsp;
+          <a href={`/blog/category/${category}`}>{cat.title}</a>
         </nav>
         <span class="post-cat-tag"><i class={`fa-solid ${cat.icon}`}></i> {cat.title}</span>
         <h1>{title}</h1>
@@ -197,7 +197,7 @@ const faqLd = faqs.length
           </div>
           <div class="card-grid">
             {related.map((r) => (
-              <a href={`/blog/${r.slug}.html`} class="card" style="text-decoration:none;">
+              <a href={`/blog/${r.slug}`} class="card" style="text-decoration:none;">
                 <span class="card-eyebrow">{CATEGORIES[r.category as keyof typeof CATEGORIES]?.title}</span>
                 <h3>{r.title}</h3>
                 <p>{r.description}</p>
@@ -214,13 +214,13 @@ const faqLd = faqs.length
         <div class="container content-narrow">
           <div class="post-nav-grid">
             {prev ? (
-              <a class="post-nav-link prev" href={`/blog/${prev.slug}.html`}>
+              <a class="post-nav-link prev" href={`/blog/${prev.slug}`}>
                 <span class="pn-dir"><i class="fa-solid fa-arrow-left"></i> Previous</span>
                 <span class="pn-title">{prev.title}</span>
               </a>
             ) : <span></span>}
             {next ? (
-              <a class="post-nav-link next" href={`/blog/${next.slug}.html`}>
+              <a class="post-nav-link next" href={`/blog/${next.slug}`}>
                 <span class="pn-dir">Next <i class="fa-solid fa-arrow-right"></i></span>
                 <span class="pn-title">{next.title}</span>
               </a>

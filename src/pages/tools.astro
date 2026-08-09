@@ -32,7 +32,7 @@ const available = hubCopy.map((t) => ({ href: TOOLS[t.key].href, icon: TOOLS[t.k
 const comingSoon: { icon: string; title: string }[] = [];
 
 const lang = getLangFromUrl(Astro.url);
-const canonical = '/tools.html';
+const canonical = '/tools';
 // Mirrors the visible trail below exactly — no invented levels.
 const crumbLd = breadcrumbLd([{ name: 'Home', href: '/' }, { name: 'Tools' }], lang, canonical);
 ---
@@ -106,7 +106,7 @@ const crumbLd = breadcrumbLd([{ name: 'Home', href: '/' }, { name: 'Tools' }], l
     <h2>Prefer to talk it through?</h2>
     <p>A licensed Utah agent can walk you through any of these numbers — free, no pressure.</p>
     <div class="cta-buttons">
-      <a href="contact.html" class="btn btn-primary btn-lg">Schedule Consultation</a>
+      <a href="/contact" class="btn btn-primary btn-lg">Schedule Consultation</a>
       <a href="tel:4352925548" class="btn btn-outline btn-lg">Call (435) 292-5548</a>
     </div>
   </div>

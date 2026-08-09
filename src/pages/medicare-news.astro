@@ -42,7 +42,7 @@ const fmt = (d: Date) =>
     <div class="container">
       <div class="news-cats">
         {usedCategories.map(([key, cat]) => (
-          <a href={`/medicare-news/category/${key}.html`} class="news-cat-chip">
+          <a href={`/medicare-news/category/${key}`} class="news-cat-chip">
             <i class={`fa-solid ${cat.icon}`}></i> {cat.title}
           </a>
         ))}
@@ -56,7 +56,7 @@ const fmt = (d: Date) =>
     {items.length > 0 ? (
       <div class="post-list">
         {items.map((p) => (
-          <a href={`/medicare-news/${p.slug}.html`} class="post-row">
+          <a href={`/medicare-news/${p.slug}`} class="post-row">
             <div class="pr-main">
               <span class="pr-cat">{NEWS_CATEGORIES[p.data.category]?.title}</span>
               <h3>{p.data.title}</h3>
@@ -68,7 +68,7 @@ const fmt = (d: Date) =>
       </div>
     ) : (
       <p style="text-align:center; color:var(--text-muted);">
-        New Medicare updates are on the way. <a href="contact.html">Sign up</a> to get notified.
+        New Medicare updates are on the way. <a href="/contact">Sign up</a> to get notified.
       </p>
     )}
   </div>
@@ -79,7 +79,7 @@ const fmt = (d: Date) =>
     <h2>Have Questions? Let's Talk.</h2>
     <p>One free, no-pressure call &mdash; clear answers, no sales pitch.</p>
     <div class="cta-buttons">
-      <a href="contact.html" class="btn btn-primary btn-lg">Schedule Consultation</a>
+      <a href="/contact" class="btn btn-primary btn-lg">Schedule Consultation</a>
       <a href="tel:4352925548" class="btn btn-outline btn-lg">Call (435) 292-5548</a>
     </div>
   </div>

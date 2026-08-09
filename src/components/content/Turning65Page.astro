@@ -32,7 +32,7 @@ interface Turning65Content {
 const lang = getLangFromUrl(Astro.url);
 const c = getPageContent<Turning65Content>('turning-65', lang);
 const vars = { phone: PHONE_DISPLAY };
-const canonical = lang === DEFAULT_LOCALE ? '/turning-65.html' : `/${lang}/turning-65.html`;
+const canonical = lang === DEFAULT_LOCALE ? '/turning-65' : `/${lang}/turning-65`;
 const alternates = hreflangAlternates('turning-65');
 // Schema built from the SAME string the breadcrumb renders (Home › Turning 65).
 const crumbLd = breadcrumbLd(crumbsFromHtml(c.breadcrumbHtml), lang, canonical);

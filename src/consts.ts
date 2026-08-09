@@ -5,7 +5,7 @@
 
 export const PHONE_DISPLAY = '(435) 292-5548';
 export const PHONE_TEL = 'tel:4352925548';
-export const CONTACT_URL = '/contact.html';
+export const CONTACT_URL = '/contact';
 
 /** "Compare Plans Online" — Bret's SunFire consumer quoting/enrollment portal.
  *  External link; UI that uses it opens in a new tab. Swap here only. */
@@ -13,17 +13,17 @@ export const COMPARE_PLANS_URL = 'https://www.sunfirematrix.com/app/consumer/med
 
 /** Calculator/tool registry. Blog `relatedTools` frontmatter references these keys. */
 export const TOOLS = {
-  eligibility:     { href: '/medicare-eligibility-calculator.html', icon: 'fa-calendar-check',              title: 'Eligibility Calculator',       desc: "See when you're eligible and your enrollment dates." },
-  irmaa:           { href: '/medicare-irmaa-calculator.html',       icon: 'fa-sack-dollar',                 title: 'IRMAA Calculator',             desc: 'Estimate your Part B & Part D premiums by income.' },
-  penalty:         { href: '/medicare-penalty-calculator.html',     icon: 'fa-triangle-exclamation',        title: 'Late Penalty Calculator',      desc: 'See if delaying could raise your premiums for life.' },
-  'drug-cost':     { href: '/medicare-drug-cost-calculator.html',   icon: 'fa-pills',                       title: 'Drug Cost Calculator',         desc: 'Estimate medication costs and generic alternatives.' },
-  timeline:        { href: '/medicare-timeline-calculator.html',    icon: 'fa-timeline',                    title: 'Timeline Calculator',          desc: 'Visualize your enrollment windows and deadlines.' },
-  countdown:       { href: '/medicare-enrollment-countdown.html',   icon: 'fa-stopwatch',                   title: 'Enrollment Countdown',         desc: 'A live countdown to your enrollment deadlines.' },
-  'cost-estimator':{ href: '/medicare-cost-estimator.html',         icon: 'fa-coins',                       title: 'Cost Estimator',               desc: 'Estimate total annual costs and compare coverage.' },
-  formulary:       { href: '/medicare-formulary-lookup.html',       icon: 'fa-prescription-bottle-medical', title: 'Formulary Lookup',             desc: 'Search drugs for typical Part D coverage & rules.' },
-  'drug-assistance':{ href: '/prescription-drug-assistance.html',    icon: 'fa-hand-holding-dollar',         title: 'Drug Assistance Finder',       desc: 'Find grants & programs to help pay for costly drugs.' },
-  quiz:            { href: '/medicare-quiz.html',                   icon: 'fa-clipboard-question',          title: 'Medicare Plan Quiz',           desc: 'Answer 7 questions to find a coverage type that fits.' },
-  glossary:        { href: '/medicare-glossary.html',              icon: 'fa-book',                        title: 'Medicare Glossary',            desc: '100+ Medicare terms in plain English.' },
+  eligibility:     { href: '/medicare-eligibility-calculator', icon: 'fa-calendar-check',              title: 'Eligibility Calculator',       desc: "See when you're eligible and your enrollment dates." },
+  irmaa:           { href: '/medicare-irmaa-calculator',       icon: 'fa-sack-dollar',                 title: 'IRMAA Calculator',             desc: 'Estimate your Part B & Part D premiums by income.' },
+  penalty:         { href: '/medicare-penalty-calculator',     icon: 'fa-triangle-exclamation',        title: 'Late Penalty Calculator',      desc: 'See if delaying could raise your premiums for life.' },
+  'drug-cost':     { href: '/medicare-drug-cost-calculator',   icon: 'fa-pills',                       title: 'Drug Cost Calculator',         desc: 'Estimate medication costs and generic alternatives.' },
+  timeline:        { href: '/medicare-timeline-calculator',    icon: 'fa-timeline',                    title: 'Timeline Calculator',          desc: 'Visualize your enrollment windows and deadlines.' },
+  countdown:       { href: '/medicare-enrollment-countdown',   icon: 'fa-stopwatch',                   title: 'Enrollment Countdown',         desc: 'A live countdown to your enrollment deadlines.' },
+  'cost-estimator':{ href: '/medicare-cost-estimator',         icon: 'fa-coins',                       title: 'Cost Estimator',               desc: 'Estimate total annual costs and compare coverage.' },
+  formulary:       { href: '/medicare-formulary-lookup',       icon: 'fa-prescription-bottle-medical', title: 'Formulary Lookup',             desc: 'Search drugs for typical Part D coverage & rules.' },
+  'drug-assistance':{ href: '/prescription-drug-assistance',    icon: 'fa-hand-holding-dollar',         title: 'Drug Assistance Finder',       desc: 'Find grants & programs to help pay for costly drugs.' },
+  quiz:            { href: '/medicare-quiz',                   icon: 'fa-clipboard-question',          title: 'Medicare Plan Quiz',           desc: 'Answer 7 questions to find a coverage type that fits.' },
+  glossary:        { href: '/medicare-glossary',              icon: 'fa-book',                        title: 'Medicare Glossary',            desc: '100+ Medicare terms in plain English.' },
 } as const;
 
 export type ToolKey = keyof typeof TOOLS;

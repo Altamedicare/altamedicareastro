@@ -25,7 +25,7 @@ const items = (await getCollection('news', ({ data }) => !data.draft))
   .map((p) => ({
     title: p.data.title,
     tag: p.data.tag,
-    url: `/medicare-news/${p.slug}.html`,
+    url: `/medicare-news/${p.slug}`,
   }));
 
 // Render the list twice so the scroll loops seamlessly (track animates -50%).
@@ -43,7 +43,7 @@ const hasItems = items.length > 0;
 {hasItems && (
   <section class="mn-section" aria-label="Latest Medicare news">
     <div class="mn-ticker">
-      <a class="mn-ticker-label" href="/medicare-news.html">
+      <a class="mn-ticker-label" href="/medicare-news">
         <span aria-hidden="true">📰</span>&nbsp;Medicare News
       </a>
 

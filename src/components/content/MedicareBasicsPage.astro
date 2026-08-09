@@ -22,7 +22,7 @@ interface MedicareBasicsContent {
 const lang = getLangFromUrl(Astro.url);
 const c = getPageContent<MedicareBasicsContent>('medicare-basics', lang);
 const vars = { phone: PHONE_DISPLAY };
-const canonical = lang === DEFAULT_LOCALE ? '/medicare-basics.html' : `/${lang}/medicare-basics.html`;
+const canonical = lang === DEFAULT_LOCALE ? '/medicare-basics' : `/${lang}/medicare-basics`;
 const alternates = hreflangAlternates('medicare-basics');
 ---
 

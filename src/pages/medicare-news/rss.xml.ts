@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 
 const SITE = 'https://altamedicare.com';
 const FEED_URL = `${SITE}/medicare-news/rss.xml`;
-const HUB_URL = `${SITE}/medicare-news.html`;
+const HUB_URL = `${SITE}/medicare-news`;
 
 const esc = (s: string) =>
   s
@@ -22,7 +22,7 @@ export const GET: APIRoute = async () => {
 
   const entries = items
     .map((p) => {
-      const url = `${SITE}/medicare-news/${p.slug}.html`;
+      const url = `${SITE}/medicare-news/${p.slug}`;
       return `    <item>
       <title>${esc(p.data.title)}</title>
       <link>${url}</link>

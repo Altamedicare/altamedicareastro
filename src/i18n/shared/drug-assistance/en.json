@@ -18,7 +18,7 @@
     "secDatabaseBlurb": "Free databases that list additional programs and discounts.",
     "whoMayQualify": "Who may qualify:",
     "conditionsLabel": "Conditions:",
-    "finderCalloutHtml": "<strong>Not sure which one fits you?</strong> Use the free <a href=\"/prescription-drug-assistance.html\">Prescription Drug Assistance Finder</a> and its quick eligibility estimator, read <a href=\"/blog/{blogSlug}.html\">Does Medicare cover {drug}?</a>, or let Bret screen you and help you apply.",
+    "finderCalloutHtml": "<strong>Not sure which one fits you?</strong> Use the free <a href=\"/prescription-drug-assistance.html\">Prescription Drug Assistance Finder</a> and its quick eligibility estimator, read <a href=\"/blog/{blogSlug}\">Does Medicare cover {drug}?</a>, or let Bret screen you and help you apply.",
     "faqEyebrow": "Plain-English answers",
     "faqH2": "{drug} Assistance — FAQ",
     "faqs": [

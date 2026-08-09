@@ -9,9 +9,9 @@ import { localizeHref } from '../i18n/content';
 
 const lang = getLangFromUrl(Astro.url);
 const tools = [
-  { href: '/medicare-eligibility-calculator.html', icon: 'fa-calendar-check', title: 'Eligibility Calculator', desc: "See when you're eligible and your enrollment dates." },
-  { href: '/medicare-irmaa-calculator.html', icon: 'fa-sack-dollar', title: 'IRMAA Calculator', desc: 'Estimate your Part B & Part D premiums.' },
-  { href: '/medicare-penalty-calculator.html', icon: 'fa-triangle-exclamation', title: 'Late Enrollment Penalty', desc: 'See if delaying could raise your premiums.' },
+  { href: '/medicare-eligibility-calculator', icon: 'fa-calendar-check', title: 'Eligibility Calculator', desc: "See when you're eligible and your enrollment dates." },
+  { href: '/medicare-irmaa-calculator', icon: 'fa-sack-dollar', title: 'IRMAA Calculator', desc: 'Estimate your Part B & Part D premiums.' },
+  { href: '/medicare-penalty-calculator', icon: 'fa-triangle-exclamation', title: 'Late Enrollment Penalty', desc: 'See if delaying could raise your premiums.' },
 ];
 ---
 
@@ -37,7 +37,7 @@ const tools = [
     </div>
 
     <div style="text-align:center; margin-top:32px;">
-      <a href={localizeHref('/tools.html', lang)} class="btn btn-outline">{t('tools.seeAll', lang)}</a>
+      <a href={localizeHref('/tools', lang)} class="btn btn-outline">{t('tools.seeAll', lang)}</a>
     </div>
   </div>
 </section>

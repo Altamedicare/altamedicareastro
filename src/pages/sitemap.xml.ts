@@ -6,8 +6,14 @@ import { PLACES, hubHref, pageHref } from '../data/places';
 import { FEATURED_DRUGS } from '../data/drugAssistance';
 import { hreflangAlternates, localePageHref, getAvailableLocales } from '../i18n/content';
 import { DEFAULT_LOCALE } from '../i18n/locales';
+import { toPageUrl } from '../i18n/urls';
 
 const SITE = 'https://altamedicare.com';
+
+// Internal `loc` values keep the authored ".html" (they double as route slugs);
+// toPageUrl converts them at emission to the extensionless form Cloudflare Pages
+// actually serves. Without this the sitemap advertises 197 URLs that 308.
+const url = (loc: string) => SITE + toPageUrl(loc);
 
 // ── i18n (existence-aware, playbook §5/§14) ─────────────────────────────────
 // A URL gets xhtml:link alternates — and its localized siblings get their own
@@ -104,13 +110,13 @@ export const GET: APIRoute = async () => {
     .map((key) => ({ loc: `/medicare-news/category/${key}.html`, priority: 0.5 }));
 
   const rows = [
-    ...staticUrls.map((u) => `  <url><loc>${SITE}${u.loc}</loc>${alternatesXml(u.loc)}<priority>${u.priority.toFixed(1)}</priority></url>`),
+    ...staticUrls.map((u) => `  <url><loc>${url(u.loc)}</loc>${alternatesXml(u.loc)}<priority>${u.priority.toFixed(1)}</priority></url>`),
     ...staticUrls.flatMap((u) => localizedRows(u.loc, u.priority)),
-    ...locationUrls.map((u) => `  <url><loc>${SITE}${u.loc}</loc>${alternatesXml(u.loc)}<priority>${u.priority.toFixed(1)}</priority></url>`),
+    ...locationUrls.map((u) => `  <url><loc>${url(u.loc)}</loc>${alternatesXml(u.loc)}<priority>${u.priority.toFixed(1)}</priority></url>`),
     ...locationUrls.flatMap((u) => localizedRows(u.loc, u.priority)),
-    ...blogUrls.map((u) => `  <url><loc>${SITE}${u.loc}</loc><lastmod>${u.lastmod}</lastmod><priority>${u.priority.toFixed(1)}</priority></url>`),
-    ...newsUrls.map((u) => `  <url><loc>${SITE}${u.loc}</loc><lastmod>${u.lastmod}</lastmod><priority>${u.priority.toFixed(1)}</priority></url>`),
-    ...newsCategoryUrls.map((u) => `  <url><loc>${SITE}${u.loc}</loc><priority>${u.priority.toFixed(1)}</priority></url>`),
+    ...blogUrls.map((u) => `  <url><loc>${url(u.loc)}</loc><lastmod>${u.lastmod}</lastmod><priority>${u.priority.toFixed(1)}</priority></url>`),
+    ...newsUrls.map((u) => `  <url><loc>${url(u.loc)}</loc><lastmod>${u.lastmod}</lastmod><priority>${u.priority.toFixed(1)}</priority></url>`),
+    ...newsCategoryUrls.map((u) => `  <url><loc>${url(u.loc)}</loc><priority>${u.priority.toFixed(1)}</priority></url>`),
   ].join('\n');
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

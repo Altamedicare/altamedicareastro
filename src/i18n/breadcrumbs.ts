@@ -11,6 +11,7 @@
 // already in the copy; callers that pass explicit crumbs must mirror their JSX.
 
 import { SITE_ORIGIN, localizeHref } from './content';
+import { toPageUrl } from './urls';
 
 export interface BreadcrumbCrumb {
   name: string;
@@ -34,8 +35,9 @@ const decode = (s: string): string =>
     .replace(/&([a-zA-Z]+);/g, (m, n: string) => (NAMED as Record<string, string>)[n] ?? m);
 
 /** Parse an authored `breadcrumbHtml` string into its visible crumbs.
- *  "<a href="index.html">Home</a> &nbsp;&rsaquo;&nbsp; Turning 65"
- *    → [{ name: 'Home', href: 'index.html' }, { name: 'Turning 65' }] */
+ *  `<a href="index.html">Home</a> &nbsp;&rsaquo;&nbsp; Turning 65`
+ *    → [{ name: 'Home', href: 'index.html' }, { name: 'Turning 65' }]
+ *  Hrefs are returned as authored; absolute() normalizes them for the schema. */
 export function crumbsFromHtml(html: string): BreadcrumbCrumb[] {
   return html
     .split(SEPARATOR)
@@ -53,7 +55,7 @@ function absolute(href: string, lang: string): string {
   const localized = localizeHref(href, lang);
   if (/^https?:\/\//i.test(localized)) return localized;
   const path = localized.startsWith('/') ? localized : `/${localized}`;
-  return SITE_ORIGIN + (path === '/index.html' ? '/' : path);
+  return SITE_ORIGIN + toPageUrl(path);
 }
 
 /** BreadcrumbList JSON-LD. The leaf falls back to `canonical` when it carries
@@ -66,7 +68,7 @@ export function breadcrumbLd(crumbs: BreadcrumbCrumb[], lang: string, canonical:
       '@type': 'ListItem',
       position: i + 1,
       name: c.name,
-      item: c.href ? absolute(c.href, lang) : SITE_ORIGIN + (canonical === '/index.html' ? '/' : canonical),
+      item: c.href ? absolute(c.href, lang) : SITE_ORIGIN + toPageUrl(canonical),
     })),
   };
 }

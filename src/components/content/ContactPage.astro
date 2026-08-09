@@ -46,7 +46,7 @@ interface ContactContent {
 const lang = getLangFromUrl(Astro.url);
 const c = getPageContent<ContactContent>('contact', lang);
 const vars = { phone: PHONE_DISPLAY };
-const canonical = lang === DEFAULT_LOCALE ? '/contact.html' : `/${lang}/contact.html`;
+const canonical = lang === DEFAULT_LOCALE ? '/contact' : `/${lang}/contact`;
 const alternates = hreflangAlternates('contact');
 ---
 

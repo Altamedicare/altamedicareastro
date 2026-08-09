@@ -128,7 +128,10 @@ export function getVirtualLocalizedPages(): { locale: string; slug: string; cont
 export function getPageContent<T>(page: string, locale: string = DEFAULT_LOCALE): T {
   const master = load(DEFAULT_LOCALE, page);
   if (!master) throw new Error(`Missing master content file: src/i18n/content/${DEFAULT_LOCALE}/${page}.json`);
-  if (locale === DEFAULT_LOCALE) return master as T;
+  // English runs through deepLocalizeHrefs too — not to translate anything (it
+  // returns the master) but because embedded hrefs still carry the authored
+  // ".html" and must reach the page in extensionless form like every other link.
+  if (locale === DEFAULT_LOCALE) return deepLocalizeHrefs(master, locale) as T;
   return deepLocalizeHrefs(load(locale, page) ?? master, locale) as T;
 }
 
@@ -158,8 +161,8 @@ export function getLocalizedContent(): { locale: string; page: string }[] {
 export function localePageHref(slug: string, locale: string): string {
   const localized =
     locale !== DEFAULT_LOCALE && getAvailableLocales(slug).includes(locale);
-  if (!localized) return slug === 'index' ? '/' : `/${slug}.html`;
-  return slug === 'index' ? `/${locale}.html` : `/${locale}/${slug}.html`;
+  if (!localized) return slug === 'index' ? '/' : `/${slug}`;
+  return slug === 'index' ? `/${locale}` : `/${locale}/${slug}`;
 }
 
 /** Rewrite one href for a locale. Page links ("/x.html", "x.html", "/") go
@@ -167,7 +170,11 @@ export function localePageHref(slug: string, locale: string): string {
  *  through untouched. Multi-segment paths (utah/…, faq/…, blog/…) also pass
  *  through — see the URL POLICY note above. */
 export function localizeHref(href: string, locale: string): string {
-  if (locale === DEFAULT_LOCALE) return href;
+  // NOTE: no DEFAULT_LOCALE short-circuit. English used to pass through
+  // untouched to keep output byte-stable, but every internal link must now be
+  // normalized to the extensionless form Cloudflare Pages actually serves (see
+  // src/i18n/urls.ts). Authored copy still says "medicare-advantage.html";
+  // this is where that becomes "/medicare-advantage".
   if (/^(https?:)?\/\//i.test(href) || /^(mailto:|tel:|#)/i.test(href)) return href;
   const i = href.search(/[?#]/);
   const path = i === -1 ? href : href.slice(0, i);
@@ -178,7 +185,11 @@ export function localizeHref(href: string, locale: string): string {
   // passing through (they never end in .html); untranslated nested pages
   // (blog/…, medicare-news/…) resolve through localePageHref to their
   // absolutized English URL — existence-aware, nothing can 404.
-  const isPage = path === '/' || /^\/?[A-Za-z0-9_-]+(\/[A-Za-z0-9_-]+)*\.html$/.test(path);
+  // A page path is the root, or slash-separated segments of [A-Za-z0-9_-] with an
+  // OPTIONAL trailing .html. Segments cannot contain dots, so assets keep passing
+  // through (/styles.css?v=31, /images/logo2.webp, /favicon.svg,
+  // /pagefind/pagefind.js) — as do protocol hrefs like sms:1435… (colon).
+  const isPage = path === '/' || /^\/?[A-Za-z0-9_-]+(\/[A-Za-z0-9_-]+)*(\.html)?$/.test(path);
   if (!isPage) return href;
   const slug = path === '/' ? 'index' : path.replace(/^\/+/, '').replace(/\.html$/, '');
   return localePageHref(slug, locale) + rest;
@@ -186,7 +197,7 @@ export function localizeHref(href: string, locale: string): string {
 
 /** Rewrite every href="…" inside an extracted HTML string (set:html copy). */
 export function localizeHtml(html: string, locale: string): string {
-  if (locale === DEFAULT_LOCALE || !html.includes('href="')) return html;
+  if (!html.includes('href="')) return html;
   return html.replace(/href="([^"]*)"/g, (_m, h: string) => `href="${localizeHref(h, locale)}"`);
 }
 
@@ -209,8 +220,8 @@ export function hreflangAlternates(slug: string): { code: string; href: string }
   const abs = (locale: string) =>
     SITE_ORIGIN +
     (locale === DEFAULT_LOCALE
-      ? slug === 'index' ? '/' : `/${slug}.html`
-      : slug === 'index' ? `/${locale}.html` : `/${locale}/${slug}.html`);
+      ? slug === 'index' ? '/' : `/${slug}`
+      : slug === 'index' ? `/${locale}` : `/${locale}/${slug}`);
   // Widen explicitly: LOCALES is `as const`, so mapped `code` narrows to the
   // locale union and rejects 'x-default' (playbook §10 broadened-union gotcha).
   const out: { code: string; href: string }[] = LOCALES.filter((l) =>

@@ -72,7 +72,7 @@ interface HomeContent {
 const lang = getLangFromUrl(Astro.url);
 const c = getPageContent<HomeContent>('index', lang);
 const vars = { phone: PHONE_DISPLAY };
-const canonical = lang === DEFAULT_LOCALE ? '/' : `/${lang}.html`;
+const canonical = lang === DEFAULT_LOCALE ? '/' : `/${lang}`;
 const alternates = hreflangAlternates('index');
 const href = (h: string) => localizeHref(h, lang);
 // Relative asset paths resolve against /es.html's directory fine (same root),
@@ -205,7 +205,7 @@ const t0 = c.videos.topics[0];
       ))}
     </div>
     <div style="text-align:center; margin-top:32px;">
-      <a href={href('/tools.html')} class="btn btn-outline">{c.toolsSection.allToolsLabel}</a>
+      <a href={href('/tools')} class="btn btn-outline">{c.toolsSection.allToolsLabel}</a>
     </div>
   </div>
 </section>
