@@ -8,7 +8,7 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import { getFaqData } from '../../data/faqs';
 import { PHONE_DISPLAY } from '../../consts';
 import { DEFAULT_LOCALE, getLangFromUrl, getLocaleMeta, t } from '../../i18n/locales';
-import { hreflangAlternates, interp, localizeHref } from '../../i18n/content';
+import { hreflangAlternates, interp, localizeHref, SITE_ORIGIN, localePageHref } from '../../i18n/content';
 
 const lang = getLangFromUrl(Astro.url);
 const { shell, categories } = getFaqData(lang);
@@ -16,6 +16,19 @@ const total = categories.reduce((n, c) => n + c.faqs.length, 0);
 const canonical = lang === DEFAULT_LOCALE ? '/faq' : `/${lang}/faq`;
 const alternates = hreflangAlternates('faq');
 const href = (h: string) => localizeHref(h, lang);
+
+// Mirrors the visible trail below (Home > FAQ) exactly — same strings, same
+// order. Built inline to match FaqCategoryPage rather than the breadcrumbLd()
+// helper the non-FAQ pages use; switching the FAQ cluster over is a refactor,
+// not this change. FAQ is the current-page leaf, so there is no third item.
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: t('nav.home', lang), item: `${SITE_ORIGIN}${localePageHref('index', lang)}` },
+    { '@type': 'ListItem', position: 2, name: shell.faqCrumb, item: `${SITE_ORIGIN}${localePageHref('faq', lang)}` },
+  ],
+};
 ---
 
 <MainLayout
@@ -27,6 +40,7 @@ const href = (h: string) => localizeHref(h, lang);
   <Fragment slot="head">
     {alternates.map((a) => <link rel="alternate" hreflang={a.code} href={a.href} />)}
     {lang !== DEFAULT_LOCALE && <meta property="og:locale" content={getLocaleMeta(lang).ogLocale} />}
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbLd)} />
   </Fragment>
 
 <section class="page-header">

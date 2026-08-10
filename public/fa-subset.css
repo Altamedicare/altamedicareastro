@@ -1,0 +1,113 @@
+/* AltaMedicare — Font Awesome 6.5.1 Solid subset (91 icons, self-hosted).
+   Generated from fa-solid-900.woff2 via pyftsubset. Replaces the 100 KB cdnjs all.min.css.
+   Class names are unchanged, so all 381 existing <i class="fa-solid fa-*"> usages work as-is.
+   Regenerate with scripts/check-fa-icons.mjs + the documented pyftsubset command. */
+@font-face{
+  font-family:"Font Awesome 6 Free";
+  font-style:normal;
+  font-weight:900;
+  font-display:block;
+  src:url("/fonts/fa-solid-subset.woff2") format("woff2");
+}
+.fa-solid,.fas{
+  -moz-osx-font-smoothing:grayscale;
+  -webkit-font-smoothing:antialiased;
+  display:inline-block;
+  font-family:"Font Awesome 6 Free";
+  font-style:normal;
+  font-variant:normal;
+  font-weight:900;
+  line-height:1;
+  text-rendering:auto;
+}
+.fa-arrow-left:before{content:"\f060"}
+.fa-arrow-right:before{content:"\f061"}
+.fa-arrow-trend-down:before{content:"\e097"}
+.fa-arrow-trend-up:before{content:"\e098"}
+.fa-arrow-up-right-from-square:before{content:"\f08e"}
+.fa-book:before{content:"\f02d"}
+.fa-book-open:before{content:"\f518"}
+.fa-book-open-reader:before{content:"\f5da"}
+.fa-briefcase:before{content:"\f0b1"}
+.fa-business-time:before{content:"\f64a"}
+.fa-cake-candles:before{content:"\f1fd"}
+.fa-calculator:before{content:"\f1ec"}
+.fa-calendar:before{content:"\f133"}
+.fa-calendar-check:before{content:"\f274"}
+.fa-calendar-day:before{content:"\f783"}
+.fa-calendar-days:before{content:"\f073"}
+.fa-calendar-plus:before{content:"\f271"}
+.fa-calendar-xmark:before{content:"\f273"}
+.fa-check:before{content:"\f00c"}
+.fa-chevron-down:before{content:"\f078"}
+.fa-circle-check:before{content:"\f058"}
+.fa-circle-exclamation:before{content:"\f06a"}
+.fa-circle-info:before{content:"\f05a"}
+.fa-circle-question:before{content:"\f059"}
+.fa-clipboard-check:before{content:"\f46c"}
+.fa-clipboard-question:before{content:"\e4e3"}
+.fa-clock:before{content:"\f017"}
+.fa-clone:before{content:"\f24d"}
+.fa-coins:before{content:"\f51e"}
+.fa-comment:before{content:"\f075"}
+.fa-comment-sms:before{content:"\f7cd"}
+.fa-comments:before{content:"\f086"}
+.fa-dollar-sign:before{content:"\24"}
+.fa-dove:before{content:"\f4ba"}
+.fa-filter:before{content:"\f0b0"}
+.fa-fire:before{content:"\f06d"}
+.fa-flag-checkered:before{content:"\f11e"}
+.fa-graduation-cap:before{content:"\f19d"}
+.fa-hand-holding-dollar:before{content:"\f4c0"}
+.fa-hand-holding-heart:before{content:"\f4be"}
+.fa-hashtag:before{content:"\23"}
+.fa-heart-crack:before{content:"\f7a9"}
+.fa-hospital:before{content:"\f0f8"}
+.fa-hourglass-half:before{content:"\f252"}
+.fa-house-user:before{content:"\e1b0"}
+.fa-id-card:before{content:"\f2c2"}
+.fa-kit-medical:before{content:"\f479"}
+.fa-landmark:before{content:"\f66f"}
+.fa-layer-group:before{content:"\f5fd"}
+.fa-life-ring:before{content:"\f1cd"}
+.fa-lightbulb:before{content:"\f0eb"}
+.fa-list:before{content:"\f03a"}
+.fa-list-check:before{content:"\f0ae"}
+.fa-location-dot:before{content:"\f3c5"}
+.fa-magnifying-glass:before{content:"\f002"}
+.fa-magnifying-glass-chart:before{content:"\e522"}
+.fa-magnifying-glass-dollar:before{content:"\f688"}
+.fa-minus:before{content:"\f068"}
+.fa-newspaper:before{content:"\f1ea"}
+.fa-phone:before{content:"\f095"}
+.fa-piggy-bank:before{content:"\f4d3"}
+.fa-pills:before{content:"\f484"}
+.fa-prescription-bottle:before{content:"\f485"}
+.fa-prescription-bottle-medical:before{content:"\f486"}
+.fa-print:before{content:"\f02f"}
+.fa-receipt:before{content:"\f543"}
+.fa-ring:before{content:"\f70b"}
+.fa-rotate-left:before{content:"\f2ea"}
+.fa-rss:before{content:"\f09e"}
+.fa-sack-dollar:before{content:"\f81d"}
+.fa-scale-balanced:before{content:"\f24e"}
+.fa-shield-halved:before{content:"\f3ed"}
+.fa-shield-heart:before{content:"\e574"}
+.fa-stairs:before{content:"\e289"}
+.fa-stethoscope:before{content:"\f0f1"}
+.fa-stopwatch:before{content:"\f2f2"}
+.fa-store:before{content:"\f54e"}
+.fa-syringe:before{content:"\f48e"}
+.fa-thumbs-up:before{content:"\f164"}
+.fa-timeline:before{content:"\e29c"}
+.fa-toolbox:before{content:"\f552"}
+.fa-traffic-light:before{content:"\f637"}
+.fa-triangle-exclamation:before{content:"\f071"}
+.fa-truck-medical:before{content:"\f0f9"}
+.fa-umbrella-beach:before{content:"\f5ca"}
+.fa-user:before{content:"\f007"}
+.fa-user-doctor:before{content:"\f0f0"}
+.fa-user-group:before{content:"\f500"}
+.fa-user-pen:before{content:"\f4ff"}
+.fa-wheelchair-move:before{content:"\e2ce"}
+.fa-xmark:before{content:"\f00d"}

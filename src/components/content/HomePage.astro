@@ -9,7 +9,7 @@
 // English messages to Bret; documented in I18N-PORT-LOG.md).
 import MainLayout from '../../layouts/MainLayout.astro';
 import { DEFAULT_LOCALE, getLangFromUrl, getLocaleMeta } from '../../i18n/locales';
-import { getPageContent, hreflangAlternates, interp, localizeHref } from '../../i18n/content';
+import { getPageContent, hreflangAlternates, interp, localizeHref, SITE_ORIGIN, localePageHref } from '../../i18n/content';
 import { COMPARE_PLANS_URL, PHONE_DISPLAY } from '../../consts';
 
 interface HomeContent {
@@ -79,6 +79,31 @@ const href = (h: string) => localizeHref(h, lang);
 // but keep the shared absolutizer pattern for safety on the hero photo.
 const asset = (p: string) => (lang === DEFAULT_LOCALE || p.startsWith('/') ? p : `/${p}`);
 const t0 = c.videos.topics[0];
+
+// WebSite entity, homepage only — it describes the site, not the page, so
+// emitting it sitewide would restate the same node on 198 URLs. `publisher`
+// points at the InsuranceAgency node MainLayout emits (@id …/#organization)
+// rather than repeating it, which is what makes the two blocks one graph
+// instead of two disconnected entities.
+//
+// Deliberately NO potentialAction/SearchAction: Pagefind runs entirely
+// client-side and /search ignores ?q=, so declaring a search endpoint would
+// point Google's sitelinks searchbox at a URL that returns nothing. Revisit
+// only once /search?q= genuinely honours the parameter.
+//
+// The @id is per-locale (…/#website, …/es#website). A single shared @id would
+// assert one entity twice with conflicting url and inLanguage values; the ES
+// homepage is a distinct URL with its own hreflang, so it is a distinct node.
+// The publisher @id stays shared — there is only one organization.
+const webSite = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${SITE_ORIGIN}${localePageHref('index', lang)}#website`,
+  url: `${SITE_ORIGIN}${localePageHref('index', lang)}`,
+  name: 'AltaMedicare',
+  publisher: { '@id': `${SITE_ORIGIN}/#organization` },
+  inLanguage: lang === DEFAULT_LOCALE ? 'en-US' : lang,
+};
 ---
 
 <MainLayout
@@ -89,20 +114,23 @@ const t0 = c.videos.topics[0];
   <Fragment slot="head">
     {alternates.map((a) => <link rel="alternate" hreflang={a.code} href={a.href} />)}
     {lang !== DEFAULT_LOCALE && <meta property="og:locale" content={getLocaleMeta(lang).ogLocale} />}
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(webSite)} />
   </Fragment>
 
 <!-- ================= SECTION 1: HERO ================= -->
 <section class="hero">
   <!-- Slow-panning background image that fills the whole section. -->
   <div class="hero-video" aria-hidden="true">
-    <img src="/images/Teton1.webp" alt="" />
+    <!-- LCP element: full-bleed hero background. fetchpriority pulls it ahead of
+         other subresources; it must stay eager. -->
+    <img src="/images/Teton1.webp" alt="" fetchpriority="high" decoding="async" />
   </div>
   <div class="hero-overlay" aria-hidden="true"></div>
 
   <div class="container">
     <div class="hero-inner">
       <div class="hero-agent">
-        <img src={asset('images/BretSwope.webp')} alt={c.why.card.photoAlt} class="hero-agent-photo" onerror="this.style.display='none'" />
+        <img src={asset('images/BretSwope.webp')} alt={c.why.card.photoAlt} class="hero-agent-photo" width="56" height="56" onerror="this.style.display='none'" />
         <div class="hero-agent-text">
           <strong>{c.why.card.name}</strong>
           <span>{c.why.card.role}</span>
@@ -322,7 +350,7 @@ const t0 = c.videos.topics[0];
       </div>
 
       <div class="bret-card">
-        <img src={asset('images/BretSwope.webp')} alt={c.why.card.photoAlt} class="bret-photo" onerror="this.style.display='none'" />
+        <img src={asset('images/BretSwope.webp')} alt={c.why.card.photoAlt} class="bret-photo" width="180" height="180" loading="lazy" onerror="this.style.display='none'" />
         <h3>{c.why.card.name}</h3>
         <p class="role">{c.why.card.role}</p>
         <p style="color:var(--charcoal-soft);">{c.why.card.quote}</p>

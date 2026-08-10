@@ -35,6 +35,11 @@ const alternates = hreflangAlternates('about');
 // Relative asset paths resolve against /es/ on localized pages — absolutize
 // there; untouched (byte-stable) on the English master.
 const asset = (p: string) => (lang === DEFAULT_LOCALE || p.startsWith('/') ? p : `/${p}`);
+// The photo below used to point at images/bret-photo.svg, which never existed
+// and 404'd on every render; an onerror handler hid the broken image, so the
+// card silently shipped photoless. It now uses BretSwope.webp — the same asset
+// and treatment as the homepage .bret-photo card — and the handler is gone,
+// because masking the failure is what kept the bug invisible.
 ---
 
 <MainLayout
@@ -59,7 +64,7 @@ const asset = (p: string) => (lang === DEFAULT_LOCALE || p.startsWith('/') ? p :
   <div class="container">
     <div class="why-us">
       <div class="bret-card" style="text-align:center;">
-        <img src={asset('images/bret-photo.svg')} alt={c.card.photoAlt} class="bret-photo" onerror="this.style.display='none'" />
+        <img src={asset('images/BretSwope.webp')} alt={c.card.photoAlt} class="bret-photo" width="180" height="180" loading="lazy" />
         <h3>{c.card.name}</h3>
         <p class="role" set:html={c.card.roleHtml}></p>
         <p style="color:var(--charcoal-soft);">{c.card.location}</p>
