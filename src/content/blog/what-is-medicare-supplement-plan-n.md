@@ -23,7 +23,7 @@ If you like the idea of a Medicare Supplement plan but want a lower monthly prem
 
 ## What Plan N is
 
-**Medigap (Medicare Supplement)** plans pair with Original Medicare and fill in the gaps it leaves behind. They're standardized by letter, so a Plan N from one company covers the same things as a Plan N from another — the main difference is price and service. There are no networks, so you can see any provider in the country who accepts Medicare.
+**[Medigap (Medicare Supplement)](/medicare-supplement)** plans pair with Original Medicare and fill in the gaps it leaves behind. They're standardized by letter, so a Plan N from one company covers the same things as a Plan N from another — the main difference is price and service. There are no networks, so you can see any provider in the country who accepts Medicare.
 
 **Plan N** is one of the most popular Medigap plans, right alongside Plan G. It covers the big-ticket gaps — things like your Part A hospital coinsurance and the 20% coinsurance you'd otherwise owe on Part B services. In exchange for a lower premium than Plan G, you agree to handle a few smaller costs yourself.
 

@@ -23,7 +23,7 @@ If you've looked at Medicare Supplement options and kept seeing "Plan G" recomme
 
 ## How Plan G works
 
-Plan G is a **Medigap (Medicare Supplement)** plan. It doesn't replace Medicare — it pairs with **Original Medicare** (Part A and Part B) and fills in the gaps Medicare leaves behind.
+Plan G is a **[Medigap (Medicare Supplement)](/medicare-supplement)** plan. It doesn't replace Medicare — it pairs with **Original Medicare** (Part A and Part B) and fills in the gaps Medicare leaves behind.
 
 On Original Medicare alone, after you meet the Part B deductible you generally owe **20% coinsurance** on most services, and there's **no cap** on how high that can go. For a routine year that's fine. For a major surgery or a long stretch of treatment, an open-ended 20% can get scary.
 

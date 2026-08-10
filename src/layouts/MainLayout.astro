@@ -120,6 +120,15 @@ const webPage =
   <meta property="og:type" content="website" />
   <meta property="og:url" content={ogUrl} />
   <meta property="og:image" content={ogImageUrl} />
+  <meta property="og:site_name" content="AltaMedicare" />
+
+  <!-- Twitter/X card. summary_large_image matches the 1200x630 og:image canvas.
+       NOTE: the card renders imageless until og:image is a raster (PNG/JPG) —
+       X, like every other platform, ignores SVG. Title/description still apply. -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImageUrl} />
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />

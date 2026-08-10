@@ -25,7 +25,7 @@ Medicare Advantage and Medigap both fill the gaps that Original Medicare leaves 
 
 Before we compare, one thing is true no matter which path you pick: you still pay the **Part B premium of $202.90 a month** in 2026. Both options sit on top of Original Medicare, not instead of it. From there, the two roads split.
 
-Medicare Advantage (Part C) is an all-in-one plan from a private insurer that bundles your coverage together. Medigap (also called Medicare Supplement) is a policy that pairs with Original Medicare to pay down its gaps, and you add a separate drug plan alongside it.
+[Medicare Advantage](/medicare-advantage) (Part C) is an all-in-one plan from a private insurer that bundles your coverage together. Medigap (also called [Medicare Supplement](/medicare-supplement)) is a policy that pairs with Original Medicare to pay down its gaps, and you add a separate drug plan alongside it.
 
 ## Side-by-side
 
@@ -42,7 +42,7 @@ Medicare Advantage (Part C) is an all-in-one plan from a private insurer that bu
 
 ## Where Medicare Advantage shines
 
-Medicare Advantage is appealing if you like the idea of one card and a low premium. Many plans cost **$0 a month** on top of your Part B premium, and they usually fold in Part D drug coverage plus extras like dental, vision, and hearing that Original Medicare doesn't touch.
+Medicare Advantage is appealing if you like the idea of one card and a low premium. Many plans cost **$0 a month** on top of your Part B premium, and they usually fold in Part D drug coverage plus extras like [dental, vision, and hearing](/dental-vision-hearing) that Original Medicare doesn't touch.
 
 Every Medicare Advantage plan also has an **annual out-of-pocket maximum** — a ceiling on what you'll spend in a year for covered medical care. That's real protection Original Medicare alone doesn't offer.
 

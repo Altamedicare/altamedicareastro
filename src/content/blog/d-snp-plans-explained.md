@@ -23,7 +23,7 @@ If you have both Medicare and Medicaid, there's a kind of plan made specifically
 
 ## What a D-SNP is
 
-D-SNP stands for **Dual Eligible Special Needs Plan**. It's a type of **Medicare Advantage** plan built just for people who qualify for both Medicare and Medicaid — folks we call "dual eligible." Like other Medicare Advantage plans, a D-SNP bundles your Part A, Part B, and usually Part D drug coverage into one plan. What makes it special is that it's designed to **coordinate your Medicare and Medicaid benefits** so the two work together instead of leaving you to juggle them yourself.
+D-SNP stands for **[Dual Eligible Special Needs Plan](/dual-eligible)**. It's a type of **Medicare Advantage** plan built just for people who qualify for both Medicare and Medicaid — folks we call "dual eligible." Like other Medicare Advantage plans, a D-SNP bundles your Part A, Part B, and usually Part D drug coverage into one plan. What makes it special is that it's designed to **coordinate your Medicare and Medicaid benefits** so the two work together instead of leaving you to juggle them yourself.
 
 That coordination is the heart of it. Many D-SNPs assign a care coordinator who helps you keep track of appointments, prescriptions, and the help available from both programs. For someone managing a few health conditions on a limited income, having one point of contact can take a real weight off your shoulders.
 
@@ -42,7 +42,7 @@ In short, every D-SNP is a Medicare Advantage plan, but not every Medicare Advan
 
 Beyond your core medical and drug coverage, many D-SNPs offer benefits that Original Medicare doesn't:
 
-- **Dental, vision, and hearing** care
+- **[Dental, vision, and hearing](/dental-vision-hearing)** care
 - An **over-the-counter (OTC) allowance** to spend on everyday health items like pain relievers, vitamins, or first-aid supplies
 - **Transportation** to and from medical appointments
 - **Care coordination** to help manage your overall health
