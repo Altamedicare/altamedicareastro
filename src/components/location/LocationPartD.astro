@@ -70,6 +70,15 @@ const breadcrumbLd = {
       <h2>{interp(c.s1H2 as string, vars)}</h2>
       <p set:html={interp(c.s1PHtml as string, vars)}></p>
 
+      {/* Statewide availability (Phase 5): standalone Part D is approved for a
+          whole state, so this page is state-scoped — see the note in
+          shared/location/en.json. Verified against CMS PDP contract
+          service-area data (July 2026). */}
+      <h2>{interp(c.uaH2 as string, vars)}</h2>
+      <p set:html={interp(c.uaP1Html as string, vars)}></p>
+      <p set:html={interp(c.uaP2Html as string, vars)}></p>
+      <p set:html={interp(c.uaP3Html as string, vars)}></p>
+
       <h2>{interp(c.s2H2 as string, vars)}</h2>
       <p set:html={interp(c.s2PHtml as string, vars)}></p>
 

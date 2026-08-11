@@ -125,6 +125,14 @@
       "s6PHtml",
       "s6Items",
       "s6PHtml",
+      "uaH2",
+      "uaP1Html",
+      "uaP2Html",
+      "uaP3Html",
+      "urH2",
+      "urP1Html",
+      "urP2Html",
+      "urP3Html",
       "maH2",
       "maPHtml",
       "maLinkLabelHtml",
@@ -146,7 +154,8 @@
       "a"
     ],
     "verbatim": [
-      "slug"
+      "slug",
+      "kind"
     ]
   }
 }

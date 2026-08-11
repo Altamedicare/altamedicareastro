@@ -17,6 +17,15 @@
   "Medicare Supplement": {
     "es": "Seguro Suplementario de Medicare"
   },
+  "community-rated": {
+    "es": "calificación comunitaria"
+  },
+  "issue-age-rated": {
+    "es": "calificación por edad de emisión"
+  },
+  "attained-age": {
+    "es": "calificación por edad cumplida"
+  },
   "Part A": {
     "es": "Parte A"
   },

@@ -43,12 +43,20 @@ const localizedRows = (loc: string, priority: number): string[] => {
     );
 };
 
-// Location cluster URLs (hub + 3 sub-pages per place), generated from PLACES.
+// Location cluster URLs, generated from PLACES. Every place gets a hub + a
+// Medicare Advantage page; Medigap and standalone Part D are STATE-scoped
+// (Phase 5 — see VIRTUAL_PAGE_SOURCES in src/i18n/content.ts), because neither
+// varies by county. The former county URLs 301 to the statewide ones in
+// public/_redirects, so they must not be advertised here.
 const locationUrls = PLACES.flatMap((p) => [
   { loc: hubHref(p), priority: 0.7 },
   { loc: pageHref(p, 'medicare-advantage'), priority: 0.7 },
-  { loc: pageHref(p, 'medicare-supplement'), priority: 0.7 },
-  { loc: pageHref(p, 'part-d'), priority: 0.7 },
+  ...(p.kind === 'state'
+    ? [
+        { loc: pageHref(p, 'medicare-supplement'), priority: 0.7 },
+        { loc: pageHref(p, 'part-d'), priority: 0.7 },
+      ]
+    : []),
 ]);
 
 // Static URLs (core pages + tools), with priorities. Blog URLs are appended

@@ -1,23 +1,29 @@
 {
-  "__note": "MASTER copy for the location page system (shared module, ADR-002). One set of {placeName}/{stateName} templates serves every place — translating this file localizes all 24 location pages. CMS figures interpolate from src/data/figures.ts via {year}/{partDAnnualCap} (§6.8). The `places` array is the verbatim slug registry driving virtual localized routes; adding a place = add it to src/data/places.ts AND here.",
+  "__note": "MASTER copy for the location page system (shared module, ADR-002). One set of {placeName}/{stateName} templates serves every place. CMS figures interpolate from src/data/figures.ts via {year}/{partDAnnualCap} (§6.8). The `places` array is the verbatim slug registry driving virtual localized routes; adding a place = add it to src/data/places.ts AND here. PHASE 5 SCOPING: `overview` and `advantage` render for states AND counties; `supplement` and `partd` render for STATES ONLY (see VIRTUAL_PAGE_SOURCES in src/i18n/content.ts and locationUrls in src/pages/sitemap.xml.ts). That is deliberate — standalone Part D is approved for a whole state at a time and Medigap benefits are federal with state-regulated pricing, so neither varies by county; the former county pages 301 to these two. Copy in `supplement`/`partd` may therefore assume a statewide subject, but keep using {placeName} rather than hardcoding a state name.",
   "places": [
     {
-      "slug": "utah"
+      "slug": "utah",
+      "kind": "state"
     },
     {
-      "slug": "utah/salt-lake-county"
+      "slug": "utah/salt-lake-county",
+      "kind": "county"
     },
     {
-      "slug": "utah/utah-county"
+      "slug": "utah/utah-county",
+      "kind": "county"
     },
     {
-      "slug": "utah/davis-county"
+      "slug": "utah/davis-county",
+      "kind": "county"
     },
     {
-      "slug": "utah/weber-county"
+      "slug": "utah/weber-county",
+      "kind": "county"
     },
     {
-      "slug": "utah/washington-county"
+      "slug": "utah/washington-county",
+      "kind": "county"
     }
   ],
   "shell": {
@@ -35,7 +41,7 @@
     "h1": "Medicare in {placeName}",
     "ledeHtml": "Everything you need to understand your Medicare options in {placeName} &mdash; explained in plain English by a licensed local agent, and updated for {year}.",
     "s1H2": "Understanding Medicare in {placeName}",
-    "s1P1Html": "Medicare itself is a federal program, so the rules, parts, and enrollment windows are the same in {placeName} as they are across the country. What changes locally is which <strong>private plans</strong> are offered at your ZIP code &mdash; the Medicare Advantage and Part D plans available to you, and the Medigap policies sold in your area. That is exactly where a local agent helps: matching the national rules to the specific plans you can actually choose from.",
+    "s1P1Html": "Medicare itself is a federal program, so the rules, parts, and enrollment windows are the same in {placeName} as they are across the country. What changes locally is narrower than most people expect. <strong>Medicare Advantage</strong> plans are approved county by county, so those choices really do depend on where you live. Standalone <strong>Part D</strong> drug plans are approved for an entire state at a time, and <strong>Medigap</strong> benefits are standardized by federal law with pricing regulated at the state level &mdash; so neither one changes from one county to the next. That is exactly where a local agent helps: matching the national rules to the plans you can actually choose from.",
     "s1P2": "Most people in {placeName} build their coverage one of two ways:",
     "s1ItemsHtml": [
       "<strong>Original Medicare + a Medigap policy + a Part D drug plan</strong> &mdash; maximum freedom to see any provider that accepts Medicare, with predictable costs.",
@@ -86,7 +92,7 @@
     "title": "Medicare Advantage in {placeName} | How Part C Works | AltaMedicare",
     "description": "How Medicare Advantage works in {placeName}: HMO vs PPO, prescription coverage, extra benefits, enrollment periods, and the questions to ask before choosing a plan.",
     "crumbLeaf": "Medicare Advantage",
-    "h1": "Medicare Advantage in {placeName}",
+    "h1": "Medicare Advantage in {placeName}: How Part C Works",
     "ledeHtml": "An all-in-one way to get your Medicare &mdash; here is how Medicare Advantage (Part C) works in {placeName}, and how to tell whether it fits you.",
     "s1H2": "How Medicare Advantage works in {placeName}",
     "s1PHtml": "A Medicare Advantage (Part C) plan is offered by a private insurer approved by Medicare. When you join one, the plan provides your Part A and Part B benefits in one package &mdash; usually with Part D drug coverage and extra benefits built in. You keep paying your Part B premium, and you follow the plan's rules for networks and referrals. In exchange, you get a single card, a predictable copay structure, and a yearly out-of-pocket maximum.",
@@ -139,11 +145,11 @@
     ]
   },
   "supplement": {
-    "title": "Medicare Supplement Plans in {placeName} | Medigap Plan G & N | AltaMedicare",
-    "description": "How Medicare Supplement (Medigap) plans work in {placeName}: Plan G, Plan N, foreign travel coverage, premiums, and your guaranteed issue rights.",
+    "title": "Medicare Supplement in {placeName} | Medigap Rules, Rating & Plan G vs N | AltaMedicare",
+    "description": "How Medigap works in {placeName}: state-regulated pricing, what attained-age rating means for your premium, guaranteed issue rights, and Plan G vs Plan N.",
     "crumbLeaf": "Medicare Supplement",
-    "h1": "Medicare Supplement Plans in {placeName}",
-    "ledeHtml": "Predictable costs and the freedom to see any provider that accepts Medicare &mdash; here is how Medigap works in {placeName}, including Plan G and Plan N.",
+    "h1": "Medicare Supplement in {placeName}: State Rules, Rating, and Plan Letters",
+    "ledeHtml": "Predictable costs and the freedom to see any provider that accepts Medicare &mdash; here is how Medigap works in {placeName}, how state rules shape what you pay, and how Plan G and Plan N compare.",
     "s1H2": "How Medigap works with Original Medicare",
     "s1PHtml": "A Medicare Supplement (Medigap) policy pairs with <strong>Original Medicare</strong>. Medicare pays its share first, then your Medigap plan pays many of the costs Medicare leaves behind &mdash; deductibles, coinsurance, and copays. There are no networks, so you can use any provider in the country that accepts Medicare, and the plans are standardized by letter, which makes comparing them refreshingly simple. You add a standalone <a href=\"{partDHref}\">Part D drug plan</a> for prescriptions.",
     "s2H2": "Plan G",
@@ -154,6 +160,10 @@
     "s4PHtml": "Original Medicare generally does not cover care outside the United States. Several Medigap plans &mdash; including Plan G and Plan N &mdash; add <strong>foreign travel emergency coverage</strong>, which can help with emergency care during the first 60 days of a trip, subject to a deductible and a lifetime limit. If you travel internationally, this is a meaningful benefit to weigh.",
     "s5H2": "Premium considerations",
     "s5PHtml": "Because the coverage within a lettered plan is identical from company to company, the difference between carriers comes down to price and how rates are likely to change over time. A lower starting premium is not always the best long-term value, so it is worth comparing the companies offering the same plan. Our <a href=\"/medicare-cost-estimator.html\">cost estimator</a> helps you weigh premiums against expected out-of-pocket costs.",
+    "urH2": "How {placeName} regulates and prices Medigap",
+    "urP1Html": "Medigap benefits are set by federal law, but the companies that sell the policies &mdash; and the way they are allowed to price them &mdash; are regulated at the state level. That split is the most useful thing to understand before you shop in {placeName}: <strong>what a plan letter covers is fixed, and what it costs is not</strong>.",
+    "urP2Html": "The Utah Insurance Department describes three ways a Medigap policy can be priced: <strong>community-rated</strong>, where your premium is not based on your age; <strong>issue-age-rated</strong>, where it is based on how old you were when you bought it; and <strong>attained-age-rated</strong>, which starts low and rises as you get older. The Department notes that <strong>most companies in {placeName} offer attained-age-rated products</strong>. That single detail deserves more weight than it usually gets, because an attained-age policy that looks like the bargain at 65 can quietly become the most expensive one you hold by 80.",
+    "urP3Html": "Since the benefits inside a plan letter are identical everywhere, comparing Medigap in {placeName} really is an exercise in price and service. The Utah Insurance Department publishes its own rate comparison at <a href=\"https://medigap.utah.gov/\" rel=\"nofollow\">medigap.utah.gov</a>, and its <a href=\"https://insurance.utah.gov/consumers/health-insurance/medicare/\" rel=\"nofollow\">Medicare page</a> explains the rating methods in full. Companies file new rates over time, so check current figures rather than trusting a number you saw once &mdash; including ours.",
     "s6H2": "Guaranteed issue rights",
     "s6PHtml": "The best time to buy a Medigap policy is during your <strong>Medigap Open Enrollment Period</strong> &mdash; the 6 months that begin when you are 65 or older and enrolled in Part B. In that window you have <strong>guaranteed issue rights</strong>: insurers cannot deny you or charge more because of your health. Certain life events create other guaranteed-issue windows too. Outside those windows, you may have to pass medical underwriting, so timing matters. Not sure whether Medigap or Medicare Advantage fits you better? See our <a href=\"/blog/medicare-advantage-vs-medigap.html\">side-by-side comparison</a>.",
     "toolsHeading": "Tools to plan your coverage",
@@ -163,6 +173,10 @@
       {
         "q": "Are Medicare Supplement plans standardized in {placeName}?",
         "a": "Yes. Medigap plans are standardized by letter, so a Plan G offers the same core benefits no matter which company sells it in {placeName}. Because the coverage is identical, the main things that differ between companies are price and service."
+      },
+      {
+        "q": "Why do two companies charge different prices for the same Medigap plan in {placeName}?",
+        "a": "Because the benefits are standardized but the pricing is not. Every company selling a given plan letter covers the same things, so they compete on premium and service. They also choose how to rate the policy, and the Utah Insurance Department notes that most companies in {placeName} use attained-age rating, where the premium rises as you age. Comparing the starting price alone can be misleading."
       },
       {
         "q": "Does a Medicare Supplement plan cover prescriptions?",
@@ -183,13 +197,17 @@
     ]
   },
   "partd": {
-    "title": "Medicare Part D in {placeName} | Prescription Drug Plans | AltaMedicare",
-    "description": "How Medicare Part D prescription drug plans work in {placeName}: formularies, drug tiers, prior authorization, step therapy, Extra Help, and the {year} {partDAnnualCap} cap.",
+    "title": "Medicare Part D in {placeName} | Statewide Plan Availability & Costs | AltaMedicare",
+    "description": "Medicare Part D in {placeName}: why standalone drug plan availability is identical in every county, plus Extra Help and the {year} {partDAnnualCap} cap.",
     "crumbLeaf": "Part D",
     "h1": "Medicare Part D in {placeName}",
-    "ledeHtml": "Prescription drug coverage, explained &mdash; how Part D plans work in {placeName}, what drives your costs, and how the {year} {partDAnnualCap} cap protects you.",
+    "ledeHtml": "Prescription drug coverage, explained &mdash; which standalone Part D plans you can join anywhere in {placeName}, what drives your costs, and how the {year} {partDAnnualCap} cap protects you.",
     "s1H2": "Prescription coverage in {placeName}",
     "s1PHtml": "Part D is Medicare's prescription drug coverage. You can get it two ways: as a <strong>standalone Part D plan</strong> alongside Original Medicare (and usually a Medigap policy), or <strong>built into a Medicare Advantage plan</strong>. Either way, the coverage is delivered by private insurers, and the plan you pick determines which drugs are covered and what you pay.",
+    "uaH2": "Standalone Part D availability does not change by county",
+    "uaP1Html": "This surprises almost everyone, and it saves a lot of wasted shopping: <strong>the standalone Part D plans sold in {placeName} are the same in every county</strong>. The list you can choose from in Salt Lake County is the identical list available in Washington County, Cache County, and everywhere else in the state. Where you live inside {placeName} does not add or remove a single standalone drug plan.",
+    "uaP2Html": "That is structural, not a quirk of this year's market. CMS organizes standalone Part D into regions built from <strong>whole states</strong>, and a sponsor approved to sell in {placeName} must offer its plan throughout {placeName}. In CMS's July 2026 contract service-area data, <strong>five standalone Part D contracts</strong> cover all 29 {placeName} counties &mdash; an identical roster from Logan to St. George. One contract is one plan sponsor, and a sponsor can offer more than one plan, so the number of individual plans you will compare is larger than five.",
+    "uaP3Html": "It is worth knowing precisely because <a href=\"/utah/medicare-advantage.html\">Medicare Advantage</a> behaves the opposite way &mdash; those plans are approved county by county, and the choices genuinely do differ depending on where in {placeName} you live. So your ZIP code matters a great deal when you compare Medicare Advantage, and not at all when you pick a standalone Part D plan. Source: <a href=\"https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-advantagepart-d-contract-and-enrollment-data/pdp-contract-service-area-state/county\" rel=\"nofollow\">CMS Part D contract service area by state/county</a>.",
     "s2H2": "Formularies",
     "s2PHtml": "Every Part D plan has a <strong>formulary</strong> &mdash; its list of covered drugs. Two plans with similar premiums can treat your medications very differently, so the single most important step is confirming your drugs are on a plan's formulary before you enroll. Our <a href=\"/medicare-formulary-lookup.html\">formulary lookup</a> shows typical coverage, and the <a href=\"/medicare-drug-cost-calculator.html\">drug cost calculator</a> estimates your costs.",
     "s3H2": "Drug tiers",
@@ -210,6 +228,10 @@
     "toolsSub": "Check coverage, estimate drug costs, and compare your total spend.",
     "faqHeading": "Medicare Part D in {placeName}: FAQs",
     "faqs": [
+      {
+        "q": "Do Part D plans differ from county to county in {placeName}?",
+        "a": "No. Standalone Part D plans are approved for the whole state, so every county in {placeName} has exactly the same list to choose from. Moving from one {placeName} county to another does not change which standalone drug plans you can join. Medicare Advantage is different &mdash; those plans are approved county by county and the choices really do vary."
+      },
       {
         "q": "How do I choose a Part D plan in {placeName}?",
         "a": "Start with your medications. Because every Part D plan in {placeName} has its own formulary, the best plan is simply the one that covers your specific drugs for the lowest total yearly cost, not the one with the cheapest premium. Our drug cost calculator and formulary lookup make that comparison quick."

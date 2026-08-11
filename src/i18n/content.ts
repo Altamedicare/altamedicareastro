@@ -76,17 +76,31 @@ const VIRTUAL_PAGE_SOURCES: {
     contentKey: 'location-advantage',
     slugs: (en) => ((en as { places: { slug: string }[] }).places ?? []).map((p) => `${p.slug}/medicare-advantage`),
   },
+  // Phase 5: Medigap and standalone Part D are STATE-scoped, so these two
+  // generate for `kind: "state"` places only. Standalone Part D is approved for
+  // a whole state at a time and Medigap benefits are federal with
+  // state-regulated pricing — neither varies by county, so the former county
+  // pages 301 to the statewide ones (public/_redirects). `kind` is a verbatim
+  // registry field (masks.json), mirroring places.ts; content.ts cannot import
+  // places.ts directly without a cycle (places → i18n/shared → i18n/content).
   {
     module: 'location',
     contentKey: 'location-supplement',
-    slugs: (en) => ((en as { places: { slug: string }[] }).places ?? []).map((p) => `${p.slug}/medicare-supplement`),
+    slugs: (en) => statePlaces(en).map((p) => `${p.slug}/medicare-supplement`),
   },
   {
     module: 'location',
     contentKey: 'location-partd',
-    slugs: (en) => ((en as { places: { slug: string }[] }).places ?? []).map((p) => `${p.slug}/part-d`),
+    slugs: (en) => statePlaces(en).map((p) => `${p.slug}/part-d`),
   },
 ];
+
+/** Registry places that are states — the scope for Medigap/Part D (Phase 5). */
+function statePlaces(en: unknown): { slug: string }[] {
+  return ((en as { places: { slug: string; kind?: string }[] }).places ?? []).filter(
+    (p) => p.kind === 'state',
+  );
+}
 
 const sharedFile = (module: string, locale: string): unknown =>
   sharedFiles[`./shared/${module}/${locale}.json`];

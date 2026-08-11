@@ -27,6 +27,15 @@ const vars = { placeName: n, year: CURRENT.year, partDAnnualCap: usd(CURRENT.par
 const childCounties = PLACES.filter(
   (p) => p.kind === 'county' && p.slug.startsWith(`${place.slug}/`),
 );
+// Phase 5: Medigap and standalone Part D are state-scoped, so a county hub
+// links UP to the statewide guides (the county versions 301 there). The label
+// reuses the SAME translated string with {placeName} bound to the state, so the
+// link reads "…in Utah →" without any new copy to translate.
+const topicPlace =
+  place.kind === 'state'
+    ? place
+    : (PLACES.find((p) => p.kind === 'state' && place.slug.startsWith(`${p.slug}/`)) ?? place);
+const topicVars = { ...vars, placeName: topicPlace.name };
 const canonicalEn = hubHref(place);
 const canonical = lang === DEFAULT_LOCALE ? canonicalEn : `/${lang}${canonicalEn}`;
 const alternates = hreflangAlternates(slug);
@@ -90,11 +99,11 @@ const breadcrumbLd = {
 
       <h2>{interp(c.msH2 as string, vars)}</h2>
       <p set:html={interp(c.msPHtml as string, vars)}></p>
-      <p><a href={localizeHref(pageHref(place, 'medicare-supplement'), lang)}><strong set:html={interp(c.msLinkLabelHtml as string, vars)} /></a></p>
+      <p><a href={localizeHref(pageHref(topicPlace, 'medicare-supplement'), lang)}><strong set:html={interp(c.msLinkLabelHtml as string, topicVars)} /></a></p>
 
       <h2>{interp(c.pdH2 as string, vars)}</h2>
       <p set:html={interp(c.pdPHtml as string, vars)}></p>
-      <p><a href={localizeHref(pageHref(place, 'part-d'), lang)}><strong set:html={interp(c.pdLinkLabelHtml as string, vars)} /></a></p>
+      <p><a href={localizeHref(pageHref(topicPlace, 'part-d'), lang)}><strong set:html={interp(c.pdLinkLabelHtml as string, topicVars)} /></a></p>
     </div>
   </section>
 

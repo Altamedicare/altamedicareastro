@@ -3,22 +3,28 @@
   "__note": "MASTER copy for the location page system (shared module, ADR-002). One set of {placeName}/{stateName} templates serves every place — translating this file localizes all 24 location pages. CMS figures interpolate from src/data/figures.ts via {year}/{partDAnnualCap} (§6.8). The `places` array is the verbatim slug registry driving virtual localized routes; adding a place = add it to src/data/places.ts AND here.",
   "places": [
     {
-      "slug": "utah"
+      "slug": "utah",
+      "kind": "state"
     },
     {
-      "slug": "utah/salt-lake-county"
+      "slug": "utah/salt-lake-county",
+      "kind": "county"
     },
     {
-      "slug": "utah/utah-county"
+      "slug": "utah/utah-county",
+      "kind": "county"
     },
     {
-      "slug": "utah/davis-county"
+      "slug": "utah/davis-county",
+      "kind": "county"
     },
     {
-      "slug": "utah/weber-county"
+      "slug": "utah/weber-county",
+      "kind": "county"
     },
     {
-      "slug": "utah/washington-county"
+      "slug": "utah/washington-county",
+      "kind": "county"
     }
   ],
   "shell": {
@@ -36,7 +42,7 @@
     "h1": "Medicare en {placeName}",
     "ledeHtml": "Todo lo que necesita para entender sus opciones de Medicare en {placeName} &mdash; explicado en lenguaje sencillo por un agente local con licencia, y actualizado para {year}.",
     "s1H2": "Entendiendo Medicare en {placeName}",
-    "s1P1Html": "Medicare en sí es un programa federal, así que las reglas, las partes y los períodos de inscripción son los mismos en {placeName} que en todo el país. Lo que cambia localmente es cuáles <strong>planes privados</strong> se ofrecen en su código postal &mdash; los planes de Medicare Advantage y de la Parte D disponibles para usted, y las pólizas Medigap que se venden en su área. Ahí es exactamente donde ayuda un agente local: hacer coincidir las reglas nacionales con los planes específicos que realmente puede elegir.",
+    "s1P1Html": "Medicare en sí es un programa federal, por lo que las reglas, las partes y los períodos de inscripción son los mismos en {placeName} que en el resto del país. Lo que cambia a nivel local es más limitado de lo que la mayoría imagina. Los planes <strong>Medicare Advantage</strong> se aprueban condado por condado, así que esas opciones sí dependen de dónde viva usted. Los planes independientes de la <strong>Parte D</strong> se aprueban para un estado entero a la vez, y los beneficios de <strong>Medigap</strong> están estandarizados por ley federal con precios regulados a nivel estatal &mdash; de modo que ninguno de los dos cambia de un condado a otro. Ahí es precisamente donde ayuda un agente local: conectar las reglas nacionales con los planes que usted realmente puede elegir.",
     "s1P2": "La mayoría de las personas en {placeName} arman su cobertura de una de dos maneras:",
     "s1ItemsHtml": [
       "<strong>Medicare Original + una póliza Medigap + un plan de medicamentos de la Parte D</strong> &mdash; máxima libertad para ver a cualquier proveedor que acepte Medicare, con costos predecibles.",
@@ -87,7 +93,7 @@
     "title": "Medicare Advantage en {placeName} | Cómo funciona la Parte C | AltaMedicare",
     "description": "Cómo funciona Medicare Advantage en {placeName}: HMO vs PPO, cobertura de medicamentos recetados, beneficios adicionales, períodos de inscripción y las preguntas que debe hacer antes de elegir un plan.",
     "crumbLeaf": "Medicare Advantage",
-    "h1": "Medicare Advantage en {placeName}",
+    "h1": "Medicare Advantage en {placeName}: cómo funciona la Parte C",
     "ledeHtml": "Una forma todo en uno de obtener su Medicare &mdash; aquí le explicamos cómo funciona Medicare Advantage (Parte C) en {placeName}, y cómo saber si es adecuado para usted.",
     "s1H2": "Cómo funciona Medicare Advantage en {placeName}",
     "s1PHtml": "Un plan Medicare Advantage (Parte C) lo ofrece una aseguradora privada aprobada por Medicare. Cuando se inscribe en uno, el plan le brinda sus beneficios de la Parte A y la Parte B en un solo paquete &mdash; por lo general con cobertura de medicamentos de la Parte D y beneficios adicionales incluidos. Usted sigue pagando su prima de la Parte B y sigue las reglas del plan en cuanto a redes y referidos. A cambio, recibe una sola tarjeta, una estructura de copagos predecible y un máximo anual de gastos de su bolsillo.",
@@ -140,11 +146,11 @@
     ]
   },
   "supplement": {
-    "title": "Planes de Seguro Suplementario de Medicare en {placeName} | Medigap Plan G y N | AltaMedicare",
-    "description": "Cómo funcionan los planes de Seguro Suplementario de Medicare (Medigap) en {placeName}: Plan G, Plan N, cobertura para viajes al extranjero, primas y sus derechos de emisión garantizada.",
+    "title": "Seguro Suplementario de Medicare (Medigap) en {placeName}: reglas, calificación y Plan G vs. N | AltaMedicare",
+    "description": "Cómo funciona Medigap en {placeName}: precios regulados por el estado, la calificación por edad cumplida, la emisión garantizada y el Plan G frente al Plan N.",
     "crumbLeaf": "Seguro Suplementario de Medicare",
-    "h1": "Planes de Seguro Suplementario de Medicare en {placeName}",
-    "ledeHtml": "Costos predecibles y la libertad de consultar a cualquier proveedor que acepte Medicare &mdash; aquí le explicamos cómo funciona Medigap en {placeName}, incluidos el Plan G y el Plan N.",
+    "h1": "Seguro Suplementario de Medicare en {placeName}: reglas estatales, calificación y planes estandarizados por letra",
+    "ledeHtml": "Costos predecibles y la libertad de consultar a cualquier proveedor que acepte Medicare &mdash; aquí le explicamos cómo funciona Medigap en {placeName}, cómo las reglas estatales influyen en lo que usted paga y cómo se comparan el Plan G y el Plan N.",
     "s1H2": "Cómo funciona Medigap con Medicare Original",
     "s1PHtml": "Una póliza de Seguro Suplementario de Medicare (Medigap) se combina con <strong>Medicare Original</strong>. Medicare paga su parte primero, luego su plan Medigap paga muchos de los costos que Medicare deja pendientes &mdash; deducibles, coseguro y copagos. No hay redes, por lo que puede usar cualquier proveedor del país que acepte Medicare, y los planes están estandarizados por letra, lo que hace que compararlos sea sorprendentemente sencillo. Usted agrega un <a href=\"{partDHref}\">plan de medicamentos de la Parte D</a> independiente para los medicamentos recetados.",
     "s2H2": "Plan G",
@@ -166,6 +172,10 @@
         "a": "Sí. Los planes Medigap están estandarizados por letra, así que un Plan G ofrece los mismos beneficios básicos sin importar qué compañía lo venda en {placeName}. Debido a que la cobertura es idéntica, lo que principalmente difiere entre las compañías es el precio y el servicio."
       },
       {
+        "q": "¿Por qué dos compañías cobran precios distintos por el mismo plan Medigap en {placeName}?",
+        "a": "Porque los beneficios están estandarizados, pero los precios no. Todas las compañías que venden un mismo plan con letra cubren lo mismo, así que compiten en prima y servicio. También eligen cómo tarificar la póliza, y el Departamento de Seguros de Utah señala que la mayoría de las compañías en {placeName} usan calificación por edad cumplida, en la que la prima sube a medida que usted envejece. Comparar solo el precio inicial puede ser engañoso."
+      },
+      {
         "q": "¿Un plan del Seguro Suplementario de Medicare cubre los medicamentos recetados?",
         "a": "No. Las pólizas Medigap no incluyen cobertura de medicamentos, así que usted agrega un plan independiente de la Parte D junto con ella. No tener una cobertura de medicamentos acreditable puede provocar una multa por inscripción tardía en la Parte D de por vida."
       },
@@ -181,14 +191,18 @@
         "q": "¿Funciona Medigap cuando viajo?",
         "a": "Sí. Debido a que Medicare Original no tiene redes, una póliza Medigap funciona con cualquier proveedor en todo el país que acepte Medicare. Varios planes Medigap, incluyendo el Plan G y el Plan N, también incluyen cobertura limitada de emergencia para viajes al extranjero."
       }
-    ]
+    ],
+    "urH2": "Cómo {placeName} regula y fija el precio de Medigap",
+    "urP1Html": "Los beneficios de Medigap están establecidos por ley federal, pero las compañías que venden las pólizas &mdash; y la forma en que se les permite fijar sus precios &mdash; están reguladas a nivel estatal. Esa división es lo más útil que debe entender antes de comparar opciones en {placeName}: <strong>lo que cubre un plan con letra es fijo; lo que cuesta, no</strong>.",
+    "urP2Html": "El Departamento de Seguros de Utah describe tres maneras de fijar el precio de una póliza Medigap: <strong>calificación comunitaria</strong>, en la que su prima no se basa en su edad; <strong>calificación por edad de emisión</strong>, basada en la edad que tenía cuando la compró; y <strong>calificación por edad cumplida</strong>, que comienza baja y sube a medida que usted envejece. El Departamento señala que <strong>la mayoría de las compañías en {placeName} ofrecen productos con calificación por edad cumplida</strong>. Ese único detalle merece más peso del que suele recibir, porque una póliza con calificación por edad cumplida que parece la más económica a los 65 años puede convertirse, sin que lo note, en la más cara que tenga a los 80.",
+    "urP3Html": "Dado que los beneficios dentro de un plan con letra son idénticos en todas partes, comparar Medigap en {placeName} es realmente un ejercicio de precio y servicio. El Departamento de Seguros de Utah publica su propia comparación de tarifas en <a href=\"https://medigap.utah.gov/\" rel=\"nofollow\">medigap.utah.gov</a>, y su <a href=\"https://insurance.utah.gov/consumers/health-insurance/medicare/\" rel=\"nofollow\">página sobre Medicare</a> explica los métodos de tarificación en detalle. Las compañías presentan tarifas nuevas con el tiempo, así que consulte las cifras actuales en lugar de confiar en las que vio una vez &mdash; incluidas las nuestras."
   },
   "partd": {
-    "title": "Parte D de Medicare en {placeName} | Planes de Medicamentos Recetados | AltaMedicare",
-    "description": "Cómo funcionan los planes de medicamentos recetados de la Parte D de Medicare en {placeName}: formularios, niveles de medicamentos, autorización previa, terapia escalonada, Ayuda Adicional (Extra Help) y el tope de {partDAnnualCap} de {year}.",
+    "title": "Parte D de Medicare en {placeName} | Disponibilidad de planes en todo el estado y costos | AltaMedicare",
+    "description": "Parte D de Medicare en {placeName}: los planes independientes de la Parte D son iguales en cada condado, más Ayuda Adicional (Extra Help) y el tope de {partDAnnualCap} de {year}.",
     "crumbLeaf": "Parte D",
     "h1": "Parte D de Medicare en {placeName}",
-    "ledeHtml": "La cobertura de medicamentos recetados, explicada &mdash; cómo funcionan los planes de la Parte D en {placeName}, qué determina sus costos y cómo lo protege el tope de {partDAnnualCap} de {year}.",
+    "ledeHtml": "La cobertura de medicamentos recetados, explicada &mdash; en qué planes independientes de la Parte D puede inscribirse en cualquier lugar de {placeName}, qué determina sus costos y cómo lo protege el tope de {partDAnnualCap} de {year}.",
     "s1H2": "Cobertura de medicamentos recetados en {placeName}",
     "s1PHtml": "La Parte D es la cobertura de medicamentos recetados de Medicare. Puede obtenerla de dos maneras: como un <strong>plan independiente de la Parte D</strong> junto con Medicare Original (y por lo general una póliza Medigap), o <strong>integrada en un plan Medicare Advantage</strong>. De cualquier manera, la cobertura la brindan aseguradoras privadas, y el plan que elija determina qué medicamentos están cubiertos y cuánto paga usted.",
     "s2H2": "Formularios",
@@ -212,6 +226,10 @@
     "faqHeading": "Medicare Parte D en {placeName}: preguntas frecuentes",
     "faqs": [
       {
+        "q": "¿Los planes de la Parte D varían de un condado a otro en {placeName}?",
+        "a": "No. Los planes independientes de la Parte D se aprueban para todo el estado, así que cada condado de {placeName} tiene exactamente la misma lista para elegir. Mudarse de un condado de {placeName} a otro no cambia en qué planes independientes de la Parte D puede inscribirse. Medicare Advantage es diferente &mdash; esos planes se aprueban condado por condado y las opciones sí varían."
+      },
+      {
         "q": "¿Cómo elijo un plan de la Parte D en {placeName}?",
         "a": "Empiece por sus medicamentos. Como cada plan de la Parte D en {placeName} tiene su propio formulario (lista de medicamentos cubiertos), el mejor plan es simplemente el que cubre sus medicamentos específicos con el menor costo total anual, no el que tiene la prima más barata. Nuestra calculadora de costos de medicamentos y la búsqueda de formularios hacen esa comparación rápida."
       },
@@ -231,6 +249,10 @@
         "q": "¿Qué es la Ayuda Adicional (Extra Help)?",
         "a": "La Ayuda Adicional (Extra Help), también llamada Subsidio por Bajos Ingresos, reduce las primas, los deducibles y los copagos de la Parte D para personas con ingresos y recursos limitados. Si usted califica, sus costos de medicamentos cubiertos se reducen considerablemente. Vale la pena solicitarla a través del Seguro Social aunque no esté seguro de calificar."
       }
-    ]
+    ],
+    "uaH2": "La disponibilidad de los planes independientes de la Parte D no cambia según el condado",
+    "uaP1Html": "Esto sorprende a casi todos y ahorra mucho tiempo de búsqueda innecesaria: <strong>los planes independientes de la Parte D que se venden en {placeName} son los mismos en cada condado</strong>. La lista entre la que puede elegir en Salt Lake County es idéntica a la disponible en Washington County, Cache County y en cualquier otro lugar del estado. El lugar donde viva dentro de {placeName} no agrega ni elimina un solo plan independiente de la Parte D.",
+    "uaP2Html": "Esto es estructural, no una peculiaridad del mercado de este año. CMS organiza la Parte D independiente en regiones formadas por <strong>estados completos</strong>, y un patrocinador aprobado para vender en {placeName} debe ofrecer su plan en todo {placeName}. En los datos de julio de 2026 sobre áreas de servicio por contrato de CMS, <strong>cinco contratos independientes de la Parte D</strong> cubren los 29 condados de {placeName} &mdash; una lista idéntica desde Logan hasta St. George. Un contrato es un patrocinador de planes, y un patrocinador puede ofrecer más de un plan, así que la cantidad de planes individuales que comparará es mayor que cinco.",
+    "uaP3Html": "Vale la pena saberlo justamente porque <a href=\"/utah/medicare-advantage.html\">Medicare Advantage</a> funciona al revés: esos planes se aprueban condado por condado y las opciones sí varían según el lugar de {placeName} donde viva. Por eso su código postal importa mucho al comparar Medicare Advantage y no importa en absoluto al elegir un plan independiente de la Parte D. Fuente: <a href=\"https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-advantagepart-d-contract-and-enrollment-data/pdp-contract-service-area-state/county\" rel=\"nofollow\">Área de servicio por contrato de la Parte D (CMS), por estado y condado</a>."
   }
 }

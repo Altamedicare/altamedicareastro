@@ -84,6 +84,15 @@ const breadcrumbLd = {
       <h2>{interp(c.s5H2 as string, vars)}</h2>
       <p set:html={interp(c.s5PHtml as string, vars)}></p>
 
+      {/* State regulatory context (Phase 5): Medigap benefits are federal but
+          pricing is state-regulated, so this page is state-scoped — see the
+          note in shared/location/en.json. Sourced to the Utah Insurance
+          Department; deliberately makes NO county-level premium claim. */}
+      <h2>{interp(c.urH2 as string, vars)}</h2>
+      <p set:html={interp(c.urP1Html as string, vars)}></p>
+      <p set:html={interp(c.urP2Html as string, vars)}></p>
+      <p set:html={interp(c.urP3Html as string, vars)}></p>
+
       <h2>{interp(c.s6H2 as string, vars)}</h2>
       <p set:html={interp(c.s6PHtml as string, vars)}></p>
     </div>

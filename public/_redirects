@@ -1,3 +1,64 @@
 # Cloudflare Pages redirects (301). Add cross-host or changed-URL redirects here.
 # Dev artifact — send to home.
 /test.html  /  301
+
+# ── Phase 5: Utah location architecture ──────────────────────────────────────
+# Standalone Part D is approved for a whole state at a time, and Medigap
+# benefits are federal with state-regulated pricing — neither varies by county
+# (verified against CMS contract service-area data, July 2026). The county
+# versions of those two topics therefore consolidated into the statewide pages.
+# County Medicare Advantage and county hubs are UNCHANGED: MA availability
+# genuinely does vary by county.
+#
+# EN → EN and ES → ES only, never across languages. The .html variants are
+# defensive: Cloudflare's automatic .html → extensionless normalization only
+# applies while the built file exists, so once these outputs are gone the .html
+# form would 404. Each points straight at the final destination — no chains.
+
+# County Part D → statewide Part D (EN)
+/utah/salt-lake-county/part-d            /utah/part-d  301
+/utah/utah-county/part-d                 /utah/part-d  301
+/utah/davis-county/part-d                /utah/part-d  301
+/utah/weber-county/part-d                /utah/part-d  301
+/utah/washington-county/part-d           /utah/part-d  301
+/utah/salt-lake-county/part-d.html       /utah/part-d  301
+/utah/utah-county/part-d.html            /utah/part-d  301
+/utah/davis-county/part-d.html           /utah/part-d  301
+/utah/weber-county/part-d.html           /utah/part-d  301
+/utah/washington-county/part-d.html      /utah/part-d  301
+
+# County Part D → statewide Part D (ES)
+/es/utah/salt-lake-county/part-d         /es/utah/part-d  301
+/es/utah/utah-county/part-d              /es/utah/part-d  301
+/es/utah/davis-county/part-d             /es/utah/part-d  301
+/es/utah/weber-county/part-d             /es/utah/part-d  301
+/es/utah/washington-county/part-d        /es/utah/part-d  301
+/es/utah/salt-lake-county/part-d.html    /es/utah/part-d  301
+/es/utah/utah-county/part-d.html         /es/utah/part-d  301
+/es/utah/davis-county/part-d.html        /es/utah/part-d  301
+/es/utah/weber-county/part-d.html        /es/utah/part-d  301
+/es/utah/washington-county/part-d.html   /es/utah/part-d  301
+
+# County Medigap → statewide Medigap (EN)
+/utah/salt-lake-county/medicare-supplement          /utah/medicare-supplement  301
+/utah/utah-county/medicare-supplement               /utah/medicare-supplement  301
+/utah/davis-county/medicare-supplement              /utah/medicare-supplement  301
+/utah/weber-county/medicare-supplement              /utah/medicare-supplement  301
+/utah/washington-county/medicare-supplement         /utah/medicare-supplement  301
+/utah/salt-lake-county/medicare-supplement.html     /utah/medicare-supplement  301
+/utah/utah-county/medicare-supplement.html          /utah/medicare-supplement  301
+/utah/davis-county/medicare-supplement.html         /utah/medicare-supplement  301
+/utah/weber-county/medicare-supplement.html         /utah/medicare-supplement  301
+/utah/washington-county/medicare-supplement.html    /utah/medicare-supplement  301
+
+# County Medigap → statewide Medigap (ES)
+/es/utah/salt-lake-county/medicare-supplement       /es/utah/medicare-supplement  301
+/es/utah/utah-county/medicare-supplement            /es/utah/medicare-supplement  301
+/es/utah/davis-county/medicare-supplement           /es/utah/medicare-supplement  301
+/es/utah/weber-county/medicare-supplement           /es/utah/medicare-supplement  301
+/es/utah/washington-county/medicare-supplement      /es/utah/medicare-supplement  301
+/es/utah/salt-lake-county/medicare-supplement.html  /es/utah/medicare-supplement  301
+/es/utah/utah-county/medicare-supplement.html       /es/utah/medicare-supplement  301
+/es/utah/davis-county/medicare-supplement.html      /es/utah/medicare-supplement  301
+/es/utah/weber-county/medicare-supplement.html      /es/utah/medicare-supplement  301
+/es/utah/washington-county/medicare-supplement.html /es/utah/medicare-supplement  301
