@@ -75,6 +75,8 @@ A few clues can point you in the right direction:
 
 Want to get a feel for what your Medicare costs might look like either way? Our [cost estimator](/medicare-cost-estimator) can help you picture the numbers before you apply.
 
+It also helps to understand [dual eligible plans in Utah](/dual-eligible).
+
 ## A calm next step
 
 Sorting out full versus partial dual eligibility can feel overwhelming, especially when money is tight and the paperwork looks daunting. You don't have to figure it out alone. If you'd like a patient walk-through of where you might fit and what to apply for, [reach out](/contact) for a no-pressure conversation — no obligation, just answers.

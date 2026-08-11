@@ -56,6 +56,8 @@ Here's a detail many people don't know: **Medicaid coverage can be retroactive i
 
 If you're approved, you'll get a notice explaining what's covered and when it starts. If you're denied or unsure, don't assume that's the end of it — eligibility rules have details, and a fresh look at your income and resources sometimes changes the answer.
 
+Worth reading alongside this: [having Medicare and Medicaid together](/dual-eligible).
+
 ## A few things that trip people up
 
 - **Don't rule yourself out.** Many Utahns who qualify never apply because they assume they earn too much. Since the state may disregard some income, it's worth submitting an application even if you're on the fence.

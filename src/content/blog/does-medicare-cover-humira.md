@@ -72,6 +72,10 @@ When you next talk with your prescriber, these are useful to raise:
 - If my plan requires prior authorization or step therapy, can you help with the paperwork?
 - Are there other biologics worth considering based on my history?
 
+If your share of the cost for Humira is still more than you can manage, manufacturer and nonprofit foundation programs may be able to help. See [Humira assistance programs](/humira-assistance-program) for who qualifies and how to apply.
+
+For background, see our guide to [how Part D plans work](/prescription-drug-plans).
+
 ## How to see your real cost
 
 The best way to stop guessing is to look at your own situation. Run Humira — along with your other medications — through the [Drug Cost Calculator](/medicare-drug-cost-calculator) to estimate what you'd pay across the year under a given plan, and pair it with the Formulary Lookup to confirm coverage and tier.

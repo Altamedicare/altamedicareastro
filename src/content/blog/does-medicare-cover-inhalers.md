@@ -77,6 +77,8 @@ When you next talk with your prescriber, these are useful to raise:
 - Do I need both a daily maintenance inhaler and a rescue inhaler?
 - If my plan requires prior authorization or step therapy, can you help with the paperwork?
 
+Worth reading alongside this: [Medicare Part D coverage](/prescription-drug-plans).
+
 ## How to see your real cost
 
 The best way to stop guessing is to look at your own situation. Run your inhalers — along with your other medications — through the [Drug Cost Calculator](/medicare-drug-cost-calculator) to estimate what you'd pay across the year under a given plan, and pair it with the Formulary Lookup to confirm coverage and tier.

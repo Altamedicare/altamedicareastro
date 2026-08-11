@@ -66,6 +66,8 @@ Even if you don't qualify for Extra Help, there's good news baked into Part D th
 
 That cap is a real safety net for anyone on expensive medications — and it stacks nicely with Extra Help for those who qualify, since Extra Help often keeps your costs well below $2,000 in the first place.
 
+For the bigger picture, see our guide to [the parts of Medicare](/medicare-basics).
+
 ## See what your drugs would cost
 
 The best way to make this concrete is to look at your own medications. You can run your prescription list through the [Drug Cost Calculator](/medicare-drug-cost-calculator) to estimate what you'd pay under a given plan, and use the [Cost Estimator](/medicare-cost-estimator) to get a fuller picture of your overall Medicare costs for the year. Seeing the numbers usually makes it obvious whether Extra Help is worth pursuing.

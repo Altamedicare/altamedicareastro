@@ -53,6 +53,10 @@ For anyone with ongoing drug costs, this is the most important change to know ab
 
 Once your out-of-pocket spending on covered drugs reaches $2,000, you pay nothing more for your covered prescriptions for the rest of the calendar year. For someone on a steady brand-name medication like Eliquis — especially alongside other prescriptions — that cap can make a real difference and gives you a predictable ceiling to plan around. There's also an option to spread that $2,000 into smoother monthly payments across the year if a big bill at the start would be hard to manage.
 
+If your share of the cost for Eliquis is still more than you can manage, manufacturer and nonprofit foundation programs may be able to help. See [Eliquis assistance programs](/eliquis-assistance-program) for who qualifies and how to apply.
+
+Worth reading alongside this: [how Part D plans work](/prescription-drug-plans).
+
 ## What to check before you pick a plan
 
 A few quick steps go a long way:

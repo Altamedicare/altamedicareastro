@@ -71,6 +71,8 @@ QMB also comes with a nice bonus: if you qualify, you **automatically get Extra 
 
 If your income is a bit above the QMB limits, you may still qualify for one of the other Medicare Savings Programs. I walk through the differences in [QMB vs. SLMB vs. QI](/blog/qmb-vs-slmb-vs-qi).
 
+It also helps to understand [how dual eligibility works](/dual-eligible).
+
 ## How to apply in Utah
 
 You apply for QMB through **Utah Medicaid**. There's no cost to apply, and you can fill out the application even if you're not sure you'll qualify — it's worth letting the state decide. When you apply, it helps to have proof of your income and a rough list of your savings and accounts ready.

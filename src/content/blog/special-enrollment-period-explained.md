@@ -61,6 +61,8 @@ Here's the thing to remember about SEPs: **they don't all last the same length o
 
 Because the rules differ from one situation to the next, the safest move is to treat any qualifying event as a reason to **act quickly** rather than assume you have plenty of time. The moment your circumstances change, that's the signal to start the conversation — not after the dust settles.
 
+For the bigger picture, see our guide to [your Medicare enrollment timeline](/turning-65).
+
 ## When you're not sure, just ask
 
 Special Enrollment Periods are one of the more forgiving corners of Medicare — but only if you use them before they close. The hard part is usually just knowing that your particular life event counts and how long you have to act.

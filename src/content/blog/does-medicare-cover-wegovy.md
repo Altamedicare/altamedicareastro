@@ -79,6 +79,8 @@ One piece of forward-looking news: semaglutide is in the **second group of drugs
 - What information will you need to submit for prior authorization?
 - If my plan denies it, will you help request an exception or appeal?
 
+Worth reading alongside this: [Part D prescription coverage](/prescription-drug-plans).
+
 ## Check your plan, then let's talk
 
 Coverage for Wegovy really does come down to the documented reason behind the prescription and the fine print of your specific plan. The most useful first step is to look it up on your own plan's covered-drug list. Our [Formulary Lookup](/medicare-formulary-lookup) shows how a drug is treated, the [Drug Cost Calculator](/medicare-drug-cost-calculator) helps you estimate what you'd pay across the year, and the [Medicare Cost Estimator](/medicare-cost-estimator) gives you the bigger picture.

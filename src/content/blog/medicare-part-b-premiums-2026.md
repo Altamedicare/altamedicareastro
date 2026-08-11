@@ -60,6 +60,8 @@ Want to see your own number in seconds? Run the [IRMAA Calculator](/medicare-irm
 
 If you already collect Social Security, your Part B premium comes **straight out of your monthly benefit** — you'll see the deduction on your statement. If you haven't started Social Security yet, Medicare sends you a bill every three months (you can set up Medicare Easy Pay to automate it).
 
+For the bigger picture, see our guide to [what Medicare covers](/medicare-basics).
+
 ## Planning ahead
 
 A few practical moves keep Part B from catching you off guard:

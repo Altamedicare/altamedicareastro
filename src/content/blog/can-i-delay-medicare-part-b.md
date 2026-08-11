@@ -66,6 +66,8 @@ A quick example: go three full years without enrolling when you should have, and
 
 You can see what a delay might cost in your own case with the [Late Enrollment Penalty Calculator](/medicare-penalty-calculator). Plug in your months without coverage and it shows the lifetime impact in plain numbers.
 
+It also helps to understand [your first year on Medicare](/turning-65).
+
 ## A simple rule of thumb
 
 If you have active employer coverage from a company with 20 or more employees, delaying Part B is usually fine. If you're relying on COBRA, a retiree plan, VA benefits, or a small-employer plan, you should almost always take Part B on time.

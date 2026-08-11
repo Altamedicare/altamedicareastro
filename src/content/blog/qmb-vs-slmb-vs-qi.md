@@ -60,6 +60,8 @@ You don't have to pick the program yourself — when you apply, the **Utah Medic
 
 Want to see how these savings could change your overall costs? The [Cost Estimator](/medicare-cost-estimator) can help you picture your monthly Medicare spending, and if a term here is fuzzy, the [Glossary](/medicare-glossary) breaks it down in plain language. For a closer look at the most comprehensive program, see [what the QMB program covers](/blog/what-is-the-qmb-program).
 
+Worth reading alongside this: [dual eligible coverage](/dual-eligible).
+
 ## A few things to keep in mind
 
 These programs can also open other doors. Qualifying for any MSP automatically signs you up for **Extra Help**, which lowers Part D prescription costs too — so applying is often worth more than the premium savings alone.

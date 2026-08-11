@@ -53,6 +53,8 @@ A **Medigap** plan like **Plan G** covers nearly everything after you pay the **
 
 Want a gentle nudge as the deadline nears? The [Enrollment Countdown](/medicare-enrollment-countdown) tracks the days left in your IEP so you never have to wonder.
 
+For background, see our guide to [what to do at 65](/turning-65).
+
 ## After you enroll / each year
 
 You're not done forever — but the yearly upkeep is light.

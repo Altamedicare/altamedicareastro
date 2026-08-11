@@ -63,6 +63,8 @@ You apply through **Utah Medicaid**, the state agency that handles these program
 
 If you're close to the limits, apply anyway. The worst outcome is a no, and the best outcome is hundreds of dollars a year you no longer have to spend.
 
+It also helps to understand [having Medicare and Medicaid together](/dual-eligible).
+
 ## A gentle next step
 
 These programs exist for exactly this reason — to make Medicare manageable for people doing their best on a fixed income. If you'd like a hand checking which one might fit, [reach out](/contact) for a no-pressure conversation. There's no cost to ask, and no obligation to do anything but get your questions answered.

@@ -96,6 +96,12 @@ export const strings = {
     'footer.schedule': 'Schedule a Call',
     'footer.hours': 'Mon–Fri: 9am–6pm MT',
     'footer.rights': 'AltaMedicare. All rights reserved. · Bret Swope, Licensed Insurance Agent',
+    // Location hub → county links. Framing only; county names come from places.ts.
+    'location.countiesH2': 'Medicare by county',
+    'location.countiesIntro': 'Plan availability and provider networks change from one county to the next. Pick yours for local detail:',
+    // FAQ hub → guide pages.
+    'faqHub.moreLead': 'Looking for the full guides instead? Read',
+    'faqHub.moreOr': 'or run the numbers with the',
     // Ask Bret chat
     'chat.bubbleAria': 'Ask Bret a question',
     'chat.bubble': 'Ask Bret',
@@ -154,6 +160,10 @@ export const strings = {
     'footer.schedule': 'Agendar una llamada',
     'footer.hours': 'Lun–Vie: 9am–6pm MT',
     'footer.rights': 'AltaMedicare. Todos los derechos reservados. · Bret Swope, agente de seguros con licencia',
+    'location.countiesH2': 'Medicare por condado',
+    'location.countiesIntro': 'La disponibilidad de planes y las redes de proveedores cambian de un condado a otro. Elija el suyo para ver los detalles locales:',
+    'faqHub.moreLead': '¿Prefiere las guías completas? Lea',
+    'faqHub.moreOr': 'o haga los cálculos con las',
     'chat.bubbleAria': 'Hágale una pregunta a Bret',
     'chat.bubble': 'Pregúntele a Bret',
     'chat.closeAria': 'Cerrar el chat',

@@ -70,6 +70,8 @@ If you've realized you slipped through the cracks, don't panic — but do act.
 2. **If no SEP applies, plan for the GEP.** Mark January 1 through March 31 and apply through Social Security. Remember your coverage starts the first of the following month, so build a bridge plan for any gap.
 3. **Get your dates straight.** Knowing exactly when your windows open and close is half the battle. The [Timeline Calculator](/medicare-timeline-calculator) lays out your enrollment dates so nothing sneaks up on you.
 
+It also helps to understand [what to do at 65](/turning-65).
+
 ## The bottom line
 
 Missing your Initial Enrollment Period can mean a coverage gap and penalties that stick with you for life — but the outcome depends entirely on your situation, and there are more exceptions than most people realize. The worst thing you can do is guess.

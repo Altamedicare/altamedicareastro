@@ -66,6 +66,8 @@ Avoiding these penalties really comes down to a few habits:
 2. **Don't drop drug coverage with nothing to replace it.** If you ever go without a Part D plan, make sure whatever you do have is creditable. Plans send you a notice each year telling you whether your coverage qualifies — keep those notices.
 3. **Watch the clock when you stop working.** When active employer coverage ends, your 8-month Part B window starts. Eight months passes faster than you'd think.
 
+Worth reading alongside this: [getting started with Medicare](/turning-65).
+
 ## The bottom line
 
 Late penalties are permanent, but they're also entirely avoidable. Most people who get hit with one simply didn't realize a deadline had passed or assumed a plan counted as creditable when it didn't.

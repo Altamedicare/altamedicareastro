@@ -66,6 +66,8 @@ The $35 cap helps anyone with Medicare who relies on insulin, and it makes the b
 
 It is also worth knowing that insulin costs still count toward your overall Part D out-of-pocket total. Once your covered drug spending reaches the annual limit, you pay $0 for covered drugs the rest of the year. You can read more about that protection in our guide to [the $2,000 drug cap](/blog/the-2000-drug-cap-explained).
 
+For the bigger picture, see our guide to [Part D prescription coverage](/prescription-drug-plans).
+
 ## A quick word of reassurance
 
 The insulin cap is one of the clearest, friendliest changes Medicare has made in recent years. A covered month's supply of insulin costs no more than $35, there is no deductible to clear first, and it happens automatically.

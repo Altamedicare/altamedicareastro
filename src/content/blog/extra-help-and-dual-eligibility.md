@@ -72,6 +72,8 @@ The old "donut hole" coverage gap is gone. So even if you don't qualify for Extr
 
 If you'd like a deeper look at how Extra Help works and who else might qualify, our guide on [Extra Help explained](/blog/extra-help-explained) covers it in more detail.
 
+Worth reading alongside this: [dual eligible coverage](/dual-eligible).
+
 ## A calm next step
 
 Dual eligibility and Extra Help can feel like a maze, but the good news is that most of it happens automatically once you're enrolled. If you're not sure whether your Extra Help is active, or you just want someone to look at your situation and explain it plainly, [reach out anytime](/contact). There's no pressure and no cost to talk it through — just clear answers so you know exactly where you stand.

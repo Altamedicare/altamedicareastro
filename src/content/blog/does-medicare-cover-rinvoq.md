@@ -69,6 +69,10 @@ I'm an insurance agent, not a doctor, so I'd never tell you to start, stop, or s
 - Are there alternatives on my plan's formulary that might cost me less?
 - If Rinvoq isn't covered, would you support a coverage exception request?
 
+If your share of the cost for Rinvoq is still more than you can manage, manufacturer and nonprofit foundation programs may be able to help. See [Rinvoq assistance programs](/rinvoq-assistance-program) for who qualifies and how to apply.
+
+For the bigger picture, see our guide to [Part D prescription coverage](/prescription-drug-plans).
+
 ## A friendly next step
 
 Rinvoq coverage really comes down to the fine print of your particular plan — its tier, and whether prior authorization or step therapy applies. The best move is to look it up on **your own plan's formulary.** Our [Formulary Lookup](/medicare-formulary-lookup) shows how a drug is treated, and the [Drug Cost Calculator](/medicare-drug-cost-calculator) helps you estimate what you'd pay across the year — and remember, in 2026 your out-of-pocket Part D drug costs are capped at $2,000 for the year.

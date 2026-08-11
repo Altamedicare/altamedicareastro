@@ -68,6 +68,10 @@ I'm an insurance agent, not a doctor, so I'd never tell you to start, stop, or s
 - Are there alternatives on my plan's formulary that might cost me less?
 - If Mounjaro isn't covered, would you support a coverage exception request?
 
+If your share of the cost for Mounjaro is still more than you can manage, manufacturer and nonprofit foundation programs may be able to help. See [Mounjaro assistance programs](/mounjaro-assistance-program) for who qualifies and how to apply.
+
+If you are weighing your options, read up on [how Part D plans work](/prescription-drug-plans).
+
 ## A friendly next step
 
 Mounjaro coverage really comes down to the *why* behind the prescription and the fine print of your particular plan. The best move is to look it up on **your own plan's formulary.** Our [Formulary Lookup](/medicare-formulary-lookup) shows how a drug is treated, and the [Drug Cost Calculator](/medicare-drug-cost-calculator) helps you estimate what you'd pay across the year — and remember, in 2026 your out-of-pocket Part D drug costs are capped at $2,000 for the year.

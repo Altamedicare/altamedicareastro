@@ -79,6 +79,8 @@ So you really have three paths, and you can pursue more than one:
 2. **Appeal** if you believe the loss was an error.
 3. **Adjust your Medicare plan** using your Special Enrollment Period so you're not caught off guard.
 
+For background, see our guide to [having Medicare and Medicaid together](/dual-eligible).
+
 ## You don't have to figure this out alone
 
 Losing Medicaid can feel like the floor shifting under you, and on a tight budget that's a real worry — but the situation is usually more workable than it first appears. Acting quickly is the main thing: open your mail, respond to renewals, and use the windows Medicare gives you.

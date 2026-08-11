@@ -66,6 +66,8 @@ Remember that missing out-of-pocket maximum on Original Medicare? That's the gap
 
 Either route turns Medicare from an open-ended bill into something you can plan around.
 
+For background, see our guide to [what Medicare covers](/medicare-basics).
+
 ## Putting it all together
 
 For a quick personal estimate that adds up premiums, deductibles, and expected spending, the [Medicare Cost Estimator](/medicare-cost-estimator) does the math for you. And if you'd like a second set of eyes on which mix of coverage fits your budget, that's exactly the kind of thing a short, no-pressure call can sort out — [reach out anytime](/contact) and we'll walk through your numbers together.

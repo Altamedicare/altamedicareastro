@@ -51,6 +51,8 @@ Here's the part that matters most: the numbers above are **2026 federal baseline
 
 Because of that, a hard line on paper isn't really a hard line in practice. If you're a little over a limit, you should still apply. Applying is free, and the worst outcome is a "no" — while many people who assumed they wouldn't qualify end up getting help. For a step-by-step walk-through of the paperwork, see [how to apply for Medicaid in Utah](/blog/how-to-apply-for-medicaid-in-utah).
 
+Worth reading alongside this: [dual eligible plans in Utah](/dual-eligible).
+
 ## A few things worth knowing
 
 - **Resources are not your whole net worth.** Your home and your car usually don't count, so don't rule yourself out based on what you own.

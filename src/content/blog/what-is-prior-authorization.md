@@ -69,6 +69,8 @@ So if you and your doctor believe the treatment is right for you, it's worth pus
 
 Prior authorization sometimes gets confused with **step therapy**, and they're cousins, not twins. Step therapy means the plan wants you to try a **preferred (often lower-cost) drug first**, and only if that doesn't work will it cover the next option. Prior authorization, by contrast, is simply about getting approval before coverage — it doesn't necessarily require you to try something else first. A drug can have one rule, both, or neither.
 
+For background, see our guide to [how Part D plans work](/prescription-drug-plans).
+
 ## Check before you enroll
 
 The best way to avoid surprises is to look before you leap. Each plan publishes a **formulary** — its official list of covered drugs — and any medication that needs prior authorization is usually flagged with a small "**PA**" note. You can run your prescriptions through the [Formulary Lookup](/medicare-formulary-lookup) to see which of your drugs carry a PA requirement under a given plan, before you ever sign up. That five-minute check can save you a stressful trip to the pharmacy later.

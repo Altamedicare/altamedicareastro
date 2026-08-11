@@ -68,6 +68,19 @@ const breadcrumbLd = {
         </a>
       ))}
     </div>
+
+    {/* The FAQ hub had no contextual links in or out — chrome only. This ties it
+        to the guide pages the answers reference. Framing strings are localized;
+        the destinations resolve per locale through href(). */}
+    <p class="faq-hub-links" style="margin-top:28px;">
+      {t('faqHub.moreLead', lang)}{' '}
+      <a href={href('medicare-basics.html')}>{t('nav.basics', lang)}</a>,{' '}
+      <a href={href('medicare-advantage.html')}>{t('nav.ma', lang)}</a>,{' '}
+      <a href={href('medicare-supplement.html')}>{t('nav.supplement', lang)}</a>,{' '}
+      <a href={href('prescription-drug-plans.html')}>{t('nav.pdp', lang)}</a>{' '}
+      {t('faqHub.moreOr', lang)}{' '}
+      <a href={href('/tools')}>{t('footer.tools', lang)}</a>.
+    </p>
   </div>
 </section>
 

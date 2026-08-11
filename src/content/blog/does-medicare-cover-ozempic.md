@@ -59,6 +59,10 @@ One more piece of good news. Starting in **2026, Part D includes a $2,000 cap on
 
 For a higher-cost brand-name drug, that cap can turn a scary, unpredictable expense into something you can plan around — as long as the drug is on your plan's formulary and covered for an approved use.
 
+If your share of the cost for Ozempic is still more than you can manage, manufacturer and nonprofit foundation programs may be able to help. See [Ozempic assistance programs](/ozempic-assistance-program) for who qualifies and how to apply.
+
+For background, see our guide to [Medicare Part D coverage](/prescription-drug-plans).
+
 ## A friendly next step
 
 Ozempic coverage really does come down to the *why* behind the prescription and the fine print of your particular plan. If you're not sure where your plan stands — or you're shopping for one that handles your medications well — I'm happy to walk through it with you, no pressure. You can [reach out anytime](/contact) and we'll look at your formulary and costs together.

@@ -64,6 +64,8 @@ Here's the part that surprises a lot of people, and it's genuinely good news. Mo
 
 That means if a plan isn't meeting your needs — maybe a medication dropped off the formulary, a doctor left the network, or you'd simply like better extras — you generally don't have to wait until next fall to make a switch. This flexibility takes a lot of the pressure off the decision. You're choosing a starting point, not locking yourself in for twelve months. If your circumstances change, your plan can change with them.
 
+For the bigger picture, see our guide to [dual eligible plans in Utah](/dual-eligible).
+
 ## A calm next step
 
 Enrolling in a D-SNP comes down to confirming you have both programs, checking your doctors and drugs, comparing your options, and signing up — with the comfort of knowing you can adjust later if you need to.

@@ -8,7 +8,7 @@ import LocationTools from './LocationTools.astro';
 import LocationFaq from './LocationFaq.astro';
 import LocationCTA from './LocationCTA.astro';
 import LocationBreadcrumb from './LocationBreadcrumb.astro';
-import { getLocationCopy, hubHref, pageHref, parentStateHub, placeFromSlug, type Crumb } from '../../data/places';
+import { getLocationCopy, hubHref, pageHref, parentStateHub, placeFromSlug, PLACES, type Crumb } from '../../data/places';
 import { PHONE_DISPLAY } from '../../consts';
 import { CURRENT } from '../../data/figures';
 import { DEFAULT_LOCALE, getLangFromUrl, getLocaleMeta, pageSlugFromUrl, t } from '../../i18n/locales';
@@ -23,6 +23,10 @@ const c = copy.overview;
 const shell = copy.shell;
 const usd = (v: number) => `$${v.toLocaleString('en-US')}`;
 const vars = { placeName: n, year: CURRENT.year, partDAnnualCap: usd(CURRENT.partD.annualCap), phone: PHONE_DISPLAY };
+// Counties nested under this hub (empty for a county page — it has no children).
+const childCounties = PLACES.filter(
+  (p) => p.kind === 'county' && p.slug.startsWith(`${place.slug}/`),
+);
 const canonicalEn = hubHref(place);
 const canonical = lang === DEFAULT_LOCALE ? canonicalEn : `/${lang}${canonicalEn}`;
 const alternates = hreflangAlternates(slug);
@@ -102,6 +106,22 @@ const breadcrumbLd = {
 
       <h2>{interp(c.helpH2 as string, vars)}</h2>
       <p set:html={interp(c.helpPHtml as string, vars)}></p>
+
+      {/* State hubs had no link to their own county pages — not in <main>, not
+          anywhere in the document — so the parent→child relationship existed
+          only in the sitemap. County names are proper nouns and come from
+          places.ts; only the two framing strings are localized. */}
+      {childCounties.length > 0 && (
+        <>
+          <h2>{t('location.countiesH2', lang)}</h2>
+          <p>{t('location.countiesIntro', lang)}</p>
+          <ul>
+            {childCounties.map((cp) => (
+              <li><a href={localizeHref(hubHref(cp), lang)}>{cp.name}</a></li>
+            ))}
+          </ul>
+        </>
+      )}
     </div>
   </section>
 

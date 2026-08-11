@@ -66,6 +66,8 @@ Sometimes the math favors Medicare even while you're working. Compare your share
 
 There's no universal answer — it comes down to your plan, your premiums, and whether an HSA is in the picture.
 
+It also helps to understand [turning 65 and Medicare](/turning-65).
+
 ## A quick way to decide
 
 Working past 65 gives you options, and that's a good thing. Run the numbers, check your employer's size, and mind the HSA and SEP rules so a small timing mistake doesn't turn into a lasting penalty. If you'd like a second set of eyes on whether to take Medicare now or hold off, [reach out for a no-pressure call](/contact) — talking it through for your specific situation usually makes the choice clear.

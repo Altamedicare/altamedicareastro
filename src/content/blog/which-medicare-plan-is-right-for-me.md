@@ -66,6 +66,8 @@ A couple of things hold true on every path:
 - **Everyone pays the Part B premium** — $202.90 a month in 2026. It's the foundation under both Medicare Advantage and Medigap.
 - **Have creditable drug coverage.** Even if you take nothing today, going without a Part D plan (or built-in Advantage drug coverage) can trigger a lifelong late penalty: 1% of $38.99 for every month you went without. A low-cost plan now protects you from that.
 
+If you are weighing your options, read up on [how Medicare Advantage works](/medicare-advantage).
+
 ## A simple next step
 
 If your head is spinning, that's normal — this is a lot to weigh. A good way to get your bearings is to take our [Medicare Plan Quiz](/medicare-quiz), which turns these questions into a few quick prompts and points you toward the type of plan that tends to fit. From there, comparing real plans against your doctors and drug list is what seals the decision.

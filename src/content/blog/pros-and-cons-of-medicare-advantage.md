@@ -58,6 +58,8 @@ Now the other side of the ledger — the trade-offs the commercials tend to skip
 | Yearly out-of-pocket cap | Yes |
 | Referrals / prior authorization | Common |
 
+For background, see our guide to [Medicare Advantage coverage](/medicare-advantage).
+
 ## So is it right for you?
 
 There's no universal answer, and anyone who gives you one without asking questions isn't really helping. The right path depends on which doctors you want to keep, the medications you take, how much travel you do, and how you feel about networks versus freedom of choice. Someone who splits the year between two states, for example, often leans away from a network plan, while a homebody who wants dental built in may love one.

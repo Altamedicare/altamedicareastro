@@ -65,6 +65,8 @@ The good news is that once you're enrolled through the GEP, you can also pick up
 
 So the spring window isn't just about getting in the door — it's a chance to put together coverage that actually fits how you use care.
 
+If you are weighing your options, read up on [getting started with Medicare](/turning-65).
+
 ## A calm next step
 
 Missing your enrollment window is frustrating, but it isn't the end of the road. The General Enrollment Period gives you a clear way back in, and the key is simply understanding what it'll cost and acting early so your coverage gap stays as short as possible.

@@ -53,6 +53,8 @@ On top of that, every Part D plan in 2026 caps your out-of-pocket drug costs at 
 
 Here's a perk that's easy to miss: dual eligible members get **extra chances to change plans during the year**, not just during the fall enrollment window everyone else uses. So if a plan isn't fitting — maybe its dental network is thin, or another plan has a better grocery allowance — you usually aren't stuck waiting twelve months to switch.
 
+For background, see our guide to [how dual eligibility works](/dual-eligible).
+
 ## Is it worth looking into?
 
 If you have both Medicare and Medicaid and you're still on Original Medicare alone, it's very much worth a look. A D-SNP could give you dental, vision, hearing, an OTC or grocery allowance, and rides to appointments — typically for a $0 premium and little to no cost-sharing as a full dual. The catch is simply knowing the plans exist and comparing them honestly.

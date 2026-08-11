@@ -68,6 +68,8 @@ Extra Help dramatically lowers what you pay at the pharmacy, with reduced or $0 
 - **A D-SNP can tie it all together.** A Dual Eligible Special Needs Plan is a Medicare Advantage plan built specifically for duals. It coordinates your Medicare and Medicaid benefits in one place, usually for a $0 premium, often with extras like dental, vision, hearing, and transportation.
 - **You get extra chances to change plans.** Duals have more opportunities during the year to switch plans than other Medicare members, so you're not locked in if something isn't working.
 
+If you are weighing your options, read up on [having Medicare and Medicaid together](/dual-eligible).
+
 ## You don't have to figure this out alone
 
 Having both Medicare and Medicaid is genuinely good news — it's one of the most complete forms of coverage available, and it's designed so almost nothing falls through the cracks. The hard part is just knowing what you're entitled to.

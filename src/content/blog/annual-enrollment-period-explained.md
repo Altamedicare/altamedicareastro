@@ -64,6 +64,8 @@ There's a second window that often gets mixed up with the AEP: the **Medicare Ad
 
 So the spring window is a narrower, second-chance period — useful if you signed up for a Medicare Advantage plan in the fall and realized by February it wasn't the right fit. But the AEP is the main event, and it's the broadest opportunity you'll get all year.
 
+For the bigger picture, see our guide to [enrolling in Medicare](/turning-65).
+
 ## A simple plan for the fall
 
 You don't have to overhaul anything during the AEP. For most people, a smart approach looks like this: read your Annual Notice of Change when it arrives, list your current prescriptions and doctors, and check whether your plan still covers them well for the coming year. If it does, you can sit tight. If it doesn't, you've got from October 15 to December 7 to make a better choice.

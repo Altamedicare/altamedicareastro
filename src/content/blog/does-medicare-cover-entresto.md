@@ -57,6 +57,10 @@ If a plan doesn't cover Entresto, places it on a high tier, or denies a prior au
 
 If cost or coverage is a concern, that's a conversation worth having with your physician. There are other heart-failure medicines, such as ACE inhibitors or ARBs, that your doctor may consider. I'm not here to suggest any medical change — only to point out that you and your doctor have choices to weigh, and the right one is a medical decision, not an insurance one.
 
+If your share of the cost for Entresto is still more than you can manage, manufacturer and nonprofit foundation programs may be able to help. See [Entresto assistance programs](/entresto-assistance-program) for who qualifies and how to apply.
+
+It also helps to understand [choosing a Part D plan](/prescription-drug-plans).
+
 ## Questions to ask your doctor
 
 - Is Entresto the best fit for my heart failure, or would another medicine work?

@@ -70,6 +70,8 @@ You may have heard about **IRMAA**, an income surcharge that raises the Part B a
 
 If your income is higher and you're *not* a dual, it's a different story — our [IRMAA Calculator](/medicare-irmaa-calculator) can show you what those surcharges would look like.
 
+If you are weighing your options, read up on [dual eligible plans in Utah](/dual-eligible).
+
 ## So what do you actually pay?
 
 For full duals and QMB members, the realistic answer is that your out-of-pocket Medicare cost is often **near $0** — premiums covered, deductibles covered, copays covered, and drugs down to a few dollars each. For SLMB and QI, you save the Part B premium but still handle your own cost-sharing.

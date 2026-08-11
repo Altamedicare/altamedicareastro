@@ -69,6 +69,8 @@ If you don't qualify for full Medicaid, a **Medicare Savings Program (MSP)** is 
 
 These are **2026 limits** — check current figures and apply through Utah Medicaid or Social Security, since Utah may disregard some income and makes the final call. Our [Medicare Savings Programs guide](/blog/medicare-savings-programs) walks through each one in detail.
 
+If you are weighing your options, read up on [how dual eligibility works](/dual-eligible).
+
 ## A quick look at the savings
 
 Want to see what your costs might look like with this help in place? The [Cost Estimator](/medicare-cost-estimator) can give you a rough picture so you can plan with a little more confidence.

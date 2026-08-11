@@ -55,6 +55,10 @@ If a plan doesn't cover Dupixent, places it on a high tier, or denies a prior au
 
 If cost or coverage is a concern, that's a conversation worth having with your physician. There are other biologics that may be appropriate for your specific condition, and what fits eczema may differ from what fits asthma. I'm not here to suggest any medical change — only to point out that you and your doctor have choices to weigh. For another self-injected biologic option, you might also look at how coverage works in our guide on whether [Medicare covers Rinvoq](/blog/does-medicare-cover-rinvoq). The right medicine is a medical decision, not an insurance one.
 
+If your share of the cost for Dupixent is still more than you can manage, manufacturer and nonprofit foundation programs may be able to help. See [Dupixent assistance programs](/dupixent-assistance-program) for who qualifies and how to apply.
+
+For background, see our guide to [Part D prescription coverage](/prescription-drug-plans).
+
 ## Questions to ask your doctor
 
 - Is Dupixent the best fit for my condition, or would another biologic work?

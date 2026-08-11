@@ -67,6 +67,8 @@ There's a similar penalty for going without **creditable drug coverage**, so Par
 
 If you're **still working at 65** and have active coverage from an employer with **20 or more employees**, you can usually delay Part B without any penalty. When that job-based coverage ends, you get an **8-month Special Enrollment Period** to sign up. Just know that **COBRA, retiree plans, and VA benefits do not count** as the kind of coverage that lets you delay — so if you're relying on one of those, treat your IEP as the real deadline.
 
+It also helps to understand [the turning-65 checklist](/turning-65).
+
 ## A simple plan
 
 For most people turning 65, the smart move is to mark the start of your IEP, enroll in the first three months, and decide on a plan to go with Original Medicare before your birthday rolls around. Run your dates through the [Timeline Calculator](/medicare-timeline-calculator), confirm your eligibility, and you'll be set.

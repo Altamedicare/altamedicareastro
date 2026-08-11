@@ -64,6 +64,10 @@ If a plan won't cover Xarelto, places it on a high tier, or applies a rule that 
 
 If cost or coverage becomes a hurdle, it's worth asking your doctor whether another option fits your situation. Other anticoagulants include **apixaban (Eliquis)** — you can read more in [does Medicare cover Eliquis](/blog/does-medicare-cover-eliquis) — and the older, lower-cost **warfarin**. Each works a bit differently and isn't right for everyone, so this is strictly a conversation for you and your physician. I can tell you what your plan covers; your doctor decides what's medically appropriate.
 
+If your share of the cost for Xarelto is still more than you can manage, manufacturer and nonprofit foundation programs may be able to help. See [Xarelto assistance programs](/xarelto-assistance-program) for who qualifies and how to apply.
+
+For the bigger picture, see our guide to [how Part D plans work](/prescription-drug-plans).
+
 ## Questions to ask your doctor
 
 - Is Xarelto the best anticoagulant for my situation, or is another option worth considering?

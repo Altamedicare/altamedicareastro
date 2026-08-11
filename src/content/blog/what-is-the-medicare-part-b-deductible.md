@@ -67,6 +67,8 @@ With Advantage, the Part B deductible isn't really the centerpiece. The plan set
 
 The big advantage here is the **annual out-of-pocket maximum**. Every Advantage plan has one, so unlike Original Medicare alone, your spending on covered services can't run away from you in a bad year. The trade-offs are networks (HMO or PPO) and plan-specific rules about referrals and approvals.
 
+For the bigger picture, see our guide to [how Medicare is structured](/medicare-basics).
+
 ## Which path fits you
 
 There's no single right answer — it depends on your health, your budget, your doctors, and how much predictability you want.

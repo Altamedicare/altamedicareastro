@@ -61,6 +61,10 @@ If cost or coverage rules become a hurdle, the best move is a conversation with 
 - Are there other diabetes medicines that might work as well and cost me less?
 - Would a coverage exception make sense if Trulicity is on a high tier?
 
+If your share of the cost for Trulicity is still more than you can manage, manufacturer and nonprofit foundation programs may be able to help. See [Trulicity assistance programs](/trulicity-assistance-program) for who qualifies and how to apply.
+
+For background, see our guide to [choosing a Part D plan](/prescription-drug-plans).
+
 ## A friendly next step
 
 Trulicity coverage really comes down to the *why* behind the prescription and the fine print of your particular plan. If you're not sure where your plan stands — or you're shopping for one that handles your medications well — I'm happy to walk through it with you, no pressure. You can [reach out anytime](/contact) and we'll look at your formulary and costs together.

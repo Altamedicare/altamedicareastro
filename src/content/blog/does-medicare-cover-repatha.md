@@ -56,6 +56,10 @@ Here's a piece of genuinely good news for a higher-cost drug like Repatha. In 20
 
 If cost or coverage is a concern, that's a conversation worth having with your physician. Depending on your situation, your doctor may consider statins, ezetimibe, or other PCSK9-type medicines. I'm not here to suggest any medical change — only to point out that you and your doctor have choices to weigh, and the right one is a medical decision, not an insurance one.
 
+If your share of the cost for Repatha is still more than you can manage, manufacturer and nonprofit foundation programs may be able to help. See [Repatha assistance programs](/repatha-assistance-program) for who qualifies and how to apply.
+
+Worth reading alongside this: [choosing a Part D plan](/prescription-drug-plans).
+
 ## Questions to ask your doctor
 
 - Is Repatha the best fit for my cholesterol, or would another medicine work?

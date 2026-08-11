@@ -58,6 +58,8 @@ You must have both Medicare and Medicaid to enroll, and duals get extra chances 
 
 This is the step that trips people up. Your dual benefits depend on your Medicaid staying current, so watch the mail for **renewal notices** from Utah Medicaid and respond by the deadline. If your Medicaid lapses, your MSP help, automatic Extra Help, and D-SNP enrollment can lapse with it. When in doubt, open the envelope and call — it's almost always fixable if you act quickly.
 
+If you are weighing your options, read up on [dual eligible plans in Utah](/dual-eligible).
+
 ## Step 6: Review your plan every year
 
 Plans change their benefits, drug lists, and pharmacy networks each year, and so do your medications. Once a year, take a fresh look:

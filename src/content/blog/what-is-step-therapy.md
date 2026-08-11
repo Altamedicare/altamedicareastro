@@ -63,6 +63,8 @@ The best time to deal with step therapy is before you pick a plan, not at the ph
 
 Before you enroll, look up each of your prescriptions and check for a step-therapy flag. Our [Formulary Lookup](/medicare-formulary-lookup) lets you see whether a plan covers your drugs and what rules — step therapy, prior authorization, quantity limits — come attached. If a drug you rely on sits behind a step you've already failed, that's a strong reason to favor a plan that covers it more cleanly.
 
+Worth reading alongside this: [Medicare Part D coverage](/prescription-drug-plans).
+
 ## Step therapy vs. prior authorization
 
 People mix these two up, and they do overlap, but they're not the same:

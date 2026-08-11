@@ -67,6 +67,10 @@ If cost or coverage rules become a hurdle, the best move is a conversation with 
 - If my plan requires prior authorization or step therapy, can your office help with the paperwork?
 - Are there other biologics that might work as well and cost me less?
 
+If your share of the cost for Skyrizi is still more than you can manage, manufacturer and nonprofit foundation programs may be able to help. See [Skyrizi assistance programs](/skyrizi-assistance-program) for who qualifies and how to apply.
+
+It also helps to understand [how Part D plans work](/prescription-drug-plans).
+
 ## A friendly next step
 
 Skyrizi coverage comes down to two things: how and why you're taking it, and the fine print of your particular plan. If you're not sure whether your costs run through Part B or Part D — or you're shopping for a plan that handles your medications well — I'm happy to walk through it with you, no pressure. You can [reach out anytime](/contact) and we'll look at your formulary and costs together.

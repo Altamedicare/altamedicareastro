@@ -60,6 +60,10 @@ Starting this year, every Part D plan limits what you pay out of pocket for cove
 
 If Jardiance is one of several prescriptions you fill regularly, that cap can be a real relief — it puts a firm ceiling on a cost that used to feel open-ended.
 
+If your share of the cost for Jardiance is still more than you can manage, manufacturer and nonprofit foundation programs may be able to help. See [Jardiance assistance programs](/jardiance-assistance-program) for who qualifies and how to apply.
+
+It also helps to understand [Part D prescription coverage](/prescription-drug-plans).
+
 ## How to see your real cost
 
 The best way to stop guessing is to look at your own situation. Run Jardiance — along with your other medications — through the [Drug Cost Calculator](/medicare-drug-cost-calculator) to estimate what you'd pay across the year under a given plan. Pair that with the [Formulary Lookup](/medicare-formulary-lookup) to confirm coverage and tier on the specific plans you're weighing.

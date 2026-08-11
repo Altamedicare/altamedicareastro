@@ -73,6 +73,8 @@ I'm an insurance agent, not a doctor, so I'd never tell you to start, stop, or s
 - Are there alternatives on my plan's formulary that might cost me less?
 - If Zepbound isn't covered, would you support a coverage exception request?
 
+It also helps to understand [Medicare Part D coverage](/prescription-drug-plans).
+
 ## A friendly next step
 
 Zepbound coverage really comes down to the *why* behind the prescription and the fine print of your particular plan. The best move is to look it up on **your own plan's formulary.** Our [Formulary Lookup](/medicare-formulary-lookup) shows how a drug is treated, and the [Drug Cost Calculator](/medicare-drug-cost-calculator) helps you estimate what you'd pay across the year — and remember, in 2026 your out-of-pocket Part D drug costs are capped at $2,000 for the year.

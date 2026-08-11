@@ -65,6 +65,8 @@ There are several insulins and delivery methods, and the right one is a medical 
 
 Bring these up with your doctor, who can tell you what's medically appropriate for you. If you also take other diabetes medications, you may find our articles on [Ozempic](/blog/does-medicare-cover-ozempic) helpful for understanding how those are covered.
 
+For the bigger picture, see our guide to [choosing a Part D plan](/prescription-drug-plans).
+
 ## Questions to ask your doctor
 
 - Is my current insulin the best option for me, or is there a follow-on version I should consider?

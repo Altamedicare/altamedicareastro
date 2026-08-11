@@ -57,6 +57,10 @@ If a plan doesn't cover Enbrel, places it on a high tier, or denies a prior auth
 
 If cost or coverage is a concern, that's a conversation worth having with your physician. There are other biologics, and biosimilar versions of some of them, that your doctor may consider. I'm not here to suggest any medical change — only to point out that you and your doctor have choices to weigh, and the right one is a medical decision, not an insurance one. If you take other biologics, you may also want to read whether [Medicare covers Humira](/blog/does-medicare-cover-humira), which works in a similar way.
 
+If your share of the cost for Enbrel is still more than you can manage, manufacturer and nonprofit foundation programs may be able to help. See [Enbrel assistance programs](/enbrel-assistance-program) for who qualifies and how to apply.
+
+For the bigger picture, see our guide to [Medicare Part D coverage](/prescription-drug-plans).
+
 ## Questions to ask your doctor
 
 - Is Enbrel the best fit for my condition, or would another biologic work?

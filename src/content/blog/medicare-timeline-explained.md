@@ -67,6 +67,8 @@ Most Medicare penalties come from missing a window, not from making a wrong choi
 
 If a deadline is sneaking up, the [Enrollment Countdown](/medicare-enrollment-countdown) shows exactly how many days you have left so nothing slips past you.
 
+If you are weighing your options, read up on [signing up for Medicare](/turning-65).
+
 ## Putting the roadmap together
 
 Here's the timeline at a glance: sign up during your **IEP at 65**, then mark your calendar for **AEP every fall (Oct 15 – Dec 7)** to review your coverage. Keep the **Jan 1 – Mar 31** windows in your back pocket for switching Medicare Advantage plans or catching up if you missed enrolling, and remember that **life events can open an SEP** anytime in between.

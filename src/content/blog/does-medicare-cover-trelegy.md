@@ -70,6 +70,8 @@ When you next talk with your prescriber, these are useful to raise:
 - If my plan requires prior authorization or step therapy, can you help with the paperwork?
 - Do I also need a separate rescue inhaler?
 
+If you are weighing your options, read up on [Medicare Part D coverage](/prescription-drug-plans).
+
 ## How to see your real cost
 
 The best way to stop guessing is to look at your own situation. Run Trelegy — along with your other medications — through the [Drug Cost Calculator](/medicare-drug-cost-calculator) to estimate what you'd pay across the year under a given plan, and pair it with the [Formulary Lookup](/medicare-formulary-lookup) to confirm coverage and tier.

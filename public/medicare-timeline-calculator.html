@@ -356,5 +356,24 @@
   form.addEventListener("change",function(){if(document.getElementById("dob").value)run(false);});
 })();
 </script>
+<!-- Site architecture block. These pages are hand-authored HTML in public/ and never pass
+     through MainLayout, so they carry none of the site chrome. Without this they are link
+     islands: several emitted a single internal link. Kept dependency-free (inline styles,
+     no shared class names) because each tool page owns its own CSS. -->
+<nav class="tool-site-links" aria-label="More from AltaMedicare" style="max-width:900px;margin:40px auto 48px;padding:22px 24px;border:1px solid #dfe4e8;border-radius:10px;background:#fff;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;">
+  <h2 style="margin:0 0 14px;font-size:15px;font-weight:700;color:#1b2830;">More Medicare help</h2>
+  <div style="display:flex;flex-wrap:wrap;gap:10px 18px;font-size:14.5px;line-height:1.5;">
+    <a href="/medicare-basics" style="color:#135aac;text-decoration:none;">Medicare Basics</a>
+    <a href="/medicare-advantage" style="color:#135aac;text-decoration:none;">Medicare Advantage</a>
+    <a href="/medicare-supplement" style="color:#135aac;text-decoration:none;">Medicare Supplement</a>
+    <a href="/prescription-drug-plans" style="color:#135aac;text-decoration:none;">Part D Drug Plans</a>
+    <a href="/turning-65" style="color:#135aac;text-decoration:none;">Turning 65</a>
+    <a href="/drug-savings" style="color:#135aac;text-decoration:none;">Prescription Savings</a>
+    <a href="/utah" style="color:#135aac;text-decoration:none;">Medicare in Utah</a>
+    <a href="/tools" style="color:#135aac;text-decoration:none;">All Medicare Tools</a>
+    <a href="/faq" style="color:#135aac;text-decoration:none;">Medicare FAQ</a>
+    <a href="/contact" style="color:#135aac;text-decoration:none;">Talk to Bret</a>
+  </div>
+</nav>
 </body>
 </html>

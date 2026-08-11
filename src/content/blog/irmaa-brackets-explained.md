@@ -70,6 +70,8 @@ If your income fell because of a **life-changing event**, you don't have to just
 
 To request a reduction, file **Form SSA-44** ("Medicare Income-Related Monthly Adjustment Amount – Life-Changing Event") with documentation of the change. If approved, Social Security uses a more recent year's income instead of the two-year-old return.
 
+If you are weighing your options, read up on [what Medicare covers](/medicare-basics).
+
 ## Planning around the brackets
 
 Because IRMAA is a cliff, staying *just under* a threshold can be worth real money. A few strategies worth discussing with a tax advisor:

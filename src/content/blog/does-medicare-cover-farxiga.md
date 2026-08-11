@@ -72,6 +72,10 @@ To see what Farxiga might actually cost you, run it — along with your other me
 
 If cost or a coverage rule becomes a roadblock, there may be other options in the same drug family worth raising with your physician. Another SGLT2 inhibitor, **empagliflozin (Jardiance)**, treats similar conditions — you can read more in our guide on [whether Medicare covers Jardiance](/blog/does-medicare-cover-jardiance). I'm an insurance agent, not a doctor, so any switch is a medical decision: bring it to your physician, who knows your health history.
 
+If your share of the cost for Farxiga is still more than you can manage, manufacturer and nonprofit foundation programs may be able to help. See [Farxiga assistance programs](/farxiga-assistance-program) for who qualifies and how to apply.
+
+If you are weighing your options, read up on [Part D prescription coverage](/prescription-drug-plans).
+
 ## Questions to ask your doctor
 
 - Is Farxiga the right choice for my condition, or would another SGLT2 inhibitor work as well?
