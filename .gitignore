@@ -17,3 +17,10 @@ dist/
 # logs
 *.log
 npm-debug.log*
+
+# internal working papers — this repository is PUBLIC. These are SEO
+# measurement notes (baselines, pre-registered hypotheses, deferred-decision
+# logic), not site source. Kept on disk, out of the repo. Listed here so a
+# `git add -A` cannot sweep them back in.
+GSC-DVH-BASELINE.md
+PRODUCTION-BASELINE.md
