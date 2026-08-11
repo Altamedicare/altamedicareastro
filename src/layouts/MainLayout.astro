@@ -80,12 +80,34 @@ const localBusiness = {
   description: 'Local Medicare guidance and prescription savings help for Utah families.',
   url: 'https://altamedicare.com/',
   telephone: '+1-435-292-5548',
+  email: 'bret@altamedicare.com',
+  // The header/footer mark. Both properties carry it: `logo` is what
+  // Organization-family types are read for, `image` is what LocalBusiness
+  // consumers look at, and they are the same asset here.
+  logo: 'https://altamedicare.com/images/logo2.webp',
+  image: 'https://altamedicare.com/images/logo2.webp',
+  // Published hours, stated identically in the footer (`footer.hours`) and on
+  // /contact (`info.phoneHoursHtml`). Local-time strings with no offset are
+  // correct — the business locality is already declared below.
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '09:00',
+      closes: '18:00',
+    },
+  ],
+  // County-level, matching the location pages the site actually publishes
+  // (src/i18n/shared/location — places[]). The previous four city entries were
+  // a guess: none had a page of its own, and the list omitted Washington
+  // County, which does.
   areaServed: [
-    { '@type': 'City', name: 'Alpine' },
-    { '@type': 'City', name: 'Provo' },
-    { '@type': 'City', name: 'Salt Lake City' },
-    { '@type': 'City', name: 'Ogden' },
     { '@type': 'State', name: 'Utah' },
+    { '@type': 'AdministrativeArea', name: 'Salt Lake County' },
+    { '@type': 'AdministrativeArea', name: 'Utah County' },
+    { '@type': 'AdministrativeArea', name: 'Davis County' },
+    { '@type': 'AdministrativeArea', name: 'Weber County' },
+    { '@type': 'AdministrativeArea', name: 'Washington County' },
   ],
   address: {
     '@type': 'PostalAddress',

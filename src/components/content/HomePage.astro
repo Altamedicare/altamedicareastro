@@ -130,7 +130,7 @@ const webSite = {
   <div class="container">
     <div class="hero-inner">
       <div class="hero-agent">
-        <img src={asset('images/BretSwope.webp')} alt={c.why.card.photoAlt} class="hero-agent-photo" width="56" height="56" onerror="this.style.display='none'" />
+        <img src={asset('images/bret-56.webp')} srcset={`${asset('images/bret-56.webp')} 1x, ${asset('images/bret-112.webp')} 2x, ${asset('images/bret-168.webp')} 3x`} alt={c.why.card.photoAlt} class="hero-agent-photo" width="56" height="56" onerror="this.style.display='none'" />
         <div class="hero-agent-text">
           <strong>{c.why.card.name}</strong>
           <span>{c.why.card.role}</span>
@@ -350,7 +350,7 @@ const webSite = {
       </div>
 
       <div class="bret-card">
-        <img src={asset('images/BretSwope.webp')} alt={c.why.card.photoAlt} class="bret-photo" width="180" height="180" loading="lazy" onerror="this.style.display='none'" />
+        <img src={asset('images/bret-180.webp')} srcset={`${asset('images/bret-180.webp')} 1x, ${asset('images/bret-360.webp')} 2x, ${asset('images/bret-540.webp')} 3x`} alt={c.why.card.photoAlt} class="bret-photo" width="180" height="180" loading="lazy" onerror="this.style.display='none'" />
         <h3>{c.why.card.name}</h3>
         <p class="role">{c.why.card.role}</p>
         <p style="color:var(--charcoal-soft);">{c.why.card.quote}</p>
