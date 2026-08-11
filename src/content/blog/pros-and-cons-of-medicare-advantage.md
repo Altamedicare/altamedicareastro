@@ -66,4 +66,6 @@ There's no universal answer, and anyone who gives you one without asking questio
 
 If you'd like a quick gut-check, the [Medicare Plan Quiz](/medicare-quiz) walks you through a few questions and points you toward the type of coverage that tends to match your situation. It's a good starting place before you compare specific plans.
 
+If the alternative is what you're really weighing, our head-to-head on [Medicare Advantage vs. Medigap](/blog/medicare-advantage-vs-medigap) puts the two side by side — including why your first choice carries more weight than most people expect.
+
 At the end of the day, Medicare Advantage is a strong choice for many people and the wrong choice for others, and that's perfectly normal. If you want a plain-English second opinion on whether it fits your life — and which plans in your area actually keep your doctors and drugs — [reach out](/contact) and we'll talk it through. No pressure, no script, just a straight answer.
