@@ -44,6 +44,19 @@ const toolCards = relatedTools
   .map((k) => TOOLS[k]);
 
 // ── Structured data ──────────────────────────────────────────────
+// Rich Person author (EEAT), matching NewsArticle.astro. Single-author site →
+// keyed to the About page anchor so blog and news resolve to one Bret entity
+// instead of two unrelated bare Persons. worksFor points at the canonical
+// organization by @id rather than restating it.
+const authorLd = {
+  '@type': 'Person',
+  '@id': `${SITE}/about.html#bret-swope`,
+  name: author,
+  jobTitle: 'Licensed Utah Medicare Agent',
+  url: `${SITE}/about`,
+  worksFor: { '@id': `${SITE}/#organization` },
+};
+
 const articleLd = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
@@ -51,12 +64,13 @@ const articleLd = {
   description,
   datePublished: iso(publishDate),
   dateModified: iso(lastUpdated),
-  author: { '@type': 'Person', name: author },
-  publisher: {
-    '@type': 'Organization',
-    name: 'AltaMedicare',
-    logo: { '@type': 'ImageObject', url: `${SITE}/images/favicon.svg` },
-  },
+  author: authorLd,
+  // Reference, not a copy. MainLayout emits the InsuranceAgency node on every
+  // page, so the target is present in this page's graph. Restating it here
+  // minted a second, anonymous Organization and carried a logo URL
+  // (/images/favicon.svg) that does not exist — the favicon lives at the site
+  // root. Both defects disappear with the reference.
+  publisher: { '@id': `${SITE}/#organization` },
   mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE}${canonical}` },
   image: `${SITE}${ogImage}`,
   keywords: tags.join(', '),

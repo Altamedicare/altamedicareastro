@@ -52,7 +52,7 @@ const authorLd = {
   name: author,
   jobTitle: 'Licensed Utah Medicare Agent',
   url: `${SITE}/about`,
-  worksFor: { '@type': 'Organization', name: 'AltaMedicare' },
+  worksFor: { '@id': `${SITE}/#organization` },
 };
 
 const articleLd = {
@@ -63,11 +63,8 @@ const articleLd = {
   datePublished: iso(date),
   dateModified: iso(lastUpdated),
   author: authorLd,
-  publisher: {
-    '@type': 'Organization',
-    name: 'AltaMedicare',
-    logo: { '@type': 'ImageObject', url: `${SITE}/images/favicon.svg` },
-  },
+  // Reference, not a copy — see BlogPost.astro for the reasoning.
+  publisher: { '@id': `${SITE}/#organization` },
   mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE}${canonical}` },
   image: `${SITE}${ogImage}`,
   articleSection: cat.title,

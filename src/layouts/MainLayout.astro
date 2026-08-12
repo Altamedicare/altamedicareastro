@@ -77,6 +77,11 @@ const localBusiness = {
   // a future sameAs (GBP + socials) anchors here too.
   '@id': 'https://altamedicare.com/#organization',
   name: 'AltaMedicare',
+  // The Google Business Profile is named "Alta Medicare". The spacing is the
+  // only difference, and the one-word form is what the domain, email, and all
+  // site copy use — so this asserts the two strings as one entity rather than
+  // renaming 152 occurrences across EN and ES content.
+  alternateName: 'Alta Medicare',
   description: 'Local Medicare guidance and prescription savings help for Utah families.',
   url: 'https://altamedicare.com/',
   telephone: '+1-435-292-5548',
