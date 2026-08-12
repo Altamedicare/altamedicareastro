@@ -118,6 +118,37 @@
       "Is it an HMO or PPO &mdash; and does that match how I like to get care?"
     ],
     "s6PHtml": "Not sure where to start? Our <a href=\"/blog/pros-and-cons-of-medicare-advantage.html\">pros and cons guide</a> and <a href=\"/blog/medicare-advantage-vs-medigap.html\">Advantage vs. Medigap comparison</a> lay out the trade-offs, and Bret can compare the plans available at your address with you.",
+    "cmaH2": "What is different about Medicare Advantage in {placeName}",
+    "cmaAngles": [
+      {
+        "slug": "utah/salt-lake-county",
+        "text": "Salt Lake County has the widest Medicare Advantage choice in the state. Every organization selling Medicare Advantage in Utah sells here, and more of them offer both an HMO and a PPO than in any other county on this site. That breadth is a real advantage &mdash; it also means the comparison work matters more here than it would in a smaller market."
+      },
+      {
+        "slug": "utah/utah-county",
+        "text": "Utah County offers most of what is available statewide, with two narrower spots: HealthSpring sells only a PPO here rather than both plan types, and Devoted Health is not offered at all. Select Health also accounts for a noticeably larger share of local Medicare Advantage enrollment here than it does farther north."
+      },
+      {
+        "slug": "utah/davis-county",
+        "text": "Davis County's Medicare Advantage lineup is identical to Salt Lake County's &mdash; the same organizations, offering the same HMO and PPO combinations. What differs is how neighbors have actually chosen: Select Health accounts for a smaller share of enrollment here than in any of the other four counties covered on this site."
+      },
+      {
+        "slug": "utah/weber-county",
+        "text": "Weber County offers most of what is available statewide, with two differences worth knowing before you compare: Aetna Medicare sells only an HMO here rather than both an HMO and a PPO, and Devoted Health is not offered at all. UnitedHealthcare accounts for the largest single share of local Medicare Advantage enrollment."
+      },
+      {
+        "slug": "utah/washington-county",
+        "text": "Washington County has the narrowest Medicare Advantage lineup of the five counties covered on this site. Two organizations that sell along the Wasatch Front &mdash; HealthSpring and Devoted Health &mdash; are not offered here, and Humana sells only a PPO rather than both plan types. If you are comparing notes with family in Salt Lake County, expect a shorter list of options at your address."
+      }
+    ],
+    "cmaBrandsH3": "Medicare Advantage organizations serving {placeName}",
+    "cmaBrandsIntroHtml": "These are the organizations approved to sell Medicare Advantage in {placeName}, and whether each offers an HMO, a PPO, or both. That distinction drives a lot: an HMO usually costs less but expects you to stay inside the plan's network, while a PPO costs more and lets you go outside it at a higher share. Appearing here means an organization sells at least one plan in the county &mdash; it does not tell you which specific plan, doctor, hospital, or medication any of them covers.",
+    "cmaColBrand": "Organization",
+    "cmaColPlanTypes": "Plan types offered",
+    "cmaEnrollH3": "How {placeName} residents are enrolled today",
+    "cmaEnrollIntroHtml": "Among {placeName} residents already in a Medicare Advantage plan offered in their county, these organizations account for the largest shares. Read this as a description of what people have chosen, not as a ranking: <strong>a larger share does not mean a plan is better, higher rated, or the right fit for you</strong>.",
+    "cmaCaveatHtml": "Both lists change from one plan year to the next &mdash; organizations enter and leave county markets, and the plan types they offer shift. Before you enroll, check the things that actually decide it for you: whether your own doctors take part in the specific plan you are considering, whether your prescriptions sit on that plan's formulary, and what its premium, copays, and out-of-pocket maximum are. Those vary plan by plan and are not shown above.",
+    "cmaSourceHtml": "Source: <a href=\"{maSourceUrl}\" rel=\"nofollow\">CMS Medicare Advantage contract service area and enrollment data</a>, {maPeriod}. Individual-market Medicare Advantage only; employer or union group plans, Cost plans, and PACE are excluded.",
     "toolsHeading": "Tools to compare your options",
     "toolsSub": "See which coverage type fits, estimate your costs, and check your drugs.",
     "faqHeading": "Medicare Advantage in {placeName}: FAQs",

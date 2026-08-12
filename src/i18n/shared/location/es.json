@@ -119,6 +119,37 @@
       "¿Es un HMO o un PPO &mdash; y coincide con la forma en que me gusta recibir atención?"
     ],
     "s6PHtml": "¿No está seguro de por dónde empezar? Nuestra <a href=\"/blog/pros-and-cons-of-medicare-advantage.html\">guía de ventajas y desventajas</a> y nuestra <a href=\"/blog/medicare-advantage-vs-medigap.html\">comparación de Advantage vs. Medigap</a> exponen las ventajas y desventajas, y Bret puede comparar con usted los planes disponibles en su dirección.",
+    "cmaH2": "Qué distingue a Medicare Advantage en {placeName}",
+    "cmaAngles": [
+      {
+        "slug": "utah/salt-lake-county",
+        "text": "Salt Lake County ofrece la selección más amplia de Medicare Advantage del estado. Todas las organizaciones que venden Medicare Advantage en Utah venden aquí, y más de ellas ofrecen tanto un HMO como un PPO que en cualquier otro condado de este sitio. Esa amplitud es una ventaja real &mdash; también significa que el trabajo de comparar importa más aquí que en un mercado más pequeño."
+      },
+      {
+        "slug": "utah/utah-county",
+        "text": "Utah County ofrece la mayor parte de lo disponible en todo el estado, con dos opciones más limitadas: HealthSpring vende aquí solo un PPO en lugar de ambos tipos de plan, y Devoted Health no se ofrece. Select Health también representa una parte notablemente mayor de la inscripción local en Medicare Advantage que más al norte."
+      },
+      {
+        "slug": "utah/davis-county",
+        "text": "La oferta de Medicare Advantage de Davis County es idéntica a la de Salt Lake County &mdash; las mismas organizaciones, con las mismas combinaciones de HMO y PPO. Lo que cambia es lo que sus vecinos han elegido en la práctica: Select Health representa aquí una parte menor de la inscripción que en cualquiera de los otros cuatro condados que cubre este sitio."
+      },
+      {
+        "slug": "utah/weber-county",
+        "text": "Weber County ofrece la mayor parte de lo disponible en todo el estado, con dos diferencias que conviene conocer antes de comparar: Aetna Medicare vende aquí solo un HMO en lugar de un HMO y un PPO, y Devoted Health no se ofrece. UnitedHealthcare representa la mayor parte individual de la inscripción local en Medicare Advantage."
+      },
+      {
+        "slug": "utah/washington-county",
+        "text": "Washington County tiene la oferta de Medicare Advantage más limitada de los cinco condados que cubre este sitio. Dos organizaciones que venden a lo largo del Wasatch Front &mdash; HealthSpring y Devoted Health &mdash; no se ofrecen aquí, y Humana vende solo un PPO en lugar de ambos tipos de plan. Si está comparando opciones con familiares en Salt Lake County, espere una lista más corta en su dirección."
+      }
+    ],
+    "cmaBrandsH3": "Organizaciones de Medicare Advantage que prestan servicio en {placeName}",
+    "cmaBrandsIntroHtml": "Estas son las organizaciones autorizadas a vender Medicare Advantage en {placeName}, y si cada una ofrece un HMO, un PPO o ambos. Esa distinción influye mucho: un HMO suele costar menos pero espera que usted se mantenga dentro de la red del plan, mientras que un PPO cuesta más y le permite salir de ella pagando una parte mayor. Aparecer aquí significa que una organización vende al menos un plan en el condado &mdash; no le dice qué plan, médico, hospital o medicamento específico cubre ninguna de ellas.",
+    "cmaColBrand": "Organización",
+    "cmaColPlanTypes": "Tipos de plan ofrecidos",
+    "cmaEnrollH3": "Cómo están inscritos hoy los residentes de {placeName}",
+    "cmaEnrollIntroHtml": "Entre los residentes de {placeName} que ya tienen un plan Medicare Advantage ofrecido en su condado, estas organizaciones representan las mayores proporciones. Léalo como una descripción de lo que la gente ha elegido, no como una clasificación: <strong>una proporción mayor no significa que un plan sea mejor, tenga mejor calificación ni sea el adecuado para usted</strong>.",
+    "cmaCaveatHtml": "Ambas listas cambian de un año de plan a otro: las organizaciones entran y salen de los mercados de cada condado, y los tipos de plan que ofrecen varían. Antes de inscribirse, verifique lo que realmente decide su elección: si sus propios médicos participan en el plan específico que está considerando, si sus recetas figuran en el formulario de ese plan, y cuáles son su prima, sus copagos y su máximo de gastos de bolsillo. Todo eso varía según el plan y no se muestra arriba.",
+    "cmaSourceHtml": "Fuente: <a href=\"{maSourceUrl}\" rel=\"nofollow\">datos de CMS sobre el área de servicio por contrato y la inscripción en Medicare Advantage</a>, {maPeriod}. Solo Medicare Advantage del mercado individual; se excluyen los planes grupales de empleadores o sindicatos, los planes Cost y PACE.",
     "toolsHeading": "Herramientas para comparar sus opciones",
     "toolsSub": "Vea qué tipo de cobertura le conviene, estime sus costos y revise sus medicamentos.",
     "faqHeading": "Medicare Advantage en {placeName}: Preguntas frecuentes",
