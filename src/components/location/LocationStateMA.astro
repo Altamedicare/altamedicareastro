@@ -1,0 +1,93 @@
+---
+// Statewide Medicare Advantage section (Phase 7). The counterpart to
+// LocationCountyMA: that one renders the local detail on a county page, this
+// one renders the statewide pattern on the state MA page and points down to the
+// counties. It is the hub half of hub -> spoke.
+//
+// It owns NO data. Every figure is derived from the existing Phase 6 dataset in
+// src/data/countyMedicareAdvantage.ts, so the annual CMS refresh still happens
+// in exactly one place and this section cannot drift away from the county
+// pages. The same claim discipline applies: brands and counts only, never
+// contract counts, provider/network claims, or plan-level figures.
+//
+// Renders nothing unless the place is a state with at least one county that has
+// MA data, so it is inert on county pages and on any future state without data.
+import type { Place } from '../../data/places';
+import type { LocationPageCopy } from '../../data/places';
+import { PLACES, pageHref } from '../../data/places';
+import { COUNTY_MA, maPeriod, MA_SOURCE_URL } from '../../data/countyMedicareAdvantage';
+import { interp, localizeHref } from '../../i18n/content';
+import { getLangFromUrl } from '../../i18n/locales';
+
+interface Props {
+  place: Place;
+  /** The `advantage` copy object for the active locale. */
+  copy: LocationPageCopy;
+  vars: Record<string, string | number>;
+}
+const { place, copy, vars } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+
+// Counties of THIS state that have Phase 6 MA data, with their brand counts
+// derived rather than restated.
+const rows =
+  place.kind === 'state'
+    ? PLACES.filter((p) => p.kind === 'county' && p.slug.startsWith(`${place.slug}/`) && COUNTY_MA[p.slug]).map(
+        (p) => ({
+          name: p.name,
+          href: localizeHref(pageHref(p, 'medicare-advantage'), lang),
+          orgs: COUNTY_MA[p.slug].brands.length,
+        }),
+      )
+    : [];
+
+const v = {
+  ...vars,
+  statePartDHref: localizeHref(pageHref(place, 'part-d'), lang),
+  // Same source line as the county sections — one string, one period, one URL.
+  maPeriod: maPeriod(lang),
+  maSourceUrl: MA_SOURCE_URL,
+};
+---
+
+{rows.length > 0 && (
+  <section class="section-tinted">
+    <div class="container content-narrow">
+      <h2>{interp(copy.cmsH2 as string, v)}</h2>
+      <p set:html={interp(copy.cmsP1Html as string, v)} />
+
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">{interp(copy.cmsColCounty as string, v)}</th>
+              <th scope="col">{interp(copy.cmsColOrgs as string, v)}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((r) => (
+              <tr>
+                <th scope="row"><a href={r.href}>{r.name}</a></th>
+                <td>{r.orgs}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <p set:html={interp(copy.cmsP2Html as string, v)} />
+      <p class="source-note"><small set:html={interp(copy.cmaSourceHtml as string, v)} /></p>
+    </div>
+  </section>
+)}
+
+<style>
+  .table-scroll { overflow-x: auto; margin: 1rem 0; }
+  .table-scroll table { width: 100%; border-collapse: collapse; }
+  .table-scroll th, .table-scroll td {
+    text-align: left; padding: 0.55rem 0.75rem; border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  }
+  .table-scroll thead th { font-weight: 600; white-space: nowrap; }
+  .table-scroll tbody th { font-weight: 400; }
+  .source-note { margin-top: 1rem; opacity: 0.8; }
+</style>

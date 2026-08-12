@@ -56,6 +56,14 @@ const utahHubLink = {
   href: localizeHref(hubHref(utah), lang),
   label: interp(placeLabel, { placeName: utah.name }),
 };
+// Phase 7: this block listed the state hub and jumped straight to the counties,
+// bypassing the statewide Utah MA pillar entirely — one reason that page had
+// only 2 contextual inbound links. The label reuses the location module's
+// already-translated "Read the full guide…" template, so no new copy anywhere.
+const utahMaLink = {
+  href: localizeHref(pageHref(utah, 'medicare-advantage'), lang),
+  labelHtml: interp(loc.overview.maLinkLabelHtml as string, { placeName: utah.name }),
+};
 const countyLinks = counties.map((p) => ({
   href: localizeHref(pageHref(p, 'medicare-advantage'), lang),
   label: interp(maLabel, { placeName: p.name }),
@@ -120,6 +128,7 @@ const notFit = c.notFit;
     <h2>{utahH2}</h2>
     <ul>
       <li><a href={utahHubLink.href}>{utahHubLink.label}</a></li>
+      <li><a href={utahMaLink.href} set:html={utahMaLink.labelHtml} /></li>
       {countyLinks.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
     </ul>
 

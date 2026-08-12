@@ -13,7 +13,8 @@
 import type { Place } from '../../data/places';
 import { getCountyMa, maPeriod, MA_SOURCE_URL } from '../../data/countyMedicareAdvantage';
 import type { LocationPageCopy } from '../../data/places';
-import { interp } from '../../i18n/content';
+import { PLACES, pageHref } from '../../data/places';
+import { interp, localizeHref } from '../../i18n/content';
 import { getLangFromUrl } from '../../i18n/locales';
 
 interface Props {
@@ -29,7 +30,17 @@ const data = getCountyMa(place);
 const lang = getLangFromUrl(Astro.url);
 const angles = (copy.cmaAngles as { slug: string; text: string }[] | undefined) ?? [];
 const angle = angles.find((a) => a.slug === place.slug)?.text;
-const v = { ...vars, maPeriod: maPeriod(lang), maSourceUrl: MA_SOURCE_URL };
+// Upward link to the statewide MA pillar (Phase 7). The county pages had no
+// path back up to /utah/medicare-advantage, which left that pillar with only 2
+// contextual inbound links against 6-7 for its Medigap and Part D siblings.
+const stateOf = PLACES.find((p) => p.kind === 'state' && place.slug.startsWith(`${p.slug}/`));
+const v = {
+  ...vars,
+  maPeriod: maPeriod(lang),
+  maSourceUrl: MA_SOURCE_URL,
+  stateName: stateOf?.name ?? '',
+  stateMaHref: stateOf ? localizeHref(pageHref(stateOf, 'medicare-advantage'), lang) : '',
+};
 ---
 
 {data && (
@@ -68,6 +79,7 @@ const v = { ...vars, maPeriod: maPeriod(lang), maSourceUrl: MA_SOURCE_URL };
       </ul>
 
       <p set:html={interp(copy.cmaCaveatHtml as string, v)} />
+      {stateOf && <p set:html={interp(copy.cmaUpLinkHtml as string, v)} />}
       <p class="source-note"><small set:html={interp(copy.cmaSourceHtml as string, v)} /></p>
     </div>
   </section>

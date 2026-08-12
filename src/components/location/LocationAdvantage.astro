@@ -7,6 +7,7 @@ import LocationFaq from './LocationFaq.astro';
 import LocationCTA from './LocationCTA.astro';
 import LocationBreadcrumb from './LocationBreadcrumb.astro';
 import LocationCountyMA from './LocationCountyMA.astro';
+import LocationStateMA from './LocationStateMA.astro';
 import { getLocationCopy, hubHref, pageHref, parentStateHub, placeFromSlug, type Crumb } from '../../data/places';
 import { PHONE_DISPLAY } from '../../consts';
 import { DEFAULT_LOCALE, getLangFromUrl, getLocaleMeta, pageSlugFromUrl, t } from '../../i18n/locales';
@@ -95,6 +96,8 @@ const breadcrumbLd = {
 
   {/* Phase 6: renders only for places with county MA data — states show nothing. */}
   <LocationCountyMA place={place} copy={c} vars={vars} />
+  {/* Phase 7: the state-side counterpart — renders only on a state MA page. */}
+  <LocationStateMA place={place} copy={c} vars={vars} />
 
   <LocationTools
     tools={['quiz', 'cost-estimator', 'formulary']}
