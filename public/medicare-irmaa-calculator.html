@@ -33,6 +33,9 @@
 <link rel="preload" href="/fonts/fa-solid-subset.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="/fa-subset.css?v=1" />
 
+<!-- Business entity schema — same InsuranceAgency (LocalBusiness subtype) node MainLayout.astro emits on every built page; @id ties it to the canonical organization entity. -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"InsuranceAgency","@id":"https://altamedicare.com/#organization","name":"AltaMedicare","alternateName":"Alta Medicare","description":"Local Medicare guidance and prescription savings help for Utah families.","url":"https://altamedicare.com/","telephone":"+1-435-292-5548","email":"bret@altamedicare.com","logo":"https://altamedicare.com/images/logo2.webp","image":"https://altamedicare.com/images/logo2.webp","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"18:00"}],"areaServed":[{"@type":"State","name":"Utah"},{"@type":"AdministrativeArea","name":"Salt Lake County"},{"@type":"AdministrativeArea","name":"Utah County"},{"@type":"AdministrativeArea","name":"Davis County"},{"@type":"AdministrativeArea","name":"Weber County"},{"@type":"AdministrativeArea","name":"Washington County"}],"address":{"@type":"PostalAddress","addressLocality":"Alpine","addressRegion":"UT","addressCountry":"US"},"founder":{"@type":"Person","name":"Bret Swope"}}</script>
+
 <!-- WebApplication schema -->
 <script type="application/ld+json">
 {
