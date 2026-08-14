@@ -4,6 +4,7 @@
 // CMS annual figures interpolate from src/data/figures.ts (§6.8) — the
 // January figures update flows to both languages from one data edit.
 import MainLayout from '../../layouts/MainLayout.astro';
+import AiSummary from '../AiSummary.astro';
 import HelpfulTools from '../HelpfulTools.astro';
 import { DEFAULT_LOCALE, getLangFromUrl, getLocaleMeta } from '../../i18n/locales';
 import { getPageContent, hreflangAlternates, interp, localizeHref } from '../../i18n/content';
@@ -50,6 +51,7 @@ const alternates = hreflangAlternates('prescription-drug-plans');
   <div class="container">
     <div class="breadcrumb" set:html={c.breadcrumbHtml}></div>
     <h1>{c.header.h1}</h1>
+    <AiSummary />
     <p class="lede" set:html={c.header.ledeHtml}></p>
   </div>
 </section>

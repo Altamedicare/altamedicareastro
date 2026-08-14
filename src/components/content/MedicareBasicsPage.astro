@@ -2,6 +2,7 @@
 // src/components/content/MedicareBasicsPage.astro — THE shared template.
 // Copy lives in src/i18n/content/{locale}/medicare-basics.json.
 import MainLayout from '../../layouts/MainLayout.astro';
+import AiSummary from '../AiSummary.astro';
 import HelpfulTools from '../HelpfulTools.astro';
 import { DEFAULT_LOCALE, getLangFromUrl, getLocaleMeta } from '../../i18n/locales';
 import { getPageContent, hreflangAlternates, interp, localizeHref } from '../../i18n/content';
@@ -40,6 +41,7 @@ const alternates = hreflangAlternates('medicare-basics');
   <div class="container">
     <div class="breadcrumb" set:html={c.breadcrumbHtml}></div>
     <h1>{c.header.h1}</h1>
+    <AiSummary />
     <p class="lede">{c.header.lede}</p>
   </div>
 </section>

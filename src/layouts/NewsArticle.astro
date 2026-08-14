@@ -1,5 +1,6 @@
 ---
 import MainLayout from './MainLayout.astro';
+import AiSummary from '../components/AiSummary.astro';
 import { NEWS_CATEGORIES, CONTACT_URL, COMPARE_PLANS_URL, PHONE_TEL, PHONE_DISPLAY } from '../consts';
 
 interface RelatedItem { slug: string; title: string; summary: string; category: string; }
@@ -113,6 +114,7 @@ const faqLd = faqs.length
         </nav>
         <span class="post-cat-tag"><i class={`fa-solid ${cat.icon}`}></i> {cat.title}</span>
         <h1>{title}</h1>
+        <AiSummary />
         <p class="lede">{summary}</p>
         <p class="post-byline">
           By <a href="/about" rel="author">{author}</a> &middot; Licensed Utah Medicare Agent

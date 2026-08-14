@@ -1,5 +1,6 @@
 ---
 import MainLayout from './MainLayout.astro';
+import AiSummary from '../components/AiSummary.astro';
 import { TOOLS, CATEGORIES, COMPARE_PLANS_URL, CONTACT_URL, PHONE_TEL, PHONE_DISPLAY } from '../consts';
 
 interface RelatedPost { slug: string; title: string; description: string; category: string; }
@@ -119,6 +120,7 @@ const faqLd = faqs.length
         </nav>
         <span class="post-cat-tag"><i class={`fa-solid ${cat.icon}`}></i> {cat.title}</span>
         <h1>{title}</h1>
+        <AiSummary />
         <p class="lede">{description}</p>
         <div class="post-meta">
           <span><i class="fa-solid fa-user-pen"></i> {author}</span>

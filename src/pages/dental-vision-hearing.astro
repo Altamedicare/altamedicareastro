@@ -2,6 +2,7 @@
 // English-only master (no /es/ sibling committed) — chrome still routes through
 // the locale helpers so the page behaves like every other one.
 import MainLayout from '../layouts/MainLayout.astro';
+import AiSummary from '../components/AiSummary.astro';
 import LocationTools from '../components/location/LocationTools.astro';
 import { getLangFromUrl, t } from '../i18n/locales';
 import { breadcrumbLd } from '../i18n/breadcrumbs';
@@ -34,6 +35,7 @@ const crumbLd = breadcrumbLd(
   <div class="container">
     <div class="breadcrumb"><a href="/">Home</a> &nbsp;&rsaquo;&nbsp; <a href="/medicare-basics">Plans</a> &nbsp;&rsaquo;&nbsp; Dental, Vision, Hearing</div>
     <h1>Dental, Vision &amp; Hearing Coverage</h1>
+    <AiSummary />
     <p class="lede">Original Medicare doesn&rsquo;t cover routine dental, vision, or hearing care &mdash; but you have options.</p>
   </div>
 </section>

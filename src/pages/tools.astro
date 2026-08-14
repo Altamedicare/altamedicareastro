@@ -8,6 +8,7 @@
 // compact card labels, so they stay here as explicit overrides. ORDER, URLS, and
 // all visible copy are unchanged by this refactor.
 import MainLayout from '../layouts/MainLayout.astro';
+import AiSummary from '../components/AiSummary.astro';
 import { TOOLS, type ToolKey } from '../consts';
 import { getLangFromUrl } from '../i18n/locales';
 import { breadcrumbLd } from '../i18n/breadcrumbs';
@@ -50,6 +51,7 @@ const crumbLd = breadcrumbLd([{ name: 'Home', href: '/' }, { name: 'Tools' }], l
   <div class="container">
     <div class="breadcrumb"><a href="/">Home</a> &nbsp;&rsaquo;&nbsp; Tools</div>
     <h1>Free Medicare Tools</h1>
+    <AiSummary />
     <p class="lede">Interactive calculators to help you make informed Medicare decisions — no sign-up, no cost, nothing saved.</p>
   </div>
 </section>

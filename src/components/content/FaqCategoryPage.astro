@@ -7,6 +7,7 @@
 // any language. The category key derives from the URL (works identically on
 // the master route and the [locale] dynamic route).
 import MainLayout from '../../layouts/MainLayout.astro';
+import AiSummary from '../AiSummary.astro';
 import { getFaqData } from '../../data/faqs';
 import { TOOLS, COMPARE_PLANS_URL, CONTACT_URL, PHONE_DISPLAY } from '../../consts';
 import { DEFAULT_LOCALE, getLangFromUrl, getLocaleMeta, localizeLabel, pageSlugFromUrl, t } from '../../i18n/locales';
@@ -61,6 +62,7 @@ const breadcrumbLd = {
     <div class="container">
       <div class="breadcrumb"><a href={href('/')}>{t('nav.home', lang)}</a> &nbsp;&rsaquo;&nbsp; <a href={href('/faq')}>{shell.faqCrumb}</a> &nbsp;&rsaquo;&nbsp; {cat.title}</div>
       <h1><i class={`fa-solid ${cat.icon}`} style="margin-right:10px;color:var(--mountain-blue);"></i>{cat.title}</h1>
+      <AiSummary />
       <p class="lede">{cat.blurb}</p>
     </div>
   </section>

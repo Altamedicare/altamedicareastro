@@ -7,6 +7,7 @@
 // Band chrome reuses the existing t('tools.*') dictionary — no new copy, so
 // English and Spanish stay in parity without a translation pass.
 import MainLayout from '../../layouts/MainLayout.astro';
+import AiSummary from '../AiSummary.astro';
 import LocationTools from '../location/LocationTools.astro';
 import { DEFAULT_LOCALE, getLangFromUrl, getLocaleMeta, t } from '../../i18n/locales';
 import { getPageContent, hreflangAlternates, interp, localizeHref } from '../../i18n/content';
@@ -53,6 +54,7 @@ const crumbLd = breadcrumbLd(crumbsFromHtml(c.breadcrumbHtml), lang, canonical);
   <div class="container">
     <div class="breadcrumb" set:html={c.breadcrumbHtml}></div>
     <h1 set:html={c.header.h1Html}></h1>
+    <AiSummary />
     <p class="lede" set:html={c.header.ledeHtml}></p>
   </div>
 </section>

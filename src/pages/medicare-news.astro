@@ -1,5 +1,6 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import AiSummary from '../components/AiSummary.astro';
 import { getCollection } from 'astro:content';
 import { NEWS_CATEGORIES } from '../consts';
 
@@ -32,6 +33,7 @@ const fmt = (d: Date) =>
   <div class="container">
     <div class="breadcrumb"><a href="/">Home</a> &nbsp;&rsaquo;&nbsp; Medicare News</div>
     <h1>Medicare News &amp; Updates</h1>
+    <AiSummary />
     <p class="lede">Important changes, savings opportunities, and Utah-specific Medicare news for 2026 and beyond.</p>
     <p style="margin-top:14px;"><a href="/medicare-news/rss.xml" class="news-rss-link"><i class="fa-solid fa-rss"></i> Subscribe via RSS</a></p>
   </div>

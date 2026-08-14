@@ -1,0 +1,39 @@
+---
+// src/components/AiSummary.astro — the entity ("AI Summary") block.
+//
+// Renders IMMEDIATELY AFTER the <h1> on every eligible page, ahead of the
+// existing topical .lede. The two do different jobs and both stay: this states
+// who AltaMedicare is, the .lede states what the page is about.
+//
+// Copy comes from i18n/ai-summary.ts (never machine-translated); the phone
+// comes from consts.ts, so the number exists in exactly one place. Locale is
+// derived from the URL — the same component serves the master EN routes and
+// the [locale] dynamic route with no locale prop to thread through.
+import { aiSummary } from '../i18n/ai-summary';
+import { getLangFromUrl } from '../i18n/locales';
+import { interp } from '../i18n/content';
+import { PHONE_DISPLAY, PHONE_TEL } from '../consts';
+
+interface Props {
+  /** Location pages only — the Place name the template already computed. */
+  placeName?: string;
+  /** 'compact' is the homepage, whose hero already carries much of this. */
+  variant?: 'default' | 'compact';
+}
+
+const { placeName, variant = 'default' } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const copy = aiSummary(lang);
+const template = placeName
+  ? copy.placeBody
+  : variant === 'compact'
+    ? copy.compactBody
+    : copy.body;
+const html = interp(template, {
+  phone: PHONE_DISPLAY,
+  phoneTel: PHONE_TEL,
+  placeName: placeName ?? '',
+});
+---
+
+<p class="ai-summary" set:html={html}></p>

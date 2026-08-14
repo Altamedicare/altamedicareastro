@@ -1444,6 +1444,22 @@ section {
   margin: 0 auto;
 }
 
+/* ---------- AI SUMMARY (entity block) ----------
+   Sits between the <h1> and the topical .lede on every eligible page. It is
+   deliberately quieter than the .lede: the lede still reads as the page's
+   opening line, while this states who AltaMedicare is for readers and for AI
+   answer engines. Subtle, never hidden — display:none or visibility tricks
+   would make it cloaked text. */
+.ai-summary {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 720px;
+  margin: 0 auto 14px;
+}
+.ai-summary a { color: var(--mountain-blue); }
+.post-header .ai-summary { text-align: left; }
+
 /* ---------- HERO REEL ON INTERIOR + ARTICLE HEADERS ----------
    The same background reel as the home hero, injected into every .page-header
    and .post-header by MainLayout. A translucent light overlay keeps the existing
@@ -1529,10 +1545,14 @@ section {
 .page-header.has-reel .breadcrumb,
 .page-header.has-reel .breadcrumb a,
 .page-header.has-reel .lede,
+.page-header.has-reel .ai-summary,
+.page-header.has-reel .ai-summary a,
 .page-header.has-reel .news-rss-link,
 .post-header.has-reel .breadcrumb,
 .post-header.has-reel .breadcrumb a,
 .post-header.has-reel .lede,
+.post-header.has-reel .ai-summary,
+.post-header.has-reel .ai-summary a,
 .post-header.has-reel .post-meta,
 .post-header.has-reel .post-meta i,
 .post-header.has-reel .post-byline,

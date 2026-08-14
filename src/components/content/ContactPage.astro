@@ -4,6 +4,7 @@
 // External-system boundaries (honest, per playbook §3): the Cal.com booking
 // widget and the SunFire plan portal are English-only vendor surfaces.
 import MainLayout from '../../layouts/MainLayout.astro';
+import AiSummary from '../AiSummary.astro';
 import { DEFAULT_LOCALE, getLangFromUrl, getLocaleMeta } from '../../i18n/locales';
 import { getPageContent, hreflangAlternates, interp, localizeHref } from '../../i18n/content';
 import { COMPARE_PLANS_URL, PHONE_DISPLAY } from '../../consts';
@@ -64,6 +65,7 @@ const alternates = hreflangAlternates('contact');
   <div class="container">
     <div class="breadcrumb" set:html={c.breadcrumbHtml}></div>
     <h1>{c.header.h1}</h1>
+    <AiSummary />
     <p class="lede" set:html={c.header.ledeHtml}></p>
   </div>
 </section>

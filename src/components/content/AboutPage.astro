@@ -6,6 +6,7 @@
 // {phone} interpolates from consts.ts so the number never lives in
 // translatable copy (§6.8).
 import MainLayout from '../../layouts/MainLayout.astro';
+import AiSummary from '../AiSummary.astro';
 import { DEFAULT_LOCALE, getLangFromUrl, getLocaleMeta } from '../../i18n/locales';
 import { getPageContent, hreflangAlternates, interp, localizeHref } from '../../i18n/content';
 import { PHONE_DISPLAY } from '../../consts';
@@ -57,6 +58,7 @@ const asset = (p: string) => (lang === DEFAULT_LOCALE || p.startsWith('/') ? p :
   <div class="container">
     <div class="breadcrumb" set:html={c.breadcrumbHtml}></div>
     <h1 id="bret-swope">{c.header.h1}</h1>
+    <AiSummary />
     <p class="lede" set:html={c.header.ledeHtml}></p>
   </div>
 </section>

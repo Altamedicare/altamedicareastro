@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import MainLayout from '../layouts/MainLayout.astro';
+import AiSummary from '../components/AiSummary.astro';
 import { CATEGORIES } from '../consts';
 
 const posts = (await getCollection('blog', ({ data }) => !data.draft))
@@ -25,6 +26,7 @@ const fmt = (d: Date) =>
   <div class="container">
     <div class="breadcrumb"><a href="/">Home</a> &nbsp;&rsaquo;&nbsp; Blog</div>
     <h1>Medicare Guides &amp; Articles</h1>
+    <AiSummary />
     <p class="lede">Straight answers to the Medicare questions Utah families actually ask &mdash; written by a licensed local agent, updated for 2026.</p>
   </div>
 </section>

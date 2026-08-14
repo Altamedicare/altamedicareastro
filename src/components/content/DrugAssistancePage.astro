@@ -6,6 +6,7 @@
 // byte-identical across locales by construction (ADR-002 physical split).
 // The drug slug derives from the URL: "<slug>-assistance-program".
 import MainLayout from '../../layouts/MainLayout.astro';
+import AiSummary from '../AiSummary.astro';
 import {
   getDrugShell,
   getFeaturedDrugs,
@@ -74,6 +75,7 @@ const faqLd = {
         <a href={href('/prescription-drug-assistance')}>{shell.crumbFinder}</a> &nbsp;&rsaquo;&nbsp; {d.drug}
       </div>
       <h1>{interp(shell.h1, vars)}</h1>
+      <AiSummary />
       <p class="lede">{interp(shell.lede, vars)}</p>
     </div>
   </section>

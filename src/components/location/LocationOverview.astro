@@ -4,6 +4,7 @@
 // derives from the URL, so the same component renders master routes and the
 // [locale] dynamic route. CMS figures interpolate from figures.ts (§6.8).
 import MainLayout from '../../layouts/MainLayout.astro';
+import AiSummary from '../AiSummary.astro';
 import LocationTools from './LocationTools.astro';
 import LocationFaq from './LocationFaq.astro';
 import LocationCTA from './LocationCTA.astro';
@@ -75,6 +76,7 @@ const breadcrumbLd = {
     <div class="container">
       <LocationBreadcrumb crumbs={crumbs} />
       <h1>{interp(c.h1, vars)}</h1>
+      <AiSummary placeName={n} />
       <p class="lede" set:html={interp(c.ledeHtml, vars)}></p>
     </div>
   </section>

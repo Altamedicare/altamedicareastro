@@ -5,6 +5,7 @@
 // results, but it is sitemapped at 0.8, linked sitewide, and ranking — it must
 // stay index,follow for Google. See the prop docs in MainLayout.
 import MainLayout from '../../layouts/MainLayout.astro';
+import AiSummary from '../AiSummary.astro';
 import { getFaqData } from '../../data/faqs';
 import { PHONE_DISPLAY } from '../../consts';
 import { DEFAULT_LOCALE, getLangFromUrl, getLocaleMeta, t } from '../../i18n/locales';
@@ -47,6 +48,7 @@ const breadcrumbLd = {
   <div class="container">
     <div class="breadcrumb"><a href={href('/')}>{t('nav.home', lang)}</a> &nbsp;&rsaquo;&nbsp; {shell.faqCrumb}</div>
     <h1>{shell.hubH1}</h1>
+    <AiSummary />
     <p class="lede" set:html={interp(shell.hubLedeHtml, { total })}></p>
   </div>
 </section>

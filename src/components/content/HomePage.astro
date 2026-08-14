@@ -8,6 +8,7 @@
 // prefilled bodies remain component literals (protocol-href boundary —
 // English messages to Bret; documented in I18N-PORT-LOG.md).
 import MainLayout from '../../layouts/MainLayout.astro';
+import AiSummary from '../AiSummary.astro';
 import { DEFAULT_LOCALE, getLangFromUrl, getLocaleMeta } from '../../i18n/locales';
 import { getPageContent, hreflangAlternates, interp, localizeHref, SITE_ORIGIN, localePageHref } from '../../i18n/content';
 import { COMPARE_PLANS_URL, PHONE_DISPLAY } from '../../consts';
@@ -137,6 +138,7 @@ const webSite = {
         </div>
       </div>
       <h1>{c.hero.h1}</h1>
+      <AiSummary variant="compact" />
       <p class="subhead">
         {c.hero.subhead}
       </p>
