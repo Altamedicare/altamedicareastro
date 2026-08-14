@@ -4,14 +4,14 @@
 //   node scripts/gen-bret-derivatives.mjs
 //
 // WHY THIS EXISTS. public/ is served verbatim (Astro never processes it), and
-// the master BretSwope.webp is 1241x1268 / ~174 KB while the largest place it
-// is ever displayed is 180 CSS px — the homepage hero shows it at 56x56. Every
-// visitor was paying ~174 KB to paint a 56 px avatar. These derivatives cut the
-// homepage image cost by ~94%.
+// the master BretSwope.webp (src/assets/, not served) is 1241x1268 / ~174 KB
+// while the largest place it is ever displayed is 180 CSS px — the homepage
+// hero shows it at 56x56. Serving the master meant every visitor paid ~174 KB
+// to paint a 56 px avatar. These derivatives cut the homepage image cost by ~94%.
 //
-// WHY A SCRIPT AND NOT astro:assets. <Image>/<Picture> would mean moving the
-// master into src/assets and replacing the locale-aware asset() helper in three
-// components — a wide change for a byte problem. sharp is also only a
+// WHY A SCRIPT AND NOT astro:assets. <Image>/<Picture> would mean replacing
+// the locale-aware asset() helper in three components — a wide change for a
+// byte problem. sharp is also only a
 // transitive dependency (via astro), so committing the output keeps the build
 // dependency-free. Run this manually when the master photo changes; commit the
 // result.
@@ -25,7 +25,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
-const SRC = path.join(ROOT, 'public/images/BretSwope.webp');
+const SRC = path.join(ROOT, 'src/assets/BretSwope.webp');
 const OUT_DIR = path.join(ROOT, 'public/images');
 
 // 56 px (hero avatar) and 180 px (bret-card) at 1x/2x/3x. Nothing renders the
