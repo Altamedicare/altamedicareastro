@@ -9,6 +9,8 @@ author: "Bret Swope"
 
 Every year, Medicare Advantage plans send out an **Annual Notice of Change (ANOC)** — and every year, the details inside it matter. For 2026, many Utah plans adjusted their networks, drug formularies, premiums, and extra benefits. A plan that was a great fit last year isn't automatically the best fit this year.
 
+*This article covers the **2026** Medicare Advantage plan year. Plans can change from one year to the next, so the specifics described here may not match your plan today. For our broader guide to reviewing and changing your coverage, see [Annual Enrollment Period Explained](/blog/annual-enrollment-period-explained).*
+
 ## What commonly changes
 
 - **Provider networks** — your doctor or hospital may move in or out of network

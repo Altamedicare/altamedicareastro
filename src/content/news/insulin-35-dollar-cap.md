@@ -5,6 +5,15 @@ summary: "Covered insulin remains capped at $35 per month for Medicare beneficia
 tag: "Savings"
 category: "prescription-drugs"
 author: "Bret Swope"
+faqs:
+  - question: "How much does insulin cost with Medicare in 2026?"
+    answer: "You pay no more than $35 for a one-month supply of each covered insulin. The cap applies whether your coverage comes from a Part D plan or a Medicare Advantage plan with drug coverage."
+  - question: "Do I have to meet my deductible before the $35 insulin cap applies?"
+    answer: "No. The $35 cap applies before you've met any plan deductible, so you don't pay full price first."
+  - question: "Does the $35 insulin cap apply to Medicare Advantage plans?"
+    answer: "Yes, as long as the Medicare Advantage plan includes prescription drug coverage. The cap works the same way as it does under a standalone Part D plan."
+  - question: "What if my insulin isn't on my plan's formulary?"
+    answer: "The cap applies to covered insulin, so each plan's formulary matters. It's worth confirming the specific insulin you use appears on your plan's list at the $35 price."
 ---
 
 If you use insulin, here's good news that's easy to miss: under Medicare, your cost for a one-month supply of each **covered insulin** is capped at **$35** — and there's **no deductible** to meet first. That applies whether you get your insulin through a Part D drug plan or a Medicare Advantage plan with drug coverage.
