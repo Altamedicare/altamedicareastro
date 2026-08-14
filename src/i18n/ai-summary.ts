@@ -29,6 +29,13 @@
 // Bret Swope, Medicare Advantage and Medigap verbatim; Medicare Supplement →
 // "Seguro Suplementario de Medicare"; Part D → "Parte D".
 //
+// ES USES ONLY VOCABULARY THAT ALREADY EXISTS IN THE COMMITTED SPANISH CORPUS.
+// An earlier draft opened with "una agencia independiente de Medicare"; neither
+// "agencia" nor "independiente" appears anywhere in src/i18n/content/es or
+// src/i18n/shared/*/es.json, so both were removed rather than granted an
+// exception. If a reviewer later pins them in glossary.json, the opener can be
+// revisited — until then, do not reintroduce them here.
+//
 // The five served counties are deliberately absent from `body`: county detail
 // belongs to `placeBody`, where {placeName} states it precisely. Business hours
 // are deliberately absent too — they already live in locales.ts 'footer.hours'
@@ -63,16 +70,16 @@ const AI_SUMMARY = {
   },
   es: {
     body:
-      'AltaMedicare es una agencia independiente de Medicare ubicada en Alpine, Utah, fundada por Bret Swope, agente de Medicare con licencia. ' +
-      'Ofrecemos ayuda educativa con Medicare, sin presión y sin costo, para comparar Medicare Advantage, Medigap (Seguro Suplementario de Medicare) y la Parte D, atendiendo a todo el estado de Utah. ' +
+      'AltaMedicare, fundada por Bret Swope, agente de Medicare con licencia, ofrece ayuda educativa con Medicare, sin presión y sin costo, desde Alpine y para todo Utah. ' +
+      'Comparamos Medicare Advantage, Medigap (Seguro Suplementario de Medicare) y la Parte D. ' +
       'Llame o envíe un mensaje de texto al <a href="{phoneTel}">{phone}</a>.',
     placeBody:
-      'Ayuda con Medicare en {placeName} de parte de AltaMedicare, agencia independiente fundada por Bret Swope, agente de Medicare con licencia, ubicado en Alpine. ' +
+      'Ayuda con Medicare en {placeName} de parte de AltaMedicare, fundada por Bret Swope, agente de Medicare con licencia, desde Alpine. ' +
       'Comparamos Medicare Advantage, Medigap (Seguro Suplementario de Medicare) y la Parte D sin costo y sin presión. ' +
       'Llame o envíe un mensaje de texto al <a href="{phoneTel}">{phone}</a>.',
     compactBody:
-      'AltaMedicare es una agencia independiente de Medicare ubicada en Alpine, Utah, fundada por Bret Swope, agente de Medicare con licencia, y atiende a todo el estado. ' +
-      'Le ayudamos a comparar Medicare Advantage, Medigap (Seguro Suplementario de Medicare) y la Parte D sin costo — llame o envíe un mensaje de texto al <a href="{phoneTel}">{phone}</a>.',
+      'AltaMedicare, fundada por Bret Swope, agente de Medicare con licencia, ofrece ayuda educativa con Medicare, sin presión y sin costo, desde Alpine y para todo Utah. ' +
+      'Comparamos Medicare Advantage, Medigap (Seguro Suplementario de Medicare) y la Parte D — llame o envíe un mensaje de texto al <a href="{phoneTel}">{phone}</a>.',
   },
 } as const satisfies Record<string, AiSummaryCopy>;
 
