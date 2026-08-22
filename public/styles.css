@@ -363,6 +363,7 @@ p { margin: 0 0 1em; }
 /* Clear reel behind the text — a soft white halo keeps it readable over busy footage. */
 .hero-inner h1,
 .hero-inner .subhead,
+.hero-inner .ai-summary,
 .hero-inner .hero-phone,
 .hero-inner .hero-trust,
 .hero-tools-label {
@@ -381,6 +382,18 @@ p { margin: 0 0 1em; }
   max-width: 640px;
   margin-left: auto;
   margin-right: auto;
+}
+/* The entity summary (AiSummary compact variant) sits over the same busy
+   photo as the h1/subhead but was left at the page-body --text-muted gray
+   with no halo — unreadable over bright sky. Match the subhead's contrast
+   treatment instead of the light default. */
+.hero-inner .ai-summary {
+  color: var(--charcoal-soft);
+}
+/* Simple mobile-only stand-in for the AiSummary paragraph below (see
+   RESPONSIVE section) — hidden on desktop where the full sentence shows. */
+.hero-mobile-tagline {
+  display: none;
 }
 .hero-buttons {
   display: flex;
@@ -1570,6 +1583,8 @@ section {
    defaults remain. The big <h1> keeps its dark color + white halo. */
 @media (prefers-reduced-motion: no-preference) {
   .hero-inner .subhead,
+  .hero-inner .ai-summary,
+  .hero-inner .ai-summary a,
   .hero-inner .hero-phone,
   .hero-inner .hero-trust,
   .hero-tools .hero-tools-label {
@@ -1765,6 +1780,27 @@ section {
   .hero { padding: 60px 0 90px; }
   .form-row { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
+  /* Small screens: the full AiSummary sentence is too much text packed under
+     the h1/subhead. Swap it for a short tagline; the full entity sentence
+     stays in the DOM (still read by crawlers/AI, still shown ≥768px). */
+  .hero-inner .ai-summary { display: none; }
+  .hero-mobile-tagline {
+    display: block;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--charcoal-soft);
+    margin: 0 0 14px;
+  }
+}
+@media (max-width: 768px) and (prefers-reduced-motion: no-preference) {
+  .hero-mobile-tagline {
+    color: #fff;
+    text-shadow:
+      0 0 3px rgba(0, 0, 0, 0.95),
+      0 0 9px rgba(0, 0, 0, 0.85),
+      0 1px 4px rgba(0, 0, 0, 1),
+      0 2px 18px rgba(0, 0, 0, 0.7);
+  }
 }
 
 @media (max-width: 480px) {

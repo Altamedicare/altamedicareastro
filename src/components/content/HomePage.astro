@@ -16,7 +16,7 @@ import { COMPARE_PLANS_URL, PHONE_DISPLAY } from '../../consts';
 interface HomeContent {
   page: { title: string; description: string };
   hero: {
-    h1: string; subhead: string; scheduleLabel: string; drugLabel: string;
+    h1: string; subhead: string; mobileTagline: string; scheduleLabel: string; drugLabel: string;
     compareLabel: string; trust: string; searchSrLabel: string;
     searchPlaceholder: string;
     examples: { __q: string; label: string }[];
@@ -139,6 +139,7 @@ const webSite = {
       </div>
       <h1>{c.hero.h1}</h1>
       <AiSummary variant="compact" />
+      <p class="hero-mobile-tagline">{c.hero.mobileTagline}</p>
       <p class="subhead">
         {c.hero.subhead}
       </p>
