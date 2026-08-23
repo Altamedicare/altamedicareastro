@@ -1793,16 +1793,16 @@ section {
   }
   /* Simplify the phone hero to its essentials: headline, one short tagline,
      a single primary CTA, the phone link, and the trust line. Everything
-     else here (agent badge, long subhead, secondary buttons, search example
-     chips, the calculator shortcut row) is either redundant with content
-     already stated elsewhere on the page (agent photo in the Why Us section,
-     tools in the Free Tools section) or is a second/third choice action that
-     just adds visual noise on a small screen. Desktop is untouched. */
+     else here (agent badge, long subhead, secondary buttons) is redundant
+     with content already stated elsewhere on the page (agent photo in the
+     Why Us section) or is a second/third choice action that just adds
+     visual noise on a small screen. Desktop is untouched.
+     (.search-examples / .hero-tools are also dropped on mobile, but that
+     override lives at the end of the file — their unscoped base rules
+     below would otherwise win the cascade by source order.) */
   .hero-agent { display: none; }
   .hero .subhead { display: none; }
   .hero-buttons .btn:not(:first-child) { display: none; }
-  .search-examples { display: none; }
-  .hero-tools { display: none; }
 }
 @media (max-width: 768px) and (prefers-reduced-motion: no-preference) {
   .hero-mobile-tagline {
@@ -2676,3 +2676,13 @@ section {
 .faq-cta .dot { color:var(--border-light); }
 
 .faq-empty { text-align:center; padding:24px; color:var(--text-muted); }
+
+/* ---------- MOBILE HERO SIMPLIFICATION (cont'd from the 768px block above) ----------
+   .search-examples and .hero-tools are defined unscoped further up the file
+   (after the 768px media block), so a display:none placed inside that block
+   loses the cascade to those later same-specificity rules. Placing the
+   override here, after both definitions, makes it actually win. */
+@media (max-width: 768px) {
+  .search-examples,
+  .hero-tools { display: none; }
+}
