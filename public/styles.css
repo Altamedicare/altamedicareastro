@@ -1791,6 +1791,18 @@ section {
     color: var(--charcoal-soft);
     margin: 0 0 14px;
   }
+  /* Simplify the phone hero to its essentials: headline, one short tagline,
+     a single primary CTA, the phone link, and the trust line. Everything
+     else here (agent badge, long subhead, secondary buttons, search example
+     chips, the calculator shortcut row) is either redundant with content
+     already stated elsewhere on the page (agent photo in the Why Us section,
+     tools in the Free Tools section) or is a second/third choice action that
+     just adds visual noise on a small screen. Desktop is untouched. */
+  .hero-agent { display: none; }
+  .hero .subhead { display: none; }
+  .hero-buttons .btn:not(:first-child) { display: none; }
+  .search-examples { display: none; }
+  .hero-tools { display: none; }
 }
 @media (max-width: 768px) and (prefers-reduced-motion: no-preference) {
   .hero-mobile-tagline {
