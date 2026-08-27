@@ -766,6 +766,16 @@
   });
 
   searchEl.addEventListener("input",render);
+  // Enter opens the researched guide directly when the query names one;
+  // otherwise it just re-runs the filter. (No blur/change navigation — a
+  // text input's "change" fires on blur too, which would surprise-navigate.)
+  searchEl.addEventListener("keydown",function(e){
+    if(e.key!=="Enter") return;
+    e.preventDefault();
+    var rec=recordForSearch(searchEl.value.trim().toLowerCase());
+    if(rec){ window.location.href="/"+rec.slug+"-assistance-program"; return; }
+    render();
+  });
   condEl.addEventListener("change",render);
   typeEl.addEventListener("change",render);
   render();
