@@ -1781,16 +1781,11 @@ section {
   .form-row { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   /* Small screens: the full AiSummary sentence is too much text packed under
-     the h1/subhead. Swap it for a short tagline; the full entity sentence
-     stays in the DOM (still read by crawlers/AI, still shown ≥768px). */
+     the h1/subhead, and .hero-mobile-tagline (kept display:none from its
+     base rule) would just restate the h1 a second time — so mobile drops
+     both and shows only the headline. The full entity sentence stays in
+     the DOM (still read by crawlers/AI, still shown ≥768px). */
   .hero-inner .ai-summary { display: none; }
-  .hero-mobile-tagline {
-    display: block;
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: var(--charcoal-soft);
-    margin: 0 0 14px;
-  }
   /* Simplify the phone hero to its essentials: headline, one short tagline,
      a single primary CTA, the phone link, and the trust line. Everything
      else here (agent badge, long subhead, secondary buttons) is redundant
@@ -1803,16 +1798,6 @@ section {
   .hero-agent { display: none; }
   .hero .subhead { display: none; }
   .hero-buttons .btn:not(:first-child) { display: none; }
-}
-@media (max-width: 768px) and (prefers-reduced-motion: no-preference) {
-  .hero-mobile-tagline {
-    color: #fff;
-    text-shadow:
-      0 0 3px rgba(0, 0, 0, 0.95),
-      0 0 9px rgba(0, 0, 0, 0.85),
-      0 1px 4px rgba(0, 0, 0, 1),
-      0 2px 18px rgba(0, 0, 0, 0.7);
-  }
 }
 
 @media (max-width: 480px) {
