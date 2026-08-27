@@ -220,7 +220,15 @@ const webPage =
             <a href={href('/tools')} set:html={t('nav.allTools', lang)} />
           </div>
         </li>
-        <li><a href={href('drug-savings.html')}>{t('nav.drugSavings', lang)}</a></li>
+        <li class="has-dropdown">
+          <a href={href('/prescription-drug-assistance')}>{t('nav.rx', lang)}</a>
+          <div class="dropdown">
+            <a href={href('/prescription-drug-assistance')}>{t('nav.rxFinder', lang)}</a>
+            <a href={href('/prescription-drug-assistance#all-medications')}>{t('nav.rxAll', lang)}</a>
+            <a href={href('drug-savings.html')}>{t('nav.rxReview', lang)}</a>
+            <a href={href('/blog/extra-help-explained')}>{t('nav.rxExtraHelp', lang)}</a>
+          </div>
+        </li>
         <li><a href={href('turning-65.html')}>{t('nav.turning65', lang)}</a></li>
         <li><a href={href('medicare-news.html')}>{t('nav.news', lang)}</a></li>
         <li><a href={href('about.html')}>{t('nav.about', lang)}</a></li>
