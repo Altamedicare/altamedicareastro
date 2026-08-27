@@ -5,9 +5,11 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "npm run fa:check && astro build && pagefind --site dist",
+    "build": "npm run fa:check && npm run rx:check && astro build && pagefind --site dist",
     "fa:check": "node scripts/check-fa-icons.mjs",
     "fa:subset": "node scripts/gen-fa-subset.mjs",
+    "rx:check": "node scripts/check-rx-data.mjs && node scripts/gen-rx-directory.mjs --check",
+    "rx:dir": "node scripts/gen-rx-directory.mjs",
     "preview": "astro preview",
     "fetch-news": "node scripts/fetch-news.mjs",
     "translate": "node scripts/translate.js",

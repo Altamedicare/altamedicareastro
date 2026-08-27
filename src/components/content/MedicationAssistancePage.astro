@@ -1,0 +1,544 @@
+---
+// MedicationAssistancePage.astro — the record-driven reference page for one
+// researched medication (docs/PRESCRIPTION-ASSISTANCE-MIGRATION.md). Rendered
+// by src/pages/[drug]-assistance-program.astro whenever a
+// MedicationAssistanceRecord exists for the drug. One record → one page:
+//
+//   Hero (kicker · H1 · last-verified · summary · AiSummary)
+//   Quick Answer · About the medication · Options at a glance (table)
+//   Assistance programs (manufacturer / charitable / government cards)
+//   How to Apply (7 steps) · What You'll Need · If Assistance Is Unavailable
+//   Could Extra Help Reduce Your Costs? · Key terms (<dl>) · Related
+//   medications · FAQ (+ FAQPage schema) · Sources · Related resources · CTA
+//
+// Sections render only when the record has content for them: a medication
+// with no charitable fund shows the honest-negative card, not a padded
+// section. Nothing on this page is hard-coded per medication.
+//
+// Information architecture ports the Vernal Medicare reference implementation;
+// the visual design is AltaMedicare's (MainLayout chrome + styles.css design
+// system + scoped section styles below). English-only: the Spanish experience
+// for translated slugs stays on the legacy DrugAssistancePage template.
+import MainLayout from '../../layouts/MainLayout.astro';
+import AiSummary from '../AiSummary.astro';
+import AssistanceProgramCard from './AssistanceProgramCard.astro';
+import ApplicationSteps from './ApplicationSteps.astro';
+import {
+  assistanceHref,
+  assistanceTitle,
+  assistanceHeading,
+  assistanceLabel,
+  verifiedMonth,
+  extraHelpProgram,
+  extraHelpFacts,
+  medicationAssistanceFor,
+  categoryLabelsFor,
+  checkedDate,
+  KIND_META,
+  STATUS_META,
+  MEDICARE_META,
+  KEY_TERMS,
+  FPL_NOTE,
+} from '../../data/medicationAssistance';
+import { FEATURED_DRUGS } from '../../data/drugAssistance';
+import { DEFAULT_LOCALE, t } from '../../i18n/locales';
+import { hreflangAlternates, localizeHref, localizeHtml } from '../../i18n/content';
+import { PHONE_DISPLAY } from '../../consts';
+import type { MedicationAssistanceRecord, AssistanceProgram } from '../../types/MedicationAssistance';
+
+interface Props {
+  record: MedicationAssistanceRecord;
+}
+const { record: r } = Astro.props;
+
+const lang = DEFAULT_LOCALE; // records are English-only by design
+const href = (h: string) => localizeHref(h, lang);
+const html = (s: string) => localizeHtml(s, lang);
+
+const pageSlug = `${r.slug}-assistance-program`;
+const canonical = `/${pageSlug}`;
+const alternates = hreflangAlternates(pageSlug); // non-empty only for the translated legacy slugs
+const verified = verifiedMonth(r.lastVerified);
+const extraHelp = extraHelpProgram();
+const eh = extraHelpFacts();
+
+// Group programs the way the reference groups them. Extra Help has its own
+// section, so `government` here is only for any additional government route.
+const byKind = (kinds: AssistanceProgram['kind'][]) => r.programs.filter((p) => kinds.includes(p.kind));
+const manufacturer = byKind(['manufacturer-pap', 'manufacturer-savings', 'manufacturer-direct']);
+const charitable = byKind(['charitable']);
+const government = byKind(['government']).filter((p) => p.id !== 'extra-help');
+const openCount = r.programs.filter((p) => p.status === 'open' || p.status === 'limited').length;
+
+// Options-at-a-glance table: every researched program + Extra Help.
+const glance = [...r.programs, extraHelp];
+
+// Related medications: a record-driven page when one exists, else the legacy page.
+const relatedMeds = r.relatedMedications
+  .map((slug) => {
+    const rec = medicationAssistanceFor(slug);
+    if (rec) return { href: assistanceHref(slug), label: assistanceLabel(rec), sub: rec.genericName };
+    const d = FEATURED_DRUGS.find((x) => x.slug === slug);
+    return d ? { href: assistanceHref(slug), label: `${d.drug} Assistance Programs`, sub: d.generic } : null;
+  })
+  .filter((x): x is { href: string; label: string; sub: string } => x !== null);
+
+const summary =
+  `${r.quickAnswer.verdict} Financial assistance may be available through charitable foundations, ` +
+  `manufacturer programs, Medicare's Extra Help program, or other assistance resources. Availability ` +
+  `and eligibility change frequently — the information on this page was verified in ${verified}.`;
+
+const disclaimer =
+  `Assistance information last verified ${verified}. Program details — fund status, eligibility, prices, ` +
+  `phone numbers — change often; confirm with each program before applying. AltaMedicare does not ` +
+  `administer, fund or approve any assistance program. Not medical advice.`;
+
+const smsHref = (msg: string) => `sms:14352925548?body=${encodeURIComponent(msg)}`;
+
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: r.faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.question,
+    acceptedAnswer: { '@type': 'Answer', text: html(f.answer) },
+  })),
+};
+
+const showVideo = r.video.status === 'published' && r.video.youtubeId;
+
+const JUMPS = [
+  { id: 'quick-answer', label: 'Quick answer' },
+  { id: 'programs', label: 'Assistance programs' },
+  { id: 'how-to-apply', label: 'How to apply' },
+  { id: 'what-you-need', label: "What you'll need" },
+  { id: 'if-unavailable', label: 'If assistance is unavailable' },
+  { id: 'extra-help', label: 'Medicare Extra Help' },
+];
+---
+
+<MainLayout title={assistanceTitle(r)} description={r.description_meta} canonical={`${canonical}.html`} pageType="Guide">
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(faqLd)} />
+    {alternates.map((a) => <link rel="alternate" hreflang={a.code} href={a.href} />)}
+  </Fragment>
+
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href={href('/')}>{t('nav.home', lang)}</a> &nbsp;&rsaquo;&nbsp;
+        <a href={href('/prescription-drug-assistance')}>Prescription Assistance</a> &nbsp;&rsaquo;&nbsp; {r.brandName}
+      </div>
+      <p class="mapg-kicker">{categoryLabelsFor(r).join(' · ')}</p>
+      <h1>{assistanceHeading(r)}</h1>
+      <AiSummary />
+      <p class="mapg-verified">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="18" height="18"><path d="M9 11.5l2 2 4-4.5"/><path d="M4 6.5l8-3.5 8 3.5v5c0 5-3.4 8.2-8 9.5-4.6-1.3-8-4.5-8-9.5z"/></svg>
+        Assistance information last verified: <strong>{verified}</strong>
+      </p>
+      <p class="lede">{summary}</p>
+    </div>
+  </section>
+
+  <section class="section-white">
+    <div class="container mapg">
+
+      <nav class="mapg-jump" aria-label="On this page">
+        {JUMPS.map((j) => <a href={`#${j.id}`}>{j.label}</a>)}
+      </nav>
+
+      {/* ─── Quick answer ─────────────────────────────────────────────── */}
+      <section class="mapg-quick" id="quick-answer">
+        <h2>Can I get help paying for {r.brandName}?</h2>
+        <p class="mapg-quick__verdict">{r.quickAnswer.verdict}</p>
+        <ul class="mapg-quick__points">
+          {r.quickAnswer.points.map((p) => (
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+              <span>{p}</span>
+            </li>
+          ))}
+        </ul>
+        <p class="mapg-quick__count">
+          {openCount > 0
+            ? `${openCount} of the ${r.programs.length} programs we checked for ${r.brandName} ${openCount === 1 ? 'was' : 'were'} accepting applications when verified in ${verified}.`
+            : `None of the ${r.programs.length} programs we checked for ${r.brandName} were accepting new applications when verified in ${verified} — see the alternatives below.`}
+        </p>
+      </section>
+
+      {showVideo && (
+        <div class="mapg-video">
+          <iframe
+            src={`https://www.youtube-nocookie.com/embed/${r.video.youtubeId}`}
+            title={r.video.title}
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      )}
+
+      {/* ─── About the medication ─────────────────────────────────────── */}
+      <section class="mapg-about">
+        <div class="mapg-about__card">
+          <h2>About {r.brandName} ({r.genericName})</h2>
+          <p>{r.description}</p>
+          <h3>Approved uses</h3>
+          <ul>{r.usedFor.map((u) => <li>{u}</li>)}</ul>
+          <p class="mapg-about__maker"><strong>Manufacturer:</strong> {r.manufacturer}</p>
+        </div>
+        <div class="mapg-about__card mapg-about__card--cost">
+          <h2>Why {r.brandName} can be expensive on Medicare</h2>
+          <p set:html={html(r.whyCostly)}></p>
+          <h3>Medicare coverage context</h3>
+          <p set:html={html(r.medicareContext)}></p>
+          <p class="mapg-about__links">
+            <a href={href('/medicare-formulary-lookup.html')}>Check typical Part D coverage</a> ·
+            <a href={href('/medicare-drug-cost-calculator.html')}>Estimate your drug costs</a> ·
+            <a href={href('/prescription-drug-plans.html')}>Compare Part D drug plans</a>
+          </p>
+        </div>
+      </section>
+
+      {/* ─── Options at a glance ──────────────────────────────────────── */}
+      <section class="mapg-glance" id="programs">
+        <h2>{r.brandName} assistance options at a glance</h2>
+        <p class="mapg-sub">Every program we checked, what kind of help it is, whether people with Medicare can use it, and its status when we verified it. <em>A medication being listed by a program is not the same as the program accepting applications.</em></p>
+        <p class="mapg-fpl"><strong>About the income limits below:</strong> {FPL_NOTE}</p>
+        <div class="mapg-tablewrap">
+          <table class="mapg-table">
+            <caption class="mapg-sr-only">{r.brandName} assistance programs compared</caption>
+            <thead>
+              <tr><th scope="col">Program</th><th scope="col">Type of help</th><th scope="col">People with Medicare</th><th scope="col">Status ({verified})</th></tr>
+            </thead>
+            <tbody>
+              {glance.map((p) => (
+                <tr>
+                  <th scope="row"><a href={`#program-${p.id}`}>{p.name}</a></th>
+                  <td>{KIND_META[p.kind].label}</td>
+                  <td><span class:list={['mapg-pill', MEDICARE_META[p.medicare].cls]}>{MEDICARE_META[p.medicare].label.replace('Medicare: ', '')}</span></td>
+                  <td><span class:list={['mapg-pill', STATUS_META[p.status].cls]}>{STATUS_META[p.status].label}</span></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      {/* ─── Program cards ────────────────────────────────────────────── */}
+      {manufacturer.length > 0 && (
+        <section class="mapg-group">
+          <div class="mapg-group__head" style={`--c:${KIND_META['manufacturer-pap'].color};--t:${KIND_META['manufacturer-pap'].tint}`}>
+            <span class="mapg-group__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-6h6v6"/><path d="M9 12h.01M15 12h.01M9 9h.01M15 9h.01"/></svg></span>
+            <div>
+              <h2>Manufacturer programs from {r.manufacturer}</h2>
+              <p>A <strong>patient assistance program</strong> (free or low-cost drug by income) is not the same as a <strong>copay card</strong> (a commercial discount that usually excludes Medicare). Both are listed so you can see which one applies to you.</p>
+            </div>
+          </div>
+          <div class="mapg-cards">{manufacturer.map((p) => <AssistanceProgramCard program={p} />)}</div>
+        </section>
+      )}
+
+      {charitable.length > 0 && (
+        <section class="mapg-group">
+          <div class="mapg-group__head" style={`--c:${KIND_META.charitable.color};--t:${KIND_META.charitable.tint}`}>
+            <span class="mapg-group__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M2.8 19c0-3.3 2.7-5.5 6.2-5.5s6.2 2.2 6.2 5.5"/><circle cx="17.5" cy="8.5" r="2.4"/><path d="M15.8 13.7c2.7.3 4.9 2.3 4.9 5.3"/></svg></span>
+            <div>
+              <h2>Charitable grants for {r.brandName}</h2>
+              <p>{r.charitableSummary}</p>
+            </div>
+          </div>
+          <div class="mapg-cards">{charitable.map((p) => <AssistanceProgramCard program={p} />)}</div>
+        </section>
+      )}
+
+      {government.length > 0 && (
+        <section class="mapg-group">
+          <div class="mapg-group__head" style={`--c:${KIND_META.government.color};--t:${KIND_META.government.tint}`}>
+            <span class="mapg-group__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5L12 5l8 5.5"/><path d="M5 10.5V19h14v-8.5"/><path d="M9.5 19v-5h5v5"/></svg></span>
+            <div>
+              <h2>Other government routes</h2>
+              <p>{KIND_META.government.explainer}</p>
+            </div>
+          </div>
+          <div class="mapg-cards">{government.map((p) => <AssistanceProgramCard program={p} />)}</div>
+        </section>
+      )}
+
+      {/* ─── How to apply ─────────────────────────────────────────────── */}
+      <section class="mapg-apply" id="how-to-apply">
+        <h2>How to apply for {r.brandName} assistance</h2>
+        <ApplicationSteps steps={r.applicationSteps} />
+      </section>
+
+      {/* ─── What you'll need + if unavailable ────────────────────────── */}
+      <div class="mapg-duo">
+        <section class="mapg-need" id="what-you-need">
+          <h2>What you'll need</h2>
+          <p class="mapg-sub">Only items the programs above actually ask for. Gather these before you start.</p>
+          <ul class="mapg-check">
+            {r.documentsNeeded.map((d) => (
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                <span><strong>{d.item}</strong>{d.note && <em> — {d.note}</em>}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+        <section class="mapg-alt" id="if-unavailable">
+          <h2>If assistance is unavailable</h2>
+          <p class="mapg-sub">A closed fund or a denial is not the end of the road. Check these next:</p>
+          <ol class="mapg-altlist">
+            {r.ifUnavailable.map((a) => (
+              <li>
+                {a.text}
+                {a.href && <Fragment> <a href={/^https?:/.test(a.href) ? a.href : href(a.href)} {...(/^https?:/.test(a.href) ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>{a.label ?? 'Learn more'}</a></Fragment>}
+              </li>
+            ))}
+          </ol>
+        </section>
+      </div>
+
+      {/* ─── Extra Help ───────────────────────────────────────────────── */}
+      <section class="mapg-eh" id="extra-help">
+        <div class="mapg-eh__intro">
+          <h2>Could Medicare Extra Help reduce your {r.brandName} costs?</h2>
+          <p>Extra Help is not a grant for {r.brandName}. It is a Medicare program that lowers what qualifying beneficiaries pay for their Part D premium, deductible and <em>every</em> covered prescription — so it is worth checking even when a charitable fund is closed, because it does not depend on fund balances.</p>
+          {r.extraHelpNote && <p>{r.extraHelpNote}</p>}
+          <p>In {eh.year}, people with full Extra Help generally pay no more than {eh.brandCopay} for a covered brand-name drug. Income must be below about {eh.incomeIndividual} a year for one person ({eh.incomeCouple} for a couple) and countable resources under {eh.resourcesIndividual} ({eh.resourcesCouple} for a couple). Apply free through Social Security — online, by phone at {eh.phone}, or in person — and never pay anyone to apply for you.</p>
+          <p class="mapg-eh__links">
+            <a href={href('/blog/extra-help-explained.html')}>Extra Help explained</a> ·
+            <a href={href('/blog/medicare-savings-programs.html')}>Medicare Savings Programs</a> ·
+            <a href={href('/medicare-drug-cost-calculator.html')}>Estimate your drug costs</a> ·
+            <a href={href('/drug-savings.html')}>Free prescription cost review</a>
+          </p>
+        </div>
+        <AssistanceProgramCard program={extraHelp} />
+      </section>
+
+      {/* ─── Key terms ────────────────────────────────────────────────── */}
+      <section class="mapg-terms">
+        <h2>Key terms on this page</h2>
+        <dl>
+          {KEY_TERMS.map((k) => (
+            <div class="mapg-terms__row">
+              <dt>{k.term}</dt>
+              <dd>{k.definition}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
+      {/* ─── Related medications ──────────────────────────────────────── */}
+      {relatedMeds.length > 0 && (
+        <section class="mapg-meds">
+          <h2>Related medication assistance guides</h2>
+          <div class="mapg-meds__grid">
+            {relatedMeds.map((m) => (
+              <a class="mapg-meds__card" href={href(m.href)}>
+                <strong>{m.label}</strong>
+                <span>{m.sub}</span>
+              </a>
+            ))}
+            <a class="mapg-meds__card mapg-meds__card--hub" href={href('/prescription-drug-assistance.html')}>
+              <strong>All prescription assistance</strong>
+              <span>Directory &amp; program finder</span>
+            </a>
+          </div>
+        </section>
+      )}
+    </div>
+  </section>
+
+  {/* ─── FAQ ────────────────────────────────────────────────────────── */}
+  <section class="section-tinted">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Common Questions</span>
+        <h2>{r.brandName} assistance FAQ</h2>
+      </div>
+      <div class="content-narrow">
+        {r.faqs.map((f) => (
+          <details class="mapg-faq">
+            <summary>{f.question}</summary>
+            <div class="mapg-faq-a" set:html={html(f.answer)}></div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* ─── Sources + related resources ────────────────────────────────── */}
+  <section class="section-white">
+    <div class="container mapg">
+      <div class="mapg-foot">
+        <section class="mapg-sources">
+          <h2>Sources</h2>
+          <ul>
+            {r.sources.map((s) => (
+              <li>
+                <a href={s.url} target="_blank" rel="noopener noreferrer">{s.title}</a>
+                <span class="mapg-sources__sub">{s.publisher} — checked {checkedDate(s.checked)}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+        <section class="mapg-rel">
+          <h2>Related resources</h2>
+          <ul>
+            {r.relatedResources.map((x) => (
+              <li>
+                <a href={href(x.href)}>{x.label}</a>
+                {x.blurb && <span class="mapg-sources__sub">{x.blurb}</span>}
+              </li>
+            ))}
+          </ul>
+        </section>
+      </div>
+      <p class="mapg-disclaimer">{disclaimer}</p>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="container">
+      <h2>Having trouble figuring out your prescription costs?</h2>
+      <p>Bret can help you understand your Medicare prescription coverage and where to look for {r.brandName} assistance — free, no pressure. We don't award grants or decide eligibility; the programs above do. We help you find and apply to the right ones.</p>
+      <div class="cta-buttons">
+        <a href={smsHref(`Hi Bret, I need help paying for ${r.brandName}. Can you help?`)} class="btn btn-primary btn-lg">Text Bret About {r.brandName}</a>
+        <a href="tel:4352925548" class="btn btn-outline btn-lg">Call {PHONE_DISPLAY}</a>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .mapg-kicker { margin: 0 0 0.4rem; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #135aac; }
+  .mapg-verified {
+    display: inline-flex; align-items: center; gap: 0.45rem; margin: 10px 0 0;
+    background: #ecfdf3; color: #15803d; font-size: 0.86rem; font-weight: 600;
+    border-radius: 999px; padding: 0.35rem 0.8rem;
+  }
+  .mapg-verified strong { color: #14532d; }
+
+  .mapg { --navy: #0a2540; --line: #e6ebf2; --copy: #43526b; --accent: #135aac; }
+  .mapg h2 { color: var(--navy); font-size: clamp(1.3rem, 2.4vw, 1.6rem); line-height: 1.2; margin: 0 0 0.6rem; }
+  .mapg h3 { color: var(--navy); font-size: 1.02rem; margin: 0.8rem 0 0.35rem; }
+  .mapg p { color: var(--copy); line-height: 1.6; }
+  .mapg-sub { margin: 0 0 1.1rem; font-size: 0.95rem; max-width: 72ch; }
+  .mapg-fpl {
+    margin: 0 0 1.2rem; max-width: 78ch; font-size: 0.88rem; line-height: 1.55;
+    background: #f4f7fb; border-left: 3px solid #94a8bf; border-radius: 0 10px 10px 0;
+    padding: 0.7rem 0.95rem;
+  }
+  .mapg-fpl strong { color: var(--navy); }
+  .mapg-sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .mapg-pill { display: inline-block; font-size: 0.76rem; font-weight: 700; border-radius: 999px; padding: 0.2rem 0.6rem; white-space: nowrap; }
+  .mapg-pill.is-open { background: #ecfdf3; color: #15803d; }
+  .mapg-pill.is-limited { background: #fff7ed; color: #b45309; }
+  .mapg-pill.is-closed { background: #fef3f2; color: #b42318; }
+  .mapg-pill.is-verify, .mapg-pill.is-none { background: #eef2f6; color: #475467; }
+
+  .mapg-jump { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 0 0 2rem; }
+  .mapg-jump a {
+    text-decoration: none; font-size: 0.86rem; font-weight: 700; color: var(--navy);
+    background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 0.4rem 0.85rem;
+  }
+  .mapg-jump a:hover { border-color: var(--accent); color: var(--accent); }
+
+  .mapg-quick {
+    background: linear-gradient(135deg, #0a2540 0%, #0d3f86 100%); color: #fff;
+    border-radius: 20px; padding: 1.7rem 1.9rem; margin: 0 0 2rem;
+    box-shadow: 0 22px 50px rgba(10, 37, 64, 0.22);
+  }
+  .mapg-quick h2, .mapg-quick p { color: #fff; }
+  .mapg-quick__verdict { margin: 0 0 1rem; font-size: 1.12rem; line-height: 1.55; color: #eaf1fd; }
+  .mapg-quick__points { list-style: none; margin: 0 0 1rem; padding: 0; display: grid; gap: 0.55rem; }
+  .mapg-quick__points li { display: flex; gap: 0.6rem; align-items: flex-start; color: #eaf1fd; font-size: 0.96rem; line-height: 1.5; }
+  .mapg-quick__points svg { flex: none; width: 20px; height: 20px; color: #86efac; margin-top: 0.1rem; }
+  .mapg-quick__count { margin: 0; font-size: 0.88rem; color: #cfe0f0; }
+
+  .mapg-video { margin: 0 0 2rem; }
+  .mapg-video iframe { width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 16px; }
+
+  .mapg-about { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 0 0 2.2rem; }
+  .mapg-about__card { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 1.4rem 1.5rem; box-shadow: 0 6px 18px -16px rgba(13, 63, 134, .5); }
+  .mapg-about__card--cost { background: #fff7ed; border-color: #fde2c4; }
+  .mapg-about__card h2 { font-size: 1.2rem; }
+  .mapg-about__card p { margin: 0 0 0.5rem; font-size: 0.95rem; }
+  .mapg-about__card ul { margin: 0 0 0.6rem; padding-left: 1.15rem; color: var(--copy); font-size: 0.93rem; line-height: 1.5; display: grid; gap: 0.2rem; }
+  .mapg-about__maker { font-size: 0.9rem; }
+  .mapg-about__links { font-size: 0.9rem; }
+  .mapg-about__links a { color: #0d3f86; font-weight: 700; text-decoration: none; }
+  .mapg-about__links a:hover { text-decoration: underline; }
+  @media (max-width: 860px) { .mapg-about { grid-template-columns: 1fr; } }
+
+  .mapg-glance { margin: 0 0 2.4rem; }
+  .mapg-tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
+  .mapg-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+  .mapg-table thead th { text-align: left; background: #f4f7fb; color: var(--navy); font-size: 0.82rem; letter-spacing: 0.03em; text-transform: uppercase; padding: 0.8rem 1rem; border-bottom: 1px solid var(--line); }
+  .mapg-table th, .mapg-table td { padding: 0.8rem 1rem; border-bottom: 1px solid #eef2f6; vertical-align: top; color: var(--copy); }
+  .mapg-table tbody th { text-align: left; font-weight: 700; color: var(--navy); }
+  .mapg-table tbody th a { color: var(--navy); text-decoration: none; }
+  .mapg-table tbody th a:hover { color: var(--accent); text-decoration: underline; }
+  .mapg-table tr:last-child th, .mapg-table tr:last-child td { border-bottom: none; }
+
+  .mapg-group { margin: 0 0 2.6rem; }
+  .mapg-group__head { display: flex; gap: 0.9rem; align-items: flex-start; margin: 0 0 1.1rem; }
+  .mapg-group__icon { flex: none; display: grid; place-items: center; width: 46px; height: 46px; border-radius: 13px; background: var(--t); color: var(--c); }
+  .mapg-group__icon svg { width: 24px; height: 24px; }
+  .mapg-group__head h2 { margin: 0 0 0.3rem; }
+  .mapg-group__head p { margin: 0; font-size: 0.93rem; max-width: 72ch; }
+  .mapg-group__head strong { color: var(--navy); }
+  .mapg-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1rem; align-items: start; }
+  @media (max-width: 900px) { .mapg-cards { grid-template-columns: 1fr; } }
+
+  .mapg-apply { margin: 0 0 2.4rem; }
+
+  .mapg-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 0 0 2.4rem; align-items: start; }
+  .mapg-need, .mapg-alt { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 1.4rem 1.5rem; }
+  .mapg-alt { background: #eaf2fd; border-color: #cfe0f5; }
+  .mapg-check { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.55rem; }
+  .mapg-check li { display: flex; gap: 0.55rem; align-items: flex-start; color: var(--copy); font-size: 0.93rem; line-height: 1.5; }
+  .mapg-check svg { flex: none; width: 18px; height: 18px; color: #16a34a; margin-top: 0.15rem; }
+  .mapg-check strong { color: var(--navy); }
+  .mapg-check em { font-style: normal; color: #6b7c8c; }
+  .mapg-altlist { margin: 0; padding-left: 1.25rem; display: grid; gap: 0.55rem; color: #17324d; font-size: 0.94rem; line-height: 1.55; }
+  .mapg-altlist a { color: #0d3f86; font-weight: 700; }
+  @media (max-width: 860px) { .mapg-duo { grid-template-columns: 1fr; } }
+
+  .mapg-eh { display: grid; grid-template-columns: 1.1fr 1fr; gap: 1.4rem; margin: 0 0 2.4rem; align-items: start; background: #f0e9fd; border-radius: 20px; padding: 1.6rem; }
+  .mapg-eh__intro p { margin: 0 0 0.7rem; font-size: 0.95rem; }
+  .mapg-eh__links { font-size: 0.9rem; }
+  .mapg-eh__links a { color: #6d28d9; font-weight: 700; text-decoration: none; }
+  .mapg-eh__links a:hover { text-decoration: underline; }
+  @media (max-width: 960px) { .mapg-eh { grid-template-columns: 1fr; } }
+
+  .mapg-terms { margin: 0 0 2.4rem; }
+  .mapg-terms dl { margin: 0; display: grid; gap: 0.6rem; }
+  .mapg-terms__row { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 0.85rem 1.1rem; }
+  .mapg-terms dt { color: var(--navy); font-weight: 800; margin: 0 0 0.2rem; }
+  .mapg-terms dd { margin: 0; color: var(--copy); font-size: 0.92rem; line-height: 1.55; }
+
+  .mapg-meds { margin: 0 0 1rem; }
+  .mapg-meds__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.7rem; }
+  .mapg-meds__card { display: flex; flex-direction: column; gap: 0.15rem; border: 1px solid var(--line); border-radius: 12px; padding: 0.85rem 1rem; text-decoration: none; background: #fff; }
+  .mapg-meds__card strong { color: var(--navy); font-size: 0.95rem; }
+  .mapg-meds__card span { color: #55627a; font-size: 0.82rem; }
+  .mapg-meds__card:hover { border-color: var(--accent); }
+  .mapg-meds__card--hub { background: #eaf2fd; border-color: #cfe0f5; }
+
+  .mapg-faq { background: #fff; border: 1px solid #e6ebf2; border-radius: 12px; margin-bottom: 10px; overflow: hidden; }
+  .mapg-faq summary { list-style: none; cursor: pointer; padding: 17px 20px; font-weight: 600; font-size: 1.05rem; color: #0a2540; }
+  .mapg-faq summary::-webkit-details-marker { display: none; }
+  .mapg-faq[open] summary { padding-bottom: 6px; }
+  .mapg-faq-a { padding: 0 20px 18px; color: var(--text-muted, #475467); }
+  .mapg-faq-a :global(a) { color: #0d3f86; font-weight: 600; }
+
+  .mapg-foot { display: grid; grid-template-columns: 1.2fr 1fr; gap: 1.4rem; align-items: start; }
+  @media (max-width: 900px) { .mapg-foot { grid-template-columns: 1fr; } }
+  .mapg-sources, .mapg-rel { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 1.4rem 1.6rem; }
+  .mapg-sources ul, .mapg-rel ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.55rem; }
+  .mapg-sources a, .mapg-rel a { color: #0d3f86; font-weight: 600; font-size: 0.92rem; line-height: 1.45; }
+  .mapg-sources__sub { display: block; color: #94a3b8; font-size: 0.78rem; margin-top: 0.1rem; }
+  .mapg-disclaimer { margin: 1.5rem 0 0; color: #6b7c8c; font-size: 0.85rem; line-height: 1.55; }
+</style>

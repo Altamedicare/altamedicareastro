@@ -1,12 +1,33 @@
 ---
-// Thin master wrapper — one shared component renders every drug landing page
-// (src/components/content/DrugAssistancePage.astro; slug derives from URL).
+// [drug]-assistance-program.astro — one canonical page per medication.
+//
+// PRECEDENCE (ported from the Vernal Medicare reference implementation): when
+// an independently-researched MedicationAssistanceRecord exists for the slug,
+// the SAME canonical URL renders the record-driven reference page
+// (MedicationAssistancePage). The legacy generic template (DrugAssistancePage)
+// renders otherwise — it is the interim experience for any future medication
+// added to FEATURED_DRUGS before it is researched, and it remains the
+// translated Spanish experience for the legacy slugs under /es/ (that route
+// lives in [locale]/[...path].astro and is untouched by the record system).
+//
+// Paths are the UNION of the legacy FEATURED_DRUGS slugs and the record
+// registry, so a researched medication needs no FEATURED_DRUGS entry (the
+// bilingual copy module stays at its translated 14 — records are English-only
+// and Spanish copy is never machine-generated).
 import DrugAssistancePage from '../components/content/DrugAssistancePage.astro';
+import MedicationAssistancePage from '../components/content/MedicationAssistancePage.astro';
 import { FEATURED_DRUGS } from '../data/drugAssistance';
+import { MEDICATION_ASSISTANCE, medicationAssistanceFor } from '../data/medicationAssistance';
 
 export function getStaticPaths() {
-  return FEATURED_DRUGS.map((d) => ({ params: { drug: d.slug } }));
+  const slugs = new Set<string>([
+    ...FEATURED_DRUGS.map((d) => d.slug),
+    ...MEDICATION_ASSISTANCE.map((r) => r.slug),
+  ]);
+  return [...slugs].map((slug) => ({ params: { drug: slug } }));
 }
+
+const record = medicationAssistanceFor(Astro.params.drug as string);
 ---
 
-<DrugAssistancePage />
+{record ? <MedicationAssistancePage record={record} /> : <DrugAssistancePage />}

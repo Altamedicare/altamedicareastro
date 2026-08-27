@@ -1,0 +1,111 @@
+---
+// AssistanceProgramCard.astro — one assistance program on a medication page.
+// Renders exactly what the record says: kind, status, Medicare rule,
+// eligibility, requirements, how to apply, official link/phone, and the dated
+// source(s) behind the claim. Honest negatives (status 'not-found') render as
+// a card too, so "we looked" is visible. Ported from the Vernal Medicare
+// reference implementation (docs/PRESCRIPTION-ASSISTANCE-MIGRATION.md).
+import { KIND_META, STATUS_META, MEDICARE_META, checkedDate } from '../../data/medicationAssistance';
+import type { AssistanceProgram } from '../../types/MedicationAssistance';
+
+interface Props {
+  program: AssistanceProgram;
+}
+const { program: p } = Astro.props;
+const kind = KIND_META[p.kind];
+const status = STATUS_META[p.status];
+const medicare = MEDICARE_META[p.medicare];
+const telLink = (phone: string) => `tel:${phone.replace(/[^0-9]/g, '')}`;
+const negative = p.status === 'not-found';
+---
+
+<article class:list={['apc', { 'apc--negative': negative }]} style={`--c:${kind.color};--t:${kind.tint}`} id={`program-${p.id}`}>
+  <header class="apc__head">
+    <p class="apc__kind">{kind.label}</p>
+    <h3 class="apc__name">{p.name}</h3>
+    <p class="apc__operator">{p.operator}{p.fund && <Fragment> · {p.fund}</Fragment>}</p>
+    <div class="apc__pills">
+      <span class:list={['apc__pill', status.cls]}>{status.label}</span>
+      <span class:list={['apc__pill', medicare.cls]}>{medicare.label}</span>
+    </div>
+  </header>
+
+  <p class="apc__status"><strong>Status:</strong> {p.statusNote}</p>
+  <p class="apc__summary">{p.summary}</p>
+  <p class="apc__medicare"><strong>If you have Medicare:</strong> {p.medicareNote}</p>
+  {p.covers && <p class="apc__covers"><strong>What it can cover:</strong> {p.covers}</p>}
+
+  {p.eligibility.length > 0 && (
+    <div class="apc__block">
+      <h4>Who may qualify</h4>
+      <ul>{p.eligibility.map((e) => <li>{e}</li>)}</ul>
+    </div>
+  )}
+  {p.requirements && p.requirements.length > 0 && (
+    <div class="apc__block">
+      <h4>What the application asks for</h4>
+      <ul>{p.requirements.map((r) => <li>{r}</li>)}</ul>
+    </div>
+  )}
+  <div class="apc__block">
+    <h4>How to apply</h4>
+    <p>{p.howToApply}</p>
+  </div>
+
+  {(p.applyUrl || p.phone) && (
+    <div class="apc__actions">
+      {p.applyUrl && (
+        <a class="apc__link" href={p.applyUrl} target="_blank" rel="noopener noreferrer">{p.applyLabel ?? 'Official program page'} &rarr;</a>
+      )}
+      {p.phone && <a class="apc__phone" href={telLink(p.phone)}>{p.phone}</a>}
+    </div>
+  )}
+
+  <footer class="apc__sources">
+    <span class="apc__sources-lbl">Source{p.sources.length > 1 ? 's' : ''}:</span>
+    {p.sources.map((s, i) => (
+      <span class="apc__source">
+        <a href={s.url} target="_blank" rel="noopener noreferrer">{s.title}</a> ({s.publisher}; checked {checkedDate(s.checked)}){i < p.sources.length - 1 ? ';' : ''}
+      </span>
+    ))}
+  </footer>
+</article>
+
+<style>
+  .apc {
+    background: #fff; border: 1px solid #e6ebf2; border-left: 5px solid var(--c);
+    border-radius: 14px; padding: 20px 22px 18px;
+    box-shadow: 0 6px 18px -16px rgba(13, 63, 134, .5);
+    display: flex; flex-direction: column; gap: 0.6rem;
+  }
+  .apc--negative { background: #f8fafc; border-style: dashed; border-left-style: solid; box-shadow: none; }
+  .apc__head { display: grid; gap: 0.25rem; }
+  .apc__kind {
+    margin: 0; display: inline-block; width: fit-content;
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--c); background: var(--t); border-radius: 999px; padding: 0.2rem 0.6rem;
+  }
+  .apc__name { margin: 0.2rem 0 0; color: #0a2540; font-size: 1.15rem; line-height: 1.3; }
+  .apc__operator { margin: 0; color: var(--text-muted, #475467); font-size: 0.88rem; }
+  .apc__pills { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.35rem; }
+  .apc__pill { font-size: 0.74rem; font-weight: 700; border-radius: 999px; padding: 0.22rem 0.6rem; white-space: nowrap; }
+  .is-open { background: #ecfdf3; color: #15803d; }
+  .is-limited { background: #fff7ed; color: #b45309; }
+  .is-closed { background: #fef3f2; color: #b42318; }
+  .is-verify { background: #eef2f6; color: #475467; }
+  .is-none { background: #eef2f6; color: #475467; }
+  .apc__status, .apc__summary, .apc__medicare, .apc__covers { margin: 0; color: #334155; font-size: 0.94rem; line-height: 1.55; }
+  .apc__status strong, .apc__medicare strong, .apc__covers strong { color: #0a2540; }
+  .apc__medicare { background: #f4f7fb; border-radius: 10px; padding: 0.6rem 0.8rem; }
+  .apc__block h4 { margin: 0.2rem 0 0.3rem; color: #0a2540; font-size: 0.85rem; letter-spacing: 0.02em; text-transform: uppercase; }
+  .apc__block ul { margin: 0; padding-left: 1.15rem; display: grid; gap: 0.25rem; }
+  .apc__block li, .apc__block p { margin: 0; color: var(--text-muted, #475467); font-size: 0.9rem; line-height: 1.5; }
+  .apc__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.1rem; padding-top: 0.7rem; border-top: 1px solid #eef2f6; }
+  .apc__link { color: #0d3f86; font-weight: 700; text-decoration: none; font-size: 0.93rem; }
+  .apc__link:hover { text-decoration: underline; }
+  .apc__phone { color: #475467; font-weight: 600; text-decoration: none; font-size: 0.93rem; }
+  .apc__phone:hover { text-decoration: underline; }
+  .apc__sources { color: #7a8ba0; font-size: 0.78rem; line-height: 1.5; padding-top: 0.5rem; border-top: 1px dashed #eef2f6; }
+  .apc__sources-lbl { font-weight: 700; margin-right: 0.3rem; }
+  .apc__sources a { color: #55627a; }
+</style>

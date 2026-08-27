@@ -4,6 +4,7 @@ import { FAQ_CATEGORIES } from '../data/faqs';
 import { NEWS_CATEGORIES } from '../consts';
 import { PLACES, hubHref, pageHref } from '../data/places';
 import { FEATURED_DRUGS } from '../data/drugAssistance';
+import { MEDICATION_ASSISTANCE } from '../data/medicationAssistance';
 import { hreflangAlternates, localePageHref, getAvailableLocales } from '../i18n/content';
 import { DEFAULT_LOCALE } from '../i18n/locales';
 import { toPageUrl } from '../i18n/urls';
@@ -91,6 +92,12 @@ const staticUrls: { loc: string; priority: number }[] = [
   { loc: '/medicare-glossary.html', priority: 0.7 },
   // Drug-specific assistance landing pages, generated from FEATURED_DRUGS.
   ...FEATURED_DRUGS.map((d) => ({ loc: `/${d.slug}-assistance-program.html`, priority: 0.7 })),
+  // Researched medication records beyond the legacy FEATURED_DRUGS set (the
+  // route builds the union — see [drug]-assistance-program.astro). These are
+  // English-only, so localizedRows()/alternatesXml() emit nothing for them.
+  ...MEDICATION_ASSISTANCE.filter((r) => !FEATURED_DRUGS.some((d) => d.slug === r.slug)).map(
+    (r) => ({ loc: `/${r.slug}-assistance-program.html`, priority: 0.7 }),
+  ),
 ];
 
 export const GET: APIRoute = async () => {
