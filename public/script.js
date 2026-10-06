@@ -69,7 +69,8 @@
     enrollBtn.target = '_blank';
     enrollBtn.rel = 'noopener';
     enrollBtn.setAttribute('aria-label', 'Browse and enroll in a Medicare plan online');
-    enrollBtn.textContent = 'Enroll';
+    enrollBtn.title = 'Compare plans and enroll online yourself';
+    enrollBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2h9"/></svg>Enroll';
     const menuToggle = headerCta.querySelector('.menu-toggle');
     if (menuToggle) headerCta.insertBefore(enrollBtn, menuToggle);
     else headerCta.appendChild(enrollBtn);

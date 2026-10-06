@@ -5,13 +5,27 @@
     "description": "Helping Alpine and Utah residents understand Medicare, lower prescription costs, and make confident healthcare decisions. Licensed local Medicare guidance with no pressure."
   },
   "hero": {
-    "h1": "Simple Medicare Guidance for Utah Families",
+    "h1": "Simple Medicare Guidance",
+    "eyebrow": "Local · Independent · Licensed",
+    "h1Accent": "Guidance",
+    "phoneNote": "Call or text — we’re here to help",
+    "features": [
+      { "strong": "Personal,", "span": "One-on-One Help" },
+      { "strong": "Lower", "span": "Prescription Costs" },
+      { "strong": "Unbiased", "span": "Plan Comparisons" }
+    ],
     "subhead": "Helping Alpine and Utah residents understand Medicare, lower prescription\n        costs, and make confident healthcare decisions.",
     "mobileTagline": "Simple Medicare guidance",
     "scheduleLabel": "Schedule Free Consultation",
     "drugLabel": "Check Prescription Costs",
     "compareLabel": "Compare Plans Online",
-    "trust": "Trusted by Utah families · Licensed · No-pressure guidance",
+    "selfEnroll": {
+      "title": "Prefer to do it yourself?",
+      "text": "Compare plans side by side and enroll online on your own — anytime, at your own pace.",
+      "button": "Enroll Online",
+      "note": "It’s the same blue Enroll button at the top of every page."
+    },
+    "trust": "Trusted by our clients · Licensed · No-pressure guidance",
     "searchSrLabel": "Ask a Medicare question",
     "searchPlaceholder": "Ask a Medicare question — e.g. “Can I keep my doctor?”",
     "examples": [

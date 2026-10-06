@@ -148,7 +148,7 @@ p { margin: 0 0 1em; }
 }
 /* Header spans wider than the 1200px body cap so the full nav + CTA fit on one line. */
 .site-header > .container {
-  max-width: 1560px;
+  max-width: 1880px;
 }
 .header-inner {
   display: flex;
@@ -1726,9 +1726,10 @@ section {
   }
 }
 
-/* Header collapse — below 1560px the full nav no longer fits cleanly, so the
+/* Header collapse — the full nav + CTA row (lang, search, phone, Text Us,
+   Enroll) needs ~1800px, so below 1880px the full nav no longer fits and the
    whole nav folds into the hamburger while the search + phone stay in the bar. */
-@media (max-width: 1560px) {
+@media (max-width: 1879px) {
   .menu-toggle { display: block; }
   /* Full-width dropdown anchored under the header. Pinned to BOTH edges (left:0;
      right:0) so it always spans the header width and can't slide off-screen — the
@@ -2670,4 +2671,375 @@ section {
 @media (max-width: 768px) {
   .search-examples,
   .hero-tools { display: none; }
+}
+
+/* ---------- HOME HERO — SPLIT LAYOUT (portrait + content over the Teton photo) ----------
+   Scoped to .hero--split and placed last so it wins over the generic hero rules
+   above (including the white-text/reduced-motion block and the mobile overrides).
+   A dark left-to-right scrim sits behind the content column so every line of
+   small supporting text stays readable over the busy photo, motion or not. */
+.hero--split { padding: 36px 0 40px; }
+.hero--split::before,
+.hero--split::after { display: none; }
+/* Keep Bret (left third of the photo) inside the clear left column. */
+.hero--split .hero-video img {
+  object-position: 15% 20%;
+  transform: translate(-50%, -50%);
+  animation: heroDriftSplit 40s ease-in-out infinite alternate;
+}
+/* Gentler than heroPan: barely any zoom, so the photo (and Bret) isn't
+   cropped in tight on the shorter split hero. */
+@keyframes heroDriftSplit {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  100% { transform: translate(-50%, -50%) scale(1.04); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero--split .hero-video img { animation: none; }
+}
+/* Desktop: the hero is far wider than the 16:9 photo, so "cover" crops it
+   hard top and bottom. Instead show the photo uncropped at full hero height,
+   pinned left (where Bret is), and fill the leftover right edge with a
+   cover-scaled copy of the same image (cached, no extra download) that the
+   photo fades into. */
+@media (min-width: 1025px) {
+  .hero--split .hero-video::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("/images/Teton1.webp") right center / cover no-repeat;
+  }
+  .hero--split .hero-video img {
+    top: 0;
+    left: 0;
+    width: auto;
+    height: 100%;
+    min-width: 0;
+    max-width: none;
+    object-fit: fill;
+    transform: none;
+    transform-origin: left center;
+    animation: heroDriftLeft 40s ease-in-out infinite alternate;
+    -webkit-mask-image: linear-gradient(90deg, #000 70%, transparent 100%);
+    mask-image: linear-gradient(90deg, #000 70%, transparent 100%);
+  }
+  @keyframes heroDriftLeft {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.03); }
+  }
+}
+@media (min-width: 1025px) and (prefers-reduced-motion: reduce) {
+  .hero--split .hero-video img { animation: none; }
+}
+.hero--split .hero-overlay {
+  background:
+    linear-gradient(90deg, rgba(6, 18, 40, 0) 0%, rgba(6, 18, 40, 0) 28%, rgba(6, 18, 40, 0.32) 44%, rgba(6, 18, 40, 0.36) 75%, rgba(6, 18, 40, 0.2) 100%);
+}
+.hero--split > .container { max-width: 1440px; }
+.hero-layout {
+  display: grid;
+  grid-template-columns: minmax(300px, 36%) 1fr;
+  gap: 40px;
+  align-items: center;
+  min-height: 560px;
+}
+.hero-main { min-width: 0; }
+
+/* Name plate over Bret (who is part of the background photo) */
+.hero-nameplate {
+  position: absolute;
+  z-index: 3;
+  left: 28px;
+  bottom: 24px;
+  padding: 14px 22px 12px;
+  border-radius: var(--radius-md);
+  background: rgba(6, 18, 40, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.7);
+}
+.hero-nameplate-name {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  padding-bottom: 6px;
+  margin-bottom: 8px;
+  border-bottom: 3px solid #fbbf24;
+}
+.hero-nameplate span {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #e2e8f0;
+}
+
+/* Content column — left aligned, white type */
+.hero--split .hero-inner { max-width: 900px; margin: 0; text-align: left; }
+.hero--split .hero-agent { display: none; }
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 14px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.hero-eyebrow::before {
+  content: "";
+  width: 44px; height: 3px;
+  border-radius: 2px;
+  background: #fbbf24;
+  flex-shrink: 0;
+}
+.hero--split h1 {
+  color: #fff;
+  font-size: clamp(2.4rem, 4.6vw, 4rem);
+  font-weight: 800;
+  line-height: 1.05;
+  margin-bottom: 22px;
+}
+.hero-accent { color: #fbbf24; }
+
+/* Every small line over the photo: solid white + a firm dark shadow. */
+.hero--split .hero-inner h1,
+.hero--split .hero-eyebrow,
+.hero--split .hero-inner .subhead,
+.hero--split .hero-inner .ai-summary,
+.hero--split .hero-inner .ai-summary a,
+.hero--split .hero-inner .hero-phone,
+.hero--split .hero-phone-note,
+.hero--split .hero-inner .hero-trust,
+.hero--split .hero-feature-text,
+.hero--split .hero-tools .hero-tools-label {
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9), 0 2px 14px rgba(0, 0, 0, 0.55);
+}
+.hero--split .hero-inner .ai-summary { font-size: 0.95rem; line-height: 1.6; max-width: 760px; margin: 0 0 12px; }
+.hero--split .hero-inner .ai-summary a { text-decoration: underline; }
+.hero--split .subhead {
+  margin: 0 0 26px;
+  max-width: 620px;
+  font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+  font-weight: 500;
+}
+
+/* Three value points */
+.hero-features {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 14px;
+  margin: 0 0 24px;
+  padding: 0;
+}
+.hero-features li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 18px;
+  border-left: 1px solid rgba(255, 255, 255, 0.35);
+}
+.hero-features li:first-child { padding-left: 0; border-left: 0; }
+.hero-feature-icon {
+  display: grid;
+  place-items: center;
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 6px 18px -6px rgba(0, 0, 0, 0.5);
+  flex-shrink: 0;
+}
+.hero-feature-icon svg { width: 26px; height: 26px; }
+.hero-features li:nth-child(1) .hero-feature-icon { color: var(--mountain-blue); }
+.hero-features li:nth-child(2) .hero-feature-icon { color: #16a34a; }
+.hero-features li:nth-child(3) .hero-feature-icon { color: #d97706; }
+.hero-feature-text { font-size: 1rem; font-weight: 600; line-height: 1.3; max-width: 11em; }
+.hero-feature-text strong { display: block; font-weight: 600; }
+
+/* CTAs */
+.hero--split .hero-buttons { justify-content: flex-start; margin-bottom: 20px; }
+.hero--split .hero-buttons .btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 20px; font-size: 1rem; }
+.hero--split .hero-buttons .btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+.hero--split .hero-buttons .btn-primary { box-shadow: 0 10px 24px -10px rgba(37, 99, 235, 0.9); border: 2px solid rgba(255, 255, 255, 0.6); }
+.hero--split .hero-buttons .btn-outline { background-color: #fff; color: var(--mountain-blue); }
+.hero--split .hero-buttons .btn-outline:hover { background-color: var(--mountain-blue); color: #fff; }
+
+/* Phone + trust */
+.hero-contact { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px; }
+.hero--split .hero-phone { margin: 0; font-size: clamp(1.6rem, 2.6vw, 2.1rem); font-weight: 800; }
+.hero--split .hero-phone svg { width: 28px; height: 28px; }
+.hero-phone-note { margin: 0; font-size: 1.02rem; font-weight: 500; }
+.hero--split .hero-trust { margin-top: 12px; font-size: 1rem; }
+.hero--split .hero-trust .stars { color: #fbbf24; text-shadow: none; }
+
+/* Search + calculators */
+.hero--split .site-search { max-width: 720px; margin: 20px 0 0; }
+.hero--split .site-search-field { border-radius: 999px; border-color: rgba(255, 255, 255, 0.9); box-shadow: 0 14px 34px -14px rgba(0, 0, 0, 0.6); }
+.hero--split .site-search-field input::placeholder { color: var(--charcoal-soft); }
+.hero--split .search-examples { justify-content: flex-start; }
+.hero--split .search-example {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: #fff;
+  color: var(--charcoal);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+.hero--split .hero-tools { justify-content: flex-start; max-width: none; margin: 16px 0 0; gap: 10px; }
+.hero--split .hero-tools-label { font-size: 0.82rem; letter-spacing: 0.1em; }
+.hero--split .hero-tools a { padding: 9px 16px; font-size: 0.92rem; box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.5); }
+
+/* Tablet & down: drop the big portrait, centre a single column, bring back the
+   small agent badge so Bret still appears above the headline. */
+@media (max-width: 1024px) {
+  .hero-layout { grid-template-columns: 1fr; }
+  .hero-layout { min-height: 0; }
+  .hero-nameplate { display: none; }
+  .hero--split .hero-overlay { background: rgba(6, 18, 40, 0.55); }
+  .hero--split .hero-inner { margin: 0 auto; text-align: center; }
+  .hero--split .hero-agent { display: inline-flex; }
+  .hero--split .hero-agent-text strong,
+  .hero--split .hero-agent-text span { color: #fff; }
+  .hero--split .hero-agent-text { text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9); }
+  .hero-eyebrow { justify-content: center; }
+  .hero--split .subhead { margin-left: auto; margin-right: auto; }
+  .hero-features,
+  .hero--split .hero-buttons,
+  .hero-contact,
+  .hero--split .search-examples,
+  .hero--split .hero-tools { justify-content: center; }
+  .hero--split .site-search { margin: 26px auto 0; }
+}
+@media (max-width: 768px) {
+  .hero--split { padding: 72px 0 56px; }
+  .hero--split .hero-agent { display: none; }
+  .hero-eyebrow { font-size: 0.7rem; letter-spacing: 0.18em; }
+  .hero-eyebrow::before { width: 24px; }
+  .hero-features { display: none; }
+  .hero--split .hero-buttons .btn:not(:first-child) { display: none; }
+  .hero-contact { flex-direction: column; }
+  .hero--split .hero-mobile-tagline { color: #fff; }
+}
+
+/* ---------- SELF-ENROLL EMPHASIS ----------
+   Header "Enroll" button (injected by script.js, site-wide) and the matching
+   self-enroll callout in the home hero. Both open the SunFire portal. */
+.header-enroll {
+  gap: 7px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.55), 0 6px 16px -6px rgba(37, 99, 235, 0.8);
+  animation: enrollPulse 2.6s ease-out infinite;
+}
+.header-enroll svg { width: 18px; height: 18px; flex-shrink: 0; }
+@keyframes enrollPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.55), 0 6px 16px -6px rgba(37, 99, 235, 0.8); }
+  70%  { box-shadow: 0 0 0 12px rgba(37, 99, 235, 0), 0 6px 16px -6px rgba(37, 99, 235, 0.8); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0), 0 6px 16px -6px rgba(37, 99, 235, 0.8); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .header-enroll { animation: none; }
+}
+
+.hero-enroll {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 720px;
+  margin: 0 0 22px;
+  padding: 14px 14px 14px 16px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.96);
+  border: 2px solid var(--mountain-blue);
+  box-shadow: 0 16px 36px -16px rgba(0, 0, 0, 0.6);
+  text-align: left;
+}
+.hero-enroll-icon {
+  display: grid;
+  place-items: center;
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  background: #dbeafe;
+  color: var(--mountain-blue);
+  flex-shrink: 0;
+}
+.hero-enroll-icon svg { width: 26px; height: 26px; }
+.hero-enroll-text { flex: 1; min-width: 0; line-height: 1.35; }
+.hero-enroll-text strong { display: block; font-size: 1.08rem; color: var(--charcoal); }
+.hero-enroll-text span { display: block; font-size: 0.95rem; color: var(--charcoal-soft); }
+.hero-enroll-text small { display: block; margin-top: 3px; font-size: 0.8rem; font-weight: 600; color: var(--mountain-blue); }
+.hero-enroll-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  padding: 14px 22px;
+  border-radius: 999px;
+  background: var(--mountain-blue);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.05rem;
+  white-space: nowrap;
+  box-shadow: 0 10px 22px -10px rgba(37, 99, 235, 0.9);
+  transition: background-color var(--transition), transform var(--transition);
+}
+.hero-enroll-btn svg { width: 20px; height: 20px; }
+.hero-enroll-btn:hover { color: #fff; background: var(--mountain-blue-dark); transform: translateY(-1px); }
+
+@media (max-width: 1024px) {
+  .hero-enroll { margin: 0 auto 22px; }
+}
+@media (max-width: 640px) {
+  .hero-enroll { flex-wrap: wrap; padding: 14px; }
+  .hero-enroll-icon { display: none; }
+  .hero-enroll-btn { width: 100%; justify-content: center; }
+}
+
+/* ---------- HOME HERO — COMPACT PASS ----------
+   Tightens the split hero's vertical rhythm so it fits comfortably above the
+   fold on a laptop: smaller headline/feature row, slimmer CTAs and enroll
+   box, phone + trust on one line, and the example-question chips dropped
+   (the search placeholder already shows an example). */
+.hero--split { padding: 26px 0 28px; }
+.hero--split .hero-layout { min-height: 0; }
+.hero-eyebrow { margin-bottom: 10px; font-size: 0.78rem; }
+.hero--split h1 { font-size: clamp(2.1rem, 3.4vw, 3.1rem); margin-bottom: 16px; }
+.hero-features { margin-bottom: 16px; }
+.hero-features li { padding: 2px 16px; gap: 10px; }
+.hero-feature-icon { width: 40px; height: 40px; }
+.hero-feature-icon svg { width: 20px; height: 20px; }
+.hero-feature-text { font-size: 0.92rem; }
+.hero--split .hero-buttons { margin-bottom: 14px; gap: 12px; }
+.hero--split .hero-buttons .btn { padding: 11px 18px; font-size: 0.95rem; }
+.hero-enroll { margin-bottom: 14px; padding: 10px 10px 10px 14px; gap: 12px; }
+.hero-enroll-icon { width: 40px; height: 40px; }
+.hero-enroll-icon svg { width: 22px; height: 22px; }
+.hero-enroll-text strong { font-size: 1rem; }
+.hero-enroll-text span { font-size: 0.88rem; }
+.hero-enroll-text small { font-size: 0.76rem; margin-top: 2px; }
+.hero-enroll-btn { padding: 12px 20px; font-size: 1rem; }
+.hero--split .hero-inner { display: flex; flex-direction: column; }
+.hero--split .hero-inner > .hero-contact { display: inline-flex; }
+.hero--split .hero-phone { font-size: clamp(1.4rem, 2vw, 1.7rem); }
+.hero--split .hero-phone svg { width: 24px; height: 24px; }
+.hero-phone-note { font-size: 0.95rem; }
+.hero--split .hero-trust { margin-top: 6px; font-size: 0.92rem; }
+.hero--split .site-search { margin-top: 14px; }
+.hero--split .site-search-field { padding: 3px 6px 3px 16px; }
+.hero--split .site-search-field input { padding: 10px 0; font-size: 1rem; }
+.hero--split .search-examples { display: none; }
+.hero--split .hero-tools { margin-top: 12px; }
+.hero--split .hero-tools a { padding: 7px 14px; font-size: 0.88rem; }
+.hero-nameplate { padding: 10px 18px 10px; bottom: 18px; left: 20px; }
+.hero-nameplate-name { font-size: 1.35rem; padding-bottom: 4px; margin-bottom: 6px; }
+.hero-nameplate span { font-size: 0.72rem; }
+@media (max-width: 1024px) {
+  .hero--split .hero-inner { align-items: center; }
 }
