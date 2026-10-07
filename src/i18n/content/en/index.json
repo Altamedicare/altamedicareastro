@@ -49,6 +49,8 @@
   "toolsSection": {
     "eyebrow": "Free Medicare tools",
     "h2": "Free Medicare Tools",
+    "h2Accent": "Medicare",
+    "popularLabel": "Most popular",
     "intro": "Interactive calculators and resources to help you make informed Medicare decisions.",
     "cards": [
       { "__href": "/medicare-eligibility-calculator.html", "__icon": "fa-calendar-check", "h3": "Medicare Eligibility Calculator", "text": "Find out when you qualify for Medicare and calculate your Initial Enrollment Period.", "linkLabel": "Learn More" },

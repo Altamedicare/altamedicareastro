@@ -84,6 +84,8 @@
   "toolsSection": {
     "eyebrow": "Herramientas gratuitas de Medicare",
     "h2": "Herramientas Gratuitas de Medicare",
+    "h2Accent": "Medicare",
+    "popularLabel": "Más popular",
     "intro": "Calculadoras y recursos interactivos que le ayudan a tomar decisiones informadas sobre Medicare.",
     "cards": [
       {

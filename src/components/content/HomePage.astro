@@ -27,7 +27,7 @@ interface HomeContent {
   };
   trustBar: string[];
   toolsSection: {
-    eyebrow: string; h2: string; intro: string;
+    eyebrow: string; h2: string; h2Accent: string; popularLabel: string; intro: string;
     cards: { __href: string; __icon: string; h3: string; text: string; linkLabel: string }[];
     allToolsLabel: string;
   };
@@ -87,6 +87,11 @@ const t0 = c.videos.topics[0];
 const accentAt = c.hero.h1Accent ? c.hero.h1.lastIndexOf(c.hero.h1Accent) : -1;
 const h1Lead = accentAt > -1 ? c.hero.h1.slice(0, accentAt) : c.hero.h1;
 const h1Tail = accentAt > -1 ? c.hero.h1.slice(accentAt) : '';
+// Same accent treatment for the tools heading ("Free <Medicare> Tools").
+const toolsAt = c.toolsSection.h2Accent ? c.toolsSection.h2.lastIndexOf(c.toolsSection.h2Accent) : -1;
+const toolsH2 = toolsAt > -1
+  ? [c.toolsSection.h2.slice(0, toolsAt), c.toolsSection.h2Accent, c.toolsSection.h2.slice(toolsAt + c.toolsSection.h2Accent.length)]
+  : [c.toolsSection.h2, '', ''];
 const featureIcons = [
   '<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>',
   '<path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>',
@@ -280,31 +285,36 @@ const webSite = {
 </section>
 
 <!-- ================= FREE MEDICARE TOOLS ================= -->
-<section class="section-tinted" id="tools">
+<section class="tools-showcase" id="tools">
   <div class="container">
     <div class="section-header">
       <span class="eyebrow">{c.toolsSection.eyebrow}</span>
-      <h2>{c.toolsSection.h2}</h2>
+      <h2>{toolsH2[0]}{toolsH2[1] && <span class="tools-accent">{toolsH2[1]}</span>}{toolsH2[2]}</h2>
       <p>{c.toolsSection.intro}</p>
     </div>
-    <div class="card-grid">
-      {c.toolsSection.cards.map((card) => (
-        <a href={href(card.__href)} class="card" style="text-decoration:none;">
-          <div class="card-icon"><i class={`fa-solid ${card.__icon}`} style="font-size:1.6rem"></i></div>
+    <div class="tools-grid">
+      {c.toolsSection.cards.map((card, i) => (
+        <a href={href(card.__href)} class={`tools-card${i === 0 ? ' tools-card--featured' : ''}`}>
+          {i === 0 && <span class="tools-badge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg>{c.toolsSection.popularLabel}</span>}
+          <span class="tools-icon" aria-hidden="true"><i class={`fa-solid ${card.__icon}`}></i></span>
           <h3>{card.h3}</h3>
           <p>{card.text}</p>
-          <span class="card-link">{card.linkLabel}</span>
+          <span class="tools-link">{card.linkLabel}<span class="tools-link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
         </a>
       ))}
     </div>
-    <div style="text-align:center; margin-top:32px;">
-      <a href={href('/tools')} class="btn btn-outline">{c.toolsSection.allToolsLabel}</a>
+    <div class="tools-all">
+      <a href={href('/tools')} class="tools-all-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+        {c.toolsSection.allToolsLabel}
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
     </div>
   </div>
 </section>
 
 <!-- ================= SECTION 3: SIMPLE MEDICARE EXPLANATION ================= -->
-<section class="section-white">
+<section class="section-white home-basics">
   <div class="container">
     <div class="section-header">
       <span class="eyebrow">{c.explain.eyebrow}</span>
@@ -353,7 +363,7 @@ const webSite = {
 </section>
 
 <!-- ================= EDUCATIONAL VIDEO CENTER ================= -->
-<section class="section-tinted" id="videos">
+<section class="section-tinted home-videos" id="videos">
   <div class="container">
     <div class="section-header">
       <span class="eyebrow">{c.videos.eyebrow}</span>
@@ -397,13 +407,13 @@ const webSite = {
 </section>
 
 <!-- ================= SECTION 4: WHY ALTAMEDICARE ================= -->
-<section class="section-white">
+<section class="section-white home-why">
   <div class="container">
     <div class="why-us">
       <div>
-        <span class="eyebrow" style="display:inline-block; font-size:0.85rem; font-weight:600; text-transform:uppercase; letter-spacing:0.12em; color:var(--terracotta); margin-bottom:12px;">{c.why.eyebrow}</span>
+        <span class="eyebrow why-eyebrow">{c.why.eyebrow}</span>
         <h2>{c.why.h2}</h2>
-        <p style="font-size:1.1rem; color:var(--charcoal-soft); margin-bottom:24px;">
+        <p class="why-intro">
           {c.why.intro}
         </p>
         <ul class="why-us-list">
@@ -411,14 +421,14 @@ const webSite = {
             <li><span class="check">✓</span>{' '}{item}</li>
           ))}
         </ul>
-        <p style="margin:18px 0 0;" set:html={c.why.utahLinkHtml}></p>
+        <p class="why-more" set:html={c.why.utahLinkHtml}></p>
       </div>
 
       <div class="bret-card">
         <img src={asset('images/bret-180.webp')} srcset={`${asset('images/bret-180.webp')} 1x, ${asset('images/bret-360.webp')} 2x, ${asset('images/bret-540.webp')} 3x`} alt={c.why.card.photoAlt} class="bret-photo" width="180" height="180" loading="lazy" onerror="this.style.display='none'" />
         <h3>{c.why.card.name}</h3>
         <p class="role">{c.why.card.role}</p>
-        <p style="color:var(--charcoal-soft);">{c.why.card.quote}</p>
+        <p class="bret-quote">{c.why.card.quote}</p>
         <div class="bret-actions">
           <a href="tel:4352925548" class="btn btn-secondary">{c.why.card.callLabel}</a>
           <a href="sms:14352925548?body=Hi%20Bret%2C%20I%20have%20a%20question%20about%20Medicare." class="btn btn-primary">{c.why.card.textLabel}</a>
@@ -431,7 +441,7 @@ const webSite = {
 </section>
 
 <!-- ================= LATEST ARTICLES CAROUSEL ================= -->
-<section class="section-tinted">
+<section class="section-tinted home-articles">
   <div class="container">
     <div class="carousel-head">
       <div class="section-header" style="text-align:left; margin:0; max-width:640px;">
@@ -462,7 +472,7 @@ const webSite = {
 </section>
 
 <!-- ================= MINI BANNER: TURNING 65 ================= -->
-<section class="mini-banner">
+<section class="mini-banner home-ready">
   <div class="container">
     <div>
       <h2>{c.miniBanner.h2}</h2>
@@ -476,7 +486,7 @@ const webSite = {
 </section>
 
 <!-- ================= SECTION 6: PRESCRIPTION SAVINGS TOOL ================= -->
-<section class="prescription-section">
+<section class="prescription-section home-rx">
   <div class="container">
     <div class="section-header">
       <span class="eyebrow">{c.prescription.eyebrow}</span>
@@ -515,7 +525,7 @@ const webSite = {
 </section>
 
 <!-- ================= SECTION 7: TESTIMONIALS ================= -->
-<section class="section-white">
+<section class="section-white home-reviews">
   <div class="container">
     <div class="section-header">
       <span class="eyebrow">{c.reviews.eyebrow}</span>
@@ -528,7 +538,7 @@ const webSite = {
           <figure class={i === 0 ? 'review-slide active' : 'review-slide'}>
             <div class="review-stars" aria-label={c.reviews.starsAria}>★★★★★</div>
             <blockquote>{s.quote}</blockquote>
-            <figcaption class="review-author">{s.author}</figcaption>
+            <figcaption class="review-author"><span class="review-avatar" aria-hidden="true">{s.author.replace(/^[^\p{L}]+/u, '').charAt(0)}</span>{s.author}</figcaption>
           </figure>
         ))}
       </div>
@@ -542,7 +552,7 @@ const webSite = {
 </section>
 
 <!-- ================= SECTION 8: FAQ ================= -->
-<section class="section-tinted">
+<section class="section-tinted home-faq">
   <div class="container">
     <div class="section-header">
       <span class="eyebrow">{c.faq.eyebrow}</span>
@@ -574,7 +584,7 @@ const webSite = {
 </section>
 
 <!-- ================= SECTION 9: FINAL CTA ================= -->
-<section class="final-cta">
+<section class="final-cta home-cta">
   <div class="container">
     <h2>{c.cta.h2}</h2>
     <p>{c.cta.text}</p>
