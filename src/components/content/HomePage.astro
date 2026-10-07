@@ -136,9 +136,19 @@ const webSite = {
   <div class="hero-video" aria-hidden="true">
     <!-- LCP element: full-bleed hero background. fetchpriority pulls it ahead of
          other subresources; it must stay eager. -->
-    <img src="/images/Teton1.webp" alt="" fetchpriority="high" decoding="async" />
+    <!-- Phones get the plain landscape (no Bret) — he'd sit behind the text
+         there — with a small round photo of him top-right instead. -->
+    <picture>
+      <source media="(max-width: 768px)" srcset="/images/teton-mobile.webp" />
+      <img src="/images/Teton1.webp" alt="" fetchpriority="high" decoding="async" />
+    </picture>
   </div>
   <div class="hero-overlay" aria-hidden="true"></div>
+  <!-- Phone-only: small photo of Bret, top-right. -->
+  <div class="hero-mobile-bret">
+    <img src={asset('images/bret-112.webp')} srcset={`${asset('images/bret-112.webp')} 1x, ${asset('images/bret-168.webp')} 2x`} alt={c.why.card.photoAlt} width="56" height="56" />
+    <span>{c.why.card.name}</span>
+  </div>
   <!-- Name plate pinned to the bottom-left corner, over Bret in the photo. -->
   <div class="hero-nameplate">
     <strong class="hero-nameplate-name">{c.why.card.name}</strong>
