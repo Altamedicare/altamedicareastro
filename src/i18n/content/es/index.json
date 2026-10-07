@@ -31,9 +31,7 @@
     "compareLabel": "Comparar planes en línea",
     "selfEnroll": {
       "title": "¿Prefiere hacerlo usted mismo?",
-      "text": "Compare planes lado a lado e inscríbase en línea por su cuenta, en cualquier momento y a su propio ritmo.",
-      "button": "Inscribirse en línea",
-      "note": "Es el mismo botón azul de inscripción (Enroll) en la parte superior de cada página."
+      "button": "Inscribirse en línea"
     },
     "trust": "La confianza de nuestros clientes · Con licencia · Orientación sin presión",
     "searchSrLabel": "Haga una pregunta sobre Medicare",

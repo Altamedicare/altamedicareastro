@@ -19,7 +19,7 @@ interface HomeContent {
     features: { strong: string; span: string }[];
     subhead: string; mobileTagline: string; scheduleLabel: string; drugLabel: string;
     compareLabel: string; trust: string;
-    selfEnroll: { title: string; text: string; button: string; note: string }; searchSrLabel: string;
+    selfEnroll: { title: string; button: string }; searchSrLabel: string;
     searchPlaceholder: string;
     examples: { __q: string; label: string }[];
     toolsLabel: string;
@@ -189,8 +189,6 @@ const webSite = {
             </span>
             <div class="hero-enroll-text">
               <strong>{c.hero.selfEnroll.title}</strong>
-              <span>{c.hero.selfEnroll.text}</span>
-              <small>{c.hero.selfEnroll.note}</small>
             </div>
             <a href={COMPARE_PLANS_URL} target="_blank" rel="noopener" class="hero-enroll-btn">
               {c.hero.selfEnroll.button}

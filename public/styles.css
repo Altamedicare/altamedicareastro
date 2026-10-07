@@ -2681,32 +2681,19 @@ section {
 .hero--split { padding: 36px 0 40px; }
 .hero--split::before,
 .hero--split::after { display: none; }
-/* Keep Bret (left third of the photo) inside the clear left column. */
+/* Keep Bret (left third of the photo) in view. Static — no pan/zoom — so the
+   photo renders crisp instead of being continuously rescaled. */
 .hero--split .hero-video img {
   object-position: 15% 20%;
   transform: translate(-50%, -50%);
-  animation: heroDriftSplit 40s ease-in-out infinite alternate;
+  animation: none;
 }
-/* Gentler than heroPan: barely any zoom, so the photo (and Bret) isn't
-   cropped in tight on the shorter split hero. */
-@keyframes heroDriftSplit {
-  0% { transform: translate(-50%, -50%) scale(1); }
-  100% { transform: translate(-50%, -50%) scale(1.04); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero--split .hero-video img { animation: none; }
-}
-/* Desktop: the hero is far wider than the 16:9 photo, so "cover" crops it
-   hard top and bottom. Instead show the photo uncropped at full hero height,
-   pinned left (where Bret is), and fill the leftover right edge with a
-   cover-scaled copy of the same image (cached, no extra download) that the
-   photo fades into. */
+/* Desktop: the whole photo, uncropped, at the hero's height and pinned left,
+   so Bret and the peaks stay a modest size at any screen width. It blends
+   into a solid brand-blue panel on the right (no stretched copies or blurs). */
 @media (min-width: 1025px) {
-  .hero--split .hero-video::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: url("/images/Teton1.webp") right center / cover no-repeat;
+  .hero--split .hero-video {
+    background: linear-gradient(160deg, #1e4fa8 0%, #143a80 55%, #0f2f66 100%);
   }
   .hero--split .hero-video img {
     top: 0;
@@ -2714,26 +2701,16 @@ section {
     width: auto;
     height: 100%;
     min-width: 0;
+    min-height: 0;
     max-width: none;
     object-fit: fill;
     transform: none;
-    transform-origin: left center;
-    animation: heroDriftLeft 40s ease-in-out infinite alternate;
-    -webkit-mask-image: linear-gradient(90deg, #000 70%, transparent 100%);
-    mask-image: linear-gradient(90deg, #000 70%, transparent 100%);
-  }
-  @keyframes heroDriftLeft {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.03); }
+    -webkit-mask-image: linear-gradient(90deg, #000 72%, transparent 100%);
+    mask-image: linear-gradient(90deg, #000 72%, transparent 100%);
   }
 }
-@media (min-width: 1025px) and (prefers-reduced-motion: reduce) {
-  .hero--split .hero-video img { animation: none; }
-}
-.hero--split .hero-overlay {
-  background:
-    linear-gradient(90deg, rgba(6, 18, 40, 0) 0%, rgba(6, 18, 40, 0) 28%, rgba(6, 18, 40, 0.32) 44%, rgba(6, 18, 40, 0.36) 75%, rgba(6, 18, 40, 0.2) 100%);
-}
+/* No colour wash over the photo; text legibility comes from tight shadows. */
+.hero--split .hero-overlay { background: transparent; }
 .hero--split > .container { max-width: 1440px; }
 .hero-layout {
   display: grid;
@@ -2819,7 +2796,7 @@ section {
 .hero--split .hero-feature-text,
 .hero--split .hero-tools .hero-tools-label {
   color: #fff;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9), 0 2px 14px rgba(0, 0, 0, 0.55);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.85), 0 0 6px rgba(0, 0, 0, 0.45);
 }
 .hero--split .hero-inner .ai-summary { font-size: 0.95rem; line-height: 1.6; max-width: 760px; margin: 0 0 12px; }
 .hero--split .hero-inner .ai-summary a { text-decoration: underline; }
@@ -2901,7 +2878,7 @@ section {
   .hero-layout { grid-template-columns: 1fr; }
   .hero-layout { min-height: 0; }
   .hero-nameplate { display: none; }
-  .hero--split .hero-overlay { background: rgba(6, 18, 40, 0.55); }
+  .hero--split .hero-overlay { background: rgba(6, 18, 40, 0.35); }
   .hero--split .hero-inner { margin: 0 auto; text-align: center; }
   .hero--split .hero-agent { display: inline-flex; }
   .hero--split .hero-agent-text strong,
@@ -3042,4 +3019,79 @@ section {
 .hero-nameplate span { font-size: 0.72rem; }
 @media (max-width: 1024px) {
   .hero--split .hero-inner { align-items: center; }
+}
+
+/* ---------- HOME HERO — WIDE CONTENT COLUMN (desktop) ----------
+   Photo, Bret's size and hero height are unchanged. The content column now
+   spans the blue panel out to the right edge instead of stopping at a narrow
+   max-width; every row shares the same left/right edges. */
+@media (min-width: 1025px) {
+  .hero--split > .container { max-width: none; padding-left: 32px; padding-right: 56px; }
+  .hero-layout { grid-template-columns: minmax(300px, 36%) 1fr; gap: 40px; }
+  .hero-main { max-width: 1180px; }
+  .hero--split .hero-inner { max-width: none; width: 100%; }
+  .hero-features { flex-wrap: nowrap; }
+  .hero-features li { flex: 1 1 0; min-width: 0; }
+  .hero-feature-text { max-width: none; }
+  .hero--split .hero-buttons { flex-wrap: nowrap; }
+  .hero--split .hero-buttons .btn { flex: 1 1 0; justify-content: center; }
+  .hero-enroll { max-width: none; width: 100%; }
+  .hero--split .site-search { max-width: none; width: 100%; }
+  .hero--split .hero-tools { flex-wrap: nowrap; }
+  .hero--split .hero-tools a { flex: 1 1 0; justify-content: center; }
+}
+
+/* ---------- "ENROLL ONLINE" ATTENTION EFFECT ----------
+   A light shine sweeps across the button every few seconds, a soft ring
+   pulses out from it, and the arrow nudges forward. On hover the button
+   lifts and the arrow slides further. All motion is dropped for
+   prefers-reduced-motion. */
+.hero-enroll-btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  animation: enrollRing 2.8s ease-out infinite;
+  transition: background-color var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+.hero-enroll-btn::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0; bottom: 0;
+  left: -60%;
+  width: 45%;
+  background: linear-gradient(105deg, transparent 0%, rgba(255, 255, 255, 0.45) 50%, transparent 100%);
+  transform: skewX(-20deg);
+  animation: enrollShine 3.6s ease-in-out infinite;
+  pointer-events: none;
+}
+.hero-enroll-btn svg { transition: transform var(--transition); animation: enrollNudge 3.6s ease-in-out infinite; }
+.hero-enroll-btn:hover,
+.hero-enroll-btn:focus-visible {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 14px 28px -10px rgba(37, 99, 235, 0.95);
+}
+.hero-enroll-btn:hover svg,
+.hero-enroll-btn:focus-visible svg { animation: none; transform: translateX(5px); }
+.hero-enroll-btn:active { transform: translateY(0) scale(0.98); }
+@keyframes enrollShine {
+  0%, 55% { left: -60%; }
+  85%, 100% { left: 130%; }
+}
+@keyframes enrollRing {
+  0%   { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.55), 0 10px 22px -10px rgba(37, 99, 235, 0.9); }
+  70%  { box-shadow: 0 0 0 12px rgba(37, 99, 235, 0), 0 10px 22px -10px rgba(37, 99, 235, 0.9); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0), 0 10px 22px -10px rgba(37, 99, 235, 0.9); }
+}
+@keyframes enrollNudge {
+  0%, 60%, 100% { transform: translateX(0); }
+  70% { transform: translateX(4px); }
+  80% { transform: translateX(0); }
+  88% { transform: translateX(3px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-enroll-btn,
+  .hero-enroll-btn::after,
+  .hero-enroll-btn svg { animation: none; }
+  .hero-enroll-btn::after { display: none; }
 }

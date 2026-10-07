@@ -21,9 +21,7 @@
     "compareLabel": "Compare Plans Online",
     "selfEnroll": {
       "title": "Prefer to do it yourself?",
-      "text": "Compare plans side by side and enroll online on your own — anytime, at your own pace.",
-      "button": "Enroll Online",
-      "note": "It’s the same blue Enroll button at the top of every page."
+      "button": "Enroll Online"
     },
     "trust": "Trusted by our clients · Licensed · No-pressure guidance",
     "searchSrLabel": "Ask a Medicare question",
