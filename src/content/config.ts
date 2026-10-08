@@ -25,6 +25,10 @@ const blog = defineCollection({
     image: z.string().optional(),
     draft: z.boolean().default(false),
     featured: z.boolean().default(false),
+    // Opt-in visual layout. 'feature' renders the body's ## sections as cards,
+    // steps and panels (src/components/blog/FeatureArticle.astro); the Markdown
+    // stays the single source of the text. Omitted -> the standard article.
+    presentation: z.enum(['feature']).optional(),
     // Tool registry keys (see src/consts.ts) → rendered as the Related Tools band.
     relatedTools: z.array(z.string()).default([]),
     // Optional Q&A → FAQPage JSON-LD + on-page FAQ block.

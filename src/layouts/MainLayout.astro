@@ -178,7 +178,7 @@ const webPage =
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="stylesheet" href="/styles.css?v=33" />
+  <link rel="stylesheet" href="/styles.css?v=34" />
   <link rel="preload" href="/fonts/fa-solid-subset.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/fa-subset.css?v=1" />
 
@@ -225,7 +225,7 @@ const webPage =
           <div class="dropdown">
             <a href={href('/prescription-drug-assistance')}>{t('nav.rxFinder', lang)}</a>
             <a href={href('/prescription-drug-assistance#all-medications')}>{t('nav.rxAll', lang)}</a>
-            <a href={href('drug-savings.html')}>{t('nav.rxReview', lang)}</a>
+            <a href={href('/drug-savings#free-review')}>{t('nav.rxReview', lang)}</a>
             <a href={href('/blog/extra-help-explained')}>{t('nav.rxExtraHelp', lang)}</a>
           </div>
         </li>
@@ -486,6 +486,18 @@ const webPage =
   if (!ticker) return;
   var hero = document.querySelector('.hero, .page-header, .post-header');
   if (hero && hero.parentNode) hero.insertAdjacentElement('afterend', ticker);
+})();
+// Deep links (/drug-savings#free-review): the browser jumps to the anchor while
+// parsing, but the ticker move above and late-loading hero images then shift
+// the layout, leaving the visitor short of the target. Re-align once the page
+// has settled. Only runs when a #fragment matches an element on this page.
+(function(){
+  var id = decodeURIComponent((location.hash || '').slice(1));
+  if (!id) return;
+  function align(){ var el = document.getElementById(id); if (el) el.scrollIntoView({ block: 'start' }); }
+  align();
+  if (document.readyState === 'complete') return;
+  window.addEventListener('load', function(){ requestAnimationFrame(align); }, { once: true });
 })();
 </script>
 <script is:inline src="/script.js"></script>

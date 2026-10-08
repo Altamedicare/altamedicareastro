@@ -1,6 +1,7 @@
 ---
 import MainLayout from './MainLayout.astro';
 import AiSummary from '../components/AiSummary.astro';
+import FeatureArticle from '../components/blog/FeatureArticle.astro';
 import { TOOLS, CATEGORIES, COMPARE_PLANS_URL, CONTACT_URL, PHONE_TEL, PHONE_DISPLAY } from '../consts';
 
 interface RelatedPost { slug: string; title: string; description: string; category: string; }
@@ -22,12 +23,35 @@ interface Props {
   related: RelatedPost[];
   prev?: NavPost;
   next?: NavPost;
+  /** Opt-in visual layout (frontmatter `presentation`). */
+  presentation?: 'feature';
+  /** Raw Markdown body — read only by the feature layout. */
+  body?: string;
 }
 
 const {
   slug, title, description, category, publishDate, updatedDate,
   author, tags, image, faqs, relatedTools, readingTime, related, prev, next,
+  presentation, body = '',
 } = Astro.props;
+const feature = presentation === 'feature';
+// Feature hero: gold accent on the title's last word, and up to three
+// indicators taken from the bold terms of the body's first bulleted list.
+const tw = title.split(' ');
+const titleLead = tw.length > 1 ? tw.slice(0, -1).join(' ') + ' ' : '';
+const titleTail = tw.length > 1 ? tw[tw.length - 1] : title;
+const firstList = (body.match(/(?:^[-*] .*\n?)+/m) || [''])[0];
+const heroTerms = [...firstList.matchAll(/\*\*(.+?)\*\*/g)]
+  .map((m) => m[1].charAt(0).toUpperCase() + m[1].slice(1)).slice(0, 3);
+const hsvg = (d: string) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
+const heroIcons = [
+  hsvg('<ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/>'),
+  hsvg('<path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/>'),
+  hsvg('<path d="M3 9l1.5-5h15L21 9M3 9h18v11a1 1 0 01-1 1H4a1 1 0 01-1-1zM3 9a3 3 0 006 0 3 3 0 006 0 3 3 0 006 0"/><path d="M10 21v-6h4v6"/>'),
+];
+const arrowSvg = hsvg('<path d="M5 12h14M13 6l6 6-6 6"/>');
+const phoneSvg = hsvg('<path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0122 16.92z"/>');
+
 
 const canonical = `/blog/${slug}`;
 const cat = CATEGORIES[category];
@@ -110,7 +134,35 @@ const faqLd = faqs.length
     {faqLd && <script type="application/ld+json" is:inline set:html={JSON.stringify(faqLd)} />}
   </Fragment>
 
-  <article class="blog-post">
+  <article class={feature ? 'blog-post blog-post--feature' : 'blog-post'}>
+    {feature && (
+    <header class="post-header post-header--feature">
+      <div class="container">
+        <div class="fx-hero-copy">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a> &nbsp;&rsaquo;&nbsp;
+            <a href="/blog">Blog</a> &nbsp;&rsaquo;&nbsp;
+            <a href={`/blog/category/${category}`}>{cat.title}</a>
+          </nav>
+          <span class="post-cat-tag"><i class={`fa-solid ${cat.icon}`}></i> {cat.title}</span>
+          <h1>{titleLead}<span class="fx-accent">{titleTail}</span></h1>
+          <AiSummary />
+          <p class="lede">{description}</p>
+          <div class="post-meta">
+            <span><i class="fa-solid fa-user-pen"></i> {author}</span>
+            <span><i class="fa-solid fa-clock"></i> {readingTime} min read</span>
+            <span><i class="fa-solid fa-rotate"></i> Updated {fmt(lastUpdated)}</span>
+          </div>
+          {heroTerms.length > 0 && (
+            <ul class="fx-hero-terms">
+              {heroTerms.map((t, i) => <li><span set:html={heroIcons[i % heroIcons.length]} />{t}</li>)}
+            </ul>
+          )}
+        </div>
+      </div>
+    </header>
+    )}
+    {!feature && (
     <header class="post-header">
       <div class="container content-narrow">
         <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -129,10 +181,11 @@ const faqLd = faqs.length
         </div>
       </div>
     </header>
+    )}
 
     <div class="section-white">
-      <div class="container content-narrow post-body">
-        <slot />
+      <div class={feature ? 'container post-body fx-body' : 'container content-narrow post-body'}>
+        {feature ? <FeatureArticle body={body} /> : <slot />}
 
         {category === 'drug-coverage' && (
           <p class="post-disclaimer">
@@ -168,7 +221,28 @@ const faqLd = faqs.length
       </section>
     )}
 
-    {toolCards.length > 0 && (
+    {feature && toolCards.length > 0 && (
+      <section class="fx-tools">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">Free tools</span>
+            <h2>Related Calculators</h2>
+            <p>Put these numbers to work for your own situation.</p>
+          </div>
+          <div class="fx-tool-grid">
+            {toolCards.map((t) => (
+              <a href={t.href} class="fx-tool">
+                <span class="fx-tool-icon"><i class={`fa-solid ${t.icon}`} aria-hidden="true"></i></span>
+                <span class="fx-tool-text"><strong>{t.title}</strong><span>{t.desc}</span></span>
+                <span class="fx-tool-btn">Open tool<span set:html={arrowSvg} /></span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {!feature && toolCards.length > 0 && (
       <section class="section-white">
         <div class="container">
           <div class="section-header">
@@ -190,6 +264,24 @@ const faqLd = faqs.length
       </section>
     )}
 
+    {feature && (
+    <section class="ma-cta fx-cta">
+      <div class="container">
+        <div>
+          <span class="ma-eyebrow ma-eyebrow--light">Free consultation</span>
+          <h2>Want a real person to walk through this with you?</h2>
+          <p>Bret Swope is a licensed Utah Medicare agent. No bots, no pressure &mdash; just clear answers.</p>
+        </div>
+        <div class="ma-cta-actions">
+          <a href={CONTACT_URL} class="ma-btn-gold">Talk to Bret<span set:html={arrowSvg} /></a>
+          <a href={PHONE_TEL} class="ma-cta-phone"><span set:html={phoneSvg} />Call {PHONE_DISPLAY}</a>
+          <a href={COMPARE_PLANS_URL} class="ma-cta-compare" target="_blank" rel="noopener">Compare Plans Online<span set:html={arrowSvg} /></a>
+        </div>
+      </div>
+    </section>
+    )}
+
+    {!feature && (
     <section class="post-help section-tinted">
       <div class="container content-narrow">
         <div class="callout">
@@ -203,6 +295,7 @@ const faqLd = faqs.length
         </div>
       </div>
     </section>
+    )}
 
     {related.length > 0 && (
       <section class="section-white">
