@@ -8,7 +8,22 @@
   "breadcrumbHtml": "<a href=\"index.html\">Inicio</a> &nbsp;&rsaquo;&nbsp; Cumplir 65 años",
   "header": {
     "h1Html": "¿Va a cumplir 65 años? Esta es su guía de Medicare",
-    "ledeHtml": "Entrar a Medicare por edad puede sentirse abrumador. Aquí tiene un cronograma tranquilo y paso a paso que le ayudará a evitar multas y a tomar la decisión correcta."
+    "ledeHtml": "Entrar a Medicare por edad puede sentirse abrumador. Aquí tiene un cronograma tranquilo y paso a paso que le ayudará a evitar multas y a tomar la decisión correcta.",
+    "eyebrow": "Guía de Medicare para quienes cumplen 65",
+    "h1Accent": "guía de Medicare",
+    "features": [
+      "Conozca sus fechas de inscripción",
+      "Evite multas costosas",
+      "Compare sus opciones"
+    ],
+    "card": {
+      "title": "Orientación local sobre Medicare",
+      "items": [
+        "Consulta gratuita",
+        "Revisiones anuales gratuitas",
+        "Un cronograma tranquilo, paso a paso"
+      ]
+    }
   },
   "timeline": {
     "eyebrow": "Paso a paso",
@@ -61,7 +76,8 @@
         "h3Html": "Ya recibe Seguro Social",
         "textHtml": "Si ya cobra Seguro Social, lo inscribirán automáticamente en la Parte A y la Parte B cuando cumpla 65 años. Aun así, debe revisar sus opciones: la inscripción automática no significa que tenga el mejor plan para sus medicamentos u otros beneficios."
       }
-    ]
+    ],
+    "eyebrow": "Situaciones comunes"
   },
   "penalties": {
     "h2": "Multas que debe evitar",
@@ -74,7 +90,8 @@
         "h3Html": "Multa por inscripción tardía en la Parte D",
         "textHtml": "Si pasa más de 63 días sin <a href=\"prescription-drug-plans.html\">cobertura acreditable de medicamentos</a>, deberá pagar una multa de la Parte D: 1% de la prima base nacional por cada mes que estuvo sin ella. También es de por vida."
       }
-    ]
+    ],
+    "eyebrow": "Multas que debe evitar"
   },
   "callout": {
     "heading": "Buenas noticias: estas multas se pueden evitar por completo.",
@@ -84,6 +101,7 @@
     "h2Html": "¿Tiene preguntas? Hablemos.",
     "textHtml": "Una llamada gratuita y sin presión &mdash; respuestas claras, sin argumentos de venta.",
     "scheduleLabel": "Programar consulta",
-    "callLabel": "Llame al {phone}"
+    "callLabel": "Llame al {phone}",
+    "eyebrow": "Consulta gratuita"
   }
 }
