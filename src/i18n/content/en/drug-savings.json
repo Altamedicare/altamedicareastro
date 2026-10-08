@@ -7,7 +7,23 @@
   "breadcrumbHtml": "<a href=\"/\">Home</a> &nbsp;&rsaquo;&nbsp; Drug Savings",
   "header": {
     "h1": "Lower Your Prescription Costs",
-    "ledeHtml": "Send us your medication list and we&rsquo;ll review whether your current plan is your most affordable option. No cost. No obligation."
+    "ledeHtml": "Send us your medication list and we&rsquo;ll review whether your current plan is your most affordable option. No cost. No obligation.",
+    "eyebrow": "Medicare prescription drug plans",
+    "h1Accent": "Prescription Costs",
+    "features": [
+      {
+        "t": "Compare your drug costs",
+        "d": "Across Part D plans and pharmacies"
+      },
+      {
+        "t": "Check your pharmacy",
+        "d": "Preferred pharmacies often cost less"
+      },
+      {
+        "t": "Find Extra Help",
+        "d": "Many people qualify and don’t know it"
+      }
+    ]
   },
   "why": {
     "h2": "Why Most People Overpay for Prescriptions",
@@ -19,7 +35,8 @@
       "<strong>Whether you qualify for Extra Help</strong> &mdash; many people qualify and don&rsquo;t know it",
       "<strong>Whether the new $2,000 cap applies to you</strong> &mdash; this 2025+ change affects high-cost drug users"
     ],
-    "outroHtml": "People often switch into the same plan year after year out of habit. We&rsquo;ll actually compare your options, not just renew you into what you had."
+    "outroHtml": "People often switch into the same plan year after year out of habit. We&rsquo;ll actually compare your options, not just renew you into what you had.",
+    "eyebrow": "Understanding your options"
   },
   "review": {
     "eyebrow": "Free Service",
@@ -41,6 +58,30 @@
     "h2": "Have Questions? Let's Talk.",
     "textHtml": "One free, no-pressure call &mdash; clear answers, no sales pitch.",
     "scheduleLabel": "Schedule Consultation",
-    "callLabel": "Call {phone}"
+    "callLabel": "Call {phone}",
+    "eyebrow": "Free consultation"
+  },
+  "update": {
+    "eyebrow": "{year} Medicare update",
+    "capLabel": "Part D annual out-of-pocket cap in {year}",
+    "insulinLabel": "Insulin covered by Medicare, per month per prescription"
+  },
+  "process": {
+    "eyebrow": "Our simple process",
+    "h2": "How We Help",
+    "steps": [
+      {
+        "t": "Send your medication list",
+        "d": "Tell us what you take &mdash; by text or email."
+      },
+      {
+        "t": "We compare your options",
+        "d": "We&rsquo;ll actually compare your options, not just renew you into what you had."
+      },
+      {
+        "t": "You get a clear cost comparison",
+        "d": "We&rsquo;ll get back to you with a personalized cost comparison."
+      }
+    ]
   }
 }

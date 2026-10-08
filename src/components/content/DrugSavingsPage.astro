@@ -7,26 +7,68 @@ import AiSummary from '../AiSummary.astro';
 import { DEFAULT_LOCALE, getLangFromUrl, getLocaleMeta } from '../../i18n/locales';
 import { getPageContent, hreflangAlternates, interp, localizeHref } from '../../i18n/content';
 import { PHONE_DISPLAY } from '../../consts';
+import { CURRENT } from '../../data/figures';
 
 interface DrugSavingsContent {
   page: { title: string; description: string };
   breadcrumbHtml: string;
-  header: { h1: string; ledeHtml: string };
-  why: { h2: string; intro: string; itemsHtml: string[]; outroHtml: string };
+  header: { eyebrow: string; h1: string; h1Accent: string; ledeHtml: string; features: { t: string; d: string }[] };
+  why: { eyebrow: string; h2: string; intro: string; itemsHtml: string[]; outroHtml: string };
+  update: { eyebrow: string; capLabel: string; insulinLabel: string };
+  process: { eyebrow: string; h2: string; steps: { t: string; d: string }[] };
   review: {
     eyebrow: string; h2: string; introHtml: string;
     textAction: { strong: string; spanHtml: string; label: string };
     emailAction: { strong: string; span: string; label: string };
     noteHtml: string;
   };
-  cta: { h2: string; textHtml: string; scheduleLabel: string; callLabel: string };
+  cta: { eyebrow: string; h2: string; textHtml: string; scheduleLabel: string; callLabel: string };
 }
 
 const lang = getLangFromUrl(Astro.url);
 const c = getPageContent<DrugSavingsContent>('drug-savings', lang);
-const vars = { phone: PHONE_DISPLAY };
+const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
+// CMS figures come from figures.ts (single source of truth) — never literals.
+const vars = {
+  phone: PHONE_DISPLAY,
+  year: CURRENT.year,
+  partDAnnualCap: usd(CURRENT.partD.annualCap),
+  insulinCap: usd(CURRENT.partD.insulinCap),
+};
 const canonical = lang === DEFAULT_LOCALE ? '/drug-savings.html' : `/${lang}/drug-savings`;
 const alternates = hreflangAlternates('drug-savings');
+const href = (h: string) => localizeHref(h, lang);
+
+// ---- Presentation only (visual redesign; every sentence comes from the JSON).
+const accentAt = c.header.h1Accent ? c.header.h1.lastIndexOf(c.header.h1Accent) : -1;
+const h1Lead = accentAt > -1 ? c.header.h1.slice(0, accentAt) : c.header.h1;
+const h1Accent = accentAt > -1 ? c.header.h1Accent : '';
+// Each existing bullet is "<strong>Title</strong> — detail"; render as a card.
+const factorCards = c.why.itemsHtml.map((html) => {
+  const m = html.match(/^<strong>(.*?)<\/strong>\s*(?:&mdash;|\u2014)?\s*(.*)$/s);
+  return m ? { title: m[1], detailHtml: m[2] } : { title: '', detailHtml: html };
+});
+
+const svg = (d: string) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
+const icons = {
+  pill: svg('<path d="M10.5 20.5l10-10a4.95 4.95 0 10-7-7l-10 10a4.95 4.95 0 107 7z"/><path d="M8.5 8.5l7 7"/>'),
+  store: svg('<path d="M3 9l1.5-5h15L21 9M3 9h18v11a1 1 0 01-1 1H4a1 1 0 01-1-1zM3 9a3 3 0 006 0 3 3 0 006 0 3 3 0 006 0"/><path d="M10 21v-6h4v6"/>'),
+  heart: svg('<path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 00-7.8 7.8L12 21.2l8.8-8.8a5.5 5.5 0 000-7.8z"/>'),
+  doc: svg('<path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/>'),
+  mail: svg('<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/>'),
+  people: svg('<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>'),
+  shield: svg('<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M15 9.5a3 3 0 00-3-1.5c-1.4 0-2.5.8-2.5 1.9 0 2.6 5 1.4 5 4 0 1.1-1.1 1.9-2.5 1.9a2.8 2.8 0 01-2.5-1.4M12 6.5v1.5M12 16v1.5"/>'),
+  coins: svg('<ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/>'),
+  syringe: svg('<path d="M18 2l4 4M17 7l3-3M19 9L8.7 19.3a2.4 2.4 0 01-3.4 0l-.6-.6a2.4 2.4 0 010-3.4L15 5M9 11l4 4M5 19l-3 3M14 4l6 6"/>'),
+  chat: svg('<path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>'),
+  search: svg('<circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>'),
+  check: svg('<path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2h9"/>'),
+  phone: svg('<path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0122 16.92z"/>'),
+  arrow: svg('<path d="M5 12h14M13 6l6 6-6 6"/>'),
+};
+const heroIcons = [icons.pill, icons.store, icons.heart];
+const factorIcons = [icons.doc, icons.store, icons.mail, icons.people, icons.shield];
+const stepIcons = [icons.chat, icons.search, icons.check];
 ---
 
 <MainLayout
@@ -39,27 +81,73 @@ const alternates = hreflangAlternates('drug-savings');
     {lang !== DEFAULT_LOCALE && <meta property="og:locale" content={getLocaleMeta(lang).ogLocale} />}
   </Fragment>
 
-<section class="page-header">
+<section class="page-header page-header--ds">
   <div class="container">
-    <div class="breadcrumb" set:html={c.breadcrumbHtml}></div>
-    <h1>{c.header.h1}</h1>
-    <AiSummary />
-    <p class="lede" set:html={c.header.ledeHtml}></p>
+    <!-- Soft white "cloud" behind the copy keeps it readable over the clear photo. -->
+    <div class="ma-hero-copy">
+      <div class="breadcrumb" set:html={c.breadcrumbHtml}></div>
+      <span class="ds-eyebrow">{c.header.eyebrow}</span>
+      <h1>{h1Lead}{h1Accent && <span class="ds-accent">{h1Accent}</span>}</h1>
+      <AiSummary />
+      <p class="lede" set:html={c.header.ledeHtml}></p>
+      <ul class="ds-hero-features">
+        {c.header.features.map((f, i) => (
+          <li>
+            <span class="ds-hero-icon" set:html={heroIcons[i % heroIcons.length]} />
+            <span><strong>{f.t}</strong><span>{f.d}</span></span>
+          </li>
+        ))}
+      </ul>
+    </div>
   </div>
 </section>
 
-<section class="section-white">
-  <div class="container content-narrow">
-    <h2>{c.why.h2}</h2>
-    <p>{c.why.intro}</p>
-    <ul>
-      {c.why.itemsHtml.map((item) => <li set:html={item} />)}
+<!-- Why costs vary: framed art + copy + {year} dashboard, then the five factors -->
+<section class="ds-why">
+  <div class="container">
+    <div class="ds-why-top">
+      <div class="ma-moop-card photo-frame-3d ds-art" aria-hidden="true">
+        <div class="ds-art-card">
+          <span class="ds-art-icon" set:html={icons.pill} />
+          <span class="ds-art-icon ds-art-icon--gold" set:html={icons.coins} />
+          <span class="ds-art-icon ds-art-icon--sky" set:html={icons.store} />
+        </div>
+      </div>
+      <div>
+        <span class="ma-eyebrow">{c.why.eyebrow}</span>
+        <h2>{c.why.h2}</h2>
+        <p class="ma-lead">{c.why.intro}</p>
+        <div class="ds-dashboard" aria-label={interp(c.update.eyebrow, vars)}>
+          <span class="ds-dash-eyebrow">{interp(c.update.eyebrow, vars)}</span>
+          <div class="ds-dash-grid">
+            <div class="ds-dash-tile">
+              <span class="ds-dash-icon" set:html={icons.coins} />
+              <div><strong>{vars.partDAnnualCap}</strong><span>{interp(c.update.capLabel, vars)}</span></div>
+            </div>
+            <div class="ds-dash-tile ds-dash-tile--green">
+              <span class="ds-dash-icon" set:html={icons.syringe} />
+              <div><strong>{vars.insulinCap}</strong><span>{interp(c.update.insulinLabel, vars)}</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <ul class="ds-factors">
+      {factorCards.map((f, i) => (
+        <li class="ds-factor">
+          <span class="ds-factor-icon" set:html={factorIcons[i % factorIcons.length]} />
+          <h3 set:html={f.title} />
+          <p set:html={f.detailHtml} />
+        </li>
+      ))}
     </ul>
-    <p set:html={c.why.outroHtml}></p>
+    <p class="ds-outro" set:html={c.why.outroHtml}></p>
   </div>
 </section>
 
-<section class="prescription-section">
+<!-- Free prescription review: two-choice action panel (existing sms:/mailto: links) -->
+<section class="prescription-section ds-review">
   <div class="container">
     <div class="section-header">
       <span class="eyebrow">{c.review.eyebrow}</span>
@@ -90,18 +178,42 @@ const alternates = hreflangAlternates('drug-savings');
         <a href="mailto:bret@altamedicare.com?subject=Free%20Prescription%20Review&body=Name%3A%0D%0APhone%3A%0D%0AZIP%3A%0D%0APreferred%20Pharmacy%3A%0D%0A%0D%0AMedications%20(one%20per%20line%2C%20with%20dose%20if%20known)%3A%0D%0A" class="btn btn-outline btn-lg">{c.review.emailAction.label}</a>
       </div>
 
-      <p style="font-size:0.9rem; color:var(--text-muted); text-align:center; margin:18px 0 0;" set:html={c.review.noteHtml}></p>
+      <p class="ds-review-note" set:html={c.review.noteHtml}></p>
     </div>
   </div>
 </section>
 
-<section class="final-cta">
+<!-- How we help: three steps built from sentences already on this page -->
+<section class="ds-process">
   <div class="container">
-    <h2>{c.cta.h2}</h2>
-    <p set:html={c.cta.textHtml}></p>
-    <div class="cta-buttons">
-      <a href={localizeHref('/contact', lang)} class="btn btn-primary btn-lg">{c.cta.scheduleLabel}</a>
-      <a href="tel:4352925548" class="btn btn-outline btn-lg">{interp(c.cta.callLabel, vars)}</a>
+    <div class="section-header">
+      <span class="eyebrow">{c.process.eyebrow}</span>
+      <h2>{c.process.h2}</h2>
+    </div>
+    <ol class="ds-steps">
+      {c.process.steps.map((st, i) => (
+        <li class="ds-step">
+          <span class="ds-step-num">{i + 1}</span>
+          <span class="ds-step-icon" set:html={stepIcons[i % stepIcons.length]} />
+          <h3>{st.t}</h3>
+          <p set:html={st.d} />
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="ma-cta">
+  <div class="container">
+    <div>
+      <span class="ma-eyebrow ma-eyebrow--light">{c.cta.eyebrow}</span>
+      <h2>{c.cta.h2}</h2>
+      <p set:html={c.cta.textHtml}></p>
+    </div>
+    <div class="ma-cta-actions">
+      <a href={href('/contact')} class="ma-btn-gold">{c.cta.scheduleLabel}<span set:html={icons.arrow} /></a>
+      <a href="tel:4352925548" class="ma-cta-phone"><span set:html={icons.phone} />{interp(c.cta.callLabel, vars)}</a>
     </div>
   </div>
 </section>

@@ -7,7 +7,23 @@
   "breadcrumbHtml": "<a href=\"/\">Inicio</a> &nbsp;&rsaquo;&nbsp; Ahorro en medicamentos",
   "header": {
     "h1": "Reduzca el Costo de sus Medicamentos Recetados",
-    "ledeHtml": "Envíenos su lista de medicamentos y revisaremos si su plan actual es la opción más económica para usted. Sin costo. Sin compromiso."
+    "ledeHtml": "Envíenos su lista de medicamentos y revisaremos si su plan actual es la opción más económica para usted. Sin costo. Sin compromiso.",
+    "eyebrow": "Planes de medicamentos recetados de Medicare",
+    "h1Accent": "Medicamentos Recetados",
+    "features": [
+      {
+        "t": "Compare el costo de sus medicamentos",
+        "d": "Entre planes de la Parte D y farmacias"
+      },
+      {
+        "t": "Revise su farmacia",
+        "d": "Las farmacias preferidas suelen costar menos"
+      },
+      {
+        "t": "Encuentre Ayuda Adicional (Extra Help)",
+        "d": "Muchas personas califican y no lo saben"
+      }
+    ]
   },
   "why": {
     "h2": "Por qué la mayoría de las personas paga de más por sus medicamentos",
@@ -19,7 +35,8 @@
       "<strong>Si califica para Ayuda Adicional (Extra Help)</strong> &mdash; muchas personas califican y no lo saben",
       "<strong>Si el nuevo tope de $2,000 le aplica</strong> &mdash; este cambio de 2025 en adelante afecta a quienes usan medicamentos de alto costo"
     ],
-    "outroHtml": "Muchas personas renuevan el mismo plan año tras año por costumbre. Nosotros compararemos de verdad sus opciones, en lugar de simplemente renovarle lo que ya tenía."
+    "outroHtml": "Muchas personas renuevan el mismo plan año tras año por costumbre. Nosotros compararemos de verdad sus opciones, en lugar de simplemente renovarle lo que ya tenía.",
+    "eyebrow": "Entienda sus opciones"
   },
   "review": {
     "eyebrow": "Servicio gratuito",
@@ -41,6 +58,30 @@
     "h2": "¿Tiene preguntas? Hablemos.",
     "textHtml": "Una llamada gratuita y sin presión &mdash; respuestas claras, sin argumentos de venta.",
     "scheduleLabel": "Programar consulta",
-    "callLabel": "Llame al {phone}"
+    "callLabel": "Llame al {phone}",
+    "eyebrow": "Consulta gratuita"
+  },
+  "update": {
+    "eyebrow": "Novedades de Medicare para {year}",
+    "capLabel": "Tope anual de gastos de bolsillo de la Parte D en {year}",
+    "insulinLabel": "Insulina cubierta por Medicare, por mes y por receta"
+  },
+  "process": {
+    "eyebrow": "Nuestro proceso sencillo",
+    "h2": "Cómo le Ayudamos",
+    "steps": [
+      {
+        "t": "Envíe su lista de medicamentos",
+        "d": "Díganos qué toma &mdash; por mensaje de texto o correo electrónico."
+      },
+      {
+        "t": "Comparamos sus opciones",
+        "d": "Compararemos de verdad sus opciones, en lugar de simplemente renovarle lo que ya tenía."
+      },
+      {
+        "t": "Reciba una comparación clara de costos",
+        "d": "Le responderemos con una comparación de costos personalizada."
+      }
+    ]
   }
 }
