@@ -7,7 +7,14 @@
   "breadcrumbHtml": "<a href=\"index.html\">Home</a> &nbsp;&rsaquo;&nbsp; <a href=\"medicare-basics.html\">Plans</a> &nbsp;&rsaquo;&nbsp; Medicare Advantage",
   "header": {
     "h1": "Medicare Advantage Plans in Utah",
-    "ledeHtml": "All-in-one Medicare plans that bundle hospital, medical, and usually drug coverage &mdash; often with extras like dental, vision, and hearing."
+    "ledeHtml": "All-in-one Medicare plans that bundle hospital, medical, and usually drug coverage &mdash; often with extras like dental, vision, and hearing.",
+    "eyebrow": "Medicare Advantage plans",
+    "h1Accent": "in Utah",
+    "features": [
+      "Local, independent guidance",
+      "Compare plan options",
+      "Find the coverage you need"
+    ]
   },
   "includes": {
     "h2": "What Medicare Advantage Includes",
@@ -26,7 +33,21 @@
     "networksH3": "How Networks Work",
     "networksHtml": "Medicare Advantage plans use provider networks. Most are <strong>HMO</strong> (in-network only) or <strong>PPO</strong> (in-network preferred, out-of-network allowed at higher cost). Before choosing a plan, we always verify your doctors and preferred hospitals are in-network.",
     "moopH3": "Copays and Maximum Out-of-Pocket (MOOP)",
-    "moopHtml": "Instead of paying a percentage of every service like Original Medicare, Advantage plans typically use flat copays (e.g., $0 for primary care, $40 for specialist). Every Advantage plan also has an annual <strong>maximum out-of-pocket limit</strong> &mdash; once you hit it, the plan pays 100% for the rest of the year."
+    "moopHtml": "Instead of paying a percentage of every service like Original Medicare, Advantage plans typically use flat copays (e.g., $0 for primary care, $40 for specialist). Every Advantage plan also has an annual <strong>maximum out-of-pocket limit</strong> &mdash; once you hit it, the plan pays 100% for the rest of the year.",
+    "eyebrow": "Plan overview",
+    "benefitsEyebrow": "Extra benefits",
+    "networksEyebrow": "Provider networks",
+    "networkTypes": [
+      {
+        "__name": "HMO",
+        "textHtml": "In-network only"
+      },
+      {
+        "__name": "PPO",
+        "textHtml": "In-network preferred, out-of-network allowed at higher cost"
+      }
+    ],
+    "moopEyebrow": "Costs"
   },
   "fit": {
     "h2": "Is Medicare Advantage Right for You?",
@@ -37,7 +58,8 @@
       "Your doctors are in-network",
       "You don&rsquo;t travel extensively for healthcare",
       "You&rsquo;re generally healthy and want a budget-friendly option"
-    ]
+    ],
+    "eyebrow": "Is it a good fit?"
   },
   "__notFitPendingTranslation": {
     "h2": "When Medicare Advantage May Not Be the Best Fit",
@@ -59,6 +81,10 @@
     "textHtml": "One free, no-pressure call &mdash; clear answers, no sales pitch.",
     "scheduleLabel": "Schedule Consultation",
     "callLabel": "Call {phone}",
-    "compareLabel": "Compare Plans Online"
+    "compareLabel": "Compare Plans Online",
+    "eyebrow": "Free consultation"
+  },
+  "related": {
+    "eyebrow": "Utah resources"
   }
 }

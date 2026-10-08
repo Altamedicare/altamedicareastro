@@ -1,0 +1,96 @@
+{
+  "__note": "MASTER content for /tools.html, extracted losslessly from src/pages/tools.astro. Tool URLs/icons come from the TOOLS registry (src/consts.ts) via __key; only the hub's longer titles/descriptions live here. Calculators themselves are English-only, so their links resolve to the English URLs on every locale.",
+  "page": {
+    "title": "Free Medicare Tools & Calculators | AltaMedicare",
+    "description": "Free, interactive Medicare calculators: eligibility and enrollment dates, IRMAA premiums, late enrollment penalties, and prescription drug costs."
+  },
+  "breadcrumbHtml": "<a href=\"/\">Home</a> &nbsp;&rsaquo;&nbsp; Tools",
+  "header": {
+    "eyebrow": "Interactive calculators",
+    "h1": "Free Medicare Tools",
+    "h1Accent": "Medicare",
+    "lede": "Interactive calculators to help you make informed Medicare decisions — no sign-up, no cost, nothing saved.",
+    "features": [
+      "No sign-up",
+      "No cost",
+      "Nothing saved"
+    ]
+  },
+  "library": {
+    "eyebrow": "Available now",
+    "h2": "Calculators & Estimators",
+    "intro": "Built for Utah Medicare beneficiaries and their families.",
+    "linkLabel": "Learn More",
+    "tools": [
+      {
+        "__key": "eligibility",
+        "title": "Medicare Eligibility Calculator",
+        "desc": "Find out when you're eligible and calculate your Initial Enrollment Period."
+      },
+      {
+        "__key": "irmaa",
+        "title": "IRMAA Calculator",
+        "desc": "Estimate your Medicare Part B and Part D premiums based on income."
+      },
+      {
+        "__key": "penalty",
+        "title": "Late Enrollment Penalty Calculator",
+        "desc": "See whether delaying Medicare could permanently increase your premiums."
+      },
+      {
+        "__key": "drug-cost",
+        "title": "Drug Cost Calculator",
+        "desc": "Estimate medication costs and compare lower-cost generic alternatives."
+      },
+      {
+        "__key": "timeline",
+        "title": "Medicare Timeline Calculator",
+        "desc": "Visualize your enrollment windows and key Medicare deadlines."
+      },
+      {
+        "__key": "countdown",
+        "title": "Enrollment Countdown",
+        "desc": "A live countdown to your Medicare enrollment deadlines."
+      },
+      {
+        "__key": "cost-estimator",
+        "title": "Medicare Cost Estimator",
+        "desc": "Estimate your total annual costs and compare coverage options."
+      },
+      {
+        "__key": "formulary",
+        "title": "Formulary Lookup",
+        "desc": "Search medications to see typical Part D coverage and restrictions."
+      },
+      {
+        "__key": "drug-assistance",
+        "title": "Drug Assistance Finder",
+        "desc": "Find Extra Help, copay grants, and manufacturer programs that lower medication costs."
+      },
+      {
+        "__key": "quiz",
+        "title": "Medicare Plan Quiz",
+        "desc": "Answer 7 questions to discover which coverage type may fit you."
+      },
+      {
+        "__key": "glossary",
+        "title": "Medicare Glossary",
+        "desc": "Search 100+ Medicare terms explained in plain English."
+      }
+    ]
+  },
+  "comingSoon": {
+    "eyebrow": "In development",
+    "h2": "Coming Soon",
+    "intro": "More free tools we're building to round out the AltaMedicare resource center.",
+    "label": "Coming soon"
+  },
+  "guideHtml": "Numbers only tell part of the story. If you want the plain-English version first, start with <a href=\"/medicare-basics\">Medicare basics</a>, compare <a href=\"/medicare-advantage\">Medicare Advantage</a> against <a href=\"/medicare-supplement\">Medicare Supplement</a>, or read up on <a href=\"/prescription-drug-plans\">Part D drug plans</a>. Just turning 65? The <a href=\"/turning-65\">turning 65 guide</a> walks through the deadlines these calculators assume. For quick answers, browse the <a href=\"/faq\">Medicare FAQ</a>.",
+  "cta": {
+    "eyebrow": "Free consultation",
+    "h2": "Prefer to talk it through?",
+    "text": "A licensed Utah agent can walk you through any of these numbers — free, no pressure.",
+    "scheduleLabel": "Schedule Consultation",
+    "callLabel": "Call {phone}"
+  }
+}

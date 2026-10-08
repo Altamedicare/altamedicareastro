@@ -7,7 +7,21 @@
   "breadcrumbHtml": "<a href=\"index.html\">Home</a> &nbsp;&rsaquo;&nbsp; Medicare Basics",
   "header": {
     "h1": "Medicare Basics",
-    "lede": "A plain-English guide to the parts of Medicare, when you can enroll, and how to avoid penalties."
+    "lede": "A plain-English guide to the parts of Medicare, when you can enroll, and how to avoid penalties.",
+    "features": [
+      {
+        "strong": "Easy to Understand",
+        "span": "Clear explanations in plain English"
+      },
+      {
+        "strong": "Independent Guidance",
+        "span": "Unbiased, local and trusted"
+      },
+      {
+        "strong": "Make Confident Decisions",
+        "span": "Get the information you need"
+      }
+    ]
   },
   "parts": {
     "h2": "The Four Parts of Medicare",
@@ -28,6 +42,19 @@
       {
         "h3Html": "Part D &mdash; Prescription Drug Coverage",
         "textHtml": "Helps cover the cost of prescription medications. You can get Part D as a standalone plan (alongside Original Medicare) or as part of a Medicare Advantage plan."
+      }
+    ],
+    "eyebrow": "Medicare basics",
+    "links": [
+      null,
+      null,
+      {
+        "__href": "medicare-advantage.html",
+        "label": "Learn about Part C"
+      },
+      {
+        "__href": "prescription-drug-plans.html",
+        "label": "Learn about Part D"
       }
     ]
   },
@@ -50,7 +77,8 @@
         "h3Html": "Special Enrollment Periods (SEPs)",
         "textHtml": "Triggered by life events like moving, losing employer coverage, qualifying for Extra Help, or moving in or out of a Medicaid program. These give you a window to change plans outside the normal periods."
       }
-    ]
+    ],
+    "eyebrow": "When you can enroll"
   },
   "callout": {
     "heading": "Late enrollment penalties are permanent.",
@@ -63,12 +91,24 @@
       "<strong>Medicare Advantage</strong> tends to have lower (or $0) monthly premiums but uses networks and copays. Great if you&rsquo;re generally healthy and want extras like dental and vision.",
       "<strong>Medicare Supplement</strong> has a higher monthly premium but very low out-of-pocket costs and any-doctor flexibility. Great if you want predictable costs and travel often."
     ],
-    "outroHtml": "There&rsquo;s no universally &ldquo;better&rdquo; option &mdash; it depends on your health, your budget, where you travel, and how you use healthcare. <a href=\"contact.html\">Let&rsquo;s talk through it.</a>"
+    "outroHtml": "There&rsquo;s no universally &ldquo;better&rdquo; option &mdash; it depends on your health, your budget, where you travel, and how you use healthcare. <a href=\"contact.html\">Let&rsquo;s talk through it.</a>",
+    "eyebrow": "Compare your options",
+    "links": [
+      {
+        "__href": "medicare-advantage.html",
+        "label": "Learn about Medicare Advantage"
+      },
+      {
+        "__href": "medicare-supplement.html",
+        "label": "Learn about Medicare Supplement"
+      }
+    ]
   },
   "cta": {
     "h2Html": "Have Questions? Let's Talk.",
     "textHtml": "One free, no-pressure call &mdash; clear answers, no sales pitch.",
     "scheduleLabel": "Schedule Consultation",
-    "callLabel": "Call {phone}"
+    "callLabel": "Call {phone}",
+    "eyebrow": "Free consultation"
   }
 }

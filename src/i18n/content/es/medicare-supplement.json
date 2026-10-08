@@ -8,14 +8,22 @@
   "breadcrumbHtml": "<a href=\"index.html\">Inicio</a> &nbsp;&rsaquo;&nbsp; <a href=\"medicare-basics.html\">Planes</a> &nbsp;&rsaquo;&nbsp; Seguro Suplementario de Medicare",
   "header": {
     "h1": "Planes de Seguro Suplementario de Medicare (Medigap)",
-    "ledeHtml": "Costos predecibles, amplia flexibilidad para elegir médicos y tranquilidad. Aquí le explicamos cómo funcionan los planes de Seguro Suplementario de Medicare y a quién le convienen."
+    "ledeHtml": "Costos predecibles, amplia flexibilidad para elegir médicos y tranquilidad. Aquí le explicamos cómo funcionan los planes de Seguro Suplementario de Medicare y a quién le convienen.",
+    "eyebrow": "Planes de Seguro Suplementario de Medicare",
+    "h1Accent": "(Medigap)",
+    "features": [
+      "Orientación independiente e imparcial",
+      "Compare opciones de planes",
+      "Entienda sus gastos de su bolsillo"
+    ]
   },
   "how": {
     "h2": "Cómo funciona el Seguro Suplementario de Medicare",
     "paragraphsHtml": [
       "Los planes de Seguro Suplementario de Medicare (también llamados Medigap) funcionan junto con Medicare Original. Medicare Original paga primero y, luego, su plan Suplementario paga la mayor parte o la totalidad de lo que Medicare no cubre: deducibles, copagos y coseguro.",
       "El resultado son costos de atención médica muy predecibles: una prima mensual estable y muy poco (a menudo nada) de gastos de su bolsillo cuando de verdad usa los servicios."
-    ]
+    ],
+    "eyebrow": "Lo básico"
   },
   "why": {
     "h2": "Por qué las personas eligen el Seguro Suplementario de Medicare",
@@ -36,18 +44,27 @@
         "h3Html": "No se necesitan referidos",
         "textHtml": "No necesita que un médico de atención primaria lo remita a un especialista. Consulte a quien quiera, cuando lo necesite."
       }
-    ]
+    ],
+    "eyebrow": "Beneficios clave"
   },
   "letters": {
     "h2Html": "Letras de los planes: ¿cuál es la diferencia?",
     "paragraphsHtml": [
       "Los planes de Seguro Suplementario de Medicare están estandarizados por ley federal y se identifican con una letra (Plan G, Plan N, Plan F para quienes son elegibles, etc.). Los planes con la misma letra cubren lo mismo, sin importar qué aseguradora los venda; las únicas diferencias son la prima y el servicio de la compañía.",
       "Los planes más populares hoy entre las personas que se inscriben por primera vez son el <strong>Plan G</strong> y el <strong>Plan N</strong>. Le explicaremos cuál se ajusta mejor a su situación y compararemos varias aseguradoras para encontrar el precio más bajo."
+    ],
+    "eyebrow": "Opciones de planes",
+    "__planChips": [
+      "Plan G",
+      "Plan N",
+      "Plan F"
     ]
   },
   "partD": {
     "h2": "Importante: Agregue un plan de medicamentos de la Parte D",
-    "textHtml": "Los planes de Seguro Suplementario de Medicare no incluyen cobertura de medicamentos recetados. Si elige un plan Suplementario, por lo general lo combinará con un <a href=\"prescription-drug-plans.html\">plan de la Parte D</a> independiente. Nos encargaremos de esto en la misma conversación."
+    "textHtml": "Los planes de Seguro Suplementario de Medicare no incluyen cobertura de medicamentos recetados. Si elige un plan Suplementario, por lo general lo combinará con un <a href=\"prescription-drug-plans.html\">plan de la Parte D</a> independiente. Nos encargaremos de esto en la misma conversación.",
+    "eyebrow": "No lo olvide",
+    "linkLabel": "Más sobre los planes de la Parte D"
   },
   "callout": {
     "headingHtml": "El mejor momento para inscribirse: cuando es elegible por primera vez.",
@@ -58,6 +75,7 @@
     "textHtml": "Una llamada gratuita y sin presión &mdash; respuestas claras, sin argumentos de venta.",
     "scheduleLabel": "Programar consulta",
     "callLabel": "Llame al {phone}",
-    "compareLabel": "Comparar planes en línea"
+    "compareLabel": "Comparar planes en línea",
+    "eyebrow": "Consulta gratuita"
   }
 }

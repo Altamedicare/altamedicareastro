@@ -1,0 +1,46 @@
+{
+  "__translation_note": "Hand-authored Spanish (Claude, model claude-fable-5-1, 2026-10-07) following SPANISH-STYLE.md and src/i18n/glossary.json (CMS es.medicare.gov terminology) because no ANTHROPIC_API_KEY was available for scripts/translate.js. Validated with `npm run translate -- --check`. PENDING native-speaker review (YMYL). Seeded as authoritative per playbook §5.3 — do not hand-edit copy here; fix the English master or pin the term in the glossary.",
+  "page": {
+    "title": "Reduzca el Costo de sus Medicamentos Recetados | AltaMedicare",
+    "description": "Revisión gratuita de medicamentos recetados para beneficiarios de Medicare en Utah. Comparamos sus medicamentos entre planes de la Parte D y farmacias para encontrar su costo más bajo."
+  },
+  "breadcrumbHtml": "<a href=\"/\">Inicio</a> &nbsp;&rsaquo;&nbsp; Ahorro en medicamentos",
+  "header": {
+    "h1": "Reduzca el Costo de sus Medicamentos Recetados",
+    "ledeHtml": "Envíenos su lista de medicamentos y revisaremos si su plan actual es la opción más económica para usted. Sin costo. Sin compromiso."
+  },
+  "why": {
+    "h2": "Por qué la mayoría de las personas paga de más por sus medicamentos",
+    "intro": "El mismo medicamento puede costar cantidades muy distintas según:",
+    "itemsHtml": [
+      "<strong>Qué plan de la Parte D tiene</strong> &mdash; cada plan cubre medicamentos diferentes en distintos niveles de copago",
+      "<strong>Qué farmacia usa</strong> &mdash; las farmacias preferidas suelen costar mucho menos que las estándar",
+      "<strong>Si usa el pedido por correo</strong> &mdash; los suministros de 90 días suelen ser más baratos que tres surtidos mensuales",
+      "<strong>Si califica para Ayuda Adicional (Extra Help)</strong> &mdash; muchas personas califican y no lo saben",
+      "<strong>Si el nuevo tope de $2,000 le aplica</strong> &mdash; este cambio de 2025 en adelante afecta a quienes usan medicamentos de alto costo"
+    ],
+    "outroHtml": "Muchas personas renuevan el mismo plan año tras año por costumbre. Nosotros compararemos de verdad sus opciones, en lugar de simplemente renovarle lo que ya tenía."
+  },
+  "review": {
+    "eyebrow": "Servicio gratuito",
+    "h2": "Obtenga su Revisión Gratuita de Medicamentos",
+    "introHtml": "Díganos qué toma y le responderemos con una comparación de costos personalizada.",
+    "textAction": {
+      "strong": "Envíe sus medicamentos a Bret por mensaje de texto",
+      "spanHtml": "La forma más rápida &mdash; abre un mensaje de texto con su lista ya iniciada",
+      "label": "Enviar mis medicamentos por texto"
+    },
+    "emailAction": {
+      "strong": "Envíe sus medicamentos a Bret por correo electrónico",
+      "span": "Abre su correo electrónico con una plantilla rápida para completar",
+      "label": "Enviar mis medicamentos por correo"
+    },
+    "noteHtml": "Bret revisa personalmente cada lista &mdash; por lo general en unas pocas horas. Sin costo, sin compromiso."
+  },
+  "cta": {
+    "h2": "¿Tiene preguntas? Hablemos.",
+    "textHtml": "Una llamada gratuita y sin presión &mdash; respuestas claras, sin argumentos de venta.",
+    "scheduleLabel": "Programar consulta",
+    "callLabel": "Llame al {phone}"
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "__translation_note": "Hand-authored Spanish (Claude, model claude-fable-5-1, 2026-10-07) following SPANISH-STYLE.md and src/i18n/glossary.json (CMS es.medicare.gov terminology) because no ANTHROPIC_API_KEY was available for scripts/translate.js. Validated with `npm run translate -- --check`. PENDING native-speaker review (YMYL). Seeded as authoritative per playbook §5.3 — do not hand-edit copy here; fix the English master or pin the term in the glossary.",
+  "page": {
+    "title": "Planes para Personas con Doble Elegibilidad y Medicaid (D-SNP) | AltaMedicare",
+    "description": "Si tiene Medicare y Medicaid, los planes D-SNP ofrecen beneficios adicionales: tarjetas para alimentos, transporte, productos de venta libre (OTC), dental, visión y primas de $0."
+  },
+  "breadcrumbHtml": "<a href=\"/\">Inicio</a> &nbsp;&rsaquo;&nbsp; <a href=\"/medicare-basics\">Planes</a> &nbsp;&rsaquo;&nbsp; Doble elegibilidad / Medicaid",
+  "header": {
+    "eyebrow": "Planes por necesidades especiales de elegibilidad doble",
+    "h1": "Planes para Personas con Doble Elegibilidad y Medicaid (D-SNP)",
+    "h1Accent": "(D-SNP)",
+    "lede": "Si tiene Medicare y Medicaid, puede calificar para planes especiales con beneficios adicionales a muy bajo costo o sin costo.",
+    "features": [
+      "Medicare y Medicaid coordinados",
+      "Beneficios adicionales",
+      "Orientación local e independiente"
+    ]
+  },
+  "basics": {
+    "eyebrow": "Lo básico",
+    "h2": "Medicare + Medicaid = Más Ayuda",
+    "textHtml": "Si califica tanto para Medicare como para Medicaid, se le considera una persona con <strong>doble elegibilidad</strong>. Los planes especiales llamados <strong>D-SNP (Planes por necesidades especiales de elegibilidad doble)</strong> están diseñados específicamente para personas en su situación &mdash; con beneficios adicionales más allá de lo que cualquiera de los dos programas ofrece por sí solo.",
+    "equation": [
+      "Medicare",
+      "Medicaid",
+      "D-SNP"
+    ]
+  },
+  "benefits": {
+    "eyebrow": "Beneficios comunes",
+    "h2": "Beneficios comunes de los D-SNP",
+    "cards": [
+      [
+        {
+          "t": "Tarjetas para alimentos",
+          "d": "asignación mensual para alimentos saludables en tiendas participantes"
+        }
+      ],
+      [
+        {
+          "t": "Tarjetas para productos de venta libre (OTC)",
+          "d": "asignación para artículos de farmacia como vitaminas, analgésicos y primeros auxilios"
+        }
+      ],
+      [
+        {
+          "t": "Transporte",
+          "d": "viajes a citas médicas y, a veces, a la farmacia o al supermercado"
+        }
+      ],
+      [
+        {
+          "t": "Dental, visión y audición",
+          "d": "a menudo más generosos que los planes Medicare Advantage estándar"
+        }
+      ],
+      [
+        {
+          "t": "Prima de $0 o muy baja",
+          "d": "muchos D-SNP tienen una prima mensual de $0"
+        }
+      ],
+      [
+        {
+          "t": "Copagos de $0",
+          "d": "para muchos servicios"
+        },
+        {
+          "t": "Ayuda Adicional (Extra Help) con la Parte D",
+          "d": "costos de medicamentos recetados drásticamente reducidos"
+        }
+      ]
+    ]
+  },
+  "qualify": {
+    "eyebrow": "¿Quién califica?",
+    "h2": "¿Califica usted?",
+    "introHtml": "Puede tener doble elegibilidad si tiene Medicare Y además alguno de los siguientes:",
+    "items": [
+      "Medicaid",
+      "Programa para beneficiarios calificados de Medicare (QMB)",
+      "Programa para beneficiarios de Medicare de Bajos Ingresos (SLMB)",
+      "Programa para individuos calificados (QI)",
+      "Programa para individuos incapacitados y empleados calificados (QDWI)"
+    ],
+    "__programs": [
+      "QMB",
+      "SLMB",
+      "QI",
+      "QDWI"
+    ],
+    "noteHtml": "Se aplican límites de ingresos y de recursos. Podemos ayudarle a verificar si califica y acompañarle en la solicitud si está cerca del límite."
+  },
+  "switch": {
+    "eyebrow": "Opciones flexibles",
+    "h2": "Puede Cambiar de Plan en Cualquier Momento",
+    "textHtml": "La mayoría de los beneficiarios de Medicare no pueden cambiar de plan excepto durante ciertos períodos de inscripción. <strong>Los beneficiarios con doble elegibilidad tienen un Período de Inscripción Especial</strong> que les permite cambiar de plan D-SNP con más flexibilidad durante todo el año.",
+    "help": {
+      "heading": "¿No está seguro de si califica?",
+      "textHtml": "Llámenos. Verificaremos juntos su elegibilidad para Medicare y Medicaid &mdash; es una conversación rápida, y muchas personas descubren que califican para beneficios que no conocían."
+    }
+  },
+  "cta": {
+    "eyebrow": "Consulta gratuita",
+    "h2": "¿Tiene preguntas? Hablemos.",
+    "textHtml": "Una llamada gratuita y sin presión &mdash; respuestas claras, sin argumentos de venta.",
+    "scheduleLabel": "Programar consulta",
+    "callLabel": "Llame al {phone}",
+    "compareLabel": "Comparar planes en línea"
+  }
+}

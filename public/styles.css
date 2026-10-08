@@ -3700,3 +3700,1100 @@ section {
 .home-rx .section-header h2 { color: #0f172a; }
 .home-rx .section-header p { color: var(--charcoal-soft); }
 .home-faq .faq-item:not(.open) .faq-answer { padding-top: 0; padding-bottom: 0; }
+
+/* ==========================================================================
+   MEDICARE BASICS PAGE — redesign
+   Scoped to .page-header--basics and the basics-* classes in
+   MedicareBasicsPage.astro. Palette matches the homepage refresh:
+   navy #0f2f66, blue var(--mountain-blue), gold #fbbf24.
+   ========================================================================== */
+
+/* ---------- Hero: sharp Teton photo, white type, three feature points ---------- */
+.page-header--basics {
+  text-align: left;
+  padding: 64px 0 54px;
+  background:
+    linear-gradient(90deg, rgba(6, 18, 40, 0.72) 0%, rgba(6, 18, 40, 0.45) 55%, rgba(6, 18, 40, 0.15) 100%),
+    url("/images/Teton2.webp") center 40% / cover no-repeat,
+    #0f2f66;
+}
+/* Use the sharp CSS photo instead of the injected (stretched) teton3 reel,
+   and drop the floating logo badge on this page. */
+.page-header--basics .ph-video,
+.page-header--basics .ph-overlay,
+.page-header--basics::after { display: none; }
+.page-header--basics > .container { text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); }
+.page-header--basics .breadcrumb,
+.page-header--basics .breadcrumb a,
+.page-header.page-header--basics.has-reel .breadcrumb,
+.page-header.page-header--basics.has-reel .breadcrumb a { color: #e2e8f0; text-shadow: none; }
+.page-header--basics h1 {
+  color: #fff;
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.page-header--basics .ai-summary,
+.page-header--basics .ai-summary a,
+.page-header.page-header--basics.has-reel .ai-summary,
+.page-header.page-header--basics.has-reel .ai-summary a {
+  color: #e2e8f0;
+  margin: 0 0 12px;
+  max-width: 760px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+.page-header--basics .lede,
+.page-header.page-header--basics.has-reel .lede {
+  color: #fff;
+  font-weight: 600;
+  margin: 0;
+  max-width: 720px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+.basics-features {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 40px;
+  margin: 30px 0 0;
+  padding: 0;
+}
+.basics-features li { display: flex; align-items: center; gap: 14px; }
+.basics-feature-icon {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--mountain-blue);
+  flex-shrink: 0;
+  box-shadow: 0 8px 18px -8px rgba(0, 0, 0, 0.6);
+}
+.basics-feature-icon svg { width: 26px; height: 26px; }
+.basics-features strong { display: block; color: #fff; font-size: 1.05rem; }
+.basics-features li > span:last-child > span { display: block; color: #e2e8f0; font-size: 0.9rem; }
+
+/* ---------- Shared section bits ---------- */
+.basics-section { padding: 72px 0; }
+.basics-head { max-width: 760px; margin-bottom: 34px; }
+.basics-head h2 { font-weight: 800; letter-spacing: -0.02em; color: #0f172a; margin-bottom: 10px; }
+.basics-head p { color: var(--charcoal-soft); font-size: 1.08rem; margin: 0; }
+.basics-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 10px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mountain-blue);
+}
+.basics-eyebrow::before { content: ""; width: 40px; height: 3px; border-radius: 2px; background: #fbbf24; }
+.basics-link,
+.basics-option-btn,
+.basics-cta-btn { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; }
+.basics-link svg,
+.basics-option-btn svg,
+.basics-cta-btn svg { width: 16px; height: 16px; transition: transform var(--transition); }
+.basics-link:hover svg,
+.basics-option-btn:hover svg,
+.basics-cta-btn:hover svg { transform: translateX(3px); }
+
+/* ---------- The four Parts ---------- */
+.basics-parts { background: #fff; }
+.basics-parts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+.basics-part {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0 22px 24px;
+  border-radius: 20px;
+  background: #fff;
+  border: 1px solid #e5edf9;
+  box-shadow: 0 18px 40px -26px rgba(15, 47, 102, 0.45);
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.basics-part:hover { transform: translateY(-4px); box-shadow: 0 26px 48px -24px rgba(15, 47, 102, 0.5); }
+.basics-part-art {
+  display: grid;
+  place-items: center;
+  height: 130px;
+  margin: 0 -22px 34px;
+  color: #fff;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.28), transparent 45%),
+    linear-gradient(135deg, var(--part-a, #2563eb), var(--part-b, #1e40af));
+}
+.basics-part-art svg { width: 52px; height: 52px; stroke-width: 1.7; }
+.basics-part-letter {
+  position: absolute;
+  top: 108px;
+  left: 20px;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  background: var(--part-num, var(--mountain-blue));
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.2rem;
+  box-shadow: 0 6px 14px -6px rgba(0, 0, 0, 0.45);
+}
+.basics-part:nth-child(2) { --part-a: #0284c7; --part-b: #075985; --part-num: #0284c7; }
+.basics-part:nth-child(3) { --part-a: #f59e0b; --part-b: #d97706; --part-num: #f59e0b; }
+.basics-part:nth-child(4) { --part-a: #16a34a; --part-b: #166534; --part-num: #16a34a; }
+.basics-part h3 { font-size: 1.15rem; font-weight: 800; color: #0f172a; margin-bottom: 8px; }
+.basics-part p { font-size: 0.95rem; color: var(--charcoal-soft); margin-bottom: 16px; }
+.basics-link { margin-top: auto; color: var(--mountain-blue); font-size: 0.95rem; }
+
+/* ---------- Enrollment periods + penalty card ---------- */
+.basics-enroll { background: linear-gradient(180deg, #eef4ff 0%, #f7faff 100%); }
+.basics-enroll-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+.basics-enroll-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.basics-enroll-list li {
+  display: flex;
+  gap: 18px;
+  padding: 20px 22px;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid #e5edf9;
+  box-shadow: 0 12px 28px -24px rgba(15, 47, 102, 0.5);
+}
+.basics-enroll-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #dbeafe;
+  color: var(--mountain-blue);
+  flex-shrink: 0;
+}
+.basics-enroll-icon svg { width: 26px; height: 26px; }
+.basics-enroll-list h3 { font-size: 1.08rem; font-weight: 800; color: #0f172a; margin-bottom: 4px; }
+.basics-enroll-list p { font-size: 0.95rem; color: var(--charcoal-soft); margin: 0; }
+.basics-penalty {
+  position: sticky;
+  top: 110px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #fde68a;
+  box-shadow: 0 24px 48px -28px rgba(15, 47, 102, 0.55);
+}
+.basics-penalty-art {
+  display: grid;
+  place-items: center;
+  height: 190px;
+  background:
+    radial-gradient(circle at 75% 25%, rgba(255, 255, 255, 0.5), transparent 50%),
+    linear-gradient(135deg, #fef3c7, #fde68a);
+}
+.basics-penalty-cal {
+  display: grid;
+  place-items: center;
+  width: 110px;
+  height: 110px;
+  border-radius: 24px;
+  background: #fff;
+  color: #dc2626;
+  box-shadow: 0 16px 32px -16px rgba(180, 83, 9, 0.6);
+  transform: rotate(-6deg);
+}
+.basics-penalty-cal svg { width: 60px; height: 60px; }
+.basics-penalty-body {
+  display: flex;
+  gap: 14px;
+  padding: 22px 24px 24px;
+  background: #fffbeb;
+}
+.basics-penalty-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--mountain-blue);
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+.basics-penalty-body strong { display: block; color: #1d4ed8; font-size: 1.08rem; margin-bottom: 6px; }
+.basics-penalty-body p { margin: 0; color: var(--charcoal-soft); font-size: 0.95rem; }
+
+/* ---------- Supplement vs Advantage ---------- */
+.basics-compare { background: #fff; }
+.basics-compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.basics-option {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 28px;
+  border-radius: 20px;
+  border: 1px solid #e5edf9;
+  box-shadow: 0 18px 40px -26px rgba(15, 47, 102, 0.45);
+}
+.basics-option--ma { background: linear-gradient(180deg, #fffaf0 0%, #fff 70%); border-color: #fde9b8; }
+.basics-option--ms { background: linear-gradient(180deg, #f1f6ff 0%, #fff 70%); }
+.basics-option-icon {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #dbeafe;
+  color: var(--mountain-blue);
+}
+.basics-option--ma .basics-option-icon { background: #fdecc8; color: #b45309; }
+.basics-option-icon svg { width: 26px; height: 26px; }
+.basics-option p { margin: 0; color: var(--charcoal-soft); font-size: 1rem; line-height: 1.6; }
+.basics-option p strong { display: block; color: #0f172a; font-size: 1.2rem; font-weight: 800; margin-bottom: 6px; }
+.basics-option-btn {
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 11px 20px;
+  border-radius: 999px;
+  border: 2px solid var(--mountain-blue);
+  color: var(--mountain-blue);
+  font-size: 0.95rem;
+  transition: background-color var(--transition), color var(--transition);
+}
+.basics-option-btn:hover { background: var(--mountain-blue); color: #fff; }
+.basics-compare-outro {
+  margin: 26px 0 0;
+  padding: 18px 22px;
+  border-radius: 14px;
+  background: #f7faff;
+  border-left: 4px solid #fbbf24;
+  color: var(--charcoal-soft);
+}
+
+/* ---------- CTA band ---------- */
+.basics-cta {
+  padding: 52px 0;
+  color: #fff;
+  background:
+    linear-gradient(90deg, #0f2f66 0%, #1d4ed8 60%, rgba(29, 78, 216, 0.55) 100%),
+    url("/images/teton-mobile.webp") right center / cover no-repeat,
+    #0f2f66;
+}
+.basics-cta .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+.basics-cta .basics-eyebrow { color: #fff; }
+.basics-cta h2 { color: #fff; font-weight: 800; font-size: clamp(1.7rem, 3vw, 2.3rem); margin-bottom: 6px; }
+.basics-cta p { margin: 0; color: #e2e8f0; font-size: 1.05rem; }
+.basics-cta-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+.basics-cta-btn {
+  padding: 14px 26px;
+  border-radius: 999px;
+  background: #fbbf24;
+  color: #0f172a;
+  font-size: 1.02rem;
+  box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.6);
+}
+.basics-cta-btn:hover { background: #fff; color: #0f172a; }
+.basics-cta-phone { display: inline-flex; align-items: center; gap: 10px; color: #fff; font-size: 1.4rem; font-weight: 800; }
+.basics-cta-phone:hover { color: #fbbf24; }
+.basics-cta-phone svg { width: 24px; height: 24px; color: #fbbf24; }
+
+/* ---------- Helpful tools band (scoped wrapper on this page) ---------- */
+.basics-tools .section-tinted { background: #fff; }
+.basics-tools .section-header { text-align: left; max-width: 760px; margin: 0 0 30px; }
+.basics-tools .section-header .eyebrow { display: inline-flex; align-items: center; gap: 14px; font-weight: 700; letter-spacing: 0.2em; }
+.basics-tools .section-header .eyebrow::before { content: ""; width: 40px; height: 3px; border-radius: 2px; background: #fbbf24; }
+.basics-tools .section-header h2 { font-weight: 800; color: #0f172a; }
+.basics-tools .card {
+  border-radius: 20px;
+  border: 1px solid #e5edf9;
+  box-shadow: 0 18px 40px -26px rgba(15, 47, 102, 0.45);
+}
+.basics-tools .card-icon { border-radius: 50%; background: #dbeafe; color: var(--mountain-blue); }
+.basics-tools .card:nth-child(2) .card-icon { background: #fdecc8; color: #d97706; }
+.basics-tools .card:nth-child(3) .card-icon { background: #dbeafe; color: #1d4ed8; }
+.basics-tools .card h3 { font-weight: 800; color: #0f172a; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  .basics-parts-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 900px) {
+  .basics-enroll-grid,
+  .basics-compare-grid { grid-template-columns: 1fr; }
+  .basics-penalty { position: static; }
+}
+@media (max-width: 640px) {
+  .page-header--basics { padding: 48px 0 40px; }
+  .basics-features { gap: 14px; }
+  .basics-feature-icon { width: 44px; height: 44px; }
+  .basics-section { padding: 52px 0; }
+  .basics-parts-grid { grid-template-columns: 1fr; }
+  .basics-enroll-list li { padding: 16px; gap: 14px; }
+  .basics-option { padding: 22px; }
+}
+
+/* ---------- Medicare Basics hero v2: wider view + text "cloud" ----------
+   teton3 is a wide panorama, so a short wide banner shows the whole range
+   instead of a tight crop of the 16:9 photo. No darkening: a soft, feathered
+   white cloud sits behind the copy, which switches to dark navy text. */
+.page-header--basics {
+  padding: 56px 0 50px;
+  background: url("/images/teton3.webp") center 35% / cover no-repeat, #3498f6;
+}
+.page-header--basics > .container { text-shadow: none; }
+.basics-hero-copy {
+  position: relative;
+  isolation: isolate;
+  max-width: 1000px;
+}
+/* The cloud: an evenly filled, heavily feathered white blob (rounded box +
+   blur) so every line, corners included, gets the same backing. */
+.basics-hero-copy::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -26px -70px -26px -90px;
+  border-radius: 140px;
+  background: rgba(255, 255, 255, 0.84);
+  filter: blur(26px);
+  pointer-events: none;
+}
+.page-header--basics .basics-features { flex-wrap: nowrap; gap: 32px; margin-top: 24px; }
+.page-header--basics .lede { font-size: 1.15rem; }
+.page-header--basics h1 { margin-bottom: 10px; }
+@media (max-width: 1100px) {
+  .page-header--basics .basics-features { flex-wrap: wrap; gap: 14px 28px; }
+}
+.page-header--basics h1 { color: #0f2f66; }
+.page-header--basics .breadcrumb,
+.page-header.page-header--basics.has-reel .breadcrumb { color: var(--charcoal-soft); }
+.page-header--basics .breadcrumb a,
+.page-header.page-header--basics.has-reel .breadcrumb a { color: var(--mountain-blue); }
+.page-header--basics .ai-summary,
+.page-header.page-header--basics.has-reel .ai-summary { color: var(--charcoal-soft); text-shadow: none; }
+.page-header--basics .ai-summary a,
+.page-header.page-header--basics.has-reel .ai-summary a { color: var(--mountain-blue); text-shadow: none; }
+.page-header--basics .lede,
+.page-header.page-header--basics.has-reel .lede { color: #0f172a; text-shadow: none; }
+.page-header--basics .basics-feature-icon { background: var(--mountain-blue); color: #fff; }
+.page-header--basics .basics-features strong { color: #0f2f66; }
+.page-header--basics .basics-features li > span:last-child > span { color: var(--charcoal-soft); }
+@media (max-width: 768px) {
+  .page-header--basics { background-image: url("/images/teton-mobile.webp"); background-position: center; }
+  .basics-hero-copy::before { inset: -20px -30px; border-radius: 60px; filter: blur(18px); }
+}
+
+/* ==========================================================================
+   MEDICARE ADVANTAGE PAGE — visual-guide redesign
+   Scoped to .page-header--ma and ma-* classes (MedicareAdvantagePage.astro).
+   Same system as Medicare Basics: navy #0f2f66, blue, white, gold #fbbf24.
+   ========================================================================== */
+
+/* ---------- Hero: panorama + strong navy gradient behind the copy ---------- */
+.page-header--ma {
+  text-align: left;
+  padding: 64px 0 56px;
+  background:
+    linear-gradient(90deg, rgba(10, 30, 70, 0.94) 0%, rgba(10, 30, 70, 0.85) 38%, rgba(10, 30, 70, 0.45) 68%, rgba(10, 30, 70, 0.15) 100%),
+    url("/images/teton3.webp") center 35% / cover no-repeat,
+    #0f2f66;
+}
+.page-header--ma .ph-video,
+.page-header--ma .ph-overlay,
+.page-header--ma::after { display: none; }
+.page-header--ma > .container { text-shadow: none; max-width: var(--max-width); }
+.page-header--ma .breadcrumb,
+.page-header--ma .breadcrumb a,
+.page-header.page-header--ma.has-reel .breadcrumb,
+.page-header.page-header--ma.has-reel .breadcrumb a { color: #cbd5e1; text-shadow: none; }
+.page-header--ma h1 {
+  color: #fff;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  max-width: 760px;
+  margin-bottom: 16px;
+}
+.ma-accent { color: #fbbf24; }
+.page-header--ma .ai-summary,
+.page-header.page-header--ma.has-reel .ai-summary { color: #cbd5e1; text-shadow: none; margin: 0 0 12px; max-width: 700px; }
+.page-header--ma .ai-summary a,
+.page-header.page-header--ma.has-reel .ai-summary a { color: #fbbf24; text-shadow: none; }
+.page-header--ma .lede,
+.page-header.page-header--ma.has-reel .lede { color: #fff; text-shadow: none; margin: 0; max-width: 640px; font-size: 1.2rem; }
+.ma-hero-features {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 34px;
+  margin: 28px 0 0;
+  padding: 0;
+}
+.ma-hero-features li { display: flex; align-items: center; gap: 12px; color: #fff; font-weight: 700; font-size: 0.98rem; }
+.ma-hero-icon {
+  display: grid; place-items: center;
+  width: 46px; height: 46px; border-radius: 50%;
+  background: #fff; color: var(--mountain-blue); flex-shrink: 0;
+}
+.ma-hero-icon svg { width: 22px; height: 22px; }
+
+/* ---------- Shared ---------- */
+.ma-section { padding: 76px 0; }
+.ma-section h2 { font-weight: 800; letter-spacing: -0.02em; color: #0f172a; margin-bottom: 12px; }
+.ma-eyebrow {
+  display: inline-flex; align-items: center; gap: 14px;
+  margin-bottom: 10px;
+  font-size: 0.8rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--mountain-blue);
+}
+.ma-eyebrow::before { content: ""; width: 40px; height: 3px; border-radius: 2px; background: #fbbf24; }
+.ma-eyebrow--light { color: #fff; }
+.ma-lead { font-size: 1.08rem; color: var(--charcoal-soft); line-height: 1.7; }
+.ma-split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.ma-photo {
+  position: relative; margin: 0;
+  border-radius: 22px; overflow: hidden;
+  box-shadow: 0 30px 60px -30px rgba(15, 47, 102, 0.6);
+}
+.ma-photo img { display: block; width: 100%; height: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: 20% 30%; }
+.ma-photo figcaption {
+  position: absolute; left: 18px; bottom: 18px;
+  padding: 12px 18px; border-radius: 14px;
+  background: rgba(10, 30, 70, 0.82); color: #fff;
+}
+.ma-photo figcaption strong { display: block; font-size: 1.15rem; }
+.ma-photo figcaption span { display: block; font-size: 0.8rem; color: #cbd5e1; letter-spacing: 0.04em; }
+
+/* ---------- 1. Intro ---------- */
+.ma-intro { background: #fff; }
+.ma-info {
+  display: flex; gap: 14px; align-items: flex-start;
+  margin-top: 20px; padding: 18px 20px;
+  border-radius: 16px; background: #eef4ff; border: 1px solid #dbe7fb;
+}
+.ma-info p { margin: 0; color: #0f2f66; font-weight: 500; }
+.ma-info-icon { flex-shrink: 0; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--mountain-blue); color: #fff; }
+.ma-info-icon svg { width: 20px; height: 20px; }
+
+/* ---------- 2. Benefits ---------- */
+.ma-benefits { background: linear-gradient(180deg, #eef4ff 0%, #f7faff 100%); }
+.ma-benefit-grid {
+  list-style: none; margin: 30px 0 0; padding: 0;
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px;
+}
+.ma-benefit {
+  padding: 24px 22px; border-radius: 18px; background: #fff;
+  border: 1px solid #e5edf9;
+  box-shadow: 0 16px 36px -26px rgba(15, 47, 102, 0.5);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.ma-benefit:hover { transform: translateY(-4px); box-shadow: 0 24px 44px -24px rgba(15, 47, 102, 0.5); }
+.ma-benefit-icon {
+  display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%;
+  background: #dbeafe; color: var(--mountain-blue); margin-bottom: 16px;
+}
+.ma-benefit-icon svg { width: 28px; height: 28px; }
+.ma-benefit:nth-child(4n+2) .ma-benefit-icon { background: #fdecc8; color: #b45309; }
+.ma-benefit:nth-child(4n+3) .ma-benefit-icon { background: #d1fae5; color: #15803d; }
+.ma-benefit:nth-child(4n+4) .ma-benefit-icon { background: #e0f2fe; color: #0369a1; }
+.ma-benefit p { margin: 0; font-size: 0.95rem; color: var(--charcoal-soft); line-height: 1.55; }
+.ma-benefit p strong { display: block; font-size: 1.08rem; color: #0f172a; font-weight: 800; margin-bottom: 4px; }
+
+/* ---------- 3. Networks ---------- */
+.ma-networks { background: #fff; }
+.ma-split--photo-left { grid-template-columns: 1fr 1.05fr; }
+.ma-photo--landscape img { aspect-ratio: 4 / 3; object-position: center; }
+.ma-photo-badge {
+  position: absolute; left: 20px; bottom: 20px;
+  display: grid; place-items: center; width: 64px; height: 64px; border-radius: 18px;
+  background: #fff; color: var(--mountain-blue); box-shadow: 0 12px 26px -12px rgba(0, 0, 0, 0.6);
+}
+.ma-photo-badge svg { width: 32px; height: 32px; }
+.ma-network-types { display: grid; gap: 14px; margin-top: 18px; }
+.ma-network {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 18px 20px; border-radius: 16px; background: #f7faff; border: 1px solid #e5edf9;
+}
+.ma-network-icon { flex-shrink: 0; display: grid; place-items: center; width: 50px; height: 50px; border-radius: 50%; background: #dbeafe; color: var(--mountain-blue); }
+.ma-network-icon svg { width: 24px; height: 24px; }
+.ma-network strong { display: block; font-size: 1.15rem; color: #0f172a; }
+.ma-network p { margin: 2px 0 0; color: var(--charcoal-soft); }
+.ma-verify { display: flex; gap: 10px; align-items: flex-start; margin: 18px 0 0; font-weight: 600; color: #0f2f66; }
+.ma-verify > span:first-child { flex-shrink: 0; display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: #fbbf24; color: #0f2f66; }
+.ma-verify > span:first-child svg { width: 14px; height: 14px; stroke-width: 3; }
+
+/* ---------- 4. MOOP ---------- */
+.ma-moop { background: linear-gradient(180deg, #f7faff 0%, #eef4ff 100%); }
+.ma-moop-card {
+  position: relative; min-height: 300px; display: flex; align-items: flex-end;
+  padding: 24px; border-radius: 22px; overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(10, 30, 70, 0.1) 0%, rgba(10, 30, 70, 0.55) 100%),
+    url("/images/Teton2.webp") center 40% / cover no-repeat;
+  box-shadow: 0 30px 60px -30px rgba(15, 47, 102, 0.6);
+}
+.ma-moop-box {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 22px 24px; border-radius: 16px;
+  background: rgba(10, 30, 70, 0.9); color: #fff;
+}
+.ma-moop-box p { margin: 0; font-size: 1.05rem; line-height: 1.6; color: #e2e8f0; }
+.ma-moop-box p strong { color: #fbbf24; }
+.ma-moop-icon { flex-shrink: 0; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 12px; background: #fff; color: var(--mountain-blue); }
+.ma-moop-icon svg { width: 26px; height: 26px; }
+
+/* ---------- 5. Fit ---------- */
+.ma-fit { background: #fff; }
+.ma-split--fit { grid-template-columns: 1.2fr 1fr; align-items: start; }
+.ma-checklist { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 12px; }
+.ma-checklist li { display: flex; gap: 12px; align-items: flex-start; font-size: 1.05rem; color: #0f172a; }
+.ma-checklist li > span:first-child { flex-shrink: 0; display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: #fbbf24; color: #0f2f66; }
+.ma-checklist li > span:first-child svg { width: 15px; height: 15px; stroke-width: 3; }
+.ma-notfit { margin-top: 28px; }
+.ma-notfit h3 { font-weight: 800; color: #0f172a; }
+.ma-fit-callout {
+  padding: 30px; border-radius: 22px;
+  background: linear-gradient(180deg, #fffaf0 0%, #fff7e6 100%);
+  border: 1px solid #fde9b8;
+  box-shadow: 0 24px 48px -30px rgba(180, 83, 9, 0.45);
+}
+.ma-fit-icon { display: grid; place-items: center; width: 60px; height: 60px; border-radius: 50%; background: #dbeafe; color: var(--mountain-blue); margin-bottom: 16px; }
+.ma-fit-icon svg { width: 30px; height: 30px; }
+.ma-fit-callout strong { display: block; font-size: 1.3rem; color: #0f172a; margin-bottom: 8px; }
+.ma-fit-callout p { color: var(--charcoal-soft); margin: 0 0 20px; }
+.ma-btn-primary,
+.ma-btn-gold,
+.ma-cta-compare { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; border-radius: 999px; transition: background-color var(--transition), color var(--transition), transform var(--transition); }
+.ma-btn-primary svg,
+.ma-btn-gold svg,
+.ma-cta-compare svg { width: 18px; height: 18px; }
+.ma-btn-primary { padding: 13px 24px; background: var(--mountain-blue); color: #fff; box-shadow: 0 12px 24px -12px rgba(37, 99, 235, 0.9); }
+.ma-btn-primary:hover { background: #1d4ed8; color: #fff; transform: translateY(-1px); }
+
+/* ---------- 6. Related ---------- */
+.ma-related { background: linear-gradient(180deg, #eef4ff 0%, #f7faff 100%); }
+.ma-related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; margin-top: 26px; }
+.ma-related-card {
+  display: flex; align-items: center; gap: 14px;
+  padding: 18px; border-radius: 16px; background: #fff; border: 1px solid #e5edf9;
+  color: #0f172a; font-weight: 700; font-size: 0.95rem; line-height: 1.35;
+  box-shadow: 0 14px 30px -24px rgba(15, 47, 102, 0.5);
+  transition: transform var(--transition), border-color var(--transition);
+}
+.ma-related-card:hover { transform: translateY(-3px); border-color: var(--mountain-blue-light); color: var(--mountain-blue); }
+.ma-related-icon { flex-shrink: 0; display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px; background: #dbeafe; color: var(--mountain-blue); }
+.ma-related-icon svg { width: 20px; height: 20px; }
+
+/* ---------- 7. CTA ---------- */
+.ma-cta {
+  padding: 56px 0; color: #fff;
+  background:
+    linear-gradient(90deg, #0f2f66 0%, #1d4ed8 60%, rgba(29, 78, 216, 0.5) 100%),
+    url("/images/teton-mobile.webp") right center / cover no-repeat, #0f2f66;
+}
+.ma-cta .container { display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap; }
+.ma-cta h2 { color: #fff; font-weight: 800; font-size: clamp(1.8rem, 3.2vw, 2.5rem); margin-bottom: 6px; }
+.ma-cta p { color: #e2e8f0; margin: 0; font-size: 1.08rem; }
+.ma-cta-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.ma-btn-gold { padding: 14px 26px; background: #fbbf24; color: #0f172a; box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.6); }
+.ma-btn-gold:hover { background: #fff; color: #0f172a; }
+.ma-cta-phone { display: inline-flex; align-items: center; gap: 10px; color: #fff; font-size: 1.5rem; font-weight: 800; }
+.ma-cta-phone:hover { color: #fbbf24; }
+.ma-cta-phone svg { width: 24px; height: 24px; color: #fbbf24; }
+.ma-cta-compare { color: #fff; padding: 0; }
+.ma-cta-compare:hover { color: #fbbf24; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  .ma-benefit-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 900px) {
+  .ma-split,
+  .ma-split--photo-left,
+  .ma-split--fit { grid-template-columns: 1fr; gap: 32px; }
+  .ma-networks .ma-photo { order: 2; }
+}
+@media (max-width: 768px) {
+  .page-header--ma {
+    padding: 48px 0 44px;
+    background:
+      linear-gradient(180deg, rgba(10, 30, 70, 0.9) 0%, rgba(10, 30, 70, 0.82) 100%),
+      url("/images/teton-mobile.webp") center / cover no-repeat, #0f2f66;
+  }
+  .ma-hero-features { flex-direction: column; gap: 12px; }
+  .ma-section { padding: 54px 0; }
+}
+@media (max-width: 560px) {
+  .ma-benefit-grid { grid-template-columns: 1fr; }
+  .ma-moop-card { min-height: 0; padding: 14px; }
+  .ma-fit-callout { padding: 22px; }
+}
+@media (max-width: 560px) {
+  .ma-benefit-grid { gap: 12px; }
+  .ma-benefit { display: flex; gap: 14px; align-items: flex-start; padding: 16px; }
+  .ma-benefit-icon { width: 46px; height: 46px; margin: 0; flex-shrink: 0; }
+  .ma-benefit-icon svg { width: 22px; height: 22px; }
+}
+
+/* ---------- Medicare Advantage hero v2: clear photo + text "cloud" ----------
+   No darkening; a feathered white cloud sits behind the copy (same treatment
+   as the Medicare Basics hero) and the text switches to navy. */
+.page-header--ma { background: url("/images/teton3.webp") center 35% / cover no-repeat, #3498f6; }
+.ma-hero-copy { position: relative; isolation: isolate; max-width: 900px; }
+.ma-hero-copy::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -26px -70px -26px -90px;
+  border-radius: 140px;
+  background: rgba(255, 255, 255, 0.84);
+  filter: blur(26px);
+  pointer-events: none;
+}
+.page-header--ma h1 { color: #0f2f66; }
+.page-header--ma .ma-accent { color: #d97706; }
+.page-header--ma .ma-eyebrow--light { color: var(--mountain-blue); }
+.page-header--ma .breadcrumb,
+.page-header.page-header--ma.has-reel .breadcrumb { color: var(--charcoal-soft); }
+.page-header--ma .breadcrumb a,
+.page-header.page-header--ma.has-reel .breadcrumb a,
+.page-header--ma .ai-summary a,
+.page-header.page-header--ma.has-reel .ai-summary a { color: var(--mountain-blue); }
+.page-header--ma .ai-summary,
+.page-header.page-header--ma.has-reel .ai-summary { color: var(--charcoal-soft); }
+.page-header--ma .lede,
+.page-header.page-header--ma.has-reel .lede { color: #0f172a; font-weight: 600; }
+.page-header--ma .ma-hero-features li { color: #0f2f66; }
+.page-header--ma .ma-hero-icon { background: var(--mountain-blue); color: #fff; }
+@media (max-width: 768px) {
+  .page-header--ma { background: url("/images/teton-mobile.webp") center / cover no-repeat, #3498f6; }
+  .ma-hero-copy::before { inset: -20px -30px; border-radius: 60px; filter: blur(18px); }
+}
+
+/* ---------- Shared 3D photo frame (.photo-frame-3d) ----------
+   One implementation for every plan page (Medicare Advantage, Medicare
+   Supplement): a white bevelled border (light top-left edge, soft darker
+   bottom-right edge), a layered drop shadow, and a gentle tilt on hover —
+   toward the left by default, --tilt-right for photos on the left side.
+   Motion is dropped for prefers-reduced-motion. */
+.photo-frame-3d {
+  position: relative;
+  border: 6px solid #fff;
+  box-shadow:
+    inset 0 0 0 1px rgba(15, 47, 102, 0.08),
+    0 1px 0 1px rgba(255, 255, 255, 0.9),
+    0 2px 4px rgba(15, 47, 102, 0.08),
+    0 10px 20px -6px rgba(15, 47, 102, 0.18),
+    0 30px 50px -24px rgba(15, 47, 102, 0.45);
+  outline: 1px solid rgba(15, 47, 102, 0.1);
+  transform: perspective(1200px) rotateX(0) rotateY(0);
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
+}
+.photo-frame-3d::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 2px 2px 0 rgba(255, 255, 255, 0.55), inset -2px -2px 0 rgba(15, 47, 102, 0.12);
+}
+.photo-frame-3d > :not(img) { z-index: 1; }
+.photo-frame-3d:hover {
+  transform: perspective(1200px) rotateY(-4deg) rotateX(2deg) translateY(-4px);
+  box-shadow:
+    inset 0 0 0 1px rgba(15, 47, 102, 0.08),
+    0 1px 0 1px rgba(255, 255, 255, 0.9),
+    0 4px 8px rgba(15, 47, 102, 0.1),
+    0 18px 30px -8px rgba(15, 47, 102, 0.22),
+    0 44px 64px -28px rgba(15, 47, 102, 0.55);
+}
+.photo-frame-3d--tilt-right:hover {
+  transform: perspective(1200px) rotateY(4deg) rotateX(2deg) translateY(-4px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .photo-frame-3d { transition: none; }
+  .photo-frame-3d:hover { transform: none; }
+}
+
+/* ---------- MEDICARE SUPPLEMENT PAGE ----------
+   Built from the shared plan-page classes (ma-*, photo-frame-3d); only the
+   pieces unique to this page live here. */
+.ms-why-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; margin-top: 30px; }
+.ms-why h3 { font-size: 1.12rem; font-weight: 800; color: #0f172a; margin-bottom: 8px; }
+.ms-why p { margin: 0; }
+.ms-btn-outline {
+  display: inline-flex; align-items: center; gap: 10px;
+  margin-top: 8px; padding: 12px 22px; border-radius: 999px;
+  border: 2px solid var(--mountain-blue); color: var(--mountain-blue);
+  font-weight: 700; font-size: 0.95rem;
+  transition: background-color var(--transition), color var(--transition);
+}
+.ms-btn-outline svg { width: 18px; height: 18px; }
+.ms-btn-outline:hover { background: var(--mountain-blue); color: #fff; }
+.ms-letter-card {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(-4deg);
+  display: flex; align-items: center; gap: 16px;
+  padding: 18px 22px; border-radius: 16px; background: #fff;
+  box-shadow: 0 24px 40px -18px rgba(0, 0, 0, 0.55);
+}
+.ms-letter-card-icon { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 14px; background: #dbeafe; color: var(--mountain-blue); }
+.ms-letter-card-icon svg { width: 28px; height: 28px; }
+.ms-letter-chips { display: flex; gap: 8px; }
+.ms-letter-chips span {
+  padding: 8px 14px; border-radius: 10px; font-weight: 800; font-size: 1.05rem; white-space: nowrap;
+  background: #0f2f66; color: #fff;
+}
+.ms-letter-chips span:first-child { background: #fbbf24; color: #0f172a; }
+.ms-callout-card { min-height: 320px; }
+.ms-callout-box {
+  display: flex; gap: 14px; align-items: flex-start;
+  padding: 20px 22px; border-radius: 16px;
+  background: rgba(255, 251, 235, 0.97); border: 1px solid #fde68a;
+}
+.ms-callout-box strong { display: block; color: #0f172a; font-size: 1.08rem; margin-bottom: 6px; }
+.ms-callout-box p { margin: 0; color: var(--charcoal-soft); font-size: 0.95rem; line-height: 1.6; }
+@media (max-width: 1100px) { .ms-why-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 900px) { .ms-letters-photo { order: 2; } }
+@media (max-width: 560px) {
+  .ms-why-grid { grid-template-columns: 1fr; gap: 12px; }
+  .ms-why { display: grid; grid-template-columns: 46px 1fr; column-gap: 14px; }
+  .ms-why .ma-benefit-icon { grid-row: span 2; }
+  .ms-letter-card { padding: 12px 14px; gap: 10px; }
+  .ms-letter-card-icon { width: 40px; height: 40px; }
+  .ms-letter-chips span { padding: 6px 10px; font-size: 0.9rem; }
+  .ms-callout-card { min-height: 0; }
+}
+/* Inline emphasis inside a "why" card stays inline (the shared .ma-benefit
+   rule turns a leading <strong> into the card title). */
+.ms-why p strong { display: inline; font-size: inherit; margin: 0; font-weight: 700; }
+
+/* ---------- PRESCRIPTION DRUG PLANS (PART D) PAGE ----------
+   Built from the shared plan-page classes (ma-*, ms-why-grid, photo-frame-3d);
+   only the pieces unique to this page live here. */
+.pd-checks { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 14px; }
+.pd-checks li {
+  display: flex; gap: 14px; align-items: flex-start;
+  padding: 16px 18px; border-radius: 16px; background: #f7faff; border: 1px solid #e5edf9;
+}
+.pd-checks p { margin: 0; color: var(--charcoal-soft); }
+.pd-checks p strong { display: block; color: #0f172a; font-size: 1.05rem; }
+.pd-check { flex-shrink: 0; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--mountain-blue); color: #fff; }
+.pd-check svg { width: 16px; height: 16px; stroke-width: 3; }
+.pd-art { align-items: center; justify-content: center; min-height: 320px; }
+.pd-art-card {
+  display: flex; align-items: center; gap: 18px;
+  padding: 22px 28px; border-radius: 20px; background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 24px 40px -18px rgba(0, 0, 0, 0.55); transform: rotate(-3deg);
+}
+.pd-art-icon { display: grid; place-items: center; width: 72px; height: 72px; border-radius: 20px; background: linear-gradient(135deg, #f59e0b, #d97706); color: #fff; }
+.pd-art-icon svg { width: 40px; height: 40px; }
+.pd-art-label { font-size: 2rem; font-weight: 800; color: #0f2f66; }
+
+.pd-changes { background: #fff; }
+.pd-changes-split { align-items: center; }
+.pd-change-list { display: grid; gap: 14px; margin-top: 18px; }
+.pd-cap-card {
+  position: relative; overflow: hidden;
+  padding: 34px 32px; border-radius: 22px; color: #fff;
+  background:
+    linear-gradient(110deg, rgba(10, 30, 70, 0.97) 0%, rgba(10, 30, 70, 0.9) 55%, rgba(10, 30, 70, 0.55) 100%),
+    url("/images/teton-mobile.webp") right center / cover no-repeat, #0f2f66;
+  box-shadow: 0 30px 60px -28px rgba(15, 47, 102, 0.7);
+  border: 6px solid #fff; outline: 1px solid rgba(15, 47, 102, 0.1);
+}
+.pd-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 7px 14px; border-radius: 999px; background: #fbbf24; color: #0f172a;
+  font-size: 0.8rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+}
+.pd-badge svg { width: 16px; height: 16px; }
+.pd-cap-card h3 { color: #fff; font-size: 1.5rem; font-weight: 800; margin: 18px 0 12px; line-height: 1.2; }
+.pd-big { display: block; font-size: clamp(3rem, 6vw, 4.4rem); line-height: 1; color: #fbbf24; letter-spacing: -0.02em; }
+.pd-cap-card p { color: #e2e8f0; margin: 0; font-size: 1.02rem; line-height: 1.65; max-width: 520px; }
+
+.pd-help-photo img { aspect-ratio: 16 / 11; }
+.pd-review {
+  left: auto !important; right: 16px; bottom: 16px; max-width: 360px;
+  display: flex; gap: 14px; align-items: flex-start;
+  background: rgba(255, 255, 255, 0.97) !important; color: var(--charcoal) !important;
+  padding: 18px 20px !important; box-shadow: 0 16px 30px -16px rgba(0, 0, 0, 0.5);
+}
+.pd-review .ma-fit-icon { width: 46px; height: 46px; margin: 0; flex-shrink: 0; }
+.pd-review .ma-fit-icon svg { width: 24px; height: 24px; }
+.pd-review strong { display: block; color: #0f172a; font-size: 1.05rem; margin-bottom: 4px; }
+.pd-review p { margin: 0; color: var(--charcoal-soft); font-size: 0.92rem; line-height: 1.55; }
+.pd-review a { color: var(--mountain-blue); font-weight: 700; }
+
+@media (max-width: 640px) {
+  .pd-art { min-height: 220px; }
+  .pd-art-card { padding: 16px 20px; }
+  .pd-art-icon { width: 56px; height: 56px; }
+  .pd-art-label { font-size: 1.6rem; }
+  .pd-cap-card { padding: 24px 20px; }
+  .pd-help-photo img { aspect-ratio: 4 / 3; }
+  .pd-review { position: static !important; max-width: none; border-radius: 0 0 14px 14px !important; box-shadow: none; }
+}
+.pd-review .ma-fit-icon { background: #dbeafe; color: var(--mountain-blue); }
+/* Phones: the $2,000 card leads the {year} section, right under its heading. */
+@media (max-width: 900px) {
+  .pd-changes-split > div:first-child { display: contents; }
+  .pd-changes-split .ma-eyebrow, .pd-changes-split h2 { order: 0; }
+  .pd-cap-card { order: 1; }
+  .pd-change-list { order: 2; margin-top: 0; }
+  .pd-changes-split { gap: 18px; }
+  .pd-changes-split h2 { margin-bottom: 0; }
+}
+
+/* ---------- DUAL ELIGIBLE (D-SNP) PAGE ----------
+   Shares the plan-page system (ma-*, photo-frame-3d); its own identity comes
+   from the Medicare + Medicaid equation art, the horizontal benefit cards and
+   the program-acronym card. */
+.dsnp-equation {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  display: flex; align-items: center; gap: 10px; flex-wrap: nowrap;
+  padding: 16px 18px; border-radius: 18px; background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 24px 40px -18px rgba(0, 0, 0, 0.55);
+}
+.dsnp-chip { padding: 9px 14px; border-radius: 12px; background: var(--mountain-blue); color: #fff; font-weight: 800; font-size: 1.05rem; white-space: nowrap; }
+.dsnp-chip--gold { background: #fbbf24; color: #0f172a; }
+.dsnp-chip--navy { background: #0f2f66; }
+.dsnp-op { display: grid; place-items: center; color: #0f2f66; font-weight: 800; font-size: 1.4rem; }
+.dsnp-op svg { width: 22px; height: 22px; stroke-width: 3; }
+
+.dsnp-benefits { list-style: none; margin: 30px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.dsnp-benefit {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 22px; border-radius: 18px; background: #fff; border: 1px solid #e5edf9;
+  box-shadow: 0 14px 32px -24px rgba(15, 47, 102, 0.5);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.dsnp-benefit:hover { transform: translateY(-4px); box-shadow: 0 22px 40px -22px rgba(15, 47, 102, 0.5); }
+.dsnp-benefit-icon { flex-shrink: 0; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: #dbeafe; color: var(--mountain-blue); }
+.dsnp-benefit-icon svg { width: 28px; height: 28px; }
+.dsnp-benefit p { margin: 0 0 10px; color: var(--charcoal-soft); font-size: 0.95rem; line-height: 1.55; }
+.dsnp-benefit p:last-child { margin-bottom: 0; }
+.dsnp-benefit p strong { display: block; color: #0f172a; font-size: 1.08rem; font-weight: 800; margin-bottom: 3px; }
+.dsnp-benefit p strong::first-letter { text-transform: uppercase; }
+
+.dsnp-programs { align-items: center; justify-content: center; min-height: 320px; }
+.dsnp-programs-card {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+  padding: 20px; border-radius: 20px; background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 24px 40px -18px rgba(0, 0, 0, 0.55); transform: rotate(-3deg);
+}
+.dsnp-programs-card span { padding: 14px 22px; border-radius: 12px; text-align: center; font-weight: 800; font-size: 1.3rem; background: #0f2f66; color: #fff; }
+.dsnp-programs-card span:nth-child(2), .dsnp-programs-card span:nth-child(3) { background: #fbbf24; color: #0f172a; }
+.dsnp-note { margin: 20px 0 0; padding: 16px 18px; border-radius: 14px; background: #fffbeb; border-left: 4px solid #fbbf24; color: var(--charcoal-soft); }
+
+.dsnp-help-photo img { aspect-ratio: 16 / 11; }
+.dsnp-help {
+  left: auto !important; right: 16px; bottom: 16px; max-width: 370px;
+  display: flex; gap: 14px; align-items: flex-start;
+  background: rgba(255, 255, 255, 0.97) !important; color: var(--charcoal) !important;
+  padding: 18px 20px !important; box-shadow: 0 16px 30px -16px rgba(0, 0, 0, 0.5);
+}
+.dsnp-help-icon { flex-shrink: 0; display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; background: var(--mountain-blue); color: #fff; }
+.dsnp-help-icon svg { width: 22px; height: 22px; }
+.dsnp-help strong { display: block; color: #0f172a; font-size: 1.05rem; margin-bottom: 4px; }
+.dsnp-help p { margin: 0 0 8px; color: var(--charcoal-soft); font-size: 0.92rem; line-height: 1.55; }
+.dsnp-help a { color: var(--mountain-blue); font-weight: 800; }
+
+@media (max-width: 1100px) { .dsnp-benefits { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 900px) { .dsnp-programs { order: 2; } }
+@media (max-width: 640px) {
+  .dsnp-benefits { grid-template-columns: 1fr; gap: 12px; }
+  .dsnp-benefit { padding: 16px; }
+  .dsnp-benefit-icon { width: 46px; height: 46px; }
+  .dsnp-equation { gap: 6px; padding: 10px; }
+  .dsnp-chip { padding: 6px 9px; font-size: 0.85rem; }
+  .dsnp-op { font-size: 1.1rem; }
+  .dsnp-op svg { width: 16px; height: 16px; }
+  .dsnp-programs { min-height: 220px; }
+  .dsnp-programs-card span { padding: 10px 16px; font-size: 1.1rem; }
+  .dsnp-help-photo img { aspect-ratio: 4 / 3; }
+  .dsnp-help { position: static !important; max-width: none; border-radius: 0 0 14px 14px !important; box-shadow: none; }
+}
+.ma-photo figcaption .dsnp-help-icon { color: #fff; font-size: inherit; letter-spacing: 0; }
+
+/* ---------- DENTAL, VISION & HEARING PAGE ----------
+   Shares the plan-page system (ma-*, photo-frame-3d, basics-tools); its own
+   identity is the three numbered option cards and the icon trio. */
+.dvh-gaps { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 10px; }
+.dvh-gaps li {
+  display: flex; align-items: center; gap: 14px;
+  padding: 12px 16px; border-radius: 14px; background: #f7faff; border: 1px solid #e5edf9;
+  color: #0f172a; font-weight: 600;
+}
+.dvh-gap-icon { flex-shrink: 0; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: #dbeafe; color: var(--mountain-blue); }
+.dvh-gap-icon svg { width: 20px; height: 20px; }
+.dvh-goodnews { border-left: 4px solid #fbbf24; }
+.dvh-trio { align-items: center; justify-content: center; min-height: 340px; }
+.dvh-trio-card {
+  display: flex; gap: 16px; padding: 24px 28px; border-radius: 22px;
+  background: rgba(255, 255, 255, 0.96); box-shadow: 0 24px 40px -18px rgba(0, 0, 0, 0.55);
+  transform: rotate(-3deg);
+}
+.dvh-trio-icon { display: grid; place-items: center; width: 84px; height: 84px; border-radius: 50%; background: var(--mountain-blue); color: #fff; }
+.dvh-trio-icon svg { width: 42px; height: 42px; }
+.dvh-trio-icon--gold { background: #fbbf24; color: #0f172a; }
+.dvh-trio-icon--sky { background: #0284c7; }
+
+.dvh-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-top: 14px; }
+.dvh-option {
+  position: relative; display: flex; flex-direction: column;
+  padding: 28px 26px; border-radius: 20px; background: #fff;
+  border: 1px solid #e5edf9; border-top: 5px solid var(--opt, var(--mountain-blue));
+  box-shadow: 0 18px 40px -26px rgba(15, 47, 102, 0.5);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.dvh-option:hover { transform: translateY(-5px); box-shadow: 0 28px 50px -24px rgba(37, 99, 235, 0.45); }
+.dvh-option--2 { --opt: #fbbf24; --opt-num-bg: #fbbf24; --opt-num: #0f172a; }
+.dvh-option--3 { --opt: #38bdf8; --opt-num-bg: #0284c7; }
+.dvh-option-top { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+.dvh-num { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; background: var(--opt-num-bg, var(--mountain-blue)); color: var(--opt-num, #fff); font-weight: 800; font-size: 1.15rem; }
+.dvh-option-icon { display: grid; place-items: center; width: 60px; height: 60px; border-radius: 50%; background: #eef4ff; color: var(--mountain-blue); }
+.dvh-option-icon svg { width: 30px; height: 30px; }
+.dvh-option h2 { font-size: 1.3rem; line-height: 1.25; margin-bottom: 12px; }
+.dvh-option p { color: var(--charcoal-soft); font-size: 0.98rem; line-height: 1.65; margin: 0 0 14px; }
+.dvh-option p a { font-weight: 700; }
+.dvh-option-note {
+  margin-top: auto !important; margin-bottom: 0 !important;
+  display: flex; gap: 10px; align-items: flex-start;
+  padding: 14px 16px; border-radius: 14px; background: #eef4ff; color: #0f2f66 !important; font-weight: 600;
+}
+.dvh-option-note span { flex-shrink: 0; display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--mountain-blue); color: #fff; }
+.dvh-option-note svg { width: 14px; height: 14px; stroke-width: 3; }
+
+.dvh-look { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 48px; align-items: start; }
+.dvh-checklist { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.dvh-checklist li {
+  display: flex; gap: 14px; align-items: center;
+  padding: 14px 18px; border-radius: 14px; background: #fff; border: 1px solid #e5edf9;
+  box-shadow: 0 10px 24px -22px rgba(15, 47, 102, 0.5);
+}
+.dvh-checklist p { margin: 0; color: var(--charcoal-soft); }
+.dvh-checklist p strong { color: #0f172a; }
+.dvh-check-icon { flex-shrink: 0; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: #dbeafe; color: var(--mountain-blue); }
+.dvh-check-icon svg { width: 20px; height: 20px; }
+.dvh-fit {
+  display: flex; gap: 16px; align-items: flex-start; margin-top: 18px;
+  padding: 22px 24px; border-radius: 16px; background: #fff;
+  border-left: 5px solid var(--mountain-blue); box-shadow: 0 18px 36px -24px rgba(15, 47, 102, 0.5);
+}
+.dvh-fit-icon { flex-shrink: 0; display: grid; place-items: center; width: 50px; height: 50px; border-radius: 50%; background: #fbbf24; color: #0f172a; }
+.dvh-fit-icon svg { width: 26px; height: 26px; }
+.dvh-fit strong { display: block; color: #0f172a; font-size: 1.1rem; margin-bottom: 6px; }
+.dvh-fit p { margin: 0; color: var(--charcoal-soft); line-height: 1.65; }
+
+@media (max-width: 1000px) {
+  .dvh-options { grid-template-columns: 1fr; }
+  .dvh-look { grid-template-columns: 1fr; gap: 20px; }
+}
+@media (max-width: 900px) { .dvh-trio { min-height: 220px; } }
+@media (max-width: 640px) {
+  .dvh-trio-card { gap: 10px; padding: 16px 18px; }
+  .dvh-trio-icon { width: 60px; height: 60px; }
+  .dvh-trio-icon svg { width: 30px; height: 30px; }
+  .dvh-option { padding: 22px 20px; }
+  .dvh-checklist li { align-items: flex-start; }
+  .dvh-fit { padding: 18px; }
+}
+
+/* ---------- FREE MEDICARE TOOLS HUB (/tools) ----------
+   Shares the plan-page hero/CTA (ma-*); the tool library cards are unique to
+   this page. No new image assets: the four core calculators use the existing
+   Teton photo behind their art panel, the rest a tinted gradient. */
+.tools-library { background: #f4f8fc; }
+.tools-library .section-header .eyebrow { display: inline-flex; align-items: center; gap: 14px; font-weight: 700; letter-spacing: 0.2em; }
+.tools-library .section-header .eyebrow::before,
+.tools-library .section-header .eyebrow::after { content: ""; width: 36px; height: 3px; border-radius: 2px; background: #fbbf24; }
+.tools-library .section-header h2 { font-weight: 800; color: #0f172a; }
+.tool-lib-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.tool-lib-card {
+  position: relative; display: flex; align-items: stretch; gap: 14px; overflow: hidden;
+  padding: 18px; border-radius: 20px; background: #fff; border: 1px solid #e3ebf7;
+  color: inherit; box-shadow: 0 16px 36px -26px rgba(15, 47, 102, 0.5);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+.tool-lib-card:hover,
+.tool-lib-card:focus-visible {
+  transform: translateY(-4px); border-color: #93c5fd;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15), 0 24px 44px -24px rgba(37, 99, 235, 0.5);
+}
+.tool-lib-body { flex: 1; min-width: 0; display: flex; flex-direction: column; padding: 4px 0 2px 4px; }
+.tool-lib-icon {
+  display: grid; place-items: center; width: 50px; height: 50px; border-radius: 50%;
+  background: #dbeafe; color: var(--mountain-blue); font-size: 1.3rem; margin-bottom: 14px;
+}
+.tool-lib-card h3 { font-size: 1.15rem; font-weight: 800; line-height: 1.25; color: #0f172a; margin-bottom: 8px; }
+.tool-lib-card p { font-size: 0.93rem; line-height: 1.55; color: var(--charcoal-soft); margin: 0 0 14px; }
+.tool-lib-link { margin-top: auto; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; color: var(--mountain-blue); }
+.tool-lib-link svg { width: 16px; height: 16px; transition: transform var(--transition); }
+.tool-lib-card:hover .tool-lib-link svg { transform: translateX(3px); }
+.tool-lib-art {
+  flex: 0 0 38%; display: grid; place-items: center; border-radius: 14px;
+  font-size: 2.8rem; color: rgba(255, 255, 255, 0.95);
+  background:
+    radial-gradient(circle at 75% 20%, rgba(255, 255, 255, 0.3), transparent 50%),
+    linear-gradient(150deg, #60a5fa 0%, #2563eb 55%, #1e3a8a 100%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+}
+.tool-lib-art i { filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.25)); }
+.tool-lib-card:nth-child(3n+2) .tool-lib-art { background: radial-gradient(circle at 75% 20%, rgba(255,255,255,.35), transparent 50%), linear-gradient(150deg, #fcd34d 0%, #f59e0b 55%, #b45309 100%); }
+.tool-lib-card:nth-child(3n) .tool-lib-art { background: radial-gradient(circle at 75% 20%, rgba(255,255,255,.3), transparent 50%), linear-gradient(150deg, #38bdf8 0%, #0284c7 55%, #075985 100%); }
+.tool-lib-card--featured .tool-lib-art,
+.tool-lib-card--featured:nth-child(n) .tool-lib-art {
+  background:
+    linear-gradient(180deg, rgba(15, 47, 102, 0.05) 0%, rgba(15, 47, 102, 0.55) 100%),
+    url("/images/teton-mobile.webp") center / cover no-repeat;
+  border: 3px solid #fff; box-shadow: 0 10px 22px -12px rgba(15, 47, 102, 0.6);
+}
+.tool-lib-card--featured .tool-lib-art i {
+  display: grid; place-items: center; width: 72px; height: 72px; border-radius: 18px;
+  background: rgba(255, 255, 255, 0.95); color: var(--mountain-blue); font-size: 2rem;
+}
+
+.tools-guide { padding-top: 0; background: #f4f8fc; }
+.tools-guide-panel {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 24px 26px; border-radius: 18px; background: #eaf2ff;
+  border-left: 5px solid var(--mountain-blue); box-shadow: 0 14px 30px -26px rgba(15, 47, 102, 0.5);
+}
+.tools-guide-panel p { margin: 0; color: #1e293b; line-height: 1.75; }
+.tools-guide-panel a { color: var(--mountain-blue); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+.tools-guide-icon { flex-shrink: 0; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--mountain-blue); color: #fff; }
+.tools-guide-icon svg { width: 22px; height: 22px; }
+
+@media (max-width: 1100px) { .tool-lib-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) {
+  .tool-lib-grid { grid-template-columns: 1fr; gap: 14px; }
+  .tool-lib-card { padding: 14px; }
+  .tool-lib-art { flex-basis: 30%; font-size: 2rem; }
+  .tool-lib-card--featured .tool-lib-art i { width: 54px; height: 54px; font-size: 1.5rem; border-radius: 14px; }
+  .tools-guide-panel { padding: 18px; }
+}
+@media (prefers-reduced-motion: reduce) { .tool-lib-card { transition: none; } .tool-lib-card:hover { transform: none; } }

@@ -1,0 +1,191 @@
+---
+// src/components/content/DualEligiblePage.astro — THE shared template.
+// Copy lives in src/i18n/content/{locale}/dual-eligible.json. Layout reuses
+// the shared plan-page classes (ma-*, photo-frame-3d).
+import MainLayout from '../../layouts/MainLayout.astro';
+import AiSummary from '../AiSummary.astro';
+import HelpfulTools from '../HelpfulTools.astro';
+import { DEFAULT_LOCALE, getLangFromUrl, getLocaleMeta } from '../../i18n/locales';
+import { getPageContent, hreflangAlternates, interp, localizeHref } from '../../i18n/content';
+import { COMPARE_PLANS_URL, PHONE_DISPLAY } from '../../consts';
+
+interface Benefit { t: string; d: string }
+interface DualEligibleContent {
+  page: { title: string; description: string };
+  breadcrumbHtml: string;
+  header: { eyebrow: string; h1: string; h1Accent: string; lede: string; features: string[] };
+  basics: { eyebrow: string; h2: string; textHtml: string; equation: string[] };
+  benefits: { eyebrow: string; h2: string; cards: Benefit[][] };
+  qualify: { eyebrow: string; h2: string; introHtml: string; items: string[]; __programs: string[]; noteHtml: string };
+  switch: { eyebrow: string; h2: string; textHtml: string; help: { heading: string; textHtml: string } };
+  cta: { eyebrow: string; h2: string; textHtml: string; scheduleLabel: string; callLabel: string; compareLabel: string };
+}
+
+const lang = getLangFromUrl(Astro.url);
+const c = getPageContent<DualEligibleContent>('dual-eligible', lang);
+const vars = { phone: PHONE_DISPLAY };
+const canonical = lang === DEFAULT_LOCALE ? '/dual-eligible.html' : `/${lang}/dual-eligible`;
+const alternates = hreflangAlternates('dual-eligible');
+const href = (h: string) => localizeHref(h, lang);
+// Headline accent ("(D-SNP)") — plain h1 if a locale's h1 lacks it.
+const accentAt = c.header.h1Accent ? c.header.h1.lastIndexOf(c.header.h1Accent) : -1;
+const h1Lead = accentAt > -1 ? c.header.h1.slice(0, accentAt) : c.header.h1;
+const h1Accent = accentAt > -1 ? c.header.h1Accent : '';
+// Bret's photo alt already exists (translated) in the homepage content.
+const home = getPageContent<{ why: { card: { photoAlt: string } } }>('index', lang);
+
+const svg = (d: string) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
+const icons = {
+  people: svg('<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>'),
+  shield: svg('<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>'),
+  hand: svg('<path d="M11 14h2a2 2 0 000-4h-3c-.6 0-1.1.2-1.4.6L3 16"/><path d="M7 20l1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 00-2.75-2.91l-4.2 3.9"/><path d="M2 15l6 6"/>'),
+  cart: svg('<circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/>'),
+  pill: svg('<path d="M10.5 20.5l10-10a4.95 4.95 0 10-7-7l-10 10a4.95 4.95 0 107 7z"/><path d="M8.5 8.5l7 7"/>'),
+  car: svg('<path d="M5 17h14M5 17a2 2 0 104 0M15 17a2 2 0 104 0"/><path d="M3 17V11l2-5h14l2 5v6"/><path d="M3 11h18"/>'),
+  tooth: svg('<path d="M12 5.5C10 3 6 3 5 6c-1 3 .5 6 1.5 9 .7 2 1 5 2.5 5s1.5-4 3-4 1.5 4 3 4 1.8-3 2.5-5c1-3 2.5-6 1.5-9-1-3-5-3-7-.5z"/>'),
+  dollar: svg('<circle cx="12" cy="12" r="10"/><path d="M15 9.5a3 3 0 00-3-1.5c-1.7 0-3 .9-3 2.2 0 3 6 1.6 6 4.6 0 1.3-1.3 2.2-3 2.2a3.2 3.2 0 01-3-1.6M12 6v2M12 16v2"/>'),
+  card: svg('<rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/>'),
+  rx: svg('<path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 12h3a2 2 0 010 4H9v-6zM12 16l3 3"/>'),
+  info: svg('<circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>'),
+  check: svg('<path d="M20 6L9 17l-5-5"/>'),
+  plus: svg('<path d="M12 5v14M5 12h14"/>'),
+  swap: svg('<path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/>'),
+  phone: svg('<path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0122 16.92z"/>'),
+  arrow: svg('<path d="M5 12h14M13 6l6 6-6 6"/>'),
+};
+const heroIcons = [icons.people, icons.shield, icons.hand];
+const benefitIcons = [icons.cart, icons.pill, icons.car, icons.tooth, icons.dollar, icons.rx];
+---
+
+<MainLayout
+  title={c.page.title}
+  description={c.page.description}
+  canonical={canonical}
+>
+  <Fragment slot="head">
+    {alternates.map((a) => <link rel="alternate" hreflang={a.code} href={a.href} />)}
+    {lang !== DEFAULT_LOCALE && <meta property="og:locale" content={getLocaleMeta(lang).ogLocale} />}
+  </Fragment>
+
+<section class="page-header page-header--ma page-header--dsnp">
+  <div class="container">
+    <!-- Soft white "cloud" behind the copy keeps it readable over the clear photo. -->
+    <div class="ma-hero-copy">
+      <div class="breadcrumb" set:html={c.breadcrumbHtml}></div>
+      <span class="ma-eyebrow ma-eyebrow--light">{c.header.eyebrow}</span>
+      <h1>{h1Lead}{h1Accent && <span class="ma-accent">{h1Accent}</span>}</h1>
+      <AiSummary />
+      <p class="lede">{c.header.lede}</p>
+      <ul class="ma-hero-features">
+        {c.header.features.map((f, i) => (
+          <li><span class="ma-hero-icon" set:html={heroIcons[i % heroIcons.length]} />{f}</li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Medicare + Medicaid = More Help -->
+<section class="ma-section ma-intro">
+  <div class="container ma-split">
+    <div>
+      <span class="ma-eyebrow">{c.basics.eyebrow}</span>
+      <h2>{c.basics.h2}</h2>
+      <p class="ma-lead" set:html={c.basics.textHtml}></p>
+    </div>
+    <figure class="ma-photo ma-photo--landscape photo-frame-3d dsnp-equation-photo">
+      <img src="/images/teton-mobile.webp" alt="" width="1000" height="563" loading="lazy" decoding="async" />
+      <div class="dsnp-equation" aria-hidden="true">
+        <span class="dsnp-chip">{c.basics.equation[0]}</span>
+        <span class="dsnp-op" set:html={icons.plus} />
+        <span class="dsnp-chip dsnp-chip--gold">{c.basics.equation[1]}</span>
+        <span class="dsnp-op">=</span>
+        <span class="dsnp-chip dsnp-chip--navy">{c.basics.equation[2]}</span>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- Common D-SNP Benefits -->
+<section class="ma-section ma-benefits">
+  <div class="container">
+    <span class="ma-eyebrow">{c.benefits.eyebrow}</span>
+    <h2>{c.benefits.h2}</h2>
+    <ul class="dsnp-benefits">
+      {c.benefits.cards.map((card, i) => (
+        <li class="dsnp-benefit">
+          <span class="dsnp-benefit-icon" set:html={benefitIcons[i % benefitIcons.length]} />
+          <div>
+            {card.map((b) => (
+              <p><strong>{b.t}</strong>{b.d}</p>
+            ))}
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<!-- Do You Qualify? -->
+<section class="ma-section ma-networks">
+  <div class="container ma-split ma-split--photo-left">
+    <div class="ma-moop-card photo-frame-3d photo-frame-3d--tilt-right dsnp-programs" aria-hidden="true">
+      <div class="dsnp-programs-card">
+        {c.qualify.__programs.map((p) => <span>{p}</span>)}
+      </div>
+    </div>
+    <div>
+      <span class="ma-eyebrow">{c.qualify.eyebrow}</span>
+      <h2>{c.qualify.h2}</h2>
+      <p class="ma-lead" set:html={c.qualify.introHtml}></p>
+      <ul class="ma-checklist">
+        {c.qualify.items.map((q) => <li><span set:html={icons.check} /><span>{q}</span></li>)}
+      </ul>
+      <p class="dsnp-note" set:html={c.qualify.noteHtml}></p>
+    </div>
+  </div>
+</section>
+
+<!-- You Can Switch Plans Anytime -->
+<section class="ma-section ma-moop">
+  <div class="container ma-split">
+    <div>
+      <span class="ma-eyebrow">{c.switch.eyebrow}</span>
+      <h2>{c.switch.h2}</h2>
+      <p class="ma-lead" set:html={c.switch.textHtml}></p>
+    </div>
+    <figure class="ma-photo photo-frame-3d dsnp-help-photo">
+      <img src="/images/Teton1.webp" alt={home.why.card.photoAlt} width="1672" height="941" loading="lazy" decoding="async" />
+      <figcaption class="dsnp-help">
+        <span class="dsnp-help-icon" set:html={icons.phone} />
+        <div>
+          <strong>{c.switch.help.heading}</strong>
+          <p set:html={c.switch.help.textHtml}></p>
+          <a href="tel:4352925548">{PHONE_DISPLAY}</a>
+        </div>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="ma-cta">
+  <div class="container">
+    <div>
+      <span class="ma-eyebrow ma-eyebrow--light">{c.cta.eyebrow}</span>
+      <h2>{c.cta.h2}</h2>
+      <p set:html={c.cta.textHtml}></p>
+    </div>
+    <div class="ma-cta-actions">
+      <a href={href('/contact')} class="ma-btn-gold">{c.cta.scheduleLabel}<span set:html={icons.arrow} /></a>
+      <a href="tel:4352925548" class="ma-cta-phone"><span set:html={icons.phone} />{interp(c.cta.callLabel, vars)}</a>
+      <a href={COMPARE_PLANS_URL} target="_blank" rel="noopener" class="ma-cta-compare">{c.cta.compareLabel}<span set:html={icons.arrow} /></a>
+    </div>
+  </div>
+</section>
+
+<div class="basics-tools">
+<HelpfulTools />
+</div>
+
+</MainLayout>

@@ -1,0 +1,46 @@
+{
+  "__note": "MASTER content for /drug-savings.html, extracted losslessly from src/pages/drug-savings.astro. sms:/mailto: prefilled bodies stay in the component (protocol-href boundary — English messages to Bret). The $2,000 cap line is literal page copy, not a figures.ts token.",
+  "page": {
+    "title": "Lower Your Prescription Costs | AltaMedicare",
+    "description": "Free prescription review for Utah Medicare beneficiaries. We compare your medications across Part D plans and pharmacies to find your lowest cost."
+  },
+  "breadcrumbHtml": "<a href=\"/\">Home</a> &nbsp;&rsaquo;&nbsp; Drug Savings",
+  "header": {
+    "h1": "Lower Your Prescription Costs",
+    "ledeHtml": "Send us your medication list and we&rsquo;ll review whether your current plan is your most affordable option. No cost. No obligation."
+  },
+  "why": {
+    "h2": "Why Most People Overpay for Prescriptions",
+    "intro": "The same medication can cost wildly different amounts depending on:",
+    "itemsHtml": [
+      "<strong>Which Part D plan you have</strong> &mdash; each plan covers different drugs at different copay tiers",
+      "<strong>Which pharmacy you use</strong> &mdash; preferred pharmacies often cost dramatically less than standard ones",
+      "<strong>Whether you use mail order</strong> &mdash; 90-day supplies are often cheaper than three monthly fills",
+      "<strong>Whether you qualify for Extra Help</strong> &mdash; many people qualify and don&rsquo;t know it",
+      "<strong>Whether the new $2,000 cap applies to you</strong> &mdash; this 2025+ change affects high-cost drug users"
+    ],
+    "outroHtml": "People often switch into the same plan year after year out of habit. We&rsquo;ll actually compare your options, not just renew you into what you had."
+  },
+  "review": {
+    "eyebrow": "Free Service",
+    "h2": "Get Your Free Prescription Review",
+    "introHtml": "Tell us what you take and we&rsquo;ll get back to you with a personalized cost comparison.",
+    "textAction": {
+      "strong": "Text your meds to Bret",
+      "spanHtml": "Fastest way &mdash; opens a text with your list already started",
+      "label": "Text Your Medications"
+    },
+    "emailAction": {
+      "strong": "Email your meds to Bret",
+      "span": "Opens your email with a quick template to fill in",
+      "label": "Email Your Medications"
+    },
+    "noteHtml": "Bret personally reviews every list &mdash; usually within a few hours. No cost, no obligation."
+  },
+  "cta": {
+    "h2": "Have Questions? Let's Talk.",
+    "textHtml": "One free, no-pressure call &mdash; clear answers, no sales pitch.",
+    "scheduleLabel": "Schedule Consultation",
+    "callLabel": "Call {phone}"
+  }
+}

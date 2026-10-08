@@ -12,13 +12,13 @@ interface Block { h3Html: string; textHtml: string }
 interface MedicareSupplementContent {
   page: { title: string; description: string };
   breadcrumbHtml: string;
-  header: { h1: string; ledeHtml: string };
-  how: { h2: string; paragraphsHtml: string[] };
-  why: { h2: string; blocks: Block[] };
-  letters: { h2Html: string; paragraphsHtml: string[] };
-  partD: { h2: string; textHtml: string };
+  header: { h1: string; ledeHtml: string; eyebrow: string; h1Accent: string; features: string[] };
+  how: { eyebrow: string; h2: string; paragraphsHtml: string[] };
+  why: { eyebrow: string; h2: string; blocks: Block[] };
+  letters: { eyebrow: string; h2Html: string; paragraphsHtml: string[]; __planChips: string[] };
+  partD: { eyebrow: string; h2: string; textHtml: string; linkLabel: string };
   callout: { headingHtml: string; textHtml: string };
-  cta: { h2Html: string; textHtml: string; scheduleLabel: string; callLabel: string; compareLabel: string };
+  cta: { eyebrow: string; h2Html: string; textHtml: string; scheduleLabel: string; callLabel: string; compareLabel: string };
 }
 
 const lang = getLangFromUrl(Astro.url);
@@ -26,6 +26,33 @@ const c = getPageContent<MedicareSupplementContent>('medicare-supplement', lang)
 const vars = { phone: PHONE_DISPLAY };
 const canonical = lang === DEFAULT_LOCALE ? '/medicare-supplement' : `/${lang}/medicare-supplement`;
 const alternates = hreflangAlternates('medicare-supplement');
+const href = (h: string) => localizeHref(h, lang);
+
+// ---- Presentation only. Layout classes are shared with the Medicare
+// Advantage page (ma-*, photo-frame-3d) so the plan pages read as one system.
+const accentAt = c.header.h1Accent ? c.header.h1.lastIndexOf(c.header.h1Accent) : -1;
+const h1Lead = accentAt > -1 ? c.header.h1.slice(0, accentAt) : c.header.h1;
+const h1Accent = accentAt > -1 ? c.header.h1Accent : '';
+const h1Tail = accentAt > -1 ? c.header.h1.slice(accentAt + c.header.h1Accent.length) : '';
+// Bret's name/role/alt already exist (translated) in the homepage content.
+const home = getPageContent<{ why: { card: { photoAlt: string; name: string; role: string } } }>('index', lang);
+
+const svg = (d: string) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
+const icons = {
+  shield: svg('<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>'),
+  people: svg('<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>'),
+  doc: svg('<path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/>'),
+  dollar: svg('<circle cx="12" cy="12" r="10"/><path d="M15 9.5a3 3 0 00-3-1.5c-1.7 0-3 .9-3 2.2 0 3 6 1.6 6 4.6 0 1.3-1.3 2.2-3 2.2a3.2 3.2 0 01-3-1.6M12 6v2M12 16v2"/>'),
+  steth: svg('<path d="M4.8 2.3A.3.3 0 105 2H4a2 2 0 00-2 2v5a6 6 0 006 6 6 6 0 006-6V4a2 2 0 00-2-2h-1a.2.2 0 10.3.3"/><path d="M8 15v1a6 6 0 006 6 6 6 0 006-6v-4"/><circle cx="20" cy="10" r="2"/>'),
+  globe: svg('<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>'),
+  route: svg('<circle cx="6" cy="19" r="3"/><circle cx="18" cy="5" r="3"/><path d="M9 19h8.5a3.5 3.5 0 000-7h-11a3.5 3.5 0 010-7H15"/>'),
+  info: svg('<circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>'),
+  arrow: svg('<path d="M5 12h14M13 6l6 6-6 6"/>'),
+  phone: svg('<path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0122 16.92z"/>'),
+};
+const heroIcons = [icons.shield, icons.people, icons.doc];
+// One icon per existing "why" block: costs, doctors, nationwide, no referrals.
+const whyIcons = [icons.dollar, icons.steth, icons.globe, icons.route];
 ---
 
 <MainLayout
@@ -38,54 +65,122 @@ const alternates = hreflangAlternates('medicare-supplement');
     {lang !== DEFAULT_LOCALE && <meta property="og:locale" content={getLocaleMeta(lang).ogLocale} />}
   </Fragment>
 
-<section class="page-header">
+<section class="page-header page-header--ma page-header--ms">
   <div class="container">
-    <div class="breadcrumb" set:html={c.breadcrumbHtml}></div>
-    <h1>{c.header.h1}</h1>
-    <AiSummary />
-    <p class="lede" set:html={c.header.ledeHtml}></p>
+    <!-- Soft white "cloud" behind the copy keeps it readable over the clear photo. -->
+    <div class="ma-hero-copy">
+      <div class="breadcrumb" set:html={c.breadcrumbHtml}></div>
+      <span class="ma-eyebrow ma-eyebrow--light">{c.header.eyebrow}</span>
+      <h1>{h1Lead}{h1Accent && <span class="ma-accent">{h1Accent}</span>}{h1Tail}</h1>
+      <AiSummary />
+      <p class="lede" set:html={c.header.ledeHtml}></p>
+      <ul class="ma-hero-features">
+        {c.header.features.map((f, i) => (
+          <li><span class="ma-hero-icon" set:html={heroIcons[i % heroIcons.length]} />{f}</li>
+        ))}
+      </ul>
+    </div>
   </div>
 </section>
 
-<section class="section-white">
-  <div class="container content-narrow">
-    <h2>{c.how.h2}</h2>
-    {c.how.paragraphsHtml.map((p) => <p set:html={p} />)}
+<!-- How it works: framed photo left, copy right -->
+<section class="ma-section ma-intro">
+  <div class="container ma-split ma-split--photo-left">
+    <figure class="ma-photo photo-frame-3d photo-frame-3d--tilt-right">
+      <img src="/images/Teton1.webp" alt={home.why.card.photoAlt} width="1672" height="941" loading="lazy" decoding="async" />
+      <figcaption><strong>{home.why.card.name}</strong><span>{home.why.card.role}</span></figcaption>
+    </figure>
+    <div>
+      <span class="ma-eyebrow">{c.how.eyebrow}</span>
+      <h2>{c.how.h2}</h2>
+      <p class="ma-lead" set:html={c.how.paragraphsHtml[0]}></p>
+      {c.how.paragraphsHtml.slice(1).map((p) => (
+        <div class="ma-info">
+          <span class="ma-info-icon" set:html={icons.info} />
+          <p set:html={p}></p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
 
+<!-- Why people choose it: four benefit cards -->
+<section class="ma-section ma-benefits">
+  <div class="container">
+    <span class="ma-eyebrow">{c.why.eyebrow}</span>
     <h2>{c.why.h2}</h2>
-
-    {c.why.blocks.map((b) => (
-      <Fragment>
-        <h3 set:html={b.h3Html} />
-        <p set:html={b.textHtml} />
-      </Fragment>
-    ))}
-
-    <h2 set:html={c.letters.h2Html}></h2>
-    {c.letters.paragraphsHtml.map((p) => <p set:html={p} />)}
-
-    <h2>{c.partD.h2}</h2>
-    <p set:html={c.partD.textHtml}></p>
-
-    <div class="callout">
-      <strong set:html={c.callout.headingHtml}></strong>
-      <p style="margin:8px 0 0;" set:html={c.callout.textHtml}></p>
+    <div class="ms-why-grid">
+      {c.why.blocks.map((b, i) => (
+        <article class="ma-benefit ms-why">
+          <span class="ma-benefit-icon" set:html={whyIcons[i % whyIcons.length]} />
+          <h3 set:html={b.h3Html} />
+          <p set:html={b.textHtml} />
+        </article>
+      ))}
     </div>
   </div>
 </section>
 
-<section class="final-cta">
+<!-- Plan letters: framed photo with the plan letters named in the copy -->
+<section class="ma-section ma-networks">
+  <div class="container ma-split ma-split--photo-left">
+    <figure class="ma-photo ma-photo--landscape photo-frame-3d photo-frame-3d--tilt-right ms-letters-photo">
+      <img src="/images/teton-mobile.webp" alt="" width="1000" height="563" loading="lazy" decoding="async" />
+      <div class="ms-letter-card" aria-hidden="true">
+        <span class="ms-letter-card-icon" set:html={icons.doc} />
+        <div class="ms-letter-chips">
+          {c.letters.__planChips.map((l) => <span>{l}</span>)}
+        </div>
+      </div>
+    </figure>
+    <div>
+      <span class="ma-eyebrow">{c.letters.eyebrow}</span>
+      <h2 set:html={c.letters.h2Html}></h2>
+      {c.letters.paragraphsHtml.map((p) => <p class="ma-lead" set:html={p} />)}
+      <a href={COMPARE_PLANS_URL} target="_blank" rel="noopener" class="ms-btn-outline">{c.cta.compareLabel}<span set:html={icons.arrow} /></a>
+    </div>
+  </div>
+</section>
+
+<!-- Part D + enrollment-timing callout over a framed photo -->
+<section class="ma-section ma-moop">
+  <div class="container ma-split">
+    <div>
+      <span class="ma-eyebrow">{c.partD.eyebrow}</span>
+      <h2>{c.partD.h2}</h2>
+      <p class="ma-lead" set:html={c.partD.textHtml}></p>
+      <a href={href('prescription-drug-plans.html')} class="ms-btn-outline">{c.partD.linkLabel}<span set:html={icons.arrow} /></a>
+    </div>
+    <div class="ma-moop-card photo-frame-3d ms-callout-card">
+      <div class="ms-callout-box">
+        <span class="ma-info-icon" set:html={icons.info} />
+        <div>
+          <strong set:html={c.callout.headingHtml}></strong>
+          <p set:html={c.callout.textHtml}></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="ma-cta">
   <div class="container">
-    <h2 set:html={c.cta.h2Html}></h2>
-    <p set:html={c.cta.textHtml}></p>
-    <div class="cta-buttons">
-      <a href={localizeHref('contact.html', lang)} class="btn btn-primary btn-lg">{c.cta.scheduleLabel}</a>
-      <a href="tel:4352925548" class="btn btn-outline btn-lg">{interp(c.cta.callLabel, vars)}</a>
-      <a href={COMPARE_PLANS_URL} target="_blank" rel="noopener" class="btn btn-outline btn-lg">{c.cta.compareLabel}</a>
+    <div>
+      <span class="ma-eyebrow ma-eyebrow--light">{c.cta.eyebrow}</span>
+      <h2 set:html={c.cta.h2Html}></h2>
+      <p set:html={c.cta.textHtml}></p>
+    </div>
+    <div class="ma-cta-actions">
+      <a href={href('contact.html')} class="ma-btn-gold">{c.cta.scheduleLabel}<span set:html={icons.arrow} /></a>
+      <a href="tel:4352925548" class="ma-cta-phone"><span set:html={icons.phone} />{interp(c.cta.callLabel, vars)}</a>
+      <a href={COMPARE_PLANS_URL} target="_blank" rel="noopener" class="ma-cta-compare">{c.cta.compareLabel}<span set:html={icons.arrow} /></a>
     </div>
   </div>
 </section>
 
+<div class="basics-tools">
 <HelpfulTools />
+</div>
 
 </MainLayout>

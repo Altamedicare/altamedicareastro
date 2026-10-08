@@ -1,0 +1,86 @@
+{
+  "__translation_note": "Hand-authored Spanish (Claude, model claude-fable-5-1, 2026-10-07) following SPANISH-STYLE.md and src/i18n/glossary.json (CMS es.medicare.gov terminology) because no ANTHROPIC_API_KEY was available for scripts/translate.js. Validated with `npm run translate -- --check`. PENDING native-speaker review (YMYL). Seeded as authoritative per playbook §5.3 — do not hand-edit copy here; fix the English master or pin the term in the glossary.",
+  "page": {
+    "title": "Cobertura Dental, de la Vista y Auditiva | AltaMedicare",
+    "description": "Medicare Original no cubre los servicios dentales, de la vista ni auditivos de rutina. Estas son sus opciones a través de Medicare Advantage y planes independientes."
+  },
+  "breadcrumbHtml": "<a href=\"/\">Inicio</a> &nbsp;&rsaquo;&nbsp; <a href=\"/medicare-basics\">Planes</a> &nbsp;&rsaquo;&nbsp; Dental, Vista, Audición",
+  "header": {
+    "eyebrow": "Dental &bull; Vista &bull; Audición",
+    "h1": "Cobertura Dental, de la Vista y Auditiva",
+    "ledeHtml": "Medicare Original no cubre la atención dental, de la vista ni auditiva de rutina &mdash; pero usted tiene opciones.",
+    "features": [
+      "Cobertura dental",
+      "Cobertura de la vista",
+      "Cobertura auditiva"
+    ]
+  },
+  "gaps": {
+    "eyebrow": "Lo básico",
+    "h2Html": "Lo que Medicare Original No Cubre",
+    "introHtml": "Muchas personas se sorprenden al saber que Medicare Original (Parte A y Parte B) no cubre la mayor parte de lo que consideramos atención médica &ldquo;de todos los días&rdquo;:",
+    "items": [
+      "Limpiezas dentales de rutina, empastes, coronas y dentaduras postizas",
+      "Exámenes de la vista de rutina, anteojos o lentes de contacto",
+      "Exámenes de audición o audífonos"
+    ],
+    "goodNews": "La buena noticia: hay varias maneras de agregar esta cobertura."
+  },
+  "options": {
+    "eyebrow": "Sus opciones de cobertura",
+    "cards": [
+      {
+        "h2": "Opción 1: Planes Medicare Advantage",
+        "textHtml": "La mayoría de los planes <a href=\"/medicare-advantage\">Medicare Advantage</a> incluyen beneficios dentales, de la vista y auditivos sin prima adicional. Los niveles de cobertura varían según el plan &mdash; algunos incluyen solo limpiezas y exámenes, mientras que otros cubren coronas, dentaduras postizas y audífonos con asignaciones significativas.",
+        "note": "Si lo dental, la vista y la audición son importantes para usted, esta suele ser la opción más sencilla."
+      },
+      {
+        "h2Html": "Opción 2: Planes Independientes Dentales, de la Vista y Auditivos",
+        "textHtml": "Disponibles junto con Medicare Original y los planes de <a href=\"/medicare-supplement\">Seguro Suplementario de Medicare</a>. Le permiten conservar la flexibilidad para elegir médicos de Medicare Original/Seguro Suplementario mientras agrega cobertura complementaria. Las primas y los beneficios varían mucho."
+      },
+      {
+        "h2": "Opción 3: Programas de Descuento",
+        "textHtml": "Algunos programas de descuento dental y de la vista no son seguros, pero ofrecen tarifas reducidas con proveedores participantes. Útiles para necesidades ocasionales sin comprometerse con la prima de un seguro completo."
+      }
+    ]
+  },
+  "lookFor": {
+    "eyebrow": "Compare sus opciones",
+    "h2": "Qué Debe Buscar",
+    "intro": "Al comparar beneficios dentales, de la vista y auditivos:",
+    "items": [
+      {
+        "t": "Máximos anuales",
+        "d": "¿cuánto pagará el plan por año?"
+      },
+      {
+        "t": "Períodos de espera",
+        "d": "¿puede usar los beneficios mayores de inmediato o tiene que esperar?"
+      },
+      {
+        "t": "Red de proveedores",
+        "d": "¿está incluido su dentista o audiólogo?"
+      },
+      {
+        "t": "Asignaciones para audífonos",
+        "d": "algunos planes ofrecen $1,000 o más, otros mucho menos"
+      },
+      {
+        "t": "Asignaciones para la vista",
+        "d": "¿cuánto aportan para armazones y lentes cada año?"
+      }
+    ]
+  },
+  "fit": {
+    "headingHtml": "Encontremos la opción adecuada.",
+    "textHtml": "Si el trabajo dental, los audífonos o el cuidado de la vista son importantes para usted, díganoslo &mdash; le ayudaremos a comparar los planes en los que estos beneficios realmente destacan. Algunos planes tienen una excelente cobertura dental pero mínima auditiva; otros, al revés. La opción correcta depende de lo que usted realmente necesita."
+  },
+  "cta": {
+    "eyebrow": "Consulta gratuita",
+    "h2": "¿Tiene preguntas? Hablemos.",
+    "textHtml": "Una llamada gratuita y sin presión &mdash; respuestas claras, sin argumentos de venta.",
+    "scheduleLabel": "Programar consulta",
+    "callLabel": "Llame al {phone}",
+    "compareLabel": "Comparar planes en línea"
+  }
+}

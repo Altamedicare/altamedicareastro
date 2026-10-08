@@ -13,6 +13,12 @@ snapshot → extract JSON → componentize → 3-diff → translate → QA → c
 | Prescription Drug Plans | ✅ | ✅ | ✅ | ✅ | `bb0af9d` (figures tokenized §6.8) |
 | Medicare Advantage | ✅ | ✅ | ✅ | ✅ | `0dcf634` → tag `i18n-batch-2` |
 | Home | ✅ | ✅ | ✅ | ✅ | tag `i18n-homepage` (174 segments; approval gate after 3-diff) |
+| Free Medicare Tools (/tools) | ✅ | ✅ | ✅ hand-authored | ✅ | ⬜ uncommitted (2026-10-07) |
+| Dual Eligible (D-SNP) | ✅ | ✅ | ✅ hand-authored | ✅ | ⬜ uncommitted (2026-10-07) |
+| Dental, Vision & Hearing | ✅ | ✅ | ✅ hand-authored | ✅ | ⬜ uncommitted (2026-10-07; DVH copy frozen — extraction only) |
+| Drug Savings | ✅ | ✅ | ✅ hand-authored | ✅ | ⬜ uncommitted (2026-10-07) |
+
+2026-10-07 batch (4 pages): Spanish hand-authored by Claude (no ANTHROPIC_API_KEY available; playbook §10 'seed hand-authored es'), `--check` clean, 3-diff identical on all four EN pages (post-translation deltas = hreflang links + switcher only). New glossary pins (CMS es.medicare.gov): Medicaid (verbatim), Dual Eligible Special Needs Plan(s), QMB/SLMB/QI/QDWI program names — three validator-flagged FAQ es lines corrected to the pinned forms. NATIVE REVIEW PENDING before push.
 
 Shared infrastructure:
 

@@ -8,7 +8,14 @@
   "breadcrumbHtml": "<a href=\"index.html\">Inicio</a> &nbsp;&rsaquo;&nbsp; <a href=\"medicare-basics.html\">Planes</a> &nbsp;&rsaquo;&nbsp; Medicare Advantage",
   "header": {
     "h1": "Planes Medicare Advantage en Utah",
-    "ledeHtml": "Planes de Medicare todo en uno que combinan cobertura hospitalaria, médica y, por lo general, de medicamentos &mdash; a menudo con extras como dental, visión y audición."
+    "ledeHtml": "Planes de Medicare todo en uno que combinan cobertura hospitalaria, médica y, por lo general, de medicamentos &mdash; a menudo con extras como dental, visión y audición.",
+    "eyebrow": "Planes Medicare Advantage",
+    "h1Accent": "en Utah",
+    "features": [
+      "Orientación local e independiente",
+      "Compare opciones de planes",
+      "Encuentre la cobertura que necesita"
+    ]
   },
   "includes": {
     "h2": "Qué incluye Medicare Advantage",
@@ -27,7 +34,21 @@
     "networksH3": "Cómo funcionan las redes",
     "networksHtml": "Los planes Medicare Advantage usan redes de proveedores. La mayoría son <strong>HMO</strong> (solo dentro de la red) o <strong>PPO</strong> (se prefiere dentro de la red, pero se permite fuera de la red a un costo mayor). Antes de elegir un plan, siempre verificamos que sus médicos y hospitales preferidos estén dentro de la red.",
     "moopH3": "Copagos y máximo de gastos de su bolsillo (MOOP)",
-    "moopHtml": "En lugar de pagar un porcentaje de cada servicio como en Medicare Original, los planes Advantage suelen usar copagos fijos (por ejemplo, $0 por atención primaria, $40 por especialista). Todo plan Advantage también tiene un <strong>límite máximo anual de gastos de su bolsillo</strong> &mdash; una vez que lo alcanza, el plan paga el 100% durante el resto del año."
+    "moopHtml": "En lugar de pagar un porcentaje de cada servicio como en Medicare Original, los planes Advantage suelen usar copagos fijos (por ejemplo, $0 por atención primaria, $40 por especialista). Todo plan Advantage también tiene un <strong>límite máximo anual de gastos de su bolsillo</strong> &mdash; una vez que lo alcanza, el plan paga el 100% durante el resto del año.",
+    "eyebrow": "Resumen del plan",
+    "benefitsEyebrow": "Beneficios adicionales",
+    "networksEyebrow": "Redes de proveedores",
+    "networkTypes": [
+      {
+        "__name": "HMO",
+        "textHtml": "Solo dentro de la red"
+      },
+      {
+        "__name": "PPO",
+        "textHtml": "Se prefiere dentro de la red, pero se permite fuera de la red a un costo mayor"
+      }
+    ],
+    "moopEyebrow": "Costos"
   },
   "fit": {
     "h2": "¿Es Medicare Advantage adecuado para usted?",
@@ -38,7 +59,8 @@
       "Sus médicos están dentro de la red",
       "No viaja mucho para recibir atención médica",
       "Goza de buena salud en general y quiere una opción económica"
-    ]
+    ],
+    "eyebrow": "¿Es una buena opción?"
   },
   "callout": {
     "heading": "Los planes cambian todos los años.",
@@ -49,6 +71,10 @@
     "textHtml": "Una llamada gratuita y sin presión &mdash; respuestas claras, sin argumentos de venta.",
     "scheduleLabel": "Programar consulta",
     "callLabel": "Llame al {phone}",
-    "compareLabel": "Comparar planes en línea"
+    "compareLabel": "Comparar planes en línea",
+    "eyebrow": "Consulta gratuita"
+  },
+  "related": {
+    "eyebrow": "Recursos de Utah"
   }
 }

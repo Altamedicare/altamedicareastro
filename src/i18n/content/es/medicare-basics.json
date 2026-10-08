@@ -8,7 +8,21 @@
   "breadcrumbHtml": "<a href=\"index.html\">Inicio</a> &nbsp;&rsaquo;&nbsp; Conceptos Básicos de Medicare",
   "header": {
     "h1": "Conceptos Básicos de Medicare",
-    "lede": "Una guía en lenguaje sencillo sobre las partes de Medicare, cuándo puede inscribirse y cómo evitar multas."
+    "lede": "Una guía en lenguaje sencillo sobre las partes de Medicare, cuándo puede inscribirse y cómo evitar multas.",
+    "features": [
+      {
+        "strong": "Fácil de entender",
+        "span": "Explicaciones claras y sencillas"
+      },
+      {
+        "strong": "Orientación independiente",
+        "span": "Imparcial, local y de confianza"
+      },
+      {
+        "strong": "Decisiones con confianza",
+        "span": "La información que necesita"
+      }
+    ]
   },
   "parts": {
     "h2": "Las Cuatro Partes de Medicare",
@@ -29,6 +43,19 @@
       {
         "h3Html": "Parte D &mdash; Cobertura de Medicamentos Recetados",
         "textHtml": "Ayuda a cubrir el costo de los medicamentos recetados. Puede obtener la Parte D como un plan independiente (junto con Medicare Original) o como parte de un plan Medicare Advantage."
+      }
+    ],
+    "eyebrow": "Conceptos básicos de Medicare",
+    "links": [
+      null,
+      null,
+      {
+        "__href": "medicare-advantage.html",
+        "label": "Más sobre la Parte C"
+      },
+      {
+        "__href": "prescription-drug-plans.html",
+        "label": "Más sobre la Parte D"
       }
     ]
   },
@@ -51,7 +78,8 @@
         "h3Html": "Períodos de Inscripción Especial (SEP)",
         "textHtml": "Se activan por eventos de la vida como mudarse, perder la cobertura de un empleador, calificar para la Ayuda Adicional (Extra Help), o entrar o salir de un programa de Medicaid. Estos le dan una ventana para cambiar de plan fuera de los períodos normales."
       }
-    ]
+    ],
+    "eyebrow": "Cuándo puede inscribirse"
   },
   "callout": {
     "heading": "Las multas por inscripción tardía son permanentes.",
@@ -64,12 +92,24 @@
       "<strong>Medicare Advantage</strong> suele tener primas mensuales más bajas (o de $0), pero usa redes de proveedores y copagos. Excelente si por lo general goza de buena salud y desea beneficios adicionales como servicios dentales y de la vista.",
       "<strong>El Seguro Suplementario de Medicare</strong> tiene una prima mensual más alta, pero costos de bolsillo muy bajos y la flexibilidad de acudir a cualquier médico. Excelente si desea costos predecibles y viaja con frecuencia."
     ],
-    "outroHtml": "No hay una opción que sea universalmente &ldquo;mejor&rdquo; &mdash; depende de su salud, su presupuesto, a dónde viaja y cómo usa los servicios de salud. <a href=\"contact.html\">Conversemos al respecto.</a>"
+    "outroHtml": "No hay una opción que sea universalmente &ldquo;mejor&rdquo; &mdash; depende de su salud, su presupuesto, a dónde viaja y cómo usa los servicios de salud. <a href=\"contact.html\">Conversemos al respecto.</a>",
+    "eyebrow": "Compare sus opciones",
+    "links": [
+      {
+        "__href": "medicare-advantage.html",
+        "label": "Más sobre Medicare Advantage"
+      },
+      {
+        "__href": "medicare-supplement.html",
+        "label": "Más sobre el Seguro Suplementario de Medicare"
+      }
+    ]
   },
   "cta": {
     "h2Html": "¿Tiene preguntas? Hablemos.",
     "textHtml": "Una llamada gratuita y sin presión &mdash; respuestas claras, sin argumentos de venta.",
     "scheduleLabel": "Programar consulta",
-    "callLabel": "Llame al {phone}"
+    "callLabel": "Llame al {phone}",
+    "eyebrow": "Consulta gratuita"
   }
 }

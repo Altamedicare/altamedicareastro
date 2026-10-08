@@ -1,0 +1,163 @@
+---
+// src/components/content/ToolsPage.astro — THE shared template for the tools hub.
+// Copy lives in src/i18n/content/{locale}/tools.json. Each tool's URL and icon
+// come from the TOOLS registry (src/consts.ts) via its __key — one source of
+// truth shared with HelpfulTools, LocationTools and the header dropdown. The
+// calculators are English-only, so localizeHref resolves them to English URLs.
+import MainLayout from '../../layouts/MainLayout.astro';
+import AiSummary from '../AiSummary.astro';
+import { TOOLS, PHONE_DISPLAY, type ToolKey } from '../../consts';
+import { DEFAULT_LOCALE, getLangFromUrl, getLocaleMeta } from '../../i18n/locales';
+import { getPageContent, hreflangAlternates, interp, localizeHref } from '../../i18n/content';
+import { breadcrumbLd, crumbsFromHtml } from '../../i18n/breadcrumbs';
+
+interface ToolsContent {
+  page: { title: string; description: string };
+  breadcrumbHtml: string;
+  header: { eyebrow: string; h1: string; h1Accent: string; lede: string; features: string[] };
+  library: { eyebrow: string; h2: string; intro: string; linkLabel: string; tools: { __key: ToolKey; title: string; desc: string }[] };
+  comingSoon: { eyebrow: string; h2: string; intro: string; label: string };
+  guideHtml: string;
+  cta: { eyebrow: string; h2: string; text: string; scheduleLabel: string; callLabel: string };
+}
+
+const lang = getLangFromUrl(Astro.url);
+const c = getPageContent<ToolsContent>('tools', lang);
+const vars = { phone: PHONE_DISPLAY };
+const canonical = lang === DEFAULT_LOCALE ? '/tools' : `/${lang}/tools`;
+const alternates = hreflangAlternates('tools');
+// Mirrors the visible trail exactly — no invented levels.
+const crumbLd = breadcrumbLd(crumbsFromHtml(c.breadcrumbHtml), lang, canonical);
+const href = (h: string) => localizeHref(h, lang);
+
+// href + icon come from the registry; the hub only supplies its own wording.
+const available = c.library.tools.map((t) => ({ href: TOOLS[t.__key].href, icon: TOOLS[t.__key].icon, title: t.title, desc: t.desc }));
+const comingSoon: { icon: string; title: string }[] = [];
+
+// Headline accent — plain h1 if a locale's h1 lacks it.
+const accentAt = c.header.h1Accent ? c.header.h1.indexOf(c.header.h1Accent) : -1;
+const h1Lead = accentAt > -1 ? c.header.h1.slice(0, accentAt) : c.header.h1;
+const h1Accent = accentAt > -1 ? c.header.h1Accent : '';
+const h1Tail = accentAt > -1 ? c.header.h1.slice(accentAt + c.header.h1Accent.length) : '';
+
+// The four core calculators get the mountain-photo art panel; the rest get a
+// tinted gradient panel, so the grid stays one cohesive library.
+const featured = new Set(['/medicare-eligibility-calculator', '/medicare-irmaa-calculator', '/medicare-penalty-calculator', '/medicare-drug-cost-calculator']);
+const svg = (d: string) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
+const heroIcons = [
+  svg('<path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M17 8l5 5M22 8l-5 5"/>'),
+  svg('<circle cx="12" cy="12" r="10"/><path d="M15 9.5a3 3 0 00-3-1.5c-1.7 0-3 .9-3 2.2 0 3 6 1.6 6 4.6 0 1.3-1.3 2.2-3 2.2a3.2 3.2 0 01-3-1.6M12 6v2M12 16v2"/>'),
+  svg('<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>'),
+];
+const infoIcon = svg('<circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>');
+const arrow = svg('<path d="M5 12h14M13 6l6 6-6 6"/>');
+const phoneIcon = svg('<path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0122 16.92z"/>');
+
+---
+
+<MainLayout
+  title={c.page.title}
+  description={c.page.description}
+  canonical={canonical}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(crumbLd)} />
+    {alternates.map((a) => <link rel="alternate" hreflang={a.code} href={a.href} />)}
+    {lang !== DEFAULT_LOCALE && <meta property="og:locale" content={getLocaleMeta(lang).ogLocale} />}
+  </Fragment>
+
+<section class="page-header page-header--ma page-header--tools">
+  <div class="container">
+    <!-- Soft white "cloud" behind the copy keeps it readable over the clear photo. -->
+    <div class="ma-hero-copy">
+      <div class="breadcrumb" set:html={c.breadcrumbHtml}></div>
+      <span class="ma-eyebrow ma-eyebrow--light">{c.header.eyebrow}</span>
+      <h1>{h1Lead}{h1Accent && <span class="ma-accent">{h1Accent}</span>}{h1Tail}</h1>
+      <AiSummary />
+      <p class="lede">{c.header.lede}</p>
+      <ul class="ma-hero-features">
+        {c.header.features.map((f, i) => (
+          <li><span class="ma-hero-icon" set:html={heroIcons[i % heroIcons.length]} />{f}</li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section-white tools-library">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">{c.library.eyebrow}</span>
+      <h2>{c.library.h2}</h2>
+      <p>{c.library.intro}</p>
+    </div>
+
+    <div class="tool-lib-grid">
+      {
+        available.map((t) => (
+          <a href={href(t.href)} class={`tool-lib-card${featured.has(t.href) ? ' tool-lib-card--featured' : ''}`}>
+            <div class="tool-lib-body">
+              <span class="tool-lib-icon"><i class={`fa-solid ${t.icon}`} aria-hidden="true"></i></span>
+              <h3>{t.title}</h3>
+              <p>{t.desc}</p>
+              <span class="tool-lib-link">{c.library.linkLabel}<span set:html={arrow} /></span>
+            </div>
+            <span class="tool-lib-art" aria-hidden="true"><i class={`fa-solid ${t.icon}`}></i></span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+{
+  comingSoon.length > 0 && (
+    <section class="section-tinted">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">{c.comingSoon.eyebrow}</span>
+          <h2>{c.comingSoon.h2}</h2>
+          <p>{c.comingSoon.intro}</p>
+        </div>
+
+        <div class="card-grid">
+          {comingSoon.map((t) => (
+            <div class="card" style="opacity:0.7;">
+              <div class="card-icon"><i class={`fa-solid ${t.icon}`} style="font-size:1.6rem"></i></div>
+              <h3>{t.title}</h3>
+              <span class="card-link" style="color:var(--text-muted);">{c.comingSoon.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+{/* /tools had no contextual inbound or outbound links into the guide pages —
+    it was reachable only through header/footer chrome. This connects the hub
+    to the pillars its calculators actually serve. */}
+<section class="section-white tools-guide">
+  <div class="container content-narrow">
+    <div class="tools-guide-panel">
+    <span class="tools-guide-icon" set:html={infoIcon} />
+    <p set:html={c.guideHtml}></p>
+    </div>
+  </div>
+</section>
+
+<section class="ma-cta">
+  <div class="container">
+    <div>
+      <span class="ma-eyebrow ma-eyebrow--light">{c.cta.eyebrow}</span>
+      <h2>{c.cta.h2}</h2>
+      <p>{c.cta.text}</p>
+    </div>
+    <div class="ma-cta-actions">
+      <a href={href('/contact')} class="ma-btn-gold">{c.cta.scheduleLabel}<span set:html={arrow} /></a>
+      <a href="tel:4352925548" class="ma-cta-phone"><span set:html={phoneIcon} />{interp(c.cta.callLabel, vars)}</a>
+    </div>
+  </div>
+</section>
+
+</MainLayout>

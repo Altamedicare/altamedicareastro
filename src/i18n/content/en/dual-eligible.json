@@ -1,0 +1,111 @@
+{
+  "__note": "MASTER content for /dual-eligible.html, extracted losslessly from src/pages/dual-eligible.astro (visual redesign of 2026-10). __programs are the program acronyms shown on the decorative card (never translated).",
+  "page": {
+    "title": "Dual Eligible & Medicaid Plans (D-SNP) | AltaMedicare",
+    "description": "If you have both Medicare and Medicaid, D-SNP plans offer extra benefits: grocery cards, transportation, OTC, dental, vision, and $0 premiums."
+  },
+  "breadcrumbHtml": "<a href=\"/\">Home</a> &nbsp;&rsaquo;&nbsp; <a href=\"/medicare-basics\">Plans</a> &nbsp;&rsaquo;&nbsp; Dual Eligible / Medicaid",
+  "header": {
+    "eyebrow": "Dual Eligible Special Needs Plans",
+    "h1": "Dual Eligible & Medicaid Plans (D-SNP)",
+    "h1Accent": "(D-SNP)",
+    "lede": "If you have both Medicare and Medicaid, you may qualify for special plans with extra benefits at little to no cost.",
+    "features": [
+      "Coordinated Medicare & Medicaid",
+      "Extra benefits",
+      "Local, independent guidance"
+    ]
+  },
+  "basics": {
+    "eyebrow": "The basics",
+    "h2": "Medicare + Medicaid = More Help",
+    "textHtml": "If you qualify for both Medicare and Medicaid, you&rsquo;re considered <strong>dual eligible</strong>. Special plans called <strong>D-SNPs (Dual-Eligible Special Needs Plans)</strong> are designed specifically for people in your situation &mdash; with extra benefits beyond what either program offers alone.",
+    "equation": [
+      "Medicare",
+      "Medicaid",
+      "D-SNP"
+    ]
+  },
+  "benefits": {
+    "eyebrow": "Common benefits",
+    "h2": "Common D-SNP Benefits",
+    "cards": [
+      [
+        {
+          "t": "Grocery cards",
+          "d": "monthly allowance for healthy groceries at participating stores"
+        }
+      ],
+      [
+        {
+          "t": "Over-the-counter (OTC) cards",
+          "d": "allowance for pharmacy items like vitamins, pain relievers, first aid"
+        }
+      ],
+      [
+        {
+          "t": "Transportation",
+          "d": "rides to medical appointments and sometimes to the pharmacy or grocery store"
+        }
+      ],
+      [
+        {
+          "t": "Dental, vision, hearing",
+          "d": "often more generous than standard Medicare Advantage plans"
+        }
+      ],
+      [
+        {
+          "t": "$0 or very low premium",
+          "d": "many D-SNPs have $0 monthly premium"
+        }
+      ],
+      [
+        {
+          "t": "$0 copays",
+          "d": "for many services"
+        },
+        {
+          "t": "Extra Help with Part D",
+          "d": "drastically reduced prescription costs"
+        }
+      ]
+    ]
+  },
+  "qualify": {
+    "eyebrow": "Who qualifies?",
+    "h2": "Do You Qualify?",
+    "introHtml": "You may be dual eligible if you&rsquo;re on Medicare AND any of the following:",
+    "items": [
+      "Medicaid",
+      "Qualified Medicare Beneficiary (QMB)",
+      "Specified Low-Income Medicare Beneficiary (SLMB)",
+      "Qualifying Individual (QI)",
+      "Qualified Disabled and Working Individuals (QDWI)"
+    ],
+    "__programs": [
+      "QMB",
+      "SLMB",
+      "QI",
+      "QDWI"
+    ],
+    "noteHtml": "Income and asset limits apply. We can help you check whether you qualify and walk through the application if you&rsquo;re close."
+  },
+  "switch": {
+    "eyebrow": "Flexible options",
+    "h2": "You Can Switch Plans Anytime",
+    "textHtml": "Most Medicare beneficiaries are locked into their plan choice except during certain enrollment windows. <strong>Dual-eligible beneficiaries get a Special Enrollment Period</strong> that lets them change D-SNP plans more flexibly throughout the year.",
+    "help": {
+      "heading": "Not sure if you qualify?",
+      "textHtml": "Call us. We&rsquo;ll check Medicare and Medicaid eligibility together &mdash; it&rsquo;s a quick conversation, and many people find out they qualify for benefits they didn&rsquo;t know about."
+    }
+  },
+  "cta": {
+    "eyebrow": "Free consultation",
+    "h2": "Have Questions? Let's Talk.",
+    "textHtml": "One free, no-pressure call &mdash; clear answers, no sales pitch.",
+    "scheduleLabel": "Schedule Consultation",
+    "callLabel": "Call {phone}",
+    "compareLabel": "Compare Plans Online"
+  }
+}

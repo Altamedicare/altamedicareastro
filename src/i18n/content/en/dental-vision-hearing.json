@@ -1,0 +1,86 @@
+{
+  "__note": "MASTER content for /dental-vision-hearing.html, extracted losslessly from src/pages/dental-vision-hearing.astro (visual redesign of 2026-10). Title/H1/copy/links frozen pending GSC data — extraction only, no wording changes.",
+  "page": {
+    "title": "Dental, Vision & Hearing Coverage | AltaMedicare",
+    "description": "Original Medicare doesn’t cover routine dental, vision, or hearing. Here are your options through Medicare Advantage and standalone plans."
+  },
+  "breadcrumbHtml": "<a href=\"/\">Home</a> &nbsp;&rsaquo;&nbsp; <a href=\"/medicare-basics\">Plans</a> &nbsp;&rsaquo;&nbsp; Dental, Vision, Hearing",
+  "header": {
+    "eyebrow": "Dental &bull; Vision &bull; Hearing",
+    "h1": "Dental, Vision & Hearing Coverage",
+    "ledeHtml": "Original Medicare doesn&rsquo;t cover routine dental, vision, or hearing care &mdash; but you have options.",
+    "features": [
+      "Dental coverage",
+      "Vision coverage",
+      "Hearing coverage"
+    ]
+  },
+  "gaps": {
+    "eyebrow": "The basics",
+    "h2Html": "What Original Medicare Doesn&rsquo;t Cover",
+    "introHtml": "Many people are surprised to learn that Original Medicare (Parts A and B) doesn&rsquo;t cover most of what we think of as &ldquo;everyday&rdquo; healthcare:",
+    "items": [
+      "Routine dental cleanings, fillings, crowns, dentures",
+      "Routine eye exams, glasses, or contact lenses",
+      "Hearing exams or hearing aids"
+    ],
+    "goodNews": "The good news: there are several ways to add this coverage."
+  },
+  "options": {
+    "eyebrow": "Your coverage options",
+    "cards": [
+      {
+        "h2": "Option 1: Medicare Advantage Plans",
+        "textHtml": "Most <a href=\"/medicare-advantage\">Medicare Advantage</a> plans include dental, vision, and hearing benefits at no extra premium. Coverage levels vary by plan &mdash; some include only cleanings and exams, while others cover crowns, dentures, and hearing aids with meaningful allowances.",
+        "note": "If dental, vision, and hearing are important to you, this is often the simplest path."
+      },
+      {
+        "h2Html": "Option 2: Standalone Dental, Vision &amp; Hearing Plans",
+        "textHtml": "Available alongside Original Medicare and <a href=\"/medicare-supplement\">Medicare Supplement</a> plans. These let you keep the doctor flexibility of Original Medicare/Supplement while adding ancillary coverage. Premiums and benefits vary widely."
+      },
+      {
+        "h2": "Option 3: Discount Programs",
+        "textHtml": "Some dental and vision discount programs aren&rsquo;t insurance, but offer reduced rates at participating providers. Useful for occasional needs without committing to a full insurance premium."
+      }
+    ]
+  },
+  "lookFor": {
+    "eyebrow": "Compare your options",
+    "h2": "What to Look For",
+    "intro": "When comparing dental, vision, and hearing benefits:",
+    "items": [
+      {
+        "t": "Annual maximums",
+        "d": "how much will the plan pay per year?"
+      },
+      {
+        "t": "Waiting periods",
+        "d": "can you use major benefits right away, or do you have to wait?"
+      },
+      {
+        "t": "Network",
+        "d": "is your dentist or audiologist included?"
+      },
+      {
+        "t": "Hearing aid allowances",
+        "d": "some plans offer $1,000+, others much less"
+      },
+      {
+        "t": "Vision allowances",
+        "d": "how much toward frames and lenses each year?"
+      }
+    ]
+  },
+  "fit": {
+    "headingHtml": "Let&rsquo;s find the right fit.",
+    "textHtml": "If dental work, hearing aids, or eye care matter to you, tell us &mdash; we&rsquo;ll help you compare plans where these benefits actually shine. Some plans have great dental but minimal hearing; others are the reverse. The right choice depends on what you actually need."
+  },
+  "cta": {
+    "eyebrow": "Free consultation",
+    "h2": "Have Questions? Let's Talk.",
+    "textHtml": "One free, no-pressure call &mdash; clear answers, no sales pitch.",
+    "scheduleLabel": "Schedule Consultation",
+    "callLabel": "Call {phone}",
+    "compareLabel": "Compare Plans Online"
+  }
+}

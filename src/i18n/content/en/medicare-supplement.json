@@ -7,14 +7,22 @@
   "breadcrumbHtml": "<a href=\"index.html\">Home</a> &nbsp;&rsaquo;&nbsp; <a href=\"medicare-basics.html\">Plans</a> &nbsp;&rsaquo;&nbsp; Medicare Supplement",
   "header": {
     "h1": "Medicare Supplement (Medigap) Plans",
-    "ledeHtml": "Predictable costs, broad doctor flexibility, and peace of mind. Here&rsquo;s how Medicare Supplement plans work and who they fit."
+    "ledeHtml": "Predictable costs, broad doctor flexibility, and peace of mind. Here&rsquo;s how Medicare Supplement plans work and who they fit.",
+    "eyebrow": "Medicare Supplement plans",
+    "h1Accent": "(Medigap)",
+    "features": [
+      "Independent, unbiased guidance",
+      "Compare plan options",
+      "Understand your out-of-pocket costs"
+    ]
   },
   "how": {
     "h2": "How Medicare Supplement Works",
     "paragraphsHtml": [
       "Medicare Supplement plans (also called Medigap) work alongside Original Medicare. Original Medicare pays first, then your Supplement plan pays most or all of what Medicare doesn&rsquo;t cover &mdash; deductibles, copays, and coinsurance.",
       "The result is very predictable healthcare costs: a stable monthly premium and very little (often nothing) out-of-pocket when you actually use care."
-    ]
+    ],
+    "eyebrow": "The basics"
   },
   "why": {
     "h2": "Why People Choose Medicare Supplement",
@@ -35,18 +43,27 @@
         "h3Html": "No Referrals Needed",
         "textHtml": "You don&rsquo;t need a primary care doctor to refer you to a specialist. See whoever you want, whenever you need to."
       }
-    ]
+    ],
+    "eyebrow": "Key benefits"
   },
   "letters": {
     "h2Html": "Plan Letters &mdash; What&rsquo;s the Difference?",
     "paragraphsHtml": [
       "Medicare Supplement plans are standardized by federal law and labeled by letter (Plan G, Plan N, Plan F for those eligible, etc.). Plans with the same letter cover the same things, no matter which insurer sells them &mdash; the only differences are the premium and the company&rsquo;s service.",
       "The most popular plans for new enrollees today are <strong>Plan G</strong> and <strong>Plan N</strong>. We&rsquo;ll walk through which fits your situation best and shop multiple carriers to find the lowest price."
+    ],
+    "eyebrow": "Plan options",
+    "__planChips": [
+      "Plan G",
+      "Plan N",
+      "Plan F"
     ]
   },
   "partD": {
     "h2": "Important: Add a Part D Drug Plan",
-    "textHtml": "Medicare Supplement plans don&rsquo;t include prescription drug coverage. If you choose a Supplement, you&rsquo;ll typically pair it with a standalone <a href=\"prescription-drug-plans.html\">Part D plan</a>. We&rsquo;ll handle this in the same conversation."
+    "textHtml": "Medicare Supplement plans don&rsquo;t include prescription drug coverage. If you choose a Supplement, you&rsquo;ll typically pair it with a standalone <a href=\"prescription-drug-plans.html\">Part D plan</a>. We&rsquo;ll handle this in the same conversation.",
+    "eyebrow": "Don't forget",
+    "linkLabel": "Learn about Part D plans"
   },
   "callout": {
     "headingHtml": "Best time to enroll: when you&rsquo;re first eligible.",
@@ -57,6 +74,7 @@
     "textHtml": "One free, no-pressure call &mdash; clear answers, no sales pitch.",
     "scheduleLabel": "Schedule Consultation",
     "callLabel": "Call {phone}",
-    "compareLabel": "Compare Plans Online"
+    "compareLabel": "Compare Plans Online",
+    "eyebrow": "Free consultation"
   }
 }

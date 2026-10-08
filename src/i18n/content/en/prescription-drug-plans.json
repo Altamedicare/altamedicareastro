@@ -7,7 +7,14 @@
   "breadcrumbHtml": "<a href=\"index.html\">Home</a> &nbsp;&rsaquo;&nbsp; <a href=\"medicare-basics.html\">Plans</a> &nbsp;&rsaquo;&nbsp; Prescription Drug Plans",
   "header": {
     "h1": "Medicare Prescription Drug Plans (Part D)",
-    "ledeHtml": "The right Part D plan can save you hundreds &mdash; or thousands &mdash; per year. Here&rsquo;s how they work and how we shop for the best one for you."
+    "ledeHtml": "The right Part D plan can save you hundreds &mdash; or thousands &mdash; per year. Here&rsquo;s how they work and how we shop for the best one for you.",
+    "eyebrow": "Prescription drug plans",
+    "h1Accent": "(Part D)",
+    "features": [
+      "Compare plan options",
+      "Potential savings",
+      "Local, independent guidance"
+    ]
   },
   "how": {
     "h2": "How Part D Works",
@@ -15,13 +22,20 @@
     "itemsHtml": [
       "<strong>Standalone Part D plan</strong> &mdash; paired with Original Medicare or a Medicare Supplement",
       "<strong>Built into a Medicare Advantage plan</strong> &mdash; called a Medicare Advantage Prescription Drug (MAPD) plan"
-    ]
+    ],
+    "eyebrow": "The basics"
   },
   "choice": {
     "h2": "Why Plan Choice Matters So Much",
     "paragraphsHtml": [
       "Each Part D plan has its own <strong>formulary</strong> &mdash; the list of drugs it covers and how much they cost. The same medication can cost $4 on one plan and $140 on another. The right plan for you depends entirely on which specific drugs you take.",
       "That&rsquo;s why we always start by reviewing your medications before recommending anything. There&rsquo;s no &ldquo;best&rdquo; Part D plan in general &mdash; only the best one for your specific drug list."
+    ],
+    "eyebrow": "Why it matters",
+    "cardTitles": [
+      "Different formularies",
+      "Different costs",
+      "Local guidance helps"
     ]
   },
   "changes": {
@@ -39,7 +53,9 @@
         "h3": "Medicare Prescription Payment Plan",
         "textHtml": "You can choose to spread your annual prescription costs across monthly payments instead of paying a large bill at the pharmacy counter. Helpful if you have a high-cost specialty drug."
       }
-    ]
+    ],
+    "eyebrow": "{year} updates",
+    "badge": "New for {year}"
   },
   "pharmacies": {
     "h2": "Pharmacies Matter Too",
@@ -47,7 +63,8 @@
   },
   "extraHelp": {
     "h2": "Extra Help / Low Income Subsidy",
-    "textHtml": "If your income is below certain thresholds, you may qualify for <strong>Extra Help</strong> &mdash; a federal program that drastically lowers your Part D costs. Many people who qualify don&rsquo;t know it. We can help you check."
+    "textHtml": "If your income is below certain thresholds, you may qualify for <strong>Extra Help</strong> &mdash; a federal program that drastically lowers your Part D costs. Many people who qualify don&rsquo;t know it. We can help you check.",
+    "eyebrow": "Lower your costs"
   },
   "callout": {
     "heading": "Free prescription review.",
@@ -58,6 +75,7 @@
     "textHtml": "One free, no-pressure call &mdash; clear answers, no sales pitch.",
     "scheduleLabel": "Schedule Consultation",
     "callLabel": "Call {phone}",
-    "compareLabel": "Compare Plans Online"
+    "compareLabel": "Compare Plans Online",
+    "eyebrow": "Free consultation"
   }
 }

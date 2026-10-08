@@ -1,0 +1,96 @@
+{
+  "__translation_note": "Hand-authored Spanish (Claude, model claude-fable-5-1, 2026-10-07) following SPANISH-STYLE.md and src/i18n/glossary.json (CMS es.medicare.gov terminology) because no ANTHROPIC_API_KEY was available for scripts/translate.js. Validated with `npm run translate -- --check`. PENDING native-speaker review (YMYL). Seeded as authoritative per playbook §5.3 — do not hand-edit copy here; fix the English master or pin the term in the glossary.",
+  "page": {
+    "title": "Herramientas y Calculadoras Gratuitas de Medicare | AltaMedicare",
+    "description": "Calculadoras de Medicare gratuitas e interactivas: elegibilidad y fechas de inscripción, primas de IRMAA, multas por inscripción tardía y costos de medicamentos recetados."
+  },
+  "breadcrumbHtml": "<a href=\"/\">Inicio</a> &nbsp;&rsaquo;&nbsp; Herramientas",
+  "header": {
+    "eyebrow": "Calculadoras interactivas",
+    "h1": "Herramientas Gratuitas de Medicare",
+    "h1Accent": "Medicare",
+    "lede": "Calculadoras interactivas para ayudarle a tomar decisiones informadas sobre Medicare — sin registro, sin costo, sin guardar nada.",
+    "features": [
+      "Sin registro",
+      "Sin costo",
+      "No se guarda nada"
+    ]
+  },
+  "library": {
+    "eyebrow": "Disponibles ahora",
+    "h2": "Calculadoras y Estimadores",
+    "intro": "Creadas para los beneficiarios de Medicare en Utah y sus familias.",
+    "linkLabel": "Más información",
+    "tools": [
+      {
+        "__key": "eligibility",
+        "title": "Calculadora de Elegibilidad para Medicare",
+        "desc": "Descubra cuándo es elegible y calcule su Período de Inscripción Inicial."
+      },
+      {
+        "__key": "irmaa",
+        "title": "Calculadora de IRMAA",
+        "desc": "Estime sus primas de la Parte B y la Parte D de Medicare según sus ingresos."
+      },
+      {
+        "__key": "penalty",
+        "title": "Calculadora de Multas por Inscripción Tardía",
+        "desc": "Vea si retrasar Medicare podría aumentar sus primas de forma permanente."
+      },
+      {
+        "__key": "drug-cost",
+        "title": "Calculadora de Costos de Medicamentos",
+        "desc": "Estime los costos de sus medicamentos y compare alternativas genéricas de menor costo."
+      },
+      {
+        "__key": "timeline",
+        "title": "Calculadora de Cronograma de Medicare",
+        "desc": "Visualice sus períodos de inscripción y las fechas límite clave de Medicare."
+      },
+      {
+        "__key": "countdown",
+        "title": "Cuenta Regresiva de Inscripción",
+        "desc": "Una cuenta regresiva en vivo hasta sus fechas límite de inscripción en Medicare."
+      },
+      {
+        "__key": "cost-estimator",
+        "title": "Estimador de Costos de Medicare",
+        "desc": "Estime sus costos anuales totales y compare opciones de cobertura."
+      },
+      {
+        "__key": "formulary",
+        "title": "Búsqueda en el Formulario",
+        "desc": "Busque medicamentos para ver la cobertura y las restricciones típicas de la Parte D."
+      },
+      {
+        "__key": "drug-assistance",
+        "title": "Buscador de Asistencia para Medicamentos",
+        "desc": "Encuentre Ayuda Adicional (Extra Help), subvenciones para copagos y programas de fabricantes que reducen el costo de los medicamentos."
+      },
+      {
+        "__key": "quiz",
+        "title": "Cuestionario de Planes de Medicare",
+        "desc": "Responda 7 preguntas para descubrir qué tipo de cobertura puede ser adecuado para usted."
+      },
+      {
+        "__key": "glossary",
+        "title": "Glosario de Medicare",
+        "desc": "Busque más de 100 términos de Medicare explicados en lenguaje sencillo."
+      }
+    ]
+  },
+  "comingSoon": {
+    "eyebrow": "En desarrollo",
+    "h2": "Próximamente",
+    "intro": "Más herramientas gratuitas que estamos creando para completar el centro de recursos de AltaMedicare.",
+    "label": "Próximamente"
+  },
+  "guideHtml": "Los números solo cuentan parte de la historia. Si prefiere empezar por la versión en lenguaje sencillo, comience con los <a href=\"/medicare-basics\">conceptos básicos de Medicare</a>, compare <a href=\"/medicare-advantage\">Medicare Advantage</a> con el <a href=\"/medicare-supplement\">Seguro Suplementario de Medicare</a>, o infórmese sobre los <a href=\"/prescription-drug-plans\">planes de medicamentos de la Parte D</a>. ¿Cumple 65 pronto? La <a href=\"/turning-65\">guía para quienes cumplen 65</a> explica las fechas límite que estas calculadoras asumen. Para respuestas rápidas, consulte las <a href=\"/faq\">preguntas frecuentes sobre Medicare</a>.",
+  "cta": {
+    "eyebrow": "Consulta gratuita",
+    "h2": "¿Prefiere hablarlo con alguien?",
+    "text": "Un agente con licencia en Utah puede explicarle cualquiera de estos números — gratis, sin presión.",
+    "scheduleLabel": "Programar consulta",
+    "callLabel": "Llame al {phone}"
+  }
+}
