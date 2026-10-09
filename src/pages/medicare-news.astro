@@ -17,6 +17,15 @@ const usedCategories = Object.entries(NEWS_CATEGORIES).filter(
 
 const fmt = (d: Date) =>
   d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
+
+// ---- Presentation (visual redesign; every title/summary/date/link is the
+// collection's own data). First item (featured-first sort above) leads.
+const [lead, ...rest] = items;
+// Hero highlights: the four categories that have articles, using the
+// registry's own blurbs and linking to the existing category pages.
+const highlights = usedCategories.slice(0, 4);
+const arrow = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
+const phone = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>`;
 ---
 
 <MainLayout
@@ -29,42 +38,69 @@ const fmt = (d: Date) =>
     <link rel="alternate" type="application/rss+xml" title="AltaMedicare Medicare News" href="/medicare-news/rss.xml" />
   </Fragment>
 
-<section class="page-header">
+<section class="page-header page-header--ma page-header--news">
   <div class="container">
-    <div class="breadcrumb"><a href="/">Home</a> &nbsp;&rsaquo;&nbsp; Medicare News</div>
-    <h1>Medicare News &amp; Updates</h1>
-    <AiSummary />
-    <p class="lede">Important changes, savings opportunities, and Utah-specific Medicare news for 2026 and beyond.</p>
-    <p style="margin-top:14px;"><a href="/medicare-news/rss.xml" class="news-rss-link"><i class="fa-solid fa-rss"></i> Subscribe via RSS</a></p>
+    <!-- Soft white "cloud" behind the copy keeps it readable over the clear photo. -->
+    <div class="ma-hero-copy">
+      <div class="breadcrumb"><a href="/">Home</a> &nbsp;&rsaquo;&nbsp; Medicare News</div>
+      <h1>Medicare <span class="ma-accent">News &amp; Updates</span></h1>
+      <AiSummary />
+      <p class="lede">Important changes, savings opportunities, and Utah-specific Medicare news for 2026 and beyond.</p>
+      {highlights.length > 0 && (
+        <ul class="nw-highlights">
+          {highlights.map(([key, cat]) => (
+            <li>
+              <a href={`/medicare-news/category/${key}`}>
+                <span class="nw-hl-icon"><i class={`fa-solid ${cat.icon}`} aria-hidden="true"></i></span>
+                <span><strong>{cat.title}</strong><span>{cat.blurb}</span></span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+      <p class="nw-rss"><a href="/medicare-news/rss.xml" class="news-rss-link"><i class="fa-solid fa-rss"></i> Subscribe via RSS</a></p>
+    </div>
   </div>
 </section>
 
-{usedCategories.length > 0 && (
-  <section class="section-tinted" style="padding-top:28px; padding-bottom:28px;">
-    <div class="container">
-      <div class="news-cats">
+<section class="nw-section">
+  <div class="container">
+    {usedCategories.length > 0 && (
+      <div class="nw-filters" role="group" aria-label="Filter news by category">
+        <button type="button" class="nw-filter is-active" data-filter="all" aria-pressed="true"><i class="fa-solid fa-newspaper" aria-hidden="true"></i> All News</button>
         {usedCategories.map(([key, cat]) => (
-          <a href={`/medicare-news/category/${key}`} class="news-cat-chip">
-            <i class={`fa-solid ${cat.icon}`}></i> {cat.title}
-          </a>
+          <button type="button" class="nw-filter" data-filter={key} aria-pressed="false"><i class={`fa-solid ${cat.icon}`} aria-hidden="true"></i> {cat.title}</button>
         ))}
       </div>
-    </div>
-  </section>
-)}
+    )}
 
-<section class="section-white">
-  <div class="container">
     {items.length > 0 ? (
-      <div class="post-list">
-        {items.map((p) => (
-          <a href={`/medicare-news/${p.slug}`} class="post-row">
-            <div class="pr-main">
-              <span class="pr-cat">{NEWS_CATEGORIES[p.data.category]?.title}</span>
+      <div class="nw-grid" id="news-grid">
+        {lead && (
+          <a href={`/medicare-news/${lead.slug}`} class="nw-card nw-card--lead" data-category={lead.data.category}>
+            <span class="nw-art" aria-hidden="true">
+              <span class="nw-art-icon"><i class={`fa-solid ${NEWS_CATEGORIES[lead.data.category]?.icon}`}></i></span>
+              {lead.data.featured && <span class="nw-badge">Featured news</span>}
+            </span>
+            <span class="nw-body">
+              <span class="nw-meta"><span class="nw-cat">{NEWS_CATEGORIES[lead.data.category]?.title}</span><time datetime={lead.data.date.toISOString().slice(0, 10)}>{fmt(lead.data.date)}</time></span>
+              <h2>{lead.data.title}</h2>
+              <p>{lead.data.summary}</p>
+              <span class="nw-read">Read article<span set:html={arrow} /></span>
+            </span>
+          </a>
+        )}
+        {rest.map((p) => (
+          <a href={`/medicare-news/${p.slug}`} class="nw-card" data-category={p.data.category}>
+            <span class="nw-art" aria-hidden="true">
+              <span class="nw-art-icon"><i class={`fa-solid ${NEWS_CATEGORIES[p.data.category]?.icon}`}></i></span>
+            </span>
+            <span class="nw-body">
+              <span class="nw-meta"><span class="nw-cat">{NEWS_CATEGORIES[p.data.category]?.title}</span><time datetime={p.data.date.toISOString().slice(0, 10)}>{fmt(p.data.date)}</time></span>
               <h3>{p.data.title}</h3>
               <p>{p.data.summary}</p>
-            </div>
-            <span class="pr-date">{fmt(p.data.date)}</span>
+              <span class="nw-read">Read article<span set:html={arrow} /></span>
+            </span>
           </a>
         ))}
       </div>
@@ -73,18 +109,47 @@ const fmt = (d: Date) =>
         New Medicare updates are on the way. <a href="/contact">Sign up</a> to get notified.
       </p>
     )}
+    <p class="nw-empty" id="news-empty" hidden>No articles in this category yet.</p>
   </div>
 </section>
 
-<section class="final-cta">
+<section class="ma-cta">
   <div class="container">
-    <h2>Have Questions? Let's Talk.</h2>
-    <p>One free, no-pressure call &mdash; clear answers, no sales pitch.</p>
-    <div class="cta-buttons">
-      <a href="/contact" class="btn btn-primary btn-lg">Schedule Consultation</a>
-      <a href="tel:4352925548" class="btn btn-outline btn-lg">Call (435) 292-5548</a>
+    <div>
+      <span class="ma-eyebrow ma-eyebrow--light">Free consultation</span>
+      <h2>Have Questions? Let's Talk.</h2>
+      <p>One free, no-pressure call &mdash; clear answers, no sales pitch.</p>
+    </div>
+    <div class="ma-cta-actions">
+      <a href="/contact" class="ma-btn-gold">Schedule Consultation<span set:html={arrow} /></a>
+      <a href="tel:4352925548" class="ma-cta-phone"><span set:html={phone} />Call (435) 292-5548</a>
     </div>
   </div>
 </section>
+
+<!-- Category filter: progressive enhancement over the full list (every card is
+     a plain link and all are visible without JS). -->
+<script is:inline>
+(function(){
+  var grid = document.getElementById('news-grid');
+  if (!grid) return;
+  var cards = [].slice.call(grid.querySelectorAll('.nw-card'));
+  var empty = document.getElementById('news-empty');
+  [].forEach.call(document.querySelectorAll('.nw-filter'), function(btn){
+    btn.addEventListener('click', function(){
+      var f = btn.getAttribute('data-filter'), shown = 0;
+      [].forEach.call(document.querySelectorAll('.nw-filter'), function(b){
+        var on = b === btn; b.classList.toggle('is-active', on); b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      cards.forEach(function(c){
+        var match = f === 'all' || c.getAttribute('data-category') === f;
+        c.hidden = !match; if (match) shown++;
+      });
+      grid.classList.toggle('is-filtered', f !== 'all');
+      if (empty) empty.hidden = shown > 0;
+    });
+  });
+})();
+</script>
 
 </MainLayout>

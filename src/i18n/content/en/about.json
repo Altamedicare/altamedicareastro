@@ -7,7 +7,9 @@
   "breadcrumbHtml": "<a href=\"index.html\">Home</a> &nbsp;&rsaquo;&nbsp; About Bret",
   "header": {
     "h1": "Meet Bret Swope",
-    "ledeHtml": "Founder of AltaMedicare and your local Utah Medicare guide. Here's a little about who I am and why I do this work."
+    "ledeHtml": "Founder of AltaMedicare and your local Utah Medicare guide. Here's a little about who I am and why I do this work.",
+    "eyebrow": "About AltaMedicare",
+    "h1Accent": "Bret Swope"
   },
   "card": {
     "photoAlt": "Bret Swope, founder of AltaMedicare",
@@ -30,7 +32,10 @@
       "<strong>Help year-round.</strong> If you have a billing question in March or a prescription issue in July, I&rsquo;m here."
     ],
     "h2Mission": "My Mission",
-    "missionHtml": "To make Medicare feel less confusing, less stressful, and less expensive for Utah families &mdash; one honest conversation at a time."
+    "missionHtml": "To make Medicare feel less confusing, less stressful, and less expensive for Utah families &mdash; one honest conversation at a time.",
+    "storyEyebrow": "My story",
+    "expectEyebrow": "What you can expect",
+    "missionAccent": "Utah families"
   },
   "callout": {
     "heading": "Want to chat?",
