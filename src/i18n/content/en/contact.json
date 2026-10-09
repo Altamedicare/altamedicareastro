@@ -7,7 +7,10 @@
   "breadcrumbHtml": "<a href=\"/\">Home</a> &nbsp;&rsaquo;&nbsp; Contact",
   "header": {
     "h1": "Get In Touch",
-    "ledeHtml": "Whether you&rsquo;re turning 65, comparing plans, or just have a question &mdash; we&rsquo;d love to hear from you."
+    "ledeHtml": "Whether you&rsquo;re turning 65, comparing plans, or just have a question &mdash; we&rsquo;d love to hear from you.",
+    "eyebrow": "Contact AltaMedicare",
+    "h1Accent": "Touch",
+    "tagline": "Friendly, no-pressure Medicare help."
   },
   "info": {
     "h3": "How to Reach Bret",
@@ -19,7 +22,8 @@
     "officeCity": "Alpine, Utah",
     "officeNote": "Serving the entire state of Utah",
     "afterHeading": "What happens after I contact you?",
-    "afterTextHtml": "Bret will personally reach out within one business day to set up a no-pressure conversation. You can do the call by phone, video, or in person &mdash; whichever you prefer. There&rsquo;s no cost."
+    "afterTextHtml": "Bret will personally reach out within one business day to set up a no-pressure conversation. You can do the call by phone, video, or in person &mdash; whichever you prefer. There&rsquo;s no cost.",
+    "intro": "Have a question about Medicare? I’m here to help."
   },
   "actions": {
     "h3": "Ready to talk?",
@@ -41,6 +45,7 @@
     "h2Html": "Have Questions? Let's Talk.",
     "textHtml": "One free, no-pressure call &mdash; clear answers, no sales pitch.",
     "scheduleLabel": "Schedule Consultation",
-    "callLabel": "Call {phone}"
+    "callLabel": "Call {phone}",
+    "eyebrow": "Free consultation"
   }
 }

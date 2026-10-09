@@ -12,9 +12,10 @@ import { COMPARE_PLANS_URL, PHONE_DISPLAY } from '../../consts';
 interface ContactContent {
   page: { title: string; description: string };
   breadcrumbHtml: string;
-  header: { h1: string; ledeHtml: string };
+  header: { h1: string; ledeHtml: string; eyebrow: string; h1Accent: string; tagline: string };
   info: {
     h3: string;
+    intro: string;
     phoneLabel: string;
     phoneHoursHtml: string;
     emailLabel: string;
@@ -41,7 +42,7 @@ interface ContactContent {
     browseSubHtml: string;
     browseLabel: string;
   };
-  cta: { h2Html: string; textHtml: string; scheduleLabel: string; callLabel: string };
+  cta: { eyebrow: string; h2Html: string; textHtml: string; scheduleLabel: string; callLabel: string };
 }
 
 const lang = getLangFromUrl(Astro.url);
@@ -49,6 +50,22 @@ const c = getPageContent<ContactContent>('contact', lang);
 const vars = { phone: PHONE_DISPLAY };
 const canonical = lang === DEFAULT_LOCALE ? '/contact' : `/${lang}/contact`;
 const alternates = hreflangAlternates('contact');
+
+// ---- Presentation only (visual redesign; copy comes from the JSON).
+const accentAt = c.header.h1Accent ? c.header.h1.lastIndexOf(c.header.h1Accent) : -1;
+const h1Lead = accentAt > -1 ? c.header.h1.slice(0, accentAt) : c.header.h1;
+const h1Accent = accentAt > -1 ? c.header.h1.slice(accentAt) : '';
+// Every "schedule" button opens the same Cal.com booking widget as
+// "Book Appointment" (the real scheduler) instead of reloading this page.
+const cal = {
+  'data-cal-link': 'bret-swope-oagxvu/medicare-questions',
+  'data-cal-namespace': 'medicare-questions',
+  'data-cal-config': '{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light"}',
+};
+const svg = (d: string) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
+const phoneIcon = svg('<path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0122 16.92z"/>');
+const calIcon = svg('<rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 14h.01M12 14h.01M16 14h.01"/>');
+const chatIcon = svg('<path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/>');
 ---
 
 <MainLayout
@@ -61,20 +78,30 @@ const alternates = hreflangAlternates('contact');
     {lang !== DEFAULT_LOCALE && <meta property="og:locale" content={getLocaleMeta(lang).ogLocale} />}
   </Fragment>
 
-<section class="page-header">
+<section class="page-header page-header--ma page-header--contact">
   <div class="container">
-    <div class="breadcrumb" set:html={c.breadcrumbHtml}></div>
-    <h1>{c.header.h1}</h1>
-    <AiSummary />
-    <p class="lede" set:html={c.header.ledeHtml}></p>
+    <!-- Soft white "cloud" behind the copy keeps it readable over the clear photo. -->
+    <div class="ma-hero-copy">
+      <div class="breadcrumb" set:html={c.breadcrumbHtml}></div>
+      <span class="ma-eyebrow ma-eyebrow--light">{c.header.eyebrow}</span>
+      <h1>{h1Lead}{h1Accent && <span class="ma-accent">{h1Accent}</span>}</h1>
+      <p class="ct-tagline">{c.header.tagline}</p>
+      <AiSummary />
+      <p class="lede" set:html={c.header.ledeHtml}></p>
+      <div class="ab-hero-actions">
+        <a href="tel:4352925548" class="ma-btn-gold"><span set:html={phoneIcon} />{interp(c.actions.callLabel, vars)}</a>
+        <button type="button" class="ab-btn-outline" {...cal}><span set:html={calIcon} />{c.actions.bookTitle}</button>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="section-white">
+<section class="section-white ct-main">
   <div class="container">
     <div class="contact-grid">
       <div class="contact-info">
-        <h3>{c.info.h3}</h3>
+        <h2 class="ct-h">{c.info.h3}</h2>
+        <p class="ct-intro">{c.info.intro}</p>
 
         <div class="contact-method">
           <div class="icon-circle">
@@ -109,15 +136,18 @@ const alternates = hreflangAlternates('contact');
           </div>
         </div>
 
-        <div style="background:var(--soft-sand); padding:24px; border-radius:var(--radius-md); margin-top:30px;">
-          <strong style="color:var(--charcoal);">{c.info.afterHeading}</strong>
-          <p style="margin:8px 0 0; color:var(--charcoal-soft); font-size:0.95rem;" set:html={c.info.afterTextHtml}></p>
+        <div class="ct-after">
+          <span class="ct-after-icon" set:html={chatIcon} />
+          <div>
+            <strong>{c.info.afterHeading}</strong>
+            <p set:html={c.info.afterTextHtml}></p>
+          </div>
         </div>
       </div>
 
-      <div class="form-card contact-actions" style="margin:0;">
-        <h3 style="margin-bottom:8px;">{c.actions.h3}</h3>
-        <p style="margin:0 0 26px; color:var(--charcoal-soft);" set:html={c.actions.ledeHtml}></p>
+      <div class="form-card contact-actions ct-card" id="ready-to-talk" style="margin:0;">
+        <h2 class="ct-h">{c.actions.h3}</h2>
+        <p class="ct-intro" set:html={c.actions.ledeHtml}></p>
 
         <div class="contact-action">
           <div class="icon-circle" aria-hidden="true">
@@ -173,13 +203,19 @@ const alternates = hreflangAlternates('contact');
   </div>
 </section>
 
-<section class="final-cta">
+<section class="ma-cta ct-cta">
   <div class="container">
-    <h2 set:html={c.cta.h2Html}></h2>
-    <p set:html={c.cta.textHtml}></p>
-    <div class="cta-buttons">
-      <a href={localizeHref('contact.html', lang)} class="btn btn-primary btn-lg">{c.cta.scheduleLabel}</a>
-      <a href="tel:4352925548" class="btn btn-outline btn-lg">{interp(c.cta.callLabel, vars)}</a>
+    <div class="ct-cta-copy">
+      <span class="ct-cta-icon" set:html={chatIcon} />
+      <div>
+        <span class="ma-eyebrow ma-eyebrow--light">{c.cta.eyebrow}</span>
+        <h2 set:html={c.cta.h2Html}></h2>
+        <p set:html={c.cta.textHtml}></p>
+      </div>
+    </div>
+    <div class="ct-cta-actions">
+      <button type="button" class="ma-btn-gold" {...cal}><span set:html={calIcon} />{c.cta.scheduleLabel}</button>
+      <a href="tel:4352925548" class="ct-btn-white"><span set:html={phoneIcon} />{interp(c.cta.callLabel, vars)}</a>
     </div>
   </div>
 </section>

@@ -5461,3 +5461,61 @@ section {
   .ab-quote-photo blockquote { position: static; border-radius: 0; }
   .ab-mission { padding: 48px 0; }
 }
+
+/* ==========================================================================
+   CONTACT PAGE — redesign (page-header--contact, ct-*)
+   Shared clear-photo + text-cloud hero (ma-*, ab-hero-actions); light-blue
+   two-column contact section with an elevated action card; mountain CTA.
+   ========================================================================== */
+.page-header--contact h1 { margin-bottom: 8px; }
+.ct-tagline { margin: 0 0 12px; font-size: clamp(1.15rem, 2vw, 1.45rem); font-weight: 800; color: #0f2f66; }
+.page-header--contact button.ab-btn-outline { font: inherit; font-weight: 700; cursor: pointer; }
+.page-header--contact .ma-btn-gold svg,
+.ct-cta button svg { width: 20px; height: 20px; }
+.ma-btn-gold:focus-visible, .ab-btn-outline:focus-visible, .ct-btn-white:focus-visible { outline: 3px solid #93c5fd; outline-offset: 3px; }
+
+.ct-main { background: linear-gradient(180deg, #f4f8fc 0%, #eef4ff 100%); padding: 64px 0; }
+.ct-main .contact-grid { gap: 40px; align-items: start; }
+.ct-h { font-size: clamp(1.7rem, 3vw, 2.2rem); font-weight: 800; letter-spacing: -0.02em; color: #0f172a; margin: 0 0 6px; }
+.ct-intro { margin: 0 0 22px; color: var(--charcoal-soft); font-size: 1.05rem; }
+.ct-main .contact-method { padding: 18px 0; border-bottom: 1px solid #dbe7fb; align-items: center; }
+.ct-main .contact-method:last-of-type { border-bottom: 0; }
+.ct-main .contact-method .icon-circle { width: 58px; height: 58px; background: #dbeafe; color: var(--mountain-blue); }
+.ct-main .contact-method .icon-circle svg { width: 26px; height: 26px; }
+.ct-main .contact-method strong { font-size: 1.1rem; color: #0f172a; }
+.ct-main .contact-method a { font-size: 1.15rem; font-weight: 600; color: var(--mountain-blue); }
+.ct-after { display: flex; gap: 14px; align-items: flex-start; margin-top: 22px; padding: 22px; border-radius: 16px; background: #fff; border-left: 5px solid var(--mountain-blue); box-shadow: 0 14px 30px -24px rgba(15, 47, 102, 0.5); }
+.ct-after-icon { flex-shrink: 0; display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; background: #fbbf24; color: #0f2f66; }
+.ct-after-icon svg { width: 24px; height: 24px; }
+.ct-after strong { display: block; font-size: 1.08rem; color: #0f172a; margin-bottom: 6px; }
+.ct-after p { margin: 0; color: var(--charcoal-soft); line-height: 1.65; }
+.ct-card { padding: 30px; border-radius: 22px; background: #fff; border: 1px solid #e3ebf7; box-shadow: 0 30px 60px -32px rgba(15, 47, 102, 0.55); }
+.ct-card .contact-action { grid-template-columns: 52px 1fr auto; align-items: center; gap: 6px 16px; border-top: 1px solid #e3ebf7; padding: 18px 0; }
+.ct-card .contact-action:first-of-type { border-top: 0; }
+.ct-card .contact-action .icon-circle { width: 52px; height: 52px; background: #dbeafe; }
+.ct-card .contact-action-text strong { font-weight: 800; }
+.ct-card .contact-action .btn { grid-column: auto; width: auto; margin: 0; min-width: 200px; justify-content: center; padding: 13px 20px; font-size: 0.98rem; }
+.ct-card .contact-action .btn-primary { background: var(--mountain-blue); }
+
+.ct-cta .container { align-items: center; }
+.ct-cta-copy { display: flex; gap: 18px; align-items: center; }
+.ct-cta-icon { flex-shrink: 0; display: grid; place-items: center; width: 64px; height: 64px; border-radius: 18px; border: 2px solid rgba(255, 255, 255, 0.7); background: rgba(255, 255, 255, 0.12); color: #fff; }
+.ct-cta-icon svg { width: 34px; height: 34px; }
+.ct-cta-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.ct-cta button.ma-btn-gold { border: 0; font: inherit; font-weight: 700; cursor: pointer; }
+.ct-btn-white { display: inline-flex; align-items: center; gap: 10px; padding: 13px 24px; border-radius: 999px; border: 2px solid #fff; color: #fff; font-weight: 700; transition: background-color var(--transition), color var(--transition); }
+.ct-btn-white svg { width: 20px; height: 20px; }
+.ct-btn-white:hover { background: #fff; color: #0f2f66; }
+
+@media (max-width: 1100px) {
+  .ct-card .contact-action { grid-template-columns: 52px 1fr; }
+  .ct-card .contact-action .btn { grid-column: 1 / -1; width: 100%; min-width: 0; }
+}
+@media (max-width: 640px) {
+  .ct-main { padding: 44px 0; }
+  .ct-card { padding: 20px; }
+  .ct-cta-copy { align-items: flex-start; }
+  .ct-cta-icon { width: 52px; height: 52px; }
+  .ct-cta-actions, .ct-cta-actions > * { width: 100%; justify-content: center; }
+  .page-header--contact .ab-hero-actions > * { width: 100%; justify-content: center; }
+}
