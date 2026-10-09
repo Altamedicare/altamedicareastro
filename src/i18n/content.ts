@@ -201,7 +201,7 @@ export function localizeHref(href: string, locale: string): string {
   // absolutized English URL — existence-aware, nothing can 404.
   // A page path is the root, or slash-separated segments of [A-Za-z0-9_-] with an
   // OPTIONAL trailing .html. Segments cannot contain dots, so assets keep passing
-  // through (/styles.css?v=38, /images/logo2.webp, /favicon.svg,
+  // through (/styles.css?v=46, /images/logo2.webp, /favicon.svg,
   // /pagefind/pagefind.js) — as do protocol hrefs like sms:1435… (colon).
   const isPage = path === '/' || /^\/?[A-Za-z0-9_-]+(\/[A-Za-z0-9_-]+)*(\.html)?$/.test(path);
   if (!isPage) return href;

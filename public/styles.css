@@ -5519,3 +5519,169 @@ section {
   .ct-cta-actions, .ct-cta-actions > * { width: 100%; justify-content: center; }
   .page-header--contact .ab-hero-actions > * { width: 100%; justify-content: center; }
 }
+
+/* Contact: interactive rows inside the 3D boxes. Rows highlight and their
+   icon lifts toward the viewer on hover/keyboard focus. */
+.ct-card.tilt-3d { overflow: visible; }
+.ct-card .contact-action,
+.ct-main .contact-method { border-radius: 14px; transition: background-color 0.25s ease, padding 0.25s ease; }
+.ct-card .contact-action:hover,
+.ct-card .contact-action:focus-within { background: #f1f6ff; padding-left: 12px; padding-right: 12px; }
+.ct-main .contact-method:hover,
+.ct-main .contact-method:focus-within { background: rgba(255, 255, 255, 0.75); padding-left: 12px; padding-right: 12px; }
+.ct-card .contact-action .icon-circle,
+.ct-main .contact-method .icon-circle { transition: transform 0.3s cubic-bezier(.2,.8,.2,1), background-color 0.25s ease, color 0.25s ease, box-shadow 0.3s ease; }
+.ct-card .contact-action:hover .icon-circle,
+.ct-card .contact-action:focus-within .icon-circle,
+.ct-main .contact-method:hover .icon-circle,
+.ct-main .contact-method:focus-within .icon-circle {
+  transform: translateY(-3px) scale(1.08); background: var(--mountain-blue); color: #fff;
+  box-shadow: 0 10px 20px -10px rgba(37, 99, 235, 0.8);
+}
+.ct-card .contact-action .btn { transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease; }
+.ct-card .contact-action .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px -10px rgba(37, 99, 235, 0.8); }
+.ct-after.tilt-3d:hover .ct-after-icon { transform: translateZ(14px) scale(1.08); transition: transform 0.3s ease; }
+@media (prefers-reduced-motion: reduce) {
+  .ct-card .contact-action, .ct-main .contact-method, .ct-card .contact-action .icon-circle, .ct-main .contact-method .icon-circle, .ct-card .contact-action .btn { transition: none; }
+  .ct-card .contact-action:hover .icon-circle, .ct-main .contact-method:hover .icon-circle, .ct-card .contact-action .btn:hover { transform: none; }
+}
+
+/* Home hero now has a single button (Schedule removed) — size it to its label. */
+.hero--split .hero-buttons .btn { flex: 0 0 auto; }
+
+/* ---------- Home hero contact strip ----------
+   Label + number + real Call / Text buttons. Call is gold with a pulsing
+   ring; Text is white with an offset ring; the phone icon "rings" every few
+   seconds. All motion is dropped for prefers-reduced-motion. */
+.hero--split .hero-inner > .hero-contact--strip { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+.hero-contact--strip .hero-phone-note {
+  margin: 0; font-size: 0.8rem !important; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
+  color: #fbbf24 !important;
+}
+.hero-contact-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 14px; }
+.hero-contact--strip .hero-phone svg { animation: heroPhoneRing 4s ease-in-out infinite; transform-origin: 50% 50%; }
+.hero-act {
+  position: relative; display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 20px; border-radius: 999px; font-weight: 800; font-size: 1rem; text-shadow: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+.hero-act svg { width: 18px; height: 18px; }
+.hero-act--call { background: #fbbf24; color: #0f172a; animation: heroRingGold 2.4s ease-out infinite; }
+.hero-act--text { background: #fff; color: #1d4ed8; animation: heroRingWhite 2.4s ease-out 1.2s infinite; }
+.hero-act:hover, .hero-act:focus-visible { transform: translateY(-2px) scale(1.05); color: inherit; }
+.hero-act--call:hover { background: #fcd34d; color: #0f172a; }
+.hero-act--text:hover { background: #eff6ff; color: #1d4ed8; }
+.hero-act:focus-visible { outline: 3px solid #93c5fd; outline-offset: 3px; }
+@keyframes heroRingGold {
+  0%   { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.7), 0 8px 18px -8px rgba(0, 0, 0, 0.5); }
+  70%  { box-shadow: 0 0 0 14px rgba(251, 191, 36, 0), 0 8px 18px -8px rgba(0, 0, 0, 0.5); }
+  100% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0), 0 8px 18px -8px rgba(0, 0, 0, 0.5); }
+}
+@keyframes heroRingWhite {
+  0%   { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.75), 0 8px 18px -8px rgba(0, 0, 0, 0.5); }
+  70%  { box-shadow: 0 0 0 14px rgba(255, 255, 255, 0), 0 8px 18px -8px rgba(0, 0, 0, 0.5); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0), 0 8px 18px -8px rgba(0, 0, 0, 0.5); }
+}
+@keyframes heroPhoneRing {
+  0%, 70%, 100% { transform: rotate(0); }
+  74% { transform: rotate(-16deg); } 78% { transform: rotate(14deg); }
+  82% { transform: rotate(-10deg); } 86% { transform: rotate(8deg); } 90% { transform: rotate(0); }
+}
+@media (max-width: 1024px) {
+  .hero--split .hero-inner > .hero-contact--strip { align-items: center; }
+  .hero-contact-row { justify-content: center; }
+}
+@media (max-width: 768px) {
+  .hero-contact--strip { flex-direction: column; }
+  .hero-contact-row .hero-phone { flex-basis: 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-act, .hero-contact--strip .hero-phone svg { animation: none; }
+  .hero-act:hover { transform: none; }
+}
+
+/* Self-enroll box now sits in the contact row, right after "Text". Compact
+   pill version of the earlier full-width card; keeps its shine/ring button. */
+.hero-enroll--inline {
+  width: auto; max-width: none; margin: 0; padding: 5px 5px 5px 12px; gap: 10px; flex-wrap: nowrap;
+  border-radius: 999px; border-width: 2px; box-shadow: 0 8px 18px -8px rgba(0, 0, 0, 0.5);
+}
+.hero-enroll--inline .hero-enroll-icon { width: 30px; height: 30px; border-radius: 50%; }
+.hero-enroll--inline .hero-enroll-icon svg { width: 17px; height: 17px; }
+.hero-enroll--inline .hero-enroll-text strong { font-size: 0.92rem; white-space: nowrap; text-shadow: none; }
+.hero-enroll--inline .hero-enroll-btn { padding: 9px 16px; font-size: 0.95rem; }
+.hero-enroll--inline .hero-enroll-btn svg { width: 16px; height: 16px; }
+@media (max-width: 640px) {
+  .hero-enroll--inline { width: 100%; justify-content: space-between; flex-wrap: wrap; border-radius: 18px; padding: 8px 8px 8px 12px; }
+  .hero-enroll--inline .hero-enroll-icon { display: grid; }
+  .hero-enroll--inline .hero-enroll-btn { width: auto; }
+}
+@media (max-width: 640px) {
+  .hero-enroll--inline .hero-enroll-text { flex: 1 1 auto; min-width: 0; }
+  .hero-enroll--inline .hero-enroll-text strong { white-space: normal; line-height: 1.25; }
+  .hero-enroll--inline .hero-enroll-btn { flex-shrink: 0; }
+}
+
+/* Hero action row: Call · Text · Check Prescription Costs · Prefer to do it
+   yourself? on ONE line (number sits beside them on wide screens, above them
+   on laptops). Compact sizing so all four fit from ~1100px up. */
+.hero-actions { display: flex; flex-wrap: nowrap; align-items: center; gap: 10px; }
+.hero-actions .hero-act { padding: 9px 16px; font-size: 0.95rem; white-space: nowrap; }
+.hero-act--rx { background: #fff; color: #1d4ed8; border: 2px solid #1d4ed8; padding: 7px 14px !important; box-shadow: 0 8px 18px -8px rgba(0, 0, 0, 0.5); }
+.hero-act--rx:hover { background: #1d4ed8; color: #fff; }
+.hero-actions .hero-enroll--inline { padding: 4px 4px 4px 10px; gap: 8px; }
+.hero-actions .hero-enroll--inline .hero-enroll-icon { display: none; }
+.hero-actions .hero-enroll--inline .hero-enroll-text strong { font-size: 0.86rem; }
+.hero-actions .hero-enroll--inline .hero-enroll-btn { padding: 8px 14px; font-size: 0.9rem; }
+@media (max-width: 1099px) {
+  .hero-actions { flex-wrap: wrap; justify-content: center; }
+}
+@media (max-width: 640px) {
+  .hero-actions { width: 100%; }
+  .hero-actions .hero-act--rx { flex: 1 1 100%; justify-content: center; }
+  .hero-actions .hero-enroll--inline .hero-enroll-icon { display: grid; }
+}
+/* Keep the four actions inside the column on laptops (and in longer Spanish):
+   the self-enroll prompt wraps to two short lines instead of pushing past. */
+.hero-actions > * { flex-shrink: 0; }
+.hero-actions .hero-enroll--inline { flex-shrink: 1; min-width: 0; }
+.hero-actions .hero-enroll--inline .hero-enroll-text { min-width: 0; }
+.hero-actions .hero-enroll--inline .hero-enroll-text strong { white-space: normal; line-height: 1.15; display: block; max-width: 9.5em; }
+@media (max-width: 1500px) {
+  .hero-actions { gap: 8px; }
+  .hero-actions .hero-act { padding: 8px 13px; font-size: 0.9rem; }
+  .hero-act--rx { padding: 6px 11px !important; }
+  .hero-actions .hero-enroll--inline .hero-enroll-btn { padding: 8px 12px; font-size: 0.86rem; }
+}
+@media (max-width: 640px) {
+  .hero-actions .hero-enroll--inline { flex: 1 1 100%; }
+  .hero-actions .hero-enroll--inline .hero-enroll-text strong { max-width: none; }
+  .hero-actions .hero-act--rx { white-space: normal; text-align: center; }
+}
+/* Longer labels (e.g. Spanish "Consulte los Costos de sus Medicamentos") wrap
+   to two short lines inside their button instead of pushing past the column. */
+.hero-actions .hero-act--rx { white-space: normal; line-height: 1.15; max-width: 12em; text-align: left; }
+.hero-actions .hero-act--rx svg { flex-shrink: 0; }
+@media (max-width: 1199px) { .hero-actions { flex-wrap: wrap; } }
+@media (max-width: 640px) { .hero-actions .hero-act--rx { max-width: none; text-align: center; } }
+.hero-actions .hero-act--rx { max-width: 14.5em; }
+.hero-actions .hero-enroll--inline .hero-enroll-text strong { max-width: 11em; }
+@media (max-width: 640px) { .hero-actions .hero-act--rx { max-width: none; } .hero-actions .hero-enroll--inline .hero-enroll-text strong { max-width: none; } }
+
+/* Phone hero: bigger photo of Bret (56px -> 104px), with room above the eyebrow. */
+@media (max-width: 768px) {
+  .hero-mobile-bret { top: 14px; right: 14px; gap: 6px; }
+  .hero-mobile-bret img { width: 104px; height: 104px; border-width: 4px; box-shadow: 0 12px 26px -10px rgba(0, 0, 0, 0.65); }
+  .hero-mobile-bret span { font-size: 0.82rem; padding: 3px 10px; }
+  .hero--split { padding-top: 150px; }
+}
+/* Phone hero: Bret's photo centered above the headline. */
+@media (max-width: 768px) {
+  .hero-mobile-bret { right: auto; left: 50%; transform: translateX(-50%); }
+}
+/* Phone hero: Bret's photo larger still (104px -> 140px). */
+@media (max-width: 768px) {
+  .hero-mobile-bret img { width: 140px; height: 140px; }
+  .hero-mobile-bret span { font-size: 0.88rem; }
+  .hero--split { padding-top: 192px; }
+}

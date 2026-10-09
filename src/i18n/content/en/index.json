@@ -8,7 +8,9 @@
     "h1": "Simple Medicare Guidance",
     "eyebrow": "Local · Independent · Licensed",
     "h1Accent": "Guidance",
-    "phoneNote": "Call or text — we’re here to help",
+    "phoneNote": "Talk to Bret directly — free, no pressure",
+    "callBtn": "Call",
+    "textBtn": "Text",
     "features": [
       { "strong": "Personal,", "span": "One-on-One Help" },
       { "strong": "Lower", "span": "Prescription Costs" },

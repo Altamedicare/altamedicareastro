@@ -136,7 +136,7 @@ const chatIcon = svg('<path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0
           </div>
         </div>
 
-        <div class="ct-after">
+        <div class="ct-after tilt-3d">
           <span class="ct-after-icon" set:html={chatIcon} />
           <div>
             <strong>{c.info.afterHeading}</strong>
@@ -145,7 +145,7 @@ const chatIcon = svg('<path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0
         </div>
       </div>
 
-      <div class="form-card contact-actions ct-card" id="ready-to-talk" style="margin:0;">
+      <div class="form-card contact-actions ct-card tilt-3d" data-tilt-max="3" id="ready-to-talk" style="margin:0;">
         <h2 class="ct-h">{c.actions.h3}</h2>
         <p class="ct-intro" set:html={c.actions.ledeHtml}></p>
 
@@ -219,6 +219,29 @@ const chatIcon = svg('<path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0
     </div>
   </div>
 </section>
+
+<!-- Pointer-follow tilt for .tilt-3d boxes (data-tilt-max = max degrees; default 5).
+     Fine pointers only; skipped entirely for prefers-reduced-motion. -->
+<script is:inline>
+(function(){
+  if (!matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.querySelectorAll('.tilt-3d').forEach(function(el){
+    var max = parseFloat(el.getAttribute('data-tilt-max')) || 5;
+    el.addEventListener('pointermove', function(e){
+      var r = el.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+      el.style.setProperty('--ry', ((x - 0.5) * 2 * max).toFixed(2) + 'deg');
+      el.style.setProperty('--rx', ((0.5 - y) * 1.6 * max).toFixed(2) + 'deg');
+      el.style.setProperty('--gx', (x * 100).toFixed(1) + '%');
+      el.style.setProperty('--gy', (y * 100).toFixed(1) + '%');
+      el.classList.add('is-tilting');
+    });
+    el.addEventListener('pointerleave', function(){
+      el.classList.remove('is-tilting'); el.style.removeProperty('--rx'); el.style.removeProperty('--ry');
+    });
+  });
+})();
+</script>
 
 <!-- Cal.com element-click embed: powers the "Book Appointment" button above -->
 <script type="text/javascript" is:inline>
